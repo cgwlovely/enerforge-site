@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case studies — Worked examples of the EnerForge sanity check</title>
+  <meta name="description" content="Worked examples of the EnerForge project-intelligence sanity check for industrial solar + BESS — illustrative and public-data screens showing how customer value, contract revenue and bankability are tested early." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark">EF</span>
+        <span class="brand__name">Ener<b>Forge</b></span>
+      </a>
+      <nav class="nav__links">
+        <a href="index.html">Home</a>
+        <a href="case-studies.html" class="is-current">Case Studies</a>
+        <a href="notes.html">Project Notes</a>
+        <a href="index.html#lens">Project Lens</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Sanity Check</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO (static) -->
+    <section class="case-hero">
+      <div class="container">
+        <p class="eyebrow">Case studies</p>
+        <h1>Worked examples of the sanity check</h1>
+        <p class="case-hero__sub">
+          Each case takes a real or public-data industrial energy project and runs it through the
+          same lens &mdash; technical fit, customer value, contract revenue, carbon and bankability
+          &mdash; to show what an early screen actually surfaces before serious development spend.
+        </p>
+        <div class="note">
+          <span class="cap">How to read these</span>
+          <p>
+            These are illustrative and public-data screens of the method, not commissioned advice or
+            bank-approved models. Figures are indicative early-stage outputs. Nothing here is legal,
+            financial, tax, engineering or investment advice.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIBRARY (rendered from cases/data.js) -->
+    <section class="section section--tint" id="cases">
+      <div class="container">
+        <p class="eyebrow">The library</p>
+        <h2 class="section-title">Cases so far</h2>
+        <p class="section-intro">
+          A small, growing set. Each opens into a full write-up of the question, the numbers and the
+          decision.
+        </p>
+
+        <!-- map + case tiles injected here by cases/render.js -->
+        <div id="cases-mount"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand__mark">EF</span>
+            <span class="brand__name">Ener<b style="color:#6fb6a4">Forge</b></span>
+          </a>
+          <p class="footer__note">
+            EnerForge is my independent BESS feasibility and project-intelligence workflow. I use it
+            to sanity-check early industrial energy ideas, publish project notes, and exchange views
+            with people working on solar + BESS, EaaS and the industrial energy transition.
+          </p>
+        </div>
+        <nav class="footer__links">
+          <a href="index.html">Home</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="notes.html">Project Notes</a>
+          <a href="index.html#lens">Project Lens</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Sanity Check</a>
+        </nav>
+      </div>
+      <p class="footer__legal">
+        EnerForge is an independent workflow built by one person. It is not a consulting firm or a
+        software platform, and nothing here is legal, financial, tax, engineering or investment
+        advice &mdash; it is an early project logic check and peer-style discussion. © 2026 EnerForge.
+      </p>
+    </div>
+  </footer>
+
+  <!-- data + renderer -->
+  <script src="cases/data.js"></script>
+  <script src="cases/render.js"></script>
+</body>
+</html>

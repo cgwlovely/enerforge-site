@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The first feasibility question should not be "what is the IRR?" | EnerForge</title>
+  <meta name="description" content="EnerForge project note: the first feasibility question should not be the IRR &mdash; start with what problem the project solves, and for whom." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark">EF</span>
+        <span class="brand__name">Ener<b>Forge</b></span>
+      </a>
+      <nav class="nav__links">
+        <a href="index.html">Home</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="notes.html" class="is-current">Project Notes</a>
+        <a href="index.html#lens">Project Lens</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Sanity Check</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <div class="container">
+        <header class="article">
+          <p class="article__meta">
+            <span>Project note 08</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span>Project finance</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="muted">Working notebook</span>
+          </p>
+          <h1>The first feasibility question should not be &ldquo;what is the IRR?&rdquo;</h1>
+        </header>
+      </div>
+
+      <div class="container">
+        <div class="article__body">
+          <p>IRR is useful, but it is not the first question.</p>
+          <p>For early-stage industrial BESS projects, I think the first question should be:</p>
+          <div class="pull"><span class="hl">What problem is the project solving, and for whom?</span></div>
+          <p>A customer may want lower diesel cost, better reliability, emissions reduction, less fuel logistics risk or a cleaner energy story. A developer may want stable revenue. A lender wants predictable cash flow and downside protection. An investor wants risk-adjusted return.</p>
+          <p>These are not the same question.</p>
+          <p>That is why a useful feasibility model should not only calculate IRR. It should show how value moves across the project:</p>
+          <div class="flow" aria-label="value chain">
+            <span>Customer avoided cost</span><b>&rarr;</b>
+            <span>EaaS fee</span><b>&rarr;</b>
+            <span>SPV revenue</span><b>&rarr;</b>
+            <span>CFADS</span><b>&rarr;</b>
+            <span>Debt service</span><b>&rarr;</b>
+            <span class="is-end">Equity return</span>
+          </div>
+          <p>If that chain breaks, the project needs to be redesigned. A high-level IRR number is not enough.</p>
+          <p>The real early question is:</p>
+          <div class="pull">Does the project logic hold together?</div>
+        </div>
+      </div>
+
+      <div class="container">
+        <nav class="article-nav">
+          <a class="btn btn--outline" href="note-7.html">&larr; Previous note</a>
+          <a class="btn btn--primary" href="note-9.html">Next note <span class="btn__arrow">&rarr;</span></a>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand__mark">EF</span>
+            <span class="brand__name">Ener<b style="color:#6fb6a4">Forge</b></span>
+          </a>
+          <p class="footer__note">
+            EnerForge is my independent BESS feasibility and project-intelligence workflow. I use it
+            to sanity-check early industrial energy ideas, publish project notes, and exchange views
+            with people working on solar + BESS, EaaS and the industrial energy transition.
+          </p>
+        </div>
+        <nav class="footer__links">
+          <a href="index.html">Home</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="notes.html">Project Notes</a>
+          <a href="index.html#lens">Project Lens</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Sanity Check</a>
+        </nav>
+      </div>
+      <p class="footer__legal">
+        EnerForge is an independent workflow built by one person. It is not a consulting firm or a
+        software platform, and nothing here is legal, financial, tax, engineering or investment
+        advice &mdash; it is an early project logic check and peer-style discussion. © 2026 EnerForge.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
