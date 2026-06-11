@@ -173,7 +173,7 @@ window.ENERFORGE_CASES = [
     ],
 
     downloads: [
-      { label: "Financeability report (PDF)", href: "", note: "sample — available on request" },
+      { label: "Financeability report (PDF)", href: "reports/Fountain_Head_Hybrid_Energy_Financeability_Report.pdf", note: "download PDF" },
       { label: "Scenario workbook (XLSX)", href: "", note: "sample — available on request" }
     ]
   },
