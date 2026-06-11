@@ -226,6 +226,9 @@
           : '<span class="dl" aria-disabled="true"><b>' + d.label + "</b><span>" + (d.note || "coming soon") + "</span></span>";
       }).join("") + "</div>";
     }
+    if (c.downloadsNote) {
+      inner += '<p class="section-intro" style="margin-top:20px;font-size:15px;">' + c.downloadsNote + "</p>";
+    }
     return sec("section--tint", inner);
   }
 
