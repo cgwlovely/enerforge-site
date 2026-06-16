@@ -48,7 +48,7 @@ window.ENERFORGE_CASES = [
      =========================================================================== */
   {
     id: "fountain-head",
-    num: "02",
+    num: "01",
     title: "Fountain Head: a gold mine that looked better at 100% renewable — and financed worse.",
     subtitle:
       "An independent public-data screen of the Fountain Head gold mine in the Northern Territory — testing solar + BESS + diesel under a third-party SPV, where more renewable was not the better commercial answer.",
@@ -183,7 +183,7 @@ window.ENERFORGE_CASES = [
      =========================================================================== */
   {
     id: "weak-grid-eaas",
-    num: "01",
+    num: "02",
     title: "Weak-grid industrial solar + BESS EaaS — customer value was strong, but the debt case failed.",
     subtitle:
       "An illustrative weak-grid, diesel-exposed industrial site screened for solar + BESS under an EaaS structure. The customer avoided-cost case was material. The base-case financing was not. This screen shows where the gap is and what would need to change.",
