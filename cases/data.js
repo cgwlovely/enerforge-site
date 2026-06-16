@@ -173,8 +173,7 @@ window.ENERFORGE_CASES = [
     ],
 
     downloads: [
-      { label: "Financeability report (PDF)", href: "reports/Fountain_Head_Hybrid_Energy_Financeability_Report.pdf", note: "download PDF" },
-      { label: "Scenario workbook (XLSX)", href: "", note: "sample — available on request" }
+      { label: "Financeability report (PDF)", href: "reports/Fountain_Head_Hybrid_Energy_Financeability_Report.pdf", note: "download PDF" }
     ],
     downloadsNote: "Want the full scenario workbook, sensitivity tables, or a walk-through of the numbers? <a href='index.html#contact'>Reach out</a> — I'm happy to share more detail or talk through what this screen means for a project you're looking at."
   },
@@ -301,9 +300,7 @@ window.ENERFORGE_CASES = [
       { title: "Next-step data request", desc: "What to confirm — EPC quote, EaaS term sheet, customer credit support — before proceeding." }
     ],
 
-    downloads: [
-      { label: "Sample decision card (PDF)", href: "", note: "sample — available on request" }
-    ]
+    downloads: []
   }
 
 ];
