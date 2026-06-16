@@ -184,12 +184,12 @@ window.ENERFORGE_CASES = [
   {
     id: "weak-grid-eaas",
     num: "01",
-    title: "A project that saved the customer money — and still couldn't be financed.",
+    title: "Weak-grid industrial solar + BESS EaaS — customer value was strong, but the debt case failed.",
     subtitle:
-      "An illustrative weak-grid, diesel-exposed industrial site. The customer case works; the base-case financing does not — a lesson in why customer value and bankability are not the same.",
-    status: { label: "Not bankable under the current debt structure", tone: "warn" },
+      "An illustrative weak-grid, diesel-exposed industrial site screened for solar + BESS under an EaaS structure. The customer avoided-cost case was material. The base-case financing was not. This screen shows where the gap is and what would need to change.",
+    status: { label: "Not bankable under the current debt structure — rework commercial structure first", tone: "warn" },
     lesson:
-      "<span class='hl'>Not bankable does not mean no value.</span> This project creates real customer savings and still fails the lender test under its current debt structure. The honest fix is to redesign the commercial and financing structure — not to abandon the technical solution.",
+      "<span class='hl'>Customer savings are not the same as bankable SPV revenue.</span> This project creates real customer value and still fails the lender test under its current debt structure. The screen identifies exactly where the gap is — contracted revenue, debt sizing, tenor, or risk allocation — so the structure can be redesigned before EPC or financing work begins.",
 
     industry: "Industrial / weak-grid energy user",
     location: "Representative weak-grid industrial site",
@@ -300,7 +300,8 @@ window.ENERFORGE_CASES = [
       { title: "Next-step data request", desc: "What to confirm — EPC quote, EaaS term sheet, customer credit support — before proceeding." }
     ],
 
-    downloads: []
+    downloads: [],
+    downloadsNote: "Want to test a similar site? <a href='index.html#contact'>Request an early sanity check</a> before committing to EPC, legal, or financing work — send five basic inputs and get a structured early read on your project."
   }
 
 ];
