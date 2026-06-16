@@ -1,5 +1,5 @@
 /* =============================================================================
-   EnerForge — CASE STUDY DATA
+   Heliovulcan Energy Advisors — CASE STUDY DATA
    -----------------------------------------------------------------------------
    This is the ONLY file you edit to add or change a case study.
    No build step, no framework. Add a new object to the ENERFORGE_CASES array

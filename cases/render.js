@@ -1,5 +1,5 @@
 /* =============================================================================
-   EnerForge — CASE STUDY RENDERER
+   Heliovulcan Energy Advisors — CASE STUDY RENDERER
    Reads window.ENERFORGE_CASES (from cases/data.js) and renders:
      • the index grid + project map on  case-studies.html  (#cases-mount)
      • a full individual case page on    case.html?id=<id> (#case-mount)
@@ -237,7 +237,7 @@
     if (c.limitations && c.limitations.length) inner += '<div class="prose" style="margin-top:24px;">' + paras(c.limitations) + "</div>";
     // standard disclaimer on EVERY case page
     inner += '<div class="note"><span class="cap">Important disclaimer</span><p>' +
-      "EnerForge case studies are independent, early-stage screens for discussion only. They are not legal, financial, tax, engineering or investment advice, not an EPC design, bankable feasibility study or financing offer, and (for public-data cases) are not commissioned by, endorsed by or verified with the project owner. All figures are indicative and must be validated against owner data before any commercial decision." +
+      "Heliovulcan Energy Advisors case studies are independent, early-stage screens for discussion only. They are not legal, financial, tax, engineering or investment advice, not an EPC design, bankable feasibility study or financing offer, and (for public-data cases) are not commissioned by, endorsed by or verified with the project owner. All figures are indicative and must be validated against owner data before any commercial decision." +
       "</p></div>";
     return sec("", inner);
   }
@@ -268,7 +268,7 @@
         '<div class="cta-row"><a class="btn btn--primary" href="case-studies.html">All case studies <span class="btn__arrow">&rarr;</span></a></div>');
       return;
     }
-    document.title = "Case " + (c.num || "") + ": " + String(c.title).replace(/<[^>]+>/g, "") + " | EnerForge";
+    document.title = "Case " + (c.num || "") + ": " + String(c.title).replace(/<[^>]+>/g, "") + " | Heliovulcan Energy Advisors";
     mount.innerHTML =
       heroBlock(c) +
       glanceBlock(c) +
