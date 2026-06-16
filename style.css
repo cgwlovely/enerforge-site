@@ -465,8 +465,8 @@ image-slot::part(image) { object-fit: cover !important; }
   height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
 }
 .brand { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
-.brand__logo { height: 44px; width: auto; display: block; }
-.brand__logo--footer { height: 52px; }
+.brand__logo { height: 44px; max-height: 44px; width: auto; max-width: 180px; display: block; object-fit: contain; }
+.brand__logo--footer { height: 52px; max-height: 52px; max-width: 200px; }
 
 .nav__links { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
 .nav__links a {
