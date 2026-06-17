@@ -31,7 +31,7 @@
     return (
       '<a class="map-link" href="case.html?id=' + esc(c.id) + '">' +
         '<title>' + esc("Case " + (c.num || "") + " — " + (c.location || c.title)) + '</title>' +
-        '<g class="pin-group">' +
+        '<g class="pin-group" data-case="' + esc(c.id) + '">' +
           '<g transform="translate(' + p.x + "," + p.y + ')"' + (hollow ? ' class="pin--hollow"' : "") + '>' +
             '<circle class="pin__halo" r="17" />' +
             '<circle class="pin pin__dot" r="7" />' +
@@ -42,6 +42,19 @@
           '</g>' +
         '</g>' +
       '</a>'
+    );
+  }
+
+  function buildTipHTML(c) {
+    var tone = (c.status && c.status.tone) || "warn";
+    var toneCls = tone === "ok" ? "maptip__status--ok" : tone === "bad" ? "maptip__status--bad" : "maptip__status--warn";
+    var srcLabel = c.source === "illustrative" ? "Hypothetical project" : "Public-data screen";
+    return (
+      '<p class="maptip__head">Case ' + esc(c.num || "") + " · " + esc(c.industry || "") + "</p>" +
+      '<p class="maptip__loc">' + esc(c.location || "") + "</p>" +
+      '<p class="maptip__type">' + esc(c.projectType || "") + "</p>" +
+      '<span class="maptip__badge">' + esc(srcLabel) + "</span>" +
+      (c.status ? '<p class="maptip__status ' + toneCls + '">' + esc(c.status.label) + "</p>" : "")
     );
   }
 
@@ -89,6 +102,39 @@
       '<div class="case-index">' + tiles +
         '<div class="case-soon">More cases are being added as projects are screened &mdash;<br />industrial solar, storage, diesel displacement and weak-grid sites.</div>' +
       "</div>";
+
+    // ---- map hover tooltips ------------------------------------------------
+    var mapWrap = mount.querySelector(".map-wrap");
+    if (mapWrap) {
+      var tip = document.createElement("div");
+      tip.className = "maptip";
+      tip.setAttribute("aria-hidden", "true");
+      tip.hidden = true;
+      mapWrap.appendChild(tip);
+
+      mount.querySelectorAll(".pin-group[data-case]").forEach(function (pg) {
+        var c = byId(pg.getAttribute("data-case"));
+        if (!c) return;
+
+        function showTip(e) {
+          tip.innerHTML = buildTipHTML(c);
+          tip.hidden = false;
+          moveTip(e);
+        }
+        function moveTip(e) {
+          var rect = mapWrap.getBoundingClientRect();
+          var tx = e.clientX - rect.left + 16;
+          var ty = e.clientY - rect.top - 20;
+          // flip left if near right edge
+          if (tx + 240 > rect.width) { tx = e.clientX - rect.left - 240 - 16; }
+          tip.style.left = Math.max(4, tx) + "px";
+          tip.style.top  = Math.max(4, ty) + "px";
+        }
+        pg.addEventListener("mouseenter", showTip);
+        pg.addEventListener("mousemove",  moveTip);
+        pg.addEventListener("mouseleave", function () { tip.hidden = true; });
+      });
+    }
   }
 
   /* ---- DETAIL section builders ------------------------------------------ */

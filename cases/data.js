@@ -61,7 +61,7 @@ window.ENERFORGE_CASES = [
     projectType: "Behind-the-meter solar + BESS + diesel hybrid (EaaS / third-party SPV)",
     tags: ["Hybrid energy", "Mining", "Public data"],
     source: "public",
-    pin: { x: 456, y: 108, type: "solid", label: "Case 02 · Fountain Head" },
+    pin: { x: 456, y: 108, type: "solid", label: "Case 01 · Fountain Head" },
 
     summary:
       "A public-data screen of the Fountain Head gold mine (Northern Territory). Four solar + BESS + diesel cases, all clearing the lender DSCR — but only the 60% hybrid leaves the owner genuinely ahead after buy-out.",
@@ -196,7 +196,7 @@ window.ENERFORGE_CASES = [
     projectType: "Behind-the-meter solar + BESS, Energy-as-a-Service",
     tags: ["BESS feasibility", "EaaS", "Bankability"],
     source: "illustrative",
-    pin: { x: 178, y: 332, type: "hollow", label: "Case 01 · representative site" },
+    pin: { x: 178, y: 332, type: "hollow", label: "Case 02 · Hypothetical site" },
 
     summary:
       "A weak-grid, diesel-exposed industrial site. The customer case works; the base-case financing does not. A lesson in why customer value and bankability are not the same.",
