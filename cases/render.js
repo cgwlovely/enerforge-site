@@ -1,6 +1,6 @@
 /* =============================================================================
    Heliovulcan Energy Advisors — CASE STUDY RENDERER
-   Reads window.ENERFORGE_CASES (from cases/data.js) and renders:
+   Reads window.HELIOVULCAN_CASES (from cases/data.js) and renders:
      • the index grid + project map on  case-studies.html  (#cases-mount)
      • a full individual case page on    case.html?id=<id> (#case-mount)
    Pure vanilla JS. No build step. Works on file:// and any static host.
@@ -9,7 +9,7 @@
 (function () {
   "use strict";
 
-  var CASES = window.ENERFORGE_CASES || [];
+  var CASES = window.HELIOVULCAN_CASES || [];
 
   /* ---- small helpers ----------------------------------------------------- */
   function esc(s) {

@@ -2,7 +2,7 @@
    Heliovulcan Energy Advisors — CASE STUDY DATA
    -----------------------------------------------------------------------------
    This is the ONLY file you edit to add or change a case study.
-   No build step, no framework. Add a new object to the ENERFORGE_CASES array
+   No build step, no framework. Add a new object to the HELIOVULCAN_CASES array
    and a new card + map pin appear on case-studies.html automatically, and a
    full page renders at  case.html?id=<your-id>
 
@@ -41,7 +41,7 @@
    EVERY case page automatically — you do not need to repeat them here.
    ============================================================================= */
 
-window.ENERFORGE_CASES = [
+window.HELIOVULCAN_CASES = [
 
   /* ===========================================================================
      CASE 02 — FOUNTAIN HEAD GOLD MINE  (first published case)
@@ -96,7 +96,7 @@ window.ENERFORGE_CASES = [
     ],
 
     method: [
-      "A high-level but structured public-information desktop screen across the EnerForge&trade; F1-F4 framework: F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 financeability readiness. Annual energy and peak load were reconstructed from public environmental-impact material, a diesel-only baseline was built for context, and four hybrid configurations were sized across a range of renewable shares.",
+      "A high-level but structured public-information desktop screen across the F1-F4 Pre-DD framework: F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 financeability readiness. Annual energy and peak load were reconstructed from public environmental-impact material, a diesel-only baseline was built for context, and four hybrid configurations were sized across a range of renewable shares.",
       "On site suitability (F2), public maps and mine layout were read into a candidate-zone hypothesis: <strong>Zone A</strong> as the interconnection / BESS / PCS / EMS zone, <strong>Zone B</strong> as the main PV array candidate, and <strong>Zone C</strong> as a future expansion sensitivity. <strong>A+B</strong> is the preferred desktop site hypothesis.",
       "Each configuration was then tested for financeability readiness (F4) — indicative DSCR, debt capacity and the residual buy-out an investor would need — and for the owner&rsquo;s true saving after that buy-out, not just the headline tariff discount. None of this replaces owner data, hourly dispatch modelling, specialist DD or EPC pricing."
     ],

@@ -1,4 +1,4 @@
-# EnerForge — First content batch (8 pieces)
+# Heliovulcan — First content batch (8 pieces)
 
 Goal: build credibility as an independent project-intelligence operator by sharing a point of view
 and a real worked case — **not** by selling services. Voice: personal, technical, grounded,
@@ -79,9 +79,9 @@ All case numbers below come from the published case study and can be quoted as *
   valid, valuable result → the cost of deciding late.
 - **Case insight:** This case's outcome was "optimise" — proceed to a controlled development gate
   (EPC quote, EaaS term sheet, debt restructure), not a final investment decision.
-- **CTA:** "This is the whole reason I built EnerForge — about page."
+- **CTA:** "This is the whole reason I built Heliovulcan — about page."
 
-## 8. What I learned building EnerForge
+## 8. What I learned building Heliovulcan
 
 - **Core point:** A personal, reflective piece on connecting technical, commercial, carbon and
   financing logic that's usually assessed in silos.

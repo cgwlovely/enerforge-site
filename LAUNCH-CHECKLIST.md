@@ -1,4 +1,4 @@
-# EnerForge — Launch Readiness Checklist
+# Heliovulcan — Launch Readiness Checklist
 
 A pre-launch review of the static MVP (`index.html`, `case-study.html`, `style.css`).
 Site positioning: *an independent project intelligence workflow for industrial solar + BESS
@@ -35,7 +35,7 @@ carbon upside and bankability before full project development.*
    the site widely.
 4. **Add a favicon** (a 32×32 `favicon.png` + `<link rel="icon">`) so the browser tab isn't blank.
 5. **Confirm the © year / entity name** in the footer matches how you want to present (personal name
-   vs. "EnerForge").
+   vs. "Heliovulcan").
 
 ## Nice to Improve Later
 
@@ -51,18 +51,18 @@ carbon upside and bankability before full project development.*
 ## Suggested meta title / description
 
 **Home (`index.html`)**
-- Title: `EnerForge — Independent project intelligence for industrial solar + BESS`
+- Title: `Heliovulcan — Independent project intelligence for industrial solar + BESS`
 - Description: `An independent workflow, built by one energy and climate modeller, to test customer value, contract revenue, carbon upside and bankability before serious development cost is committed.`
 
 **Case study (`case-study.html`)**
-- Title: `Case study: a solar + BESS project that saved the customer money — and still couldn't be financed | EnerForge`
+- Title: `Case study: a solar + BESS project that saved the customer money — and still couldn't be financed | Heliovulcan`
 - Description: `A worked weak-grid solar + BESS EaaS screening: real customer savings, not bankable under the current debt structure. Shared as a lesson, not a success story.`
 
 *(Both are already set in the files; listed here for reference / editing.)*
 
 ## Suggested footer disclaimer
 
-> EnerForge is an independent workflow built by one person. It is not a consulting firm, an
+> Heliovulcan is an independent workflow built by one person. It is not a consulting firm, an
 > engineering firm or a software platform. Nothing on this site is financial, investment, tax or
 > engineering advice. All figures are illustrative outputs of an early-stage screening model and
 > should not be relied on for an investment decision.
@@ -80,5 +80,5 @@ The site is three static files with no build step, so any static host works:
   subdomain instantly and easy custom-domain + form handling later.
 
 Recommended: **Netlify** for the MVP — drag-drop deploy, free HTTPS, and built-in form handling
-when you replace the mailto. Point a custom domain (e.g. `enerforge.io`) at it once chosen, then
+when you replace the mailto. Point a custom domain (e.g. `heliovulcan.com.au`) at it once chosen, then
 update the placeholder email to match the domain.

@@ -1,4 +1,4 @@
-# EnerForge — independent BESS feasibility & project-intelligence website
+# Heliovulcan — independent BESS feasibility & project-intelligence website
 
 A static, founder-led website for early-stage industrial **solar + BESS** sanity checks,
 project notes and case studies. No framework, no build step — plain HTML, one CSS file, and a
@@ -12,7 +12,7 @@ You do **not** edit any page design to publish a case. Open:
 cases/data.js
 ```
 
-Copy an existing object in the `ENERFORGE_CASES` array, change the fields, and save. That's it:
+Copy an existing object in the `HELIOVULCAN_CASES` array, change the fields, and save. That's it:
 
 - a new card + map pin appear on **case-studies.html** automatically, and
 - a full page renders at **case.html?id=&lt;your-id&gt;**
@@ -70,6 +70,6 @@ This is a static site — it deploys anywhere with zero configuration.
 
 ---
 
-EnerForge is an independent workflow built by one person. Nothing on the site is legal,
+Heliovulcan is an independent workflow built by one person. Nothing on the site is legal,
 financial, tax, engineering or investment advice — it is an early project logic check and
 peer-style discussion.
