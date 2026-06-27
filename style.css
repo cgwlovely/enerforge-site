@@ -572,8 +572,18 @@ image-slot::part(image) { object-fit: cover !important; }
    ============================================================= */
 .grid { display: grid; gap: 18px; margin-top: 40px; }
 .grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
 .grid--5 { grid-template-columns: repeat(5, 1fr); }
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
+
+/* F1-F4 Pre-DD cards — orange F-badge on the standard card */
+.predd-card__f {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 13px; font-weight: 600; letter-spacing: .04em;
+  color: #fff; background: linear-gradient(135deg, #f59b4d, var(--amber));
+  width: 38px; height: 26px; border-radius: 7px;
+}
+.predd-card h3 { margin-top: 14px; }
 
 .card {
   background: var(--surface); border: 1px solid var(--line);
@@ -712,12 +722,13 @@ image-slot::part(image) { object-fit: cover !important; }
   .feature { grid-template-columns: 1fr; gap: 28px; }
   .about { grid-template-columns: 1fr; gap: 24px; }
   .grid--5 { grid-template-columns: repeat(2, 1fr); }
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
   .grid--3 { grid-template-columns: repeat(2, 1fr); }
   .scenarios { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .section { padding: 60px 0; }
-  .grid--3, .grid--2 { grid-template-columns: 1fr; }
+  .grid--4, .grid--3, .grid--2 { grid-template-columns: 1fr; }
   .nav__inner { height: auto; padding: 12px var(--pad); flex-direction: column; align-items: flex-start; gap: 8px; }
   .nav__links { gap: 2px; }
   .nav__links a { padding: 6px 10px; font-size: 14px; }

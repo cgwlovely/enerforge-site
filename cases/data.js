@@ -49,22 +49,22 @@ window.ENERFORGE_CASES = [
   {
     id: "fountain-head",
     num: "01",
-    title: "Fountain Head: a gold mine that looked better at 100% renewable — and financed worse.",
+    title: "Fountain Head Hybrid Energy Pre-DD Screen",
     subtitle:
-      "An independent public-data screen of the Fountain Head gold mine in the Northern Territory — testing solar + BESS + diesel under a third-party SPV, where more renewable was not the better commercial answer.",
-    status: { label: "Outcome: 60% hybrid is the preferred screen", tone: "ok" },
+      "A public-information desktop Pre-DD screen for a remote mine hybrid-energy case — testing whether a 60% renewable diesel-PV-BESS pathway is more useful than a short-life standalone case or a 100% renewable upper-bound case, across approval delta, site suitability, microgrid boundary and financeability readiness.",
+    status: { label: "Public sample available · S4 60% hybrid preferred", tone: "ok" },
     lesson:
-      "<span class='hl'>More renewable is not automatically better.</span> Every case here can be geared to pass a lender DSCR — but the 100% renewable case, weighed down by CAPEX and a large buy-out, leaves the owner worse off. The 60% hybrid is the only case that works for the owner and the lender at once.",
+      "<span class='hl'>A screen of readiness, not a verdict on the project.</span> Across F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 financeability readiness, the 60% hybrid pathway (S4) is the preferred base case to validate — more renewable was not automatically the better answer. Everything here is a public-information screen, not formal due diligence.",
 
     industry: "Gold mining",
     location: "Fountain Head / Pine Creek, Northern Territory, Australia",
-    projectType: "Behind-the-meter solar + BESS + diesel hybrid (EaaS / third-party SPV)",
-    tags: ["Hybrid energy", "Mining", "Public data"],
+    projectType: "Diesel-PV-BESS hybrid microgrid (public-information Pre-DD screen)",
+    tags: ["Development + financeability screen", "Hybrid energy", "Mining", "Public data"],
     source: "public",
     pin: { x: 456, y: 108, type: "solid", label: "Case 01 · Fountain Head" },
 
     summary:
-      "A public-data screen of the Fountain Head gold mine (Northern Territory). Four solar + BESS + diesel cases, all clearing the lender DSCR — but only the 60% hybrid leaves the owner genuinely ahead after buy-out.",
+      "A public-information Pre-DD screen of a remote NT gold-mine hybrid-energy case. Combines financeability, public-map interpretation, an A/B/C candidate-zone hypothesis, approval delta and microgrid boundary questions, and an owner data-room request.",
     stats: [
       { value: "~30 GWh/yr", label: "indicative demand" },
       { value: "4 cases", label: "S1 / S3 / S4 / S5" },
@@ -84,8 +84,9 @@ window.ENERFORGE_CASES = [
     ],
 
     method: [
-      "A high-level but structured desktop screen. Annual energy and peak load were reconstructed from public environmental-impact material, a diesel-only baseline was built for tariff and emissions context, and four hybrid configurations were sized across a range of renewable shares.",
-      "Each configuration was then tested for SPV financeability — DSCR, debt capacity and the residual buy-out an investor would need — and for the owner&rsquo;s true saving after that buy-out, not just the headline tariff discount."
+      "A high-level but structured public-information desktop screen across the EnerForge&trade; F1-F4 framework: F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 financeability readiness. Annual energy and peak load were reconstructed from public environmental-impact material, a diesel-only baseline was built for context, and four hybrid configurations were sized across a range of renewable shares.",
+      "On site suitability (F2), public maps and mine layout were read into a candidate-zone hypothesis: <strong>Zone A</strong> as the interconnection / BESS / PCS / EMS zone, <strong>Zone B</strong> as the main PV array candidate, and <strong>Zone C</strong> as a future expansion sensitivity. <strong>A+B</strong> is the preferred desktop site hypothesis.",
+      "Each configuration was then tested for financeability readiness (F4) — indicative DSCR, debt capacity and the residual buy-out an investor would need — and for the owner&rsquo;s true saving after that buy-out, not just the headline tariff discount. None of this replaces owner data, hourly dispatch modelling, specialist DD or EPC pricing."
     ],
 
     dataSources: [
@@ -173,9 +174,10 @@ window.ENERFORGE_CASES = [
     ],
 
     downloads: [
+      { label: "Public Pre-DD Brief (PDF)", href: "reports/Fountain_Head_PreDD_Enhanced_Public_EN_v4.pdf", note: "download public report" },
       { label: "Financeability report (PDF)", href: "reports/Fountain_Head_Hybrid_Energy_Financeability_Report.pdf", note: "download PDF" }
     ],
-    downloadsNote: "Want the full scenario workbook, sensitivity tables, or a walk-through of the numbers? <a href='index.html#contact'>Reach out</a> — I'm happy to share more detail or talk through what this screen means for a project you're looking at."
+    downloadsNote: "Want the full scenario workbook, sensitivity tables, the candidate-zone hypothesis or the owner data-room request? <a href='index.html#contact'>Reach out</a> — happy to share more detail or talk through what this screen means for a project you're looking at."
   },
 
   /* ===========================================================================
