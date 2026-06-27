@@ -14,7 +14,7 @@ carbon upside and bankability before full project development.*
 | 1 | Internal links resolve (`index.html`, `case-study.html`, `#lens`, `#about`, `#contact`, `#reports`) | ✅ Pass |
 | 2 | Nav identical on both pages (only `is-current` differs) | ✅ Pass |
 | 3 | CTAs all point somewhere valid (case study, #reports, mailto, back-to-home) | ✅ Pass |
-| 4 | Placeholder email is clearly flagged to replace | ✅ Pass — `hello@enerforge.example` + a `.small-note` reminder |
+| 4 | Contact email set to a real, monitored address | ✅ Pass — `grant.chen.phd@gmail.com` |
 | 5 | Meta title + description present and on-message on both pages | ✅ Pass |
 | 6 | Mobile layout (nav stacks, grids collapse, matrix/risk reflow) | ✅ Pass |
 | 7 | "Coming soon" items are explained, not bare | ✅ Pass — reports `.small-note`; case-study `.note` |
@@ -29,8 +29,7 @@ carbon upside and bankability before full project development.*
 ## Must Fix Before Publishing
 
 1. **Replace `[Your Name]`** in the About section (`index.html`) with your real name.
-2. **Replace the placeholder email** `hello@enerforge.example` with a real, monitored address
-   (the "Get in touch" button + footer-adjacent note).
+2. **Contact email** is set to `grant.chen.phd@gmail.com` (live `mailto:` links across the site).
 3. **Decide what "Preview coming soon" links to.** Either keep them as honest placeholders (fine for
    MVP — they are already explained) or wire them to a real PDF / contact form before you promote
    the site widely.

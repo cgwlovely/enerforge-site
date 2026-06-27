@@ -64,7 +64,7 @@ This is a static site — it deploys anywhere with zero configuration.
 
 ## Before you go live
 
-- Replace the placeholder email `hello@enerforge.example` (in `index.html`) with a real address.
+- Contact email is set to `grant.chen.phd@gmail.com` (live `mailto:` links across the site).
 - Add a `favicon.png` + `<link rel="icon">` if you want a custom browser-tab icon.
 - Swap the `assets/*.jpg` photos for your own if preferred.
 

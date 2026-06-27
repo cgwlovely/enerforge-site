@@ -576,6 +576,17 @@ image-slot::part(image) { object-fit: cover !important; }
 .grid--5 { grid-template-columns: repeat(5, 1fr); }
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
 
+/* case-study figures (framework infographic, candidate-zone map) */
+.case-figure { margin: 32px 0 0; }
+.case-figure img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface);
+}
+.case-figure figcaption {
+  margin-top: 12px; font-size: 13px; line-height: 1.55; color: var(--ink-faint); max-width: 760px;
+}
+
 /* F1-F4 Pre-DD cards — orange F-badge on the standard card */
 .predd-card__f {
   display: inline-flex; align-items: center; justify-content: center;

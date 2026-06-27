@@ -65,6 +65,18 @@ window.ENERFORGE_CASES = [
 
     summary:
       "A public-information Pre-DD screen of a remote NT gold-mine hybrid-energy case. Combines financeability, public-map interpretation, an A/B/C candidate-zone hypothesis, approval delta and microgrid boundary questions, and an owner data-room request.",
+
+    frameworkFigure: {
+      src: "assets/fountainhead-predd-framework.png",
+      alt: "Fountain Head Pre-DD framework: F1-F4 questions, owners and milestones from public desktop screen to financial close preparation",
+      caption: "What this Pre-DD screen really sequences: what question to ask, who should answer it, when it is needed, and what risk it removes &mdash; across F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 commercial &amp; FC readiness, from public desktop screen through owner data room and specialist DD to financial close preparation."
+    },
+    siteFigure: {
+      src: "assets/fountainhead-zones-map.png",
+      alt: "Fountain Head candidate energy zones and constraints — desktop interpretation of public information",
+      caption: "Candidate energy zones (desktop interpretation of public information): Zone A interconnection / BESS / PCS / EMS, Zone B main PV array, Zone C future expansion sensitivity, with strong, medium and watercourse constraints. A desktop hypothesis only &mdash; not a final engineering or approval boundary."
+    },
+
     stats: [
       { value: "~30 GWh/yr", label: "indicative demand" },
       { value: "4 cases", label: "S1 / S3 / S4 / S5" },
