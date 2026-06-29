@@ -1,0 +1,254 @@
+<!--
+  ============================================================================
+  HELIOVULCAN REPORT TEMPLATE  —  reports/_template.html
+  ----------------------------------------------------------------------------
+  HOW TO USE THIS TEMPLATE:
+    1. COPY this file.
+    2. RENAME the copy to:  reports/project-name-review.html
+       (lowercase, hyphens, e.g. reports/sunrise-dam-hybrid-energy-review.html)
+    3. REPLACE every [PLACEHOLDER] below — including in <title>, meta
+       description, meta keywords, canonical, Open Graph, twitter card and
+       the JSON-LD block.
+    4. REMOVE the <meta name="robots" content="noindex, nofollow" /> line
+       (marked below) so the finished page CAN be indexed by Google.
+    5. ADD the new page URL to  /sitemap.xml
+    6. ADD internal links to the new page from the "Explore more" sections in
+       index.html, case-studies.html and notes.html.
+
+  IMPORTANT:
+    - Do NOT add THIS _template.html to sitemap.xml.
+    - Do NOT link to THIS _template.html from any page.
+    - Keep nav, footer and styling exactly as-is (matches the live reports).
+  ============================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- TEMPLATE GUARD: remove this single line when publishing a real report -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <title>[PROJECT NAME] [TECHNOLOGY TYPE] Project Preliminary Review | Heliovulcan Energy</title>
+  <meta name="description" content="[META DESCRIPTION — e.g. Public-information preliminary development review of the [PROJECT NAME] [TECHNOLOGY TYPE] Project, including site suitability, approval risks, grid considerations and financeability observations.]" />
+  <meta name="keywords" content="[PROJECT NAME], hybrid energy project review, [TECHNOLOGY TYPE] preliminary review, industrial PV+BESS due diligence, [PROJECT LOCATION], Pre-DD review, financeability screen" />
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- SEO: canonical + social preview -->
+  <link rel="canonical" href="https://heliovulcan.com.au/reports/[PROJECT-SLUG]-review.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://heliovulcan.com.au/reports/[PROJECT-SLUG]-review.html" />
+  <meta property="og:title" content="[PROJECT NAME] [TECHNOLOGY TYPE] Project — Preliminary Development &amp; Financeability Review" />
+  <meta property="og:description" content="[META DESCRIPTION]" />
+  <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured data: Report / Article + WebPage + Organization + Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://heliovulcan.com.au/#organization",
+        "name": "Heliovulcan",
+        "url": "https://heliovulcan.com.au/",
+        "description": "Independent project-intelligence brand for industrial hybrid energy, running public-information F1-F4 Pre-DD screens for PV+BESS and hybrid energy projects.",
+        "logo": "https://heliovulcan.com.au/assets/logo.webp"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://heliovulcan.com.au/#grant-chen",
+        "name": "Grant Chen",
+        "jobTitle": "Founder",
+        "worksFor": { "@id": "https://heliovulcan.com.au/#organization" }
+      },
+      {
+        "@type": ["Report", "Article"],
+        "headline": "[PROJECT NAME] [TECHNOLOGY TYPE] Project — Preliminary Development & Financeability Review",
+        "name": "[PROJECT NAME] [TECHNOLOGY TYPE] Project — Preliminary Development & Financeability Review",
+        "description": "[META DESCRIPTION]",
+        "url": "https://heliovulcan.com.au/reports/[PROJECT-SLUG]-review.html",
+        "image": "https://heliovulcan.com.au/assets/bess.jpg",
+        "datePublished": "[YYYY-MM-DD]",
+        "dateModified": "[YYYY-MM-DD]",
+        "inLanguage": "en",
+        "author": { "@id": "https://heliovulcan.com.au/#grant-chen" },
+        "publisher": { "@id": "https://heliovulcan.com.au/#organization" },
+        "mainEntityOfPage": "https://heliovulcan.com.au/reports/[PROJECT-SLUG]-review.html",
+        "about": ["[TECHNOLOGY TYPE]", "PV+BESS", "Battery energy storage", "[PROJECT LOCATION]", "Project financeability"],
+        "keywords": "[PROJECT NAME], hybrid energy project review, [TECHNOLOGY TYPE] preliminary review, industrial PV+BESS due diligence"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://heliovulcan.com.au/reports/[PROJECT-SLUG]-review.html",
+        "url": "https://heliovulcan.com.au/reports/[PROJECT-SLUG]-review.html",
+        "name": "[PROJECT NAME] [TECHNOLOGY TYPE] Project Preliminary Review | Heliovulcan Energy",
+        "isPartOf": { "@id": "https://heliovulcan.com.au/#organization" },
+        "breadcrumb": { "@id": "https://heliovulcan.com.au/reports/[PROJECT-SLUG]-review.html#breadcrumb" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://heliovulcan.com.au/reports/[PROJECT-SLUG]-review.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://heliovulcan.com.au/" },
+          { "@type": "ListItem", "position": 2, "name": "Case studies", "item": "https://heliovulcan.com.au/case-studies.html" },
+          { "@type": "ListItem", "position": 3, "name": "[PROJECT NAME] [TECHNOLOGY TYPE] review", "item": "https://heliovulcan.com.au/reports/[PROJECT-SLUG]-review.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="../index.html">
+        <svg class="brand__svg" viewBox="0 0 48 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><g stroke="#f07820" stroke-width="2.2" stroke-linecap="round"><line x1="39" y1="24" x2="46" y2="24"/><line x1="38.3" y1="19.4" x2="44.9" y2="17.2"/><line x1="36.1" y1="15.2" x2="41.8" y2="11.1"/><line x1="32.8" y1="11.9" x2="36.9" y2="6.2"/><line x1="28.6" y1="9.7" x2="30.8" y2="3.1"/><line x1="24" y1="9" x2="24" y2="2"/><line x1="19.4" y1="9.7" x2="17.2" y2="3.1"/><line x1="15.2" y1="11.9" x2="11.1" y2="6.2"/><line x1="11.9" y1="15.2" x2="6.2" y2="11.1"/><line x1="9.7" y1="19.4" x2="3.1" y2="17.2"/><line x1="9" y1="24" x2="2" y2="24"/></g><path d="M 10 24 A 14 14 0 0 1 38 24" fill="none" stroke="#f07820" stroke-width="4" stroke-linecap="round"/><path d="M 1 52 L 15 37 L 23 47 L 23 52 Z" class="brand__mtn-dark"/><path d="M 47 52 L 33 37 L 25 47 L 25 52 Z" class="brand__mtn-dark"/><path d="M 9 52 L 24 31 L 39 52 Z" class="brand__mtn-mid"/><path d="M 27 12 L 19 30 L 24 30 L 17 46 L 29 26 L 24 26 Z" fill="#f07820"/></svg>
+        <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+      </a>
+      <nav class="nav__links">
+        <a href="../index.html">Home</a>
+        <a href="../case-studies.html">Case Studies</a>
+        <a href="../notes.html">Project Notes</a>
+        <a href="../index.html#lens">Pre-DD Framework</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">First look</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <div class="container">
+        <header class="article">
+          <p class="article__meta">
+            <a href="../case-studies.html" style="color:var(--teal-deep);text-decoration:none;">Case studies</a>
+            <span class="dot" aria-hidden="true"></span>
+            <span>Public-information preliminary review</span>
+          </p>
+          <h1>[PROJECT NAME] [TECHNOLOGY TYPE] Project &mdash; Preliminary Development &amp; Financeability Review</h1>
+          <p class="standfirst">
+            A public-information, desktop preliminary review of the [PROJECT NAME] opportunity in
+            [PROJECT LOCATION] &mdash; testing site suitability, approval risk, microgrid boundary and
+            financeability readiness for a [TECHNOLOGY TYPE] configuration, before serious development
+            cost is committed.
+          </p>
+        </header>
+      </div>
+
+      <div class="container">
+        <div class="article__body">
+
+          <h2>Executive summary</h2>
+          <p>[EXECUTIVE SUMMARY — 1&ndash;2 short paragraphs describing the question screened, the preferred base case, and the headline conclusion. Keep it public-information only; no commercially sensitive data.]</p>
+          <p>[EXECUTIVE SUMMARY — optional second paragraph. State clearly that the output is a clearer next-step pathway, not a financing decision.]</p>
+          <div class="note">
+            <span class="cap">What this is</span>
+            <p>
+              This is an independent, public-information desktop screen. It is not formal due diligence,
+              EPC design, a bankable feasibility study, lender due diligence, or legal, financial, tax or
+              investment advice. All figures and zones are indicative and must be validated against owner
+              data before any commercial decision.
+            </p>
+          </div>
+
+          <h2>Project background</h2>
+          <p>[PROJECT BACKGROUND — site context, location ([PROJECT LOCATION]), current energy supply, indicative demand, and the [TECHNOLOGY TYPE] configuration being screened. Public information only.]</p>
+
+          <h2>Key findings</h2>
+          <ul>
+            <li>[KEY FINDING 1]</li>
+            <li>[KEY FINDING 2]</li>
+            <li>[KEY FINDING 3]</li>
+            <li>[KEY FINDING 4 — optional]</li>
+          </ul>
+
+          <h2>Public information sources</h2>
+          <p>This desktop review is built only from public and indicative information, including:</p>
+          <ul>
+            <li>[PUBLIC SOURCE 1 — e.g. environmental-impact statement / GHG assessment]</li>
+            <li>[PUBLIC SOURCE 2 — e.g. public company reporting]</li>
+            <li>[PUBLIC SOURCE 3 — e.g. solar-yield dataset]</li>
+            <li>[PUBLIC SOURCE 4 — e.g. analyst assumptions]</li>
+          </ul>
+
+          <h2>Key risks</h2>
+          <ul>
+            <li><strong>Approval delta (F1):</strong> [KEY RISK 1 — approvals / disturbance / licence / heritage / closure considerations]</li>
+            <li><strong>Site suitability (F2):</strong> [KEY RISK 2 — usable area, setbacks, watercourses, constraints]</li>
+            <li><strong>Microgrid boundary (F3):</strong> [KEY RISK 3 — connection, SLD, metering, load data, reliability]</li>
+            <li><strong>Financeability (F4):</strong> [KEY RISK 4 — tenor, residual / buy-out, debt sizing, contracted revenue]</li>
+          </ul>
+
+          <h2>Recommended next steps</h2>
+          <ol style="margin-top:18px; padding-left:20px; line-height:1.9; color:var(--ink);">
+            <li>[RECOMMENDED NEXT STEP 1 — e.g. open an owner data room]</li>
+            <li>[RECOMMENDED NEXT STEP 2 — e.g. run hourly dispatch modelling]</li>
+            <li>[RECOMMENDED NEXT STEP 3 — e.g. obtain indicative EPC pricing]</li>
+            <li>[RECOMMENDED NEXT STEP 4 — e.g. commission specialist due diligence]</li>
+            <li>[RECOMMENDED NEXT STEP 5 — e.g. develop the commercial / CP pathway]</li>
+          </ol>
+
+          <h2>Download the full report</h2>
+          <p>
+            The full public sample report for the [PROJECT NAME] screen is available as a PDF. It is an
+            indicative public-data output only &mdash; not formal due diligence.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="[PDF FILENAME].pdf">Download report (PDF)</a>
+            <a class="btn btn--outline" href="../index.html#contact">Request a first look</a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <nav class="article-nav">
+          <a class="btn btn--outline" href="../case-studies.html">&larr; All case studies</a>
+          <a class="btn btn--primary" href="../index.html#contact">Request a first look <span class="btn__arrow">&rarr;</span></a>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <a class="brand" href="../index.html">
+            <svg class="brand__svg" viewBox="0 0 48 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><g stroke="#f07820" stroke-width="2.2" stroke-linecap="round"><line x1="39" y1="24" x2="46" y2="24"/><line x1="38.3" y1="19.4" x2="44.9" y2="17.2"/><line x1="36.1" y1="15.2" x2="41.8" y2="11.1"/><line x1="32.8" y1="11.9" x2="36.9" y2="6.2"/><line x1="28.6" y1="9.7" x2="30.8" y2="3.1"/><line x1="24" y1="9" x2="24" y2="2"/><line x1="19.4" y1="9.7" x2="17.2" y2="3.1"/><line x1="15.2" y1="11.9" x2="11.1" y2="6.2"/><line x1="11.9" y1="15.2" x2="6.2" y2="11.1"/><line x1="9.7" y1="19.4" x2="3.1" y2="17.2"/><line x1="9" y1="24" x2="2" y2="24"/></g><path d="M 10 24 A 14 14 0 0 1 38 24" fill="none" stroke="#f07820" stroke-width="4" stroke-linecap="round"/><path d="M 1 52 L 15 37 L 23 47 L 23 52 Z" class="brand__mtn-dark"/><path d="M 47 52 L 33 37 L 25 47 L 25 52 Z" class="brand__mtn-dark"/><path d="M 9 52 L 24 31 L 39 52 Z" class="brand__mtn-mid"/><path d="M 27 12 L 19 30 L 24 30 L 17 46 L 29 26 L 24 26 Z" fill="#f07820"/></svg>
+          <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+          </a>
+          <p class="footer__note">
+            Heliovulcan is an independent project-intelligence brand for industrial hybrid energy. It uses
+            an F1-F4 Pre-DD workflow to run public-information desktop screens &mdash; approval delta, site
+            suitability, microgrid boundary and financeability readiness &mdash; before serious development
+            cost is committed.
+          </p>
+        </div>
+        <nav class="footer__links">
+          <a href="../index.html">Home</a>
+          <a href="../case-studies.html">Case Studies</a>
+          <a href="../notes.html">Project Notes</a>
+          <a href="../index.html#lens">Pre-DD Framework</a>
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#contact">First look</a>
+        </nav>
+      </div>
+      <p class="footer__legal">
+        <b>Disclaimer:</b> Heliovulcan is an independent project-intelligence brand using an F1-F4 Pre-DD
+        workflow to run public-information desktop screens. This is not legal, financial, tax, engineering,
+        investment, EPC design, lender due diligence or formal consulting advice. All results are indicative
+        and must be independently verified before any commercial, financing or construction decision.
+        &copy; 2026 Heliovulcan Energy Advisors.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
