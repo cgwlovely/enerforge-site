@@ -28,6 +28,15 @@
       (f.caption ? '<figcaption>' + f.caption + "</figcaption>" : "") +
       "</figure>";
   }
+  function mapEmbed(m) {
+    if (!m || !m.src) return "";
+    return '<figure class="case-figure">' +
+      '<div class="case-embed">' +
+        '<iframe src="' + esc(m.src) + '" title="' + esc(m.title || "Interactive context map") + '" loading="lazy"></iframe>' +
+      "</div>" +
+      (m.caption ? '<figcaption>' + m.caption + "</figcaption>" : "") +
+      "</figure>";
+  }
 
   /* ---- Australia map outline (shared) ------------------------------------ */
   var AUS_PATH = "M 709,40 L 756,122 L 786,185 L 865,283 L 954,370 L 963,433 L 911,584 L 881,674 L 800,705 L 733,700 L 616,607 L 556,602 L 442,527 L 230,584 L 137,609 L 70,595 L 86,539 L 35,399 L 46,300 L 237,211 L 346,110 L 437,80 L 489,55 L 600,120 L 660,200 L 695,90 Z";
@@ -202,7 +211,8 @@
       inner += '<h3 style="margin-top:40px;font-size:20px;">How it was screened</h3>';
       inner += '<div class="prose" style="margin-top:14px;">' + paras(c.method) + "</div>";
     }
-    if (c.siteFigure) inner += figure(c.siteFigure);
+    if (c.siteEmbed) inner += mapEmbed(c.siteEmbed);
+    else if (c.siteFigure) inner += figure(c.siteFigure);
     return sec("", inner);
   }
 

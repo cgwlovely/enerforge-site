@@ -586,6 +586,12 @@ image-slot::part(image) { object-fit: cover !important; }
 .case-figure figcaption {
   margin-top: 12px; font-size: 13px; line-height: 1.55; color: var(--ink-faint); max-width: 760px;
 }
+/* embedded interactive map (replaces the static zones image in a case) */
+.case-embed {
+  position: relative; width: 100%; height: 70vh; min-height: 360px; max-height: 560px;
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface);
+}
+.case-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
 
 /* F1-F4 Pre-DD cards — orange F-badge on the standard card */
 .predd-card__f {

@@ -71,10 +71,10 @@ window.HELIOVULCAN_CASES = [
       alt: "Fountain Head Pre-DD framework: F1-F4 questions, owners and milestones from public desktop screen to financial close preparation",
       caption: "What this Pre-DD screen really sequences: what question to ask, who should answer it, when it is needed, and what risk it removes &mdash; across F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 commercial &amp; FC readiness, from public desktop screen through owner data room and specialist DD to financial close preparation."
     },
-    siteFigure: {
-      src: "assets/fountainhead-zones-map.png",
-      alt: "Fountain Head candidate energy zones and constraints — desktop interpretation of public information",
-      caption: "Candidate energy zones (desktop interpretation of public information): Zone A interconnection / BESS / PCS / EMS, Zone B main PV array, Zone C future expansion sensitivity, with strong, medium and watercourse constraints. A desktop hypothesis only &mdash; not a final engineering or approval boundary. <strong><a href='context_map.html' target='_blank' rel='noopener'>Open the interactive context map &rarr;</a></strong> (optional &mdash; satellite view of the lease, zones and constraints)."
+    siteEmbed: {
+      src: "context_map.html",
+      title: "Fountain Head interactive context map — lease, candidate energy zones and constraints",
+      caption: "Interactive context map (desktop interpretation of public information): pan and zoom the satellite view of the mining lease, candidate energy zones (Zone A interconnection / BESS / PCS / EMS, Zone B main PV array, Zone C future expansion) and visible constraints. A desktop hypothesis only &mdash; not a final engineering or approval boundary. <strong><a href='context_map.html' target='_blank' rel='noopener'>Open the full map in a new tab &rarr;</a></strong>"
     },
 
     stats: [

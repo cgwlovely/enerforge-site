@@ -13,9 +13,11 @@
     text-decoration:none;border-radius:8px;border:1px solid rgba(255,255,255,.25);box-shadow:0 4px 14px rgba(0,0,0,.4)}
   .backbtn:hover{background:rgba(240,120,32,.92);border-color:rgba(255,255,255,.4)}
 </style></head><body>
-<a class="backbtn" href="case.html?id=fountain-head">&larr; Back to case</a>
+<a class="backbtn" id="backbtn" href="case.html?id=fountain-head">&larr; Back to case</a>
 <div id="map"></div>
 <script>
+/* hide the back button when this map is embedded in the case page (iframe) */
+if (window.self !== window.top) { var _bb = document.getElementById('backbtn'); if (_bb) _bb.style.display = 'none'; }
 var map = L.map('map', {center: [-13.46421005, 131.50410915], zoom: 12});
 var esri = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {maxZoom:19, attribution:"Imagery (c) Esri, Maxar, Earthstar Geographics, and the GIS User Community"}).addTo(map);
 var osm  = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom:19, attribution:'(c) OpenStreetMap'});
