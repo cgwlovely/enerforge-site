@@ -74,7 +74,7 @@ window.HELIOVULCAN_CASES = [
     siteFigure: {
       src: "assets/fountainhead-zones-map.png",
       alt: "Fountain Head candidate energy zones and constraints — desktop interpretation of public information",
-      caption: "Candidate energy zones (desktop interpretation of public information): Zone A interconnection / BESS / PCS / EMS, Zone B main PV array, Zone C future expansion sensitivity, with strong, medium and watercourse constraints. A desktop hypothesis only &mdash; not a final engineering or approval boundary."
+      caption: "Candidate energy zones (desktop interpretation of public information): Zone A interconnection / BESS / PCS / EMS, Zone B main PV array, Zone C future expansion sensitivity, with strong, medium and watercourse constraints. A desktop hypothesis only &mdash; not a final engineering or approval boundary. <strong><a href='context_map.html' target='_blank' rel='noopener'>Open the interactive context map &rarr;</a></strong> (optional &mdash; satellite view of the lease, zones and constraints)."
     },
 
     stats: [
