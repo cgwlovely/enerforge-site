@@ -52,9 +52,9 @@ window.HELIOVULCAN_CASES = [
     title: "Fountain Head Hybrid Energy Pre-DD Screen",
     subtitle:
       "A public-information desktop Pre-DD screen for a remote mine hybrid-energy case — testing whether a 60% renewable diesel-PV-BESS pathway is more useful than a short-life standalone case or a 100% renewable upper-bound case, across approval delta, site suitability, microgrid boundary and financeability readiness.",
-    status: { label: "Public sample available · S4 60% hybrid preferred", tone: "ok" },
+    status: { label: "Public sample available · S4 selected for further validation", tone: "ok" },
     lesson:
-      "<span class='hl'>A screen of readiness, not a verdict on the project.</span> Across F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 financeability readiness, the 60% hybrid pathway (S4) is the preferred base case to validate — more renewable was not automatically the better answer. Everything here is a public-information screen, not formal due diligence.",
+      "<span class='hl'>A screen of readiness, not a verdict on the project.</span> Across F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 financeability readiness, S4 is the scenario selected for further validation — not a final design or investment recommendation. Everything here is a public-information screen, not formal due diligence.",
 
     industry: "Gold mining",
     location: "Fountain Head / Pine Creek, Northern Territory, Australia",
@@ -64,7 +64,7 @@ window.HELIOVULCAN_CASES = [
     pin: { x: 456, y: 108, type: "solid", label: "Case 01 · Fountain Head" },
 
     summary:
-      "A public-information Pre-DD screen of a remote NT gold-mine hybrid-energy case. Combines financeability, public-map interpretation, an A/B/C candidate-zone hypothesis, approval delta and microgrid boundary questions, and an owner data-room request.",
+      "A public-information Pre-DD screen of a remote NT gold-mine hybrid-energy case. Combines financeability, public-map interpretation, preliminary PV and BESS/PCS search areas, approval delta and microgrid boundary questions, and an owner data-room request.",
 
     frameworkFigure: {
       src: "assets/fountainhead-predd-framework.png",
@@ -73,11 +73,15 @@ window.HELIOVULCAN_CASES = [
     },
     siteEmbeds: [
       {
+        step: "Step 1 · evidence context",
+        heading: "Public EIS-derived context layers",
         src: "context_map.html",
         title: "Fountain Head public EIS-derived context layer map",
         caption: "Public-source context layers digitised from EIS material for desktop Pre-DD screening. This map provides the evidence context; it is not itself a siting recommendation. <strong><a href='context_map.html' target='_blank' rel='noopener'>Open the context layer map in a new tab &rarr;</a></strong>"
       },
       {
+        step: "Step 2 · interpreted screen",
+        heading: "Preliminary siting opportunities and constraints",
         src: "siting_opportunity_constraint_screen.html",
         title: "Fountain Head Pre-DD siting opportunity and constraint screen",
         caption: "Decision-support screen for preliminary PV/BESS siting discussion, combining visible opportunities and constraints. Candidate areas remain desktop hypotheses and require owner data, field verification, specialist assessment and engineering validation. <strong><a href='siting_opportunity_constraint_screen.html' target='_blank' rel='noopener'>Open the siting screen in a new tab &rarr;</a></strong>"
@@ -87,7 +91,7 @@ window.HELIOVULCAN_CASES = [
     stats: [
       { value: "~30 GWh/yr", label: "indicative demand" },
       { value: "4 cases", label: "S1 / S3 / S4 / S5" },
-      { value: "+$4.6M", label: "owner saving (S4)" }
+      { value: "+$4.6M", label: "modelled owner outcome (S4)" }
     ],
 
     kpis: [
@@ -104,8 +108,8 @@ window.HELIOVULCAN_CASES = [
 
     method: [
       "A high-level but structured public-information desktop screen across the F1-F4 Pre-DD framework: F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 financeability readiness. Annual energy and peak load were reconstructed from public environmental-impact material, a diesel-only baseline was built for context, and four hybrid configurations were sized across a range of renewable shares.",
-      "On site suitability (F2), public maps and mine layout were read into a candidate-zone hypothesis: <strong>Zone A</strong> as the interconnection / BESS / PCS / EMS zone, <strong>Zone B</strong> as the main PV array candidate, and <strong>Zone C</strong> as a future expansion sensitivity. <strong>A+B</strong> is the preferred desktop site hypothesis.",
-      "Each configuration was then tested for financeability readiness (F4) — indicative DSCR, debt capacity and the residual buy-out an investor would need — and for the owner&rsquo;s true saving after that buy-out, not just the headline tariff discount. None of this replaces owner data, hourly dispatch modelling, specialist DD or EPC pricing."
+      "On site suitability (F2), public maps and mine layout were screened in two stages: first the digitised public-source context, then an interpreted opportunity-and-constraint screen. The resulting PV and BESS/PCS areas are <strong>preliminary desktop search areas</strong>, not equipment footprints, approved buildable land or owner-selected sites.",
+      "Each configuration was then tested for financeability readiness (F4) using indicative DSCR, debt-capacity and residual-payment assumptions. These are screening outputs, not lender conclusions. None of this replaces owner data, hourly dispatch modelling, specialist DD, equipment sizing or EPC pricing."
     ],
 
     dataSources: [
@@ -128,12 +132,12 @@ window.HELIOVULCAN_CASES = [
     scenarios: [
       { tag: "S1 · short life", name: "Original short-life base", desc: "The disclosed-style mine-life case with limited renewable share. Too short for a third-party SPV to recover capital without a heavy residual." },
       { tag: "S3 · expanded hub", name: "7-year expanded hub", desc: "A longer demand horizon reflecting a regional / merged-asset logic. Bankability improves, but owner economics stay weak if sizing is not redesigned." },
-      { tag: "S4 · 60% renewable", name: "Balanced hybrid", desc: "PV + BESS resized to a 60% renewable share with diesel backup held constant. The best balance of DSCR, diesel reduction, buy-out and true owner saving." },
+      { tag: "S4 · 60% target", name: "Balanced hybrid for validation", desc: "PV + BESS screened against an indicative 60% annual renewable-energy target with diesel backup retained. Selected for hourly validation; not a verified physical design." },
       { tag: "S5 · 100% renewable", name: "Maximum-renewable screen", desc: "An upper-bound case: PV sized to 100% of annual energy with a much larger BESS and diesel backup. A useful strategic screen — but capital-heavy." }
     ],
 
     matrix: {
-      note: "All four cases clear the lender DSCR — only one leaves the owner ahead",
+      note: "Debt is resized in each scenario to a simplified 1.30x minimum DSCR constraint",
       columns: [
         { label: "S1 · short life" },
         { label: "S3 · expanded hub" },
@@ -141,49 +145,51 @@ window.HELIOVULCAN_CASES = [
         { label: "S5 · 100% renewable" }
       ],
       rows: [
-        { metric: "Physical renewable share", cells: [{ html: "28%" }, { html: "28%" }, { html: "60%", cls: "win" }, { html: "100%" }] },
+        { metric: "Indicative annual renewable target", cells: [{ html: "28%" }, { html: "28%" }, { html: "60%", cls: "win" }, { html: "100%" }] },
         { metric: "TIC before IDC", cells: [{ html: "$19.0M" }, { html: "$19.6M" }, { html: "$31.3M", cls: "win" }, { html: "$64.0M" }] },
         { metric: "SPV after-tax CFADS (base)", cells: [{ html: "$0.1M" }, { html: "$2.4M" }, { html: "$5.7M", cls: "win" }, { html: "$10.1M" }] },
-        { metric: "Bankable debt capacity", cells: [{ html: "$0.27M" }, { html: "$8.6M" }, { html: "$20.5M", cls: "win" }, { html: "$36.3M" }] },
-        { metric: "Min DSCR (downside)", cells: [{ html: "1.30x" }, { html: "1.30x" }, { html: "1.30x", cls: "win" }, { html: "1.30x" }] },
-        { metric: "Required residual / buy-out", cells: [{ html: "$27.3M" }, { html: "$14.5M" }, { html: "$4.5M", cls: "win" }, { html: "$24.5M" }] },
-        { metric: "Owner true saving after buy-out", cells: [{ html: "&minus;$20.1M", cls: "bad" }, { html: "&minus;$5.4M", cls: "bad" }, { html: "+$4.6M", cls: "win" }, { html: "&minus;$15.4M", cls: "bad" }] },
+        { metric: "Indicative debt capacity", cells: [{ html: "$0.27M" }, { html: "$8.6M" }, { html: "$20.5M", cls: "win" }, { html: "$36.3M" }] },
+        { metric: "Modelled min DSCR constraint", cells: [{ html: "1.30x" }, { html: "1.30x" }, { html: "1.30x", cls: "win" }, { html: "1.30x" }] },
+        { metric: "Modelled residual / buy-out", cells: [{ html: "$27.3M" }, { html: "$14.5M" }, { html: "$4.5M", cls: "win" }, { html: "$24.5M" }] },
+        { metric: "Indicative owner outcome after buy-out", cells: [{ html: "&minus;$20.1M", cls: "bad" }, { html: "&minus;$5.4M", cls: "bad" }, { html: "+$4.6M", cls: "win" }, { html: "&minus;$15.4M", cls: "bad" }] },
         { metric: "Verdict", cells: [
           { html: "<span class='pill pill--red'>Owner fails</span>" },
           { html: "<span class='pill pill--amber'>Marginal</span>" },
-          { html: "<span class='pill pill--green'>Preferred</span>", cls: "win" },
+          { html: "<span class='pill pill--green'>Validate next</span>", cls: "win" },
           { html: "<span class='pill pill--red'>Owner fails</span>" }
         ] }
-      ]
+      ],
+      footnote: "The identical 1.30x values are constraints used to resize indicative debt, not evidence that a lender has approved any scenario. Renewable percentages are annual screening targets and require 8,760-hour dispatch, reliability, curtailment, genset and battery-degradation validation. Residual / buy-out and owner-outcome figures are model outputs under unverified timing, pricing, financing and contract assumptions; they are not quoted transaction values or independently verified NPVs. Scenario-specific PV, BESS, diesel, fuel-use and dispatch schedules remain a next-stage data requirement."
     },
 
     insight:
-      "The headline trap: every case can be geared to pass a 1.30x lender DSCR. The real differentiator is the owner&rsquo;s <em>true</em> saving after the residual buy-out — and only the 60% hybrid (S4) leaves the owner genuinely ahead.",
+      "The headline trap: a model can resize debt until every scenario sits at a 1.30x DSCR constraint. That does not make every scenario financeable. Under this screen&rsquo;s unverified assumptions, S4 is the only scenario with a positive modelled owner outcome after the residual payment, so it is the case to validate next.",
 
     finance: [
-      "The short-life case (S1) collapses because the contract is too short to recover capital. It needs a $27.3M buy-out and leaves the owner $20.1M worse off — a textbook example of mine-life risk killing an SPV structure.",
-      "The 100% renewable case (S5) is the seductive one. It clears the lender test after re-gearing, so it looks bankable. But $64M of CAPEX and a $24.5M residual buy-out leave the owner $15.4M behind. Pushing renewable share to the maximum made the project look greener and finance worse."
+      "In the simplified screen, the short-life case (S1) cannot recover capital within the modelled contract period without a large residual payment. The resulting $27.3M residual and negative $20.1M owner outcome are model outputs requiring confirmation of timing, discounting, ownership and contract terms.",
+      "The 100% annual-renewable target (S5) is a capital-heavy upper-bound screen. After debt is resized to the 1.30x constraint, the model still produces a $24.5M residual and a negative $15.4M owner outcome. This does not prove the design is unfinanceable; it shows why hourly sizing, reliability and commercial assumptions must be tested before pursuing the upper bound."
     ],
 
     customer: [
-      "On the owner side, the only number that matters is the true saving after the residual buy-out is paid. A headline tariff discount is not the same thing.",
-      "Only the 60% hybrid (S4) turns the diesel saving into a positive owner outcome — roughly +$4.6M — while still supporting the lender&rsquo;s debt. That is what makes it the preferred screen, not its renewable share."
+      "On the owner side, a headline tariff discount is incomplete unless the model also shows the residual payment, ownership transfer and full comparison period.",
+      "Under the current screening assumptions, S4 produces an indicative positive owner outcome of roughly +$4.6M after the modelled buy-out. That makes it the scenario to validate next — not an investment recommendation."
     ],
 
     pullQuote:
-      "More renewable was <span class='hl'>not</span> better. The 60% hybrid was the only case that worked for the owner and the lender at the same time.",
+      "More renewable was <span class='hl'>not automatically better in the screening model.</span> S4 is the scenario to validate next, not a final design.",
 
     keyFindings: [
-      "Passing a lender DSCR is necessary, but it does not make a project good for the owner.",
+      "A modelled DSCR constraint is not lender approval and does not make a project good for the owner.",
       "Mine life and contract tenor decide whether an SPV can ever recover its capital.",
       "The residual / buy-out is where headline savings quietly disappear.",
       "Maximum renewable share is a strategy choice, not the default commercial answer.",
-      "The right question is the owner&rsquo;s true saving after buy-out — not the tariff discount."
+      "The owner outcome after buy-out must be defined over a clear period and validated against real contract terms."
     ],
 
     limitations: [
       "This is a preliminary public-data screen built from NT EPA environmental-impact material for a Fountain Head / Pine Creek style gold mine. It is a demonstration of the screening method — indicative assumptions only, not commissioned by, endorsed by or verified with the project owner.",
-      "All results must be validated against owner-confirmed mine plans, load and diesel data, hourly dispatch modelling, vendor quotations and real contract / buy-out terms before any commercial decision."
+      "All results must be validated against owner-confirmed mine plans, load and diesel data, hourly dispatch modelling, scenario-specific equipment sizing, vendor quotations and real contract / buy-out terms before any commercial decision.",
+      "The map areas are preliminary desktop search areas, not required equipment footprints. The finance outputs do not define a transaction valuation: residual timing, discount rate, inflation basis, tax treatment, ownership transfer and comparison period require confirmation."
     ],
 
     outputs: [

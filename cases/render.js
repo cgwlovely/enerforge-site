@@ -30,7 +30,9 @@
   }
   function mapEmbed(m) {
     if (!m || !m.src) return "";
-    return '<figure class="case-figure">' +
+    return (m.step ? '<p class="eyebrow" style="margin-top:36px;">' + esc(m.step) + "</p>" : "") +
+      (m.heading ? '<h3 style="margin-top:8px;">' + esc(m.heading) + "</h3>" : "") +
+      '<figure class="case-figure">' +
       '<div class="case-embed">' +
         '<iframe src="' + esc(m.src) + '" title="' + esc(m.title || "Interactive context map") + '" loading="lazy"></iframe>' +
       "</div>" +
@@ -262,6 +264,7 @@
     inner += '<div class="article-wide" style="max-width:none;margin-top:28px;">';
     if (m.note) inner += '<span class="cap" style="display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;">' + esc(m.note) + "</span>";
     inner += '<table class="matrix"><thead>' + thead + "</thead><tbody>" + tbody + "</tbody></table></div>";
+    if (m.footnote) inner += '<div class="note" style="margin-top:24px;"><span class="cap">How to read this table</span><p>' + m.footnote + "</p></div>";
     if (c.insight) inner += '<p class="insight">' + c.insight + "</p>";
     return sec("section--tint", inner);
   }
