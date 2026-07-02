@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Behind-the-meter storage and Australian demand charges | Heliovulcan Energy Advisors</title>
+  <meta name="description" content="How behind-the-meter battery storage cuts commercial and industrial demand charges through peak shaving, tariff optimisation and realistic value stacking in Australia." />
+  <meta name="keywords" content="behind-the-meter battery, demand charges Australia, peak shaving, C&I BESS, network tariff, value stacking, industrial battery storage" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://heliovulcan.com.au/btm-demand-charges-australia.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://heliovulcan.com.au/btm-demand-charges-australia.html" />
+  <meta property="og:title" content="Behind-the-meter storage and Australian demand charges | Heliovulcan" />
+  <meta property="og:description" content="Peak shaving is not about using less energy. It is about refusing to buy capacity needed for only a few minutes a month." />
+  <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="index.html">
+        <svg class="brand__svg" viewBox="0 0 48 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><g stroke="#f07820" stroke-width="2.2" stroke-linecap="round"><line x1="39" y1="24" x2="46" y2="24"/><line x1="38.3" y1="19.4" x2="44.9" y2="17.2"/><line x1="36.1" y1="15.2" x2="41.8" y2="11.1"/><line x1="32.8" y1="11.9" x2="36.9" y2="6.2"/><line x1="28.6" y1="9.7" x2="30.8" y2="3.1"/><line x1="24" y1="9" x2="24" y2="2"/><line x1="19.4" y1="9.7" x2="17.2" y2="3.1"/><line x1="15.2" y1="11.9" x2="11.1" y2="6.2"/><line x1="11.9" y1="15.2" x2="6.2" y2="11.1"/><line x1="9.7" y1="19.4" x2="3.1" y2="17.2"/><line x1="9" y1="24" x2="2" y2="24"/></g><path d="M 10 24 A 14 14 0 0 1 38 24" fill="none" stroke="#f07820" stroke-width="4" stroke-linecap="round"/><path d="M 1 52 L 15 37 L 23 47 L 23 52 Z" class="brand__mtn-dark"/><path d="M 47 52 L 33 37 L 25 47 L 25 52 Z" class="brand__mtn-dark"/><path d="M 9 52 L 24 31 L 39 52 Z" class="brand__mtn-mid"/><path d="M 27 12 L 19 30 L 24 30 L 17 46 L 29 26 L 24 26 Z" fill="#f07820"/></svg>
+        <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+      </a>
+      <nav class="nav__links">
+        <a href="index.html">Home</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="notes.html" class="is-current">Project Notes</a>
+        <a href="index.html#lens">Pre-DD Framework</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">First look</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <div class="container">
+        <header class="article">
+          <p class="article__meta">
+            <span>Project note 06</span><span class="dot" aria-hidden="true"></span>
+            <span>2 July 2026</span><span class="dot" aria-hidden="true"></span>
+            <span>F4 Financeability &middot; BTM storage &middot; Demand charges</span>
+          </p>
+          <h1>The demand charge is the line item a behind-the-meter battery can defend</h1>
+          <p class="standfirst">Peak shaving is not mainly about using less electricity. It is about refusing to buy network capacity that a commercial or industrial site needs for only a few minutes a month. That distinction changes how a BTM battery should be sized, valued and financed.</p>
+        </header>
+      </div>
+
+      <div class="container">
+        <div class="article__body">
+          <div class="note">
+            <span class="cap">Executive highlights</span>
+            <ul>
+              <li>Energy charges track monthly <strong>kWh</strong>; demand charges track the highest measured <strong>kW or kVA</strong>, often over a 15- or 30-minute interval.</li>
+              <li>A battery reduces the metered peak by discharging when site load crosses a defended ceiling. The site may consume the same energy while paying for less capacity.</li>
+              <li>The Australian opportunity starts with the customer&rsquo;s actual interval data and network tariff &mdash; not a generic battery size or an assumed perfect peak forecast.</li>
+              <li>Tariff optimisation, arbitrage, demand response, FCAS and network support may add value, but only streams that can coexist operationally should be stacked.</li>
+              <li>Demand management and outage resilience are different duties. Backup power usually requires a larger energy reserve and should be valued separately.</li>
+            </ul>
+          </div>
+
+          <h2>The line item many businesses do not understand</h2>
+          <p>A commercial electricity bill normally combines an energy charge, fixed charges and a demand charge. The energy component measures how much electricity the site uses over time. The demand component measures how fast it uses electricity at its highest point.</p>
+          <p>Two facilities can consume very different monthly energy and still face the same demand charge if they reach the same peak. A compressor, chiller, crusher or cluster of EV fast chargers can set that peak in a single interval, leaving the customer paying for capacity that was needed only briefly.</p>
+
+          <div class="pull">A demand-shaving battery does not have to reduce total consumption. It has to stop the meter from seeing the site&rsquo;s most expensive few minutes.</div>
+
+          <h2>How peak shaving works</h2>
+          <p>A battery behind the main meter monitors site load and defends a target demand ceiling. When load begins to exceed that ceiling, the battery discharges and clips the peak seen by the network. It recharges when load and tariff conditions allow.</p>
+          <p>The control problem is harder than the diagram. The system must decide how much state of charge to preserve, which peak is likely to matter and whether a later event will be higher. One missed peak can reset the billing maximum and erase much of the month&rsquo;s expected saving.</p>
+
+          <h2>Value stacking &mdash; useful, but only when it is real</h2>
+          <p>The same battery may support several value streams:</p>
+          <ul>
+            <li><strong>Peak-demand shaving</strong> against a kW or kVA network charge.</li>
+            <li><strong>Tariff optimisation</strong>, including staying below a threshold that changes the applicable tariff.</li>
+            <li><strong>Energy arbitrage</strong> between low- and high-price periods.</li>
+            <li><strong>Demand response, FCAS or network support</strong>, where market access and operating constraints permit.</li>
+            <li><strong>Solar self-consumption</strong> by shifting surplus generation into a later load period.</li>
+          </ul>
+          <p>Stacking does not mean adding every spreadsheet benefit. Each service competes for power, energy capacity and state of charge. The defensible case is the compatible stack the control system can actually deliver under the customer&rsquo;s tariff and operating profile.</p>
+
+          <h2>The Australian translation</h2>
+          <p>Australian commercial and industrial tariffs commonly recover part of network cost through measured peak kW or kVA, sometimes within defined time windows and sometimes with ratchet effects. That makes the local opportunity highly site- and tariff-specific.</p>
+          <p>For depots, logistics facilities, mine workshops and industrial sites electrifying fleets or adding large intermittent loads, the demand component can become more important even when annual energy use looks manageable. The first feasibility task is therefore not choosing a battery. It is reconstructing the delivered-cost stack from bills, interval data and the applicable network tariff.</p>
+
+          <h2>The traps that belong in the model</h2>
+          <ul>
+            <li><strong>Size to the shape and volatility of the load.</strong> Nameplate peak alone does not reveal how long the event lasts or how predictable it is.</li>
+            <li><strong>Derate forecast savings.</strong> Volatile loads, solar variability, outages and changing operating schedules reduce perfect-model performance.</li>
+            <li><strong>Check tariff rules.</strong> Billing windows, kVA measurement, ratchets and threshold changes can matter more than the nominal demand rate.</li>
+            <li><strong>Separate resilience.</strong> A battery sized to clip short peaks is not automatically capable of carrying critical load through an outage.</li>
+            <li><strong>Test degradation and availability.</strong> The valuable peak may occur when the battery is unavailable, energy-limited or preserving warranty constraints.</li>
+          </ul>
+
+          <h2>Commercial structure matters</h2>
+          <p>The customer does not always need to fund the asset directly. Shared-savings agreements, fixed service payments, solar-plus-storage PPAs and performance contracts can convert an uncertain capital decision into an operating-cost proposition. But the contract must say who carries performance risk when the peak is missed, the tariff changes or the operating profile moves.</p>
+
+          <h2>The Pre-DD takeaway</h2>
+          <div class="insight">For Heliovulcan, demand-charge analysis sits across <strong>F3 Microgrid Boundary</strong> and <strong>F4 Financeability Readiness</strong>. F3 asks where the meter, load, controls and battery duty sit. F4 asks which avoided costs are repeatable enough to support the commercial structure. Before quoting a system, obtain the interval data, map the tariff and identify the peak events the battery is actually being asked to defend.</div>
+          <div class="pull"><span class="hl">Read the bill and interval data before sizing the battery. The biggest opportunity may be a capacity charge created in fifteen minutes, not the energy consumed over the month.</span></div>
+
+          <div class="note">
+            <span class="cap">Source &middot; mechanism, not an Australian benchmark</span>
+            <p>Drawn from Clean Energy Group / Resilient Power Project&rsquo;s webinar &ldquo;Cutting Demand Charges with Battery Storage&rdquo;, presented by Seth Mullendore and Steve Kelly. US figures and examples from that 2018 discussion illustrate the mechanism and are not Australian benchmarks. The Australian tariff, market and industrial-site interpretation is independent analysis. Commentary for discussion &mdash; not investment, engineering or tariff advice.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <nav class="article-nav">
+          <a class="btn btn--outline" href="locational-pricing-remote-energy-australia.html">&larr; Previous note</a>
+          <a class="btn btn--primary" href="time-to-power-offgrid-hybrid.html">Next note <span class="btn__arrow">&rarr;</span></a>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <a class="brand" href="index.html">
+            <svg class="brand__svg" viewBox="0 0 48 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><g stroke="#f07820" stroke-width="2.2" stroke-linecap="round"><line x1="39" y1="24" x2="46" y2="24"/><line x1="38.3" y1="19.4" x2="44.9" y2="17.2"/><line x1="36.1" y1="15.2" x2="41.8" y2="11.1"/><line x1="32.8" y1="11.9" x2="36.9" y2="6.2"/><line x1="28.6" y1="9.7" x2="30.8" y2="3.1"/><line x1="24" y1="9" x2="24" y2="2"/><line x1="19.4" y1="9.7" x2="17.2" y2="3.1"/><line x1="15.2" y1="11.9" x2="11.1" y2="6.2"/><line x1="11.9" y1="15.2" x2="6.2" y2="11.1"/><line x1="9.7" y1="19.4" x2="3.1" y2="17.2"/><line x1="9" y1="24" x2="2" y2="24"/></g><path d="M 10 24 A 14 14 0 0 1 38 24" fill="none" stroke="#f07820" stroke-width="4" stroke-linecap="round"/><path d="M 1 52 L 15 37 L 23 47 L 23 52 Z" class="brand__mtn-dark"/><path d="M 47 52 L 33 37 L 25 47 L 25 52 Z" class="brand__mtn-dark"/><path d="M 9 52 L 24 31 L 39 52 Z" class="brand__mtn-mid"/><path d="M 27 12 L 19 30 L 24 30 L 17 46 L 29 26 L 24 26 Z" fill="#f07820"/></svg>
+            <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+          </a>
+          <p class="footer__note">Heliovulcan provides independent early-stage project screening for industrial hybrid energy. Its F1-F4 Pre-DD workflow identifies approval, site, microgrid and financeability gaps before full engineering and formal due diligence begin.</p>
+        </div>
+        <nav class="footer__links">
+          <a href="index.html">Home</a><a href="case-studies.html">Case Studies</a>
+          <a href="notes.html">Project Notes</a><a href="index.html#lens">Pre-DD Framework</a>
+          <a href="index.html#about">About</a><a href="index.html#contact">First look</a>
+        </nav>
+      </div>
+      <p class="footer__legal"><b>Disclaimer:</b> Heliovulcan Energy Advisors provides early-stage project screening and decision-support material only. It does not provide EPC design, certified engineering advice, legal advice, financial product advice, tax advice, or investment recommendations. All results are indicative and should be independently verified before commercial, financing, or construction decisions are made. &copy; 2026 Heliovulcan Energy Advisors.</p>
+    </div>
+  </footer>
+</body>
+</html>
