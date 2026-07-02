@@ -102,9 +102,10 @@ window.HELIOVULCAN_CASES = [
     ],
 
     dataSources: [
-      "NT EPA environmental-impact statement / GHG assessment — annual electricity demand and peak load",
+      "<a href='https://ntepa.nt.gov.au/your-business/public-registers/environmental-impact-assessments-register/completed-assessments/register/fountain-head-gold-project' target='_blank' rel='noopener'>NT EPA Fountain Head assessment register</a> — project history, EIS documents and assessment material",
+      "<a href='https://ntepa.nt.gov.au/_resources/documents/eia/pnx-metals-limited/draft-environmental-impact-statement-eis/main-report.pdf' target='_blank' rel='noopener'>Fountain Head draft EIS main report</a> and GHG assessment — indicative annual electricity demand and peak load",
       "PNX Metals / Sunrise public reporting — disclosed PV (4.6 MWp) and BESS (2.3 MW / 2.2 MWh) sizing",
-      "Global Solar Atlas / analyst assumption — Pine Creek solar yield (1,850 kWh/kWp/yr)",
+      "<a href='https://globalsolaratlas.info/' target='_blank' rel='noopener'>Global Solar Atlas</a> / analyst assumption — Pine Creek solar yield (1,850 kWh/kWp/yr)",
       "Analyst assumptions — diesel price, genset O&amp;M, EPC benchmarks, gearing and tenor"
     ],
 
