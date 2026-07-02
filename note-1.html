@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Customer savings are not project revenue — the first mistake in BTM BESS feasibility | Heliovulcan Energy Advisors</title>
+  <title>Industrial BESS Revenue Model: Savings vs Project Cashflow | Heliovulcan</title>
   <meta name="description" content="Customer avoided cost is not SPV revenue. Why early industrial PV+BESS models look profitable before they are financeable — and the cashflow chain a lender can actually underwrite." />
   <meta name="keywords" content="BTM BESS feasibility, customer avoided cost, EaaS contracted revenue, DSCR, project finance, financeability readiness" />
   <link rel="stylesheet" href="style.css" />
@@ -83,7 +83,18 @@
 
           <p>The useful early-stage discipline is to follow value across the whole project rather than stopping at the customer saving:</p>
 
-          <p style="font-family:var(--mono);font-size:14px;line-height:1.8;color:var(--ink);"><strong>customer avoided cost &rarr; contracted EaaS fee &rarr; SPV revenue &rarr; CFADS &rarr; debt service &rarr; equity return</strong></p>
+          <div class="process-map" role="img" aria-label="Cashflow path from customer saving through contract, SPV revenue, CFADS and debt service to equity">
+            <p class="process-map__title">Industrial BESS cashflow chain</p>
+            <div class="process-flow">
+              <div class="process-node"><strong>Customer saving</strong><small>Avoided tariff, diesel and losses</small></div><div class="process-arrow">&rarr;</div>
+              <div class="process-node is-accent"><strong>Contract</strong><small>Fee, tenor and payment obligation</small></div><div class="process-arrow">&rarr;</div>
+              <div class="process-node"><strong>SPV revenue</strong><small>Cash invoiced and collected</small></div><div class="process-arrow">&rarr;</div>
+              <div class="process-node"><strong>CFADS</strong><small>After operating costs</small></div><div class="process-arrow">&rarr;</div>
+              <div class="process-node is-warn"><strong>Debt service</strong><small>Lender-tested coverage</small></div><div class="process-arrow">&rarr;</div>
+              <div class="process-node"><strong>Equity</strong><small>Residual cashflow</small></div>
+            </div>
+            <p class="process-map__caption">Value narrows at every arrow. The lender sizes debt against the weakest contracted link, not the headline customer saving.</p>
+          </div>
 
           <p>Every arrow is a place the value can leak. If the fee captures only part of the saving, the chain narrows at arrow one. If the fee is uncontracted or contingent, it narrows at arrow two. If tenor is short or DSCR thin, it narrows at debt service. The lender underwrites the narrowest contracted point in that chain &mdash; not the width of the pool it started from.</p>
 
@@ -126,6 +137,15 @@
           <div class="insight">This note lives inside <strong>F4 &mdash; Financeability Readiness</strong>: does a contracted cashflow exist that a lender could size debt against? F4 is only one of four screens. For how it fits alongside approval, site and connection risk, see <a href="note-2.html">A Pre-DD screen is not a feasibility study</a>.</div>
 
           <div class="pull"><span class="hl">Before asking &ldquo;what is the IRR?&rdquo;, ask: which cashflow can actually be signed, invoiced, collected and underwritten?</span></div>
+
+          <h2>Questions to ask</h2>
+          <ul>
+            <li>Which party owns each saving and environmental benefit?</li>
+            <li>What payment is fixed, contracted and enforceable?</li>
+            <li>How long does the contract run relative to the debt and asset life?</li>
+            <li>What remains after availability, operating cost and lender haircuts?</li>
+            <li>Does the stressed CFADS still cover debt service?</li>
+          </ul>
 
         </div>
       </div>

@@ -21,6 +21,16 @@
       </ul></div>
 
       <h2>Revenue conflict hides inside the shared connection</h2>
+      <div class="process-map" role="img" aria-label="Solar and BESS sharing controls and a constrained grid connection">
+        <p class="process-map__title">Hybrid asset interface map</p><div class="stakeholder-map">
+          <div class="process-node"><strong>Solar</strong><small>Generation and curtailment</small></div>
+          <div class="process-node"><strong>BESS</strong><small>SOC, charging and services</small></div>
+          <div class="process-node"><strong>Engines / grid</strong><small>Firming and backup</small></div>
+          <div class="process-node is-centre"><strong>Common controller</strong><small>Priority, dispatch and protection</small></div>
+          <div class="process-node"><strong>Shared POI</strong><small>Import/export capacity</small></div>
+          <div class="process-node is-warn"><strong>Contracts</strong><small>Guarantees and remedies</small></div>
+        </div><p class="process-map__caption">The combined asset is governed by shared interfaces. Separate component models cannot show these conflicts.</p>
+      </div>
       <p>Solar wants to export during high irradiation. The battery may want the same connection capacity for an upward service or later discharge. If both share a limited POI, the model must decide which asset has priority, which output is curtailed and who bears the lost revenue.</p>
       <p>The battery is also a load while charging. An existing generation connection may not automatically provide unrestricted import capacity. Connection agreements, GPS, metering and dispatch arrangements must be checked rather than assuming that export approval creates two-way freedom.</p>
       <div class="pull">Simultaneous output &rarr; POI congestion &rarr; controller limitation &rarr; reduced deliverable service &rarr; lost revenue or performance breach.</div>

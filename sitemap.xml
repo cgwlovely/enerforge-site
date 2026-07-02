@@ -61,6 +61,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://heliovulcan.com.au/industry-maps.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://heliovulcan.com.au/privacy.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
