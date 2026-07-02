@@ -71,11 +71,18 @@ window.HELIOVULCAN_CASES = [
       alt: "Fountain Head Pre-DD framework: F1-F4 questions, owners and milestones from public desktop screen to financial close preparation",
       caption: "What this Pre-DD screen really sequences: what question to ask, who should answer it, when it is needed, and what risk it removes &mdash; across F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 commercial &amp; FC readiness, from public desktop screen through owner data room and specialist DD to financial close preparation."
     },
-    siteEmbed: {
-      src: "context_map.html",
-      title: "Fountain Head interactive context map — lease, candidate energy zones and constraints",
-      caption: "Interactive context map (desktop interpretation of public information): pan and zoom the satellite view of the mining lease, candidate energy zones (Zone A interconnection / BESS / PCS / EMS, Zone B main PV array, Zone C future expansion) and visible constraints. A desktop hypothesis only &mdash; not a final engineering or approval boundary. <strong><a href='context_map.html' target='_blank' rel='noopener'>Open the full map in a new tab &rarr;</a></strong>"
-    },
+    siteEmbeds: [
+      {
+        src: "context_map.html",
+        title: "Fountain Head public EIS-derived context layer map",
+        caption: "Public-source context layers digitised from EIS material for desktop Pre-DD screening. This map provides the evidence context; it is not itself a siting recommendation. <strong><a href='context_map.html' target='_blank' rel='noopener'>Open the context layer map in a new tab &rarr;</a></strong>"
+      },
+      {
+        src: "siting_opportunity_constraint_screen.html",
+        title: "Fountain Head Pre-DD siting opportunity and constraint screen",
+        caption: "Decision-support screen for preliminary PV/BESS siting discussion, combining visible opportunities and constraints. Candidate areas remain desktop hypotheses and require owner data, field verification, specialist assessment and engineering validation. <strong><a href='siting_opportunity_constraint_screen.html' target='_blank' rel='noopener'>Open the siting screen in a new tab &rarr;</a></strong>"
+      }
+    ],
 
     stats: [
       { value: "~30 GWh/yr", label: "indicative demand" },

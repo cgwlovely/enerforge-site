@@ -211,7 +211,11 @@
       inner += '<h3 style="margin-top:40px;font-size:20px;">How it was screened</h3>';
       inner += '<div class="prose" style="margin-top:14px;">' + paras(c.method) + "</div>";
     }
-    if (c.siteEmbed) inner += mapEmbed(c.siteEmbed);
+    if (c.siteEmbeds && c.siteEmbeds.length) {
+      c.siteEmbeds.forEach(function (m) { inner += mapEmbed(m); });
+    } else if (c.siteEmbed) {
+      inner += mapEmbed(c.siteEmbed);
+    }
     else if (c.siteFigure) inner += figure(c.siteFigure);
     return sec("", inner);
   }
