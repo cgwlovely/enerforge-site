@@ -25,6 +25,10 @@
   --teal-tint: #e7efea;
   --amber:     #b9712b;          /* caution */
   --amber-tint:#f6ece0;
+  --orange:      #f07820;        /* brand accent — sun / energy (matches logo) */
+  --orange-lite: #ff9a4d;
+  --orange-deep: #d9620f;
+  --orange-tint: #fbe7d3;
   --line:      #e4ddcf;          /* warm hairline */
   --line-soft: #ece6da;
 
@@ -504,7 +508,7 @@ image-slot::part(image) { object-fit: cover !important; }
   transition: color .15s ease, background .15s ease;
 }
 .nav__links a:hover { color: var(--ink); background: var(--surface); }
-.nav__links a.is-current { color: var(--ink); font-weight: 550; }
+.nav__links a.is-current { color: var(--ink); font-weight: 600; box-shadow: inset 0 -2px 0 var(--orange); border-radius: 7px 7px 0 0; }
 
 /* =============================================================
    BUTTONS
@@ -517,8 +521,8 @@ image-slot::part(image) { object-fit: cover !important; }
   transition: background .18s ease, color .18s ease, border-color .18s ease, transform .12s ease;
 }
 .btn:active { transform: translateY(1px); }
-.btn--primary { background: var(--teal); color: #fff; }
-.btn--primary:hover { background: var(--teal-deep); }
+.btn--primary { background: var(--orange); color: #241206; font-weight: 600; box-shadow: 0 8px 22px -14px rgba(216,98,15,0.85); }
+.btn--primary:hover { background: var(--orange-deep); color: #1c0e04; }
 .btn--outline { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn--outline:hover { border-color: var(--ink); background: var(--surface); }
 .btn--ghost-light { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.22); }
@@ -597,7 +601,7 @@ image-slot::part(image) { object-fit: cover !important; }
 .predd-card__f {
   display: inline-flex; align-items: center; justify-content: center;
   font-family: var(--mono); font-size: 13px; font-weight: 600; letter-spacing: .04em;
-  color: #fff; background: linear-gradient(135deg, #f59b4d, var(--amber));
+  color: #241206; background: linear-gradient(135deg, var(--orange-lite), var(--orange));
   width: 38px; height: 26px; border-radius: 7px;
 }
 .predd-card h3 { margin-top: 14px; }
