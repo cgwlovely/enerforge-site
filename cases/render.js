@@ -18,6 +18,7 @@
       .replace(/"/g, "&quot;");
   }
   function byId(id) { return CASES.filter(function (c) { return c.id === id; })[0]; }
+  function caseUrl(c) { return c.primaryUrl || ("case.html?id=" + encodeURIComponent(c.id)); }
   function paras(arr) { return (arr || []).map(function (p) { return "<p>" + p + "</p>"; }).join(""); }
   function figure(f) {
     if (!f || !f.src) return "";
@@ -49,7 +50,7 @@
     var hollow = p.type === "hollow";
     var w = Math.max(150, (p.label ? p.label.length : 16) * 8 + 24);
     return (
-      '<a class="map-link" href="case.html?id=' + esc(c.id) + '">' +
+      '<a class="map-link" href="' + esc(caseUrl(c)) + '">' +
         '<title>' + esc("Case " + (c.num || "") + " — " + (c.location || c.title)) + '</title>' +
         '<g class="pin-group" data-case="' + esc(c.id) + '">' +
           '<g transform="translate(' + p.x + "," + p.y + ')"' + (hollow ? ' class="pin--hollow"' : "") + '>' +
@@ -80,7 +81,9 @@
 
   /* ---- INDEX: map + case tiles ------------------------------------------- */
   function renderIndex(mount) {
-    var ordered = CASES.slice().sort(function (a, b) { return (a.num || "").localeCompare(b.num || ""); });
+    var ordered = CASES.filter(function (c) {
+      return c.isCaseStudy !== false && c.category !== "Market / Industry Note";
+    }).sort(function (a, b) { return (a.num || "").localeCompare(b.num || ""); });
 
     var map =
       '<figure class="map-wrap">' +
@@ -102,18 +105,26 @@
       var stats = (c.stats || []).slice(0, 3).map(function (s) {
         return '<span class="case-tile__stat"><b>' + s.value + "</b><span>" + s.label + "</span></span>";
       }).join("");
+      var actions = (c.indexActions && c.indexActions.length ? c.indexActions : [
+        { label: "Read the case", href: caseUrl(c), kind: "primary" }
+      ]).map(function (a) {
+        var cls = a.kind === "primary" ? "btn btn--primary" : "btn btn--outline";
+        return '<a class="' + cls + '" href="' + esc(a.href) + '"' +
+          (a.download ? " download" : "") + ">" + esc(a.label) +
+          (a.kind === "primary" ? ' <span class="btn__arrow">&rarr;</span>' : "") + "</a>";
+      }).join("");
       return (
-        '<a class="case-tile" href="case.html?id=' + esc(c.id) + '">' +
+        '<article class="case-tile' + (c.id === "fountain-head" ? " case-tile--featured" : "") + '">' +
           '<div class="case-tile__top">' +
-            '<span class="case-tile__num">Case ' + esc(c.num || "") + "</span>" +
+            '<span class="case-tile__num">' + esc(c.category || ("Case " + (c.num || ""))) + "</span>" +
             (c.status ? '<span class="pill ' + pillCls + '">' + esc(c.status.label) + "</span>" : "") +
           "</div>" +
           (tags ? '<div class="case-tile__tags">' + tags + "</div>" : "") +
           "<h3>" + c.title + "</h3>" +
           (c.summary ? '<p class="case-tile__sum">' + c.summary + "</p>" : "") +
           (stats ? '<div class="case-tile__stats">' + stats + "</div>" : "") +
-          '<span class="case-tile__cta">Read case &rarr;</span>' +
-        "</a>"
+          '<div class="case-tile__actions">' + actions + "</div>" +
+        "</article>"
       );
     }).join("");
 
@@ -300,7 +311,9 @@
       inner += '<div class="dl-row">' + c.downloads.map(function (d) {
         var live = d.href && d.href.length;
         return live
-          ? '<a class="dl" href="' + esc(d.href) + '" download><b>' + d.label + "</b><span>" + (d.note || "download") + "</span></a>"
+          ? '<a class="dl' + (d.featured ? " dl--featured" : "") + '" href="' + esc(d.href) + '" download>' +
+              (d.featured ? '<em>Recommended full report</em>' : "") +
+              "<b>" + d.label + "</b><span>" + (d.note || "download") + "</span></a>"
           : '<span class="dl" aria-disabled="true"><b>' + d.label + "</b><span>" + (d.note || "coming soon") + "</span></span>";
       }).join("") + "</div>";
     }
@@ -327,10 +340,10 @@
         '<p class="eyebrow">Peer project review</p>' +
         '<h2 class="section-title">Looking at a project like this?</h2>' +
         '<p class="section-intro">' +
-          "This is a free, peer-style sanity check, not a formal consulting engagement. If you are screening an industrial solar + BESS or diesel-displacement idea, I&rsquo;m happy to pressure-test the project logic with you: what looks sound, what needs testing, and what to ask before EPC quotes or investor discussions." +
+          "Heliovulcan is an independent project-intelligence practice providing early-stage project screening for industrial hybrid energy. A project screen can identify what looks sound, what needs testing and what to ask before EPC quotes or investor discussions." +
         "</p>" +
         '<div class="cta-row">' +
-          '<a class="btn btn--primary" href="index.html#contact">Request a free sanity check <span class="btn__arrow">&rarr;</span></a>' +
+          '<a class="btn btn--primary" href="index.html#contact">Book a 20-minute project screen <span class="btn__arrow">&rarr;</span></a>' +
           '<a class="btn btn--ghost-light" href="case-studies.html">All case studies</a>' +
         "</div>" +
       "</div></section>"
@@ -347,6 +360,8 @@
       return;
     }
     document.title = "Case " + (c.num || "") + ": " + String(c.title).replace(/<[^>]+>/g, "") + " | Heliovulcan Energy Advisors";
+    var canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute("href", c.canonicalUrl || ("https://heliovulcan.com.au/" + caseUrl(c)));
     mount.innerHTML =
       heroBlock(c) +
       glanceBlock(c) +

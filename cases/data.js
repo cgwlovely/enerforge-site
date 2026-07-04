@@ -36,6 +36,9 @@
      limitations   array of HTML paragraphs
      outputs       array of { title, desc }
      downloads     array of { label, href, note }  (use href:"" for "coming soon")
+     primaryUrl    canonical reading URL used by the index and project map
+     indexActions  array of { label, href, kind } for index-card CTAs
+     category      case-study type; "Market / Industry Note" is excluded from this library
 
    The disclaimer block and the "free sanity check" call-to-action are added to
    EVERY case page automatically — you do not need to repeat them here.
@@ -49,7 +52,7 @@ window.HELIOVULCAN_CASES = [
   {
     id: "fountain-head",
     num: "01",
-    title: "Fountain Head Hybrid Energy Pre-DD Screen",
+    title: "Fountain Head Hybrid Energy",
     subtitle:
       "A public-information desktop Pre-DD screen for a remote mine hybrid-energy case — testing whether a 60% renewable diesel-PV-BESS pathway is more useful than a short-life standalone case or a 100% renewable upper-bound case, across approval delta, site suitability, microgrid boundary and financeability readiness.",
     status: { label: "Public sample available · S4 selected for further validation", tone: "ok" },
@@ -59,12 +62,20 @@ window.HELIOVULCAN_CASES = [
     industry: "Gold mining",
     location: "Fountain Head / Pine Creek, Northern Territory, Australia",
     projectType: "Diesel-PV-BESS hybrid microgrid (public-information Pre-DD screen)",
+    category: "Integrated Pre-DD",
+    primaryUrl: "reports/fountain-head-hybrid-energy-review.html",
+    canonicalUrl: "https://heliovulcan.com.au/reports/fountain-head-hybrid-energy-review.html",
+    indexActions: [
+      { label: "Read the case", href: "reports/fountain-head-hybrid-energy-review.html", kind: "primary" },
+      { label: "Explore maps", href: "reports/fountain-head-hybrid-energy-review.html#interactive-maps", kind: "secondary" },
+      { label: "Download report", href: "reports/Fountain_Head_PreDD_Enhanced_Public_EN_v4.pdf", kind: "secondary", download: true }
+    ],
     tags: ["Development + financeability screen", "Hybrid energy", "Mining", "Public data"],
     source: "public",
     pin: { x: 456, y: 108, type: "solid", label: "Case 01 · Fountain Head" },
 
     summary:
-      "A public-information Pre-DD screen of a remote NT gold-mine hybrid-energy case. Combines financeability, public-map interpretation, preliminary PV and BESS/PCS search areas, approval delta and microgrid boundary questions, and an owner data-room request.",
+      "Remote mine · PV + BESS + diesel · Northern Territory. A public-information Pre-DD screen covering F1 Approval, F2 Site, F3 Microgrid and F4 Financeability.",
 
     frameworkFigure: {
       src: "assets/fountainhead-predd-framework.png",
@@ -200,8 +211,8 @@ window.HELIOVULCAN_CASES = [
     ],
 
     downloads: [
-      { label: "Public Pre-DD Brief (PDF)", href: "reports/Fountain_Head_PreDD_Enhanced_Public_EN_v4.pdf", note: "download public report" },
-      { label: "Financeability report (PDF)", href: "reports/Fountain_Head_Hybrid_Energy_Financeability_Report.pdf", note: "download PDF" }
+      { label: "Download Integrated Pre-DD Report", href: "reports/Fountain_Head_PreDD_Enhanced_Public_EN_v4.pdf", note: "F1-F4 development and financeability screen · 21 pages · PDF", featured: true },
+      { label: "Download Financeability Deep Dive", href: "reports/Fountain_Head_Hybrid_Energy_Financeability_Report.pdf", note: "Owner, SPV and lender economics · 16 pages · PDF" }
     ],
     downloadsNote: "Want the full scenario workbook, sensitivity tables, the candidate-zone hypothesis or the owner data-room request? <a href='index.html#contact'>Reach out</a> — happy to share more detail or talk through what this screen means for a project you're looking at."
   },
@@ -222,6 +233,12 @@ window.HELIOVULCAN_CASES = [
     industry: "Industrial / weak-grid energy user",
     location: "Representative weak-grid industrial site",
     projectType: "Behind-the-meter solar + BESS, Energy-as-a-Service",
+    category: "Financeability Screen",
+    primaryUrl: "case.html?id=weak-grid-eaas",
+    canonicalUrl: "https://heliovulcan.com.au/case.html?id=weak-grid-eaas",
+    indexActions: [
+      { label: "Read the case", href: "case.html?id=weak-grid-eaas", kind: "primary" }
+    ],
     tags: ["BESS feasibility", "EaaS", "Bankability"],
     source: "illustrative",
     pin: { x: 178, y: 332, type: "hollow", label: "Case 02 · Hypothetical site" },
@@ -329,7 +346,7 @@ window.HELIOVULCAN_CASES = [
     ],
 
     downloads: [],
-    downloadsNote: "Want to test a similar site? <a href='index.html#contact'>Request an early sanity check</a> before committing to EPC, legal, or financing work — send five basic inputs and get a structured early read on your project."
+    downloadsNote: "Want to test a similar site? <a href='index.html#contact'>Book a 20-minute project screen</a> before committing to EPC, legal or financing work."
   }
 
 ];
