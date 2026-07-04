@@ -493,6 +493,10 @@ image-slot::part(image) { object-fit: cover !important; }
 }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
 .brand__svg { width: 34px; height: 37px; flex-shrink: 0; display: block; overflow: visible; }
+/* logo image mark, in a rounded dark badge (blends with the artwork's black) */
+.brand__badge { display: inline-flex; width: 40px; height: 40px; border-radius: 9px; overflow: hidden; background: #131313; flex-shrink: 0; }
+.brand__badge img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.footer .brand__badge { width: 46px; height: 46px; }
 .brand__mtn-dark { fill: #1b3040; }
 .brand__mtn-mid  { fill: #2d4a60; }
 .brand__name { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; color: var(--ink); }
