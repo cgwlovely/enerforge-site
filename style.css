@@ -492,7 +492,7 @@ image-slot::part(image) { object-fit: cover !important; }
   height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
 }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
-.brand__svg { width: 34px; height: 37px; flex-shrink: 0; display: block; }
+.brand__svg { width: 34px; height: 37px; flex-shrink: 0; display: block; overflow: visible; }
 .brand__mtn-dark { fill: #1b3040; }
 .brand__mtn-mid  { fill: #2d4a60; }
 .brand__name { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; color: var(--ink); }
