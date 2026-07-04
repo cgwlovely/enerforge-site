@@ -200,7 +200,7 @@ window.HELIOVULCAN_CASES = [
     ],
 
     downloads: [
-      { label: "Public Pre-DD Brief (PDF)", href: "reports/Fountain_Head_PreDD_Enhanced_Public_EN_v4.pdf", note: "download public report" },
+      { label: "Public Pre-DD Brief (PDF)", href: "reports/Fountain_Head_Public_PreDD.pdf", note: "download public report" },
       { label: "Financeability report (PDF)", href: "reports/Fountain_Head_Hybrid_Energy_Financeability_Report.pdf", note: "download PDF" }
     ],
     downloadsNote: "Want the full scenario workbook, sensitivity tables, the candidate-zone hypothesis or the owner data-room request? <a href='index.html#contact'>Reach out</a> — happy to share more detail or talk through what this screen means for a project you're looking at."
