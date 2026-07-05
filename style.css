@@ -17,7 +17,7 @@
   --surface-2: #f0ece2;          /* tinted blocks */
   --ink:       #16293a;          /* deep navy — primary text */
   --ink-soft:  #4c5b68;          /* secondary text */
-  --ink-faint: #7d8a93;          /* captions / mono labels */
+  --ink-faint: #63707c;          /* captions / mono labels (AA on warm bg) */
   --navy:      #122132;          /* dark sections */
   --navy-soft: #1d3043;
   --teal:      #2f7d6b;          /* accent */
@@ -34,6 +34,7 @@
 
   /* --- type -------------------------------------------------- */
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --serif: Georgia, "Times New Roman", Times, serif;   /* report display type — titles, pull quotes, large numbers */
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
   /* --- layout ------------------------------------------------ */
@@ -58,6 +59,9 @@ body {
 }
 
 h1, h2, h3, h4 { margin: 0; font-weight: 650; line-height: 1.15; letter-spacing: -0.015em; }
+/* report display type (design system §6): Georgia for titles, pull quotes and large numbers */
+h1, h2 { font-family: var(--serif); font-weight: 700; letter-spacing: -0.01em; }
+.pull, .kpi b, .case-tile__stat b { font-family: var(--serif); }
 p { margin: 0; }
 a { color: inherit; }
 ul { margin: 0; padding: 0; list-style: none; }
@@ -560,7 +564,7 @@ image-slot::part(image) { object-fit: cover !important; }
 .btn:focus-visible, a.dl:focus-visible, .report-download:focus-visible {
   outline: 3px solid rgba(240,120,32,.45); outline-offset: 3px;
 }
-.btn--primary { background: var(--orange); color: #241206; font-weight: 600; box-shadow: 0 8px 22px -14px rgba(216,98,15,0.85); }
+.btn--primary { background: var(--orange); color: #241206; font-weight: 600; }
 .btn--primary:hover { background: var(--orange-deep); color: #1c0e04; }
 .btn--outline { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn--outline:hover { border-color: var(--ink); background: var(--surface); }
@@ -642,7 +646,7 @@ image-slot::part(image) { object-fit: cover !important; }
 .predd-card__f {
   display: inline-flex; align-items: center; justify-content: center;
   font-family: var(--mono); font-size: 13px; font-weight: 600; letter-spacing: .04em;
-  color: #241206; background: linear-gradient(135deg, var(--orange-lite), var(--orange));
+  color: #241206; background: var(--orange);
   width: 38px; height: 26px; border-radius: 7px;
 }
 .predd-card h3 { margin-top: 14px; }
