@@ -364,15 +364,16 @@ a.dl--featured:hover { background: var(--orange-deep); border-color: var(--orang
 .report-download {
   display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
   padding: 22px; border: 1px solid var(--line); border-radius: var(--radius);
-  background: var(--surface); color: var(--ink); text-decoration: none;
+  background: var(--surface); color: var(--ink);
 }
-.report-download:hover { border-color: var(--ink); transform: translateY(-1px); }
-.report-download--primary { background: var(--orange); border-color: var(--orange); color: #241206; }
-.report-download--primary:hover { background: var(--orange-deep); border-color: var(--orange-deep); }
+.report-download--recommended { border-color: rgba(240,120,32,.48); }
 .report-download__tag { font-family: var(--mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; }
+.report-download--recommended .report-download__tag {
+  padding: 5px 8px; border-radius: 5px; background: var(--orange); color: #241206;
+}
 .report-download__title { font-size: 18px; font-weight: 650; }
 .report-download__meta { font-size: 13px; line-height: 1.5; color: var(--ink-soft); }
-.report-download--primary .report-download__meta { color: #4c2a12; }
+.report-download__button { margin-top: auto; padding: 10px 15px; font-size: 14px; }
 .report-toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 34px; }
 .report-toc a { padding: 7px 11px; border: 1px solid var(--line); border-radius: 100px; color: var(--ink-soft); text-decoration: none; font-size: 13px; }
 .report-toc a:hover, .report-toc a:focus-visible { border-color: var(--orange); color: var(--ink); }
@@ -563,6 +564,8 @@ image-slot::part(image) { object-fit: cover !important; }
 .btn--primary:hover { background: var(--orange-deep); color: #1c0e04; }
 .btn--outline { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn--outline:hover { border-color: var(--ink); background: var(--surface); }
+.btn--accent-outline { background: transparent; color: var(--orange-deep); border-color: var(--orange); }
+.btn--accent-outline:hover { background: rgba(240,120,32,.08); border-color: var(--orange-deep); color: #7a3608; }
 .btn--ghost-light { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.22); }
 .btn--ghost-light:hover { background: rgba(255,255,255,0.14); }
 /* placeholder (non-functional) button, e.g. "download — coming soon" */
