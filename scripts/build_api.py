@@ -353,6 +353,9 @@ def main() -> int:
         return 1
 
     stats = validate(project, claims_doc, evidence_doc)
+    if errors:
+        print("\n".join(f"ERROR: {e}" for e in errors))
+        return 1
 
     # generate API files
     for path, payload in api_payloads(project, claims_doc, evidence_doc, stats).items():
