@@ -1,0 +1,68 @@
+{
+  "id": "project_fountain_head",
+  "canonical_url": "https://heliovulcan.com.au/projects/fountain-head/",
+  "name": "Fountain Head Hybrid Energy",
+  "entity_type": "hybrid_energy_project_screen",
+  "description": "Public-information desktop Pre-DD screen of a diesel-PV-BESS hybrid microgrid opportunity at the Fountain Head gold mine (Pine Creek, Northern Territory, Australia). Covers F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 financeability readiness. A screen of readiness, not a verdict on the project.",
+  "location": {
+    "country": "Australia",
+    "state_or_territory": "Northern Territory",
+    "locality": "Fountain Head / Pine Creek"
+  },
+  "technology": [
+    "solar_pv",
+    "battery_energy_storage",
+    "diesel_generation"
+  ],
+  "industry": "gold_mining",
+  "data_coverage": {
+    "earliest_public_source_date": "2021-05",
+    "analysis_period_start": "2026-06",
+    "analysis_period_end": "2026-07",
+    "note": "Public environmental-assessment documents date from 2020-2022; the Heliovulcan desktop screen was built and published June-July 2026."
+  },
+  "status": "public_sample_published",
+  "version": "1.0",
+  "updated_at": "2026-07-23",
+  "last_verified": "2026-07-23",
+  "links": {
+    "case_study_url": "https://heliovulcan.com.au/reports/fountain-head-hybrid-energy-review.html",
+    "case_index_url": "https://heliovulcan.com.au/case.html?id=fountain-head",
+    "dataset_url": "https://heliovulcan.com.au/datasets/fountain-head-pre-dd/",
+    "methodology_url": "https://heliovulcan.com.au/methods/pre-dd-f1-f4/",
+    "claims_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/claims.json",
+    "evidence_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/evidence.json",
+    "api_docs_url": "https://heliovulcan.com.au/api/docs/",
+    "openapi_url": "https://heliovulcan.com.au/openapi.json",
+    "report_pdf_urls": [
+      "https://heliovulcan.com.au/reports/Fountain_Head_PreDD_Enhanced_Public_EN_v4.pdf",
+      "https://heliovulcan.com.au/reports/Fountain_Head_Hybrid_Energy_Financeability_Report.pdf"
+    ]
+  },
+  "disclaimer": "Independent public-information screen. Not commissioned by, endorsed by or verified with the project owner. Not legal, financial, tax, engineering, investment or lender due-diligence advice. All figures are indicative screening outputs and must be independently verified before any commercial decision.",
+  "stats": {
+    "claims_total": 14,
+    "claims_by_type": {
+      "assumption": 1,
+      "calculated": 6,
+      "derived": 1,
+      "interpreted": 1,
+      "owner_confirmation_required": 1,
+      "public_source": 2,
+      "reported": 2
+    },
+    "derived_claims": 8,
+    "analyst_assumptions": 1,
+    "owner_confirmation_required": 1,
+    "public_sources": 4,
+    "evidence_total": 6,
+    "unresolved_evidence": 1
+  },
+  "api": {
+    "self": "https://heliovulcan.com.au/api/v1/projects/fountain-head.json",
+    "claims_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/claims.json",
+    "evidence_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/evidence.json",
+    "docs": "https://heliovulcan.com.au/api/docs/",
+    "openapi": "https://heliovulcan.com.au/openapi.json"
+  }
+}

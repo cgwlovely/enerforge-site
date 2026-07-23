@@ -1,0 +1,16 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://heliovulcan.com.au/api/v1/",
+      "service-desc": [
+        { "href": "https://heliovulcan.com.au/openapi.json", "type": "application/vnd.oai.openapi+json" }
+      ],
+      "service-doc": [
+        { "href": "https://heliovulcan.com.au/api/docs/", "type": "text/html" }
+      ],
+      "service-meta": [
+        { "href": "https://heliovulcan.com.au/api/", "type": "text/html" }
+      ]
+    }
+  ]
+}

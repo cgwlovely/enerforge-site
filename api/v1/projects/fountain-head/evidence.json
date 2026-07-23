@@ -1,0 +1,104 @@
+{
+  "project_id": "project_fountain_head",
+  "canonical_url": "https://heliovulcan.com.au/projects/fountain-head/",
+  "methodology_url": "https://heliovulcan.com.au/methods/pre-dd-f1-f4/",
+  "project_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head.json",
+  "claims_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/claims.json",
+  "version": "1.0",
+  "updated_at": "2026-07-23",
+  "count": 6,
+  "evidence": [
+    {
+      "evidence_id": "EVID-FH-EIS-MAIN-01",
+      "source_title": "Fountain Head Gold Project — Draft Environmental Impact Statement, Main Report (01238D_1_EIS_V2)",
+      "publisher": "PNX Metals Limited (published via NT EPA assessment register)",
+      "source_url": "https://ntepa.nt.gov.au/_resources/documents/eia/pnx-metals-limited/draft-environmental-impact-statement-eis/main-report.pdf",
+      "document_date": "2021-05",
+      "accessed_at": "2026-07-23",
+      "page_or_section": "Section 3.8.1.1 Project Energy Use (p. 3-46) and Table 3.19",
+      "supports_claims": [
+        "FH-LOAD-001",
+        "FH-LOAD-002",
+        "FH-FUEL-001"
+      ],
+      "evidence_type": "primary_public_document",
+      "evidence_quality": "high",
+      "notes": "Content verified 2026-07-23 against an archived copy of the same document; the NT EPA register page was verified live in a browser on the same date (the server blocks automated HTTP clients, so link checkers may see HTTP 403)."
+    },
+    {
+      "evidence_id": "EVID-FH-EPA-REG-01",
+      "source_title": "Fountain Head Gold Project — NT EPA environmental impact assessment register",
+      "publisher": "Northern Territory Environment Protection Authority",
+      "source_url": "https://ntepa.nt.gov.au/your-business/public-registers/environmental-impact-assessments-register/completed-assessments/register/fountain-head-gold-project",
+      "accessed_at": "2026-07-23",
+      "page_or_section": "Project overview and assessment-stage document list",
+      "supports_claims": [],
+      "evidence_type": "public_register",
+      "evidence_quality": "high",
+      "notes": "Context source: project history, proponent, assessment timeline and links to all EIS documents. Verified live in a browser on 2026-07-23."
+    },
+    {
+      "evidence_id": "EVID-FH-PNX-01",
+      "source_title": "PNX Metals / Sunrise public reporting — disclosed hybrid-energy configuration (4.6 MWp PV; 2.3 MW / 2.2 MWh BESS)",
+      "publisher": "PNX Metals Limited",
+      "source_url": null,
+      "accessed_at": null,
+      "supports_claims": [
+        "FH-PV-001",
+        "FH-BESS-001"
+      ],
+      "evidence_type": "company_disclosure",
+      "evidence_quality": "medium",
+      "status": "unresolved",
+      "notes": "The specific disclosure document URL was not captured in the repository when the screen was built. Figures are as cited in Heliovulcan's published Pre-DD report. UNRESOLVED: locate and record the primary disclosure (ASX announcement or company presentation) before treating these values as fully sourced."
+    },
+    {
+      "evidence_id": "EVID-FH-GSA-01",
+      "source_title": "Global Solar Atlas — regional solar resource data, Pine Creek NT",
+      "publisher": "World Bank Group / Solargis",
+      "source_url": "https://globalsolaratlas.info/",
+      "accessed_at": "2026-07-23",
+      "supports_claims": [
+        "FH-YIELD-001"
+      ],
+      "evidence_type": "reference_dataset",
+      "evidence_quality": "medium",
+      "notes": "Informs the 1,850 kWh/kWp/yr yield assumption; screening-grade only, not a bankable resource assessment."
+    },
+    {
+      "evidence_id": "EVID-FH-HV-PREDD-01",
+      "source_title": "Fountain Head Hybrid Energy — Integrated Pre-DD Development & Financeability Screen (Public EN v4)",
+      "publisher": "Heliovulcan Energy Advisors",
+      "source_url": "https://heliovulcan.com.au/reports/Fountain_Head_PreDD_Enhanced_Public_EN_v4.pdf",
+      "document_date": "2026-07",
+      "accessed_at": "2026-07-23",
+      "supports_claims": [
+        "FH-SCEN-001",
+        "FH-SITE-001"
+      ],
+      "evidence_type": "published_analysis",
+      "evidence_quality": "medium",
+      "notes": "Heliovulcan's own published screening analysis (self-published, public-information basis). Cited as the traceable record of the analysis, not as independent third-party verification."
+    },
+    {
+      "evidence_id": "EVID-FH-HV-FIN-01",
+      "source_title": "Fountain Head Hybrid Energy — Financeability Report (Public)",
+      "publisher": "Heliovulcan Energy Advisors",
+      "source_url": "https://heliovulcan.com.au/reports/Fountain_Head_Hybrid_Energy_Financeability_Report.pdf",
+      "document_date": "2026-07",
+      "accessed_at": "2026-07-23",
+      "supports_claims": [
+        "FH-SCEN-001",
+        "FH-FIN-001",
+        "FH-FIN-002",
+        "FH-FIN-003",
+        "FH-FIN-004",
+        "FH-FIN-005",
+        "FH-FIN-006"
+      ],
+      "evidence_type": "published_analysis",
+      "evidence_quality": "medium",
+      "notes": "Heliovulcan's own published financeability model outputs (owner, SPV and lender economics). Self-published analysis under stated assumptions; not independently audited."
+    }
+  ]
+}
