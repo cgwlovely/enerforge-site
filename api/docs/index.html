@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Reference — Endpoints, Fields &amp; Errors | Heliovulcan</title>
+  <meta name="description" content="Technical reference for the Heliovulcan read-only JSON API: endpoints, response fields, claim-type and confidence enums, error behaviour and versioning." />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
+  <link rel="canonical" href="https://heliovulcan.com.au/api/docs/" />
+  <link rel="service-desc" type="application/vnd.oai.openapi+json" href="https://heliovulcan.com.au/openapi.json" />
+  <style>
+    .endpoint { border: 1px solid var(--line-soft); border-radius: 10px; padding: 18px 22px; margin-top: 16px; }
+    .endpoint code.path { font-size: 15px; }
+    pre.sample { background: var(--surface-2, #f7f8f8); border: 1px solid var(--line-soft); border-radius: 8px; padding: 14px 16px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="/index.html">
+        <span class="brand__badge"><img src="/assets/logo-mark.png" alt="Heliovulcan logo" width="40" height="40" /></span>
+        <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+      </a>
+      <nav class="nav__links">
+        <a href="/index.html">Home</a>
+        <a href="/api/">Data &amp; API</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <div class="container">
+        <header class="article">
+          <p class="article__meta">
+            <a href="/api/" style="color:var(--teal-deep);text-decoration:none;">Data &amp; API</a>
+            <span class="dot" aria-hidden="true"></span>
+            <span>Technical reference</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span>API v1 &middot; updated 23 July 2026</span>
+          </p>
+          <h1>API reference</h1>
+          <p class="standfirst">
+            Read-only, unauthenticated JSON over HTTPS. All endpoints are static files on a static
+            host &mdash; stable URLs, versioned under <code>/api/v1/</code>. The machine-readable
+            description is <a href="/openapi.json">openapi.json</a>.
+          </p>
+        </header>
+      </div>
+
+      <div class="container">
+        <div class="article__body">
+
+          <h2>Conventions</h2>
+          <ul>
+            <li>Base URL: <code>https://heliovulcan.com.au</code></li>
+            <li>All endpoints are <code>GET</code>; responses are UTF-8 <code>application/json</code>;</li>
+            <li>every response carries <code>canonical_url</code> (human page), <code>methodology_url</code>, <code>version</code> and <code>updated_at</code>;</li>
+            <li>dates are <code>YYYY-MM-DD</code> (or <code>YYYY-MM</code> where only the month is known);</li>
+            <li>dollar values are indicative AUD screening-model outputs &mdash; see each claim's <code>claim_type</code>, <code>confidence</code> and <code>limitations</code>.</li>
+          </ul>
+
+          <div class="endpoint">
+            <h3><code class="path">GET /api/v1/projects/fountain-head.json</code></h3>
+            <p>Project entity: identity, location, technology, data coverage, registry stats and all related links.</p>
+            <pre class="sample">{
+  "id": "project_fountain_head",
+  "canonical_url": "https://heliovulcan.com.au/projects/fountain-head/",
+  "name": "Fountain Head Hybrid Energy",
+  "entity_type": "hybrid_energy_project_screen",
+  "location": { "country": "Australia", "state_or_territory": "Northern Territory" },
+  "technology": ["solar_pv", "battery_energy_storage", "diesel_generation"],
+  "version": "1.0",
+  "updated_at": "2026-07-23",
+  "stats": { "claims_total": 14, "public_sources": 4, "...": "..." },
+  "api": {
+    "claims_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/claims.json",
+    "evidence_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/evidence.json"
+  }
+}</pre>
+          </div>
+
+          <div class="endpoint">
+            <h3><code class="path">GET /api/v1/projects/fountain-head/claims.json</code></h3>
+            <p>The claim registry. Each claim:</p>
+            <pre class="sample">{
+  "claim_id": "FH-LOAD-001",
+  "statement": "Indicative annual electricity demand ... approximately 30 GWh per year.",
+  "value": 30,
+  "unit": "GWh/year",
+  "claim_type": "derived",
+  "confidence": "medium",
+  "method_id": "METHOD-LOAD-RECONSTRUCTION-01",
+  "evidence_ids": ["EVID-FH-EIS-MAIN-01"],
+  "last_verified": "2026-07-23",
+  "status": "published",
+  "limitations": "..."
+}</pre>
+            <p><code>claim_type</code> enum:
+              <code>reported</code> &middot; <code>public_source</code> &middot; <code>calculated</code> &middot;
+              <code>derived</code> &middot; <code>interpreted</code> &middot; <code>assumption</code> &middot;
+              <code>unresolved</code> &middot; <code>owner_confirmation_required</code>.
+              <code>confidence</code> enum: <code>high</code> &middot; <code>medium</code> &middot; <code>low</code>.
+              Definitions: <a href="/methods/pre-dd-f1-f4/">methodology</a>.</p>
+          </div>
+
+          <div class="endpoint">
+            <h3><code class="path">GET /api/v1/projects/fountain-head/evidence.json</code></h3>
+            <p>The evidence registry. Each object:</p>
+            <pre class="sample">{
+  "evidence_id": "EVID-FH-EIS-MAIN-01",
+  "source_title": "Fountain Head Gold Project — Draft EIS, Main Report",
+  "publisher": "PNX Metals Limited (published via NT EPA assessment register)",
+  "source_url": "https://ntepa.nt.gov.au/...",
+  "document_date": "2021-05",
+  "accessed_at": "2026-07-23",
+  "page_or_section": "Section 3.8.1.1 (p. 3-46) and Table 3.19",
+  "supports_claims": ["FH-LOAD-001", "FH-LOAD-002", "FH-FUEL-001"],
+  "evidence_type": "primary_public_document",
+  "evidence_quality": "high"
+}</pre>
+            <p>A <code>source_url</code> of <code>null</code> always co-occurs with
+               <code>"status": "unresolved"</code> &mdash; missing sources are published as gaps,
+               never invented.</p>
+          </div>
+
+          <h2>Errors</h2>
+          <p>
+            The API is served as static files: an unknown path returns the host's standard
+            <strong>HTTP 404</strong> with an HTML body (not JSON). There are no auth errors
+            (no auth) and no server-side query parameters &mdash; any query string is ignored.
+          </p>
+
+          <h2>Versioning &amp; stability</h2>
+          <ul>
+            <li><code>/api/v1/</code> URLs are stable; breaking changes would ship under <code>/api/v2/</code>;</li>
+            <li>additive fields may appear within v1 &mdash; consume tolerantly;</li>
+            <li>registry content changes bump the <code>version</code> / <code>updated_at</code> fields inside the payloads;</li>
+            <li>source data and JSON are generated from one structured source with schema validation (<a href="/data/schemas/claims.schema.json">claims schema</a>, <a href="/data/schemas/evidence.schema.json">evidence schema</a>, <a href="/data/schemas/project.schema.json">project schema</a>).</li>
+          </ul>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__legal">
+        <b>Disclaimer:</b> Read-only public-information data. Not legal, financial, tax, engineering,
+        investment or lender due-diligence advice. All figures are indicative screening outputs and must be
+        independently verified before any commercial decision. &copy; 2026 Heliovulcan Energy Advisors.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

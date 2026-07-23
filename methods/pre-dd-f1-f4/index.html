@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pre-DD F1–F4 Methodology — Claim Types, Confidence &amp; Boundaries | Heliovulcan</title>
+  <meta name="description" content="How Heliovulcan's F1–F4 Pre-DD screening framework works: what counts as public source, calculation, analyst judgement or owner-confirmation-required, and how claim confidence is defined." />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
+
+  <link rel="canonical" href="https://heliovulcan.com.au/methods/pre-dd-f1-f4/" />
+  <link rel="service-desc" type="application/vnd.oai.openapi+json" href="https://heliovulcan.com.au/openapi.json" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://heliovulcan.com.au/methods/pre-dd-f1-f4/" />
+  <meta property="og:title" content="Pre-DD F1–F4 Methodology — Claim Types, Confidence &amp; Boundaries" />
+  <meta property="og:description" content="What counts as public source, calculation, analyst judgement or owner-confirmation-required in a Heliovulcan Pre-DD screen, and how confidence is defined." />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="/index.html">
+        <span class="brand__badge"><img src="/assets/logo-mark.png" alt="Heliovulcan logo" width="40" height="40" /></span>
+        <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+      </a>
+      <nav class="nav__links">
+        <a href="/index.html">Home</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/notes.html">Project Notes</a>
+        <a href="/index.html#lens">Pre-DD Framework</a>
+        <a href="/index.html#about">About</a>
+        <a href="/index.html#contact">Book a 20-min screen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <div class="container">
+        <header class="article">
+          <p class="article__meta">
+            <span>Methodology</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span>Pre-DD F1&ndash;F4 framework</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span>v1.0 &middot; updated 23 July 2026</span>
+          </p>
+          <h1>Pre-DD F1&ndash;F4 methodology &mdash; claim types, confidence and boundaries</h1>
+          <p class="standfirst">
+            Every figure Heliovulcan publishes carries a claim type and a confidence rating.
+            This page defines the F1&ndash;F4 screening framework those claims come from, and
+            &mdash; more importantly &mdash; what each claim type does and does not mean.
+          </p>
+          <nav class="report-toc" aria-label="Methodology sections">
+            <a href="#framework">The F1&ndash;F4 framework</a>
+            <a href="#claim-types">Claim types</a>
+            <a href="#confidence">Confidence scale</a>
+            <a href="#load-reconstruction">Load reconstruction</a>
+            <a href="#financeability-screen">Financeability screen</a>
+            <a href="#siting-screen">Siting screen</a>
+            <a href="#boundaries">What this is not</a>
+          </nav>
+        </header>
+      </div>
+
+      <div class="container">
+        <div class="article__body">
+
+          <h2 id="framework">The F1&ndash;F4 framework</h2>
+          <p>A Pre-DD screen asks four questions, in order, before serious development cost is committed:</p>
+          <ul>
+            <li><strong>F1 &middot; Approval delta</strong> &mdash; what additional approvals would a hybrid-energy addition trigger beyond what the site already holds, and who must answer that?</li>
+            <li><strong>F2 &middot; Site suitability</strong> &mdash; do publicly visible constraints and opportunities leave credible search areas for PV and BESS/PCS near the load?</li>
+            <li><strong>F3 &middot; Microgrid boundary</strong> &mdash; where does the SPV's electrical and commercial boundary sit relative to the mine's own assets?</li>
+            <li><strong>F4 &middot; Financeability readiness</strong> &mdash; can a third-party SPV recover its capital within the available contract life and still leave the owner better off than the diesel baseline?</li>
+          </ul>
+          <p>
+            The output of a screen is a readiness verdict and a next-step data request &mdash; not a
+            design, a financing decision or an investment recommendation.
+          </p>
+
+          <h2 id="claim-types">Claim types</h2>
+          <p>Each published claim is typed by where its content comes from:</p>
+          <ul>
+            <li><code>public_source</code> &mdash; stated directly in a public document (e.g. a draft EIS); cited with section/page.</li>
+            <li><code>reported</code> &mdash; disclosed publicly by a company or third party; repeated here as reported, not independently verified.</li>
+            <li><code>derived</code> &mdash; obtained from public figures via a documented reconstruction or cross-check (see <a href="#load-reconstruction">load reconstruction</a>).</li>
+            <li><code>calculated</code> &mdash; an output of Heliovulcan's screening model under stated assumptions; indicative only.</li>
+            <li><code>interpreted</code> &mdash; an analyst judgement (e.g. which scenario to validate next); reasoned, but a judgement.</li>
+            <li><code>assumption</code> &mdash; an input chosen by the analyst (e.g. solar yield), with its basis noted.</li>
+            <li><code>owner_confirmation_required</code> &mdash; cannot be settled from public information; requires the owner, EPC, lender or a specialist.</li>
+            <li><code>unresolved</code> &mdash; known gap; explicitly left open rather than filled in.</li>
+          </ul>
+          <p>
+            <strong>The rule behind the registry:</strong> every claim has an ID; every ID has
+            evidence; every evidence has a source; and anything that cannot be verified is marked
+            <code>unresolved</code> rather than silently completed. Sources, dates, page numbers and
+            document content are never invented.
+          </p>
+
+          <h2 id="confidence">Confidence scale</h2>
+          <ul>
+            <li><strong>high</strong> &mdash; stated directly in a quality public source, or a definitional statement about the screen itself;</li>
+            <li><strong>medium</strong> &mdash; derived, reported or assumed with a reasonable public basis, but with known gaps (e.g. no primary URL captured, or a unit inconsistency in the source);</li>
+            <li><strong>low</strong> &mdash; screening-model outputs under unverified timing, pricing, financing and contract assumptions. Useful for ranking scenarios, not for pricing transactions.</li>
+          </ul>
+          <p>Confidence describes <em>how well the claim is supported today</em>, not how important it is.</p>
+
+          <h2 id="load-reconstruction">METHOD-LOAD-RECONSTRUCTION-01 &middot; load reconstruction</h2>
+          <p>
+            Annual energy and peak load are reconstructed from public environmental-impact material.
+            For Fountain Head: the draft EIS states a proposed diesel power station of three 1.5 MW
+            units (3.9 MW peak) burning ~7,500 kL/yr of diesel, and its energy table reports
+            107,853 GJ/yr of energy produced &mdash; equivalent to ~30 GWh/yr. The EIS text itself
+            says &ldquo;approximately 30 MWh/yr&rdquo;, an apparent unit error; the registry records
+            the derived ~30 GWh/yr figure as <code>derived</code> with that inconsistency stated in
+            its limitations, not as a clean public figure.
+          </p>
+
+          <h2 id="financeability-screen">METHOD-TWO-SCENARIO-FINANCE-01 &middot; scenario financeability screen</h2>
+          <p>
+            Each hybrid configuration is tested for financeability readiness using indicative DSCR,
+            debt-capacity and residual-payment assumptions. Debt is resized in every scenario to a
+            simplified 1.30x minimum-DSCR constraint &mdash; which means identical DSCR values across
+            scenarios are a <em>sizing constraint, not lender approval</em>. The discriminating
+            outputs are the residual / buy-out payment and the owner outcome after buy-out, both of
+            which depend on unverified timing, pricing, financing and contract assumptions and are
+            therefore always typed <code>calculated</code> with <strong>low</strong> confidence.
+          </p>
+
+          <h2 id="siting-screen">METHOD-SITING-SCREEN-01 &middot; siting opportunity &amp; constraint screen</h2>
+          <p>
+            Public maps and mine layout are screened in two stages: first the digitised public-source
+            context, then an interpreted opportunity-and-constraint screen. The resulting PV and
+            BESS/PCS areas are preliminary desktop search areas &mdash; not equipment footprints,
+            approved buildable land or owner-selected sites &mdash; and are always typed
+            <code>owner_confirmation_required</code>.
+          </p>
+
+          <h2 id="boundaries">What this is not</h2>
+          <ul>
+            <li>not legal, tax, engineering, investment, EPC-design or lender due-diligence advice;</li>
+            <li>not owner-verified: screens are built from public information and are not commissioned by, endorsed by or verified with project owners;</li>
+            <li>not a bankable resource, dispatch or reliability study &mdash; 8,760-hour validation is explicitly the next stage, not part of the screen;</li>
+            <li>not a promise of search-engine or AI citation: machine-readable structure makes the work discoverable and checkable, nothing more.</li>
+          </ul>
+
+          <h2>Machine access</h2>
+          <p>
+            Claims typed under this methodology are published at
+            <a href="/api/v1/projects/fountain-head/claims.json">claims.json</a> /
+            <a href="/api/v1/projects/fountain-head/evidence.json">evidence.json</a>, described by
+            the <a href="/openapi.json">OpenAPI specification</a> and documented at
+            <a href="/api/">/api/</a>.
+          </p>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <a class="brand" href="/index.html">
+            <span class="brand__badge"><img src="/assets/logo-mark.png" alt="Heliovulcan logo" width="40" height="40" /></span>
+          <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+          </a>
+          <p class="footer__note">
+            Heliovulcan is an independent project-intelligence practice providing early-stage project
+            screening for industrial hybrid energy.
+          </p>
+        </div>
+        <nav class="footer__links">
+          <a href="/index.html">Home</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/notes.html">Project Notes</a>
+          <a href="/index.html#lens">Pre-DD Framework</a>
+          <a href="/index.html#about">About</a>
+          <a href="/index.html#contact">Book a 20-min screen</a>
+          <a href="/privacy.html">Privacy</a>
+        </nav>
+      </div>
+      <p class="footer__legal">
+        <b>Disclaimer:</b> Heliovulcan is an independent project-intelligence practice providing early-stage
+        public-information project screens. This is not legal, financial, tax, engineering,
+        investment, EPC design, lender due diligence or formal consulting advice. All results are indicative
+        and must be independently verified before any commercial, financing or construction decision.
+        &copy; 2026 Heliovulcan Energy Advisors.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

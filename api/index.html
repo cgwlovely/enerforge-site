@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heliovulcan Data &amp; API — Structured Project Claims and Evidence</title>
+  <meta name="description" content="Free, read-only JSON access to Heliovulcan's structured project registries: claims with confidence and limitations, and fully attributed evidence. Currently covering the Fountain Head Pre-DD screen." />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
+
+  <link rel="canonical" href="https://heliovulcan.com.au/api/" />
+  <link rel="service-desc" type="application/vnd.oai.openapi+json" href="https://heliovulcan.com.au/openapi.json" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://heliovulcan.com.au/api/" />
+  <meta property="og:title" content="Heliovulcan Data &amp; API" />
+  <meta property="og:description" content="Free, read-only JSON access to structured project claims and evidence from Heliovulcan's public-information screens." />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="/index.html">
+        <span class="brand__badge"><img src="/assets/logo-mark.png" alt="Heliovulcan logo" width="40" height="40" /></span>
+        <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+      </a>
+      <nav class="nav__links">
+        <a href="/index.html">Home</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/notes.html">Project Notes</a>
+        <a href="/index.html#lens">Pre-DD Framework</a>
+        <a href="/index.html#about">About</a>
+        <a href="/index.html#contact">Book a 20-min screen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <div class="container">
+        <header class="article">
+          <p class="article__meta">
+            <span>Data &amp; machine access</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span>Read-only public API</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span>v1 &middot; updated 23 July 2026</span>
+          </p>
+          <h1>Heliovulcan data &amp; API</h1>
+          <p class="standfirst">
+            Every headline number on this site is a claim with an ID, a type, a confidence rating
+            and evidence behind it. This API gives you that structure directly &mdash; free,
+            read-only JSON, no key required &mdash; so a figure never has to travel without its
+            assumptions again.
+          </p>
+        </header>
+      </div>
+
+      <div class="container">
+        <div class="article__body">
+
+          <h2>What problem this solves</h2>
+          <p>
+            Screening numbers get quoted. &ldquo;~30 GWh/yr demand&rdquo;, &ldquo;+A$4.6M owner
+            outcome&rdquo; &mdash; once a figure leaves its report, nobody can tell whether it was a
+            public EIS statement, a model output or an analyst guess. Heliovulcan publishes the
+            registry itself: each claim carries its type (<code>public_source</code>,
+            <code>calculated</code>, <code>assumption</code>&hellip;), its confidence, its
+            limitations and its sources, and every JSON response links back to the human-readable
+            page and methodology.
+          </p>
+
+          <h2>What's available today</h2>
+          <p>The MVP covers one project &mdash; the Fountain Head hybrid-energy Pre-DD screen:</p>
+          <ul>
+            <li><code>GET /api/v1/projects/fountain-head.json</code> &mdash; project entity: identity, location, technology, stats and links</li>
+            <li><code>GET /api/v1/projects/fountain-head/claims.json</code> &mdash; the claim registry (14 claims)</li>
+            <li><code>GET /api/v1/projects/fountain-head/evidence.json</code> &mdash; the evidence registry (6 objects, access dates and quality ratings)</li>
+          </ul>
+          <p>
+            These are static JSON files served over HTTPS &mdash; no authentication, no rate limits
+            beyond the host's, stable URLs. Full field documentation:
+            <a href="/api/docs/">API docs</a> &middot; machine-readable description:
+            <a href="/openapi.json">openapi.json</a> &middot; discovery:
+            <a href="/.well-known/api-catalog">/.well-known/api-catalog</a>.
+          </p>
+
+          <h2>Reading the data honestly</h2>
+          <ul>
+            <li><code>claim_type</code> and <code>confidence</code> are part of the datum &mdash; a <code>calculated / low</code> value is a screening output, not a fact about the project;</li>
+            <li>evidence marked <code>unresolved</code> means the source URL is not yet captured &mdash; the gap is published rather than papered over;</li>
+            <li>every response includes <code>canonical_url</code> (the human page) and <code>methodology_url</code> &mdash; cite those alongside any figure.</li>
+          </ul>
+
+          <h2>Roadmap</h2>
+          <p>
+            The registry structure (project &rarr; claims &rarr; evidence) is designed to extend to
+            further projects, facilities and datasets. OpenAPI-described static JSON is the current
+            delivery; versioned under <code>/api/v1/</code> so future serverless or MCP delivery can
+            be added without breaking these URLs.
+          </p>
+
+          <h2>Human-readable entry points</h2>
+          <ul>
+            <li><a href="/projects/fountain-head/">Fountain Head project entity page</a></li>
+            <li><a href="/datasets/fountain-head-pre-dd/">Dataset landing page</a></li>
+            <li><a href="/methods/pre-dd-f1-f4/">Methodology</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <a class="brand" href="/index.html">
+            <span class="brand__badge"><img src="/assets/logo-mark.png" alt="Heliovulcan logo" width="40" height="40" /></span>
+          <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+          </a>
+          <p class="footer__note">
+            Heliovulcan is an independent project-intelligence practice providing early-stage project
+            screening for industrial hybrid energy.
+          </p>
+        </div>
+        <nav class="footer__links">
+          <a href="/index.html">Home</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/notes.html">Project Notes</a>
+          <a href="/index.html#lens">Pre-DD Framework</a>
+          <a href="/index.html#about">About</a>
+          <a href="/index.html#contact">Book a 20-min screen</a>
+          <a href="/privacy.html">Privacy</a>
+        </nav>
+      </div>
+      <p class="footer__legal">
+        <b>Disclaimer:</b> Heliovulcan is an independent project-intelligence practice providing early-stage
+        public-information project screens. This is not legal, financial, tax, engineering,
+        investment, EPC design, lender due diligence or formal consulting advice. All results are indicative
+        and must be independently verified before any commercial, financing or construction decision.
+        &copy; 2026 Heliovulcan Energy Advisors.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

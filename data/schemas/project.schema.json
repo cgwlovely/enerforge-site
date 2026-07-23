@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://heliovulcan.com.au/data/schemas/project.schema.json",
+  "title": "Heliovulcan Project Entity",
+  "type": "object",
+  "required": ["id", "canonical_url", "name", "entity_type", "location", "technology", "version", "updated_at", "links"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^project_[a-z0-9_]+$" },
+    "canonical_url": { "type": "string", "format": "uri" },
+    "name": { "type": "string" },
+    "entity_type": { "type": "string" },
+    "description": { "type": "string" },
+    "location": {
+      "type": "object",
+      "required": ["country"],
+      "properties": {
+        "country": { "type": "string" },
+        "state_or_territory": { "type": "string" },
+        "locality": { "type": "string" }
+      }
+    },
+    "technology": { "type": "array", "items": { "type": "string" } },
+    "industry": { "type": "string" },
+    "data_coverage": { "type": "object" },
+    "status": { "type": "string" },
+    "version": { "type": "string" },
+    "updated_at": { "type": "string", "format": "date" },
+    "last_verified": { "type": "string", "format": "date" },
+    "links": {
+      "type": "object",
+      "required": ["case_study_url", "methodology_url", "claims_url", "evidence_url", "api_docs_url", "openapi_url"]
+    },
+    "disclaimer": { "type": "string" }
+  }
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fountain Head Pre-DD Dataset — Claims &amp; Evidence Registry | Heliovulcan</title>
+  <meta name="description" content="Dataset landing page for the Fountain Head Pre-DD claim and evidence registry: scope, variables, sources, methodology, update cadence, licence, known limitations and JSON/API access." />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
+
+  <link rel="canonical" href="https://heliovulcan.com.au/datasets/fountain-head-pre-dd/" />
+  <link rel="alternate" type="application/json" href="https://heliovulcan.com.au/api/v1/projects/fountain-head.json" />
+  <link rel="service-desc" type="application/vnd.oai.openapi+json" href="https://heliovulcan.com.au/openapi.json" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://heliovulcan.com.au/datasets/fountain-head-pre-dd/" />
+  <meta property="og:title" content="Fountain Head Pre-DD Dataset — Claims &amp; Evidence Registry" />
+  <meta property="og:description" content="Scope, variables, sources, methodology, licence, known limitations and JSON/API access for the Fountain Head Pre-DD claim and evidence registry." />
+
+  <!-- BUILD:BEGIN dataset-jsonld -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://heliovulcan.com.au/datasets/fountain-head-pre-dd/",
+  "name": "Fountain Head Hybrid Energy — Pre-DD claim and evidence registry",
+  "description": "Structured claim and evidence registry for a public-information Pre-DD screen of a diesel-PV-BESS hybrid microgrid at the Fountain Head gold mine, Northern Territory, Australia. Screening outputs only; not owner-verified data.",
+  "url": "https://heliovulcan.com.au/datasets/fountain-head-pre-dd/",
+  "sameAs": "https://heliovulcan.com.au/projects/fountain-head/",
+  "creator": {
+    "@type": "Organization",
+    "@id": "https://heliovulcan.com.au/#organization",
+    "name": "Heliovulcan Energy"
+  },
+  "dateModified": "2026-07-23",
+  "version": "1.0",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "license": "https://heliovulcan.com.au/datasets/fountain-head-pre-dd/#terms",
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Fountain Head / Pine Creek, Northern Territory, Australia"
+  },
+  "temporalCoverage": "2021-05/2026-07",
+  "variableMeasured": [
+    "indicative annual electricity demand",
+    "indicative peak load",
+    "disclosed PV capacity",
+    "disclosed BESS capacity",
+    "scenario TIC",
+    "scenario CFADS",
+    "indicative debt capacity",
+    "modelled residual / buy-out",
+    "indicative owner outcome"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "name": "Project entity JSON",
+      "contentUrl": "https://heliovulcan.com.au/api/v1/projects/fountain-head.json"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "name": "Claims JSON",
+      "contentUrl": "https://heliovulcan.com.au/api/v1/projects/fountain-head/claims.json"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "name": "Evidence JSON",
+      "contentUrl": "https://heliovulcan.com.au/api/v1/projects/fountain-head/evidence.json"
+    }
+  ]
+}
+</script>
+<!-- BUILD:END dataset-jsonld -->
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="/index.html">
+        <span class="brand__badge"><img src="/assets/logo-mark.png" alt="Heliovulcan logo" width="40" height="40" /></span>
+        <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+      </a>
+      <nav class="nav__links">
+        <a href="/index.html">Home</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/notes.html">Project Notes</a>
+        <a href="/index.html#lens">Pre-DD Framework</a>
+        <a href="/index.html#about">About</a>
+        <a href="/index.html#contact">Book a 20-min screen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <div class="container">
+        <header class="article">
+          <p class="article__meta">
+            <a href="/projects/fountain-head/" style="color:var(--teal-deep);text-decoration:none;">Fountain Head project entity</a>
+            <span class="dot" aria-hidden="true"></span>
+            <span>Dataset landing page</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span>v1.0 &middot; updated 23 July 2026</span>
+          </p>
+          <h1>Fountain Head Pre-DD dataset &mdash; claim &amp; evidence registry</h1>
+          <p class="standfirst">
+            A small, fully attributed structured dataset behind the Fountain Head hybrid-energy
+            Pre-DD screen: the core published claims (with type, confidence and limitations) and the
+            evidence objects that support them. Built for reuse by analysts, search engines and AI
+            systems &mdash; with its limits stated up front.
+          </p>
+        </header>
+      </div>
+
+      <div class="container">
+        <div class="article__body">
+
+          <h2>What this dataset is for</h2>
+          <p>
+            When a mine hybrid-energy screen is quoted, the number usually travels without its
+            assumptions. This dataset keeps each headline figure attached to its claim type,
+            confidence, method and evidence, so a downstream reader &mdash; human or machine &mdash;
+            can tell a public EIS figure from a model output from an analyst assumption.
+          </p>
+
+          <h2>Coverage and variables</h2>
+          <ul>
+            <li><strong>Entity:</strong> <code>project_fountain_head</code> &mdash; Fountain Head gold mine hybrid-energy screen, Pine Creek, Northern Territory, Australia</li>
+            <li><strong>Temporal coverage:</strong> public sources from May 2021 (draft EIS); analysis June&ndash;July 2026</li>
+            <li><strong>Variables:</strong> indicative annual demand, indicative peak load, diesel fuel use, disclosed PV and BESS capacity, assumed solar yield, and scenario-level financeability outputs (TIC, CFADS, indicative debt capacity, modelled residual / buy-out, indicative owner outcome)</li>
+            <li><strong>Records:</strong> 14 published claims, 6 evidence objects (1 marked unresolved)</li>
+          </ul>
+
+          <h2>Source types</h2>
+          <ul>
+            <li><code>primary_public_document</code> &mdash; NT EPA-published draft EIS material</li>
+            <li><code>public_register</code> &mdash; NT EPA assessment register</li>
+            <li><code>company_disclosure</code> &mdash; proponent public reporting (one item currently <code>unresolved</code>: primary URL not yet captured)</li>
+            <li><code>reference_dataset</code> &mdash; Global Solar Atlas</li>
+            <li><code>published_analysis</code> &mdash; Heliovulcan's own published reports (traceability for model outputs, not independent verification)</li>
+          </ul>
+
+          <h2>Method</h2>
+          <p>
+            Claims are typed and confidence-rated under the F1&ndash;F4 Pre-DD screening framework.
+            Definitions of every claim type, the confidence scale and what requires owner
+            confirmation are on the <a href="/methods/pre-dd-f1-f4/">methodology page</a>.
+          </p>
+
+          <h2>Update cadence</h2>
+          <p>
+            Updated when the underlying screen is revised or a source is resolved; each claim and
+            evidence object carries its own <code>last_verified</code> / <code>accessed_at</code>
+            date, and the registry carries a version.
+          </p>
+
+          <h2 id="terms">Licence and use</h2>
+          <p>
+            Free to access and cite with attribution to Heliovulcan (heliovulcan.com.au), for
+            information purposes. The dataset is an independent public-information screen: it is not
+            owner-verified data and not legal, financial, engineering, investment or lender
+            due-diligence advice. Do not present <code>calculated</code> screening outputs as
+            transaction values or verified project economics.
+          </p>
+
+          <h2>Known limitations</h2>
+          <ul>
+            <li>Load and energy figures derive from a 2021 draft EIS whose text contains an apparent unit inconsistency (stated &ldquo;30 MWh/yr&rdquo;; cross-checked to ~30 GWh/yr) &mdash; see claim <code>FH-LOAD-001</code>;</li>
+            <li>PV/BESS disclosure evidence is marked <code>unresolved</code> until the primary document URL is captured;</li>
+            <li>all financeability figures are screening-model outputs under unverified timing, pricing, financing and contract assumptions;</li>
+            <li>siting areas are desktop search areas requiring owner confirmation;</li>
+            <li>the dataset covers one project only &mdash; it is the MVP of the registry structure, not a facility database.</li>
+          </ul>
+
+          <h2>Access</h2>
+          <ul>
+            <li><a href="/api/v1/projects/fountain-head.json">Project JSON</a></li>
+            <li><a href="/api/v1/projects/fountain-head/claims.json">Claims JSON</a></li>
+            <li><a href="/api/v1/projects/fountain-head/evidence.json">Evidence JSON</a></li>
+            <li><a href="/api/">API documentation</a> &middot; <a href="/openapi.json">OpenAPI specification</a></li>
+            <li>Schemas: <a href="/data/schemas/project.schema.json">project</a> &middot; <a href="/data/schemas/claims.schema.json">claims</a> &middot; <a href="/data/schemas/evidence.schema.json">evidence</a></li>
+            <li>Human-readable views: <a href="/projects/fountain-head/">project entity page</a> &middot; <a href="/reports/fountain-head-hybrid-energy-review.html">full case report</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <a class="brand" href="/index.html">
+            <span class="brand__badge"><img src="/assets/logo-mark.png" alt="Heliovulcan logo" width="40" height="40" /></span>
+          <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+          </a>
+          <p class="footer__note">
+            Heliovulcan is an independent project-intelligence practice providing early-stage project
+            screening for industrial hybrid energy.
+          </p>
+        </div>
+        <nav class="footer__links">
+          <a href="/index.html">Home</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/notes.html">Project Notes</a>
+          <a href="/index.html#lens">Pre-DD Framework</a>
+          <a href="/index.html#about">About</a>
+          <a href="/index.html#contact">Book a 20-min screen</a>
+          <a href="/privacy.html">Privacy</a>
+        </nav>
+      </div>
+      <p class="footer__legal">
+        <b>Disclaimer:</b> Heliovulcan is an independent project-intelligence practice providing early-stage
+        public-information project screens. This is not legal, financial, tax, engineering,
+        investment, EPC design, lender due diligence or formal consulting advice. All results are indicative
+        and must be independently verified before any commercial, financing or construction decision.
+        &copy; 2026 Heliovulcan Energy Advisors.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

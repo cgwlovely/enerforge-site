@@ -62,6 +62,41 @@ This is a static site — it deploys anywhere with zero configuration.
 1. Drag-and-drop this folder onto app.netlify.com, or connect the repo with **no build command**
    and publish directory `.`.
 
+## Structured data, claims & API (AI-friendly layer)
+
+The Fountain Head case also ships as a machine-readable registry. **Single source of truth**
+is `/data/` — everything else is generated:
+
+```
+data/
+  projects/fountain-head.json     project entity (identity, links, coverage)
+  claims/fountain-head.json       claim registry (IDs, types, confidence, limitations)
+  evidence/fountain-head.json     evidence registry (sources, access dates, quality)
+  schemas/*.schema.json           JSON Schemas for the three documents
+scripts/build_api.py              build + validation (stdlib python3, no deps)
+api/v1/projects/…                 GENERATED static JSON endpoints — do not hand-edit
+projects/fountain-head/           canonical entity page (tables between BUILD markers
+datasets/fountain-head-pre-dd/      and the Dataset JSON-LD are GENERATED — do not
+methods/pre-dd-f1-f4/               hand-edit inside the markers)
+openapi.json                      API description  ·  /.well-known/api-catalog  discovery
+```
+
+To change a claim or evidence item: edit the file in `/data/`, then run
+
+```
+python3 scripts/build_api.py          # regenerates api/v1 + injected HTML blocks
+python3 scripts/build_api.py --check  # CI-style gate: validates + fails if outputs stale
+```
+
+The script enforces: schema shape, claim↔evidence cross-references, "every published claim
+has evidence or is an assumption/unresolved", no silent missing sources (a null
+`source_url` must be marked `unresolved`), and sitemap coverage of the new pages.
+
+Local preview: `python3 -m http.server` from this folder (directory URLs like
+`/projects/fountain-head/` need an HTTP server; `file://` won't resolve them).
+Production: GitHub Pages serves the generated `.json` files and folder `index.html`s as-is
+— no build step runs in deployment, so **commit the generated files** after running the script.
+
 ## Before you go live
 
 - Contact email is set to `grant.chen.phd@gmail.com` (live `mailto:` links across the site).

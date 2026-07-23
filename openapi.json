@@ -1,0 +1,244 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Heliovulcan Public Data API",
+    "version": "1.0.0",
+    "summary": "Read-only structured claims and evidence behind Heliovulcan's public-information project screens.",
+    "description": "Free, unauthenticated, read-only JSON. Endpoints are static files on a static host; URLs are stable and versioned under /api/v1/. Every response links back to the canonical human-readable page and the methodology. Claim types and confidence ratings are part of the data: 'calculated / low' values are screening-model outputs, not verified project facts. See https://heliovulcan.com.au/api/ for orientation and https://heliovulcan.com.au/methods/pre-dd-f1-f4/ for definitions.",
+    "contact": { "name": "Heliovulcan Energy Advisors", "url": "https://heliovulcan.com.au/index.html#contact" }
+  },
+  "servers": [{ "url": "https://heliovulcan.com.au" }],
+  "paths": {
+    "/api/v1/projects/fountain-head.json": {
+      "get": {
+        "operationId": "getFountainHeadProject",
+        "summary": "Fountain Head project entity",
+        "description": "Identity, location, technology, data coverage, registry stats and related links for project_fountain_head.",
+        "responses": {
+          "200": {
+            "description": "Project entity record.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Project" },
+                "examples": {
+                  "default": {
+                    "value": {
+                      "id": "project_fountain_head",
+                      "canonical_url": "https://heliovulcan.com.au/projects/fountain-head/",
+                      "name": "Fountain Head Hybrid Energy",
+                      "entity_type": "hybrid_energy_project_screen",
+                      "location": { "country": "Australia", "state_or_territory": "Northern Territory", "locality": "Fountain Head / Pine Creek" },
+                      "technology": ["solar_pv", "battery_energy_storage", "diesel_generation"],
+                      "version": "1.0",
+                      "updated_at": "2026-07-23",
+                      "stats": { "claims_total": 14, "public_sources": 4, "analyst_assumptions": 1, "owner_confirmation_required": 1 },
+                      "api": {
+                        "self": "https://heliovulcan.com.au/api/v1/projects/fountain-head.json",
+                        "claims_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/claims.json",
+                        "evidence_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/evidence.json"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/api/v1/projects/fountain-head/claims.json": {
+      "get": {
+        "operationId": "getFountainHeadClaims",
+        "summary": "Fountain Head claim registry",
+        "description": "All published claims with stable IDs, claim type, confidence, method, evidence references, last-verified dates and limitations.",
+        "responses": {
+          "200": {
+            "description": "Claim registry.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ClaimRegistry" },
+                "examples": {
+                  "default": {
+                    "value": {
+                      "project_id": "project_fountain_head",
+                      "canonical_url": "https://heliovulcan.com.au/projects/fountain-head/",
+                      "methodology_url": "https://heliovulcan.com.au/methods/pre-dd-f1-f4/",
+                      "version": "1.0",
+                      "updated_at": "2026-07-23",
+                      "count": 14,
+                      "claims": [
+                        {
+                          "claim_id": "FH-LOAD-001",
+                          "statement": "Indicative annual electricity demand for the Fountain Head operation is approximately 30 GWh per year.",
+                          "value": 30,
+                          "unit": "GWh/year",
+                          "claim_type": "derived",
+                          "confidence": "medium",
+                          "method_id": "METHOD-LOAD-RECONSTRUCTION-01",
+                          "evidence_ids": ["EVID-FH-EIS-MAIN-01"],
+                          "last_verified": "2026-07-23",
+                          "status": "published"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/api/v1/projects/fountain-head/evidence.json": {
+      "get": {
+        "operationId": "getFountainHeadEvidence",
+        "summary": "Fountain Head evidence registry",
+        "description": "All evidence objects with publisher, source URL, document and access dates, supported claims, evidence type and quality. A null source_url always co-occurs with status 'unresolved'.",
+        "responses": {
+          "200": {
+            "description": "Evidence registry.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/EvidenceRegistry" },
+                "examples": {
+                  "default": {
+                    "value": {
+                      "project_id": "project_fountain_head",
+                      "canonical_url": "https://heliovulcan.com.au/projects/fountain-head/",
+                      "methodology_url": "https://heliovulcan.com.au/methods/pre-dd-f1-f4/",
+                      "version": "1.0",
+                      "updated_at": "2026-07-23",
+                      "count": 6,
+                      "evidence": [
+                        {
+                          "evidence_id": "EVID-FH-EIS-MAIN-01",
+                          "source_title": "Fountain Head Gold Project — Draft Environmental Impact Statement, Main Report",
+                          "publisher": "PNX Metals Limited (published via NT EPA assessment register)",
+                          "source_url": "https://ntepa.nt.gov.au/_resources/documents/eia/pnx-metals-limited/draft-environmental-impact-statement-eis/main-report.pdf",
+                          "document_date": "2021-05",
+                          "accessed_at": "2026-07-23",
+                          "supports_claims": ["FH-LOAD-001", "FH-LOAD-002", "FH-FUEL-001"],
+                          "evidence_type": "primary_public_document",
+                          "evidence_quality": "high"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "NotFound": {
+        "description": "Unknown path. Served by the static host as an HTML 404 page (not JSON).",
+        "content": { "text/html": { "schema": { "type": "string" } } }
+      }
+    },
+    "schemas": {
+      "Project": {
+        "type": "object",
+        "required": ["id", "canonical_url", "name", "entity_type", "location", "technology", "version", "updated_at"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^project_[a-z0-9_]+$" },
+          "canonical_url": { "type": "string", "format": "uri", "description": "Canonical human-readable project page." },
+          "name": { "type": "string" },
+          "entity_type": { "type": "string" },
+          "description": { "type": "string" },
+          "location": {
+            "type": "object",
+            "properties": {
+              "country": { "type": "string" },
+              "state_or_territory": { "type": "string" },
+              "locality": { "type": "string" }
+            }
+          },
+          "technology": { "type": "array", "items": { "type": "string" } },
+          "industry": { "type": "string" },
+          "data_coverage": { "type": "object" },
+          "status": { "type": "string" },
+          "version": { "type": "string" },
+          "updated_at": { "type": "string", "format": "date" },
+          "last_verified": { "type": "string", "format": "date" },
+          "links": { "type": "object", "description": "Human-readable related pages (case study, dataset, methodology, PDFs)." },
+          "stats": { "type": "object", "description": "Registry stats: claims_total, claims_by_type, public_sources, analyst_assumptions, owner_confirmation_required, unresolved_evidence." },
+          "api": { "type": "object", "description": "Machine endpoints: self, claims_url, evidence_url, docs, openapi." },
+          "disclaimer": { "type": "string" }
+        }
+      },
+      "Claim": {
+        "type": "object",
+        "required": ["claim_id", "statement", "claim_type", "confidence", "evidence_ids", "last_verified", "status"],
+        "properties": {
+          "claim_id": { "type": "string" },
+          "statement": { "type": "string" },
+          "value": { "type": "number" },
+          "unit": { "type": "string" },
+          "claim_type": { "enum": ["reported", "public_source", "calculated", "derived", "interpreted", "assumption", "unresolved", "owner_confirmation_required"] },
+          "confidence": { "enum": ["high", "medium", "low"] },
+          "method_id": { "type": "string", "description": "Anchors into https://heliovulcan.com.au/methods/pre-dd-f1-f4/" },
+          "evidence_ids": { "type": "array", "items": { "type": "string" } },
+          "last_verified": { "type": "string", "format": "date" },
+          "status": { "enum": ["published", "draft", "unresolved", "withdrawn"] },
+          "limitations": { "type": "string" }
+        }
+      },
+      "ClaimRegistry": {
+        "type": "object",
+        "required": ["project_id", "canonical_url", "methodology_url", "version", "updated_at", "count", "claims"],
+        "properties": {
+          "project_id": { "type": "string" },
+          "canonical_url": { "type": "string", "format": "uri" },
+          "methodology_url": { "type": "string", "format": "uri" },
+          "project_url": { "type": "string", "format": "uri" },
+          "evidence_url": { "type": "string", "format": "uri" },
+          "version": { "type": "string" },
+          "updated_at": { "type": "string", "format": "date" },
+          "currency_note": { "type": ["string", "null"] },
+          "count": { "type": "integer" },
+          "claims": { "type": "array", "items": { "$ref": "#/components/schemas/Claim" } }
+        }
+      },
+      "Evidence": {
+        "type": "object",
+        "required": ["evidence_id", "source_title", "publisher", "source_url", "supports_claims", "evidence_type", "evidence_quality"],
+        "properties": {
+          "evidence_id": { "type": "string" },
+          "source_title": { "type": "string" },
+          "publisher": { "type": "string" },
+          "source_url": { "type": ["string", "null"], "description": "null only when status is 'unresolved'." },
+          "document_date": { "type": "string" },
+          "accessed_at": { "type": ["string", "null"] },
+          "page_or_section": { "type": "string" },
+          "supports_claims": { "type": "array", "items": { "type": "string" } },
+          "evidence_type": { "enum": ["primary_public_document", "public_register", "company_disclosure", "reference_dataset", "published_analysis"] },
+          "evidence_quality": { "enum": ["high", "medium", "low"] },
+          "status": { "enum": ["verified", "unresolved"] },
+          "notes": { "type": "string" }
+        }
+      },
+      "EvidenceRegistry": {
+        "type": "object",
+        "required": ["project_id", "canonical_url", "methodology_url", "version", "updated_at", "count", "evidence"],
+        "properties": {
+          "project_id": { "type": "string" },
+          "canonical_url": { "type": "string", "format": "uri" },
+          "methodology_url": { "type": "string", "format": "uri" },
+          "project_url": { "type": "string", "format": "uri" },
+          "claims_url": { "type": "string", "format": "uri" },
+          "version": { "type": "string" },
+          "updated_at": { "type": "string", "format": "date" },
+          "count": { "type": "integer" },
+          "evidence": { "type": "array", "items": { "$ref": "#/components/schemas/Evidence" } }
+        }
+      }
+    }
+  }
+}
