@@ -83,6 +83,8 @@ def validate(project: dict, claims_doc: dict, evidence_doc: dict) -> dict:
     ev_supports: dict[str, list[str]] = {}
     for ev in evidence:
         eid = ev.get("evidence_id", "<missing>")
+        if "evidence_id" not in ev:
+            err("evidence: item missing required field 'evidence_id'")
         if eid in ev_ids:
             err(f"evidence {eid}: duplicate evidence_id")
         ev_ids.add(eid)
@@ -113,6 +115,8 @@ def validate(project: dict, claims_doc: dict, evidence_doc: dict) -> dict:
     claim_ids = set()
     for c in claims:
         cid = c.get("claim_id", "<missing>")
+        if "claim_id" not in c:
+            err("claim: item missing required field 'claim_id'")
         if cid in claim_ids:
             err(f"claim {cid}: duplicate claim_id")
         claim_ids.add(cid)
@@ -142,9 +146,10 @@ def validate(project: dict, claims_doc: dict, evidence_doc: dict) -> dict:
             if cid not in claim_ids:
                 err(f"evidence {eid}: supports_claims references unknown claim '{cid}'")
     for c in claims:
+        cid = c.get("claim_id", "<missing>")
         for eid in c.get("evidence_ids", []):
-            if eid in ev_supports and c["claim_id"] not in ev_supports[eid]:
-                err(f"evidence {eid}: missing back-reference to claim {c['claim_id']}")
+            if eid in ev_supports and cid not in ev_supports[eid]:
+                err(f"evidence {eid}: missing back-reference to claim {cid}")
 
     # cross-document consistency
     for doc_name, doc in (("claims", claims_doc), ("evidence", evidence_doc)):
