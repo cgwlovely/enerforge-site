@@ -18,6 +18,7 @@ count mismatch, so it can be used as a pre-commit / CI gate.
 """
 
 import argparse
+import html
 import json
 import re
 import sys
@@ -217,7 +218,7 @@ def api_payloads(project: dict, claims_doc: dict, evidence_doc: dict, stats: dic
 
 
 def html_escape(s: str) -> str:
-    return (str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+    return html.escape(str(s), quote=True)
 
 
 def claims_table_html(claims_doc: dict, evidence_doc: dict) -> str:
