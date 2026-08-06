@@ -63,40 +63,61 @@
     <article>
       <div class="container">
         <header class="article">
-          <p class="article__meta">
-            <span>Project note</span>
-            <span class="dot" aria-hidden="true"></span>
+          <p class="res-meta">
+            <span class="res-meta__type">Research note</span>
+            <span class="sep" aria-hidden="true"></span>
             <span>6 August 2026</span>
-            <span class="dot" aria-hidden="true"></span>
-            <span>F3 Microgrid boundary &middot; Top-down market sizing &middot; Mine energy</span>
+            <span class="sep" aria-hidden="true"></span>
+            <span>9-minute read</span>
+            <span class="sep" aria-hidden="true"></span>
+            <span>Market sizing &middot; Mine energy &middot; Australia</span>
           </p>
           <h1>Most of the diesel is on wheels</h1>
           <p class="standfirst">Australia burns 1,269.9 petajoules of diesel a year. Only about four per cent of it is burned to make electricity &mdash; a national ceiling of roughly 551 megawatts of average electrical output, mine sites and remote towns included. Take out the mines and what is left is 45 megawatts, all of it owned by state utilities. If you are sizing a diesel displacement market from the top down, that is the whole of it.</p>
+
+          <div class="glance">
+            <span class="glance__label">At a glance</span>
+            <ol>
+              <li><strong>Four per cent.</strong> Of 1,269.9 PJ of national diesel consumption, roughly 50 PJ goes into electricity generation. Independently, the official generation statistics report 4,823 GWh of oil-fired generation &mdash; <strong>551 MW average</strong>. Two different sides of the accounts, same order of magnitude.</li>
+              <li><strong>Forty-five megawatts.</strong> Subtract mine sites and the remainder is 148 registered remote power stations totalling 45.4 MW average &mdash; Energy Queensland, NT Power and Water, and Western Australia&rsquo;s regional utility. That is town supply, not facility supply.</li>
+              <li><strong>Everything else is mobile.</strong> Road transport 679 PJ, agriculture 89 PJ, rail 52 PJ, construction 27 PJ. There is no central power station to connect to, no single counterparty, no interconnection point.</li>
+              <li><strong>Roughly 390 MW of diesel generation is not booked to mining at all.</strong> It sits under electricity supply, because at most mine sites the power station belongs to an independent power producer and is reported under the operator&rsquo;s industry. Two independent calculations land on the same figure.</li>
+              <li><strong>The one thing that would rewrite all of this</strong> is haul fleet electrification &mdash; equivalent to 3,900&ndash;4,650 MW of new mining electrical load nationally, against Australian mining&rsquo;s entire current electricity consumption of 5,339 MW. It also forfeits the fuel tax credit on every litre displaced.</li>
+            </ol>
+          </div>
+
+          <nav class="res-toc" aria-label="Contents">
+            <span class="res-toc__label">In this note</span>
+            <ol>
+              <li><a href="#s-why">Why size it top-down at all</a></li>
+              <li><a href="#s-cascade">Four steps and the market is gone</a></li>
+              <li><a href="#s-where">Where the other 96 per cent is</a></li>
+              <li><a href="#s-left">What is left after mining, line by line</a></li>
+              <li><a href="#s-390">The 390 megawatts that is not booked to mining</a></li>
+              <li><a href="#s-open">The one door that is not closed</a></li>
+              <li><a href="#s-implications">What this changes in a screen</a></li>
+            </ol>
+          </nav>
         </header>
       </div>
 
       <div class="container">
         <div class="article__body">
 
-          <div class="note">
-            <span class="cap">Executive highlights</span>
-            <ul>
-              <li><strong>Four per cent.</strong> Of 1,269.9 PJ of national diesel consumption, roughly 50 PJ goes into electricity generation. Independently, the official generation statistics report 4,823 GWh of oil-fired generation &mdash; <strong>551 MW average</strong>. Two different sides of the accounts, same order of magnitude.</li>
-              <li><strong>Forty-five megawatts.</strong> Subtract mine sites and the remainder is 148 registered remote power stations totalling 45.4 MW average &mdash; Energy Queensland, NT Power and Water, and Western Australia's regional utility. That is town supply, not facility supply.</li>
-              <li><strong>Everything else is mobile.</strong> Road transport 679 PJ, agriculture 89 PJ, rail 52 PJ, construction 27 PJ. There is no central power station to connect to, no single counterparty, no interconnection point.</li>
-              <li><strong>Roughly 390 MW of diesel generation is not booked to mining at all.</strong> It sits under electricity supply, because at most mine sites the power station belongs to an independent power producer and is reported under the operator's industry. Two independent calculations land on the same figure.</li>
-              <li><strong>The one thing that would rewrite all of this</strong> is haul fleet electrification &mdash; equivalent to 3,900&ndash;4,650 MW of new mining electrical load nationally, against Australian mining's entire current electricity consumption of 5,339 MW. It also forfeits the fuel tax credit on every litre displaced.</li>
-            </ul>
-          </div>
-
-          <h2>Why size it top-down at all</h2>
+          <h2 id="s-why">Why size it top-down at all</h2>
 
           <p>Most target lists for remote energy work are built from the bottom up: find the sites, estimate their load, rank them. That is the right way to find a client and the wrong way to find out whether a market exists. A bottom-up list cannot tell you what it is missing, and it has no denominator &mdash; there is no point at which it says <em>this is all of it</em>.</p>
 
           <p>National energy statistics can. Australia publishes consumption by industry division and by fuel, and generation by fuel, from the same statistical spine. Reconcile a bottom-up site list against those totals and you get two things a site list alone never gives you: a ceiling, and a named residual. Everything below comes from that reconciliation, for the 2023&ndash;24 financial year.</p>
 
-          <h2>Four steps and the market is gone</h2>
+          <h2 id="s-cascade">Four steps and the market is gone</h2>
 
+          <div class="exhibit">
+            <div class="exhibit__head">
+              <span class="exhibit__n">Exhibit 1</span>
+              <span class="exhibit__t">Four steps reduce a 1,270 PJ fuel pool to a 45 MW market</span>
+            </div>
+            <div class="exhibit__body">
           <div class="cascade">
 
             <div class="cascade__step">
@@ -137,10 +158,18 @@
 
             <p class="cascade__foot">The third step is corroborated from the other side of the accounts: national oil-fired generation is reported at 4,823 GWh, or 551 MW average. It is a ceiling &mdash; mine sites, remote town stations and factory standby sets are all inside it. The final bar is drawn wider than scale so it remains visible.</p>
           </div>
+            </div>
+            <p class="exhibit__src"><b>Source:</b> Australian energy statistics (consumption by industry and fuel; generation by fuel), 2023&ndash;24; national greenhouse and energy reporting register of designated generation facilities. Analysis by Heliovulcan. Conversion from fuel to electrical output assumes 33 per cent thermal efficiency.</p>
+          </div>
 
-          <h2>Where the other 96 per cent is</h2>
+          <h2 id="s-where">Where the other 96 per cent is</h2>
 
-          <div class="table-scroll">
+          <div class="exhibit">
+            <div class="exhibit__head">
+              <span class="exhibit__n">Exhibit 2</span>
+              <span class="exhibit__t">One line in the national diesel account is a power station; the rest is engines that move</span>
+            </div>
+            <div class="exhibit__body exhibit__scroll">
             <table class="matrix">
               <thead>
                 <tr><th>Use</th><th class="num">PJ</th><th class="num">Share</th><th>Form</th></tr>
@@ -160,13 +189,15 @@
                 <tr><td class="metric"><strong>Total</strong></td><td class="num"><strong>1,269.9</strong></td><td class="num"><strong>100%</strong></td><td></td></tr>
               </tbody>
             </table>
+            </div>
+            <p class="exhibit__src"><b>Source:</b> Australian energy statistics, consumption by industry and fuel, 2023&ndash;24. Analysis by Heliovulcan.</p>
           </div>
 
           <p>One line in that table is a power station. The rest is engines that move.</p>
 
           <div class="pull"><span class="hl">A market made of vehicles has no interconnection point, no single counterparty, and nothing to put a battery next to.</span></div>
 
-          <h2>What is left after mining, line by line</h2>
+          <h2 id="s-left">What is left after mining, line by line</h2>
 
           <div class="verdict-list">
             <div class="verdict-list__row">
@@ -201,7 +232,7 @@
 
           <p>Four categories, four closures. This is not a market that competitors have already taken. It is a market that was never there &mdash; and knowing the difference matters, because the two call for completely different responses.</p>
 
-          <h2>The 390 megawatts that is not booked to mining</h2>
+          <h2 id="s-390">The 390 megawatts that is not booked to mining</h2>
 
           <p>The one generation line in the diesel table &mdash; 42.1 PJ under electricity supply &mdash; is larger than the registered town stations can account for. Subtract them and roughly 37.8 PJ is unexplained, equivalent to about <strong>390 MW</strong> of average electrical output.</p>
 
@@ -213,11 +244,16 @@
 
           <p>It has a corollary worth stating plainly: if most mine power station diesel is booked elsewhere, then mining's own 299.6 PJ is almost entirely mobile plant. Haul trucks, dozers, drills, light vehicles. Which is exactly what the cascade above implies, arrived at independently.</p>
 
-          <h2>The one door that is not closed</h2>
+          <h2 id="s-open">The one door that is not closed</h2>
 
           <p>Electrifying the haul fleet does not trim this market. It rewrites it.</p>
 
-          <div class="table-scroll">
+          <div class="exhibit">
+            <div class="exhibit__head">
+              <span class="exhibit__n">Exhibit 3</span>
+              <span class="exhibit__t">Haul fleet electrification would add more load than Australian mining consumes today</span>
+            </div>
+            <div class="exhibit__body exhibit__scroll">
             <table class="matrix">
               <thead>
                 <tr><th>Segment</th><th class="num">Diesel today</th><th class="num">Equivalent electrical load</th><th class="num">Fuel tax credit forgone</th></tr>
@@ -228,6 +264,8 @@
                 <tr><td class="metric">&nbsp;&nbsp;&mdash; Coal mining</td><td class="num">151.4 PJ</td><td class="num">1,970&ndash;2,340 MW</td><td class="num">~A$2.0bn/yr</td></tr>
               </tbody>
             </table>
+            </div>
+            <p class="exhibit__src"><b>Source:</b> Australian energy statistics, diesel consumption by industry, 2023&ndash;24. Electrical equivalents assume diesel end-use efficiency of 35&ndash;45 per cent against an electric drivetrain at 85&ndash;92 per cent; fuel tax credit at the full off-road rate. Analysis by Heliovulcan.</p>
           </div>
 
           <p>Set that against the sector's present position. Australian mining consumes 5,339 MW of electricity in total, and the off-grid mine generation fleet we screen sits at roughly 340&ndash;525 MW. <strong>Electrifying the fleet would raise mining electricity demand by something like seventy to ninety per cent</strong>, and in Western Australian metal mining it would multiply off-grid station capacity several times over.</p>
@@ -242,13 +280,62 @@
 
           <p>That last point is not hypothetical. On one remote gold operation we screened, the site registers zero generation and zero purchased electricity &mdash; it runs on diesel plant. Convert its energy use to an electrical equivalent and it becomes an 8.7&ndash;10.4 MW average load, implying an installed station of 25&ndash;35 MW: several times the size of a real power station at a neighbouring operation in the same group. A screening layer built on <em>who has a power station today</em> classifies that site as no target at all.</p>
 
-          <h2>What this changes in a screen</h2>
+          <div class="methodbox">
+            <span class="methodbox__label">How this was done</span>
+            <h3>A bottom-up site list, tested against a national account built a different way</h3>
+            <p>
+              Heliovulcan maintains a site-level screen of Australian mine on-site generation
+              &mdash; 370 sites, with fuel, scale band and grid position established from
+              regulatory filings rather than assumed from industry codes. That screen answers
+              &ldquo;which sites&rdquo; but cannot answer &ldquo;is that all of them&rdquo;, because
+              a list has no denominator.
+            </p>
+            <p>
+              The denominator comes from national energy statistics, which publish consumption by
+              industry division and by fuel, and generation by fuel, from the same statistical
+              spine. Building the market from the sites and then testing it against those totals
+              gives two things a site list alone never gives: a ceiling, and a residual that has
+              to be named rather than shrugged off.
+            </p>
+            <p>
+              One check governs whether any of this counts. Two figures agreeing is only evidence
+              if their inputs do not overlap &mdash; a facility&rsquo;s reported emissions and its
+              regulator-published intensity factor will always agree, because one is built from
+              the other. The 390 MW finding in this note is reported because two calculations
+              reached it from inputs with no shared source: an industry-classified energy balance
+              on one side, contractor project registers and state generation licences on the
+              other.
+            </p>
+          </div>
+
+          <h2 id="s-implications">What this changes in a screen</h2>
 
           <div class="insight">This note sits in <strong>F3 &mdash; Microgrid boundary</strong>, but its real subject is the denominator. Three disciplines follow from it. <strong>Size top-down before you rank bottom-up</strong> &mdash; a site list with no ceiling cannot tell you when it is finished, and here the ceiling is 551 MW nationally for diesel-fired generation of every kind. <strong>Check which industry line an asset is reported under before you attribute its load</strong> &mdash; roughly 390 MW of mine power generation is booked to electricity supply, and any analysis that reads the mining line alone will miss it. <strong>Screen on tomorrow's load, not today's meter</strong> &mdash; if fleet electrification is in scope, the sites with the largest future load are the ones with no electrical load now. For the adjacent questions, see <a href="mine-decarbonisation-funding-map-australia.html">grants pay for the first one, not the tenth</a> and <a href="note-3.html">weak-grid mines do not buy cheap energy</a>.</div>
 
           <div class="pull"><span class="hl">A negative result reached in days from public data is worth more than a positive one reached in months from hope.</span></div>
 
-          <p class="footer__note"><em>Figures in this note are drawn from published Australian energy statistics for 2023&ndash;24 (consumption by industry and fuel; generation by fuel), the national greenhouse and energy reporting register of designated generation facilities, and the Safeguard Mechanism emissions-intensity determinations. Conversions from fuel to electrical output assume a 33 per cent thermal efficiency; across a 30&ndash;38 per cent range the 390 MW figure moves between roughly 340 and 450 MW without changing the conclusion. The generation reconciliation uses 2022&ndash;23 where 2023&ndash;24 was not available, and this mixing is deliberate and noted. Some state and sub-division cells are suppressed in the official tables for confidentiality, so sub-totals do not always sum to division totals; division totals are the reliable figures. Attribution of the 390 MW to contractor-operated mine power stations is an inference, not a register field. Screening-level analysis only &mdash; not a sizing, connection or procurement result.</em></p>
+          <div class="provenance">
+            <div class="provenance__row">
+              <span class="provenance__k">Sources</span>
+              <span class="provenance__v">Australian energy statistics 2023&ndash;24 (consumption by industry and fuel; generation by fuel and state); national greenhouse and energy reporting register of designated generation facilities; Safeguard Mechanism emissions-intensity determinations; national pollutant inventory; state generation licences and environmental approvals. All publicly published.</span>
+            </div>
+            <div class="provenance__row">
+              <span class="provenance__k">Period</span>
+              <span class="provenance__v">Financial year 2023&ndash;24 throughout, except the generation reconciliation, which uses 2022&ndash;23 where 2023&ndash;24 was not available. The mixing is deliberate and is flagged where it occurs.</span>
+            </div>
+            <div class="provenance__row">
+              <span class="provenance__k">Assumptions</span>
+              <span class="provenance__v">Conversion from fuel to electrical output assumes 33 per cent thermal efficiency. Across a 30&ndash;38 per cent range the 390 MW figure moves between roughly 340 and 450 MW, without changing the conclusion. Haul fleet electrical equivalents assume diesel end-use efficiency of 35&ndash;45 per cent against an electric drivetrain at 85&ndash;92 per cent.</span>
+            </div>
+            <div class="provenance__row">
+              <span class="provenance__k">Limitations</span>
+              <span class="provenance__v">Some state and sub-division cells are suppressed in the official tables for confidentiality, so sub-totals do not always sum to division totals; division totals are the reliable figures. Attribution of the 390 MW to contractor-operated mine power stations is an inference drawn from the accounts, not a field in any register.</span>
+            </div>
+            <div class="provenance__row">
+              <span class="provenance__k">Status</span>
+              <span class="provenance__v">Screening-level analysis. Not a sizing, connection, procurement or investment result, and not legal, financial or engineering advice. Figures should be independently verified before any commercial decision.</span>
+            </div>
+          </div>
 
         </div>
       </div>
