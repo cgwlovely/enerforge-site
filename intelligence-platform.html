@@ -3,16 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Industrial Energy Intelligence Platform | Heliovulcan</title>
-  <meta name="description" content="Heliovulcan's internally developed industrial energy intelligence platform connects project, facility, energy-system, spatial, emissions and commercial context into an evidence-linked Pre-DD decision workflow." />
+  <title>Industrial Asset Intelligence — what is true about an asset that already exists | Heliovulcan</title>
+  <meta name="description" content="Asset-level analysis of Australian industrial operations from public information: energy and fuel, emissions and 2029 Safeguard exposure, ownership and operator structure, and sector position — built bottom-up, cross-checked against independent accounts, with every figure evidence-graded and the unobtainable named." />
+  <meta name="keywords" content="industrial asset intelligence Australia, asset-level emissions analysis, Safeguard Mechanism 2029 exposure, baseline floor, mine energy asset, bottom-up reconciliation, NGER NPI facility data, Pre-DD screening platform" />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
   <link rel="stylesheet" href="style.css" />
   <link rel="canonical" href="https://heliovulcan.com.au/intelligence-platform.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heliovulcan.com.au/intelligence-platform.html" />
-  <meta property="og:title" content="Industrial Energy Intelligence Platform | Heliovulcan" />
-  <meta property="og:description" content="An internally developed capability supporting Heliovulcan's advisory, project-intelligence and Pre-DD workflow." />
+  <meta property="og:title" content="Industrial Asset Intelligence | Heliovulcan Energy Advisors" />
+  <meta property="og:description" content="What an industrial asset actually consumes, emits, owes and is exposed to — established from the public record, cross-checked against independent accounts, with the gaps named." />
+  <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    .table-scroll { overflow-x: auto; margin-top: 26px; }
+    .table-scroll .matrix { margin-top: 0; min-width: 34rem; }
+    .ladder { margin-top: 26px; border-top: 1px solid var(--line); }
+    .ladder__row { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0 18px; padding: 15px 0; border-bottom: 1px solid var(--line-soft); }
+    .ladder__g { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--teal-deep); padding-top: 3px; }
+    .ladder__b { font-size: 15px; color: var(--ink-soft); }
+    .ladder__b b { color: var(--ink); font-weight: 600; }
+    @media (max-width: 620px) { .ladder__row { grid-template-columns: 1fr; gap: 4px; } }
+  </style>
 </head>
 <body>
 
@@ -24,7 +36,7 @@
       </a>
       <nav class="nav__links">
         <a href="index.html">Home</a>
-        <a href="facilities.html" class="is-current">Facilities</a>
+        <a href="intelligence-platform.html" class="is-current">Assets</a>
         <a href="case-studies.html">Projects</a>
         <a href="coverage.html">Coverage</a>
         <a href="notes.html">Notes</a>
@@ -36,81 +48,147 @@
 
   <main>
 
-    <section class="hero">
+    <section class="case-hero">
       <div class="container">
-        <p class="hero__tag">Industrial Energy Intelligence Platform</p>
-        <h1>Decision-support infrastructure behind the Pre-DD workflow.<br />
-          <span class="muted">Internally developed. Evidence-linked. Deliberately conservative.</span></h1>
-        <p class="hero__sub">
-          The platform is an internally developed capability supporting Heliovulcan&rsquo;s
-          advisory, project-intelligence and Pre-DD workflow. It is not a public database,
-          not client-operated software, and not a substitute for formal due diligence.
+        <p class="eyebrow">Existing assets</p>
+        <h1>What is true about an industrial asset that already exists</h1>
+        <p class="case-hero__sub">
+          Before anyone proposes anything for a plant or a mine, there is a prior question that
+          is usually assumed rather than answered: what does this operation actually consume,
+          burn, emit, produce and owe &mdash; and who is in a position to decide anything about
+          it? Australia&rsquo;s public record answers more of that than most people expect, and
+          refuses to answer some of it entirely. Both halves are useful.
         </p>
+        <div class="note">
+          <span class="cap">What this is, and is not</span>
+          <p>
+            The analysis runs on an internally developed platform that turns public information
+            and agreed inputs into a repeatable structure, so every piece of work starts from
+            organised context rather than a blank page. It is <strong>not a public database, not
+            client-operated software, and not a substitute for formal due diligence.</strong>
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- WHAT IT IS -->
-    <section class="section" aria-labelledby="what-title">
+    <!-- WHAT IT ESTABLISHES -->
+    <section class="section" id="questions" aria-labelledby="questions-title">
       <div class="container">
-        <p class="eyebrow">What it is</p>
-        <h2 class="section-title" id="what-title">Internal decision-support infrastructure</h2>
-        <p class="section-intro">
-          A structured evidence and modelling system that Heliovulcan built and maintains
-          internally. It turns public information and agreed project inputs into a repeatable
-          screening architecture, so every screen starts from organised context instead of a
-          blank page &mdash; and every conclusion can point back to how it was reached.
-        </p>
+        <p class="eyebrow">What it establishes</p>
+        <h2 class="section-title" id="questions-title">Four questions, answered from the record</h2>
+
+        <div class="grid grid--2" style="margin-top:26px;">
+          <article class="card">
+            <span class="card__tag">Energy</span>
+            <h3>What it burns and what it buys</h3>
+            <p>
+              Fuel mix and quantity, self-generation versus purchased electricity, average load,
+              and where the asset sits relative to the network. Fuel type is established from
+              evidence, not assumed from the industry code &mdash; an assumption that is wrong
+              often enough to matter.
+            </p>
+          </article>
+          <article class="card">
+            <span class="card__tag">Exposure</span>
+            <h3>What 2029 costs it</h3>
+            <p>
+              Baseline, decline path and projected compliance position under the Safeguard
+              Mechanism, priced against a revenue proxy. Including the <b>statutory baseline
+              floor</b>, which standard projections run straight through &mdash; and the resulting
+              band in which abatement earns no credit at all.
+            </p>
+          </article>
+          <article class="card">
+            <span class="card__tag">Control</span>
+            <h3>Who can actually decide</h3>
+            <p>
+              Ownership and operator structure, including the common case where the power station
+              belongs to a third party under a long-term agreement and its fuel is reported under
+              a different industry entirely. Contract end dates where they are disclosed.
+            </p>
+          </article>
+          <article class="card">
+            <span class="card__tag">Position</span>
+            <h3>Where it sits in its sector</h3>
+            <p>
+              The asset compared to its peers on the measures that are actually comparable, and
+              the asset summed with its peers to test whether the sector view holds. Both
+              directions, because each one catches errors the other does not.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- ARCHITECTURE DIAGRAM (abstract; HTML/CSS only) -->
+    <!-- ARCHITECTURE DIAGRAM -->
     <section class="section section--tint" aria-labelledby="flow-title">
       <div class="container">
         <p class="eyebrow">How information flows</p>
         <h2 class="section-title" id="flow-title">From public information to a defensible decision</h2>
         <div style="background:var(--navy,#122132);border-radius:14px;padding:34px 26px;max-width:760px;margin:0 auto;">
           <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 22px;color:#f6f3ec;font-size:14px;letter-spacing:.06em;text-align:center;width:100%;max-width:560px;">PUBLIC AND AGREED PROJECT INFORMATION</div>
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 22px;color:#f6f3ec;font-size:14px;letter-spacing:.06em;text-align:center;width:100%;max-width:560px;">PUBLIC RECORDS AND AGREED INPUTS</div>
             <div style="width:2px;height:22px;background:#f07820;"></div>
-            <div style="background:rgba(240,120,32,.14);border:1px solid #f07820;border-radius:10px;padding:12px 22px;color:#ffd9b8;font-size:14px;letter-spacing:.06em;text-align:center;width:100%;max-width:560px;">PROJECT + FACILITY INTELLIGENCE</div>
+            <div style="background:rgba(240,120,32,.14);border:1px solid #f07820;border-radius:10px;padding:12px 22px;color:#ffd9b8;font-size:14px;letter-spacing:.06em;text-align:center;width:100%;max-width:560px;">ASSET + PROJECT INTELLIGENCE</div>
             <div style="width:2px;height:22px;background:#f07820;"></div>
             <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 22px;color:#f6f3ec;font-size:14px;letter-spacing:.06em;text-align:center;width:100%;max-width:560px;">SPATIAL &middot; ENERGY &middot; EMISSIONS &middot; COMMERCIAL CONTEXT</div>
             <div style="width:2px;height:22px;background:#f07820;"></div>
-            <div style="background:rgba(240,120,32,.14);border:1px solid #f07820;border-radius:10px;padding:12px 22px;color:#ffd9b8;font-size:14px;letter-spacing:.06em;text-align:center;width:100%;max-width:560px;">F1&ndash;F4 PRE-DD WORKFLOW</div>
+            <div style="background:rgba(240,120,32,.14);border:1px solid #f07820;border-radius:10px;padding:12px 22px;color:#ffd9b8;font-size:14px;letter-spacing:.06em;text-align:center;width:100%;max-width:560px;">RECONCILIATION &middot; F1&ndash;F4 PROJECT SCREEN</div>
             <div style="width:2px;height:22px;background:#f07820;"></div>
-            <div style="background:#f07820;border-radius:10px;padding:12px 22px;color:#122132;font-weight:600;font-size:14px;letter-spacing:.06em;text-align:center;width:100%;max-width:560px;">GAPS &middot; DATA REQUESTS &middot; FEASIBILITY &middot; DECISION REPORT</div>
+            <div style="background:#f07820;border-radius:10px;padding:12px 22px;color:#122132;font-weight:600;font-size:14px;letter-spacing:.06em;text-align:center;width:100%;max-width:560px;">GAPS &middot; DATA REQUESTS &middot; FINDINGS &middot; DECISION REPORT</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHAT IT CONNECTS -->
-    <section class="section" aria-labelledby="connects-title">
+    <!-- METHOD -->
+    <section class="section" id="method" aria-labelledby="method-title">
       <div class="container">
-        <p class="eyebrow">What it connects</p>
-        <h2 class="section-title" id="connects-title">Six kinds of context, one evidence-linked view</h2>
-        <div class="grid grid--3">
-          <article class="card"><span class="card__tag">Project</span><h3>Project context</h3><p>Stage, configuration, commercial structure and decision history for the project under review.</p></article>
-          <article class="card"><span class="card__tag">Facility</span><h3>Facility context</h3><p>The host operation: production, operating boundary and the constraints that shape any energy decision.</p></article>
-          <article class="card"><span class="card__tag">Energy</span><h3>Energy-system context</h3><p>Existing generation, fuels and the physical boundary a new solar, storage or hybrid asset must fit inside.</p></article>
-          <article class="card"><span class="card__tag">Spatial</span><h3>Spatial context</h3><p>Location, distance to infrastructure and site constraints, with stated precision and stated limits.</p></article>
-          <article class="card"><span class="card__tag">Emissions</span><h3>Emissions context</h3><p>Compliance exposure and reported emissions positions that drive or constrain the opportunity.</p></article>
-          <article class="card"><span class="card__tag">Commercial</span><h3>Commercial readiness</h3><p>Contract structures, delivery parties and the readiness questions that determine whether a concept can advance.</p></article>
+        <p class="eyebrow">Method</p>
+        <h2 class="section-title" id="method-title">Built bottom-up, then checked against something built differently</h2>
+        <p class="section-intro">
+          A single-source number is an assertion. The discipline here is to build the asset from
+          filings and then test the result against an account assembled from an unrelated source
+          &mdash; national energy statistics, an independent pollutant inventory, company
+          disclosure, trade data. Where the two disagree, the disagreement is the finding.
+        </p>
+
+        <div class="insight" style="margin-top:24px;">
+          Two figures agreeing is only evidence if their inputs do not overlap. An asset&rsquo;s
+          reported emissions and its regulator-published intensity factor will always agree,
+          because one is constructed from the other. Checking them against each other proves
+          nothing, and it is one of the easiest mistakes to make. Every cross-check reported here
+          has to name both input sets and show that they are disjoint.
         </div>
       </div>
     </section>
 
-    <!-- PLATFORM CAPABILITY PREVIEW (sanitised, non-confidential) -->
+    <!-- WHAT IT CONNECTS -->
+    <section class="section section--tint" aria-labelledby="connects-title">
+      <div class="container">
+        <p class="eyebrow">What it connects</p>
+        <h2 class="section-title" id="connects-title">Six kinds of context, one evidence-linked view</h2>
+        <div class="grid grid--3">
+          <article class="card"><span class="card__tag">Asset</span><h3>Asset context</h3><p>The operation itself: production, operating boundary and the constraints that shape any energy decision.</p></article>
+          <article class="card"><span class="card__tag">Project</span><h3>Project context</h3><p>Stage, configuration, commercial structure and decision history where a project is under review.</p></article>
+          <article class="card"><span class="card__tag">Energy</span><h3>Energy-system context</h3><p>Existing generation, fuels and the physical boundary any new solar, storage or hybrid asset must fit inside.</p></article>
+          <article class="card"><span class="card__tag">Spatial</span><h3>Spatial context</h3><p>Location, distance to infrastructure and site constraints, with stated precision and stated limits.</p></article>
+          <article class="card"><span class="card__tag">Emissions</span><h3>Emissions context</h3><p>Compliance exposure and reported emissions positions that drive or constrain the opportunity.</p></article>
+          <article class="card"><span class="card__tag">Commercial</span><h3>Commercial readiness</h3><p>Contract structures, delivery parties and the readiness questions that determine whether anything can advance.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORM CAPABILITY PREVIEW -->
     <section class="section" aria-labelledby="capability-title" style="background:#0d1926;">
       <div class="container">
         <p class="eyebrow" style="color:#f07820;">Platform capability</p>
-        <h2 class="section-title" id="capability-title" style="color:#eef2f5;">National facility intelligence, spatial context, one frame</h2>
+        <h2 class="section-title" id="capability-title" style="color:#eef2f5;">National asset intelligence, spatial context, one frame</h2>
         <p class="section-intro" style="color:#aeb9c2;">
-          A selected, non-confidential view of the platform&rsquo;s coverage: national-scale facility
-          intelligence, generalised energy infrastructure and spatial context brought into the same
-          analytical frame that supports project screening. This preview is deliberately aggregated —
-          it is not a public database, not a query tool, and individual facilities cannot be
-          identified from it.
+          A selected, non-confidential view of coverage: national-scale asset intelligence,
+          generalised energy infrastructure and spatial context brought into the same analytical
+          frame. This preview is deliberately aggregated &mdash; it is not a public database, not
+          a query tool, and individual assets cannot be identified from it.
         </p>
         <figure style="margin:22px 0 0;">
           <img src="assets/capability-national.svg" alt="Aggregated national view of 8,000+ mapped industrial facilities with generalised network context"
@@ -121,18 +199,18 @@
             <img src="assets/capability-regional.svg" alt="Regional capability preview combining industrial facilities, energy infrastructure, network context and stylised spatial constraints"
                  style="width:100%;height:auto;display:block;border-radius:10px;" loading="lazy" />
             <figcaption style="margin-top:10px;font-size:0.9rem;color:#7d8a93;">
-              Regional focus: facility distribution with generalised network and stylised constraint context.
+              Regional focus: asset distribution with generalised network and stylised constraint context.
             </figcaption>
           </figure>
           <div>
             <ul style="list-style:none;padding:0;margin:6px 0 0;color:#c9d2d9;font-size:0.98rem;line-height:2.1;">
-              <li><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#f07820;margin-right:10px;"></span>Industrial facilities</li>
+              <li><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#f07820;margin-right:10px;"></span>Industrial assets</li>
               <li><span style="display:inline-block;width:22px;height:2px;background:#7d8a93;margin-right:10px;vertical-align:middle;"></span>Energy infrastructure</li>
               <li><span style="display:inline-block;width:22px;height:2px;background:#4c5b68;margin-right:10px;vertical-align:middle;"></span>Network context</li>
               <li><span style="display:inline-block;width:14px;height:12px;background:rgba(47,125,107,0.25);margin-right:10px;"></span>Spatial constraints</li>
             </ul>
             <p style="color:#7d8a93;font-size:0.9rem;margin-top:14px;">
-              Facility positions are aggregated and generalised for publication. Sources, methods,
+              Asset positions are aggregated and generalised for publication. Sources, methods,
               scoring and underlying records remain internal.
             </p>
           </div>
@@ -140,47 +218,97 @@
       </div>
     </section>
 
-    <!-- HOW IT SUPPORTS THE BUSINESS -->
-    <section class="section section--tint" aria-labelledby="support-title">
+    <!-- EVIDENCE -->
+    <section class="section" id="evidence" aria-labelledby="evidence-title">
       <div class="container">
-        <p class="eyebrow">How it supports the business</p>
+        <p class="eyebrow">Evidence discipline</p>
+        <h2 class="section-title" id="evidence-title">Every figure carries a grade, and the grade travels into the report</h2>
+
+        <div class="ladder">
+          <div class="ladder__row">
+            <span class="ladder__g">Filed</span>
+            <span class="ladder__b"><b>Reported by the operator to a regulator.</b> Strongest available. Still checked for unit and scope errors &mdash; these are found regularly.</span>
+          </div>
+          <div class="ladder__row">
+            <span class="ladder__g">Licensed</span>
+            <span class="ladder__b"><b>Named in a state licence or permit.</b> Establishes who operates a plant and often what equipment is installed.</span>
+          </div>
+          <div class="ladder__row">
+            <span class="ladder__g">Disclosed</span>
+            <span class="ladder__b"><b>Company reporting, investor material, sustainability data.</b> Useful and specific, but not independent of the operator.</span>
+          </div>
+          <div class="ladder__row">
+            <span class="ladder__g">Derived</span>
+            <span class="ladder__b"><b>Calculated from filed quantities.</b> Marked as derived throughout, and not permitted to carry a headline finding on its own.</span>
+          </div>
+          <div class="ladder__row">
+            <span class="ladder__g">Owner</span>
+            <span class="ladder__b"><b>Cannot be resolved from public information.</b> Goes on the owner-data request list rather than being estimated into place.</span>
+          </div>
+          <div class="ladder__row">
+            <span class="ladder__g">Absent</span>
+            <span class="ladder__b"><b>Established as unobtainable.</b> Written down as a closed question, not left as a blank that later reads as a zero.</span>
+          </div>
+        </div>
+
+        <p class="section-intro" style="margin-top:22px;">
+          Work can end in four honest results: continue, redesign, supplement data &mdash; or stop.
+          An analysis that says &ldquo;pause&rdquo; is the method working, not failing.
+        </p>
+      </div>
+    </section>
+
+    <!-- LIMITS -->
+    <section class="section section--tint" id="limits" aria-labelledby="limits-title">
+      <div class="container">
+        <p class="eyebrow">Limits, stated up front</p>
+        <h2 class="section-title" id="limits-title">What the public record will not give you</h2>
+        <p class="section-intro">
+          These are settled negatives, not gaps waiting to be filled by more searching. They can
+          only come from the owner, and any analysis that appears to have them without the owner
+          should be treated with suspicion.
+        </p>
+
+        <div class="table-scroll">
+          <table class="matrix">
+            <thead>
+              <tr><th>Not available</th><th>Why it matters</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="metric">Interval load curve</td><td>Nothing can be sized or priced without it</td></tr>
+              <tr><td class="metric">Peak demand</td><td>Determines connection and equipment, not average load</td></tr>
+              <tr><td class="metric">Unit run hours and standby strategy</td><td>Separates a continuous plant from a backup set</td></tr>
+              <tr><td class="metric">Contract price and volume terms</td><td>Decides who captures a saving, which often decides whether anything happens at all</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pull" style="margin-top:30px;"><span class="hl">The output is a decision about who to talk to and when. It is not a system size and it is not a price.</span></div>
+      </div>
+    </section>
+
+    <!-- SERVICE LAYERS -->
+    <section class="section" id="layers" aria-labelledby="support-title">
+      <div class="container">
+        <p class="eyebrow">How it is used</p>
         <h2 class="section-title" id="support-title">One platform, three service layers</h2>
         <div class="grid grid--3">
           <article class="card">
             <span class="card__tag">1 &middot; Screen</span>
-            <h3>Project Intelligence Screen</h3>
-            <p>A fast, structured first look: what is publicly knowable, what the critical gaps are, and whether the concept is worth investigating further.</p>
+            <h3>Asset or Project Intelligence Screen</h3>
+            <p>A fast, structured first look at an operating asset or an early project concept: what is publicly knowable, what the critical gaps are, and whether it is worth investigating further.</p>
           </article>
           <article class="card">
-            <span class="card__tag">2 &middot; Pre-DD</span>
-            <h3>Integrated Pre-DD Review</h3>
-            <p>The F1&ndash;F4 workflow applied in depth: approvals, site, energy-system boundary and financeability questions, with an evidence-gap register.</p>
+            <span class="card__tag">2 &middot; Analyse</span>
+            <h3>Asset profile or Integrated Pre-DD Review</h3>
+            <p>For an asset: the full profile with reconciliation. For a project: the F1&ndash;F4 workflow applied in depth &mdash; approvals, site, energy-system boundary and financeability &mdash; with an evidence-gap register.</p>
           </article>
           <article class="card">
             <span class="card__tag">3 &middot; Decide</span>
-            <h3>Owner Data Request &amp; Feasibility Validation</h3>
-            <p>A precise owner-data request list, screening-grade feasibility validation and a decision report that says continue, redesign, supplement data &mdash; or stop.</p>
+            <h3>Owner Data Request &amp; Validation</h3>
+            <p>A precise owner-data request list, screening-grade validation and a decision report that says continue, redesign, supplement data &mdash; or stop.</p>
           </article>
         </div>
-      </div>
-    </section>
-
-    <!-- EVIDENCE DISCIPLINE -->
-    <section class="section" aria-labelledby="evidence-title">
-      <div class="container">
-        <p class="eyebrow">Evidence discipline</p>
-        <h2 class="section-title" id="evidence-title">Every statement knows what it is</h2>
-        <p class="section-intro">Information inside the platform is always labelled, and the label travels into every report:</p>
-        <div class="grid grid--4">
-          <article class="card"><h3>Publicly verified</h3><p>Supported by public records or regulator filings.</p></article>
-          <article class="card"><h3>Screening interpretation</h3><p>A reasoned estimate, clearly labelled and never presented as fact.</p></article>
-          <article class="card"><h3>Owner confirmation required</h3><p>Cannot be resolved from public information; goes on the data request list.</p></article>
-          <article class="card"><h3>Unresolved gap</h3><p>Stays visible. A gap is never silently filled to make a conclusion look complete.</p></article>
-        </div>
-        <p class="section-intro" style="margin-top:18px;">
-          Outputs can support four honest results: continue, redesign, supplement data &mdash; or stop.
-          A screen that says &ldquo;pause&rdquo; is the platform working, not failing.
-        </p>
       </div>
     </section>
 
@@ -193,25 +321,32 @@
           Public examples show the decision framework and selected non-confidential outputs.
           The underlying source architecture, analytical rules, model controls, internal scoring
           and opportunity assessments remain confidential. Case examples use public information
-          and agreed project inputs; evidence records and analysis trails are maintained internally.
+          and agreed inputs; evidence records and analysis trails are maintained internally.
         </p>
       </div>
     </section>
 
-    <!-- SERVICE ENTRY POINT -->
+    <!-- ENGAGE -->
     <section class="section" id="engage" aria-labelledby="engage-title">
       <div class="container">
         <p class="eyebrow">Where to start</p>
-        <h2 class="section-title" id="engage-title">Three ways to engage</h2>
+        <h2 class="section-title" id="engage-title">Start small</h2>
         <p class="section-intro">
-          Every engagement starts small: a Project Intelligence Screen needs only a short note
-          and no confidential engineering files.
+          A screen needs only a short note and no confidential engineering files. If you want to
+          see the scope of the underlying work first, the coverage index lists what has been
+          analysed and to what grain.
         </p>
         <div class="cta-row">
-          <a class="btn btn--primary" href="index.html#contact">Start a Project Intelligence Screen <span class="btn__arrow">&rarr;</span></a>
-          <a class="btn btn--outline" href="index.html#lens">See the Pre-DD framework</a>
-          <a class="btn btn--outline" href="reports/Fountain_Head_PreDD_Enhanced_Public_EN_v4.pdf">View a worked public example</a>
+          <a class="btn btn--primary" href="index.html#contact">Start a screen <span class="btn__arrow">&rarr;</span></a>
+          <a class="btn btn--outline" href="coverage.html">See what has been analysed</a>
+          <a class="btn btn--outline" href="australian-diesel-replacement-market-size.html">A published example</a>
         </div>
+        <p class="footer__note" style="margin-top:24px;">
+          <em>Asset analysis is desktop work on public information and agreed inputs. It is a
+          screening-grade product: indicative, evidence-graded and explicitly bounded, and it must
+          be independently verified before any commercial, financing or engineering decision.
+          Statements about third parties reflect the public record as at the stated date.</em>
+        </p>
       </div>
     </section>
 
@@ -226,15 +361,15 @@
           <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
           </a>
           <p class="footer__note">
-            Heliovulcan provides independent early-stage project screening for industrial hybrid
-            energy, supported by an internally developed intelligence platform. Its F1-F4 Pre-DD
-            workflow identifies approval, site, microgrid and financeability gaps before full
-            engineering and formal due diligence begin.
+            Heliovulcan is an independent project-intelligence brand for industrial hybrid energy. It uses
+            an F1-F4 Pre-DD workflow to run public-information desktop screens &mdash; approval
+            delta, site suitability, microgrid boundary and financeability readiness &mdash; before serious
+            development cost is committed.
           </p>
         </div>
         <nav class="footer__links">
           <a href="index.html">Home</a>
-          <a href="facilities.html">Facilities</a>
+          <a href="intelligence-platform.html">Assets</a>
           <a href="case-studies.html">Projects</a>
           <a href="coverage.html">Coverage</a>
           <a href="notes.html">Notes</a>
@@ -242,11 +377,10 @@
         </nav>
       </div>
       <p class="footer__legal">
-        <b>Disclaimer:</b> Heliovulcan Energy Advisors provides early-stage project screening and
-        decision-support material only. It does not provide EPC design, certified engineering advice,
-        legal advice, financial product advice, tax advice, or investment recommendations. All results
-        are indicative and should be independently verified before commercial, financing, or
-        construction decisions are made. &copy; 2026 Heliovulcan Energy Advisors.
+        <b>Disclaimer:</b> Heliovulcan is an independent project-intelligence brand using an F1-F4 Pre-DD workflow to run public-information desktop screens. This is not legal,
+        financial, tax, engineering, investment, EPC design, lender due diligence or formal consulting
+        advice. All results are indicative and must be independently verified before any commercial,
+        financing or construction decision. &copy; 2026 Heliovulcan Energy Advisors.
       </p>
     </div>
   </footer>
