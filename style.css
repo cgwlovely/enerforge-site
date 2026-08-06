@@ -550,6 +550,15 @@ image-slot::part(image) { object-fit: cover !important; }
 .nav__links a:hover { color: var(--ink); background: var(--surface); }
 .nav__links a.is-current { color: var(--ink); font-weight: 600; box-shadow: inset 0 -2px 0 var(--orange); border-radius: 7px 7px 0 0; }
 
+/* nav call-to-action — a button in the nav bar, not a navigation item */
+.nav__links a.nav__cta {
+  margin-left: 10px; padding: 7px 15px;
+  color: var(--orange-deep); font-weight: 600;
+  border: 1px solid var(--orange); border-radius: 100px;
+  box-shadow: none;
+}
+.nav__links a.nav__cta:hover { background: var(--orange); color: #fff; }
+
 /* =============================================================
    BUTTONS
    ============================================================= */
