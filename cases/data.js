@@ -38,7 +38,10 @@
      downloads     array of { label, href, note }  (use href:"" for "coming soon")
      primaryUrl    canonical reading URL used by the index and project map
      indexActions  array of { label, href, kind } for index-card CTAs
-     category      case-study type; "Market / Industry Note" is excluded from this library
+     category      case-study type shown on the card, e.g. "Integrated Pre-DD"
+     track         "project" (a named site screened) | "sector" (a whole market studied).
+                   Drives which group the case appears under on case-studies.html.
+                   Sector studies carry no map pin. Default if omitted: "project".
 
    The disclaimer block and the "free sanity check" call-to-action are added to
    EVERY case page automatically — you do not need to repeat them here.
@@ -63,6 +66,7 @@ window.HELIOVULCAN_CASES = [
     location: "Fountain Head / Pine Creek, Northern Territory, Australia",
     projectType: "Diesel-PV-BESS hybrid microgrid (public-information Pre-DD screen)",
     category: "Integrated Pre-DD",
+    track: "project",
     primaryUrl: "reports/fountain-head-hybrid-energy-review.html",
     canonicalUrl: "https://heliovulcan.com.au/reports/fountain-head-hybrid-energy-review.html",
     indexActions: [
@@ -234,6 +238,7 @@ window.HELIOVULCAN_CASES = [
     location: "Representative weak-grid industrial site",
     projectType: "Behind-the-meter solar + BESS, Energy-as-a-Service",
     category: "Financeability Screen",
+    track: "project",
     primaryUrl: "case.html?id=weak-grid-eaas",
     canonicalUrl: "https://heliovulcan.com.au/case.html?id=weak-grid-eaas",
     indexActions: [
@@ -347,6 +352,42 @@ window.HELIOVULCAN_CASES = [
 
     downloads: [],
     downloadsNote: "Want to test a similar site? <a href='index.html#contact'>Book a 20-minute project screen</a> before committing to EPC, legal or financing work."
+  }  ,
+
+  /* ===========================================================================
+     SECTOR STUDY 01 — AUSTRALIAN DIESEL REPLACEMENT MARKET
+     A whole-market reconciliation rather than a single-site screen.
+     =========================================================================== */
+  {
+    id: "diesel-replacement-market",
+    num: "03",
+    title: "Most of the diesel is on wheels",
+    subtitle:
+      "A top-down closure of the Australian diesel replacement market. Australia burns 1,269.9 PJ of diesel a year and only about four per cent of it is burned to make electricity. Remove the mine sites and what remains is 45 MW of government-owned remote town supply.",
+    status: { label: "Published — negative result", tone: "warn" },
+    lesson:
+      "<span class='hl'>A site list cannot tell you when it is finished.</span> Building the market from the bottom up produced a target list. Reconciling that list against national energy accounts produced something a list never gives you: a ceiling, and a residual that had to be named.",
+
+    industry: "Mining and industrial energy",
+    location: "Australia, national",
+    projectType: "Top-down market reconciliation against national energy accounts",
+    category: "Sector Study",
+    track: "sector",
+    primaryUrl: "australian-diesel-replacement-market-size.html",
+    canonicalUrl: "https://heliovulcan.com.au/australian-diesel-replacement-market-size.html",
+    indexActions: [
+      { label: "Read the study", href: "australian-diesel-replacement-market-size.html", kind: "primary" }
+    ],
+    tags: ["Market sizing", "Mine energy", "National accounts", "Public data"],
+    source: "public",
+
+    summary:
+      "National reconciliation of the diesel displacement market. Four steps reduce a 1,270 PJ fuel pool to a 45 MW addressable remainder \u2014 and identify 390 MW of mine generation booked to the wrong industry.",
+    stats: [
+      { value: "1,269.9 PJ", label: "national diesel" },
+      { value: "551 MW", label: "national ceiling for diesel generation" },
+      { value: "45 MW", label: "left once mine sites are removed" }
+    ]
   }
 
 ];

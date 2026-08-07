@@ -81,16 +81,22 @@
 
   /* ---- INDEX: map + case tiles ------------------------------------------- */
   function renderIndex(mount) {
-    var ordered = CASES.filter(function (c) {
+    var live = CASES.filter(function (c) {
       return c.isCaseStudy !== false && c.category !== "Market / Industry Note";
     }).sort(function (a, b) { return (a.num || "").localeCompare(b.num || ""); });
 
+    function track(c) { return c.track === "sector" ? "sector" : "project"; }
+    var projects = live.filter(function (c) { return track(c) === "project"; });
+    var sectors  = live.filter(function (c) { return track(c) === "sector"; });
+
+    // the map locates individual sites; a national study has no pin
+    var mapCases = projects.filter(function (c) { return c.pin; });
     var map =
       '<figure class="map-wrap">' +
         '<svg class="aus-map" viewBox="0 0 1000 820" role="img" aria-label="Map of Australia showing project locations">' +
           '<path class="aus-land" d="' + AUS_PATH + '" />' +
           '<path class="aus-tas" d="' + TAS_PATH + '" />' +
-          ordered.map(mapMarker).join("") +
+          mapCases.map(mapMarker).join("") +
         '</svg>' +
         '<figcaption class="map-legend">' +
           '<span><i class="solid"></i> Public-data / located project</span>' +
@@ -98,7 +104,7 @@
         '</figcaption>' +
       '</figure>';
 
-    var tiles = ordered.map(function (c) {
+    function tile(c) {
       var tone = (c.status && c.status.tone) || "amber";
       var pillCls = tone === "ok" ? "pill--green" : tone === "bad" ? "pill--red" : "pill--amber";
       var tags = (c.tags || []).map(function (t) { return '<span class="t">' + esc(t) + "</span>"; }).join("");
@@ -126,13 +132,31 @@
           '<div class="case-tile__actions">' + actions + "</div>" +
         "</article>"
       );
-    }).join("");
+    }
+
+    function group(id, eyebrow, title, intro, list, extra) {
+      if (!list.length) return "";
+      return (
+        '<div class="case-group" id="' + id + '">' +
+          '<p class="eyebrow">' + eyebrow + "</p>" +
+          '<h3 class="case-group__title">' + title + "</h3>" +
+          '<p class="section-intro">' + intro + "</p>" +
+          '<div class="case-index">' + list.map(tile).join("") + (extra || "") + "</div>" +
+        "</div>"
+      );
+    }
 
     mount.innerHTML =
+      group("project-screens", "Project screens",
+        "A named site, run through the screen",
+        "One project or site at a time: whether it can advance, what the host constrains, and which evidence is still missing. Each of these is a public-information desktop screen, not commissioned advice.",
+        projects,
+        '<div class="case-soon">More screens are added as projects come through &mdash;<br />industrial solar, storage, diesel displacement and weak-grid sites.</div>') +
       map +
-      '<div class="case-index">' + tiles +
-        '<div class="case-soon">More cases are being added as projects are screened &mdash;<br />industrial solar, storage, diesel displacement and weak-grid sites.</div>' +
-      "</div>";
+      group("sector-studies", "Sector studies",
+        "A whole market, reconciled",
+        "Built bottom-up from site-level evidence, then tested against national accounts assembled a different way. The output is a ceiling and a named residual &mdash; including, sometimes, the finding that a market is smaller than it looks.",
+        sectors, "");
 
     // ---- map hover tooltips ------------------------------------------------
     var mapWrap = mount.querySelector(".map-wrap");
