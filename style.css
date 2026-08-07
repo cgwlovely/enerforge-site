@@ -337,6 +337,83 @@ a.note-card .note-status.is-drafting { color: var(--teal-deep); }
 .map-wrap { margin-top: 34px; }
 
 /* =============================================================
+   RESEARCH ARTICLE — EDITORIAL LAYOUT
+   Full-bleed hero, left action rail, numbered sections, column-width
+   exhibits and half-width inline modules. Layers over the research
+   components above; nothing existing is overridden globally.
+   ============================================================= */
+
+/* --- full-bleed hero with the title over the image --- */
+.res-hero { position: relative; background: var(--navy); overflow: hidden; }
+.res-hero__bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: .34; }
+.res-hero::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(18,33,50,.52) 0%, rgba(18,33,50,.90) 100%); }
+.res-hero__inner { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto;
+  padding: clamp(64px, 10vw, 140px) 24px clamp(38px, 5vw, 60px); }
+.res-hero .eyebrow { color: var(--orange-lite); }
+.res-hero h1 { font-family: var(--serif); color: #fff; margin: 14px 0 0; max-width: 17ch;
+  font-size: clamp(33px, 5.2vw, 56px); line-height: 1.08; letter-spacing: -0.02em; }
+.res-hero__meta { margin: 24px 0 0; font-family: var(--mono); font-size: 12px; letter-spacing: .07em;
+  text-transform: uppercase; color: rgba(255,255,255,.70);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 9px 14px; }
+.res-hero__meta .tag { border: 1px solid rgba(255,255,255,.42); border-radius: 100px; padding: 4px 12px; color: #fff; }
+.res-hero__meta .sep { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,.45); }
+
+/* --- rail + reading column --- */
+.res-layout { max-width: 1180px; margin: 0 auto; padding: 0 24px;
+  display: grid; grid-template-columns: 168px minmax(0, 720px); gap: 0 56px; justify-content: center; }
+.res-main { min-width: 0; }
+.res-rail { padding-top: 46px; }
+.res-rail__inner { position: sticky; top: 92px; display: flex; flex-direction: column; align-items: flex-start; gap: 11px; }
+.res-rail a, .res-rail button {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--ink-faint); background: none; border: 0; border-bottom: 1px solid transparent;
+  padding: 3px 0; cursor: pointer; text-decoration: none; text-align: left;
+}
+.res-rail a:hover, .res-rail button:hover { color: var(--teal-deep); border-bottom-color: var(--teal); }
+@media (max-width: 1060px) {
+  .res-layout { grid-template-columns: minmax(0, 720px); }
+  .res-rail { padding-top: 26px; }
+  .res-rail__inner { position: static; flex-direction: row; flex-wrap: wrap; gap: 8px 18px; }
+}
+
+/* --- reading column inside the layout --- */
+.res-main .standfirst,
+.res-main .glance,
+.res-main .article__body,
+.res-main .methodbox,
+.res-main .provenance,
+.res-main .article-nav { max-width: none; margin-left: 0; margin-right: 0; }
+.res-body p { font-size: 19.5px; line-height: 1.65; }
+
+/* numbered sections */
+.res-body { counter-reset: sec; }
+.res-body h2 { counter-increment: sec; margin-top: 52px; font-size: clamp(23px, 2.8vw, 29px); }
+.res-body h2::before { content: counter(sec, decimal-leading-zero); display: block;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; color: var(--teal-deep); margin-bottom: 9px; }
+
+/* exhibits sit at column width here, not broken out */
+.res-body .exhibit { max-width: none; margin: 38px 0; }
+
+/* --- compact jump strip (replaces the boxed contents list) --- */
+.res-jump { margin: 28px 0 0; padding: 13px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px 15px; }
+.res-jump b { color: var(--ink-faint); font-weight: 400; }
+.res-jump a { color: var(--ink-soft); text-decoration: none; }
+.res-jump a:hover { color: var(--teal-deep); }
+
+/* --- half-width inline module, floated into the text --- */
+.inline-module { float: right; width: 330px; margin: 10px 0 26px 38px; padding: 22px 24px;
+  background: var(--surface-2); border-top: 2px solid var(--teal); }
+.inline-module__label { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-faint); margin-bottom: 10px; }
+.inline-module h4 { font-size: 16px; margin: 0 0 8px; }
+.inline-module p { font-size: 14.5px; line-height: 1.58; color: var(--ink-soft); margin: 10px 0 0; }
+.inline-module p:first-of-type { margin-top: 0; }
+@media (max-width: 860px) { .inline-module { float: none; width: auto; margin: 28px 0; } }
+
+/* =============================================================
    CASE STUDIES INDEX HUB  (case-studies.html)
    Scalable grid of case tiles, each linking to a detail page.
    ============================================================= */

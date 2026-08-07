@@ -61,10 +61,14 @@
 
   <main>
     <article>
-      <div class="container">
-        <header class="article">
-          <p class="res-meta">
-            <span class="res-meta__type">Research note</span>
+
+      <section class="res-hero">
+        <div class="res-hero__bg" style="background-image:url('assets/diesel.jpg')" role="presentation"></div>
+        <div class="res-hero__inner">
+          <p class="eyebrow">Sector study</p>
+          <h1>Most of the diesel is on wheels</h1>
+          <p class="res-hero__meta">
+            <span class="tag">Sector study</span>
             <span class="sep" aria-hidden="true"></span>
             <span>6 August 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -72,7 +76,20 @@
             <span class="sep" aria-hidden="true"></span>
             <span>Market sizing &middot; Mine energy &middot; Australia</span>
           </p>
-          <h1>Most of the diesel is on wheels</h1>
+        </div>
+      </section>
+
+      <div class="res-layout">
+        <aside class="res-rail">
+          <div class="res-rail__inner">
+            <a href="case-studies.html#sector-studies">&larr; All case studies</a>
+            <button type="button" data-copy-link>Copy link</button>
+            <button type="button" onclick="window.print()">Print</button>
+            <a href="index.html#contact">Discuss a question</a>
+          </div>
+        </aside>
+
+        <div class="res-main">
           <p class="standfirst">Australia burns 1,269.9 petajoules of diesel a year. Only about four per cent of it is burned to make electricity &mdash; a national ceiling of roughly 551 megawatts of average electrical output, mine sites and remote towns included. Take out the mines and what is left is 45 megawatts, all of it owned by state utilities. If you are sizing a diesel displacement market from the top down, that is the whole of it.</p>
 
           <div class="glance">
@@ -86,23 +103,18 @@
             </ol>
           </div>
 
-          <nav class="res-toc" aria-label="Contents">
-            <span class="res-toc__label">In this note</span>
-            <ol>
-              <li><a href="#s-why">Why size it top-down at all</a></li>
-              <li><a href="#s-cascade">Four steps and the market is gone</a></li>
-              <li><a href="#s-where">Where the other 96 per cent is</a></li>
-              <li><a href="#s-left">What is left after mining, line by line</a></li>
-              <li><a href="#s-390">The 390 megawatts that is not booked to mining</a></li>
-              <li><a href="#s-open">The one door that is not closed</a></li>
-              <li><a href="#s-implications">What this changes in a screen</a></li>
-            </ol>
+          <nav class="res-jump" aria-label="Contents">
+            <b>In this study</b>
+            <a href="#s-why">01 Why top-down</a>
+            <a href="#s-cascade">02 The cascade</a>
+            <a href="#s-where">03 The other 96%</a>
+            <a href="#s-left">04 What is left</a>
+            <a href="#s-390">05 The 390 MW</a>
+            <a href="#s-open">06 The open door</a>
+            <a href="#s-implications">07 Implications</a>
           </nav>
-        </header>
-      </div>
 
-      <div class="container">
-        <div class="article__body">
+          <div class="article__body res-body">
 
           <h2 id="s-why">Why size it top-down at all</h2>
 
@@ -244,6 +256,15 @@
 
           <p>It has a corollary worth stating plainly: if most mine power station diesel is booked elsewhere, then mining's own 299.6 PJ is almost entirely mobile plant. Haul trucks, dozers, drills, light vehicles. Which is exactly what the cascade above implies, arrived at independently.</p>
 
+          <aside class="inline-module">
+            <span class="inline-module__label">Related reading</span>
+            <h4>Grants pay for the first one, not the tenth</h4>
+            <p>The fuel tax credit arithmetic below is the same arithmetic that decides whether a
+            public funding case for a mine energy project holds up. Twenty of 23 Australian mine
+            microgrid and BESS projects on our register were built with no public money at all.</p>
+            <p><a href="mine-decarbonisation-funding-map-australia.html">Read the note &rarr;</a></p>
+          </aside>
+
           <h2 id="s-open">The one door that is not closed</h2>
 
           <p>Electrifying the haul fleet does not trim this market. It rewrites it.</p>
@@ -336,15 +357,13 @@
               <span class="provenance__v">Screening-level analysis. Not a sizing, connection, procurement or investment result, and not legal, financial or engineering advice. Figures should be independently verified before any commercial decision.</span>
             </div>
           </div>
+          </div>
 
+          <nav class="article-nav">
+            <a class="btn btn--outline" href="case-studies.html#sector-studies">&larr; All case studies</a>
+            <a class="btn btn--primary" href="index.html#contact">Discuss a sector question <span class="btn__arrow">&rarr;</span></a>
+          </nav>
         </div>
-      </div>
-
-      <div class="container">
-        <nav class="article-nav">
-          <a class="btn btn--outline" href="mine-decarbonisation-funding-map-australia.html">&larr; Previous note</a>
-          <a class="btn btn--primary" href="index.html#contact">Book a 20-minute project screen <span class="btn__arrow">&rarr;</span></a>
-        </nav>
       </div>
     </article>
   </main>
@@ -386,5 +405,17 @@
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('[data-copy-link]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (!navigator.clipboard) return;
+        var t = b.textContent;
+        navigator.clipboard.writeText(location.href).then(function () {
+          b.textContent = 'Link copied';
+          setTimeout(function () { b.textContent = t; }, 1800);
+        }, function () {});
+      });
+    });
+  </script>
 </body>
 </html>
