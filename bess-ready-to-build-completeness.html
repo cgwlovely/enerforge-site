@@ -18,17 +18,46 @@
         <a href="index.html#about">About</a>
         <a href="index.html#contact" class="nav__cta">Book a 20-min screen</a>
       </nav></div></header>
-  <main><article>
-    <div class="container"><header class="article"><p class="res-meta">
-            <span class="res-meta__type">Perspective</span>
+  <main>
+    <article>
+
+      <section class="res-hero res-hero--plain">
+        <div class="res-hero__inner">
+          <p class="eyebrow">Perspective</p>
+          <h1>Ready-to-build is not a stage. It is the absence of critical gaps.</h1>
+          <p class="res-hero__meta">
+            <span class="tag">Perspective</span>
             <span class="sep" aria-hidden="true"></span>
             <span>2 July 2026</span>
             <span class="sep" aria-hidden="true"></span>
             <span>3-minute read</span>
             <span class="sep" aria-hidden="true"></span>
             <span>No. 10</span>
-          </p><h1>Ready-to-build is not a stage. It is the absence of critical gaps.</h1><p class="standfirst">A battery project can look 90% complete and still be worth very little if the remaining 10% contains a cable easement, incompatible consent or connection condition that cannot be satisfied.</p></header></div>
-    <div class="container"><div class="article__body">
+          </p>
+        </div>
+      </section>
+
+      <div class="res-layout">
+        <aside class="res-rail">
+          <div class="res-rail__inner">
+            <a href="notes.html">&larr; All notes</a>
+            <button type="button" data-copy-link>Copy link</button>
+            <button type="button" onclick="window.print()">Print</button>
+            <a href="index.html#contact">Discuss a question</a>
+          </div>
+        </aside>
+
+        <div class="res-main">
+          <p class="standfirst">A battery project can look 90% complete and still be worth very little if the remaining 10% contains a cable easement, incompatible consent or connection condition that cannot be satisfied.</p>
+
+          <nav class="res-jump" aria-label="Contents">
+            <b>In this note</b>
+            <a href="#s-the-developer-sells-completi">01 The developer sells completion&hellip;</a>
+            <a href="#s-queue-position-is-valuable-b">02 Queue position is valuable, but&hellip;</a>
+            <a href="#s-a-four-layer-rtb-review">03 A four-layer RTB review</a>
+          </nav>
+
+          <div class="article__body res-body">
       <div class="glance">
             <span class="glance__label">At a glance</span><ol>
         <li>Development value rises non-linearly as a project approaches complete, transferable and financeable rights.</li>
@@ -37,7 +66,7 @@
         <li>RTB diligence should test fatal flaws, rights, interfaces and delivery realism in one evidence structure.</li>
       </ol></div>
 
-      <h2>The developer sells completion probability</h2>
+      <h2 id="s-the-developer-sells-completi">The developer sells completion probability</h2>
       <div class="process-map" role="img" aria-label="Four layers of BESS ready-to-build completeness">
         <p class="process-map__title">RTB completeness test</p><div class="map-grid">
           <div class="process-node is-warn"><strong>1. Fatal flaws</strong><small>Nothing capable of stopping the project</small></div>
@@ -50,11 +79,11 @@
       <p>The development premium compensates the seller for removing years of work and reducing the probability of a zero outcome. That value can still contract quickly when market revenues weaken or capital reprices, because RTB value reflects both risk removal and the value of the asset that can be built.</p>
       <div class="pull">A project is not ready because most tasks are complete. It is ready when every critical dependency can be relied upon by the next owner and its funders.</div>
 
-      <h2>Queue position is valuable, but time cannot defeat physics</h2>
+      <h2 id="s-queue-position-is-valuable-b">Queue position is valuable, but time cannot defeat physics</h2>
       <p>An early connection position, local land relationships and network knowledge can be difficult to reproduce. Capital and suppliers can arrive later; elapsed development time cannot be purchased retrospectively.</p>
       <p>But an earlier grid date is useful only if the physical delivery chain can meet it. Transformer lead time, network work windows, planning discharge, procurement and construction must all fit on the same critical path. Moving a 2030 date to 2028 may create value; claiming 2026 without a delivery basis does not.</p>
 
-      <h2>A four-layer RTB review</h2>
+      <h2 id="s-a-four-layer-rtb-review">A four-layer RTB review</h2>
       <ol style="line-height:1.9;">
         <li><strong>Fatal flaws:</strong> prohibited use, unobtainable land or cable rights, unacceptable fire separation or unaffordable network work.</li>
         <li><strong>Rights completeness:</strong> every right is continuous, long enough, transferable and capable of supporting finance and decommissioning obligations.</li>
@@ -76,8 +105,12 @@
             </div>
           </div>
         </div></div>
-    <div class="container"><nav class="article-nav"><a class="btn btn--outline" href="bess-forecast-is-not-cashflow.html">&larr; Previous note</a><a class="btn btn--primary" href="index.html#contact">Book a 20-minute project screen <span class="btn__arrow">&rarr;</span></a></nav></div>
-  </article></main>
+    <nav class="article-nav">
+            <a class="btn btn--outline" href="notes.html">&larr; All notes</a>
+            <a class="btn btn--primary" href="index.html#contact">Discuss a question <span class="btn__arrow">&rarr;</span></a>
+          </nav>
+      </div>
+</article></main>
   <footer class="footer"><div class="container"><p class="footer__note">
             Heliovulcan is an independent industrial intelligence practice. It reconstructs
             Australian industrial assets and energy projects from public records and agreed inputs
@@ -93,5 +126,17 @@
         be independently verified before any commercial, financing or construction decision.
         &copy; 2026 Heliovulcan Energy Advisors.
       </p></div></footer>
+  <script>
+    document.querySelectorAll('[data-copy-link]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (!navigator.clipboard) return;
+        var t = b.textContent;
+        navigator.clipboard.writeText(location.href).then(function () {
+          b.textContent = 'Link copied';
+          setTimeout(function () { b.textContent = t; }, 1800);
+        }, function () {});
+      });
+    });
+  </script>
 </body>
 </html>
