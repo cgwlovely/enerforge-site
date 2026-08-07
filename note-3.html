@@ -38,10 +38,13 @@
 
   <main>
     <article>
-      <div class="container">
-        <header class="article">
-          <p class="res-meta">
-            <span class="res-meta__type">Perspective</span>
+
+      <section class="res-hero res-hero--plain">
+        <div class="res-hero__inner">
+          <p class="eyebrow">Perspective</p>
+          <h1>Weak-grid mines do not buy cheap energy</h1>
+          <p class="res-hero__meta">
+            <span class="tag">Perspective</span>
             <span class="sep" aria-hidden="true"></span>
             <span>26 June 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -49,13 +52,32 @@
             <span class="sep" aria-hidden="true"></span>
             <span>No. 03</span>
           </p>
-          <h1>Weak-grid mines do not buy cheap energy</h1>
-          <p class="standfirst">A remote mine is not shopping for cheaper electrons. It is buying operational continuity &mdash; and on those sites diesel is not a fuel line item but the thing that guarantees the plant keeps running. That changes the first PV+BESS question entirely.</p>
-        </header>
-      </div>
+        </div>
+      </section>
 
-      <div class="container">
-        <div class="article__body">
+      <div class="res-layout">
+        <aside class="res-rail">
+          <div class="res-rail__inner">
+            <a href="notes.html">&larr; All notes</a>
+            <button type="button" data-copy-link>Copy link</button>
+            <button type="button" onclick="window.print()">Print</button>
+            <a href="index.html#contact">Discuss a question</a>
+          </div>
+        </aside>
+
+        <div class="res-main">
+          <p class="standfirst">A remote mine is not shopping for cheaper electrons. It is buying operational continuity &mdash; and on those sites diesel is not a fuel line item but the thing that guarantees the plant keeps running. That changes the first PV+BESS question entirely.</p>
+
+          <nav class="res-jump" aria-label="Contents">
+            <b>In this note</b>
+            <a href="#s-why-this-matters">01 Why this matters</a>
+            <a href="#s-diesel-is-not-a-fuel-line-it">02 Diesel is not a fuel line item&hellip;</a>
+            <a href="#s-do-not-size-against-the-rare">03 Do not size against the rare peak</a>
+            <a href="#s-reliability-requirements-are">04 Reliability requirements are&hellip;</a>
+            <a href="#s-the-pre-dd-takeaway">05 The Pre-DD takeaway</a>
+          </nav>
+
+          <div class="article__body res-body">
 
           <div class="glance">
             <span class="glance__label">At a glance</span>
@@ -68,13 +90,13 @@
             </ol>
           </div>
 
-          <h2>Why this matters</h2>
+          <h2 id="s-why-this-matters">Why this matters</h2>
 
           <p>If you screen a mine-site project the way you would screen a commercial rooftop &mdash; annual energy times a tariff, minus the cost of the system &mdash; you will get a number, and it will be misleading. A grid-connected office building treats power as a cost to minimise. A remote mine treats power as the precondition for everything the site earns. When the plant stops, the loss is measured in lost production per hour, not cents per kWh. That single difference reorders the whole problem.</p>
 
           <p>It is also where I see the most avoidable early-stage mistakes: elegant &ldquo;100% renewable&rdquo; concepts that quietly assume away the very thing the site is paying diesel to guarantee. A screen that respects operational continuity looks different from the first line.</p>
 
-          <h2>Diesel is not a fuel line item &mdash; it is five roles at once</h2>
+          <h2 id="s-diesel-is-not-a-fuel-line-it">Diesel is not a fuel line item &mdash; it is five roles at once</h2>
 
           <p>Diesel generation at a remote mine is doing several jobs simultaneously, and a model that sees only the first one will mis-size everything downstream:</p>
 
@@ -90,7 +112,7 @@
 
           <div class="pull"><span class="hl">The practical question is not how to remove diesel. It is which part of the load can be served reliably and economically by solar and storage, while diesel stays available for peaks and contingencies.</span></div>
 
-          <h2>Do not size against the rare peak</h2>
+          <h2 id="s-do-not-size-against-the-rare">Do not size against the rare peak</h2>
 
           <p>Mines and heavy industrial sites often run peak loads several times their average, driven by intermittent high-draw equipment. Size a PV+BESS system to meet those rare peaks and capital cost escalates while utilisation falls &mdash; the economics collapse before a contract is even drafted. The better move is to size to the <strong>sustained, predictable load</strong>: average demand, night load, baseload consumption. Diesel keeps the peaks. The BESS is not asked to be the sole source of reliability &mdash; it is asked to displace a meaningful, contractable share of diesel <em>energy</em>, and to do it every day.</p>
 
@@ -98,7 +120,7 @@
 
           <div class="pull"><span class="hl">Which load slice can be served repeatedly, reliably and contractually?</span></div>
 
-          <h2>Reliability requirements are cost and debt drivers</h2>
+          <h2 id="s-reliability-requirements-are">Reliability requirements are cost and debt drivers</h2>
 
           <p>Once you accept that the system has to protect continuity, the reliability specification stops being a technical detail and starts driving the commercials. What the mine cannot afford to lose &mdash; and for how long &mdash; flows straight into:</p>
 
@@ -112,7 +134,7 @@
 
           <p>The technical question and the financing question are inseparable. A system can solve a reliability problem beautifully and still produce a debt case that does not close, because the reliability spec pushed CAPEX past what the contractable diesel saving can service. Sizing must be driven by what the commercial structure can support &mdash; not by the maximum renewable share the engineers can reach.</p>
 
-          <h2>The Pre-DD takeaway</h2>
+          <h2 id="s-the-pre-dd-takeaway">The Pre-DD takeaway</h2>
 
           <div class="insight">This note sits mainly in <strong>F3 &mdash; Microgrid / Connection Boundary</strong>: defining the load slice that can actually be served sets the boundary the whole commercial case lives inside. It feeds straight into <strong>F4 Financeability Readiness</strong> &mdash; where that diesel saving has to become a contracted cashflow (see <a href="note-1.html">customer savings are not project revenue</a>). For how F3 fits the wider screen, see <a href="note-2.html">A Pre-DD screen is not a feasibility study</a>. The first stage of mine-site decarbonisation is usually not &ldquo;remove diesel&rdquo; &mdash; it is to identify the part of diesel exposure that can be replaced without weakening operational continuity.</div>
 
@@ -132,12 +154,12 @@
 </div>
       </div>
 
-      <div class="container">
-        <nav class="article-nav">
-          <a class="btn btn--outline" href="note-2.html">&larr; Previous note</a>
-          <a class="btn btn--primary" href="australian-battery-financing-capital-constraint.html">Next note <span class="btn__arrow">&rarr;</span></a>
-        </nav>
-      </div>
+      <nav class="article-nav">
+            <a class="btn btn--outline" href="notes.html">&larr; All notes</a>
+            <a class="btn btn--primary" href="index.html#contact">Discuss a question <span class="btn__arrow">&rarr;</span></a>
+          </nav>
+        </div>
+      
     </article>
   </main>
 
@@ -178,5 +200,17 @@
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('[data-copy-link]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (!navigator.clipboard) return;
+        var t = b.textContent;
+        navigator.clipboard.writeText(location.href).then(function () {
+          b.textContent = 'Link copied';
+          setTimeout(function () { b.textContent = t; }, 1800);
+        }, function () {});
+      });
+    });
+  </script>
 </body>
 </html>

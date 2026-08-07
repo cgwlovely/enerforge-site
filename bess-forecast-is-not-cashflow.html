@@ -18,17 +18,47 @@
         <a href="index.html#about">About</a>
         <a href="index.html#contact" class="nav__cta">Book a 20-min screen</a>
       </nav></div></header>
-  <main><article>
-    <div class="container"><header class="article"><p class="res-meta">
-            <span class="res-meta__type">Perspective</span>
+  <main>
+    <article>
+
+      <section class="res-hero res-hero--plain">
+        <div class="res-hero__inner">
+          <p class="eyebrow">Perspective</p>
+          <h1>A BESS revenue forecast is not cashflow</h1>
+          <p class="res-hero__meta">
+            <span class="tag">Perspective</span>
             <span class="sep" aria-hidden="true"></span>
             <span>2 July 2026</span>
             <span class="sep" aria-hidden="true"></span>
             <span>3-minute read</span>
             <span class="sep" aria-hidden="true"></span>
             <span>No. 09</span>
-          </p><h1>A BESS revenue forecast is not cashflow</h1><p class="standfirst">A central forecast is closer to an architect&rsquo;s drawing than a completed building. It describes what may happen under a set of assumptions. It does not guarantee the timing, volatility or availability of cash needed to service debt.</p></header></div>
-    <div class="container"><div class="article__body">
+          </p>
+        </div>
+      </section>
+
+      <div class="res-layout">
+        <aside class="res-rail">
+          <div class="res-rail__inner">
+            <a href="notes.html">&larr; All notes</a>
+            <button type="button" data-copy-link>Copy link</button>
+            <button type="button" onclick="window.print()">Print</button>
+            <a href="index.html#contact">Discuss a question</a>
+          </div>
+        </aside>
+
+        <div class="res-main">
+          <p class="standfirst">A central forecast is closer to an architect&rsquo;s drawing than a completed building. It describes what may happen under a set of assumptions. It does not guarantee the timing, volatility or availability of cash needed to service debt.</p>
+
+          <nav class="res-jump" aria-label="Contents">
+            <b>In this note</b>
+            <a href="#s-duration-can-be-insurance-ag">01 Duration can be insurance&hellip;</a>
+            <a href="#s-revenue-stacks-share-one-phy">02 Revenue stacks share one&hellip;</a>
+            <a href="#s-uncertainty-can-remove-debt-">03 Uncertainty can remove debt&hellip;</a>
+            <a href="#s-a-three-layer-bess-finance-m">04 A three-layer BESS finance model</a>
+          </nav>
+
+          <div class="article__body res-body">
       <div class="glance">
             <span class="glance__label">At a glance</span><ol>
         <li>Median merchant revenue should not be treated as contracted project cashflow.</li>
@@ -37,7 +67,7 @@
         <li>Known bad rules can often be priced; undefined future rules can prevent credible debt sizing altogether.</li>
       </ol></div>
 
-      <h2>Duration can be insurance against being wrong</h2>
+      <h2 id="s-duration-can-be-insurance-ag">Duration can be insurance against being wrong</h2>
       <div class="process-map" role="img" aria-label="Path from BESS market forecast to financeable debt capacity">
         <p class="process-map__title">Forecast-to-financeability bridge</p><div class="process-flow">
           <div class="process-node"><strong>Market forecast</strong><small>Prices and services</small></div><div class="process-arrow">&rarr;</div>
@@ -51,7 +81,7 @@
       <p>Additional duration may lower the central-case IRR while expanding the set of markets the battery can enter and reducing dependence on one service. The investment decision should therefore compare more than the expected return. It should test capital survival under service saturation, spread compression and dispatch error.</p>
       <div class="pull">Battery duration is not only additional MWh. It can be an insurance premium against getting the future market structure wrong.</div>
 
-      <h2>Revenue stacks share one physical battery</h2>
+      <h2 id="s-revenue-stacks-share-one-phy">Revenue stacks share one physical battery</h2>
       <p>Arbitrage, FCAS, capacity and balancing are often presented as separate columns. In operation, the battery buys and sells across markets while constrained by the same state of charge, availability, efficiency, degradation and connection capacity. Charging may appear as negative revenue in one market before enabling a profitable discharge elsewhere.</p>
       <p>A financeable model therefore needs a single physical ledger:</p>
       <ul>
@@ -63,11 +93,11 @@
       </ul>
       <p>The relevant metric is the net contribution per cycle and per MW, not a label assigning each electron to a revenue stream.</p>
 
-      <h2>Uncertainty can remove debt capacity</h2>
+      <h2 id="s-uncertainty-can-remove-debt-">Uncertainty can remove debt capacity</h2>
       <p>An explicit but unfavourable network charge can be modelled, haircut and priced. A material charging rule that remains undefined after 2029 is harder: it may prevent lenders from forming a credible downside case. The same logic applies to connection constraints, marginal loss factors and market redesign.</p>
       <p>A generic &plusmn;10% regulatory sensitivity is not enough when a rule change can alter whether the asset may participate, when it can energise or which network charges it must carry.</p>
 
-      <h2>A three-layer BESS finance model</h2>
+      <h2 id="s-a-three-layer-bess-finance-m">A three-layer BESS finance model</h2>
       <ol style="line-height:1.9;">
         <li><strong>Debt foundation:</strong> repeatable or contracted revenue with transparent lender haircuts.</li>
         <li><strong>Operating scenarios:</strong> service saturation, spread compression, availability, degradation, delay and optimiser underperformance.</li>
@@ -88,8 +118,12 @@
             </div>
           </div>
         </div></div>
-    <div class="container"><nav class="article-nav"><a class="btn btn--outline" href="bess-development-queue-to-construction.html">&larr; Previous note</a><a class="btn btn--primary" href="index.html#contact">Book a 20-minute project screen <span class="btn__arrow">&rarr;</span></a></nav></div>
-  </article></main>
+    <nav class="article-nav">
+            <a class="btn btn--outline" href="notes.html">&larr; All notes</a>
+            <a class="btn btn--primary" href="index.html#contact">Discuss a question <span class="btn__arrow">&rarr;</span></a>
+          </nav>
+      </div>
+</article></main>
   <footer class="footer"><div class="container"><p class="footer__note">
             Heliovulcan is an independent industrial intelligence practice. It reconstructs
             Australian industrial assets and energy projects from public records and agreed inputs
@@ -105,5 +139,17 @@
         be independently verified before any commercial, financing or construction decision.
         &copy; 2026 Heliovulcan Energy Advisors.
       </p></div></footer>
+  <script>
+    document.querySelectorAll('[data-copy-link]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (!navigator.clipboard) return;
+        var t = b.textContent;
+        navigator.clipboard.writeText(location.href).then(function () {
+          b.textContent = 'Link copied';
+          setTimeout(function () { b.textContent = t; }, 1800);
+        }, function () {});
+      });
+    });
+  </script>
 </body>
 </html>

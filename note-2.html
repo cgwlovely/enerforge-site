@@ -38,10 +38,13 @@
 
   <main>
     <article>
-      <div class="container">
-        <header class="article">
-          <p class="res-meta">
-            <span class="res-meta__type">Perspective</span>
+
+      <section class="res-hero res-hero--plain">
+        <div class="res-hero__inner">
+          <p class="eyebrow">Perspective</p>
+          <h1>A Pre-DD screen is not a feasibility study</h1>
+          <p class="res-hero__meta">
+            <span class="tag">Perspective</span>
             <span class="sep" aria-hidden="true"></span>
             <span>19 June 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -49,13 +52,33 @@
             <span class="sep" aria-hidden="true"></span>
             <span>No. 02</span>
           </p>
-          <h1>A Pre-DD screen is not a feasibility study</h1>
-          <p class="standfirst">A feasibility study tries to prove a project works. A Pre-DD screen does the opposite job: it goes looking for where the project breaks &mdash; in approvals, on the ground, at the connection, or in the cashflow &mdash; while the answer is still cheap to act on. This note sets out how the F1&ndash;F4 workflow does that.</p>
-        </header>
-      </div>
+        </div>
+      </section>
 
-      <div class="container">
-        <div class="article__body">
+      <div class="res-layout">
+        <aside class="res-rail">
+          <div class="res-rail__inner">
+            <a href="notes.html">&larr; All notes</a>
+            <button type="button" data-copy-link>Copy link</button>
+            <button type="button" onclick="window.print()">Print</button>
+            <a href="index.html#contact">Discuss a question</a>
+          </div>
+        </aside>
+
+        <div class="res-main">
+          <p class="standfirst">A feasibility study tries to prove a project works. A Pre-DD screen does the opposite job: it goes looking for where the project breaks &mdash; in approvals, on the ground, at the connection, or in the cashflow &mdash; while the answer is still cheap to act on. This note sets out how the F1&ndash;F4 workflow does that.</p>
+
+          <nav class="res-jump" aria-label="Contents">
+            <b>In this note</b>
+            <a href="#s-why-this-matters">01 Why this matters</a>
+            <a href="#s-the-useful-output-is-a-decis">02 The useful output is a&hellip;</a>
+            <a href="#s-an-industrial-pv-bess-projec">03 An industrial PV+BESS project&hellip;</a>
+            <a href="#s-f1-f4-a-practical-screen">04 F1&ndash;F4: a practical screen</a>
+            <a href="#s-the-five-questions-inside-th">05 The five questions inside the&hellip;</a>
+            <a href="#s-the-pre-dd-takeaway">06 The Pre-DD takeaway</a>
+          </nav>
+
+          <div class="article__body res-body">
 
           <div class="glance">
             <span class="glance__label">At a glance</span>
@@ -68,13 +91,13 @@
             </ol>
           </div>
 
-          <h2>Why this matters</h2>
+          <h2 id="s-why-this-matters">Why this matters</h2>
 
           <p>Most early industrial energy conversations start with hardware &mdash; array size, battery duration, inverter choice, container layout &mdash; and end with an IRR. The problem is that a feasibility-study mindset arrives too early. It spends effort proving a chosen design works, before anyone has checked whether the project can be approved, sited, connected and financed at all. By the time those questions surface, real money has been committed to the wrong version of the project.</p>
 
           <p>A Pre-DD screen is deliberately cheaper and more sceptical. Its job at this stage is not to produce a bankable model &mdash; it is to find, from public information, where this specific project is most likely to break, and whether that break can still be designed around. That is a different instrument for a different moment.</p>
 
-          <h2>The useful output is a decision, not a number</h2>
+          <h2 id="s-the-useful-output-is-a-decis">The useful output is a decision, not a number</h2>
 
           <p>Early-stage data is soft by nature: load is approximate, diesel prices move, EPC costs are indicative, customer credit is unverified, debt terms are unnegotiated. A screen that pretends otherwise &mdash; that hands over a precise IRR to three decimal places &mdash; is selling false confidence. The honest output is a decision the project owner can act on:</p>
 
@@ -82,7 +105,7 @@
 
           <p>Each of those is a good outcome if it is reached early. &ldquo;Stop&rdquo; on a public-data screen costs a few weeks. &ldquo;Stop&rdquo; after EPC quotation, legal structuring and investor engagement costs a great deal more.</p>
 
-          <h2>An industrial PV+BESS project is not an energy model</h2>
+          <h2 id="s-an-industrial-pv-bess-projec">An industrial PV+BESS project is not an energy model</h2>
 
           <p>A spreadsheet can make almost any project look attractive if it is allowed to assume the hard parts away. The hard parts are rarely the energy balance. They are:</p>
 
@@ -94,7 +117,7 @@
             <li><strong>Financeability</strong> &mdash; does the resulting cashflow support debt on terms a lender will accept?</li>
           </ul>
 
-          <h2>F1&ndash;F4: a practical screen</h2>
+          <h2 id="s-f1-f4-a-practical-screen">F1&ndash;F4: a practical screen</h2>
 
           <p>The four screens map onto exactly those break points. They are run together, not in strict sequence &mdash; but each asks one clear question.</p>
 
@@ -110,7 +133,7 @@
           <h3>F4 &middot; Financeability Readiness</h3>
           <p>Which cashflow can be contracted, invoiced and underwritten? This is where customer savings and project revenue get separated &mdash; the subject of <a href="note-1.html">the first mistake in BTM BESS feasibility</a>.</p>
 
-          <h2>The five questions inside the screen</h2>
+          <h2 id="s-the-five-questions-inside-th">The five questions inside the screen</h2>
 
           <p>Underneath F1&ndash;F4 sit five working questions I keep returning to. They are not a checklist to tick in order &mdash; they interact, and most projects fail at a boundary between two of them:</p>
 
@@ -126,7 +149,7 @@
 
           <div class="pull">The model should not only ask: what is the IRR? It should ask: <span class="hl">what contract produces that IRR, and would anyone lend against it?</span></div>
 
-          <h2>The Pre-DD takeaway</h2>
+          <h2 id="s-the-pre-dd-takeaway">The Pre-DD takeaway</h2>
 
           <div class="insight">This note is the spine of the series: it maps the whole <strong>F1&ndash;F4 Pre-DD workflow</strong> &mdash; Approval Delta, Site Suitability, Microgrid / Connection Boundary and Financeability Readiness. The other notes go deep on individual screens; this one is the frame they hang from. A good screen does not pretend to remove uncertainty &mdash; it makes uncertainty visible early enough that the project can still be reshaped.</div>
 
@@ -146,12 +169,12 @@
 </div>
       </div>
 
-      <div class="container">
-        <nav class="article-nav">
-          <a class="btn btn--outline" href="note-1.html">&larr; Previous note</a>
-          <a class="btn btn--primary" href="note-3.html">Next note <span class="btn__arrow">&rarr;</span></a>
-        </nav>
-      </div>
+      <nav class="article-nav">
+            <a class="btn btn--outline" href="notes.html">&larr; All notes</a>
+            <a class="btn btn--primary" href="index.html#contact">Discuss a question <span class="btn__arrow">&rarr;</span></a>
+          </nav>
+        </div>
+      
     </article>
   </main>
 
@@ -192,5 +215,17 @@
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('[data-copy-link]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (!navigator.clipboard) return;
+        var t = b.textContent;
+        navigator.clipboard.writeText(location.href).then(function () {
+          b.textContent = 'Link copied';
+          setTimeout(function () { b.textContent = t; }, 1800);
+        }, function () {});
+      });
+    });
+  </script>
 </body>
 </html>
