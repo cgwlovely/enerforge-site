@@ -329,6 +329,13 @@ a.note-card .note-status.is-drafting { color: var(--teal-deep); }
 .provenance__v { font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
 @media (max-width: 600px) { .provenance__row { grid-template-columns: 1fr; } }
 
+/* case-study groups: project screens vs sector studies */
+.case-group + .case-group { margin-top: 54px; padding-top: 44px; border-top: 2px solid var(--ink); }
+.case-group__title { font-size: clamp(21px, 2.6vw, 27px); letter-spacing: -0.015em; margin: 6px 0 0; }
+.case-group .section-intro { margin-top: 12px; }
+.case-group .case-index { margin-top: 26px; }
+.map-wrap { margin-top: 34px; }
+
 /* =============================================================
    CASE STUDIES INDEX HUB  (case-studies.html)
    Scalable grid of case tiles, each linking to a detail page.
