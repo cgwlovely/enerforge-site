@@ -147,8 +147,12 @@ leaving the name in a URL or a JSON payload would have been theatre.
 |---|---|
 | `context_map.html`, `siting_opportunity_constraint_screen.html` | Kept in the repo as internal GIS capability. Unlinked everywhere, `noindex`, `robots.txt` disallow, absent from the sitemap. |
 | Both named-asset PDF reports | Kept in the repo. All download links and labels removed; available on request. |
-| `assets/fountainhead-zones-map.png` | Already unreferenced; now robots-disallowed. |
+| `assets/predd-siting-zones-map.png` | Already unreferenced; renamed off the asset name and robots-disallowed. |
 | The map pin on the case index | Now hollow and deliberately imprecise — region, not site. |
+
+`robots.txt` is itself a public file, so it uses patterns (`/reports/*.pdf`) rather than
+filenames — spelling the asset name there would leak exactly what the pages withhold. The PDFs
+keep their original filenames: they are unlinked, not withdrawn from the repository.
 
 `robots.txt` disallow is a crawling signal, **not access control**. These files are still
 fetchable by direct URL because GitHub Pages serves everything in the repo. If they need to be

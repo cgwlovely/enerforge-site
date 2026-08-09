@@ -4,15 +4,16 @@
 User-agent: *
 Allow: /
 
-# Internal analytical artefacts. These are retained in the repository as a
-# capability, not published as part of the site: detailed site-specific GIS
-# outputs and the named-asset PDF reports behind the anonymised Pre-DD case.
-# They are unlinked from every page and excluded from the sitemap. Disallow is
-# a crawling signal, not an access control — see IA-NOTES.md.
+# Internal analytical artefacts. Retained in the repository as a capability but
+# not published as part of the site: detailed site-specific GIS outputs, and the
+# PDF reports behind the anonymised Pre-DD case, which name the asset in their
+# contents. They are unlinked from every page and excluded from the sitemap.
+# Patterns rather than filenames, so this file does not itself disclose what the
+# anonymised case pages deliberately do not.
+# Disallow is a crawling signal, not access control — see IA-NOTES.md.
 Disallow: /context_map.html
 Disallow: /siting_opportunity_constraint_screen.html
-Disallow: /assets/fountainhead-zones-map.png
-Disallow: /reports/Fountain_Head_PreDD_Enhanced_Public_EN_v4.pdf
-Disallow: /reports/Fountain_Head_Hybrid_Energy_Financeability_Report.pdf
+Disallow: /assets/predd-siting-zones-map.png
+Disallow: /reports/*.pdf
 
 Sitemap: https://heliovulcan.com.au/sitemap.xml

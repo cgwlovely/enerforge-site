@@ -1,6 +1,6 @@
 {
   "status": "moved",
-  "reason": "This project entity is now published anonymised. The identifier 'fountain-head' named a third-party asset that was never involved in the analysis; it has been replaced by 'remote-mining-asset'.",
+  "reason": "This project entity is now published anonymised. The screen was built from public records without the asset owner's involvement, so it is no longer published under an identifier derived from the asset.",
   "moved_to": "https://heliovulcan.com.au/api/v1/projects/remote-mining-asset.json",
   "resource": "project entity",
   "deprecated_at": "2026-08-09",
