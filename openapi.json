@@ -9,11 +9,11 @@
   },
   "servers": [{ "url": "https://heliovulcan.com.au" }],
   "paths": {
-    "/api/v1/projects/fountain-head.json": {
+    "/api/v1/projects/remote-mining-asset.json": {
       "get": {
-        "operationId": "getFountainHeadProject",
-        "summary": "Fountain Head project entity",
-        "description": "Identity, location, technology, data coverage, registry stats and related links for project_fountain_head.",
+        "operationId": "getRemoteMiningAssetProject",
+        "summary": "Remote Mining Asset project entity",
+        "description": "Identity, location, technology, data coverage, registry stats and related links for project_remote_mining_asset.",
         "responses": {
           "200": {
             "description": "Project entity record.",
@@ -23,19 +23,19 @@
                 "examples": {
                   "default": {
                     "value": {
-                      "id": "project_fountain_head",
-                      "canonical_url": "https://heliovulcan.com.au/projects/fountain-head/",
-                      "name": "Fountain Head Hybrid Energy",
+                      "id": "project_remote_mining_asset",
+                      "canonical_url": "https://heliovulcan.com.au/projects/remote-mining-asset/",
+                      "name": "Remote Mining Asset — Hybrid Energy Pre-DD",
                       "entity_type": "hybrid_energy_project_screen",
-                      "location": { "country": "Australia", "state_or_territory": "Northern Territory", "locality": "Fountain Head / Pine Creek" },
+                      "location": { "country": "Australia", "state_or_territory": "Northern Territory", "locality": "not disclosed" },
                       "technology": ["solar_pv", "battery_energy_storage", "diesel_generation"],
                       "version": "1.0",
                       "updated_at": "2026-07-23",
                       "stats": { "claims_total": 14, "public_sources": 4, "analyst_assumptions": 1, "owner_confirmation_required": 1 },
                       "api": {
-                        "self": "https://heliovulcan.com.au/api/v1/projects/fountain-head.json",
-                        "claims_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/claims.json",
-                        "evidence_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/evidence.json"
+                        "self": "https://heliovulcan.com.au/api/v1/projects/remote-mining-asset.json",
+                        "claims_url": "https://heliovulcan.com.au/api/v1/projects/remote-mining-asset/claims.json",
+                        "evidence_url": "https://heliovulcan.com.au/api/v1/projects/remote-mining-asset/evidence.json"
                       }
                     }
                   }
@@ -47,10 +47,10 @@
         }
       }
     },
-    "/api/v1/projects/fountain-head/claims.json": {
+    "/api/v1/projects/remote-mining-asset/claims.json": {
       "get": {
-        "operationId": "getFountainHeadClaims",
-        "summary": "Fountain Head claim registry",
+        "operationId": "getRemoteMiningAssetClaims",
+        "summary": "Remote Mining Asset claim registry",
         "description": "All published claims with stable IDs, claim type, confidence, method, evidence references, last-verified dates and limitations.",
         "responses": {
           "200": {
@@ -61,8 +61,8 @@
                 "examples": {
                   "default": {
                     "value": {
-                      "project_id": "project_fountain_head",
-                      "canonical_url": "https://heliovulcan.com.au/projects/fountain-head/",
+                      "project_id": "project_remote_mining_asset",
+                      "canonical_url": "https://heliovulcan.com.au/projects/remote-mining-asset/",
                       "methodology_url": "https://heliovulcan.com.au/methods/pre-dd-f1-f4/",
                       "version": "1.0",
                       "updated_at": "2026-07-23",
@@ -70,7 +70,7 @@
                       "claims": [
                         {
                           "claim_id": "FH-LOAD-001",
-                          "statement": "Indicative annual electricity demand for the Fountain Head operation is approximately 30 GWh per year.",
+                          "statement": "Indicative annual electricity demand for the operation is approximately 30 GWh per year.",
                           "value": 30,
                           "unit": "GWh/year",
                           "claim_type": "derived",
@@ -91,10 +91,10 @@
         }
       }
     },
-    "/api/v1/projects/fountain-head/evidence.json": {
+    "/api/v1/projects/remote-mining-asset/evidence.json": {
       "get": {
-        "operationId": "getFountainHeadEvidence",
-        "summary": "Fountain Head evidence registry",
+        "operationId": "getRemoteMiningAssetEvidence",
+        "summary": "Remote Mining Asset evidence registry",
         "description": "All evidence objects with publisher, source URL, document and access dates, supported claims, evidence type and quality. A null source_url always co-occurs with status 'unresolved'.",
         "responses": {
           "200": {
@@ -105,8 +105,8 @@
                 "examples": {
                   "default": {
                     "value": {
-                      "project_id": "project_fountain_head",
-                      "canonical_url": "https://heliovulcan.com.au/projects/fountain-head/",
+                      "project_id": "project_remote_mining_asset",
+                      "canonical_url": "https://heliovulcan.com.au/projects/remote-mining-asset/",
                       "methodology_url": "https://heliovulcan.com.au/methods/pre-dd-f1-f4/",
                       "version": "1.0",
                       "updated_at": "2026-07-23",
@@ -114,9 +114,9 @@
                       "evidence": [
                         {
                           "evidence_id": "EVID-FH-EIS-MAIN-01",
-                          "source_title": "Fountain Head Gold Project — Draft Environmental Impact Statement, Main Report",
-                          "publisher": "PNX Metals Limited (published via NT EPA assessment register)",
-                          "source_url": "https://ntepa.nt.gov.au/_resources/documents/eia/pnx-metals-limited/draft-environmental-impact-statement-eis/main-report.pdf",
+                          "source_title": "Draft Environmental Impact Statement, main report — Northern Territory gold project",
+                          "publisher": "Project proponent (published via the NT EPA assessment register)",
+                          "source_url": "https://ntepa.nt.gov.au/your-business/public-registers/environmental-impact-assessments-register",
                           "document_date": "2021-05",
                           "accessed_at": "2026-07-23",
                           "supports_claims": ["FH-LOAD-001", "FH-LOAD-002", "FH-FUEL-001"],

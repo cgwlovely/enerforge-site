@@ -1,0 +1,66 @@
+{
+  "id": "project_remote_mining_asset",
+  "canonical_url": "https://heliovulcan.com.au/projects/remote-mining-asset/",
+  "name": "Remote Mining Asset — Hybrid Energy Pre-DD",
+  "entity_type": "hybrid_energy_project_screen",
+  "description": "Public-information desktop Pre-DD screen of a diesel-PV-BESS hybrid microgrid opportunity at a publicly documented Northern Territory gold mining project. Covers F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 financeability readiness. Published as a demonstration of the method, not as a promotion of any particular asset. A screen of readiness, not a verdict on the project.",
+  "anonymised": true,
+  "anonymisation_note": "The asset is not named. The screen was built entirely from public records and was not commissioned by, endorsed by or verified with the project owner; publishing it under the owner's name would imply a relationship that does not exist. Source references that would identify the asset are marked 'withheld' in the evidence registry rather than silently dropped.",
+  "location": {
+    "country": "Australia",
+    "state_or_territory": "Northern Territory",
+    "locality": "not disclosed"
+  },
+  "technology": [
+    "solar_pv",
+    "battery_energy_storage",
+    "diesel_generation"
+  ],
+  "industry": "gold_mining",
+  "data_coverage": {
+    "earliest_public_source_date": "2021-05",
+    "analysis_period_start": "2026-06",
+    "analysis_period_end": "2026-07",
+    "note": "Public environmental-assessment documents date from 2020-2022; the Heliovulcan desktop screen was built June-July 2026 and republished in anonymised form in August 2026."
+  },
+  "status": "public_sample_published",
+  "version": "2.0",
+  "updated_at": "2026-08-09",
+  "last_verified": "2026-08-09",
+  "links": {
+    "case_study_url": "https://heliovulcan.com.au/reports/remote-mining-asset-hybrid-energy-review.html",
+    "case_index_url": "https://heliovulcan.com.au/case.html?id=remote-mining-asset",
+    "dataset_url": "https://heliovulcan.com.au/datasets/remote-mining-asset-pre-dd/",
+    "methodology_url": "https://heliovulcan.com.au/methods/pre-dd-f1-f4/",
+    "claims_url": "https://heliovulcan.com.au/api/v1/projects/remote-mining-asset/claims.json",
+    "evidence_url": "https://heliovulcan.com.au/api/v1/projects/remote-mining-asset/evidence.json",
+    "api_docs_url": "https://heliovulcan.com.au/api/docs/",
+    "openapi_url": "https://heliovulcan.com.au/openapi.json"
+  },
+  "disclaimer": "Independent public-information screen. Not commissioned by, endorsed by or verified with the project owner. Not legal, financial, tax, engineering, investment or lender due-diligence advice. All figures are indicative screening outputs and must be independently verified before any commercial decision.",
+  "stats": {
+    "claims_total": 14,
+    "claims_by_type": {
+      "assumption": 1,
+      "calculated": 6,
+      "derived": 1,
+      "interpreted": 1,
+      "owner_confirmation_required": 1,
+      "public_source": 2,
+      "reported": 2
+    },
+    "derived_claims": 8,
+    "analyst_assumptions": 1,
+    "owner_confirmation_required": 1,
+    "public_sources": 4,
+    "evidence_total": 6,
+    "unresolved_evidence": 1
+  },
+  "api": {
+    "self": "https://heliovulcan.com.au/api/v1/projects/remote-mining-asset.json",
+    "claims_url": "https://heliovulcan.com.au/api/v1/projects/remote-mining-asset/claims.json",
+    "evidence_url": "https://heliovulcan.com.au/api/v1/projects/remote-mining-asset/evidence.json",
+    "docs": "https://heliovulcan.com.au/api/docs/",
+    "openapi": "https://heliovulcan.com.au/openapi.json"
+  }
+}

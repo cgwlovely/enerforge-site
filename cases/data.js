@@ -7,14 +7,14 @@
    full page renders at  case.html?id=<your-id>
 
    FIELD REFERENCE (every field is optional except id, num, title):
-     id            unique slug used in the URL (case.html?id=fountain-head)
+     id            unique slug used in the URL (case.html?id=remote-mining-asset)
      num           display number, e.g. "02"
      title         headline
      subtitle      one-paragraph standfirst
      status        { label, tone }  tone = "ok" | "warn" | "bad"
      lesson        optional navy call-out HTML stated up front
      industry      e.g. "Gold mining"
-     location      e.g. "Pine Creek, Northern Territory, Australia"
+     location      e.g. "Northern Territory, Australia"
      projectType   e.g. "Behind-the-meter solar + BESS + diesel hybrid"
      tags          array of short labels
      source        "public" (located pin) | "illustrative" (hollow pin)
@@ -50,12 +50,12 @@
 window.HELIOVULCAN_CASES = [
 
   /* ===========================================================================
-     CASE 02 — FOUNTAIN HEAD GOLD MINE  (first published case)
+     CASE 02 — REMOTE MINING ASSET  (first published case)
      =========================================================================== */
   {
-    id: "fountain-head",
+    id: "remote-mining-asset",
     num: "01",
-    title: "Fountain Head Hybrid Energy",
+    title: "Remote Mining Asset — Hybrid Energy Pre-DD",
     subtitle:
       "A public-information desktop Pre-DD screen for a remote mine hybrid-energy case — testing whether a 60% renewable diesel-PV-BESS pathway is more useful than a short-life standalone case or a 100% renewable upper-bound case, across approval delta, site suitability, microgrid boundary and financeability readiness.",
     status: { label: "Public sample available · S4 selected for further validation", tone: "ok" },
@@ -63,45 +63,34 @@ window.HELIOVULCAN_CASES = [
       "<span class='hl'>A screen of readiness, not a verdict on the project.</span> Across F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 financeability readiness, S4 is the scenario selected for further validation — not a final design or investment recommendation. Everything here is a public-information screen, not formal due diligence.",
 
     industry: "Gold mining",
-    location: "Fountain Head / Pine Creek, Northern Territory, Australia",
+    location: "Northern Territory, Australia",
     projectType: "Diesel-PV-BESS hybrid microgrid (public-information Pre-DD screen)",
     category: "Integrated Pre-DD",
     track: "project",
-    primaryUrl: "reports/fountain-head-hybrid-energy-review.html",
-    canonicalUrl: "https://heliovulcan.com.au/reports/fountain-head-hybrid-energy-review.html",
+    primaryUrl: "reports/remote-mining-asset-hybrid-energy-review.html",
+    canonicalUrl: "https://heliovulcan.com.au/reports/remote-mining-asset-hybrid-energy-review.html",
     indexActions: [
-      { label: "Read the case", href: "reports/fountain-head-hybrid-energy-review.html", kind: "primary" },
-      { label: "Explore maps", href: "reports/fountain-head-hybrid-energy-review.html#interactive-maps", kind: "secondary" },
-      { label: "Download report", href: "reports/Fountain_Head_PreDD_Enhanced_Public_EN_v4.pdf", kind: "secondary", download: true }
+      { label: "Read the case", href: "reports/remote-mining-asset-hybrid-energy-review.html", kind: "primary" },
+      { label: "How the method works", href: "methods/pre-dd-f1-f4/", kind: "secondary" }
     ],
     tags: ["Development + financeability screen", "Hybrid energy", "Mining", "Public data"],
     source: "public",
-    pin: { x: 456, y: 108, type: "solid", label: "Case 01 · Fountain Head" },
+    // hollow, deliberately imprecise: region only, not the site
+    pin: { x: 452, y: 118, type: "hollow", label: "Case 01 · Remote mining asset (NT, indicative)" },
 
     summary:
       "Remote mine · PV + BESS + diesel · Northern Territory. A public-information Pre-DD screen covering F1 Approval, F2 Site, F3 Microgrid and F4 Financeability.",
 
     frameworkFigure: {
-      src: "assets/fountainhead-predd-framework.png",
-      alt: "Fountain Head Pre-DD framework: F1-F4 questions, owners and milestones from public desktop screen to financial close preparation",
+      src: "assets/predd-f1-f4-framework.png",
+      alt: "F1-F4 Pre-DD framework: F1-F4 questions, owners and milestones from public desktop screen to financial close preparation",
       caption: "What this Pre-DD screen really sequences: what question to ask, who should answer it, when it is needed, and what risk it removes &mdash; across F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 commercial &amp; FC readiness, from public desktop screen through owner data room and specialist DD to financial close preparation."
     },
-    siteEmbeds: [
-      {
-        step: "Step 1 · evidence context",
-        heading: "Public EIS-derived context layers",
-        src: "context_map.html",
-        title: "Fountain Head public EIS-derived context layer map",
-        caption: "Public-source context layers digitised from EIS material for desktop Pre-DD screening. This map provides the evidence context; it is not itself a siting recommendation. <strong><a href='context_map.html' target='_blank' rel='noopener'>Open the context layer map in a new tab &rarr;</a></strong>"
-      },
-      {
-        step: "Step 2 · interpreted screen",
-        heading: "Preliminary siting opportunities and constraints",
-        src: "siting_opportunity_constraint_screen.html",
-        title: "Fountain Head Pre-DD siting opportunity and constraint screen",
-        caption: "Decision-support screen for preliminary PV/BESS siting discussion, combining visible opportunities and constraints. Candidate areas remain desktop hypotheses and require owner data, field verification, specialist assessment and engineering validation. <strong><a href='siting_opportunity_constraint_screen.html' target='_blank' rel='noopener'>Open the siting screen in a new tab &rarr;</a></strong>"
-      }
-    ],
+    /* Project-specific interactive siting maps (context_map.html and
+       siting_opportunity_constraint_screen.html) are no longer embedded or linked
+       publicly. The GIS work is retained in the repository as an internal
+       capability; detailed site-specific outputs belong in commissioned work.
+       See IA-NOTES.md. */
 
     stats: [
       { value: "~30 GWh/yr", label: "indicative demand" },
@@ -123,15 +112,15 @@ window.HELIOVULCAN_CASES = [
 
     method: [
       "A high-level but structured public-information desktop screen across the F1-F4 Pre-DD framework: F1 approval delta, F2 site suitability, F3 microgrid boundary and F4 financeability readiness. Annual energy and peak load were reconstructed from public environmental-impact material, a diesel-only baseline was built for context, and four hybrid configurations were sized across a range of renewable shares.",
-      "On site suitability (F2), public maps and mine layout were screened in two stages: first the digitised public-source context, then an interpreted opportunity-and-constraint screen. The resulting PV and BESS/PCS areas are <strong>preliminary desktop search areas</strong>, not equipment footprints, approved buildable land or owner-selected sites.",
+      "On site suitability (F2), public maps and site layout were screened in two stages: first the digitised public-source context, then an interpreted opportunity-and-constraint screen. The resulting PV and BESS/PCS areas are <strong>preliminary desktop search areas</strong>, not equipment footprints, approved buildable land or owner-selected sites. <strong>The site-specific map outputs are not published.</strong> Reproducing candidate siting polygons for a named third-party asset implies a relationship with its owner that does not exist, so the spatial method is described here and the detailed outputs are treated as commissioned work.",
       "Each configuration was then tested for financeability readiness (F4) using indicative DSCR, debt-capacity and residual-payment assumptions. These are screening outputs, not lender conclusions. None of this replaces owner data, hourly dispatch modelling, specialist DD, equipment sizing or EPC pricing."
     ],
 
     dataSources: [
-      "<a href='https://ntepa.nt.gov.au/your-business/public-registers/environmental-impact-assessments-register/completed-assessments/register/fountain-head-gold-project' target='_blank' rel='noopener'>NT EPA Fountain Head assessment register</a> — project history, EIS documents and assessment material",
-      "<a href='https://ntepa.nt.gov.au/_resources/documents/eia/pnx-metals-limited/draft-environmental-impact-statement-eis/main-report.pdf' target='_blank' rel='noopener'>Fountain Head draft EIS main report</a> and GHG assessment — indicative annual electricity demand and peak load",
-      "PNX Metals / Sunrise public reporting — disclosed PV (4.6 MWp) and BESS (2.3 MW / 2.2 MWh) sizing",
-      "<a href='https://globalsolaratlas.info/' target='_blank' rel='noopener'>Global Solar Atlas</a> / analyst assumption — Pine Creek solar yield (1,850 kWh/kWp/yr)",
+      "<a href='https://ntepa.nt.gov.au/your-business/public-registers/environmental-impact-assessments-register' target='_blank' rel='noopener'>NT EPA environmental impact assessment register</a> — project history, EIS documents and assessment material",
+      "<a href='https://ntepa.nt.gov.au/your-business/public-registers/environmental-impact-assessments-register' target='_blank' rel='noopener'>The project's draft EIS main report</a> and GHG assessment — indicative annual electricity demand and peak load",
+      "the proponent's public reporting — disclosed PV (4.6 MWp) and BESS (2.3 MW / 2.2 MWh) sizing",
+      "<a href='https://globalsolaratlas.info/' target='_blank' rel='noopener'>Global Solar Atlas</a> / analyst assumption — regional solar yield (1,850 kWh/kWp/yr)",
       "Analyst assumptions — diesel price, genset O&amp;M, EPC benchmarks, gearing and tenor"
     ],
 
@@ -202,9 +191,9 @@ window.HELIOVULCAN_CASES = [
     ],
 
     limitations: [
-      "This is a preliminary public-data screen built from NT EPA environmental-impact material for a Fountain Head / Pine Creek style gold mine. It is a demonstration of the screening method — indicative assumptions only, not commissioned by, endorsed by or verified with the project owner.",
+      "This is a preliminary public-data screen built from NT EPA environmental-impact material for a publicly documented Northern Territory gold mining project. It is a demonstration of the screening method — indicative assumptions only, not commissioned by, endorsed by or verified with the project owner.",
       "All results must be validated against owner-confirmed mine plans, load and diesel data, hourly dispatch modelling, scenario-specific equipment sizing, vendor quotations and real contract / buy-out terms before any commercial decision.",
-      "The map areas are preliminary desktop search areas, not required equipment footprints. The finance outputs do not define a transaction valuation: residual timing, discount rate, inflation basis, tax treatment, ownership transfer and comparison period require confirmation."
+      "The map areas were preliminary desktop search areas, not required equipment footprints, and are not published. The finance outputs do not define a transaction valuation: residual timing, discount rate, inflation basis, tax treatment, ownership transfer and comparison period require confirmation."
     ],
 
     outputs: [
@@ -214,11 +203,8 @@ window.HELIOVULCAN_CASES = [
       { title: "Next-step data request", desc: "The owner data needed to move from desktop screen to hourly dispatch validation." }
     ],
 
-    downloads: [
-      { label: "Download Integrated Pre-DD Report", href: "reports/Fountain_Head_PreDD_Enhanced_Public_EN_v4.pdf", note: "F1-F4 development and financeability screen · 21 pages · PDF", featured: true },
-      { label: "Download Financeability Deep Dive", href: "reports/Fountain_Head_Hybrid_Energy_Financeability_Report.pdf", note: "Owner, SPV and lender economics · 16 pages · PDF" }
-    ],
-    downloadsNote: "Want the full scenario workbook, sensitivity tables, the candidate-zone hypothesis or the owner data-room request? <a href='index.html#contact'>Reach out</a> — happy to share more detail or talk through what this screen means for a project you're looking at."
+    downloads: [],
+    downloadsNote: "The underlying PDF reports name the asset, so they are no longer offered as public downloads. The method, the F1-F4 findings and the full claim and evidence registry are published here in full. Want the scenario workbook, the sensitivity tables, the candidate-zone hypothesis or the owner data-room request? <a href='index.html#contact'>Ask</a> — happy to talk through what this screen means for a project you're looking at."
   },
 
   /* ===========================================================================

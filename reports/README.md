@@ -1,8 +1,13 @@
 # Reports — how to add a new report page
 
 Report pages are **indexable HTML** versions of a project review (not just a PDF), so Google can
-rank them for long-tail queries (e.g. *"Fountain Head Hybrid Energy review"*, *"mining PV+BESS
-preliminary review"*). Each lives at `reports/<slug>-review.html` and links to its PDF.
+rank them for long-tail queries (e.g. *"remote mine hybrid energy Pre-DD review"*, *"mining PV+BESS
+preliminary review"*). Each lives at `reports/<slug>-review.html`.
+
+> **Anonymise third-party assets.** A screen built from public records without the owner's
+> involvement is published without naming the asset — see `IA-NOTES.md`. Use a neutral slug
+> and title, keep the method and the evidence grades, and do not publish site-specific siting
+> maps or PDFs that name the asset.
 
 `_template.html` is the starting point for every new report.
 
@@ -15,7 +20,7 @@ preliminary review"*). Each lives at `reports/<slug>-review.html` and links to i
 
 1. **Copy** `_template.html` → rename to `reports/<slug>-review.html`.
 2. **Slug rules:** all lowercase, words joined by hyphens, end with `-review`.
-   - e.g. `sunrise-dam-hybrid-energy-review.html`
+   - e.g. `remote-site-hybrid-energy-review.html`
 3. **Delete the noindex guard** — remove this line from the new file's `<head>`:
    ```html
    <meta name="robots" content="noindex, nofollow" />

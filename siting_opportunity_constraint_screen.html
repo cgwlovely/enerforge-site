@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html><head><meta charset="utf-8"><title>Fountain Head Gold Project &mdash; Pre-DD Siting Opportunity and Constraint Screen (Desktop v1.0)</title>
+<html><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow, noarchive" /><!-- Internal GIS artefact. Retained as an analytical asset, deliberately not part of the public site: it is not linked from any page, not in the sitemap and not for indexing. See IA-NOTES.md. --><title>Remote Mining Asset &mdash; Pre-DD Siting Opportunity and Constraint Screen (Desktop v1.0)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -52,7 +52,7 @@ setTimeout(function(){ map.invalidateSize(); map.fitBounds([[-13.477361441219767
 // bottom-left: collapsible notes panel (click title to fold away)
 var panel = L.control({position:'bottomleft'});
 panel.onAdd = function(){var d=L.DomUtil.create('div','panel');
-  d.innerHTML='<h1>Fountain Head Gold Project &mdash; Pre-DD Siting Opportunity and Constraint Screen (Desktop v1.0)</h1><h2>Decision-support screen for preliminary PV/BESS siting discussion</h2>'
+  d.innerHTML='<h1>Remote Mining Asset &mdash; Pre-DD Siting Opportunity and Constraint Screen (Desktop v1.0)</h1><h2>Decision-support screen for preliminary PV/BESS siting discussion</h2>'
     +'<div class="body">'+"<p>Purpose: this map is a Pre-DD siting opportunity and constraint screen. It narrows the decision space by identifying no-go areas, review-required areas, owner/operator confirmation areas, and preliminary PV/BESS opportunity areas.</p><p>Interpretation: green and teal areas indicate preliminary desktop search areas for further investigation. They are not final candidate zones, not approved buildable land, not engineering layouts, and not owner-approved site selections. This is a decision-support map, not a decision map.</p><p>Owner / data confirmation: some residual areas may be required for mine operations, closure, drainage, laydown, access, stockpiles, or future mine planning. These areas require owner/operator confirmation. Unresolved operational footprints may reduce the practical siting area after further digitisation or CAD review.</p><p>Review-required areas are not automatically excluded; they indicate uncertainty requiring further DD.</p><p>Area summary (desktop screen): PV search area 155 ha; BESS/PCS search area 11.7 ha; owner confirmation 13 ha; review flagged 234 ha; unresolved footprint flags 6 (not spatially mapped). Search areas may overlap other review layers and are not required equipment footprints.</p>"+'</div>';
   d.querySelector('h1').onclick=function(){d.classList.toggle('collapsed');};
   L.DomEvent.disableClickPropagation(d); return d;};

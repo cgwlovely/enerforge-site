@@ -72,19 +72,19 @@ This is a static site — it deploys anywhere with zero configuration.
 
 ## Structured data, claims & API (AI-friendly layer)
 
-The Fountain Head case also ships as a machine-readable registry. **Single source of truth**
+The anonymised Remote Mining Asset case also ships as a machine-readable registry. **Single source of truth**
 is `/data/` — everything else is generated:
 
 ```
 data/
-  projects/fountain-head.json     project entity (identity, links, coverage)
-  claims/fountain-head.json       claim registry (IDs, types, confidence, limitations)
-  evidence/fountain-head.json     evidence registry (sources, access dates, quality)
+  projects/remote-mining-asset.json     project entity (identity, links, coverage)
+  claims/remote-mining-asset.json       claim registry (IDs, types, confidence, limitations)
+  evidence/remote-mining-asset.json     evidence registry (sources, access dates, quality)
   schemas/*.schema.json           JSON Schemas for the three documents
 scripts/build_api.py              build + validation (stdlib python3, no deps)
 api/v1/projects/…                 GENERATED static JSON endpoints — do not hand-edit
-projects/fountain-head/           canonical entity page (tables between BUILD markers
-datasets/fountain-head-pre-dd/      and the Dataset JSON-LD are GENERATED — do not
+projects/remote-mining-asset/    canonical entity page (tables between BUILD markers
+datasets/remote-mining-asset-pre-dd/      and the Dataset JSON-LD are GENERATED — do not
 methods/pre-dd-f1-f4/               hand-edit inside the markers)
 openapi.json                      API description  ·  /.well-known/api-catalog  discovery
 ```
@@ -101,7 +101,7 @@ has evidence or is an assumption/unresolved", no silent missing sources (a null
 `source_url` must be marked `unresolved`), and sitemap coverage of the new pages.
 
 Local preview: `python3 -m http.server` from this folder (directory URLs like
-`/projects/fountain-head/` need an HTTP server; `file://` won't resolve them).
+`/projects/remote-mining-asset/` need an HTTP server; `file://` won't resolve them).
 Production: GitHub Pages serves the generated `.json` files and folder `index.html`s as-is
 — no build step runs in deployment, so **commit the generated files** after running the script.
 

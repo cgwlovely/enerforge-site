@@ -3,7 +3,8 @@
 Why the site is shaped the way it is, so future changes stay aligned rather than drifting back
 toward a single-service brochure.
 
-Last revised: 2026-08-09 (repositioning for exploration-stage industrial intelligence).
+Last revised: 2026-08-09 (repositioning for exploration-stage industrial intelligence;
+anonymisation of the third-party asset screen).
 
 ## Positioning
 
@@ -66,8 +67,8 @@ across all 32 pages; if you change one, change them all.
 5. **Asset & market intelligence** (`#asset-market`) — absorbs what used to be a standalone
    2029 Safeguard exposure section. The Safeguard material is now framed as a worked example of
    the method, not as the site's lead hook.
-6. **Project analysis** (`#projects`) — F1–F4, the Fountain Head case, and the three sample
-   outputs. One application of the evidence engine.
+6. **Project analysis** (`#projects`) — F1–F4, the anonymised Remote Mining Asset case, and
+   what a project screen produces. One application of the evidence engine.
 7. **Evidence platform** (`#platform`).
 8. **Point of view**, **About** (`#about`), **Discuss a question** (`#contact`).
 
@@ -123,6 +124,63 @@ Company ↔ Facility ↔ Project ↔ Energy ↔ Emissions ↔ Grid ↔ Technolog
 
 and four traversals of it (policy / investment / asset / energy). A bounding note states what
 the graph is not: not complete national coverage, not queryable, not a live feed.
+
+## Anonymising third-party asset screens
+
+A screen built from public records, without the asset owner's involvement, is published
+**without naming the asset**. Two reasons, and the second is the one that actually bites:
+
+1. A named real-world project plus project-specific siting maps implies a closer relationship
+   with the owner than exists, however clearly the disclaimers say otherwise.
+2. Detailed mine-site GIS over-weights one service line at exactly the point where the practice
+   is broadening. Site-specific spatial output is commissioned work, not a public brochure.
+
+The worked case is published as **Remote Mining Asset — Hybrid Energy Pre-DD**, described where
+useful as *a publicly documented Northern Territory gold mining project*. The slug is
+`remote-mining-asset` throughout: pages, data files, entity ID (`project_remote_mining_asset`),
+claim IDs (`RMA-*`), evidence IDs (`EVID-RMA-*`) and API paths. Anonymising the visible page and
+leaving the name in a URL or a JSON payload would have been theatre.
+
+### What was withdrawn from public presentation
+
+| | |
+|---|---|
+| `context_map.html`, `siting_opportunity_constraint_screen.html` | Kept in the repo as internal GIS capability. Unlinked everywhere, `noindex`, `robots.txt` disallow, absent from the sitemap. |
+| Both named-asset PDF reports | Kept in the repo. All download links and labels removed; available on request. |
+| `assets/fountainhead-zones-map.png` | Already unreferenced; now robots-disallowed. |
+| The map pin on the case index | Now hollow and deliberately imprecise — region, not site. |
+
+`robots.txt` disallow is a crawling signal, **not access control**. These files are still
+fetchable by direct URL because GitHub Pages serves everything in the repo. If they need to be
+genuinely unreachable, they have to leave the served branch.
+
+### What stayed
+
+The F1–F4 workflow, every figure, every evidence grade, the open questions, the owner-data
+requests, and the full claim and evidence registry. GIS remains described as a capability on the
+platform and methodology pages — the method is public, the site-specific output is not. The
+aggregated national facility map is untouched: it supports the industrial-intelligence
+positioning and performs no site selection for anyone.
+
+### `withheld` vs `unresolved`
+
+Anonymising broke a citation chain, and the fix is a new evidence status rather than a quiet
+deletion. `scripts/build_api.py` now accepts a null `source_url` when status is either:
+
+- **`unresolved`** — we never captured the source. A gap in our own record.
+- **`withheld`** — we hold it and it is public, but the link identifies the asset. Requires a
+  `withheld_reason`; the validator fails without one. Document class, date and section are still
+  published, so the citation stays checkable on request.
+
+The generated claims table renders the actual status, so the two are never conflated.
+
+### Old URLs
+
+Redirect stubs at `reports/fountain-head-hybrid-energy-review.html`,
+`projects/fountain-head/` and `datasets/fountain-head-pre-dd/`. The three old API endpoints
+return a small `{"status":"moved","moved_to":…}` pointer, since static hosting cannot redirect
+JSON. Those paths still contain the old name — unavoidable if old links are not to break, and
+the stub content itself names nothing.
 
 ## Evidence discipline — the part not to lose
 

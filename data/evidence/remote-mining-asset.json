@@ -1,0 +1,86 @@
+{
+  "project_id": "project_remote_mining_asset",
+  "version": "2.0",
+  "updated_at": "2026-08-09",
+  "disclosure_note": "This registry describes a publicly documented Northern Territory mining project without naming it. Where a source URL would identify the asset, the reference is marked status 'withheld' and carries a withheld_reason rather than being silently dropped — the document class, date and section are still stated so the citation remains checkable on request.",
+  "evidence": [
+    {
+      "evidence_id": "EVID-RMA-EIS-MAIN-01",
+      "source_title": "Draft Environmental Impact Statement, main report — Northern Territory gold project (public NT EPA assessment record)",
+      "publisher": "Project proponent, published via the NT EPA environmental impact assessment register",
+      "source_url": null,
+      "accessed_at": null,
+      "document_date": "2021-05",
+      "page_or_section": "Section 3.8.1.1 Project Energy Use (p. 3-46) and Table 3.19",
+      "supports_claims": ["RMA-LOAD-001", "RMA-LOAD-002", "RMA-FUEL-001"],
+      "evidence_type": "primary_public_document",
+      "evidence_quality": "high",
+      "status": "withheld",
+      "withheld_reason": "The document is a public environmental-impact assessment record and remains publicly available on the NT EPA register. The direct link is withheld here because it names the asset, which this case study deliberately does not. Document class, date and section are stated above; the specific reference is provided on request.",
+      "notes": "Content verified 2026-07-23 against an archived copy of the same document; the register page was verified live in a browser on the same date."
+    },
+    {
+      "evidence_id": "EVID-RMA-EPA-REG-01",
+      "source_title": "NT EPA environmental impact assessment register — completed assessments",
+      "publisher": "Northern Territory Environment Protection Authority",
+      "source_url": "https://ntepa.nt.gov.au/your-business/public-registers/environmental-impact-assessments-register",
+      "accessed_at": "2026-07-23",
+      "page_or_section": "Completed assessments register index",
+      "supports_claims": [],
+      "evidence_type": "public_register",
+      "evidence_quality": "high",
+      "notes": "Context source: the public register through which the assessment documents for this class of project are published. The register index is linked; the project-specific entry is not, for the reason stated on EVID-RMA-EIS-MAIN-01. The NT EPA server blocks automated HTTP clients, so link checkers may see HTTP 403."
+    },
+    {
+      "evidence_id": "EVID-RMA-PROPONENT-01",
+      "source_title": "Proponent public reporting — disclosed hybrid-energy configuration (4.6 MWp PV; 2.3 MW / 2.2 MWh BESS)",
+      "publisher": "Project proponent (listed company disclosure)",
+      "source_url": null,
+      "accessed_at": null,
+      "supports_claims": ["RMA-PV-001", "RMA-BESS-001"],
+      "evidence_type": "company_disclosure",
+      "evidence_quality": "medium",
+      "status": "unresolved",
+      "notes": "The specific disclosure document URL was not captured when the screen was built. Figures are as cited in Heliovulcan's own Pre-DD analysis. UNRESOLVED: locate and record the primary disclosure before treating these values as fully sourced. This item is unresolved on the merits — it is not a withheld reference."
+    },
+    {
+      "evidence_id": "EVID-RMA-GSA-01",
+      "source_title": "Global Solar Atlas — regional solar resource data, Northern Territory",
+      "publisher": "World Bank Group / Solargis",
+      "source_url": "https://globalsolaratlas.info/",
+      "accessed_at": "2026-07-23",
+      "supports_claims": ["RMA-YIELD-001"],
+      "evidence_type": "reference_dataset",
+      "evidence_quality": "medium",
+      "notes": "Informs the 1,850 kWh/kWp/yr yield assumption; screening-grade only, not a bankable resource assessment."
+    },
+    {
+      "evidence_id": "EVID-RMA-HV-PREDD-01",
+      "source_title": "Heliovulcan — Integrated Pre-DD development and financeability screen (public edition, v4)",
+      "publisher": "Heliovulcan Energy Advisors",
+      "source_url": null,
+      "accessed_at": null,
+      "document_date": "2026-07",
+      "supports_claims": ["RMA-SCEN-001", "RMA-SITE-001"],
+      "evidence_type": "published_analysis",
+      "evidence_quality": "medium",
+      "status": "withheld",
+      "withheld_reason": "Heliovulcan's own report. It is no longer offered as a public download because the document names the asset. Available on request; an anonymised edition may replace it.",
+      "notes": "Cited as the traceable record of the analysis, not as independent third-party verification."
+    },
+    {
+      "evidence_id": "EVID-RMA-HV-FIN-01",
+      "source_title": "Heliovulcan — hybrid energy financeability report (public edition)",
+      "publisher": "Heliovulcan Energy Advisors",
+      "source_url": null,
+      "accessed_at": null,
+      "document_date": "2026-07",
+      "supports_claims": ["RMA-SCEN-001", "RMA-FIN-001", "RMA-FIN-002", "RMA-FIN-003", "RMA-FIN-004", "RMA-FIN-005", "RMA-FIN-006"],
+      "evidence_type": "published_analysis",
+      "evidence_quality": "medium",
+      "status": "withheld",
+      "withheld_reason": "Heliovulcan's own report. It is no longer offered as a public download because the document names the asset. Available on request; an anonymised edition may replace it.",
+      "notes": "Own published financeability model outputs (owner, SPV and lender economics). Self-published analysis under stated assumptions; not independently audited."
+    }
+  ]
+}
