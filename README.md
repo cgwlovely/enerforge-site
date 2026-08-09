@@ -1,8 +1,12 @@
-# Heliovulcan — independent BESS feasibility & project-intelligence website
+# Heliovulcan — independent industrial intelligence website
 
-A static, founder-led website for early-stage industrial **solar + BESS** sanity checks,
-project notes and case studies. No framework, no build step — plain HTML, one CSS file, and a
-small data-driven case-study engine.
+A static, founder-led website for **independent industrial intelligence**: research, public
+consultation submissions, asset and market analysis, and project screening. No framework, no
+build step — plain HTML, one CSS file, and a small data-driven case-study engine.
+
+The information architecture is deliberately broader than any one service line, so the site
+does not need another redesign as the work evolves. See
+[`IA-NOTES.md`](IA-NOTES.md) for the positioning and page-by-page rationale.
 
 ## Add a new case study (the important part)
 
@@ -24,10 +28,14 @@ Every field is documented at the top of `cases/data.js`. The disclaimer block an
 
 ```
 index.html            Home
+research.html         Research & Insights index (four topic groups)
+consultations.html    Public policy / regulatory engagement record
+intelligence-platform.html  The shared evidence base
 case-studies.html     Case-study index (map + auto-generated cards)
 case.html             Dynamic case page — reads ?id= from cases/data.js
-notes.html            Project Notes index
-note-1 … note-11.html Individual notes
+coverage.html         Track record — what has actually been analysed
+notes.html            Redirect stub → research.html (kept so the old URL still resolves)
+note-1 … note-3.html  Individual research notes (URLs unchanged)
 cases/
   data.js             ← the ONLY file you edit to add/change a case
   render.js           rendering engine (don't edit for content)
