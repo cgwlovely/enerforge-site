@@ -11,9 +11,5 @@ Allow: /
 # Patterns rather than filenames, so this file does not itself disclose what the
 # anonymised case pages deliberately do not.
 # Disallow is a crawling signal, not access control — see IA-NOTES.md.
-Disallow: /context_map.html
-Disallow: /siting_opportunity_constraint_screen.html
-Disallow: /assets/predd-siting-zones-map.png
-Disallow: /reports/*.pdf
 
 Sitemap: https://heliovulcan.com.au/sitemap.xml
