@@ -27,7 +27,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://heliovulcan.com.au"
-SLUG = "fountain-head"
+SLUG = "remote-mining-asset"
+DATASET_SLUG = "remote-mining-asset-pre-dd"
 
 CLAIM_TYPES = {"reported", "public_source", "calculated", "derived", "interpreted",
                "assumption", "unresolved", "owner_confirmation_required"}
@@ -97,9 +98,13 @@ def validate(project: dict, claims_doc: dict, evidence_doc: dict) -> dict:
         if ev.get("evidence_quality") not in CONFIDENCE:
             err(f"evidence {eid}: invalid evidence_quality")
         url, accessed = ev.get("source_url"), ev.get("accessed_at")
-        if url is None and ev.get("status") != "unresolved":
-            err(f"evidence {eid}: source_url is null but status is not 'unresolved' — "
-                "missing sources must be explicitly marked, never silently omitted")
+        if url is None and ev.get("status") not in ("unresolved", "withheld"):
+            err(f"evidence {eid}: source_url is null but status is neither 'unresolved' "
+                "nor 'withheld' — missing sources must be explicitly marked, never "
+                "silently omitted")
+        if ev.get("status") == "withheld" and not ev.get("withheld_reason"):
+            err(f"evidence {eid}: status 'withheld' requires a withheld_reason — a "
+                "reference may be withheld, but never without saying why")
         if url is not None and not str(url).startswith("https://"):
             err(f"evidence {eid}: source_url must be https")
         if accessed is not None:
@@ -238,7 +243,9 @@ def claims_table_html(claims_doc: dict, evidence_doc: dict) -> str:
             if url:
                 ev_cells.append(f"<a href='{html_escape(url)}' target='_blank' rel='noopener'>{label}</a>")
             else:
-                ev_cells.append(f"{label} <em>(unresolved)</em>")
+                # a source with no URL is either genuinely unresolved or deliberately
+                # withheld — the table must not conflate the two
+                ev_cells.append(f"{label} <em>({html_escape(ev.get('status', 'unresolved'))})</em>")
         val = ""
         if c.get("value") is not None:
             val = f"{c['value']:g} {html_escape(c.get('unit', ''))}".strip()
@@ -303,13 +310,14 @@ def dataset_jsonld(project: dict, stats: dict) -> str:
     ld = {
         "@context": "https://schema.org",
         "@type": "Dataset",
-        "@id": f"{SITE}/datasets/fountain-head-pre-dd/",
-        "name": "Fountain Head Hybrid Energy — Pre-DD claim and evidence registry",
+        "@id": f"{SITE}/datasets/{DATASET_SLUG}/",
+        "name": "Remote Mining Asset — Pre-DD claim and evidence registry",
         "description": ("Structured claim and evidence registry for a public-information "
-                        "Pre-DD screen of a diesel-PV-BESS hybrid microgrid at the Fountain Head "
-                        "gold mine, Northern Territory, Australia. Screening outputs only; "
-                        "not owner-verified data."),
-        "url": f"{SITE}/datasets/fountain-head-pre-dd/",
+                        "Pre-DD screen of a diesel-PV-BESS hybrid microgrid at a publicly "
+                        "documented gold mining project in the Northern Territory, Australia. "
+                        "The asset is not named. Screening outputs only; not owner-verified "
+                        "data."),
+        "url": f"{SITE}/datasets/{DATASET_SLUG}/",
         "sameAs": project["canonical_url"],
         "creator": {"@type": "Organization", "@id": f"{SITE}/#organization",
                      "name": "Heliovulcan Energy"},
@@ -317,9 +325,9 @@ def dataset_jsonld(project: dict, stats: dict) -> str:
         "version": project["version"],
         "inLanguage": "en",
         "isAccessibleForFree": True,
-        "license": f"{SITE}/datasets/fountain-head-pre-dd/#terms",
+        "license": f"{SITE}/datasets/{DATASET_SLUG}/#terms",
         "spatialCoverage": {"@type": "Place",
-                             "name": "Fountain Head / Pine Creek, Northern Territory, Australia"},
+                             "name": "Northern Territory, Australia"},
         "temporalCoverage": "2021-05/2026-07",
         "variableMeasured": [
             "indicative annual electricity demand", "indicative peak load",
@@ -376,7 +384,7 @@ def main() -> int:
 
     # inject generated blocks into the human pages
     proj_page = ROOT / "projects" / SLUG / "index.html"
-    ds_page = ROOT / "datasets" / "fountain-head-pre-dd" / "index.html"
+    ds_page = ROOT / "datasets" / DATASET_SLUG / "index.html"
     if proj_page.exists():
         inject(proj_page, "entity-facts", stats_html(project, stats), args.check)
         inject(proj_page, "claims-table",
@@ -391,7 +399,7 @@ def main() -> int:
     # sanity: sitemap contains the new canonical pages
     sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     for u in (f"{SITE}/projects/{SLUG}/",
-              f"{SITE}/datasets/fountain-head-pre-dd/",
+              f"{SITE}/datasets/{DATASET_SLUG}/",
               f"{SITE}/methods/pre-dd-f1-f4/",
               f"{SITE}/api/"):
         if u not in sitemap:

@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Fountain Head Gold Project — Public EIS-Derived Context Layer Map</title>
+<html><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow, noarchive" /><!-- Internal GIS artefact. Retained as an analytical asset, deliberately not part of the public site: it is not linked from any page, not in the sitemap and not for indexing. See IA-NOTES.md. --><title>Remote Mining Asset — Public EIS-Derived Context Layer Map</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -50,7 +50,7 @@ legend.onAdd = function(){var d=L.DomUtil.create('div','legend');
 legend.addTo(map);
 var panel = L.control({position:'bottomleft'});
 panel.onAdd = function(){var d=L.DomUtil.create('div','panel');
-  d.innerHTML='<h1>Fountain Head Gold Project — Public EIS-Derived Context Layer Map</h1><h2>Digitised public-source layers used for desktop Pre-DD screening</h2><p>This map shows raw digitised public-source context layers. It is not a siting interpretation map.</p>';
+  d.innerHTML='<h1>Remote Mining Asset — Public EIS-Derived Context Layer Map</h1><h2>Digitised public-source layers used for desktop Pre-DD screening</h2><p>This map shows raw digitised public-source context layers. It is not a siting interpretation map.</p>';
   d.querySelector('h1').onclick=function(){d.classList.toggle('collapsed');};
   L.DomEvent.disableClickPropagation(d); return d;};
 panel.addTo(map);

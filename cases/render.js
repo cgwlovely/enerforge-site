@@ -120,7 +120,7 @@
           (a.kind === "primary" ? ' <span class="btn__arrow">&rarr;</span>' : "") + "</a>";
       }).join("");
       return (
-        '<article class="case-tile' + (c.id === "fountain-head" ? " case-tile--featured" : "") + '">' +
+        '<article class="case-tile' + (c.id === "remote-mining-asset" ? " case-tile--featured" : "") + '">' +
           '<div class="case-tile__top">' +
             '<span class="case-tile__num">' + esc(c.category || ("Case " + (c.num || ""))) + "</span>" +
             (c.status ? '<span class="pill ' + pillCls + '">' + esc(c.status.label) + "</span>" : "") +
@@ -298,7 +298,9 @@
     var inner = head("The part that decides it", "Scenario comparison", m.note ? null : null);
     inner += '<div class="article-wide" style="max-width:none;margin-top:28px;">';
     if (m.note) inner += '<span class="cap" style="display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;">' + esc(m.note) + "</span>";
-    inner += '<table class="matrix"><thead>' + thead + "</thead><tbody>" + tbody + "</tbody></table></div>";
+    // the scenario matrix is wider than a phone; give it its own scroll box so the
+    // page body never scrolls sideways
+    inner += '<div class="table-scroll"><table class="matrix"><thead>' + thead + "</thead><tbody>" + tbody + "</tbody></table></div></div>";
     if (m.footnote) inner += '<div class="note" style="margin-top:24px;"><span class="cap">How to read this table</span><p>' + m.footnote + "</p></div>";
     if (c.insight) inner += '<p class="insight">' + c.insight + "</p>";
     return sec("section--tint", inner);
@@ -358,17 +360,18 @@
   }
 
   function ctaBlock() {
-    // standard free-sanity-check CTA on EVERY case page
+    // appended to EVERY case page. Exploration-stage framing: no package, no
+    // price, no "free" offer — the invitation is the conversation itself.
     return (
       '<section class="section section--navy"><div class="container">' +
-        '<p class="eyebrow">Peer project review</p>' +
-        '<h2 class="section-title">Looking at a project like this?</h2>' +
+        '<p class="eyebrow">Discuss a question</p>' +
+        '<h2 class="section-title">Looking at a question like this one?</h2>' +
         '<p class="section-intro">' +
-          "Heliovulcan is an independent project-intelligence practice providing early-stage project screening for industrial hybrid energy. A project screen can identify what looks sound, what needs testing and what to ask before EPC quotes or investor discussions." +
+          "Heliovulcan is an independent industrial intelligence practice. If you are working on something this evidence base could speak to \u2014 a facility, a market, a project, a policy exposure \u2014 a short, non-confidential exchange is usually enough to establish whether the public record can answer it." +
         "</p>" +
         '<div class="cta-row">' +
-          '<a class="btn btn--primary" href="index.html#contact">Book a 20-minute project screen <span class="btn__arrow">&rarr;</span></a>' +
-          '<a class="btn btn--ghost-light" href="case-studies.html">All case studies</a>' +
+          '<a class="btn btn--primary" href="index.html#contact">Discuss a question <span class="btn__arrow">&rarr;</span></a>' +
+          '<a class="btn btn--ghost-light" href="research.html">Explore our research</a>' +
         "</div>" +
       "</div></section>"
     );

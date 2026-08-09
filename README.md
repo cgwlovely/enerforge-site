@@ -1,8 +1,12 @@
-# Heliovulcan — independent BESS feasibility & project-intelligence website
+# Heliovulcan — independent industrial intelligence website
 
-A static, founder-led website for early-stage industrial **solar + BESS** sanity checks,
-project notes and case studies. No framework, no build step — plain HTML, one CSS file, and a
-small data-driven case-study engine.
+A static, founder-led website for **independent industrial intelligence**: research, public
+consultation submissions, asset and market analysis, and project screening. No framework, no
+build step — plain HTML, one CSS file, and a small data-driven case-study engine.
+
+The information architecture is deliberately broader than any one service line, so the site
+does not need another redesign as the work evolves. See
+[`IA-NOTES.md`](IA-NOTES.md) for the positioning and page-by-page rationale.
 
 ## Add a new case study (the important part)
 
@@ -24,10 +28,14 @@ Every field is documented at the top of `cases/data.js`. The disclaimer block an
 
 ```
 index.html            Home
+research.html         Research & Insights index (four topic groups)
+consultations.html    Public policy / regulatory engagement record
+intelligence-platform.html  The shared evidence base
 case-studies.html     Case-study index (map + auto-generated cards)
 case.html             Dynamic case page — reads ?id= from cases/data.js
-notes.html            Project Notes index
-note-1 … note-11.html Individual notes
+coverage.html         Track record — what has actually been analysed
+notes.html            Redirect stub → research.html (kept so the old URL still resolves)
+note-1 … note-3.html  Individual research notes (URLs unchanged)
 cases/
   data.js             ← the ONLY file you edit to add/change a case
   render.js           rendering engine (don't edit for content)
@@ -64,19 +72,19 @@ This is a static site — it deploys anywhere with zero configuration.
 
 ## Structured data, claims & API (AI-friendly layer)
 
-The Fountain Head case also ships as a machine-readable registry. **Single source of truth**
+The anonymised Remote Mining Asset case also ships as a machine-readable registry. **Single source of truth**
 is `/data/` — everything else is generated:
 
 ```
 data/
-  projects/fountain-head.json     project entity (identity, links, coverage)
-  claims/fountain-head.json       claim registry (IDs, types, confidence, limitations)
-  evidence/fountain-head.json     evidence registry (sources, access dates, quality)
+  projects/remote-mining-asset.json     project entity (identity, links, coverage)
+  claims/remote-mining-asset.json       claim registry (IDs, types, confidence, limitations)
+  evidence/remote-mining-asset.json     evidence registry (sources, access dates, quality)
   schemas/*.schema.json           JSON Schemas for the three documents
 scripts/build_api.py              build + validation (stdlib python3, no deps)
 api/v1/projects/…                 GENERATED static JSON endpoints — do not hand-edit
-projects/fountain-head/           canonical entity page (tables between BUILD markers
-datasets/fountain-head-pre-dd/      and the Dataset JSON-LD are GENERATED — do not
+projects/remote-mining-asset/    canonical entity page (tables between BUILD markers
+datasets/remote-mining-asset-pre-dd/      and the Dataset JSON-LD are GENERATED — do not
 methods/pre-dd-f1-f4/               hand-edit inside the markers)
 openapi.json                      API description  ·  /.well-known/api-catalog  discovery
 ```
@@ -93,7 +101,7 @@ has evidence or is an assumption/unresolved", no silent missing sources (a null
 `source_url` must be marked `unresolved`), and sitemap coverage of the new pages.
 
 Local preview: `python3 -m http.server` from this folder (directory URLs like
-`/projects/fountain-head/` need an HTTP server; `file://` won't resolve them).
+`/projects/remote-mining-asset/` need an HTTP server; `file://` won't resolve them).
 Production: GitHub Pages serves the generated `.json` files and folder `index.html`s as-is
 — no build step runs in deployment, so **commit the generated files** after running the script.
 

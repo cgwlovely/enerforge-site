@@ -40,6 +40,27 @@
       .outpreview__row { grid-template-columns: 1fr 5.5rem; }
       .outpreview__k { grid-column: 1 / -1; }
     }
+
+    /* evidence graph — the entities the platform links, and how */
+    .egraph { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 6px; margin-top: 28px; }
+    .egraph__n {
+      font-family: var(--mono); font-size: 11.5px; letter-spacing: .05em; text-transform: uppercase;
+      color: var(--ink); background: var(--surface); border: 1px solid var(--line);
+      border-radius: 999px; padding: 8px 13px; white-space: nowrap;
+    }
+    /* a connector is glued to the node that follows it, so a wrap never
+       strands a lone arrow at the end of a line */
+    .egraph__pair { display: inline-flex; align-items: center; gap: 6px; }
+    .egraph__l { color: var(--teal-deep); font-size: 14px; line-height: 1; user-select: none; }
+    .egraph__cap { margin-top: 16px; font-size: 14px; color: var(--ink-soft); text-align: center; }
+
+    /* question types — same evidence base, different entry point */
+    .qrow { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0 18px; padding: 16px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline; }
+    .qrow:first-of-type { border-top: 1px solid var(--line); }
+    .qrow__k { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--teal-deep); }
+    .qrow__q { font-size: 16px; color: var(--ink); font-weight: 600; }
+    .qrow__b { font-size: 14.5px; color: var(--ink-soft); margin-top: 5px; }
+    @media (max-width: 620px) { .qrow { grid-template-columns: 1fr; gap: 6px; } }
   </style>
 </head>
 <body>
@@ -52,12 +73,12 @@
       </a>
       <nav class="nav__links">
         <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="consultations.html">Consultations</a>
         <a href="intelligence-platform.html" class="is-current">Platform</a>
-        <a href="case-studies.html">Case studies</a>
-        <a href="coverage.html">Track record</a>
-        <a href="notes.html">Notes</a>
+        <a href="case-studies.html">Projects</a>
         <a href="index.html#about">About</a>
-        <a href="index.html#contact" class="nav__cta">Book a 20-min screen</a>
+        <a href="index.html#contact" class="nav__cta">Discuss a question</a>
       </nav>
     </div>
   </header>
@@ -78,6 +99,86 @@
           <strong>known</strong> from what is <strong>inferred</strong> and what is
           <strong>still missing</strong>.
         </p>
+      </div>
+    </section>
+
+    <!-- 1B — ONE EVIDENCE BASE, DIFFERENT QUESTIONS -->
+    <section class="section section--tint" id="evidence-base" aria-labelledby="evidence-base-title">
+      <div class="container">
+        <p class="eyebrow">The unifying idea</p>
+        <h2 class="section-title" id="evidence-base-title">One evidence base. Different questions.</h2>
+        <p class="section-intro">
+          A policy question, an investment question and an asset question look unrelated until you
+          notice they all resolve to the same entities. A facility belongs to a company, hosts a
+          project, consumes energy, reports emissions, connects to a grid, runs a technology, sits
+          under an approval and competes for capital. Link those once and every question after that
+          reuses the link rather than rebuilding it.
+        </p>
+
+        <div class="egraph" role="img" aria-label="Evidence graph: company, facility, project, energy, emissions, grid, technology, approval and capital, each linked to the next">
+          <span class="egraph__n">Company</span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Facility</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Project</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Energy</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Emissions</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Grid</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Technology</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Approval</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Capital</span></span>
+        </div>
+        <p class="egraph__cap">
+          The links are the asset, not the individual records. Each one is established from evidence
+          and carries the grade it was established at.
+        </p>
+
+        <h3 style="margin-top:44px;">Four questions, one traversal each</h3>
+        <p class="section-intro" style="margin-top:8px;">
+          The same graph, entered from four different directions. What changes is where the question
+          starts and which links it follows &mdash; not the underlying evidence.
+        </p>
+
+        <div style="margin-top:24px;">
+          <div class="qrow">
+            <span class="qrow__k">Policy</span>
+            <span>
+              <span class="qrow__q">Which facilities are exposed?</span>
+              <span class="qrow__b">Enter at the rule, traverse to the facilities it reaches, and price the exposure where it binds. The answer has to name the facilities it could not resolve as well as the ones it could.</span>
+            </span>
+          </div>
+          <div class="qrow">
+            <span class="qrow__k">Investment</span>
+            <span>
+              <span class="qrow__q">Which projects warrant deeper diligence?</span>
+              <span class="qrow__b">Enter at a portfolio or a pipeline, traverse to approval, grid and capital position, and separate what is genuinely decision-relevant from what is merely modelled.</span>
+            </span>
+          </div>
+          <div class="qrow">
+            <span class="qrow__k">Asset</span>
+            <span>
+              <span class="qrow__q">What can actually be established about this facility?</span>
+              <span class="qrow__b">Enter at one operation, traverse to energy, emissions, ownership and sector position, and reconcile the result against an independently built account.</span>
+            </span>
+          </div>
+          <div class="qrow">
+            <span class="qrow__k">Energy</span>
+            <span>
+              <span class="qrow__q">Where is transition technically and commercially plausible?</span>
+              <span class="qrow__b">Enter at a technology or a load, traverse to site, grid and capital constraints, and identify where the concept breaks while it is still cheap to find out.</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="note" style="margin-top:30px;">
+          <span class="cap">What the graph is, and is not</span>
+          <p>
+            It is an internal analytical structure, built asset by asset as work is done. It is
+            <strong>not complete national coverage, not a queryable database and not a live
+            feed</strong>. Entities are linked where the evidence supports a link and left unlinked
+            where it does not &mdash; which is why the count of what has been
+            <a href="coverage.html">analysed in depth</a> is much smaller than the count of what has
+            been mapped as background context.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -181,7 +282,7 @@
           </div>
         </div>
         <p class="section-intro" style="margin-top:22px;">
-          The <a href="index.html#lens">F1&ndash;F4 Pre-DD workflow</a> is one downstream route
+          The <a href="index.html#projects">F1&ndash;F4 Pre-DD workflow</a> is one downstream route
           through this &mdash; the one that applies when the question is a proposed project. It is
           a use case, not the architecture.
         </p>
@@ -456,15 +557,16 @@
     <section class="section" id="engage" aria-labelledby="engage-title">
       <div class="container">
         <p class="eyebrow">Where to start</p>
-        <h2 class="section-title" id="engage-title">Three ways in, one conversation</h2>
+        <h2 class="section-title" id="engage-title">Start with the question, not with a category</h2>
         <p class="section-intro">
-          All three route to the same short, non-confidential first exchange. A site name is often
-          enough to establish whether the question can be answered from the record at all.
+          An asset question, a project question and a sector or policy question all route to the
+          same short, non-confidential first exchange &mdash; there is nothing to choose between
+          first. A site name, a sector or a consultation paper is often enough to establish
+          whether the question can be answered from the record at all.
         </p>
         <div class="cta-row" style="margin-top:22px;">
-          <a class="btn btn--primary" href="index.html#contact">Profile an existing asset <span class="btn__arrow">&rarr;</span></a>
-          <a class="btn btn--outline" href="index.html#contact">Screen a project</a>
-          <a class="btn btn--outline" href="index.html#contact">Discuss a sector or portfolio question</a>
+          <a class="btn btn--primary" href="index.html#contact">Discuss a question <span class="btn__arrow">&rarr;</span></a>
+          <a class="btn btn--outline" href="research.html">Explore our research</a>
         </div>
         <div class="cta-row" style="margin-top:14px;">
           <a class="btn btn--outline" href="coverage.html">See what has been analysed</a>
@@ -501,11 +603,12 @@
         </div>
         <nav class="footer__links">
           <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="consultations.html">Consultations</a>
           <a href="intelligence-platform.html">Platform</a>
-          <a href="case-studies.html">Case studies</a>
+          <a href="case-studies.html">Projects</a>
           <a href="coverage.html">Track record</a>
-          <a href="notes.html">Notes</a>
-          <a href="index.html#contact">Book a 20-min screen</a>
+          <a href="index.html#contact">Discuss a question</a>
         </nav>
       </div>
       <p class="footer__legal">

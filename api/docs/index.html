@@ -26,9 +26,12 @@
       </a>
       <nav class="nav__links">
         <a href="/index.html">Home</a>
-        <a href="/api/">Data &amp; API</a>
-        <a href="/case-studies.html">Case studies</a>
-        <a href="/index.html#contact">Contact</a>
+        <a href="/research.html">Research</a>
+        <a href="/consultations.html">Consultations</a>
+        <a href="/intelligence-platform.html">Platform</a>
+        <a href="/case-studies.html">Projects</a>
+        <a href="/index.html#about">About</a>
+        <a href="/index.html#contact" class="nav__cta">Discuss a question</a>
       </nav>
     </div>
   </header>
@@ -66,12 +69,12 @@
           </ul>
 
           <div class="endpoint">
-            <h3><code class="path">GET /api/v1/projects/fountain-head.json</code></h3>
+            <h3><code class="path">GET /api/v1/projects/remote-mining-asset.json</code></h3>
             <p>Project entity: identity, location, technology, data coverage, registry stats and all related links.</p>
             <pre class="sample">{
-  "id": "project_fountain_head",
-  "canonical_url": "https://heliovulcan.com.au/projects/fountain-head/",
-  "name": "Fountain Head Hybrid Energy",
+  "id": "project_remote_mining_asset",
+  "canonical_url": "https://heliovulcan.com.au/projects/remote-mining-asset/",
+  "name": "Remote Mining Asset — Hybrid Energy Pre-DD",
   "entity_type": "hybrid_energy_project_screen",
   "location": { "country": "Australia", "state_or_territory": "Northern Territory" },
   "technology": ["solar_pv", "battery_energy_storage", "diesel_generation"],
@@ -79,14 +82,14 @@
   "updated_at": "2026-07-23",
   "stats": { "claims_total": 14, "public_sources": 4, "...": "..." },
   "api": {
-    "claims_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/claims.json",
-    "evidence_url": "https://heliovulcan.com.au/api/v1/projects/fountain-head/evidence.json"
+    "claims_url": "https://heliovulcan.com.au/api/v1/projects/remote-mining-asset/claims.json",
+    "evidence_url": "https://heliovulcan.com.au/api/v1/projects/remote-mining-asset/evidence.json"
   }
 }</pre>
           </div>
 
           <div class="endpoint">
-            <h3><code class="path">GET /api/v1/projects/fountain-head/claims.json</code></h3>
+            <h3><code class="path">GET /api/v1/projects/remote-mining-asset/claims.json</code></h3>
             <p>The claim registry. Each claim:</p>
             <pre class="sample">{
   "claim_id": "FH-LOAD-001",
@@ -110,12 +113,12 @@
           </div>
 
           <div class="endpoint">
-            <h3><code class="path">GET /api/v1/projects/fountain-head/evidence.json</code></h3>
+            <h3><code class="path">GET /api/v1/projects/remote-mining-asset/evidence.json</code></h3>
             <p>The evidence registry. Each object:</p>
             <pre class="sample">{
   "evidence_id": "EVID-FH-EIS-MAIN-01",
-  "source_title": "Fountain Head Gold Project — Draft EIS, Main Report",
-  "publisher": "PNX Metals Limited (published via NT EPA assessment register)",
+  "source_title": "Draft EIS, main report — Northern Territory gold project",
+  "publisher": "Project proponent (published via the NT EPA assessment register)",
   "source_url": "https://ntepa.nt.gov.au/...",
   "document_date": "2021-05",
   "accessed_at": "2026-07-23",
