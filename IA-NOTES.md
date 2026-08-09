@@ -195,9 +195,46 @@ This is the strongest thing the site has and none of the repositioning weakens i
   evidenced;
 - no `leading` / `best-in-class` / `trusted by` language.
 
-## CTAs
+## Commercial positioning — sell the conversation, not a package
 
-Hard lead-generation copy (`Book a 20-min screen`, `Book a 20-minute project screen`) is gone
-sitewide, replaced by `Discuss a question` and `Explore our research`. Contact functionality is
-unchanged — the same `mailto:` routes remain, and the engagement pathways are still documented
-under `#contact`, reframed as *how work is scoped* rather than a service menu.
+During exploration the site does **not** package itself around a paid-service funnel. The point
+is to maximise useful market conversations; a price list narrows them before they start. If
+repeated paid demand later reveals a standard product, pricing can be introduced then.
+
+Removed from the public pages, and not to be reintroduced without a decision:
+
+- public pricing or fixed package prices
+- `free` framing of any kind — no free screen, no free sanity check, no "no fee" bullet
+- success-fee, milestone-fee and success-linked structures
+- the `Free → Asset Review → Pre-DD → success fee` ladder, and the A/B/C/D persona cards that
+  asked visitors to classify themselves before making contact
+- the Founding Projects Program note
+
+It was **not** replaced with a commissioned-research price table. The contact section is now
+one invitation:
+
+> Heliovulcan is open to discussions around industrial, energy, emissions, policy and investment
+> questions where independent evidence or analysis may be useful.
+
+A light commercial signal stays, so the site does not read as an NGO or a university page:
+*some of the work stays open and is published here, some is commissioned, and which one a
+question turns into is worked out in the conversation.* Pre-DD capability remains fully visible
+— what is gone is the price and package mechanics around it.
+
+### CTAs
+
+Two primary calls to action sitewide, and nothing else competing with them:
+
+| | |
+|---|---|
+| **Explore our research** | `research.html` |
+| **Discuss a question** | `index.html#contact` → `mailto:` |
+
+Hard lead-generation copy (`Book a 20-min screen`, `Book a 20-minute project screen`) is gone.
+Contact functionality is unchanged — the same `mailto:` routes remain. Note that
+`cases/render.js` appends a CTA block to **every** case page automatically; it carries the same
+framing, so change it there rather than per-case.
+
+What survives under `#contact` is not a service menu: what an answer looks like, where you need
+a professional instead, optional context that sharpens a site-specific question, and the service
+boundary. Those are evidence discipline, not packaging.

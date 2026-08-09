@@ -43,7 +43,7 @@
                    Drives which group the case appears under on case-studies.html.
                    Sector studies carry no map pin. Default if omitted: "project".
 
-   The disclaimer block and the "free sanity check" call-to-action are added to
+   The disclaimer block and the "Discuss a question" call-to-action are added to
    EVERY case page automatically — you do not need to repeat them here.
    ============================================================================= */
 
@@ -337,7 +337,7 @@ window.HELIOVULCAN_CASES = [
     ],
 
     downloads: [],
-    downloadsNote: "Want to test a similar site? <a href='index.html#contact'>Book a 20-minute project screen</a> before committing to EPC, legal or financing work."
+    downloadsNote: "Looking at a similar site? <a href='index.html#contact'>Discuss a question</a> \u2014 worth doing before committing to EPC, legal or financing work."
   }  ,
 
   /* ===========================================================================

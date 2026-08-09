@@ -360,17 +360,18 @@
   }
 
   function ctaBlock() {
-    // standard free-sanity-check CTA on EVERY case page
+    // appended to EVERY case page. Exploration-stage framing: no package, no
+    // price, no "free" offer — the invitation is the conversation itself.
     return (
       '<section class="section section--navy"><div class="container">' +
-        '<p class="eyebrow">Peer project review</p>' +
-        '<h2 class="section-title">Looking at a project like this?</h2>' +
+        '<p class="eyebrow">Discuss a question</p>' +
+        '<h2 class="section-title">Looking at a question like this one?</h2>' +
         '<p class="section-intro">' +
-          "Heliovulcan is an independent project-intelligence practice providing early-stage project screening for industrial hybrid energy. A project screen can identify what looks sound, what needs testing and what to ask before EPC quotes or investor discussions." +
+          "Heliovulcan is an independent industrial intelligence practice. If you are working on something this evidence base could speak to \u2014 a facility, a market, a project, a policy exposure \u2014 a short, non-confidential exchange is usually enough to establish whether the public record can answer it." +
         "</p>" +
         '<div class="cta-row">' +
-          '<a class="btn btn--primary" href="index.html#contact">Book a 20-minute project screen <span class="btn__arrow">&rarr;</span></a>' +
-          '<a class="btn btn--ghost-light" href="case-studies.html">All case studies</a>' +
+          '<a class="btn btn--primary" href="index.html#contact">Discuss a question <span class="btn__arrow">&rarr;</span></a>' +
+          '<a class="btn btn--ghost-light" href="research.html">Explore our research</a>' +
         "</div>" +
       "</div></section>"
     );
