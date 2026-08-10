@@ -21,6 +21,8 @@
     .lawbox p { margin: 0 0 12px; font-size: 16px; }
     .lawbox p:last-child { margin-bottom: 0; }
     .lawbox cite { font-family: var(--mono); font-size: 13px; color: var(--ink-faint); font-style: normal; display: block; margin-top: 2px; }
+    /* Dated correction notice inside the method box — set apart, never hidden. */
+    .methodbox p.correction { border-left: 3px solid var(--ink-faint); padding-left: 16px; }
 
     /* ── chart system ──────────────────────────────────────────────────────
        Three series slots, snapped onto this site's own hue angles (navy 247,
@@ -134,10 +136,10 @@
           <div class="glance">
             <span class="glance__label">At a glance</span>
             <ol>
-              <li><strong>The scheme has a statutory floor.</strong> A baseline calculated below 100,000 tonnes is set to 100,000 tonnes. In the 2023&ndash;24 register, <strong>33 facilities</strong> sat at exactly that number. In 2024&ndash;25, <strong>43</strong>. Project the register forward on the legislated decline schedule and by 2029&ndash;30 it is <strong>64 of 227</strong>.</li>
-              <li><strong>The floor is worth at least 1.5 Mt a year by 2029&ndash;30</strong> &mdash; baseline held above where the 4.9-point schedule would otherwise put it. The department projects aggregate baselines at 96 Mt against a 100 Mt target; on this reconstruction, more than a third of that margin is the floor.</li>
-              <li><strong>Lowering the coverage threshold lowers the floor with it.</strong> The consultation paper says so in one sentence and does not cost it. At a 75,000-tonne threshold the held-back baseline falls from 1.5 Mt to 0.11 Mt &mdash; a tightening on facilities <em>already covered</em> comparable in scale to the 4.1 Mt of newly covered emissions the paper does put in a table.</li>
-              <li><strong>Sixty-one per cent of the floor-bound cohort is resources</strong> &mdash; 20 metal ore mines, 12 coal mines, 7 oil and gas facilities. The floor is, disproportionately, a mining instrument.</li>
+              <li><strong>The scheme has a statutory floor.</strong> A baseline calculated below 100,000 tonnes is set to 100,000 tonnes. In the 2024&ndash;25 published table, 43 facilities sat at exactly that number &mdash; but only <strong>24 of them are still covered</strong>; the other 19 have dropped out of the scheme and stayed on the list. Project the covered register forward on the legislated decline schedule and by 2029&ndash;30 it is <strong>45 of 208</strong>.</li>
+              <li><strong>The floor is worth at least 1.0 Mt a year by 2029&ndash;30</strong> &mdash; baseline held above where the 4.9-point schedule would otherwise put it, at facilities that still carry an obligation. The department projects aggregate baselines at 96 Mt against a 100 Mt target; on this reconstruction, about a quarter of that margin is the floor.</li>
+              <li><strong>Lowering the coverage threshold lowers the floor with it.</strong> The consultation paper says so in one sentence and does not cost it. At a 75,000-tonne threshold the held-back baseline falls from 0.99 Mt to 0.07 Mt &mdash; a tightening of 0.92 Mt on facilities <em>already covered</em>, against the 4.1 Mt of newly covered emissions the paper does put in a table.</li>
+              <li><strong>Seventy-one per cent of the floor-bound cohort is resources</strong> &mdash; 17 metal ore mines, 10 coal mines, 5 oil and gas facilities. The floor is, disproportionately, a mining instrument.</li>
               <li><strong>The on-site abatement problem both papers are worried about is also a mining problem.</strong> Coal, metal ore and oil and gas account for <strong>81 per cent</strong> of offset credits surrendered for compliance &mdash; 79 per cent once deemed surrenders are added &mdash; and 22 of the 24 facilities that used credits for 30 per cent or more of their baseline are mines.</li>
               <li><strong>For one large slice of it, the incentive does not reach the owner.</strong> Of the gold operations we have verified that have their own power station, <strong>90 per cent</strong> do not own it &mdash; it belongs to a contractor on a long build-own-operate contract. Every disclosed battery at those sites is on the contractor&rsquo;s asset, not the miner&rsquo;s.</li>
             </ol>
@@ -190,9 +192,13 @@
 
           <p>The logic is sound. Without the floor, a shrinking facility&rsquo;s baseline would chase its emissions down to nothing and the administrative cost of covering it would exceed the abatement. Without the asymmetry, a facility parked on the floor could bank credits for abatement it was already going to make. So the floor caps the obligation and the asymmetry cancels the reward.</p>
 
-          <p>What that produces, in practice, is a growing group of facilities for which the scheme has switched off in both directions. They face no declining constraint, because their baseline has stopped falling. And they earn nothing for abating, because between the floored baseline they must not exceed and the unfloored one credits are measured against, there is a band where abatement produces nothing sellable.</p>
+          <p>What that produces is not slack. For a covered facility the floored baseline is numerically the coverage threshold: the facility is covered <em>because</em> its emissions exceed 100,000 tonnes, and its baseline, once floored, <em>is</em> 100,000 tonnes. A facility on the floor therefore has no headroom at all &mdash; every year it is covered is a year above its baseline. The 2024&ndash;25 register bears this out without a single exception: all 24 covered facilities on the floor emitted more than 100,000 tonnes, the lowest at 101,144 and the median at 127,780.</p>
 
-          <p>The register shows how fast that group is growing.</p>
+          <p>The band between the two baselines is still there and still pays nothing. But a covered facility cannot sit inside it. Emissions in that band are emissions below 100,000 tonnes &mdash; below the coverage threshold &mdash; so a facility arrives there by leaving the scheme, not by abating within it. Nineteen facilities in the 2024&ndash;25 table have done exactly that: still listed, still showing a baseline of 100,000, emitting below it, and carrying no obligation because they are no longer designated large facilities. One of them was issued 1,138 credits against emissions of 81,563 tonnes &mdash; measured, that is, against an unfloored baseline of 82,701 rather than the 100,000 the table prints. That is section 56(4) working exactly as drafted, and it is the one place in the register where you can watch it happen.</p>
+
+          <p>Falling below the threshold does not always end coverage: a facility inside a multi-year monitoring period stays in, and one facility in the 2024&ndash;25 table is covered on emissions of 80,908 tonnes on that basis. It is the exception, not the route.</p>
+
+          <p>The register shows how fast the covered group on the floor is growing.</p>
 
           <div class="exhibit fig">
             <div class="exhibit__head">
@@ -253,7 +259,7 @@
                 <text class="ax" x="528.3" y="310" text-anchor="middle">2028&ndash;29</text>
                 <text class="ax" x="620" y="310" text-anchor="middle">2029&ndash;30</text>
               </svg></div>
-              <p class="fig-cap">The trace is the modal case, not a named facility: a baseline that reaches exactly 100,000 tonnes in 2024&ndash;25 and is then held there. Forty-three facilities are on precisely that number today, so they all project to precisely 72,838 tonnes in 2029&ndash;30. Everything between the two lines is abatement that moves a facility further into compliance and produces nothing sellable.</p>
+              <p class="fig-cap">The trace is the modal case, not a named facility: a baseline that reaches exactly 100,000 tonnes in 2024&ndash;25 and is then held there. Twenty-four covered facilities are on precisely that number today, so they all project to precisely 72,838 tonnes in 2029&ndash;30. Everything between the two lines is abatement that produces nothing sellable &mdash; but note that a covered facility cannot occupy the shaded band, because emissions inside it are below the coverage threshold. The band is reached by leaving the scheme.</p>
             </div>
             <p class="exhibit__src"><b>Source:</b> National Greenhouse and Energy Reporting (Safeguard Mechanism) Rule 2015, s10(1) and s56(4); emissions reduction contribution schedule 0.951 (2023&ndash;24) declining 4.9 points a year to 0.657 (2029&ndash;30). Analysis by Heliovulcan.</p>
           </div>
@@ -261,15 +267,15 @@
           <div class="exhibit fig">
             <div class="exhibit__head">
               <span class="exhibit__n">Exhibit 2</span>
-              <span class="exhibit__t">The number of facilities parked on the statutory floor is compounding</span>
+              <span class="exhibit__t">The number of covered facilities parked on the statutory floor is compounding</span>
             </div>
             <div class="exhibit__body">
               <div class="fig-key">
                 <span><i style="background:var(--c1)"></i>Filed &mdash; counted in the published register</span>
                 <span><i style="background:var(--c2)"></i>Projected on the legislated schedule</span>
               </div>
-              <div class="fig-scroll"><svg viewBox="0 0 720 415" role="img" aria-label="Two stacked panels sharing a time axis from 2023-24 to 2029-30. The upper panel counts facilities on the statutory floor: 33 and 43 filed, then 46, 53, 55, 60 and 64 projected. The lower panel shows baseline held above the declining path, rising from 0.266 to 1.509 million tonnes.">
-                <text class="dsub" x="70" y="18" font-weight="600">Facilities on the floor</text>
+              <div class="fig-scroll"><svg viewBox="0 0 720 415" role="img" aria-label="Two stacked panels sharing a time axis from 2023-24 to 2029-30. The upper panel counts covered facilities on the statutory floor: 22 and 24 filed, then 27, 34, 36, 41 and 45 projected. The lower panel shows baseline held above the declining path, rising from 0.155 to 0.987 million tonnes.">
+                <text class="dsub" x="70" y="18" font-weight="600">Covered facilities on the floor</text>
                 <line class="grid" x1="70" y1="200" x2="690" y2="200"/>
                 <line class="grid" x1="70" y1="154.3" x2="690" y2="154.3"/>
                 <line class="grid" x1="70" y1="108.6" x2="690" y2="108.6"/>
@@ -278,20 +284,20 @@
                 <text class="ax" x="60" y="158.3" text-anchor="end">20</text>
                 <text class="ax" x="60" y="112.6" text-anchor="end">40</text>
                 <text class="ax" x="60" y="66.9" text-anchor="end">60</text>
-                <path d="M102.3,200.0 L102.3,128.6 Q102.3,124.6 106.3,124.6 L122.3,124.6 Q126.3,124.6 126.3,128.6 L126.3,200.0 Z" fill="var(--c1)" data-tip="2023–24 · 33 facilities on the floor (filed)" tabindex="0"/>
-                <text class="dlab" x="114.3" y="116.6" text-anchor="middle">33</text>
-                <path d="M190.9,200.0 L190.9,105.7 Q190.9,101.7 194.9,101.7 L210.9,101.7 Q214.9,101.7 214.9,105.7 L214.9,200.0 Z" fill="var(--c1)" data-tip="2024–25 · 43 facilities on the floor (filed)" tabindex="0"/>
-                <text class="dlab" x="202.9" y="93.7" text-anchor="middle">43</text>
-                <path d="M279.4,200.0 L279.4,98.9 Q279.4,94.9 283.4,94.9 L299.4,94.9 Q303.4,94.9 303.4,98.9 L303.4,200.0 Z" fill="var(--c2)" data-tip="2025–26 · 46 facilities on the floor (projected)" tabindex="0"/>
-                <text class="dlab" x="291.4" y="86.9" text-anchor="middle">46</text>
-                <path d="M368.0,200.0 L368.0,82.9 Q368.0,78.9 372.0,78.9 L388.0,78.9 Q392.0,78.9 392.0,82.9 L392.0,200.0 Z" fill="var(--c2)" data-tip="2026–27 · 53 facilities on the floor (projected)" tabindex="0"/>
-                <text class="dlab" x="380.0" y="70.9" text-anchor="middle">53</text>
-                <path d="M456.6,200.0 L456.6,78.3 Q456.6,74.3 460.6,74.3 L476.6,74.3 Q480.6,74.3 480.6,78.3 L480.6,200.0 Z" fill="var(--c2)" data-tip="2027–28 · 55 facilities on the floor (projected)" tabindex="0"/>
-                <text class="dlab" x="468.6" y="66.3" text-anchor="middle">55</text>
-                <path d="M545.1,200.0 L545.1,66.9 Q545.1,62.9 549.1,62.9 L565.1,62.9 Q569.1,62.9 569.1,66.9 L569.1,200.0 Z" fill="var(--c2)" data-tip="2028–29 · 60 facilities on the floor (projected)" tabindex="0"/>
-                <text class="dlab" x="557.1" y="54.9" text-anchor="middle">60</text>
-                <path d="M633.7,200.0 L633.7,57.7 Q633.7,53.7 637.7,53.7 L653.7,53.7 Q657.7,53.7 657.7,57.7 L657.7,200.0 Z" fill="var(--c2)" data-tip="2029–30 · 64 facilities on the floor (projected)" tabindex="0"/>
-                <text class="dlab" x="645.7" y="45.7" text-anchor="middle">64</text>
+                <path d="M102.3,200.0 L102.3,153.7 Q102.3,149.7 106.3,149.7 L122.3,149.7 Q126.3,149.7 126.3,153.7 L126.3,200.0 Z" fill="var(--c1)" data-tip="2023–24 · 22 covered facilities on the floor (filed)" tabindex="0"/>
+                <text class="dlab" x="114.3" y="141.7" text-anchor="middle">22</text>
+                <path d="M190.9,200.0 L190.9,149.2 Q190.9,145.2 194.9,145.2 L210.9,145.2 Q214.9,145.2 214.9,149.2 L214.9,200.0 Z" fill="var(--c1)" data-tip="2024–25 · 24 covered facilities on the floor (filed)" tabindex="0"/>
+                <text class="dlab" x="202.9" y="137.2" text-anchor="middle">24</text>
+                <path d="M279.4,200.0 L279.4,142.3 Q279.4,138.3 283.4,138.3 L299.4,138.3 Q303.4,138.3 303.4,142.3 L303.4,200.0 Z" fill="var(--c2)" data-tip="2025–26 · 27 covered facilities on the floor (projected)" tabindex="0"/>
+                <text class="dlab" x="291.4" y="130.3" text-anchor="middle">27</text>
+                <path d="M368.0,200.0 L368.0,126.3 Q368.0,122.3 372.0,122.3 L388.0,122.3 Q392.0,122.3 392.0,126.3 L392.0,200.0 Z" fill="var(--c2)" data-tip="2026–27 · 34 covered facilities on the floor (projected)" tabindex="0"/>
+                <text class="dlab" x="380.0" y="114.3" text-anchor="middle">34</text>
+                <path d="M456.6,200.0 L456.6,121.7 Q456.6,117.7 460.6,117.7 L476.6,117.7 Q480.6,117.7 480.6,121.7 L480.6,200.0 Z" fill="var(--c2)" data-tip="2027–28 · 36 covered facilities on the floor (projected)" tabindex="0"/>
+                <text class="dlab" x="468.6" y="109.7" text-anchor="middle">36</text>
+                <path d="M545.1,200.0 L545.1,110.3 Q545.1,106.3 549.1,106.3 L565.1,106.3 Q569.1,106.3 569.1,110.3 L569.1,200.0 Z" fill="var(--c2)" data-tip="2028–29 · 41 covered facilities on the floor (projected)" tabindex="0"/>
+                <text class="dlab" x="557.1" y="98.3" text-anchor="middle">41</text>
+                <path d="M633.7,200.0 L633.7,101.2 Q633.7,97.2 637.7,97.2 L653.7,97.2 Q657.7,97.2 657.7,101.2 L657.7,200.0 Z" fill="var(--c2)" data-tip="2029–30 · 45 covered facilities on the floor (projected)" tabindex="0"/>
+                <text class="dlab" x="645.7" y="89.2" text-anchor="middle">45</text>
 
                 <text class="dsub" x="70" y="243" font-weight="600">Baseline held above the declining path, Mt</text>
                 <line class="grid" x1="70" y1="370" x2="690" y2="370"/>
@@ -302,14 +308,14 @@
                 <text class="ax" x="60" y="342.8" text-anchor="end">0.5</text>
                 <text class="ax" x="60" y="311.5" text-anchor="end">1.0</text>
                 <text class="ax" x="60" y="280.2" text-anchor="end">1.5</text>
-                <path d="M291.4,370 L291.4,353.4 L380.0,336.4 L468.6,317.9 L557.1,297.9 L645.7,275.7 L645.7,370 Z" fill="var(--c2)" opacity=".12"/>
-                <path class="ln" d="M291.4,353.4 L380.0,336.4 L468.6,317.9 L557.1,297.9 L645.7,275.7" stroke="var(--c2)"/>
-                <circle class="dot" cx="291.4" cy="353.4" r="4.5" fill="var(--c2)" data-tip="2025–26 · 0.266 Mt held above the declining path" tabindex="0"/>
-                <circle class="dot" cx="380.0" cy="336.4" r="4.5" fill="var(--c2)" data-tip="2026–27 · 0.537 Mt held above the declining path" tabindex="0"/>
-                <circle class="dot" cx="468.6" cy="317.9" r="4.5" fill="var(--c2)" data-tip="2027–28 · 0.833 Mt held above the declining path" tabindex="0"/>
-                <circle class="dot" cx="557.1" cy="297.9" r="4.5" fill="var(--c2)" data-tip="2028–29 · 1.153 Mt held above the declining path" tabindex="0"/>
-                <circle class="dot" cx="645.7" cy="275.7" r="4.5" fill="var(--c2)" data-tip="2029–30 · 1.509 Mt held above the declining path" tabindex="0"/>
-                <text class="dlab" x="645.7" y="266" text-anchor="middle">1.51</text>
+                <path d="M291.4,370 L291.4,360.3 L380.0,349.8 L468.6,337.7 L557.1,324.2 L645.7,308.3 L645.7,370 Z" fill="var(--c2)" opacity=".12"/>
+                <path class="ln" d="M291.4,360.3 L380.0,349.8 L468.6,337.7 L557.1,324.2 L645.7,308.3" stroke="var(--c2)"/>
+                <circle class="dot" cx="291.4" cy="360.3" r="4.5" fill="var(--c2)" data-tip="2025–26 · 0.155 Mt held above the declining path" tabindex="0"/>
+                <circle class="dot" cx="380.0" cy="349.8" r="4.5" fill="var(--c2)" data-tip="2026–27 · 0.323 Mt held above the declining path" tabindex="0"/>
+                <circle class="dot" cx="468.6" cy="337.7" r="4.5" fill="var(--c2)" data-tip="2027–28 · 0.517 Mt held above the declining path" tabindex="0"/>
+                <circle class="dot" cx="557.1" cy="324.2" r="4.5" fill="var(--c2)" data-tip="2028–29 · 0.733 Mt held above the declining path" tabindex="0"/>
+                <circle class="dot" cx="645.7" cy="308.3" r="4.5" fill="var(--c2)" data-tip="2029–30 · 0.987 Mt held above the declining path" tabindex="0"/>
+                <text class="dlab" x="645.7" y="298.6" text-anchor="middle">0.99</text>
 
                 <text class="ax" x="114.3" y="392" text-anchor="middle">2023&ndash;24</text>
                 <text class="ax" x="202.9" y="392" text-anchor="middle">2024&ndash;25</text>
@@ -319,33 +325,33 @@
                 <text class="ax" x="557.1" y="392" text-anchor="middle">2028&ndash;29</text>
                 <text class="ax" x="645.7" y="392" text-anchor="middle">2029&ndash;30</text>
               </svg></div>
-              <p class="fig-cap">The two panels share a time axis but not a scale &mdash; a count and a tonnage are different measures and never belong on one pair of axes. The lower panel starts in 2025&ndash;26 because the held-back tonnage cannot be computed for the filed years: for a facility already on the floor, the register publishes the floored number and not the one behind it. The projection holds production and emissions intensity fixed. It does not model the separate convergence of facility-specific intensity toward the industry average, which would push more facilities onto the floor, not fewer &mdash; so 64 is a conservative count.</p>
+              <p class="fig-cap">The two panels share a time axis but not a scale &mdash; a count and a tonnage are different measures and never belong on one pair of axes. The lower panel starts in 2025&ndash;26 because the held-back tonnage cannot be computed for the filed years: for a facility already on the floor, the register publishes the floored number and not the one behind it. The projection holds production and emissions intensity fixed. It does not model the separate convergence of facility-specific intensity toward the industry average, which would push more facilities onto the floor, not fewer &mdash; so 45 is a conservative count. Facilities that have ceased to be covered are excluded throughout: the floor holds up a number for them, but not an obligation.</p>
               <details class="fig-tv">
                 <summary>Show the numbers</summary>
                 <div class="exhibit__scroll">
                   <table class="matrix">
-                    <thead><tr><th>Year</th><th class="num">Facilities on the floor</th><th class="num">Baseline held above the path</th><th>Basis</th></tr></thead>
+                    <thead><tr><th>Year</th><th class="num">Covered facilities on the floor</th><th class="num">Baseline held above the path</th><th>Basis</th></tr></thead>
                     <tbody>
-                      <tr><td class="metric">2023&ndash;24</td><td class="num">33</td><td class="num">&mdash;</td><td>Filed</td></tr>
-                      <tr><td class="metric">2024&ndash;25</td><td class="num">43</td><td class="num">&mdash;</td><td>Filed</td></tr>
-                      <tr><td class="metric">2025&ndash;26</td><td class="num">46</td><td class="num">0.266 Mt</td><td>Projected</td></tr>
-                      <tr><td class="metric">2026&ndash;27</td><td class="num">53</td><td class="num">0.537 Mt</td><td>Projected</td></tr>
-                      <tr><td class="metric">2027&ndash;28</td><td class="num">55</td><td class="num">0.833 Mt</td><td>Projected</td></tr>
-                      <tr><td class="metric">2028&ndash;29</td><td class="num">60</td><td class="num">1.153 Mt</td><td>Projected</td></tr>
-                      <tr><td class="metric">2029&ndash;30</td><td class="num s1">64</td><td class="num s1">1.509 Mt</td><td>Projected</td></tr>
+                      <tr><td class="metric">2023&ndash;24</td><td class="num">22</td><td class="num">&mdash;</td><td>Filed</td></tr>
+                      <tr><td class="metric">2024&ndash;25</td><td class="num">24</td><td class="num">&mdash;</td><td>Filed</td></tr>
+                      <tr><td class="metric">2025&ndash;26</td><td class="num">27</td><td class="num">0.155 Mt</td><td>Projected</td></tr>
+                      <tr><td class="metric">2026&ndash;27</td><td class="num">34</td><td class="num">0.323 Mt</td><td>Projected</td></tr>
+                      <tr><td class="metric">2027&ndash;28</td><td class="num">36</td><td class="num">0.517 Mt</td><td>Projected</td></tr>
+                      <tr><td class="metric">2028&ndash;29</td><td class="num">41</td><td class="num">0.733 Mt</td><td>Projected</td></tr>
+                      <tr><td class="metric">2029&ndash;30</td><td class="num s1">45</td><td class="num s1">0.987 Mt</td><td>Projected</td></tr>
                     </tbody>
                   </table>
                 </div>
               </details>
             </div>
-            <p class="exhibit__src"><b>Source:</b> Clean Energy Regulator published Safeguard baselines and emissions, FY2023&ndash;24 and FY2024&ndash;25 (227 facilities with a baseline in the later year). Analysis by Heliovulcan.</p>
+            <p class="exhibit__src"><b>Source:</b> Clean Energy Regulator published Safeguard baselines and emissions, FY2023&ndash;24 and FY2024&ndash;25 (208 covered facilities in the later year, from 227 rows carrying a baseline). Analysis by Heliovulcan.</p>
           </div>
 
-          <p>Nineteen of the 43 currently on the floor already emit less than their floored baseline &mdash; one of them under 300 tonnes against a 100,000-tonne allowance. They are inert: no obligation, no credit, no reason to invest, and no reason to leave.</p>
+          <p>Those nineteen are the whole of the group that emits less than its floored baseline &mdash; one of them under 300 tonnes against a 100,000-tonne allowance. They are inert, but they are inert <em>outside</em> the scheme, and a tighter floor would not reach them. The 45 counted above are the ones it would.</p>
 
-          <div class="pull"><span class="hl">For a facility on the floor, the scheme has switched off in both directions at once &mdash; the constraint has stopped tightening and the credit has stopped paying.</span></div>
+          <div class="pull"><span class="hl">For a covered facility on the floor, the baseline is not a ceiling above its emissions. It is the coverage threshold itself &mdash; and the only compliant position is outside the scheme.</span></div>
 
-          <p>And the cohort is not a random sample of the register. Of the 64 facilities that reach the floor by 2029&ndash;30, 20 are metal ore mines, 12 are coal mines and 7 are oil and gas facilities. Metal ore mining is the sector that stands out: it is 23 per cent of the register and 31 per cent of the floor cohort. Coal runs the other way &mdash; 30 per cent of the register, 19 per cent of the cohort &mdash; because coal mines are, on average, larger emitters and stay above the floor. What the floor catches is the small end of a big industry: the satellite pit, the ageing operation, the plant in care and maintenance.</p>
+          <p>And the cohort is not a random sample of the register. Of the 45 covered facilities that reach the floor by 2029&ndash;30, 17 are metal ore mines, 10 are coal mines and 5 are oil and gas facilities. Metal ore mining is the sector that stands out: it is 24 per cent of the covered register and 38 per cent of the floor cohort. Coal runs the other way &mdash; 32 per cent of the register, 22 per cent of the cohort &mdash; because coal mines are, on average, larger emitters and stay above the floor. What the floor catches is the small end of a big industry: the satellite pit, the ageing operation, the plant in care and maintenance.</p>
 
           <div class="exhibit fig">
             <div class="exhibit__head">
@@ -354,79 +360,68 @@
             </div>
             <div class="exhibit__body">
               <div class="fig-key">
-                <span><i style="background:var(--c1);border-radius:50%;width:11px"></i>Share of the whole register</span>
-                <span><i style="background:var(--c2);border-radius:50%;width:11px"></i>Share of the 64-facility floor cohort</span>
+                <span><i style="background:var(--c1);border-radius:50%;width:11px"></i>Share of the covered register</span>
+                <span><i style="background:var(--c2);border-radius:50%;width:11px"></i>Share of the 45-facility floor cohort</span>
               </div>
-              <div class="fig-scroll"><svg viewBox="0 0 720 330" role="img" aria-label="Dumbbell chart comparing each sector's share of the Safeguard register with its share of the floor cohort. Metal ore mining rises from 23.3 to 31.2 per cent; coal mining falls from 30.0 to 18.8 per cent; the remaining sectors move only slightly.">
-                <line class="grid" x1="300" y1="30" x2="300" y2="300"/>
-                <line class="grid" x1="408.8" y1="30" x2="408.8" y2="300"/>
-                <line class="grid" x1="517.6" y1="30" x2="517.6" y2="300"/>
-                <line class="grid" x1="626.5" y1="30" x2="626.5" y2="300"/>
-                <text class="ax" x="286" y="50" text-anchor="end">Metal ore mining</text>
-                <line class="lead" x1="553.6" y1="46" x2="639.5" y2="46" stroke-width="2"/>
-                <circle class="dot" cx="553.6" cy="46" r="5" fill="var(--c1)" data-tip="Metal ore mining · 23.3% of the register (53 of 227)" tabindex="0"/>
-                <circle class="dot" cx="639.5" cy="46" r="5" fill="var(--c2)" data-tip="Metal ore mining · 31.2% of the floor cohort (20 of 64)" tabindex="0"/>
-                <text class="dlab" x="652" y="50">+7.9</text>
-                <text class="ax" x="286" y="84" text-anchor="end">Coal mining</text>
-                <line class="lead" x1="626.5" y1="80" x2="504.6" y2="80" stroke-width="2"/>
-                <circle class="dot" cx="626.5" cy="80" r="5" fill="var(--c1)" data-tip="Coal mining · 30.0% of the register (68 of 227)" tabindex="0"/>
-                <circle class="dot" cx="504.6" cy="80" r="5" fill="var(--c2)" data-tip="Coal mining · 18.8% of the floor cohort (12 of 64)" tabindex="0"/>
-                <text class="dlab" x="652" y="84">&minus;11.2</text>
-                <text class="ax" x="286" y="118" text-anchor="end">Oil and gas extraction</text>
-                <line class="lead" x1="439.3" y1="114" x2="418.6" y2="114" stroke-width="2"/>
-                <circle class="dot" cx="439.3" cy="114" r="5" fill="var(--c1)" data-tip="Oil and gas extraction · 12.8% of the register (29 of 227)" tabindex="0"/>
-                <circle class="dot" cx="418.6" cy="114" r="5" fill="var(--c2)" data-tip="Oil and gas extraction · 10.9% of the floor cohort (7 of 64)" tabindex="0"/>
-                <text class="ax" x="286" y="152" text-anchor="end">Non-ferrous metal manufacturing</text>
-                <line class="lead" x1="371.8" y1="148" x2="384.9" y2="148" stroke-width="2"/>
-                <circle class="dot" cx="371.8" cy="148" r="5" fill="var(--c1)" data-tip="Non-ferrous metal manufacturing · 6.6% of the register (15 of 227)" tabindex="0"/>
-                <circle class="dot" cx="384.9" cy="148" r="5" fill="var(--c2)" data-tip="Non-ferrous metal manufacturing · 7.8% of the floor cohort (5 of 64)" tabindex="0"/>
-                <text class="ax" x="286" y="186" text-anchor="end">Road freight transport</text>
-                <line class="lead" x1="314.1" y1="182" x2="351.1" y2="182" stroke-width="2"/>
-                <circle class="dot" cx="314.1" cy="182" r="5" fill="var(--c1)" data-tip="Road freight transport · 1.3% of the register (3 of 227)" tabindex="0"/>
-                <circle class="dot" cx="351.1" cy="182" r="5" fill="var(--c2)" data-tip="Road freight transport · 4.7% of the floor cohort (3 of 64)" tabindex="0"/>
-                <text class="ax" x="286" y="220" text-anchor="end">Electricity generation</text>
-                <line class="lead" x1="328.3" y1="216" x2="351.1" y2="216" stroke-width="2"/>
-                <circle class="dot" cx="328.3" cy="216" r="5" fill="var(--c1)" data-tip="Electricity generation · 2.6% of the register (6 of 227)" tabindex="0"/>
-                <circle class="dot" cx="351.1" cy="216" r="5" fill="var(--c2)" data-tip="Electricity generation · 4.7% of the floor cohort (3 of 64)" tabindex="0"/>
-                <text class="ax" x="286" y="254" text-anchor="end">Cement, lime and plaster</text>
-                <line class="lead" x1="338.1" y1="250" x2="333.7" y2="250" stroke-width="2"/>
-                <circle class="dot" cx="338.1" cy="250" r="5" fill="var(--c1)" data-tip="Cement, lime and plaster · 3.5% of the register (8 of 227)" tabindex="0"/>
-                <circle class="dot" cx="333.7" cy="250" r="5" fill="var(--c2)" data-tip="Cement, lime and plaster · 3.1% of the floor cohort (2 of 64)" tabindex="0"/>
-                <text class="ax" x="286" y="288" text-anchor="end">Pipeline and other transport</text>
-                <line class="lead" x1="314.1" y1="284" x2="333.7" y2="284" stroke-width="2"/>
-                <circle class="dot" cx="314.1" cy="284" r="5" fill="var(--c1)" data-tip="Pipeline and other transport · 1.3% of the register (3 of 227)" tabindex="0"/>
-                <circle class="dot" cx="333.7" cy="284" r="5" fill="var(--c2)" data-tip="Pipeline and other transport · 3.1% of the floor cohort (2 of 64)" tabindex="0"/>
-                <text class="ax" x="300" y="318" text-anchor="middle">0%</text>
-                <text class="ax" x="408.8" y="318" text-anchor="middle">10%</text>
-                <text class="ax" x="517.6" y="318" text-anchor="middle">20%</text>
-                <text class="ax" x="626.5" y="318" text-anchor="middle">30%</text>
+              <div class="fig-scroll"><svg viewBox="0 0 720 305" role="img" aria-label="Dumbbell chart comparing each sector&rsquo;s share of the covered Safeguard register with its share of the floor cohort. Metal ore mining rises from 24.0 to 37.8 per cent; coal mining falls from 31.7 to 22.2 per cent; road freight rises from 1.4 to 6.7 per cent; the other two move slightly.">
+                <line class="grid" x1="300.0" y1="36" x2="300.0" y2="270"/>
+                <line class="grid" x1="390.0" y1="36" x2="390.0" y2="270"/>
+                <line class="grid" x1="480.0" y1="36" x2="480.0" y2="270"/>
+                <line class="grid" x1="570.0" y1="36" x2="570.0" y2="270"/>
+                <line class="grid" x1="660.0" y1="36" x2="660.0" y2="270"/>
+                <text class="ax" x="286" y="64" text-anchor="end">Metal ore mining</text>
+                <line class="lead" x1="516.0" y1="60" x2="640.2" y2="60" stroke-width="2"/>
+                <circle class="dot" cx="516.0" cy="60" r="5" fill="var(--c1)" data-tip="Metal ore mining &middot; 24.0% of the covered register (50 of 208)" tabindex="0"/>
+                <circle class="dot" cx="640.2" cy="60" r="5" fill="var(--c2)" data-tip="Metal ore mining &middot; 37.8% of the floor cohort (17 of 45)" tabindex="0"/>
+                <text class="dlab" x="666" y="64">+13.7</text>
+                <text class="ax" x="286" y="112" text-anchor="end">Coal mining</text>
+                <line class="lead" x1="585.3" y1="108" x2="499.8" y2="108" stroke-width="2"/>
+                <circle class="dot" cx="585.3" cy="108" r="5" fill="var(--c1)" data-tip="Coal mining &middot; 31.7% of the covered register (66 of 208)" tabindex="0"/>
+                <circle class="dot" cx="499.8" cy="108" r="5" fill="var(--c2)" data-tip="Coal mining &middot; 22.2% of the floor cohort (10 of 45)" tabindex="0"/>
+                <text class="dlab" x="666" y="112">&minus;9.5</text>
+                <text class="ax" x="286" y="160" text-anchor="end">Oil and gas extraction</text>
+                <line class="lead" x1="417.0" y1="156" x2="399.9" y2="156" stroke-width="2"/>
+                <circle class="dot" cx="417.0" cy="156" r="5" fill="var(--c1)" data-tip="Oil and gas extraction &middot; 13.0% of the covered register (27 of 208)" tabindex="0"/>
+                <circle class="dot" cx="399.9" cy="156" r="5" fill="var(--c2)" data-tip="Oil and gas extraction &middot; 11.1% of the floor cohort (5 of 45)" tabindex="0"/>
+                <text class="ax" x="286" y="208" text-anchor="end">Road freight transport</text>
+                <line class="lead" x1="312.6" y1="204" x2="360.3" y2="204" stroke-width="2"/>
+                <circle class="dot" cx="312.6" cy="204" r="5" fill="var(--c1)" data-tip="Road freight transport &middot; 1.4% of the covered register (3 of 208)" tabindex="0"/>
+                <circle class="dot" cx="360.3" cy="204" r="5" fill="var(--c2)" data-tip="Road freight transport &middot; 6.7% of the floor cohort (3 of 45)" tabindex="0"/>
+                <text class="dlab" x="666" y="208">+5.2</text>
+                <text class="ax" x="286" y="256" text-anchor="end">Non-ferrous metal manufacturing</text>
+                <line class="lead" x1="355.8" y1="252" x2="360.3" y2="252" stroke-width="2"/>
+                <circle class="dot" cx="355.8" cy="252" r="5" fill="var(--c1)" data-tip="Non-ferrous metal manufacturing &middot; 6.2% of the covered register (13 of 208)" tabindex="0"/>
+                <circle class="dot" cx="360.3" cy="252" r="5" fill="var(--c2)" data-tip="Non-ferrous metal manufacturing &middot; 6.7% of the floor cohort (3 of 45)" tabindex="0"/>
+                <text class="ax" x="300.0" y="290" text-anchor="middle">0%</text>
+                <text class="ax" x="390.0" y="290" text-anchor="middle">10%</text>
+                <text class="ax" x="480.0" y="290" text-anchor="middle">20%</text>
+                <text class="ax" x="570.0" y="290" text-anchor="middle">30%</text>
+                <text class="ax" x="660.0" y="290" text-anchor="middle">40%</text>
               </svg></div>
-              <p class="fig-cap">Only the two movers are labelled, in percentage points. The rest sit within four points of their register share and are there for context; hover, focus or the table below gives every value. The eight sectors shown cover 56 of the 64 facilities.</p>
+              <p class="fig-cap">The three movers are labelled, in percentage points. Shares are of the 208 covered facilities and of the 45 in the cohort; facilities that have ceased to be covered are excluded from both. The five sectors shown cover 38 of the 45 &mdash; the remaining seven sit one apiece in seven further sectors. Road freight moves because all three of its covered facilities land on the floor.</p>
               <details class="fig-tv">
                 <summary>Show the numbers</summary>
                 <div class="exhibit__scroll">
                   <table class="matrix">
-                    <thead><tr><th>Sector</th><th class="num">Of the register</th><th class="num">Of the floor cohort</th><th class="num">Change, points</th></tr></thead>
+                    <thead><tr><th>Sector</th><th class="num">Of the covered register</th><th class="num">Of the floor cohort</th><th class="num">Change, points</th></tr></thead>
                     <tbody>
-                      <tr><td class="metric">Metal ore mining</td><td class="num">23.3% (53)</td><td class="num">31.2% (20)</td><td class="num s1">+7.9</td></tr>
-                      <tr><td class="metric">Coal mining</td><td class="num">30.0% (68)</td><td class="num">18.8% (12)</td><td class="num s1">&minus;11.2</td></tr>
-                      <tr><td class="metric">Oil and gas extraction</td><td class="num">12.8% (29)</td><td class="num">10.9% (7)</td><td class="num">&minus;1.9</td></tr>
-                      <tr><td class="metric">Non-ferrous metal manufacturing</td><td class="num">6.6% (15)</td><td class="num">7.8% (5)</td><td class="num">+1.2</td></tr>
-                      <tr><td class="metric">Road freight transport</td><td class="num">1.3% (3)</td><td class="num">4.7% (3)</td><td class="num">+3.4</td></tr>
-                      <tr><td class="metric">Electricity generation</td><td class="num">2.6% (6)</td><td class="num">4.7% (3)</td><td class="num">+2.1</td></tr>
-                      <tr><td class="metric">Cement, lime and plaster</td><td class="num">3.5% (8)</td><td class="num">3.1% (2)</td><td class="num">&minus;0.4</td></tr>
-                      <tr><td class="metric">Pipeline and other transport</td><td class="num">1.3% (3)</td><td class="num">3.1% (2)</td><td class="num">+1.8</td></tr>
+                      <tr><td class="metric">Metal ore mining</td><td class="num">24.0% (50)</td><td class="num">37.8% (17)</td><td class="num s1">+13.7</td></tr>
+                      <tr><td class="metric">Coal mining</td><td class="num">31.7% (66)</td><td class="num">22.2% (10)</td><td class="num s1">&minus;9.5</td></tr>
+                      <tr><td class="metric">Oil and gas extraction</td><td class="num">13.0% (27)</td><td class="num">11.1% (5)</td><td class="num">&minus;1.9</td></tr>
+                      <tr><td class="metric">Road freight transport</td><td class="num">1.4% (3)</td><td class="num">6.7% (3)</td><td class="num s1">+5.2</td></tr>
+                      <tr><td class="metric">Non-ferrous metal manufacturing</td><td class="num">6.2% (13)</td><td class="num">6.7% (3)</td><td class="num">+0.5</td></tr>
+                      <tr><td class="metric">Seven further sectors, one each</td><td class="num">&mdash;</td><td class="num">15.6% (7)</td><td class="num">&mdash;</td></tr>
                     </tbody>
                   </table>
                 </div>
               </details>
             </div>
-            <p class="exhibit__src"><b>Source:</b> Clean Energy Regulator published Safeguard baselines and emissions, FY2024&ndash;25, classified by the register&rsquo;s own industry field. Analysis by Heliovulcan. Percentages are of 227 facilities and of the 64 projected onto the floor in FY2029&ndash;30.</p>
+            <p class="exhibit__src"><b>Source:</b> Clean Energy Regulator published Safeguard baselines and emissions, FY2024&ndash;25, classified by the register&rsquo;s own industry field. Analysis by Heliovulcan. Percentages are of the 208 covered facilities and of the 45 projected onto the floor in FY2029&ndash;30.</p>
           </div>
 
           <h2 id="s-threshold">Why the threshold question is a floor question</h2>
 
-          <p>Because the minimum baseline moves with the coverage threshold, the choice the department is consulting on is not only about admissions. It is also about whether the 64 start declining again.</p>
+          <p>Because the minimum baseline moves with the coverage threshold, the choice the department is consulting on is not only about admissions. It is also about whether the 45 start declining again.</p>
 
           <div class="exhibit fig">
             <div class="exhibit__head">
@@ -438,7 +433,7 @@
                 <span><i style="background:var(--c2)"></i>Baseline no longer granted to facilities already covered</span>
                 <span><i style="background:var(--c3)"></i>Emissions newly brought into the scheme</span>
               </div>
-              <div class="fig-scroll"><svg viewBox="0 0 720 270" role="img" aria-label="Grouped column chart at three candidate thresholds. At 75,000 tonnes, 1.4 million tonnes of baseline is no longer granted against 4.1 million tonnes of newly covered emissions; at 50,000 tonnes it is 1.51 against 7.8; at 25,000 tonnes 1.51 against 14.2.">
+              <div class="fig-scroll"><svg viewBox="0 0 720 270" role="img" aria-label="Grouped column chart at three candidate thresholds. At 75,000 tonnes, 0.92 million tonnes of baseline is no longer granted against 4.1 million tonnes of newly covered emissions; at 50,000 tonnes it is 0.99 against 7.8; at 25,000 tonnes 0.99 against 14.2.">
                 <line class="grid" x1="90" y1="230" x2="670" y2="230"/>
                 <line class="grid" x1="90" y1="170" x2="670" y2="170"/>
                 <line class="grid" x1="90" y1="110" x2="670" y2="110"/>
@@ -448,18 +443,18 @@
                 <text class="ax" x="80" y="114" text-anchor="end">10</text>
                 <text class="ax" x="80" y="54" text-anchor="end">15</text>
                 <text class="ax" x="90" y="30">Mt CO<tspan baseline-shift="sub" font-size="8">2</tspan>-e per year, FY2029&ndash;30</text>
-                <path d="M161.7,230.0 L161.7,217.2 Q161.7,213.2 165.7,213.2 L181.7,213.2 Q185.7,213.2 185.7,217.2 L185.7,230.0 Z" fill="var(--c2)" data-tip="75,000 t threshold · baseline no longer granted: 1.40 Mt" tabindex="0"/>
-                <text class="dlab" x="173.7" y="205.2" text-anchor="middle">1.40</text>
+                <path d="M161.7,230.0 L161.7,223.0 Q161.7,219.0 165.7,219.0 L181.7,219.0 Q185.7,219.0 185.7,223.0 L185.7,230.0 Z" fill="var(--c2)" data-tip="75,000 t threshold · baseline no longer granted: 0.92 Mt" tabindex="0"/>
+                <text class="dlab" x="173.7" y="211.0" text-anchor="middle">0.92</text>
                 <path d="M187.7,230.0 L187.7,184.8 Q187.7,180.8 191.7,180.8 L207.7,180.8 Q211.7,180.8 211.7,184.8 L211.7,230.0 Z" fill="var(--c3)" data-tip="75,000 t threshold · emissions newly covered: 4.1 Mt (department&#39;s figure)" tabindex="0"/>
                 <text class="dlab" x="199.7" y="172.8" text-anchor="middle">4.1</text>
                 <text class="ax" x="186.7" y="250" text-anchor="middle">75,000 t</text>
-                <path d="M355.0,230.0 L355.0,215.9 Q355.0,211.9 359.0,211.9 L375.0,211.9 Q379.0,211.9 379.0,215.9 L379.0,230.0 Z" fill="var(--c2)" data-tip="50,000 t threshold · baseline no longer granted: 1.51 Mt" tabindex="0"/>
-                <text class="dlab" x="367.0" y="203.9" text-anchor="middle">1.51</text>
+                <path d="M355.0,230.0 L355.0,222.1 Q355.0,218.1 359.0,218.1 L375.0,218.1 Q379.0,218.1 379.0,222.1 L379.0,230.0 Z" fill="var(--c2)" data-tip="50,000 t threshold · baseline no longer granted: 0.99 Mt" tabindex="0"/>
+                <text class="dlab" x="367.0" y="210.1" text-anchor="middle">0.99</text>
                 <path d="M381.0,230.0 L381.0,140.4 Q381.0,136.4 385.0,136.4 L401.0,136.4 Q405.0,136.4 405.0,140.4 L405.0,230.0 Z" fill="var(--c3)" data-tip="50,000 t threshold · emissions newly covered: 7.8 Mt (department&#39;s figure)" tabindex="0"/>
                 <text class="dlab" x="393.0" y="128.4" text-anchor="middle">7.8</text>
                 <text class="ax" x="380.0" y="250" text-anchor="middle">50,000 t</text>
-                <path d="M548.3,230.0 L548.3,215.9 Q548.3,211.9 552.3,211.9 L568.3,211.9 Q572.3,211.9 572.3,215.9 L572.3,230.0 Z" fill="var(--c2)" data-tip="25,000 t threshold · baseline no longer granted: 1.51 Mt" tabindex="0"/>
-                <text class="dlab" x="560.3" y="203.9" text-anchor="middle">1.51</text>
+                <path d="M548.3,230.0 L548.3,222.1 Q548.3,218.1 552.3,218.1 L568.3,218.1 Q572.3,218.1 572.3,222.1 L572.3,230.0 Z" fill="var(--c2)" data-tip="25,000 t threshold · baseline no longer granted: 0.99 Mt" tabindex="0"/>
+                <text class="dlab" x="560.3" y="210.1" text-anchor="middle">0.99</text>
                 <path d="M574.3,230.0 L574.3,63.6 Q574.3,59.6 578.3,59.6 L594.3,59.6 Q598.3,59.6 598.3,63.6 L598.3,230.0 Z" fill="var(--c3)" data-tip="25,000 t threshold · emissions newly covered: 14.2 Mt (department&#39;s figure)" tabindex="0"/>
                 <text class="dlab" x="586.3" y="51.6" text-anchor="middle">14.2</text>
                 <text class="ax" x="573.3" y="250" text-anchor="middle">25,000 t</text>
@@ -470,15 +465,15 @@
                 <thead>
                   <tr>
                     <th>Coverage threshold</th>
-                    <th class="num">Facilities on the floor in FY2029&ndash;30</th>
+                    <th class="num">Covered facilities on the floor in FY2029&ndash;30</th>
                     <th class="num">Baseline held above the declining path</th>
                     <th class="num">New facilities admitted</th>
                     <th class="num">Newly covered emissions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td class="metric">100,000 t &mdash; current</td><td class="num">64</td><td class="num s1">1.51 Mt</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
-                  <tr><td class="metric">75,000 t</td><td class="num">44</td><td class="num s1">0.11 Mt</td><td class="num">48</td><td class="num">4.1 Mt</td></tr>
+                  <tr><td class="metric">100,000 t &mdash; current</td><td class="num">45</td><td class="num s1">0.99 Mt</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+                  <tr><td class="metric">75,000 t</td><td class="num">25</td><td class="num s1">0.07 Mt</td><td class="num">48</td><td class="num">4.1 Mt</td></tr>
                   <tr><td class="metric">50,000 t</td><td class="num">0</td><td class="num s1">0.00 Mt</td><td class="num">108</td><td class="num">7.8 Mt</td></tr>
                   <tr><td class="metric">25,000 t</td><td class="num">0</td><td class="num s1">0.00 Mt</td><td class="num">291</td><td class="num">14.2 Mt</td></tr>
                 </tbody>
@@ -490,25 +485,25 @@
 
           <p>Read the rows against each other. Moving the threshold from 100,000 to 75,000 tonnes admits 48 facilities carrying 4.1 Mt of emissions &mdash; but those emissions are not abatement. A newly covered facility gets a baseline, and only the gap between its emissions and that baseline is an obligation. Under the department&rsquo;s own Option 2, where new entrants start near the top of the decline curve, the obligation in the first year is close to nothing.</p>
 
-          <p>The floor column is different in kind. It is 1.4 Mt of baseline that stops being granted, to facilities that are already regulated, already reporting, and already inside the register. It requires no new production variables, no new administrative machinery and no lead time. It is the cheapest tonne in the section, and it is not in the table.</p>
+          <p>The floor column is different in kind. It is 0.92 Mt of baseline that stops being granted, to facilities that are already regulated, already reporting, and already covered. It requires no new production variables, no new administrative machinery and no lead time. It is the cheapest tonne in the section, and it is not in the table.</p>
 
-          <p>Three things have to be said about that 1.4 Mt, because they cut in different directions.</p>
+          <p>Three things have to be said about that 0.92 Mt, because they cut in different directions.</p>
 
-          <p><strong>It is a lower bound, not an estimate.</strong> For the 43 facilities already parked on the floor, the published baseline of 100,000 is <em>already</em> the floored number &mdash; the true calculated baseline behind it is lower, by an amount the register does not disclose. Projecting 100,000 forward therefore overstates their unfloored 2029 baseline, which understates the held-back tonnage. The real figure is larger.</p>
+          <p><strong>It is a lower bound, not an estimate.</strong> For the 24 covered facilities already parked on the floor, the published baseline of 100,000 is <em>already</em> the floored number &mdash; the true calculated baseline behind it is lower, by an amount the register does not disclose. Projecting 100,000 forward therefore overstates their unfloored 2029 baseline, which understates the held-back tonnage. The real figure is larger.</p>
 
-          <p><strong>The step from 75,000 to 50,000 matters more than it looks.</strong> Because 43 facilities are parked on the identical number, they project to an identical number &mdash; 72,838 tonnes in 2029&ndash;30. A 75,000-tonne floor leaves them floored, just barely. A 50,000-tonne floor releases them entirely. The relationship between threshold and effect is a cliff, not a slope, and where the cliff sits depends on undisclosed data.</p>
+          <p><strong>The step from 75,000 to 50,000 matters more than it looks.</strong> Because 24 covered facilities are parked on the identical number, they project to an identical number &mdash; 72,838 tonnes in 2029&ndash;30. A 75,000-tonne floor leaves them floored, just barely. A 50,000-tonne floor releases them entirely. The relationship between threshold and effect is a cliff, not a slope, and where the cliff sits depends on undisclosed data.</p>
 
           <div class="exhibit fig">
             <div class="exhibit__head">
               <span class="exhibit__n">Exhibit 5</span>
-              <span class="exhibit__t">Where a lower floor would bite: forty-one facilities land on the same number</span>
+              <span class="exhibit__t">Where a lower floor would bite: twenty-three covered facilities land on the same number</span>
             </div>
             <div class="exhibit__body">
               <div class="fig-key">
                 <span><i style="background:var(--c2)"></i>Below the current 100,000 t floor &mdash; the cohort</span>
                 <span><i style="background:var(--c1)"></i>Above it &mdash; still declining normally</span>
               </div>
-              <div class="fig-scroll"><svg viewBox="0 0 720 305" role="img" aria-label="Histogram of projected 2029-30 unfloored baselines in 5,000-tonne buckets from 50,000 to 150,000 tonnes. A single bucket at 70,000 to 75,000 tonnes holds 41 facilities; every other bucket holds six or fewer.">
+              <div class="fig-scroll"><svg viewBox="0 0 720 305" role="img" aria-label="Histogram of projected 2029-30 unfloored baselines in 5,000-tonne buckets from 50,000 to 150,000 tonnes. A single bucket at 70,000 to 75,000 tonnes holds 23 facilities; every other bucket holds seven or fewer.">
                 <line class="grid" x1="70" y1="260" x2="690" y2="260"/>
                 <line class="grid" x1="70" y1="211.1" x2="690" y2="211.1"/>
                 <line class="grid" x1="70" y1="162.2" x2="690" y2="162.2"/>
@@ -519,8 +514,8 @@
                 <text class="ax" x="60" y="166.2" text-anchor="end">20</text>
                 <text class="ax" x="60" y="117.3" text-anchor="end">30</text>
                 <text class="ax" x="60" y="68.4" text-anchor="end">40</text>
-                <path d="M167.5,260.0 L167.5,249.3 Q167.5,245.3 171.5,245.3 L185.5,245.3 Q189.5,245.3 189.5,249.3 L189.5,260.0 Z" fill="var(--c2)" data-tip="65,000–70,000 t · 3 facilities" tabindex="0"/>
-                <path d="M198.5,260.0 L198.5,63.6 Q198.5,59.6 202.5,59.6 L216.5,59.6 Q220.5,59.6 220.5,63.6 L220.5,260.0 Z" fill="var(--c2)" data-tip="70,000–75,000 t · 41 facilities" tabindex="0"/>
+                <path d="M167.5,260.0 L167.5,254.2 Q167.5,250.2 171.5,250.2 L185.5,250.2 Q189.5,250.2 189.5,254.2 L189.5,260.0 Z" fill="var(--c2)" data-tip="65,000–70,000 t · 2 facilities" tabindex="0"/>
+                <path d="M198.5,260.0 L198.5,151.6 Q198.5,147.6 202.5,147.6 L216.5,147.6 Q220.5,147.6 220.5,151.6 L220.5,260.0 Z" fill="var(--c2)" data-tip="70,000–75,000 t · 23 facilities" tabindex="0"/>
                 <path d="M229.5,260.0 L229.5,234.7 Q229.5,230.7 233.5,230.7 L247.5,230.7 Q251.5,230.7 251.5,234.7 L251.5,260.0 Z" fill="var(--c2)" data-tip="75,000–80,000 t · 6 facilities" tabindex="0"/>
                 <path d="M260.5,260.0 L260.5,244.4 Q260.5,240.4 264.5,240.4 L278.5,240.4 Q282.5,240.4 282.5,244.4 L282.5,260.0 Z" fill="var(--c2)" data-tip="80,000–85,000 t · 4 facilities" tabindex="0"/>
                 <path d="M291.5,260.0 L291.5,244.4 Q291.5,240.4 295.5,240.4 L309.5,240.4 Q313.5,240.4 313.5,244.4 L313.5,260.0 Z" fill="var(--c2)" data-tip="85,000–90,000 t · 4 facilities" tabindex="0"/>
@@ -540,10 +535,10 @@
                 <line class="grid" x1="225" y1="40" x2="225" y2="260"/>
                 <text class="dsub" x="384" y="50">current floor</text>
                 <text class="dsub" x="229" y="50">a 75,000 t floor</text>
-                <text class="dlab" x="424" y="112">41 facilities land on one number</text>
+                <text class="dlab" x="424" y="112">23 covered facilities land on one number</text>
                 <text class="dsub" x="424" y="128">72,838 t &mdash; the projection of every</text>
                 <text class="dsub" x="424" y="142">baseline currently sitting at 100,000</text>
-                <path class="lead" d="M420,108 L224,70"/>
+                <path class="lead" d="M420,136 L222,152"/>
                 <text class="ax" x="70" y="282" text-anchor="middle">50,000</text>
                 <text class="ax" x="225" y="282" text-anchor="middle">75,000</text>
                 <text class="ax" x="380" y="282" text-anchor="middle">100,000</text>
@@ -551,7 +546,7 @@
                 <text class="ax" x="690" y="282" text-anchor="middle">150,000</text>
                 <text class="ax" x="380" y="299" text-anchor="middle">projected 2029&ndash;30 baseline before the floor is applied, tonnes</text>
               </svg></div>
-              <p class="fig-cap">This is why the relationship between the threshold and its effect is a cliff rather than a slope. Forty-three facilities are filed at exactly 100,000 tonnes today, so they project to exactly the same number in 2029&ndash;30 &mdash; and they sit just under 75,000. A 75,000-tonne floor leaves almost all of them floored; a 50,000-tonne floor releases every one. No facility in the register projects below 50,000 tonnes. The 116 facilities above 150,000 tonnes are off the right of the chart and are nowhere near the floor.</p>
+              <p class="fig-cap">This is why the relationship between the threshold and its effect is a cliff rather than a slope. Twenty-four covered facilities are filed at exactly 100,000 tonnes today, so they project to exactly the same number in 2029&ndash;30 &mdash; and they sit just under 75,000. A 75,000-tonne floor leaves almost all of them floored; a 50,000-tonne floor releases every one. No covered facility projects below 50,000 tonnes. The 116 facilities above 150,000 tonnes are off the right of the chart and are nowhere near the floor. The distribution above 100,000 tonnes is unchanged by the coverage filter &mdash; every facility it removes sits below the floor.</p>
               <details class="fig-tv">
                 <summary>Show the numbers</summary>
                 <div class="exhibit__scroll">
@@ -559,18 +554,18 @@
                     <thead><tr><th>Projected 2029&ndash;30 baseline, before the floor</th><th class="num">Facilities</th></tr></thead>
                     <tbody>
                       <tr><td class="metric">Below 65,000 t</td><td class="num">0</td></tr>
-                      <tr><td class="metric">65,000&ndash;70,000 t</td><td class="num">3</td></tr>
-                      <tr><td class="metric">70,000&ndash;75,000 t</td><td class="num s1">41</td></tr>
+                      <tr><td class="metric">65,000&ndash;70,000 t</td><td class="num">2</td></tr>
+                      <tr><td class="metric">70,000&ndash;75,000 t</td><td class="num s1">23</td></tr>
                       <tr><td class="metric">75,000&ndash;100,000 t</td><td class="num">20</td></tr>
                       <tr><td class="metric">100,000&ndash;150,000 t</td><td class="num">47</td></tr>
                       <tr><td class="metric">150,000 t and above</td><td class="num">116</td></tr>
-                      <tr><td class="metric"><strong>Total</strong></td><td class="num"><strong>227</strong></td></tr>
+                      <tr><td class="metric"><strong>Total</strong></td><td class="num"><strong>208</strong></td></tr>
                     </tbody>
                   </table>
                 </div>
               </details>
             </div>
-            <p class="exhibit__src"><b>Source:</b> Clean Energy Regulator published Safeguard baselines and emissions, FY2024&ndash;25, each facility&rsquo;s baseline rescaled from its filed contribution factor to 0.657. Analysis by Heliovulcan. For facilities already at the statutory minimum the filed baseline is itself the floored number, so their position in this distribution is an upper bound &mdash; the true values sit further left.</p>
+            <p class="exhibit__src"><b>Source:</b> Clean Energy Regulator published Safeguard baselines and emissions, FY2024&ndash;25, covered facilities only, each facility&rsquo;s baseline rescaled from its filed contribution factor to 0.657. Analysis by Heliovulcan. For facilities already at the statutory minimum the filed baseline is itself the floored number, so their position in this distribution is an upper bound &mdash; the true values sit further left.</p>
           </div>
 
           <p><strong>None of this is an argument that lower is better.</strong> The department&rsquo;s own reasoning against a 25,000-tonne threshold &mdash; 291 new facilities, 18 new industry groups, administrative cost outrunning abatement &mdash; is sound and this analysis does not touch it. The point is narrower: whatever threshold is chosen, its largest single effect in the first year will fall on facilities that are already covered, and that effect should be in the consultation table.</p>
@@ -732,9 +727,17 @@
             <p>
               The floor analysis is not read off a table &mdash; no table publishes it. It comes from an
               independent reconstruction of the Safeguard baseline calculation from the rule text and
-              the published register: 227 facilities for FY2024&ndash;25 and 233 for FY2023&ndash;24, each
-              facility&rsquo;s baseline rescaled by the legislated emissions reduction contribution from
-              0.902 to 0.657, then tested against the statutory minimum at four candidate thresholds.
+              the published register, each facility&rsquo;s baseline rescaled by the legislated emissions
+              reduction contribution from 0.902 to 0.657, then tested against the statutory minimum at
+              four candidate thresholds.
+            </p>
+            <p>
+              <strong>Covered facilities are identified from the published table&rsquo;s own note that a
+              facility is an eligible facility under section 58B, not from its emissions.</strong> The
+              FY2024&ndash;25 table carries 227 rows with a baseline; 19 of them are facilities that have
+              dropped below the coverage threshold and remain listed. Removing those leaves 208 covered
+              facilities and 132,797,928 tonnes of covered emissions, which reconciles exactly with the
+              Regulator&rsquo;s published totals. Every floor figure in this article is on that basis.
             </p>
             <p>
               The reconstruction is validated by reproducing figures the department published from its own
@@ -743,6 +746,17 @@
               against the paper&rsquo;s &ldquo;around a third of covered facilities&rdquo; and 31.7 Mt. Facilities
               surrendering credits above 30 per cent of baseline come out at 24 against the paper&rsquo;s 23 &mdash;
               a definitional edge on deemed surrenders, and the one number we do not match exactly.
+            </p>
+            <p class="correction">
+              <strong>Correction, 10 August 2026.</strong> As first published, this article counted the
+              floor cohort over all 227 rows of the published table rather than the 208 covered
+              facilities, which put 19 facilities that had already left the scheme inside the cohort.
+              The FY2029&ndash;30 figures were 64 facilities and 1.51 Mt; they are 45 and 0.99 Mt.
+              The tightening a 75,000-tonne threshold would deliver was 1.4 Mt; it is 0.92 Mt. The
+              sentence describing floor-bound facilities as facing no declining constraint was wrong in
+              the other direction, and has been replaced: a covered facility on the floor has no
+              headroom at all. The mechanism, the exhibits&rsquo; construction and the offset-credit
+              figures are unchanged.
             </p>
             <p>
               The ownership evidence is a separate build and a slower one. Station ownership, storage and
