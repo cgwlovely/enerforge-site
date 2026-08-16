@@ -141,22 +141,32 @@ useful as *a publicly documented Northern Territory gold mining project*. The sl
 claim IDs (`RMA-*`), evidence IDs (`EVID-RMA-*`) and API paths. Anonymising the visible page and
 leaving the name in a URL or a JSON payload would have been theatre.
 
-### What was withdrawn from public presentation
+### What was withdrawn from public presentation — and what came back
 
-| | |
-|---|---|
-| `context_map.html`, `siting_opportunity_constraint_screen.html` | Kept in the repo as internal GIS capability. Unlinked everywhere, `noindex`, `robots.txt` disallow, absent from the sitemap. |
-| Both named-asset PDF reports | Kept in the repo. All download links and labels removed; available on request. |
-| `assets/predd-siting-zones-map.png` | Already unreferenced; renamed off the asset name and robots-disallowed. |
-| The map pin on the case index | Now hollow and deliberately imprecise — region, not site. |
+The first column is the state 958bb5f withdrew it to. The second is where it stands now:
+5eaab48 (9 August 2026) restored the maps and the PDF downloads, and this table was not
+updated at the time.
 
-`robots.txt` is itself a public file, so it uses patterns (`/reports/*.pdf`) rather than
-filenames — spelling the asset name there would leak exactly what the pages withhold. The PDFs
-keep their original filenames: they are unlinked, not withdrawn from the repository.
+| | Withdrawn to | State today |
+|---|---|---|
+| `context_map.html`, `siting_opportunity_constraint_screen.html` | Unlinked everywhere, `noindex`, `robots.txt` disallow, absent from the sitemap. | **Public again.** Anonymised in content, linked from the report page, `noindex` removed, disallow dropped, back in the sitemap. |
+| Both named-asset PDF reports | All download links and labels removed; available on request. | **Downloadable again** from the report page, under the independence disclaimer. Filenames still carry the asset name. |
+| `assets/predd-siting-zones-map.png` | Already unreferenced; renamed off the asset name and robots-disallowed. | Still unreferenced. The disallow is gone with the rest of the stanzas. |
+| The map pin on the case index | Now hollow and deliberately imprecise — region, not site. | Unchanged. |
 
-`robots.txt` disallow is a crawling signal, **not access control**. These files are still
-fetchable by direct URL because GitHub Pages serves everything in the repo. If they need to be
-genuinely unreachable, they have to leave the served branch.
+⚠ **Open, deliberately left as it stands (16 August 2026).** The report page carries the
+withdrawal-era sentence — *"They name the asset, so they are no longer offered as public
+downloads"* — directly above the two download links restored in 5eaab48. Prose and links
+disagree, and the two filenames are the only place on the site where the asset is named.
+Reviewed and left unchanged pending a decision on which side is right.
+
+`robots.txt` no longer carries any `Disallow`. When it did, it used patterns (`/reports/*.pdf`)
+rather than filenames — it is itself a public file, and spelling the asset name there would leak
+exactly what the pages withhold. That constraint still applies to anything added later.
+
+`robots.txt` disallow is a crawling signal, **not access control**. Files are fetchable by direct
+URL because GitHub Pages serves everything in the repo. If something needs to be genuinely
+unreachable, it has to leave the served branch.
 
 ### What stayed
 
