@@ -30,13 +30,13 @@ Creating the page has to be done by hand — it needs your own LinkedIn login.
 
 ### Tagline
 
-> Independent industrial intelligence for Australian industry, energy and investment — built from the public record.
+> Independent research on Australian industry, energy and emissions.
 
 ### About / Overview
 
-> Heliovulcan is an independent industrial intelligence practice working on Australian industry, energy and investment.
+> Heliovulcan is an independent research and analysis practice focused on Australian industry, energy and emissions.
 >
-> We reconstruct industrial assets and energy projects from the public record — regulatory registers, energy and emissions accounts, pollutant inventories, spatial layers and company disclosure — reconcile them against independently built accounts, and grade the evidence behind every figure. What the public record cannot settle is listed as such, never estimated quietly into place.
+> We use public data to answer practical questions about industrial facilities, energy use, emissions, regulation and proposed projects. The sources are regulatory registers, energy and emissions accounts, pollutant inventories, maps and company reports. We check them against accounts we build ourselves. Every figure is linked to a source and marked by evidence quality, and if the public data cannot answer something, we say so.
 >
 > Three kinds of work:
 >
