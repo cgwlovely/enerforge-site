@@ -3,19 +3,42 @@
 Why the site is shaped the way it is, so future changes stay aligned rather than drifting back
 toward a single-service brochure.
 
-Last revised: 2026-08-09 (repositioning for exploration-stage industrial intelligence;
-anonymisation of the third-party asset screen).
+Last revised: 2026-08-23 (second pass: homepage de-duplicated, the platform page rewritten and
+renamed "How it works", evidence grades renamed in plain English; see "Voice" below). Previously 2026-08-09 (repositioning for exploration-stage
+work; anonymisation of the third-party asset screen).
 
 ## Positioning
 
-> **Independent intelligence for Australian industry, energy and investment.**
+> **Independent research on Australian industry, energy and emissions.**
 >
-> We connect facility, energy, emissions, project, regulatory and commercial evidence to answer
-> questions that matter to policy, investment and industrial decisions.
+> We use public data to answer practical questions about industrial facilities, energy use,
+> emissions, regulation and proposed projects.
 
 The governing principle:
 
 > Direction may evolve, but the underlying evidence base should compound.
+
+## Voice
+
+The homepage was rewritten on 2026-08-23 because the brand copy had drifted into abstract,
+symmetrical, methodology-flavoured prose. The rules that pass now apply to all new site copy:
+
+1. One sentence, one idea.
+2. Break the sentence if it strings more than three abstract nouns together.
+3. Say "public data" or "the data" rather than "the evidence base".
+4. Say "we could not confirm it" rather than "the record cannot settle it".
+5. Do not use "question" as the all-purpose noun. Name the thing: facility, rule, cost,
+   project, assumption.
+6. Use em dashes sparingly (the homepage went from 34 to 10).
+7. Explain the evidence grading once per page, not three times.
+8. Headings say what the section contains; they are not aphorisms.
+9. Active voice with a subject: "We analyse…", "We compare…", "We could not confirm…".
+10. Keep technical terms, but gloss them in plain English on first use (Pre-DD, EIS, SLD,
+    PV+BESS).
+
+One or two shaped lines per page are worth keeping — "Most of the diesel is on wheels",
+"A model is not a project", "A clear next step — which can be to stop", "Who can actually
+decide". The failure mode was every paragraph trying to be one.
 
 The site therefore does **not** commit Heliovulcan to one final product or service category.
 Pre-DD is presented as one capability among several, not as the identity of the practice.
@@ -31,7 +54,7 @@ that can absorb them without another redesign. Concretely, that means:
 
 - a **Research** hub whose topic taxonomy has room for work that has not been written yet;
 - a **Consultations** page that exists before there is anything to put on it;
-- a **Platform** page that explains a shared evidence base rather than a single product;
+- a **How it works** page that explains the shared method rather than a single product;
 - a **Latest work** block on the homepage that makes the site read as an active research
   operation, and that is trivial to automate later.
 
@@ -42,7 +65,7 @@ that can absorb them without another redesign. Concretely, that means:
 | **Home** | `index.html` |
 | **Research** | `research.html` |
 | **Consultations** | `consultations.html` |
-| **Platform** | `intelligence-platform.html` |
+| **How it works** | `intelligence-platform.html` |
 | **Projects** | `case-studies.html` |
 | **About** | `index.html#about` |
 | **Discuss a question** (CTA) | `index.html#contact` |
@@ -56,7 +79,7 @@ across all 32 pages; if you change one, change them all.
 
 ## Homepage content hierarchy
 
-1. **Hero** — independent industrial intelligence positioning. CTAs are `Explore our research`
+1. **Hero** — independent research positioning. CTAs are `Explore the research`
    and `Discuss a question`. The graded example panel stays: it is the fastest signal of the
    evidence discipline.
 2. **Latest work** (`#latest`) — three fixed slots in order: consultation, research, project.
@@ -64,13 +87,16 @@ across all 32 pages; if you change one, change them all.
 3. **Four domains** (`#domains`) — industrial assets · energy and emissions · policy and
    regulation · projects and investment.
 4. **Research & policy** (`#research`).
-5. **Asset & market intelligence** (`#asset-market`) — absorbs what used to be a standalone
+5. **Existing operations** (`#asset-market`, was "Asset & market intelligence") — absorbs what used to be a standalone
    2029 Safeguard exposure section. The Safeguard material is now framed as a worked example of
    the method, not as the site's lead hook.
 6. **Project analysis** (`#projects`) — F1–F4, the anonymised Remote Mining Asset case, and
    what a project screen produces. One application of the evidence engine.
-7. **Evidence platform** (`#platform`).
-8. **Point of view**, **About** (`#about`), **Discuss a question** (`#contact`).
+7. **Where the information comes from** (`#platform`) — deliberately short: the figure, the
+   8,000-mapped-versus-analysed distinction, and a link out. The method itself lives on the
+   How it works page, so the homepage does not explain it twice.
+8. **About** (`#about`), **Discuss a question** (`#contact`). The navy **Point of view** band was
+   removed on 2026-08-23: by that point the page had already said the same thing four times.
 
 ### Legacy anchors
 
@@ -113,17 +139,38 @@ published to date** and none is invented. What the page does carry:
 When the first submission lands, add an entry above the record-format section using those seven
 fields, and swap the homepage `#latest` consultation slot from the pending panel to a card.
 
-## Platform
+## How it works (`intelligence-platform.html`)
 
-Strengthened with `#evidence-base` — *One evidence base. Different questions.* It shows the
-entity graph:
+Called *Platform* until 2026-08-23. The word set an expectation — software, a database, a live
+feed — that the page then spent several paragraphs dismantling. The nav label is now **How it
+works**; the file name stays `intelligence-platform.html` so no link breaks, and "platform" is
+fine as an internal name.
+
+`#evidence-base` shows the entity graph:
 
 ```
 Company ↔ Facility ↔ Project ↔ Energy ↔ Emissions ↔ Grid ↔ Technology ↔ Approval ↔ Capital
 ```
 
-and four traversals of it (policy / investment / asset / energy). A bounding note states what
-the graph is not: not complete national coverage, not queryable, not a live feed.
+and four ways to use it (policy / investment / asset / energy). One bounding note states what it
+is not: not client-operated software, not a public database, not a live or complete national
+dataset. It used to say this twice, in two adjacent blocks; one is enough.
+
+### Evidence labels
+
+The six grades are named in plain English, not in house codes, and the same words are used on
+the homepage example panel and in the output preview:
+
+| was | now |
+|---|---|
+| Filed | Regulatory filing |
+| Licensed | Licence record |
+| Disclosed | Company disclosure |
+| Derived | Calculated |
+| Owner | Owner data required |
+| Absent | Not publicly available |
+
+If you add a grade, add it in all three places and keep the wording identical.
 
 ## Anonymising third-party asset screens
 

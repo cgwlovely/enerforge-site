@@ -367,11 +367,11 @@
         '<p class="eyebrow">Discuss a question</p>' +
         '<h2 class="section-title">Looking at a question like this one?</h2>' +
         '<p class="section-intro">' +
-          "Heliovulcan is an independent industrial intelligence practice. If you are working on something this evidence base could speak to \u2014 a facility, a market, a project, a policy exposure \u2014 a short, non-confidential exchange is usually enough to establish whether the public record can answer it." +
+          "Heliovulcan is an independent research and analysis practice. If you are working on a facility, a market, a project or a policy exposure that our work could speak to, send us a short, non-confidential description. That is usually enough to tell whether public information can answer it." +
         "</p>" +
         '<div class="cta-row">' +
           '<a class="btn btn--primary" href="index.html#contact">Discuss a question <span class="btn__arrow">&rarr;</span></a>' +
-          '<a class="btn btn--ghost-light" href="research.html">Explore our research</a>' +
+          '<a class="btn btn--ghost-light" href="research.html">Explore the research</a>' +
         "</div>" +
       "</div></section>"
     );

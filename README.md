@@ -1,7 +1,8 @@
-# Heliovulcan — independent industrial intelligence website
+# Heliovulcan — independent research and analysis website
 
-A static, founder-led website for **independent industrial intelligence**: research, public
-consultation submissions, asset and market analysis, and project screening. No framework, no
+A static, founder-led website for **independent research on Australian industry, energy and
+emissions**: research, public consultation submissions, asset and market analysis, and project
+screening. No framework, no
 build step — plain HTML, one CSS file, and a small data-driven case-study engine.
 
 The information architecture is deliberately broader than any one service line, so the site
