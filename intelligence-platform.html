@@ -55,13 +55,20 @@
     .egraph__l { color: var(--teal-deep); font-size: 14px; line-height: 1; user-select: none; }
     .egraph__cap { margin-top: 16px; font-size: 14px; color: var(--ink-soft); text-align: center; }
 
-    /* question types — same records, different entry point */
-    .qrow { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0 18px; padding: 16px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline; }
-    .qrow:first-of-type { border-top: 1px solid var(--line); }
-    .qrow__k { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--teal-deep); }
-    .qrow__q { font-size: 16px; color: var(--ink); font-weight: 600; }
-    .qrow__b { font-size: 14.5px; color: var(--ink-soft); margin-top: 5px; }
-    @media (max-width: 620px) { .qrow { grid-template-columns: 1fr; gap: 6px; } }
+    /* how the work actually runs, as four steps */
+    .flow { counter-reset: step; list-style: none; margin: 26px auto 0; max-width: 760px; padding: 0; }
+    .flow li {
+      counter-increment: step; position: relative; padding: 16px 0 16px 52px;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .flow li:first-child { border-top: 1px solid var(--line); }
+    .flow li::before {
+      content: counter(step); position: absolute; left: 0; top: 15px;
+      width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+      background: var(--teal-deep); color: #fff; font-family: var(--mono); font-size: 13px;
+    }
+    .flow b { display: block; font-size: 16px; color: var(--ink); }
+    .flow span { display: block; font-size: 14.5px; color: var(--ink-soft); margin-top: 4px; }
   </style>
 </head>
 <body>
@@ -92,10 +99,9 @@
         <p class="eyebrow">How the analysis works</p>
         <h1>Understand an industrial asset or energy project before committing capital</h1>
         <p class="case-hero__sub">
-          We bring together information that normally sits in separate records: asset ownership,
-          energy use, emissions, approvals, location, infrastructure and project status. We then
-          check the result against independent datasets, and separate confirmed facts from
-          calculations, assumptions and missing information.
+          We bring together public records on an asset&rsquo;s ownership, energy use, emissions,
+          approvals, location and projects. We then compare the results with independent datasets,
+          and separate confirmed facts from calculations, assumptions and missing information.
         </p>
       </div>
     </section>
@@ -128,56 +134,14 @@
           them in isolation. Each relationship is supported by a source and given an evidence label.
         </p>
 
-        <h3 style="margin-top:44px;">Four ways the information can be used</h3>
-        <p class="section-intro" style="margin-top:8px;">
-          The same records, used four different ways. What changes is where the question starts, not
-          the underlying data.
-        </p>
-
-        <div style="margin-top:24px;">
-          <div class="qrow">
-            <span class="qrow__k">Policy</span>
-            <span>
-              <span class="qrow__q">Which facilities are exposed?</span>
-              <span class="qrow__b">Identify which facilities are covered by a rule and estimate the
-              exposure where it applies. Facilities we could not resolve are reported
-              separately.</span>
-            </span>
-          </div>
-          <div class="qrow">
-            <span class="qrow__k">Investment</span>
-            <span>
-              <span class="qrow__q">Which projects warrant deeper diligence?</span>
-              <span class="qrow__b">Screen a portfolio or project pipeline for approval, grid and
-              commercial risks that may require deeper due diligence.</span>
-            </span>
-          </div>
-          <div class="qrow">
-            <span class="qrow__k">Asset</span>
-            <span>
-              <span class="qrow__q">What can we establish about this facility?</span>
-              <span class="qrow__b">Build a facility-level view of energy use, emissions, ownership
-              and sector position, then check it against independent accounts.</span>
-            </span>
-          </div>
-          <div class="qrow">
-            <span class="qrow__k">Energy</span>
-            <span>
-              <span class="qrow__q">Where is a technology worth testing?</span>
-              <span class="qrow__b">Test where a technology may be technically and commercially
-              viable, given the site, grid and funding constraints.</span>
-            </span>
-          </div>
-        </div>
-
         <div class="note" style="margin-top:30px;">
           <span class="cap">What this is, and is not</span>
           <p>
-            This is an internal research system, not client-operated software and not a public
-            database, and not a substitute for formal due diligence. Coverage grows as assets and
-            sectors are analysed; it is not a live or complete national dataset. The count of what has been <a href="coverage.html">analysed
-            in depth</a> is much smaller than the count of what has been mapped as background
-            context.
+            This is how we work, not a product you log in to. There is no client-operated software
+            and no public database to query, and none of it substitutes for formal due diligence.
+            Coverage grows as assets and sectors are analysed; it is not a live or complete national
+            dataset. The count of what has been <a href="coverage.html">analysed in depth</a> is much
+            smaller than the count of what has been mapped as background context.
           </p>
         </div>
       </div>
@@ -257,19 +221,12 @@
       <div class="container">
         <p class="eyebrow">How information flows</p>
         <h2 class="section-title" id="flow-title">From public records to a decision</h2>
-        <div style="background:var(--navy,#122132);border-radius:14px;padding:34px 26px;max-width:760px;margin:0 auto;">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 22px;color:#f6f3ec;font-size:14px;letter-spacing:.06em;text-align:center;width:100%;max-width:560px;">PUBLIC RECORDS AND AGREED INPUTS</div>
-            <div style="width:2px;height:22px;background:#f07820;"></div>
-            <div style="background:rgba(240,120,32,.14);border:1px solid #f07820;border-radius:10px;padding:12px 22px;color:#ffd9b8;font-size:14px;letter-spacing:.06em;text-align:center;width:100%;max-width:560px;">LINKED RECORDS &mdash; ONE ACCOUNT PER ASSET</div>
-            <div style="width:2px;height:22px;background:#f07820;"></div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 22px;color:#f6f3ec;font-size:13px;letter-spacing:.05em;text-align:center;width:100%;max-width:560px;">ASSET &middot; ENERGY &middot; EMISSIONS &middot; SPATIAL &middot; CONTROL &middot; PROJECT &middot; SECTOR CONTEXT</div>
-            <div style="width:2px;height:22px;background:#f07820;"></div>
-            <div style="background:rgba(240,120,32,.14);border:1px solid #f07820;border-radius:10px;padding:12px 22px;color:#ffd9b8;font-size:14px;letter-spacing:.06em;text-align:center;width:100%;max-width:560px;">RECONCILIATION &middot; BENCHMARKING &middot; RISK AND GAP ANALYSIS</div>
-            <div style="width:2px;height:22px;background:#f07820;"></div>
-            <div style="background:#f07820;border-radius:10px;padding:12px 22px;color:#122132;font-weight:600;font-size:13px;letter-spacing:.05em;text-align:center;width:100%;max-width:560px;">ASSET PROFILE &middot; PROJECT SCREEN &middot; INVESTMENT SCREEN &middot; SECTOR ANALYSIS</div>
-          </div>
-        </div>
+        <ol class="flow">
+          <li><b>Collect the records.</b> <span>Regulatory filings, licences, maps and company disclosures.</span></li>
+          <li><b>Build the asset account.</b> <span>Ownership, energy, emissions, approvals and projects, for one facility.</span></li>
+          <li><b>Check the results.</b> <span>Compare with independent national, sector and spatial data.</span></li>
+          <li><b>Report what is known and what is missing.</b> <span>Findings, evidence labels, open questions and next steps.</span></li>
+        </ol>
         <p class="section-intro" style="margin-top:22px;">
           The <a href="index.html#projects">F1–F4 Pre-DD workflow</a> is one route through this: the
           one that applies when the question is a proposed project.
@@ -391,7 +348,7 @@
         <div class="ladder">
           <div class="ladder__row">
             <span class="ladder__g">Regulatory filing</span>
-            <span class="ladder__b"><b>Reported by the operator to a regulator.</b> The strongest source available. Still checked for unit and scope errors, which we find regularly.</span>
+            <span class="ladder__b"><b>Reported by the operator to a regulator.</b> Usually the strongest public source, but still checked for unit and scope differences.</span>
           </div>
           <div class="ladder__row">
             <span class="ladder__g">Licence record</span>
@@ -410,8 +367,8 @@
             <span class="ladder__b"><b>Held by the operator and not published.</b> It goes on the owner-data request list rather than being estimated.</span>
           </div>
           <div class="ladder__row">
-            <span class="ladder__g">Not publicly available</span>
-            <span class="ladder__b"><b>We have established that the information is not published by any party.</b> It is recorded as unavailable, not treated as zero.</span>
+            <span class="ladder__g">Not found in public sources</span>
+            <span class="ladder__b"><b>We could not find the information in the public sources reviewed.</b> It is recorded as not found, not treated as zero.</span>
           </div>
         </div>
 
@@ -427,10 +384,10 @@
               <tr><th>Not available</th><th>Why it matters</th></tr>
             </thead>
             <tbody>
-              <tr><td class="metric">Interval load curve</td><td>Nothing can be sized or priced without it</td></tr>
+              <tr><td class="metric">Interval load curve</td><td>Detailed system sizing and pricing require it</td></tr>
               <tr><td class="metric">Peak demand</td><td>Determines connection and equipment, not average load</td></tr>
               <tr><td class="metric">Unit run hours and standby strategy</td><td>Separates a continuous plant from a backup set</td></tr>
-              <tr><td class="metric">Contract price and volume terms</td><td>Decides who captures a saving, which often decides whether anything happens at all</td></tr>
+              <tr><td class="metric">Contract price and volume terms</td><td>Shows how savings are shared and whether the commercial structure is workable</td></tr>
             </tbody>
           </table>
         </div>
@@ -465,7 +422,7 @@
           <div class="outpreview__row"><span class="outpreview__k">Power station control</span><span class="outpreview__v">Third-party build-own-operate; term undisclosed</span><span class="outpreview__g">Licence record</span></div>
           <div class="outpreview__row"><span class="outpreview__k">Sector position</span><span class="outpreview__v">Percentile against comparable peers</span><span class="outpreview__g">Calculated</span></div>
           <div class="outpreview__row"><span class="outpreview__k">Interval load curve</span><span class="outpreview__v">Not in the public record</span><span class="outpreview__g is-gap">Owner data required</span></div>
-          <div class="outpreview__row"><span class="outpreview__k">Contract price and volume</span><span class="outpreview__v">Not disclosed by any party</span><span class="outpreview__g is-gap">Not publicly available</span></div>
+          <div class="outpreview__row"><span class="outpreview__k">Contract price and volume</span><span class="outpreview__v">Not found in the sources reviewed</span><span class="outpreview__g is-gap">Not found in public sources</span></div>
           <div class="outpreview__row"><span class="outpreview__k">Decision implication</span><span class="outpreview__v">Counterparty is the contractor, not the operator</span><span class="outpreview__g">Calculated</span></div>
         </div>
 
