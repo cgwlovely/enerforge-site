@@ -108,7 +108,7 @@ Production: GitHub Pages serves the generated `.json` files and folder `index.ht
 
 ## Before you go live
 
-- Contact email is set to `grant.chen.phd@gmail.com` (live `mailto:` links across the site).
+- Contact email is set to `grantchen@heliovulcan.com.au` (live `mailto:` links across the site).
 - Add a `favicon.png` + `<link rel="icon">` if you want a custom browser-tab icon.
 - Swap the `assets/*.jpg` photos for your own if preferred.
 
