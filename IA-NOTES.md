@@ -3,7 +3,9 @@
 Why the site is shaped the way it is, so future changes stay aligned rather than drifting back
 toward a single-service brochure.
 
-Last revised: 2026-08-24 (third pass: homepage cut by a third and the founder named on it; the
+Last revised: 2026-09-02 (contact address moved to the heliovulcan.com.au domain; the
+founder bio and personal links added on 2026-08-24 were reverted at the owner's request).
+Previously 2026-08-24 (third pass: homepage cut by a third and the founder named on it; the
 three project-report descriptions moved to the Projects page; the flow diagram became four steps).
 Previously 2026-08-23 (homepage de-duplicated, the platform page rewritten and renamed
 "How it works", evidence grades renamed in plain English; see "Voice" below). Previously 2026-08-09 (repositioning for exploration-stage
@@ -97,12 +99,15 @@ across all 32 pages; if you change one, change them all.
 7. **Where the information comes from** (`#platform`) — deliberately short: the figure, the
    8,000-mapped-versus-analysed distinction, and a link out. The method itself lives on the
    How it works page, so the homepage does not explain it twice.
-8. **About** (`#about`) — leads with **Grant Chen**, not with another capability paragraph. The
-   `.person` card carries initials; drop a square photo at `assets/grant-chen.jpg` and swap the
-   commented-out `<img>` in for it.
-9. **Contact** (`#contact`) — "Have a question worth checking?", and the button says **Email
-   Grant**. The navy **Point of view** band was removed on 2026-08-23, and **Explore more** on
-   2026-08-24: it was the nav and the footer links a third time.
+8. **About** (`#about`) — the practice, not the founder. A named bio, portrait and personal
+   LinkedIn were tried on 2026-08-24 and taken out again on 2026-09-02 at the owner's request:
+   the About section stays impersonal, and the site does not carry a personal profile. The
+   company LinkedIn in the footer and the `Person` entry in the homepage JSON-LD predate this
+   and are unchanged.
+9. **Contact** (`#contact`) — "Have a question worth checking?". The CTA stays **Discuss a
+   question** everywhere, for the same reason. The navy **Point of view** band was removed on
+   2026-08-23, and **Explore more** on 2026-08-24: it was the nav and the footer links a third
+   time.
 
 ### What the homepage is not allowed to become again
 
