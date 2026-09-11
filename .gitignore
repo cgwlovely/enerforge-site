@@ -1,2 +1,5 @@
 .claude/
 .worktrees/
+
+# 提交件构建残留,不部署
+submissions/_*
