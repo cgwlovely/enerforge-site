@@ -3,3 +3,4 @@
 
 # 提交件构建残留,不部署
 submissions/_*
+submissions/*-CN.pdf
