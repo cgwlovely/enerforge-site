@@ -1538,3 +1538,10 @@ a.dl:hover { border-color: var(--orange-deep); }
 .footer__col a:hover { color: #fff; }
 @media (max-width: 980px) { .footer__grid { grid-template-columns: 1fr 1fr; } .footer__about { grid-column: 1 / -1; } }
 @media (max-width: 560px) { .footer__grid { grid-template-columns: 1fr; } }
+
+/* research series navigation */
+.series-bar { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: baseline; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); border-top: 2px solid var(--ink); padding-top: 12px; margin-bottom: 22px; }
+.series-bar b { color: var(--ink); margin-right: auto; }
+.series-bar a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+.series-bar a:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
+.series-bar .is-off { color: var(--ink-faint); }

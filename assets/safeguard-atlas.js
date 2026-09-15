@@ -835,6 +835,7 @@ function renderHeadlines() {
   var r = yearAgg(10, REF), need = solveRate(REF, targetMt(0.62)), cur = yearAgg(10, S);
   var set = function (id, v) { var e = document.getElementById(id); if (e) e.innerHTML = v; };
   set("hl-net35", mt(r.net, 2) + " Mt CO\u2082-e");
+  set("ov-net35", mt(r.net, 2) + " Mt CO\u2082-e");
   set("hl-rate", need.toFixed(2) + " percentage points");
   set("hl-n", F.length + " facility rows");
   /* starting point */

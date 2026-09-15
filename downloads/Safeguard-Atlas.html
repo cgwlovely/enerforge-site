@@ -1550,6 +1550,13 @@ a.dl:hover { border-color: var(--orange-deep); }
 @media (max-width: 980px) { .footer__grid { grid-template-columns: 1fr 1fr; } .footer__about { grid-column: 1 / -1; } }
 @media (max-width: 560px) { .footer__grid { grid-template-columns: 1fr; } }
 
+/* research series navigation */
+.series-bar { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: baseline; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); border-top: 2px solid var(--ink); padding-top: 12px; margin-bottom: 22px; }
+.series-bar b { color: var(--ink); margin-right: auto; }
+.series-bar a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+.series-bar a:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
+.series-bar .is-off { color: var(--ink-faint); }
+
   </style>
   <link rel="canonical" href="https://heliovulcan.com.au/safeguard-atlas.html" />
   <meta property="og:site_name" content="Heliovulcan" />
@@ -1775,13 +1782,14 @@ a.dl:hover { border-color: var(--orange-deep); }
     .link-row a:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
     @media (max-width: 700px) { .hero-nums { grid-template-columns: 1fr; } .analysis-strip { grid-template-columns: 1fr; gap: 8px; } .chart-head { flex-direction: column; align-items: flex-start; } }
     .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 44px; }
+    .tiles--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     .tile { border-top: 1px solid var(--ink); padding: 22px 0 36px; text-decoration: none; color: inherit; display: block; }
     .tile .tile__k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
     .tile h3 { font-family: var(--serif); font-weight: 400; font-size: 26px; line-height: 1.2; margin-top: 12px; }
     .tile p { font-size: 15.5px; line-height: 1.6; color: var(--ink-soft); margin-top: 12px; max-width: 34ch; }
     .tile .tile__go { display: inline-block; margin-top: 18px; font-size: 14.5px; font-weight: 600; color: var(--ink); }
     .tile:hover .tile__go { color: var(--orange-deep); }
-    @media (max-width: 900px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 900px) { .tiles, .tiles--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 560px) { .tiles { grid-template-columns: 1fr; } .settings-strip a { margin-left: 0; } }
   </style>
 </head>
@@ -1795,12 +1803,12 @@ a.dl:hover { border-color: var(--orange-deep); }
       </a>
       <button class="nav__burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open the menu">Menu</button>
       <nav class="nav__menu" id="site-menu" aria-label="Site">
-        <ul class="nav__list"><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/research.html">Research</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-research" aria-label="Open the Research menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-research" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Browse by topic</span><ul><li><a href="https://heliovulcan.com.au/research.html">All research</a></li><li><a href="https://heliovulcan.com.au/research.html#industrial">Industrial & emissions</a></li><li><a href="https://heliovulcan.com.au/research.html#markets">Energy markets</a></li><li><a href="https://heliovulcan.com.au/research.html#battery">Battery projects</a></li><li><a href="https://heliovulcan.com.au/research.html#policy">Policy analysis</a></li></ul></div><div class="mega__col"><span class="mega__k">Featured</span><ul><li><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas: the post-2030 decline rate cannot be set in isolation</a></li><li><a href="https://heliovulcan.com.au/australian-diesel-replacement-market-size.html">Most of the diesel is on wheels</a></li><li><a href="https://heliovulcan.com.au/consultations/ai-data-centres-2026.html">Submission: AI and data centres</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu is-current"><a class="nav__top" href="https://heliovulcan.com.au/safeguard-atlas.html">Tools & data</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-tools" aria-label="Open the Tools & data menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-tools" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Interactive</span><ul><li><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas</a></li><li><a href="https://heliovulcan.com.au/industry-maps.html">Industry maps</a></li></ul></div><div class="mega__col"><span class="mega__k">Underlying</span><ul><li><a href="https://heliovulcan.com.au/methods/">Methods</a></li><li><a href="https://heliovulcan.com.au/api/">Data & API</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/consultations.html">Consultations</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-consultations" aria-label="Open the Consultations menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-consultations" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Published submissions</span><ul><li><a href="https://heliovulcan.com.au/consultations.html">All submissions</a></li><li><a href="https://heliovulcan.com.au/consultations/ai-data-centres-2026.html">AI and data centres, 2026</a></li><li><a href="https://heliovulcan.com.au/consultations/safeguard-onsite-abatement-2026.html">Safeguard onsite abatement, 2026</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="https://heliovulcan.com.au/methods/#consultation-submissions">How submissions are prepared</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/case-studies.html">Projects</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-projects" aria-label="Open the Projects menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-projects" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Cases</span><ul><li><a href="https://heliovulcan.com.au/case-studies.html#screens">Project screens</a></li><li><a href="https://heliovulcan.com.au/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a></li></ul></div><div class="mega__col"><span class="mega__k">Record</span><ul><li><a href="https://heliovulcan.com.au/coverage.html">Research coverage</a></li><li><a href="https://heliovulcan.com.au/methods/pre-dd-f1-f4/">Pre-DD methodology</a></li></ul></div></div></div></li><li class="nav__item"><a class="nav__top" href="https://heliovulcan.com.au/about.html">About</a></li></ul>
+        <ul class="nav__list"><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/research.html">Research</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-research" aria-label="Open the Research menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-research" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Browse by topic</span><ul><li><a href="https://heliovulcan.com.au/research.html">All research</a></li><li><a href="https://heliovulcan.com.au/research.html#industrial">Industrial & emissions</a></li><li><a href="https://heliovulcan.com.au/research.html#markets">Energy markets</a></li><li><a href="https://heliovulcan.com.au/research.html#battery">Battery projects</a></li><li><a href="https://heliovulcan.com.au/research.html#policy">Policy analysis</a></li></ul></div><div class="mega__col"><span class="mega__k">Featured</span><ul><li><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas: the post-2030 decline rate cannot be set in isolation</a></li><li><a href="https://heliovulcan.com.au/australian-diesel-replacement-market-size.html">Most of the diesel is on wheels</a></li><li><a href="https://heliovulcan.com.au/consultations/ai-data-centres-2026.html">Submission: AI and data centres</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu is-current"><a class="nav__top" href="https://heliovulcan.com.au/safeguard-atlas.html">Tools & data</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-tools" aria-label="Open the Tools & data menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-tools" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Interactive</span><ul><li><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas</a></li><li><a href="https://heliovulcan.com.au/industry-maps.html">Industry maps</a></li></ul></div><div class="mega__col"><span class="mega__k">Underlying</span><ul><li><a href="https://heliovulcan.com.au/methods/">Methods</a></li><li><a href="https://heliovulcan.com.au/api/">Data & JSON</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/consultations.html">Consultations</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-consultations" aria-label="Open the Consultations menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-consultations" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Published submissions</span><ul><li><a href="https://heliovulcan.com.au/consultations.html">All submissions</a></li><li><a href="https://heliovulcan.com.au/consultations/ai-data-centres-2026.html">AI and data centres, 2026</a></li><li><a href="https://heliovulcan.com.au/consultations/safeguard-onsite-abatement-2026.html">Safeguard onsite abatement, 2026</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="https://heliovulcan.com.au/methods/#consultation-submissions">How submissions are prepared</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/case-studies.html">Projects</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-projects" aria-label="Open the Projects menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-projects" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Cases</span><ul><li><a href="https://heliovulcan.com.au/case-studies.html#screens">Project screens</a></li><li><a href="https://heliovulcan.com.au/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a></li></ul></div><div class="mega__col"><span class="mega__k">Record</span><ul><li><a href="https://heliovulcan.com.au/coverage.html">Research coverage</a></li><li><a href="https://heliovulcan.com.au/methods/pre-dd-f1-f4/">Pre-DD methodology</a></li></ul></div></div></div></li><li class="nav__item"><a class="nav__top" href="https://heliovulcan.com.au/about.html">About</a></li></ul>
         <a class="nav__cta" href="https://heliovulcan.com.au/about.html#contact">Discuss a question</a>
       </nav>
     </div>
   </header>
-  <script src="https://heliovulcan.com.au/assets/site-nav.js?v=20260915e" defer></script>
+  <script src="https://heliovulcan.com.au/assets/site-nav.js?v=20260915f" defer></script>
   
 
   <section class="atlas-hero">
@@ -1883,11 +1891,9 @@ a.dl:hover { border-color: var(--orange-deep); }
         <p class="eyebrow">What changes the result</p>
         <h2>Results under the settings in force</h2>
         <p class="atlas-sec__why">
-          The rate required to meet a 2035 target changes materially with assumptions about
-          industrial production, new projects, closures and the treatment of the 21 facilities with
-          a trade-exposed determination. Hold the target fixed and those settings trade against each
-          other: relief for one group must be made up by another. Set them below; the rate required,
-          the curve and the decomposition follow.
+          The decline rate required for 2035 depends on production, closures, new entrants and the
+          treatment of 21 trade-exposed facilities. Holding the target constant means that a slower
+          path for one group requires a faster path elsewhere.
         </p>
         <div class="lab">
           <div class="panel" id="controls"></div>
@@ -1909,7 +1915,7 @@ a.dl:hover { border-color: var(--orange-deep); }
           <div id="chart-wf"></div>
         </div>
         <details class="how">
-          <summary>How this is calculated</summary>
+          <summary>How to read these charts, and how they are calculated</summary>
           <div class="how__body" id="how-lab"></div>
         </details>
       </div>
@@ -2051,7 +2057,7 @@ a.dl:hover { border-color: var(--orange-deep); }
           <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
         </div>
         <div class="footer__col"><span class="footer__k">Research</span><a href="https://heliovulcan.com.au/research.html">All research</a><a href="https://heliovulcan.com.au/research.html#industrial">Industrial &amp; emissions</a><a href="https://heliovulcan.com.au/research.html#markets">Energy markets</a><a href="https://heliovulcan.com.au/research.html#battery">Battery projects</a><a href="https://heliovulcan.com.au/research.html#policy">Policy analysis</a></div>
-        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas</a><a href="https://heliovulcan.com.au/industry-maps.html">Industry maps</a><a href="https://heliovulcan.com.au/methods/">Methods</a><a href="https://heliovulcan.com.au/api/">Data &amp; API</a></div>
+        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas</a><a href="https://heliovulcan.com.au/industry-maps.html">Industry maps</a><a href="https://heliovulcan.com.au/methods/">Methods</a><a href="https://heliovulcan.com.au/api/">Data &amp; JSON</a></div>
         <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="https://heliovulcan.com.au/consultations.html">Published submissions</a><a href="https://heliovulcan.com.au/case-studies.html">Project screens</a><a href="https://heliovulcan.com.au/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="https://heliovulcan.com.au/coverage.html">Research coverage</a></div>
         <div class="footer__col"><span class="footer__k">About</span><a href="https://heliovulcan.com.au/about.html">About Heliovulcan</a><a href="https://heliovulcan.com.au/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="https://heliovulcan.com.au/privacy.html">Privacy</a></div>
       </div>
@@ -2900,6 +2906,7 @@ function renderHeadlines() {
   var r = yearAgg(10, REF), need = solveRate(REF, targetMt(0.62)), cur = yearAgg(10, S);
   var set = function (id, v) { var e = document.getElementById(id); if (e) e.innerHTML = v; };
   set("hl-net35", mt(r.net, 2) + " Mt CO\u2082-e");
+  set("ov-net35", mt(r.net, 2) + " Mt CO\u2082-e");
   set("hl-rate", need.toFixed(2) + " percentage points");
   set("hl-n", F.length + " facility rows");
   /* starting point */

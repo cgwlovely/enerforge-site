@@ -187,6 +187,37 @@ Phrase counts over the 41 content pages, before → after this round: "is not" 1
 "does not" 68 → 51, "rather than" 52 → 20, "This note/page" 12 → 1 (privacy), "Why this matters" 12 → 0,
 "The Pre-DD takeaway" 16 → 0.
 
+## Round 11: promises narrowed, duplication cut, series (2026-09-15)
+
+Sixth editorial review. Changes and the rules they leave behind:
+
+- **The Atlas overview is an executive landing page**: H1 and conclusion, three numbers, one summary
+  chart, the sensitivity table as the findings, four doors (Pathway, Policy, Map, Facilities), one method
+  line. The three-step calculation and the register explanation live only on the Pathway and Method pages.
+  Rendered, the page is now well under 750 words; it was about 1,100.
+- **No blanket promises.** "Every figure on this site…" is gone. The claim-ID / confidence / evidence
+  structure exists for the structured project records (the Remote Mining Asset registry); research
+  articles label material figures as reported, calculated or assumed. Methods and Data & JSON say exactly that.
+- **Data & API is Data & JSON**: versioned static JSON at stable URLs, no search, filtering, write
+  access or service level. The page lists what is available and what is not, and keeps the roadmap to one line.
+- **One statement of the Remote Mining Asset's anonymity**, in a box under the hero; the footer keeps a
+  two-sentence limit. The Spatial section no longer re-explains it.
+- **Data-centre count stated on both dates**: 11 records in the 15 August 2026 NABERS extract, six still
+  current on 14 September 2026 (expired ratings, not closures), ten of 11 on the Infrastructure scope.
+  Homepage, consultations index and submission page carry the same three numbers.
+- **Long-reads split**: the baseline-floor article keeps its argument (≈3,350 words, 15 minutes) and hands
+  method, reconciliation, limitations, the s 56(4) register evidence, two secondary exhibits and the data
+  tables to `safeguard/baseline-floor-method.html`. Cards label it "In-depth analysis · 15-minute read".
+- **Research content types**: Interactive model · Quantitative analysis · In-depth analysis · Research article ·
+  Research note · Reference. "Perspective" is retired. A **Battery project readiness series** (nine pieces,
+  numbered, prev/next bar at the top of each) replaces nine similar-looking stand-alone articles.
+- **Submission pages**: The question · Key findings · Recommendations · Open questions · Sources · Related research.
+- **Language**: the metaphor density in the customer-savings note and its neighbours is reduced to
+  professional statements (no costumes, chairs, seductive numbers, quiet failures); first person removed;
+  "The honest…" → "The appropriate…"; industry-map titles in sentence case with one specific caption each.
+- **Facility pages** open with a one-line decision summary: FY2024-25 position and the modelled FY2034-35
+  position under current settings.
+
 ## Homepage (2026-09-15, six modules)
 
 1. **Hero** — one sentence of value: *Independent analysis of Australian industrial assets, energy

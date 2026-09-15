@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical appendix: how the baseline-floor analysis was built | Heliovulcan</title>
+  <meta name="description" content="Method, reconciliation, limitations and data tables behind the analysis of the Safeguard Mechanism minimum baseline and coverage threshold." />
+  <meta name="keywords" content="Safeguard Mechanism review 2026, baseline decline rate, minimum baseline 100000, coverage threshold, carbon leakage review, border carbon adjustment Australia, onsite abatement, ACCU surrender, mine power station ownership" />
+  <link rel="stylesheet" href="/style.css?v=20260915f" />
+  <link rel="canonical" href="https://heliovulcan.com.au/safeguard/baseline-floor-method.html" />
+  <meta property="og:site_name" content="Heliovulcan" />
+  <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://heliovulcan.com.au/safeguard/baseline-floor-method.html" />
+  <meta property="og:title" content="Technical appendix: how the baseline-floor analysis was built" />
+  <meta property="og:description" content="A statutory floor has frozen the baselines of 43 Safeguard facilities. By 2029-30 it would be 64. Lowering the coverage threshold moves the floor too — and that is the larger effect." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    /* scoped to this article — stepped floor chart and scrollable data tables */
+    .table-scroll { overflow-x: auto; margin-top: 28px; }
+    .table-scroll .matrix { margin-top: 0; min-width: 34rem; }
+    .lawbox { margin-top: 30px; padding: 6px 0 6px 26px; border-left: 2px solid var(--ink); }
+    .lawbox p { margin: 0 0 12px; font-size: 16px; }
+    .lawbox p:last-child { margin-bottom: 0; }
+    .lawbox cite { font-family: var(--mono); font-size: 13px; color: var(--ink-faint); font-style: normal; display: block; margin-top: 2px; }
+    /* Dated correction notice inside the method box — set apart, never hidden. */
+    .methodbox p.correction { border-left: 3px solid var(--ink-faint); padding-left: 16px; }
+
+    /* ── chart system ──────────────────────────────────────────────────────
+       Three series slots, snapped onto this site's own hue angles (navy 247,
+       teal 175, orange 55) and then moved until every computable check passes
+       against the page surface #f6f3ec: OKLCH lightness inside 0.43-0.77,
+       chroma >= 0.10, worst all-pairs CVD dE 13.1 (protan), worst normal-vision
+       dE 22.8, contrast >= 3:1. Colour follows the entity, never its rank. */
+    .fig { --c1:#0b568b; --c2:#249e85; --c3:#d36c00;
+           --grid:var(--line); --axis:var(--ink-faint); }
+    .fig svg { display: block; width: 100%; height: auto; overflow: visible; }
+    /* Below ~640px the 720-unit viewBox would shrink 11px axis text under 6px.
+       Scroll the plot inside its own container instead — same pattern the site
+       already uses for wide tables. The page body never scrolls sideways. */
+    .fig-scroll { margin: 0 -2px; }
+    @media (max-width: 640px) {
+      .fig-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .fig-scroll svg { min-width: 560px; }
+    }
+    .fig text { font-family: var(--sans); fill: var(--ink-soft); }
+    .fig .ax { font-family: var(--mono); font-size: 11px; fill: var(--axis);
+               font-variant-numeric: tabular-nums; }
+    .fig .grid { stroke: var(--grid); stroke-width: 1; }
+    .fig .rule { stroke: var(--ink); stroke-width: 1; }
+    .fig .dlab { font-size: 12.5px; font-weight: 600; fill: var(--ink); }
+    .fig .dsub { font-size: 11px; fill: var(--ink-faint); }
+    .fig .note { font-size: 12px; fill: var(--ink-soft); }
+    .fig .lead { stroke: var(--ink-faint); stroke-width: 1; fill: none; }
+    .fig .ln { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+    .fig .dot { stroke: var(--bg); stroke-width: 2; }
+    .fig [data-tip] { cursor: default; }
+    .fig [data-tip]:focus { outline: 2px solid var(--teal-deep); outline-offset: 2px; }
+    /* legend — always present for two or more series; identity is never colour alone */
+    .fig-key { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 14px; }
+    .fig-key span { display: inline-flex; align-items: center; gap: 7px;
+                    font-size: 13.5px; color: var(--ink-soft); }
+    .fig-key i { width: 15px; height: 11px; border-radius: 2px; flex: none; }
+    .fig-key i.l { height: 3px; border-radius: 2px; }
+    .fig-cap { margin-top: 12px; font-size: 13.5px; line-height: 1.55; color: var(--ink-soft); }
+    /* table view — every chart has a WCAG-clean twin, so no value is gated */
+    .fig-tv { margin-top: 14px; font-size: 14px; }
+    .fig-tv > summary { font-family: var(--mono); font-size: 11px; letter-spacing: .09em;
+                        text-transform: uppercase; color: var(--ink-faint); cursor: pointer; }
+    .fig-tv > summary:hover { color: var(--teal-deep); }
+    .fig-tv .matrix { margin-top: 12px; }
+    /* schematic (Exhibit 7) — a diagram, not a plot */
+    .fig .box { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
+    .fig .boxh { font-size: 13.5px; font-weight: 700; fill: var(--ink); }
+    .fig .boxr { font-size: 12.5px; fill: var(--ink-soft); }
+    /* shared tooltip — enhances, never gates: every value is also directly
+       labelled or in the table view, and focus shows the same as hover */
+    #tip { position: fixed; z-index: 60; pointer-events: none; opacity: 0;
+           transition: opacity .1s; background: var(--ink); color: #fff;
+           font-size: 12.5px; line-height: 1.45; padding: 7px 10px; border-radius: 0;
+           max-width: 15rem; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
+    #tip.on { opacity: 1; }
+    @media (prefers-reduced-motion: reduce) { #tip { transition: none; } }
+  </style>
+</head>
+<body>
+
+  <header class="nav" id="site-nav">
+    <div class="nav__inner">
+      <a class="brand" href="/index.html" aria-label="Heliovulcan home">
+        <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
+        <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+      </a>
+      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open the menu">Menu</button>
+      <nav class="nav__menu" id="site-menu" aria-label="Site">
+        <ul class="nav__list"><li class="nav__item nav__item--menu is-current"><a class="nav__top" href="/research.html">Research</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-research" aria-label="Open the Research menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-research" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Browse by topic</span><ul><li><a href="/research.html">All research</a></li><li><a href="/research.html#industrial">Industrial & emissions</a></li><li><a href="/research.html#markets">Energy markets</a></li><li><a href="/research.html#battery">Battery projects</a></li><li><a href="/research.html#policy">Policy analysis</a></li></ul></div><div class="mega__col"><span class="mega__k">Featured</span><ul><li><a href="/safeguard-atlas.html">Safeguard Atlas: the post-2030 decline rate cannot be set in isolation</a></li><li><a href="/australian-diesel-replacement-market-size.html">Most of the diesel is on wheels</a></li><li><a href="/consultations/ai-data-centres-2026.html">Submission: AI and data centres</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/safeguard-atlas.html">Tools & data</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-tools" aria-label="Open the Tools & data menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-tools" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Interactive</span><ul><li><a href="/safeguard-atlas.html">Safeguard Atlas</a></li><li><a href="/industry-maps.html">Industry maps</a></li></ul></div><div class="mega__col"><span class="mega__k">Underlying</span><ul><li><a href="/methods/">Methods</a></li><li><a href="/api/">Data & JSON</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/consultations.html">Consultations</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-consultations" aria-label="Open the Consultations menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-consultations" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Published submissions</span><ul><li><a href="/consultations.html">All submissions</a></li><li><a href="/consultations/ai-data-centres-2026.html">AI and data centres, 2026</a></li><li><a href="/consultations/safeguard-onsite-abatement-2026.html">Safeguard onsite abatement, 2026</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="/methods/#consultation-submissions">How submissions are prepared</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/case-studies.html">Projects</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-projects" aria-label="Open the Projects menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-projects" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Cases</span><ul><li><a href="/case-studies.html#screens">Project screens</a></li><li><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a></li></ul></div><div class="mega__col"><span class="mega__k">Record</span><ul><li><a href="/coverage.html">Research coverage</a></li><li><a href="/methods/pre-dd-f1-f4/">Pre-DD methodology</a></li></ul></div></div></div></li><li class="nav__item"><a class="nav__top" href="/about.html">About</a></li></ul>
+        <a class="nav__cta" href="/about.html#contact">Discuss a question</a>
+      </nav>
+    </div>
+  </header>
+  <script src="/assets/site-nav.js?v=20260915f" defer></script>
+  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/research.html">Research</a><span aria-hidden="true">/</span><a href="/safeguard-review-2026-baseline-floor.html">Lowering the threshold does more to the facilities already in</a><span aria-hidden="true">/</span><span aria-current="page">Technical appendix: how the baseline-floor analysis was built</span></div></nav>
+
+  <main>
+    <section class="case-hero">
+      <div class="container">
+        <p class="eyebrow">Technical appendix</p>
+        <h1>How the baseline-floor analysis was built</h1>
+        <p class="case-hero__sub">Method, reconciliation against the department&rsquo;s published figures, limitations and the data tables behind <a href="/safeguard-review-2026-baseline-floor.html">Lowering the threshold does more to the facilities already in</a>.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="article__body res-body" style="max-width:var(--maxw-read)">
+          <h2 id="documents">The three review documents</h2>
+          <p>The three documents are one review seen from three angles, and each hands work to the next.</p><p>The <strong>Carbon Leakage Review</strong>, led by Frank Jotzo and published in February, closed with a recommendation to introduce a border carbon adjustment for cement and clinker first, to consider lime, hydrogen and ammonia, steel and iron, and glass later, to refuse export rebates outright, and &mdash; the part that matters here &mdash; to remove concessional trade-exposed baselines for any commodity once a border adjustment covers it. Its recommendations were handed to the Safeguard review.</p><p>The <strong>Climate Change Authority</strong> was given a deliberately narrow brief: the post-2030 baseline decline rate, and the extent to which the reforms are actually driving abatement at the facilities themselves. Its preliminary arithmetic puts a decline rate of about 4.5 per cent a year against the bottom of Australia&rsquo;s 2035 target range and about 7 per cent against the top &mdash; against an indicative 3.285 per cent currently written into the rules. It says explicitly that the coverage threshold and international units are outside its scope.</p><p>The <strong>department&rsquo;s consultation paper</strong> is the wide one. It carries the decline rate, credit restrictions, trade-exposed concessions, the border adjustment, banking and borrowing, coal baselines, road-versus-rail coverage, and the coverage threshold. It opens by stating that the review &ldquo;is not intended to make fundamental reforms&rdquo; and that changes will generally take effect from 1 July 2030.</p><p>Within that, the coverage threshold gets a short section and a clean table: drop from 100,000 tonnes to 75,000 and 48 more facilities come in, carrying 4.1 Mt of newly covered emissions; drop to 50,000 and it is 108 facilities and 7.8 Mt. The biggest increases, the paper notes, are in metal ore mining and oil and gas extraction.</p>
+          <h2 id="method">Method, reconciliation and limitations</h2>
+          <div class="methodbox">
+            <span class="methodbox__label">How this was done</span>
+            <h3>An independent rebuild of the baseline calculation, checked against the department&rsquo;s own published figures</h3>
+            <p>
+              No table publishes the floor analysis; it has to be rebuilt. It comes from an
+              independent reconstruction of the Safeguard baseline calculation from the rule text and
+              the published register, each facility&rsquo;s baseline rescaled by the legislated emissions
+              reduction contribution from 0.902 to 0.657, then tested against the statutory minimum at
+              four candidate thresholds.
+            </p>
+            <p>
+              <strong>Covered facilities are identified from the published table&rsquo;s own note that a
+              facility is an eligible facility under section 58B, not from its emissions.</strong> The
+              FY2024&ndash;25 table carries 227 rows with a baseline; 19 of them are facilities that have
+              dropped below the coverage threshold and remain listed. Removing those leaves 208 covered
+              facilities and 132,797,928 tonnes of covered emissions, which reconciles exactly with the
+              Regulator&rsquo;s published totals. Every floor figure in this article is on that basis.
+            </p>
+            <p>
+              The reconstruction is validated by reproducing figures the department published from its own
+              data. Offset credits surrendered come out at 10,831,682 against the paper&rsquo;s 10.8 million;
+              scheme credits at 2,582,112 against 2.6 million; coal mining at 68 facilities and 31.8 Mt
+              against the paper&rsquo;s &ldquo;around a third of covered facilities&rdquo; and 31.7 Mt. Facilities
+              surrendering credits above 30 per cent of baseline come out at 24 against the paper&rsquo;s 23 &mdash;
+              a definitional edge on deemed surrenders, and the one number we do not match exactly.
+            </p>
+            <p class="correction">
+              <strong>Correction, 10 August 2026.</strong> As first published, this article counted the
+              floor cohort over all 227 rows of the published table rather than the 208 covered
+              facilities, which put 19 facilities that had already left the scheme inside the cohort.
+              The FY2029&ndash;30 figures were 64 facilities and 1.51 Mt; they are 45 and 0.99 Mt.
+              The tightening a 75,000-tonne threshold would deliver was 1.4 Mt; it is 0.92 Mt. The
+              sentence describing floor-bound facilities as facing no declining constraint was wrong in
+              the other direction, and has been replaced: a covered facility on the floor has no
+              headroom at all. The mechanism, the exhibits&rsquo; construction and the offset-credit
+              figures are unchanged.
+            </p>
+            <p>
+              The ownership evidence is a separate build and a slower one. Station ownership, storage and
+              contract expiry exist in no national register, so each is either established from a named
+              public source or recorded as unchecked. Forty-four of the 88 gold sites are verified; 22 are
+              explicitly not yet checked and are excluded from the percentages rather than assumed. A blank
+              storage field means no disclosure was found, never that no battery exists &mdash; behind-the-meter
+              storage has no register in Australia, and reading a blank as a zero has put a site with nine
+              megawatts of installed battery at the top of a target list before now.
+            </p>
+          </div>
+          <h2 id="s56">Section 56(4) in the register</h2>
+          <p>The band between the two baselines is still there and still pays nothing. But a covered facility cannot sit inside it. Emissions in that band are emissions below 100,000 tonnes &mdash; below the coverage threshold &mdash; so a facility arrives there by leaving the scheme, not by abating within it. Nineteen facilities in the 2024&ndash;25 table have done exactly that: still listed, still showing a baseline of 100,000, emitting below it, and carrying no obligation because they are no longer designated large facilities. One of them was issued 1,138 credits against emissions of 81,563 tonnes &mdash; measured, that is, against an unfloored baseline of 82,701 rather than the 100,000 the table prints. That is section 56(4) working exactly as drafted, and it is the one place in the register where you can watch it happen.</p>
+          <h2 id="cohort">Sector composition of the floor cohort</h2>
+          <div class="exhibit fig">
+            <div class="exhibit__head">
+              <span class="exhibit__n">Exhibit 3</span>
+              <span class="exhibit__t">Metal ore mining is over-represented on the floor; coal is under-represented</span>
+            </div>
+            <div class="exhibit__body">
+              <div class="fig-key">
+                <span><i style="background:var(--c1);border-radius:50%;width:11px"></i>Share of the covered register</span>
+                <span><i style="background:var(--c2);border-radius:50%;width:11px"></i>Share of the 45-facility floor cohort</span>
+              </div>
+              <div class="fig-scroll"><svg viewBox="0 0 720 305" role="img" aria-label="Dumbbell chart comparing each sector&rsquo;s share of the covered Safeguard register with its share of the floor cohort. Metal ore mining rises from 24.0 to 37.8 per cent; coal mining falls from 31.7 to 22.2 per cent; road freight rises from 1.4 to 6.7 per cent; the other two move slightly.">
+                <line class="grid" x1="300.0" y1="36" x2="300.0" y2="270"/>
+                <line class="grid" x1="390.0" y1="36" x2="390.0" y2="270"/>
+                <line class="grid" x1="480.0" y1="36" x2="480.0" y2="270"/>
+                <line class="grid" x1="570.0" y1="36" x2="570.0" y2="270"/>
+                <line class="grid" x1="660.0" y1="36" x2="660.0" y2="270"/>
+                <text class="ax" x="286" y="64" text-anchor="end">Metal ore mining</text>
+                <line class="lead" x1="516.0" y1="60" x2="640.2" y2="60" stroke-width="2"/>
+                <circle class="dot" cx="516.0" cy="60" r="5" fill="var(--c1)" data-tip="Metal ore mining &middot; 24.0% of the covered register (50 of 208)" tabindex="0"/>
+                <circle class="dot" cx="640.2" cy="60" r="5" fill="var(--c2)" data-tip="Metal ore mining &middot; 37.8% of the floor cohort (17 of 45)" tabindex="0"/>
+                <text class="dlab" x="666" y="64">+13.7</text>
+                <text class="ax" x="286" y="112" text-anchor="end">Coal mining</text>
+                <line class="lead" x1="585.3" y1="108" x2="499.8" y2="108" stroke-width="2"/>
+                <circle class="dot" cx="585.3" cy="108" r="5" fill="var(--c1)" data-tip="Coal mining &middot; 31.7% of the covered register (66 of 208)" tabindex="0"/>
+                <circle class="dot" cx="499.8" cy="108" r="5" fill="var(--c2)" data-tip="Coal mining &middot; 22.2% of the floor cohort (10 of 45)" tabindex="0"/>
+                <text class="dlab" x="666" y="112">&minus;9.5</text>
+                <text class="ax" x="286" y="160" text-anchor="end">Oil and gas extraction</text>
+                <line class="lead" x1="417.0" y1="156" x2="399.9" y2="156" stroke-width="2"/>
+                <circle class="dot" cx="417.0" cy="156" r="5" fill="var(--c1)" data-tip="Oil and gas extraction &middot; 13.0% of the covered register (27 of 208)" tabindex="0"/>
+                <circle class="dot" cx="399.9" cy="156" r="5" fill="var(--c2)" data-tip="Oil and gas extraction &middot; 11.1% of the floor cohort (5 of 45)" tabindex="0"/>
+                <text class="ax" x="286" y="208" text-anchor="end">Road freight transport</text>
+                <line class="lead" x1="312.6" y1="204" x2="360.3" y2="204" stroke-width="2"/>
+                <circle class="dot" cx="312.6" cy="204" r="5" fill="var(--c1)" data-tip="Road freight transport &middot; 1.4% of the covered register (3 of 208)" tabindex="0"/>
+                <circle class="dot" cx="360.3" cy="204" r="5" fill="var(--c2)" data-tip="Road freight transport &middot; 6.7% of the floor cohort (3 of 45)" tabindex="0"/>
+                <text class="dlab" x="666" y="208">+5.2</text>
+                <text class="ax" x="286" y="256" text-anchor="end">Non-ferrous metal manufacturing</text>
+                <line class="lead" x1="355.8" y1="252" x2="360.3" y2="252" stroke-width="2"/>
+                <circle class="dot" cx="355.8" cy="252" r="5" fill="var(--c1)" data-tip="Non-ferrous metal manufacturing &middot; 6.2% of the covered register (13 of 208)" tabindex="0"/>
+                <circle class="dot" cx="360.3" cy="252" r="5" fill="var(--c2)" data-tip="Non-ferrous metal manufacturing &middot; 6.7% of the floor cohort (3 of 45)" tabindex="0"/>
+                <text class="ax" x="300.0" y="290" text-anchor="middle">0%</text>
+                <text class="ax" x="390.0" y="290" text-anchor="middle">10%</text>
+                <text class="ax" x="480.0" y="290" text-anchor="middle">20%</text>
+                <text class="ax" x="570.0" y="290" text-anchor="middle">30%</text>
+                <text class="ax" x="660.0" y="290" text-anchor="middle">40%</text>
+              </svg></div>
+              <p class="fig-cap">The three movers are labelled, in percentage points. Shares are of the 208 covered facilities and of the 45 in the cohort; facilities that have ceased to be covered are excluded from both. The five sectors shown cover 38 of the 45 &mdash; the remaining seven sit one apiece in seven further sectors. Road freight moves because all three of its covered facilities land on the floor.</p>
+              <details class="fig-tv">
+                <summary>Show the numbers</summary>
+                <div class="exhibit__scroll">
+                  <table class="matrix">
+                    <thead><tr><th>Sector</th><th class="num">Of the covered register</th><th class="num">Of the floor cohort</th><th class="num">Change, points</th></tr></thead>
+                    <tbody>
+                      <tr><td class="metric">Metal ore mining</td><td class="num">24.0% (50)</td><td class="num">37.8% (17)</td><td class="num s1">+13.7</td></tr>
+                      <tr><td class="metric">Coal mining</td><td class="num">31.7% (66)</td><td class="num">22.2% (10)</td><td class="num s1">&minus;9.5</td></tr>
+                      <tr><td class="metric">Oil and gas extraction</td><td class="num">13.0% (27)</td><td class="num">11.1% (5)</td><td class="num">&minus;1.9</td></tr>
+                      <tr><td class="metric">Road freight transport</td><td class="num">1.4% (3)</td><td class="num">6.7% (3)</td><td class="num s1">+5.2</td></tr>
+                      <tr><td class="metric">Non-ferrous metal manufacturing</td><td class="num">6.2% (13)</td><td class="num">6.7% (3)</td><td class="num">+0.5</td></tr>
+                      <tr><td class="metric">Seven further sectors, one each</td><td class="num">&mdash;</td><td class="num">15.6% (7)</td><td class="num">&mdash;</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+            <p class="exhibit__src"><b>Source:</b> Clean Energy Regulator published Safeguard baselines and emissions, FY2024&ndash;25, classified by the register&rsquo;s own industry field. Analysis by Heliovulcan. Percentages are of the 208 covered facilities and of the 45 projected onto the floor in FY2029&ndash;30.</p>
+          </div>
+          <h2 id="cliff">Where a lower floor would bite</h2>
+          <div class="exhibit fig">
+            <div class="exhibit__head">
+              <span class="exhibit__n">Exhibit 5</span>
+              <span class="exhibit__t">Where a lower floor would bite: twenty-three covered facilities land on the same number</span>
+            </div>
+            <div class="exhibit__body">
+              <div class="fig-key">
+                <span><i style="background:var(--c2)"></i>Below the current 100,000 t floor &mdash; the cohort</span>
+                <span><i style="background:var(--c1)"></i>Above it &mdash; still declining normally</span>
+              </div>
+              <div class="fig-scroll"><svg viewBox="0 0 720 305" role="img" aria-label="Histogram of projected 2029-30 unfloored baselines in 5,000-tonne buckets from 50,000 to 150,000 tonnes. A single bucket at 70,000 to 75,000 tonnes holds 23 facilities; every other bucket holds seven or fewer.">
+                <line class="grid" x1="70" y1="260" x2="690" y2="260"/>
+                <line class="grid" x1="70" y1="211.1" x2="690" y2="211.1"/>
+                <line class="grid" x1="70" y1="162.2" x2="690" y2="162.2"/>
+                <line class="grid" x1="70" y1="113.3" x2="690" y2="113.3"/>
+                <line class="grid" x1="70" y1="64.4" x2="690" y2="64.4"/>
+                <text class="ax" x="60" y="264" text-anchor="end">0</text>
+                <text class="ax" x="60" y="215.1" text-anchor="end">10</text>
+                <text class="ax" x="60" y="166.2" text-anchor="end">20</text>
+                <text class="ax" x="60" y="117.3" text-anchor="end">30</text>
+                <text class="ax" x="60" y="68.4" text-anchor="end">40</text>
+                <path d="M167.5,260.0 L167.5,254.2 Q167.5,250.2 171.5,250.2 L185.5,250.2 Q189.5,250.2 189.5,254.2 L189.5,260.0 Z" fill="var(--c2)" data-tip="65,000–70,000 t · 2 facilities" tabindex="0"/>
+                <path d="M198.5,260.0 L198.5,151.6 Q198.5,147.6 202.5,147.6 L216.5,147.6 Q220.5,147.6 220.5,151.6 L220.5,260.0 Z" fill="var(--c2)" data-tip="70,000–75,000 t · 23 facilities" tabindex="0"/>
+                <path d="M229.5,260.0 L229.5,234.7 Q229.5,230.7 233.5,230.7 L247.5,230.7 Q251.5,230.7 251.5,234.7 L251.5,260.0 Z" fill="var(--c2)" data-tip="75,000–80,000 t · 6 facilities" tabindex="0"/>
+                <path d="M260.5,260.0 L260.5,244.4 Q260.5,240.4 264.5,240.4 L278.5,240.4 Q282.5,240.4 282.5,244.4 L282.5,260.0 Z" fill="var(--c2)" data-tip="80,000–85,000 t · 4 facilities" tabindex="0"/>
+                <path d="M291.5,260.0 L291.5,244.4 Q291.5,240.4 295.5,240.4 L309.5,240.4 Q313.5,240.4 313.5,244.4 L313.5,260.0 Z" fill="var(--c2)" data-tip="85,000–90,000 t · 4 facilities" tabindex="0"/>
+                <path d="M322.5,260.0 L322.5,244.4 Q322.5,240.4 326.5,240.4 L340.5,240.4 Q344.5,240.4 344.5,244.4 L344.5,260.0 Z" fill="var(--c2)" data-tip="90,000–95,000 t · 4 facilities" tabindex="0"/>
+                <path d="M353.5,260.0 L353.5,254.2 Q353.5,250.2 357.5,250.2 L371.5,250.2 Q375.5,250.2 375.5,254.2 L375.5,260.0 Z" fill="var(--c2)" data-tip="95,000–100,000 t · 2 facilities" tabindex="0"/>
+                <path d="M384.5,260.0 L384.5,229.8 Q384.5,225.8 388.5,225.8 L402.5,225.8 Q406.5,225.8 406.5,229.8 L406.5,260.0 Z" fill="var(--c1)" data-tip="100,000–105,000 t · 7 facilities" tabindex="0"/>
+                <path d="M415.5,260.0 L415.5,249.3 Q415.5,245.3 419.5,245.3 L433.5,245.3 Q437.5,245.3 437.5,249.3 L437.5,260.0 Z" fill="var(--c1)" data-tip="105,000–110,000 t · 3 facilities" tabindex="0"/>
+                <path d="M446.5,260.0 L446.5,239.6 Q446.5,235.6 450.5,235.6 L464.5,235.6 Q468.5,235.6 468.5,239.6 L468.5,260.0 Z" fill="var(--c1)" data-tip="110,000–115,000 t · 5 facilities" tabindex="0"/>
+                <path d="M477.5,260.0 L477.5,244.4 Q477.5,240.4 481.5,240.4 L495.5,240.4 Q499.5,240.4 499.5,244.4 L499.5,260.0 Z" fill="var(--c1)" data-tip="115,000–120,000 t · 4 facilities" tabindex="0"/>
+                <path d="M508.5,260.0 L508.5,244.4 Q508.5,240.4 512.5,240.4 L526.5,240.4 Q530.5,240.4 530.5,244.4 L530.5,260.0 Z" fill="var(--c1)" data-tip="120,000–125,000 t · 4 facilities" tabindex="0"/>
+                <path d="M539.5,260.0 L539.5,254.2 Q539.5,250.2 543.5,250.2 L557.5,250.2 Q561.5,250.2 561.5,254.2 L561.5,260.0 Z" fill="var(--c1)" data-tip="125,000–130,000 t · 2 facilities" tabindex="0"/>
+                <path d="M570.5,260.0 L570.5,239.6 Q570.5,235.6 574.5,235.6 L588.5,235.6 Q592.5,235.6 592.5,239.6 L592.5,260.0 Z" fill="var(--c1)" data-tip="130,000–135,000 t · 5 facilities" tabindex="0"/>
+                <path d="M601.5,260.0 L601.5,234.7 Q601.5,230.7 605.5,230.7 L619.5,230.7 Q623.5,230.7 623.5,234.7 L623.5,260.0 Z" fill="var(--c1)" data-tip="135,000–140,000 t · 6 facilities" tabindex="0"/>
+                <path d="M632.5,260.0 L632.5,239.6 Q632.5,235.6 636.5,235.6 L650.5,235.6 Q654.5,235.6 654.5,239.6 L654.5,260.0 Z" fill="var(--c1)" data-tip="140,000–145,000 t · 5 facilities" tabindex="0"/>
+                <path d="M663.5,260.0 L663.5,234.7 Q663.5,230.7 667.5,230.7 L681.5,230.7 Q685.5,230.7 685.5,234.7 L685.5,260.0 Z" fill="var(--c1)" data-tip="145,000–150,000 t · 6 facilities" tabindex="0"/>
+                <line class="rule" x1="380" y1="40" x2="380" y2="260"/>
+                <line class="grid" x1="225" y1="40" x2="225" y2="260"/>
+                <text class="dsub" x="384" y="50">current floor</text>
+                <text class="dsub" x="229" y="50">a 75,000 t floor</text>
+                <text class="dlab" x="424" y="112">23 covered facilities land on one number</text>
+                <text class="dsub" x="424" y="128">72,838 t &mdash; the projection of every</text>
+                <text class="dsub" x="424" y="142">baseline currently sitting at 100,000</text>
+                <path class="lead" d="M420,136 L222,152"/>
+                <text class="ax" x="70" y="282" text-anchor="middle">50,000</text>
+                <text class="ax" x="225" y="282" text-anchor="middle">75,000</text>
+                <text class="ax" x="380" y="282" text-anchor="middle">100,000</text>
+                <text class="ax" x="535" y="282" text-anchor="middle">125,000</text>
+                <text class="ax" x="690" y="282" text-anchor="middle">150,000</text>
+                <text class="ax" x="380" y="299" text-anchor="middle">projected 2029&ndash;30 baseline before the floor is applied, tonnes</text>
+              </svg></div>
+              <p class="fig-cap">This is why the relationship between the threshold and its effect is a cliff rather than a slope. Twenty-four covered facilities are filed at exactly 100,000 tonnes today, so they project to exactly the same number in 2029&ndash;30 &mdash; and they sit just under 75,000. A 75,000-tonne floor leaves almost all of them floored; a 50,000-tonne floor releases every one. No covered facility projects below 50,000 tonnes. The 116 facilities above 150,000 tonnes are off the right of the chart and are nowhere near the floor. The distribution above 100,000 tonnes is unchanged by the coverage filter &mdash; every facility it removes sits below the floor.</p>
+              <details class="fig-tv">
+                <summary>Show the numbers</summary>
+                <div class="exhibit__scroll">
+                  <table class="matrix">
+                    <thead><tr><th>Projected 2029&ndash;30 baseline, before the floor</th><th class="num">Facilities</th></tr></thead>
+                    <tbody>
+                      <tr><td class="metric">Below 65,000 t</td><td class="num">0</td></tr>
+                      <tr><td class="metric">65,000&ndash;70,000 t</td><td class="num">2</td></tr>
+                      <tr><td class="metric">70,000&ndash;75,000 t</td><td class="num s1">23</td></tr>
+                      <tr><td class="metric">75,000&ndash;100,000 t</td><td class="num">20</td></tr>
+                      <tr><td class="metric">100,000&ndash;150,000 t</td><td class="num">47</td></tr>
+                      <tr><td class="metric">150,000 t and above</td><td class="num">116</td></tr>
+                      <tr><td class="metric"><strong>Total</strong></td><td class="num"><strong>208</strong></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+            <p class="exhibit__src"><b>Source:</b> Clean Energy Regulator published Safeguard baselines and emissions, FY2024&ndash;25, covered facilities only, each facility&rsquo;s baseline rescaled from its filed contribution factor to 0.657. Analysis by Heliovulcan. For facilities already at the statutory minimum the filed baseline is itself the floored number, so their position in this distribution is an upper bound &mdash; the true values sit further left.</p>
+          </div>
+          <h2 id="surrender">Credit surrender by sector</h2>
+          <div class="exhibit fig">
+            <div class="exhibit__head">
+              <span class="exhibit__n">Exhibit 6</span>
+              <span class="exhibit__t">Four-fifths of compliance credit surrender comes from three resource sectors</span>
+            </div>
+            <div class="exhibit__body">
+              <div class="fig-key">
+                <span><i style="background:var(--c2)"></i>Coal, oil and gas, metal ore</span>
+                <span><i style="background:var(--c1)"></i>Every other sector</span>
+              </div>
+              <div class="fig-scroll"><svg viewBox="0 0 720 305" role="img" aria-label="Horizontal bar chart of offset credits surrendered by sector in 2024-25. Coal mining 5,050,594; oil and gas extraction 1,941,035; metal ore mining 1,562,804; then non-ferrous metal manufacturing 681,168 and a long tail below 330,000.">
+                <line class="grid" x1="300" y1="20" x2="300" y2="272"/>
+                <line class="grid" x1="430.8" y1="20" x2="430.8" y2="272"/>
+                <line class="grid" x1="561.5" y1="20" x2="561.5" y2="272"/>
+                <text class="ax" x="288" y="44" text-anchor="end">Coal mining</text>
+                <path d="M300.0,31.0 L626.2,31.0 Q630.2,31.0 630.2,35.0 L630.2,45.0 Q630.2,49.0 626.2,49.0 L300.0,49.0 Z" fill="var(--c2)" data-tip="Coal mining · 5,050,594 offset credits surrendered · 47.9%" tabindex="0"/>
+                <text class="dlab" x="637.2" y="44">5,050,594</text>
+                <text class="ax" x="288" y="74" text-anchor="end">Oil and gas extraction</text>
+                <path d="M300.0,61.0 L422.9,61.0 Q426.9,61.0 426.9,65.0 L426.9,75.0 Q426.9,79.0 422.9,79.0 L300.0,79.0 Z" fill="var(--c2)" data-tip="Oil and gas extraction · 1,941,035 offset credits surrendered · 18.4%" tabindex="0"/>
+                <text class="dlab" x="433.9" y="74">1,941,035</text>
+                <text class="ax" x="288" y="104" text-anchor="end">Metal ore mining</text>
+                <path d="M300.0,91.0 L398.2,91.0 Q402.2,91.0 402.2,95.0 L402.2,105.0 Q402.2,109.0 398.2,109.0 L300.0,109.0 Z" fill="var(--c2)" data-tip="Metal ore mining · 1,562,804 offset credits surrendered · 14.8%" tabindex="0"/>
+                <text class="dlab" x="409.2" y="104">1,562,804</text>
+                <text class="ax" x="288" y="134" text-anchor="end">Non-ferrous metal mfg</text>
+                <path d="M300.0,121.0 L340.5,121.0 Q344.5,121.0 344.5,125.0 L344.5,135.0 Q344.5,139.0 340.5,139.0 L300.0,139.0 Z" fill="var(--c1)" data-tip="Non-ferrous metal manufacturing · 681,168 offset credits surrendered · 6.5%" tabindex="0"/>
+                <text class="dlab" x="351.5" y="134">681,168</text>
+                <text class="ax" x="288" y="164" text-anchor="end">Rail freight transport</text>
+                <path d="M300.0,151.0 L317.5,151.0 Q321.5,151.0 321.5,155.0 L321.5,165.0 Q321.5,169.0 317.5,169.0 L300.0,169.0 Z" fill="var(--c1)" data-tip="Rail freight transport · 328,427 offset credits surrendered · 3.1%" tabindex="0"/>
+                <text class="dlab" x="328.5" y="164">328,427</text>
+                <text class="ax" x="288" y="194" text-anchor="end">Air and space transport</text>
+                <path d="M300.0,181.0 L310.3,181.0 Q314.3,181.0 314.3,185.0 L314.3,195.0 Q314.3,199.0 310.3,199.0 L300.0,199.0 Z" fill="var(--c1)" data-tip="Air and space transport · 218,307 offset credits surrendered · 2.1%" tabindex="0"/>
+                <text class="dlab" x="321.3" y="194">218,307</text>
+                <text class="ax" x="288" y="224" text-anchor="end">Ferrous metal mfg</text>
+                <path d="M300.0,211.0 L309.4,211.0 Q313.4,211.0 313.4,215.0 L313.4,225.0 Q313.4,229.0 309.4,229.0 L300.0,229.0 Z" fill="var(--c1)" data-tip="Ferrous metal manufacturing · 204,177 offset credits surrendered · 1.9%" tabindex="0"/>
+                <text class="dlab" x="320.4" y="224">204,177</text>
+                <text class="ax" x="288" y="254" text-anchor="end">Petroleum and coal products</text>
+                <path d="M300.0,241.0 L306.1,241.0 Q310.1,241.0 310.1,245.0 L310.1,255.0 Q310.1,259.0 306.1,259.0 L300.0,259.0 Z" fill="var(--c1)" data-tip="Petroleum and coal product manufacturing · 154,446 offset credits surrendered · 1.5%" tabindex="0"/>
+                <text class="dlab" x="317.1" y="254">154,446</text>
+                <text class="ax" x="300" y="290" text-anchor="middle">0</text>
+                <text class="ax" x="430.8" y="290" text-anchor="middle">2,000,000</text>
+                <text class="ax" x="561.5" y="290" text-anchor="middle">4,000,000</text>
+              </svg></div>
+              <p class="fig-cap">Eight sectors are shown, not all of them; the tail below 150,000 credits is omitted and the totals below are of everything. Coal alone surrenders more than every non-resource sector on the register put together.</p>
+              <div class="exhibit__scroll">
+              <table class="matrix">
+                <thead>
+                  <tr><th>Sector</th><th class="num">Offset credits surrendered</th><th class="num">Share of all surrender</th><th class="num">Scheme credits surrendered</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="metric">Coal mining</td><td class="num">5,050,594</td><td class="num">47.9%</td><td class="num">1,351,561</td></tr>
+                  <tr><td class="metric">Oil and gas extraction</td><td class="num">1,941,035</td><td class="num">18.4%</td><td class="num">646,868</td></tr>
+                  <tr><td class="metric">Metal ore mining</td><td class="num">1,562,804</td><td class="num">14.8%</td><td class="num">299,698</td></tr>
+                  <tr><td class="metric"><strong>&mdash; three sectors combined</strong></td><td class="num s1"><strong>8,554,433</strong></td><td class="num s1"><strong>81.1%</strong></td><td class="num"><strong>2,298,127</strong></td></tr>
+                  <tr><td class="metric">Non-ferrous metal manufacturing</td><td class="num">681,168</td><td class="num">6.5%</td><td class="num">212,070</td></tr>
+                  <tr><td class="metric">Rail freight transport</td><td class="num">328,427</td><td class="num">3.1%</td><td class="num">13,513</td></tr>
+                  <tr><td class="metric">Air and space transport</td><td class="num">218,307</td><td class="num">2.1%</td><td class="num">0</td></tr>
+                  <tr><td class="metric">Ferrous metal manufacturing</td><td class="num">204,177</td><td class="num">1.9%</td><td class="num">0</td></tr>
+                  <tr><td class="metric"><strong>All facilities</strong></td><td class="num"><strong>10,549,152</strong></td><td class="num"><strong>100%</strong></td><td class="num"><strong>2,582,112</strong></td></tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+            <p class="exhibit__src"><b>Source:</b> Clean Energy Regulator published Safeguard baselines and emissions, FY2024&ndash;25. Analysis by Heliovulcan. Shares are of offset credits surrendered; the largest sectors are shown, not every sector. Adding deemed surrenders brings the offset total to 10,831,682 &mdash; reconciling to the 10.8 million stated in the consultation paper, and putting the three-sector share at 79.0 per cent on that wider basis. The scheme-credit total reconciles to the paper&rsquo;s 2.6 million.</p>
+          </div>
+          <h2 id="coal">Coal baselines and the generation-side market</h2>
+          <p>The same caution applies, for a different reason, to coal. Both papers raise ending the concession that lets existing coal mines keep half of their baseline on facility-specific intensity past 2030 while everyone else converges to the industry average. Doing so would raise the liability on gassy mines &mdash; correctly, on the scheme&rsquo;s own logic. But of 102 Australian coal mines in our screen, none is off-grid, and the emissions at issue are ventilation air methane and haul fleet diesel. Tightening coal baselines creates a compliance cost. It does not create a generation-side market, and any business case built on the assumption that it does will be wrong by an order of magnitude.</p>
+          <h2 id="disciplines">Three disciplines for reading a coverage proposal, in full</h2>
+          <div class="insight">Three disciplines follow. <strong>Read the mechanism itself — the largest quantified consequence in the coverage section of a 48-page consultation paper is one uncosted sentence about the minimum baseline, and it is only visible if you have rebuilt the calculation. <strong>Ask who the instrument lands on before asking whether it is strong enough</strong> &mdash; credit discounting is aimed at the party holding the baseline, and at most off-grid mines the generating asset belongs to a contractor on a decade-long contract, so the price signal and the investment decision sit on different balance sheets. <strong>Separate the compliance cost from the addressable market</strong> &mdash; tightening coal baselines is real money and almost no generation-side opportunity, because the emissions are ventilation methane and haul fleet, not a power station. For the adjacent sizing question, see <a href="/australian-diesel-replacement-market-size.html">most of the diesel is on wheels</a>; for what the ownership work looks like at site level, see <a href="/methods/">how the analysis works</a>.</div>
+
+          <div class="pull"><span class="hl">A rule with a floor in it does not stop a facility decarbonising. It stops the scheme asking.</span></div>
+
+          <div class="provenance">
+            <div class="provenance__row">
+              <span class="provenance__k">Sources</span>
+              <span class="provenance__v">Clean Energy Regulator published Safeguard Mechanism baselines and emissions, FY2023&ndash;24 and FY2024&ndash;25; National Greenhouse and Energy Reporting (Safeguard Mechanism) Rule 2015 (F2024C00846), sections 10(1) and 56(4); Safeguard Mechanism Review Consultation Paper, DCCEEW, August 2026; 2026 Annual Progress Advice Consultation Paper, Climate Change Authority, July 2026; Carbon Leakage Review Final Report, DCCEEW, published February 2026; national pollutant inventory; state generation licences; contractor project registers; company annual and sustainability filings. All publicly published.</span>
+            </div>
+            <div class="provenance__row">
+              <span class="provenance__k">Period</span>
+              <span class="provenance__v">Register data FY2024&ndash;25, with FY2023&ndash;24 used for the year-on-year floor count. Projections are to FY2029&ndash;30 on the legislated decline schedule as it stands at the date of publication.</span>
+            </div>
+            <div class="provenance__row">
+              <span class="provenance__k">Assumptions</span>
+              <span class="provenance__v">The projection holds production and emissions intensity fixed and rescales the baseline by the emissions reduction contribution alone. It does not model the convergence of facility-specific intensity toward the industry average, which on a single tested facility understated the projected gap by 23&ndash;37 per cent; it does not model borrowing adjustments, which the floor provision expressly carves out. Both omissions bias the floor count downward.</span>
+            </div>
+            <div class="provenance__row">
+              <span class="provenance__k">Limitations</span>
+              <span class="provenance__v">For facilities already at the statutory minimum, the published baseline is the floored figure, so their true unfloored baseline is unknown and the held-back tonnage reported here is a lower bound. The department&rsquo;s admissions figures in Exhibit 4 are reproduced from its consultation paper and have not been independently rebuilt; we cannot compute sub-threshold facility emissions from public data and do not identify which facilities a lower threshold would admit. The gold ownership percentages exclude 22 sites recorded as not yet checked. No facility is named in this article as a commercial target.</span>
+            </div>
+            <div class="provenance__row">
+              <span class="provenance__k">Status</span>
+              <span class="provenance__v">Screening-level analysis of public records, prepared while the consultation is open. It is not a submission, not legal, financial, tax or engineering advice, and not a financial product recommendation. Nothing here forecasts what the review will decide. Figures should be independently verified before any commercial, financing or regulatory decision.</span>
+            </div>
+          </div>
+          </div>
+          <h2 id="tables">Data tables behind the exhibits</h2>
+          <h3>Exhibit 2 The number of covered facilities parked on the statutory floor is compounding Filed — counted in the published register Projected </h3><details open class="fig-tv">
+                <summary>Show the numbers</summary>
+                <div class="exhibit__scroll">
+                  <table class="matrix">
+                    <thead><tr><th>Year</th><th class="num">Covered facilities on the floor</th><th class="num">Baseline held above the path</th><th>Basis</th></tr></thead>
+                    <tbody>
+                      <tr><td class="metric">2023&ndash;24</td><td class="num">22</td><td class="num">&mdash;</td><td>Filed</td></tr>
+                      <tr><td class="metric">2024&ndash;25</td><td class="num">24</td><td class="num">&mdash;</td><td>Filed</td></tr>
+                      <tr><td class="metric">2025&ndash;26</td><td class="num">27</td><td class="num">0.155 Mt</td><td>Projected</td></tr>
+                      <tr><td class="metric">2026&ndash;27</td><td class="num">34</td><td class="num">0.323 Mt</td><td>Projected</td></tr>
+                      <tr><td class="metric">2027&ndash;28</td><td class="num">36</td><td class="num">0.517 Mt</td><td>Projected</td></tr>
+                      <tr><td class="metric">2028&ndash;29</td><td class="num">41</td><td class="num">0.733 Mt</td><td>Projected</td></tr>
+                      <tr><td class="metric">2029&ndash;30</td><td class="num s1">45</td><td class="num s1">0.987 Mt</td><td>Projected</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+          <p class="small-note">Facility-level rows: <a href="/safeguard/facilities.html">Safeguard Atlas facilities table</a>. Model inputs: <a href="/data/safeguard-atlas.json">safeguard-atlas.json</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a class="brand" href="/index.html">
+            <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
+            <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+          </a>
+          <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
+        </div>
+        <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">All research</a><a href="/research.html#industrial">Industrial &amp; emissions</a><a href="/research.html#markets">Energy markets</a><a href="/research.html#battery">Battery projects</a><a href="/research.html#policy">Policy analysis</a></div>
+        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/industry-maps.html">Industry maps</a><a href="/methods/">Methods</a><a href="/api/">Data &amp; JSON</a></div>
+        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Published submissions</a><a href="/case-studies.html">Project screens</a><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">About Heliovulcan</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
+      </div>
+      <p class="footer__legal">
+        <b>Disclaimer:</b> Heliovulcan is an independent research and analysis practice providing public-information desktop analysis and screening support. Nothing on this site is legal, financial, tax, engineering, investment or lender due-diligence advice, a compliance determination, or regulatory representation or lobbying, and nothing here is a financial product recommendation. All results are indicative and must be independently verified before any commercial, financing or construction decision. &copy; 2026 Heliovulcan Energy Advisors.
+      </p>
+    </div>
+  </footer>
+
+  <div id="tip" role="tooltip" aria-hidden="true"></div>
+
+  <script>
+    /* Chart tooltip. It enhances and never gates: every value is also directly
+       labelled or listed in that exhibit's table view. Keyboard focus shows the
+       same content as hover, and the hit area is the mark plus its surface ring. */
+    (function () {
+      var tip = document.getElementById('tip');
+      function show(el) {
+        var t = el.getAttribute('data-tip');
+        if (!t) return;
+        tip.textContent = t;
+        tip.classList.add('on');
+        tip.setAttribute('aria-hidden', 'false');
+        var r = el.getBoundingClientRect();
+        var w = tip.offsetWidth, h = tip.offsetHeight;
+        var x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), innerWidth - w - 8);
+        var y = r.top - h - 10;
+        if (y < 8) y = r.bottom + 10;
+        y = Math.min(Math.max(8, y), innerHeight - h - 8);
+        tip.style.left = x + 'px';
+        tip.style.top = y + 'px';
+      }
+      function hide() { tip.classList.remove('on'); tip.setAttribute('aria-hidden', 'true'); }
+      document.querySelectorAll('.fig [data-tip]').forEach(function (el) {
+        el.addEventListener('mouseenter', function () { show(el); });
+        el.addEventListener('focus', function () { show(el); });
+        el.addEventListener('mouseleave', hide);
+        el.addEventListener('blur', hide);
+      });
+      addEventListener('scroll', hide, { passive: true });
+      addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+    })();
+
+    document.querySelectorAll('[data-copy-link]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (!navigator.clipboard) return;
+        var t = b.textContent;
+        navigator.clipboard.writeText(location.href).then(function () {
+          b.textContent = 'Link copied';
+          setTimeout(function () { b.textContent = t; }, 1800);
+        }, function () {});
+      });
+    });
+  </script>
+</body>
+</html>

@@ -15,7 +15,7 @@ WS = SITE.parents[1]            # /Users/hugefafafa1/BESS
 TEMPLATES = [WS / "tools/consultation_kb/atlas/parts/shell.html",
              WS / "tools/consultation_kb/atlas/facility_template.html",
              WS / "tools/consultation_kb/atlas/build_facility_pages.py"]
-ASSET_V = "20260915e"          # bump when style.css or site-nav.js changes: returning browsers cache both
+ASSET_V = "20260915f"          # bump when style.css or site-nav.js changes: returning browsers cache both
 SKIP = {"ar.html", "context_map.html", "siting_opportunity_constraint_screen.html", "reports/_template.html"}
 
 # ---- the menu -------------------------------------------------------------------
@@ -29,7 +29,7 @@ MENU = [
                       ("Submission: AI and data centres", "/consultations/ai-data-centres-2026.html")])]),
     ("tools", "Tools & data", "/safeguard-atlas.html", [
         ("Interactive", [("Safeguard Atlas", "/safeguard-atlas.html"), ("Industry maps", "/industry-maps.html")]),
-        ("Underlying", [("Methods", "/methods/"), ("Data & API", "/api/")])]),
+        ("Underlying", [("Methods", "/methods/"), ("Data & JSON", "/api/")])]),
     ("consultations", "Consultations", "/consultations.html", [
         ("Published submissions", [("All submissions", "/consultations.html"),
                                    ("AI and data centres, 2026", "/consultations/ai-data-centres-2026.html"),
@@ -44,6 +44,7 @@ MENU = [
 
 # page path → (section key, breadcrumb trail [(label, href), …] excluding the page itself)
 SECTION_OF = {
+    "safeguard/baseline-floor-method.html": ("research", [("Research", "/research.html"), ("Lowering the threshold does more to the facilities already in", "/safeguard-review-2026-baseline-floor.html")]),
     "index.html": ("home", []),
     "research.html": ("research", []),
     "consultations.html": ("consultations", []),
@@ -117,7 +118,7 @@ FOOTER = '''<footer class="footer">
           <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
         </div>
         <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">All research</a><a href="/research.html#industrial">Industrial &amp; emissions</a><a href="/research.html#markets">Energy markets</a><a href="/research.html#battery">Battery projects</a><a href="/research.html#policy">Policy analysis</a></div>
-        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/industry-maps.html">Industry maps</a><a href="/methods/">Methods</a><a href="/api/">Data &amp; API</a></div>
+        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/industry-maps.html">Industry maps</a><a href="/methods/">Methods</a><a href="/api/">Data &amp; JSON</a></div>
         <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Published submissions</a><a href="/case-studies.html">Project screens</a><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="/coverage.html">Research coverage</a></div>
         <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">About Heliovulcan</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
       </div>
@@ -145,7 +146,7 @@ def apply(path: pathlib.Path, rel: str) -> bool:
     if not HEAD_RE.search(s): return False
     section, trail = SECTION_OF.get(rel, ("", []))
     if rel.startswith("facility/"): section, trail = "tools", [("Tools & data", "/safeguard-atlas.html"), ("Facilities", "/safeguard/facilities.html")]
-    if rel.startswith("safeguard/"): section, trail = "tools", [("Tools & data", "/safeguard-atlas.html"), ("Safeguard Atlas", "/safeguard-atlas.html")]
+    if rel.startswith("safeguard/") and rel not in SECTION_OF: section, trail = "tools", [("Tools & data", "/safeguard-atlas.html"), ("Safeguard Atlas", "/safeguard-atlas.html")]
     if rel.startswith("consultations/"): section = "consultations"
     new = header_html(section) + crumb_html(trail, title_of(s))
     s = HEAD_RE.sub(lambda m: new, s, count=1)
