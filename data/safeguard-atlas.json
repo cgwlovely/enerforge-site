@@ -1700,13 +1700,28 @@
     "n": "NPI site 547078 confirmed by repo onsite geojson AU-FERTILISER-2026/01_YPF_AMMONIA_ONSITE.geojson within 0.8 km"
    }
   ],
+  "lines": [
+   {
+    "i": 50,
+    "n": "DBNGP",
+    "d": "M104.05 20.602 L104.01 20.67 L104.035 20.716 L104.007 20.764 L103.925 20.832 L103.75 20.894 L103.683 20.943 L103.579 21.131 L103.436 21.258 L103.004 21.901 L102.621 22.587 L102.556 22.733 L102.488 23.023 L102.524 23.447 L102.6 23.658 L102.631 24.019 L102.713 24.212 L102.734 24.392 L102.708 24.43 L102.737 24.751 L102.636 26.812 L102.629 27.523 L102.57 28.108 L102.592 28.802 L102.573 29.332 L102.598 29.425 L102.726 29.586 L102.784 29.706 L102.782 30.038 L102.824 30.211 L103.336 31.612 L103.315 31.776 L103.351 31.926 L103.339 31.98 L103.374 32.07 L103.332 32.124 L103.171 32.237 L103.181 32.29 L103.205 32.297 L103.278 32.423 L103.277 32.565 L103.258 32.688 L103.205 32.797 L103.139 33.265",
+    "km": 1524,
+    "op": ""
+   },
+   {
+    "i": 173,
+    "n": "South West Queensland Pipeline",
+    "d": "M132.923 26.692 L131.558 26.683 L130.912 26.654 L130.568 26.611 L130.246 26.642 L129.961 26.709 L129.662 26.736 L129.092 26.834 L128.789 26.843 L128.1 26.946 L127.607 26.97 L127.031 27.115 L126.981 27.136 L126.84 27.28 L126.719 27.332 L126.454 27.363 L126.361 27.398",
+    "km": 753,
+    "op": "APA"
+   }
+  ],
   "missing": [],
   "not_placed": [
    "Aurizon National Transport Facility",
    "AusNet Gas Services Pty Ltd",
    "Australian Gas Networks (Vic) Pty Ltd",
    "CTC WA Facility",
-   "DBNGP",
    "Gippsland Basin facility",
    "JGN",
    "Multinet Principal Distribution Network and South Gippsland Pipeline",
@@ -1716,7 +1731,6 @@
    "PRL03 Rail - IOR Facility",
    "Qantas Airways Limited - National Facility",
    "Rail",
-   "South West Queensland Pipeline",
    "TT-Line - Victorian Operation",
    "V/Line",
    "Virgin Australia Holdings National Transport Facility",

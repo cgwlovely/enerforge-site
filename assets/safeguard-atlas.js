@@ -951,6 +951,11 @@ function renderMap() {
   var maxCov = Math.max.apply(null, F.map(function (f) { return f.cov; }));
   var s = ['<svg viewBox="' + x0 + " " + y0 + " " + (x1 - x0) + " " + (y1 - y0) + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of Safeguard facilities" style="font-family:var(--sans)">'];
   Object.keys(M.paths).forEach(function (k) { s.push('<path class="map-state" d="' + M.paths[k] + '"/>'); });
+  (M.lines || []).forEach(function (l) {
+    var f = F[l.i];
+    s.push('<path class="map-line" data-i="' + l.i + '" d="' + l.d + '" fill="none" stroke="#4C3F79" stroke-width=".22" stroke-linecap="round" stroke-linejoin="round" opacity=".75"><title>' +
+      esc(f.n) + " — pipeline, " + int(l.km) + " km — " + int(f.cov) + " t</title></path>");
+  });
   var col = function (p) {
     var f = F[p.i];
     if (mode === "pos0") return f.cov > f.b0 ? PAL.neg : PAL.pos;
@@ -969,15 +974,16 @@ function renderMap() {
     ? [["Above baseline", PAL.neg], ["At or below baseline", PAL.pos]].concat(mode === "pos35" ? [["Closed under the selected settings", "#9A958C"]] : [])
     : mode === "teba" ? [["Trade-exposed determination", "#4C3F79"], ["Default path", "#9A958C"]]
     : [["A · two sources agree within 5 km", tierColour("A")], ["B · one source only", tierColour("B")], ["C · sources disagree, drawn at the mine or plant registry", tierColour("C")]];
+  if ((M.lines || []).length) leg.push(["Pipeline, drawn as a line", "#4C3F79"]);
   $("legend-map").innerHTML = legend(leg);
-  Array.prototype.forEach.call(document.querySelectorAll(".map-dot"), function (c) {
+  Array.prototype.forEach.call(document.querySelectorAll(".map-dot, .map-line"), function (c) {
     c.addEventListener("mouseenter", function () { mapInfo(+c.getAttribute("data-i")); });
     c.addEventListener("click", function () { MAP_ON = +c.getAttribute("data-i"); mapInfo(MAP_ON, true); });
   });
   if (MAP_ON !== null) mapInfo(MAP_ON, true);
-  var t = M.tiers || {}, np = M.not_placed || [], miss = M.missing || [];
+  var t = M.tiers || {}, np = M.not_placed || [], miss = M.missing || [], ln = M.lines || [];
   $("map-tiers").innerHTML =
-    "<b>" + M.points.length + " of " + F.length + " register rows are placed.</b> " +
+    "<b>" + M.points.length + " of " + F.length + " register rows are placed as points" + (ln.length ? " and " + ln.length + " as pipelines" : "") + ".</b> " +
     (t.A || 0) + " have a National Pollutant Inventory site and an independent registry feature of the same name within 5 km of each other (grade A), " +
     (t.B || 0) + " rest on one source only or on sources between 5 and 15 km apart (grade B), and " +
     (t.C || 0) + " have sources that disagree by more than 15 km (grade C, drawn at the registry point as an open circle). " +
@@ -995,6 +1001,8 @@ function renderMap() {
     "the point is moved to them and graded A with the move recorded. Where only one source exists, or the sources are 5 to 15 km apart, the point is graded B. " +
     "Where the NPI site and the sector's registry disagree by more than 15 km, the registry point is drawn as an open circle and graded C.</p>" +
     "<p><b>Projection.</b> Equirectangular, standard parallel 27°S. Distances are approximate.</p>" +
+    (ln.length ? "<p><b>Drawn as lines (" + ln.length + ").</b> " + ln.map(function (l) { return esc(l.n) + " (" + int(l.km) + " km)"; }).join(" · ") +
+      ". Geometry is Geoscience Australia's gas pipeline layer, simplified for display; the register row covers the whole pipeline, including its compressor stations.</p>" : "") +
     "<p><b>Not placed by design (" + np.length + ").</b> " + np.map(esc).join(" · ") + ".</p>" +
     (miss.length ? "<p><b>Not located (" + miss.length + ").</b> " + miss.map(esc).join(" · ") + ".</p>" : "") +
     "<p>Gas distribution networks, pipelines, railways, haul roads, road and air fleets and multi-platform offshore fields have no single location and are not placed.</p>";
@@ -1011,7 +1019,7 @@ function mapInfo(i, pin) {
     (f.cov > f.b0 ? '<span class="pill pill--over">' + int(f.cov - f.b0) + " above</span>" : '<span class="pill pill--under">' + int(f.b0 - f.cov) + " below</span>") +
     " &nbsp;·&nbsp; FY2034-35 under the selected settings: " + (r ? ("baseline <b>" + int(r.b) + "</b> t, " + (r.cov > r.b ? '<span class="pill pill--over">' + int(r.cov - r.b) + " above</span>" : '<span class="pill pill--under">' + int(r.b - r.cov) + " below</span>")) : '<span class="pill pill--closed">closed</span>') +
     '</div><div style="margin-top:6px;font-size:12.5px;color:var(--ink-faint)">Location grade ' + p.t + (p.n ? " — " + esc(p.n) : "") + (pin ? " · selected" : "") + "</div>";
-  Array.prototype.forEach.call(document.querySelectorAll(".map-dot"), function (c) { c.classList.toggle("is-on", +c.getAttribute("data-i") === i); });
+  Array.prototype.forEach.call(document.querySelectorAll(".map-dot, .map-line"), function (c) { c.classList.toggle("is-on", +c.getAttribute("data-i") === i); });
 }
 
 /* ---------- 14. facility sandbox -------------------------------------- */
