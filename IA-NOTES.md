@@ -247,6 +247,25 @@ the evidence standard the submissions meet. Rules now in force:
   hero metadata in two fixed columns; finding titles in sans 17.5 px with the qualifying condition in
   the title itself; recommendations as three numbered cards, each written in full.
 
+### Round 13: say the specific thing (2026-09-16)
+
+Two sentences had been made abstract to sound like research. Rules:
+
+- **The homepage sentence names the inputs, the object, the check and the labels**: "We build facility- and
+  project-level accounts from regulatory filings, licences and company disclosures. We cross-check the key
+  figures against independent sources and identify what is reported, calculated, assumed or still unknown."
+  No "reconstruct facilities", no "test the numbers", no "how far the record supports each one".
+- **A submission title states the finding, not a slogan.** The data-centre page is now "Australia
+  regulates data centres through multiple systems, but cannot trace one facility across them", with the
+  crosswalk explained in the standfirst; the lodged PDF keeps its official title and the page says so.
+  Findings say what was found in the sources reviewed ("no public crosswalk was found", "the threshold sits
+  in the National Electricity Rules, which do not operate in WA or the NT", "did not describe … in one
+  proposal reviewed") rather than blanket verdicts ("has the data", "does not reach", "unreliable").
+  Recommendations share one verb: connect the records, connect the regulatory perimeter, connect the measures.
+- **When a title changes, everything changes with it**: `<title>`, meta and Open Graph descriptions,
+  structured data, the consultations card, the homepage card, related-research cards and the breadcrumb
+  (regenerated from `<title>` by `apply_chrome.py`).
+
 ## Homepage (2026-09-15, six modules)
 
 1. **Hero** — one sentence of value: *Independent analysis of Australian industrial assets, energy
