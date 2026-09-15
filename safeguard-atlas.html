@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Safeguard Atlas — an independent model of the Safeguard Mechanism | Heliovulcan</title>
-  <meta name="description" content="An independent model of how the Safeguard Mechanism converts a national 2035 target into facility-level baselines: the FY2024-25 register, the annual pathway, the policy settings, a map, every facility, and the method." />
+  <title>The post-2030 decline rate cannot be set in isolation | Safeguard Atlas | Heliovulcan</title>
+  <meta name="description" content="Our analysis finds that the headline decline rate is only one part of the 2035 outcome. Safeguard Atlas models the trade-offs facility by facility from the FY2024-25 register." />
   <meta name="keywords" content="Safeguard Mechanism model, safeguard baseline calculator, Australia 2035 target, decline rate, TEBA, safeguard mechanism credits, facility emissions Australia" />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
   <link rel="apple-touch-icon" href="/favicon.png" />
@@ -13,8 +13,8 @@
   <meta property="og:site_name" content="Heliovulcan" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heliovulcan.com.au/safeguard-atlas.html" />
-  <meta property="og:title" content="An independent model of the Safeguard Mechanism, facility by facility." />
-  <meta property="og:description" content="An independent model of how the Safeguard Mechanism converts a national 2035 target into facility-level baselines: the FY2024-25 register, the annual pathway, the policy settings, a map, every facility, and the method." />
+  <meta property="og:title" content="The post-2030 decline rate cannot be set in isolation" />
+  <meta property="og:description" content="Our analysis finds that the headline decline rate is only one part of the 2035 outcome. Safeguard Atlas models the trade-offs facility by facility from the FY2024-25 register." />
   <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
@@ -201,6 +201,28 @@
     .settings-strip .ss-lab { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
     .settings-strip a { color: var(--ink); font-weight: 600; text-decoration: none; margin-left: auto; }
     .settings-strip a:hover { color: var(--orange-deep); }
+    .hero-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 40px; }
+    .hero-nums > div { border-top: 1px solid rgba(255,255,255,.35); padding-top: 16px; }
+    .hero-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.05; color: #fff; }
+    .hero-nums span { display: block; margin-top: 10px; font-size: 14px; line-height: 1.5; color: #c6d2da; max-width: 30ch; }
+    .hero-finding { margin-top: 36px; font-size: 18px; line-height: 1.6; color: #eef2f4; max-width: 66ch; }
+    .analysis-strip { display: grid; grid-template-columns: 11rem 1fr; gap: 0 32px; padding: 22px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
+    .analysis-strip .as-k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding-top: 4px; }
+    .analysis-strip p { font-size: 16px; line-height: 1.6; color: var(--ink); max-width: 72ch; }
+    .chart-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: 40px; }
+    .chart-head .chart-h { margin-top: 0; max-width: 34ch; }
+    .chart-sub { font-size: 13.5px; color: var(--ink-faint); margin-top: 6px; max-width: 70ch; }
+    .chart-mark { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); white-space: nowrap; }
+    .sens-tbl { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 24px; border-top: 2px solid var(--ink); }
+    .sens-tbl th { text-align: left; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); }
+    .sens-tbl th.num, .sens-tbl td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .sens-tbl td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--line-soft); }
+    .sens-tbl tr.tot td { font-weight: 600; }
+    .legend-line { font-size: 13px; color: var(--ink-faint); margin-top: 18px; }
+    .link-row { display: flex; gap: 10px 32px; flex-wrap: wrap; margin-top: 22px; }
+    .link-row a { font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+    .link-row a:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
+    @media (max-width: 700px) { .hero-nums { grid-template-columns: 1fr; } .analysis-strip { grid-template-columns: 1fr; gap: 8px; } .chart-head { flex-direction: column; align-items: flex-start; } }
     .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 44px; }
     .tile { border-top: 1px solid var(--ink); padding: 22px 0 36px; text-decoration: none; color: inherit; display: block; }
     .tile .tile__k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
@@ -235,49 +257,50 @@
   <section class="atlas-hero">
     <div class="container">
       <p class="atlas-hero__sub">Safeguard Atlas</p>
-      <h1>An independent model of the Safeguard Mechanism, facility by facility.</h1>
-      <p class="atlas-hero__lede">The Safeguard Mechanism sets an annual emissions baseline for each of Australia's largest industrial facilities, calculated from production, an applicable emissions intensity and a decline rate that falls every year. Safeguard Atlas reconstructs that calculation from the published register and the Safeguard Rule. Each part of the model has its own page.</p>
-      <nav class="atlas-subnav" aria-label="Safeguard Atlas sections"><a href="/safeguard-atlas.html" class="is-here">Overview</a><a href="/safeguard/pathway.html">Pathway</a><a href="/safeguard/scorecard.html">Scorecard</a><a href="/safeguard/policy.html">Policy settings</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/facilities.html">Facilities</a><a href="/safeguard/sandbox.html">Sandbox</a><a href="/safeguard/method.html">Method</a></nav>
+      <h1>The post-2030 decline rate cannot be set in isolation</h1>
+      <p class="atlas-hero__lede">A facility-level model of how production, new entrants, closures and trade-exposed treatment shape Australia's industrial emissions pathway to 2035.</p>
+      <div class="hero-nums"><div><b id="hl-net35"></b><span>Modelled compliant emissions in FY2034-35 under the starting-point assumptions</span></div><div><b id="hl-rate"></b><span>Annual post-2030 decline required to meet a 62% national target on the modelled pathway</span></div><div><b id="hl-n"></b><span>Reconstructed from the FY2024-25 Safeguard register, year by year to FY2039-40</span></div></div>
+      <p class="hero-finding">Our analysis finds that the headline decline rate is only one part of the 2035 outcome. A more lenient pathway for trade-exposed facilities, stronger production or additional new projects must be offset elsewhere if the same national target is to be met.</p>
+      <div class="atlas-hero__jump"><a href="/safeguard/pathway.html">Explore the findings</a><a href="/safeguard/policy.html">Test the assumptions</a><a href="/safeguard/method.html">Review the methodology</a></div>
       <p class="atlas-hero__stamp" id="stamp"></p>
+      <nav class="atlas-subnav" aria-label="Safeguard Atlas sections"><a href="/safeguard-atlas.html" class="is-here">Findings</a><a href="/safeguard/pathway.html">Pathway</a><a href="/safeguard/policy.html">Policy settings</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/facilities.html">Facilities</a><a href="/safeguard/sandbox.html">Sandbox</a><a href="/safeguard/scorecard.html">Scorecard</a><a href="/safeguard/method.html">Method</a></nav>
     </div>
   </section>
   <main id="atlas-start">
-<!-- ======================= 1. STARTING POINT ======================= -->
-    <section class="atlas-sec" id="start">
+    <section class="atlas-sec" style="padding:40px 0 0;border-top:0"><div class="container"><div class="analysis-strip"><span class="as-k">Our analysis</span><p>A facility-level model covering 209 register rows, 16 financial years and the policy settings the 2026-27 review consults on. Every aggregate result is rebuilt from facility-level baselines, covered emissions and stated production assumptions, and the page recomputes the figures published in Heliovulcan's 2026 submission as a check.</p></div></div></section>
+<!-- ======================= 2. NATIONAL PATHWAY ======================= -->
+    <section class="atlas-sec" id="pathway">
       <div class="container">
-        <p class="eyebrow">The starting point</p>
-        <h2>The FY2024-25 register, as published</h2>
+        <p class="eyebrow">What the model shows</p>
+        <h2>Covered emissions and baselines diverge sharply after 2030</h2>
         <p class="atlas-sec__why">
-          The Clean Energy Regulator publishes a register each year with one row per facility,
-          giving the facility's baseline and its covered emissions. Every projection on this page
-          starts from that register. The figures in this section are taken directly from it and are
-          not modelled.
+          Baselines fall every year by rule. Covered emissions do not. Under the starting-point
+          assumptions the gap between the two widens from FY2029-30, and the units that gap requires
+          facilities to surrender are the scheme's real obligation.
         </p>
-        <div class="kpis" id="kpis"></div>
-        <p class="note-inline">
-          <span class="tag tag--off">Official</span> marks a figure taken from a published source.
-          <span class="tag tag--mod">Modelled</span> marks a figure calculated on this page from
-          official inputs. <span class="tag tag--asm">Assumption</span> marks a stated scenario
-          setting that the reader can change. Nothing on this page is a compliance determination;
-          the Regulator's determinations govern.
-        </p>
-      </div>
-    </section>
-    <section class="atlas-sec" id="parts">
-      <div class="container">
-        <p class="eyebrow">The model, by part</p>
-        <h2>Each part of the model has its own page</h2>
-        <div class="tiles">
-          <a class="tile" href="/safeguard/pathway.html"><span class="tile__k">01</span><h3>National pathway</h3><p>Covered emissions, aggregate baselines and modelled compliant net emissions, FY2024-25 to FY2039-40, against the 2035 targets.</p><span class="tile__go">Open &rarr;</span></a>
-          <a class="tile" href="/safeguard/policy.html"><span class="tile__k">02</span><h3>Policy settings</h3><p>The post-2030 decline rate required for a 2035 target, and how it moves with the trade-exposed treatment, production, closures, new entrants and abatement.</p><span class="tile__go">Open &rarr;</span></a>
-          <a class="tile" href="/safeguard/scorecard.html"><span class="tile__k">03</span><h3>Scorecard</h3><p>How much of the change in baselines between the two published registers the rule alone explains.</p><span class="tile__go">Open &rarr;</span></a>
-          <a class="tile" href="/safeguard/map.html"><span class="tile__k">04</span><h3>Map</h3><p>Every register row placed by National Pollutant Inventory coordinates, with a stated location grade for each point.</p><span class="tile__go">Open &rarr;</span></a>
-          <a class="tile" href="/safeguard/facilities.html"><span class="tile__k">05</span><h3>Facilities</h3><p>The 209 rows of the register, searchable, with the modelled FY2034-35 position and a page for each facility.</p><span class="tile__go">Open &rarr;</span></a>
-          <a class="tile" href="/safeguard/sandbox.html"><span class="tile__k">06</span><h3>Facility sandbox</h3><p>The same calculation applied to a facility that is not in the register. Nothing entered is stored.</p><span class="tile__go">Open &rarr;</span></a>
-          <a class="tile" href="/safeguard/method.html"><span class="tile__k">07</span><h3>Method and sources</h3><p>Inputs, verification against the 2026 submission, register changes, and limitations.</p><span class="tile__go">Open &rarr;</span></a>
+        <div id="chart-path-head"></div>
+        <div class="chart-wrap">
+          <div class="legend" id="legend-path"></div>
+          <div id="chart-path"></div>
         </div>
+        <div class="outgrid" id="path-out" style="margin-top:16px"></div>
+        <p class="atlas-sec__why" style="margin-top:22px">
+          The chart separates reported <b>covered emissions</b>, <b>aggregate baselines</b> and
+          <b>modelled compliant net emissions</b>, the smaller of each facility's covered emissions
+          and its baseline summed across facilities. The difference between covered and compliant
+          emissions is the number of units facilities would need to surrender under the settings in
+          force. The dashed line is current policy on the starting-point assumptions.
+        </p>
+        <details class="how">
+          <summary>How this is calculated</summary>
+          <div class="how__body" id="how-path"></div>
+        </details>
       </div>
     </section>
+    <section class="atlas-sec" id="sensitivity"><div class="container"><p class="eyebrow">What changes the result</p><h2>Relief for one group must be made up by another</h2><p class="atlas-sec__why">Move one setting at a time from the starting point and the FY2034-35 figure moves with it. The rate required for a 62% target moves in the opposite direction. None of these settings is a forecast; each is a choice the consultation puts on the table.</p><div id="sens-out"></div><div class="link-row"><a href="/safeguard/policy.html">Set the assumptions and see the iso-target curve &rarr;</a></div></div></section>
+    <section class="atlas-sec" id="evidence"><div class="container"><p class="eyebrow">Explore the evidence</p><h2>Every aggregate on this site can be followed down to a facility</h2><div class="tiles"><a class="tile" href="/safeguard/map.html"><span class="tile__k">Map</span><h3>Where the covered emissions are</h3><p>Every register row placed by National Pollutant Inventory coordinates, with a location grade for each point.</p><span class="tile__go">Open &rarr;</span></a><a class="tile" href="/safeguard/facilities.html"><span class="tile__k">Facilities</span><h3>Where each facility stands</h3><p>All 209 rows, searchable, with the modelled FY2034-35 position and a page for each facility.</p><span class="tile__go">Open &rarr;</span></a><a class="tile" href="/safeguard/sandbox.html"><span class="tile__k">Sandbox</span><h3>A facility not in the register</h3><p>The same calculation applied to a project or facility of the reader's own. Nothing entered is stored.</p><span class="tile__go">Open &rarr;</span></a></div></div></section>
+    <section class="atlas-sec" id="changed"><div class="container"><p class="eyebrow">What has changed</p><h2 id="scorecard-h2">The rule alone explains most of last year's fall in baselines</h2><p class="atlas-sec__why">Two registers have now been published under the reformed rules. The model is held against each new register as it appears; the first comparison shows the ERC step accounting for almost all of the fall in aggregate baselines, with production and intensity making up the rest.</p><div class="link-row"><a href="/safeguard/scorecard.html">See the scorecard &rarr;</a></div></div></section>
+    <section class="atlas-sec" id="method-link"><div class="container"><p class="eyebrow">Method</p><h2>Sources, verification and limitations</h2><p class="atlas-sec__why">Inputs and their sources, the changes between the two registers, the 135 published figures recomputed in the browser, and what the model does not do.</p><div class="link-row"><a href="/safeguard/method.html">Review the methodology &rarr;</a><a href="/data/safeguard-atlas.json">Download the model inputs (JSON)</a></div></div></section>
 
   </main>
 

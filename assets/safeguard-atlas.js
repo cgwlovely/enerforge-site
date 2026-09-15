@@ -825,6 +825,65 @@ function selfCheck() {
 }
 
 
+/* ---------- 11b. headlines: the answer first, the evidence after -------- */
+function chartHead(id, title, sub) {
+  var el = document.getElementById(id); if (!el) return;
+  el.innerHTML = '<div class="chart-head"><div><h3 class="chart-h">' + title + '</h3>' +
+    (sub ? '<p class="chart-sub">' + sub + "</p>" : "") + '</div><span class="chart-mark">Heliovulcan analysis</span></div>';
+}
+function renderHeadlines() {
+  var r = yearAgg(10, REF), need = solveRate(REF, targetMt(0.62)), cur = yearAgg(10, S);
+  var set = function (id, v) { var e = document.getElementById(id); if (e) e.innerHTML = v; };
+  set("hl-net35", mt(r.net, 2) + " Mt CO\u2082-e");
+  set("hl-rate", need.toFixed(2) + " percentage points");
+  set("hl-n", F.length + " facility rows");
+  /* starting point */
+  var cov = 0, over = 0; F.forEach(function (f) { cov += f.cov; if (f.cov > f.b0) over++; });
+  set("start-h2", "The FY2024-25 register: " + F.length + " rows, " + mt(cov / 1e6) + " Mt CO\u2082-e covered, " + over + " facilities above their baseline");
+  /* pathway chart */
+  chartHead("chart-path-head",
+    "Modelled compliant emissions " + (cur.net < r.net - 0.005 ? "fall to " : cur.net > r.net + 0.005 ? "reach " : "fall to ") + mt(cur.net, 2) +
+    " Mt CO\u2082-e by FY2034-35 under the settings in force" + (isRef() ? "" : ", against " + mt(r.net, 2) + " Mt under current policy"),
+    "Mt CO\u2082-e per year, FY2024-25 to FY2039-40; settings in force compared with the current-policy reference case");
+  /* policy charts */
+  var T = targetMt(S.target);
+  chartHead("chart-front-head",
+    "A slower path for the " + D.meta.teba_facilities + " trade-exposed facilities must be paid for by the other " + (F.length - D.meta.teba_facilities),
+    "Pairs of post-2030 decline rates, in percentage points per year, that meet the " + Math.round(S.target * 100) + "% target of " + mt(T, 1) + " Mt CO\u2082-e in FY2034-35");
+  chartHead("chart-wf-head", isRef() ? "Current policy on the starting-point assumptions" : "Where the difference from current policy comes from",
+    "FY2034-35 modelled compliant net emissions, Mt CO\u2082-e; each bar moves one setting from current policy to the value in force");
+  /* scorecard */
+  if (D.scorecard) { var t = D.scorecard[D.scorecard.length - 1], share = 100 * (t.b_prev - t.b_pred) / (t.b_prev - t.b_act);
+    set("scorecard-h2", "The rule alone explains " + share.toFixed(0) + "% of the fall in baselines between the two registers"); }
+  /* map: states */
+  if (D.map) { var st = {}; F.forEach(function (f) { st[f.s] = (st[f.s] || 0) + f.cov; });
+    var arr = Object.keys(st).map(function (k) { return [k, st[k]]; }).sort(function (a, b) { return b[1] - a[1]; });
+    var top3 = arr.slice(0, 3), tot = arr.reduce(function (a, x) { return a + x[1]; }, 0), s3 = top3.reduce(function (a, x) { return a + x[1]; }, 0);
+    set("map-h2", top3.map(function (x) { return x[0]; }).join(", ") + " carry " + (100 * s3 / tot).toFixed(0) + "% of covered emissions"); }
+  /* facilities */
+  set("facilities-h2", over + " facilities were above their baseline in FY2024-25; under the settings in force, " + cur.over + " are above it in FY2034-35");
+}
+/* the overview's "what changes the result": one setting moved at a time from the starting point */
+function renderSensitivity() {
+  var el = document.getElementById("sens-out"); if (!el) return;
+  var base = net35(REF), T62 = targetMt(0.62);
+  var cases = [
+    ["Trade-exposed determinations renewed on their slower rate", { teba: "renew" }],
+    ["Trade-exposed facilities reset to the default path in FY2030-31", { teba: "reset" }],
+    ["Production held constant instead of the OCE outlook", { pf: "flat" }],
+    ["No new entrants", { pipe: false }],
+    ["Confirmed closures plus approval expiries", { clos: "tracker" }],
+    ["Additional on-site abatement of 1% a year", { abate: 0.01 }]
+  ];
+  el.innerHTML = '<table class="sens-tbl"><thead><tr><th>One setting changed from the starting point</th>' +
+    '<th class="num">FY2034-35 net, Mt</th><th class="num">Change</th><th class="num">Rate required for 62%, pp/yr</th></tr></thead><tbody>' +
+    '<tr class="tot"><td>Current policy on the starting-point assumptions</td><td class="num">' + mt(base, 2) + '</td><td class="num">&mdash;</td><td class="num">' + solveRate(REF, T62).toFixed(2) + "</td></tr>" +
+    cases.map(function (c) {
+      var o = Object.assign({}, REF, c[1]), n = net35(o), d = n - base;
+      return "<tr><td>" + c[0] + '</td><td class="num">' + mt(n, 2) + '</td><td class="num" style="color:' + (d > 0 ? "var(--amber)" : "var(--teal-deep)") + '">' + sgn(d, 2) + '</td><td class="num">' + solveRate(o, T62).toFixed(2) + "</td></tr>";
+    }).join("") + "</tbody></table>";
+}
+
 /* ---------- 12. assumption scorecard ---------------------------------- */
 var GROUP_LABEL = { lng: "LNG", coal: "Coal mining", other: "Other industries", alumina: "Alumina",
   steel: "Steel", iron_ore: "Iron ore", gas_east: "Gas, east coast", aluminium: "Aluminium", gold: "Gold",
@@ -1066,6 +1125,8 @@ function renderSandbox() {
 /* ---------- 11. wire it up ------------------------------------------- */
 function redraw() {
   renderSettingsStrip();
+  renderHeadlines();
+  renderSensitivity();
   syncControls();
   renderPath();
   renderLab();

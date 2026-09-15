@@ -259,6 +259,38 @@ The settings chosen on the policy page carry across the other pages (localStorag
 every page carries the section navigation. `safeguard/` redirects to the overview. Layout source:
 `tools/consultation_kb/atlas/parts/` (shell, section fragments, engine) assembled by `build_atlas.py`.
 
+**Narrative order, not database order (2026-09-15, third brief).** The owner's third note: the
+site read as a regulatory data tool, not a conclusion-driven research report, because readers met
+definitions and controls before they met a finding. The rules that now govern the Atlas, and any
+research page after it:
+
+- The title states the finding, not the product. *The post-2030 decline rate cannot be set in
+  isolation*, then one line saying what the model is.
+- Three headline numbers directly under the masthead, each answering a question, all computed
+  by the engine from the starting-point assumptions (never typed in): FY2034-35 modelled compliant
+  emissions, the post-2030 rate required for a 62% target, the number of register rows. Then one
+  paragraph beginning *Our analysis finds…*.
+- Page order follows an executive reader: findings → what the model shows (pathway) → what changes
+  the result (policy settings) → explore the evidence (map, facilities, sandbox) → what has changed
+  (scorecard) → method. The scorecard and the map are evidence, not the story, and sit after it.
+- Every section heading gives the answer; the body gives the evidence. Headings with numbers in
+  them are rendered by the engine (`start-h2`, `scorecard-h2`, `map-h2`, `facilities-h2`) so they
+  cannot drift from the data.
+- Chart convention: the chart title is the conclusion (*Modelled compliant emissions fall to
+  70.25 Mt…*), one line of units and scope beneath it, `Heliovulcan analysis` at the right, and one
+  source line below; the full method sits in a folded block.
+- Three tiers of visual weight: the finding (masthead, big numbers, the full-width core chart);
+  the evidence (charts with conclusion titles and a short paragraph); the audit material
+  (methods, sources, tables, control explanations), folded or last.
+- Say the boundary once. Disclaimers appear in the footer and once in the method page; the
+  sandbox says once that nothing is stored.
+- No manual voice: no *This section shows…*, *The first… The last…*, *Nothing on this page…*.
+  Active judgements (*Our analysis finds…*), short sentences allowed, specific subjects (*The
+  Regulator publishes…*, *The model applies…*).
+
+The overview also carries a *What changes the result* table: one setting moved at a time from the
+starting point, with the FY2034-35 figure and the rate required for 62% under each.
+
 `facility/<slug>.html` — one page per register row, not per facility. Where a facility name appears
 twice in one register (Telfer Gold Mine in FY2024-25) each row gets its own page, disambiguated by
 responsible emitter in the slug, and each page says plainly that the other row exists and that the

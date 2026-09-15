@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Policy settings and the post-2030 decline rate | Safeguard Atlas | Heliovulcan</title>
-  <meta name="description" content="A scenario tool for the Safeguard Mechanism: the post-2030 decline rate required for a 2035 target under alternative settings for trade-exposed facilities, production, closures and new entrants." />
+  <title>There is no single correct post-2030 decline rate | Safeguard Atlas | Heliovulcan</title>
+  <meta name="description" content="The post-2030 decline rate required for a 2035 target under alternative settings for trade-exposed facilities, production, closures and new entrants, with the iso-target curve and a decomposition." />
   <meta name="keywords" content="Safeguard Mechanism model, safeguard baseline calculator, Australia 2035 target, decline rate, TEBA, safeguard mechanism credits, facility emissions Australia" />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
   <link rel="apple-touch-icon" href="/favicon.png" />
@@ -13,8 +13,8 @@
   <meta property="og:site_name" content="Heliovulcan" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heliovulcan.com.au/safeguard/policy.html" />
-  <meta property="og:title" content="The post-2030 decline rate and the settings that determine it" />
-  <meta property="og:description" content="A scenario tool for the Safeguard Mechanism: the post-2030 decline rate required for a 2035 target under alternative settings for trade-exposed facilities, production, closures and new entrants." />
+  <meta property="og:title" content="There is no single correct post-2030 decline rate" />
+  <meta property="og:description" content="The post-2030 decline rate required for a 2035 target under alternative settings for trade-exposed facilities, production, closures and new entrants, with the iso-target curve and a decomposition." />
   <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
@@ -201,6 +201,28 @@
     .settings-strip .ss-lab { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
     .settings-strip a { color: var(--ink); font-weight: 600; text-decoration: none; margin-left: auto; }
     .settings-strip a:hover { color: var(--orange-deep); }
+    .hero-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 40px; }
+    .hero-nums > div { border-top: 1px solid rgba(255,255,255,.35); padding-top: 16px; }
+    .hero-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.05; color: #fff; }
+    .hero-nums span { display: block; margin-top: 10px; font-size: 14px; line-height: 1.5; color: #c6d2da; max-width: 30ch; }
+    .hero-finding { margin-top: 36px; font-size: 18px; line-height: 1.6; color: #eef2f4; max-width: 66ch; }
+    .analysis-strip { display: grid; grid-template-columns: 11rem 1fr; gap: 0 32px; padding: 22px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
+    .analysis-strip .as-k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding-top: 4px; }
+    .analysis-strip p { font-size: 16px; line-height: 1.6; color: var(--ink); max-width: 72ch; }
+    .chart-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: 40px; }
+    .chart-head .chart-h { margin-top: 0; max-width: 34ch; }
+    .chart-sub { font-size: 13.5px; color: var(--ink-faint); margin-top: 6px; max-width: 70ch; }
+    .chart-mark { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); white-space: nowrap; }
+    .sens-tbl { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 24px; border-top: 2px solid var(--ink); }
+    .sens-tbl th { text-align: left; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); }
+    .sens-tbl th.num, .sens-tbl td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .sens-tbl td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--line-soft); }
+    .sens-tbl tr.tot td { font-weight: 600; }
+    .legend-line { font-size: 13px; color: var(--ink-faint); margin-top: 18px; }
+    .link-row { display: flex; gap: 10px 32px; flex-wrap: wrap; margin-top: 22px; }
+    .link-row a { font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+    .link-row a:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
+    @media (max-width: 700px) { .hero-nums { grid-template-columns: 1fr; } .analysis-strip { grid-template-columns: 1fr; gap: 8px; } .chart-head { flex-direction: column; align-items: flex-start; } }
     .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 44px; }
     .tile { border-top: 1px solid var(--ink); padding: 22px 0 36px; text-decoration: none; color: inherit; display: block; }
     .tile .tile__k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
@@ -235,24 +257,23 @@
   <section class="atlas-hero">
     <div class="container">
       <p class="atlas-hero__sub">Safeguard Atlas</p>
-      <h1>The post-2030 decline rate and the settings that determine it</h1>
-      <p class="atlas-hero__lede">Set the 2035 target, the treatment of trade-exposed facilities, production, closures, new entrants and abatement. The rate required to meet the target, the iso-target curve and the decomposition are recalculated for each change. The settings carry across the other pages.</p>
-      <nav class="atlas-subnav" aria-label="Safeguard Atlas sections"><a href="/safeguard-atlas.html">Overview</a><a href="/safeguard/pathway.html">Pathway</a><a href="/safeguard/scorecard.html">Scorecard</a><a href="/safeguard/policy.html" class="is-here">Policy settings</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/facilities.html">Facilities</a><a href="/safeguard/sandbox.html">Sandbox</a><a href="/safeguard/method.html">Method</a></nav>
+      <h1>There is no single correct post-2030 decline rate</h1>
+      <p class="atlas-hero__lede">The rate required to meet a 2035 target moves with assumptions about production, new projects, closures and the treatment of trade-exposed facilities. Set them here; the settings carry across the other pages.</p>
+      <nav class="atlas-subnav" aria-label="Safeguard Atlas sections"><a href="/safeguard-atlas.html">Findings</a><a href="/safeguard/pathway.html">Pathway</a><a href="/safeguard/policy.html" class="is-here">Policy settings</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/facilities.html">Facilities</a><a href="/safeguard/sandbox.html">Sandbox</a><a href="/safeguard/scorecard.html">Scorecard</a><a href="/safeguard/method.html">Method</a></nav>
     </div>
   </section>
   <main id="atlas-start">
 <!-- ======================= 3. POLICY LAB ======================= -->
     <section class="atlas-sec" id="lab">
       <div class="container">
-        <p class="eyebrow">Policy settings</p>
-        <h2>The post-2030 decline rate and the settings that determine it</h2>
+        <p class="eyebrow">What changes the result</p>
+        <h2>There is no single correct post-2030 decline rate</h2>
         <p class="atlas-sec__why">
-          The consultation paper asks what the post-2030 decline rate should be. The rate cannot be
-          determined in isolation. The FY2034-35 result also depends on commodity production, on
-          which facilities close, on whether new projects enter the scheme, and on how facilities
-          with a trade-exposed determination are treated when those determinations expire. For a
-          fixed 2035 target, these settings are interdependent: a more lenient setting for one
-          requires a more stringent setting for another. The curve below shows that trade-off.
+          The rate required to meet a 2035 target changes materially with assumptions about
+          industrial production, new projects, closures and the treatment of the 21 facilities with
+          a trade-exposed determination. Hold the target fixed and those settings trade against each
+          other: relief for one group must be made up by another. Set them below; the rate required,
+          the curve and the decomposition follow.
         </p>
         <div class="lab">
           <div class="panel" id="controls"></div>
@@ -261,12 +282,12 @@
             <div class="outgrid" id="lab-out"></div>
           </div>
         </div>
-        <h3 class="chart-h">Combinations of decline rates that meet the same 2035 target</h3>
+        <div id="chart-front-head"></div>
         <div class="chart-wrap">
           <div class="legend" id="legend-front"></div>
           <div id="chart-front"></div>
         </div>
-        <h3 class="chart-h">Decomposition of the difference from current policy, FY2034-35</h3>
+        <div id="chart-wf-head"></div>
         <div class="chart-wrap">
           <div class="legend" id="legend-wf"></div>
           <div id="chart-wf"></div>

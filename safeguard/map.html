@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Map of Safeguard facilities | Safeguard Atlas | Heliovulcan</title>
-  <meta name="description" content="A map of the 209 facility rows in the FY2024-25 Safeguard register, sized by covered emissions and coloured by position against baseline, with a stated location grade for each point." />
+  <title>Where the covered emissions are | Safeguard Atlas | Heliovulcan</title>
+  <meta name="description" content="A map of the 209 facility rows in the FY2024-25 Safeguard register, sized by covered emissions and coloured by position against baseline." />
   <meta name="keywords" content="Safeguard Mechanism model, safeguard baseline calculator, Australia 2035 target, decline rate, TEBA, safeguard mechanism credits, facility emissions Australia" />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
   <link rel="apple-touch-icon" href="/favicon.png" />
@@ -13,8 +13,8 @@
   <meta property="og:site_name" content="Heliovulcan" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heliovulcan.com.au/safeguard/map.html" />
-  <meta property="og:title" content="Location of the facilities" />
-  <meta property="og:description" content="A map of the 209 facility rows in the FY2024-25 Safeguard register, sized by covered emissions and coloured by position against baseline, with a stated location grade for each point." />
+  <meta property="og:title" content="Where the covered emissions are" />
+  <meta property="og:description" content="A map of the 209 facility rows in the FY2024-25 Safeguard register, sized by covered emissions and coloured by position against baseline." />
   <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
@@ -201,6 +201,28 @@
     .settings-strip .ss-lab { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
     .settings-strip a { color: var(--ink); font-weight: 600; text-decoration: none; margin-left: auto; }
     .settings-strip a:hover { color: var(--orange-deep); }
+    .hero-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 40px; }
+    .hero-nums > div { border-top: 1px solid rgba(255,255,255,.35); padding-top: 16px; }
+    .hero-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.05; color: #fff; }
+    .hero-nums span { display: block; margin-top: 10px; font-size: 14px; line-height: 1.5; color: #c6d2da; max-width: 30ch; }
+    .hero-finding { margin-top: 36px; font-size: 18px; line-height: 1.6; color: #eef2f4; max-width: 66ch; }
+    .analysis-strip { display: grid; grid-template-columns: 11rem 1fr; gap: 0 32px; padding: 22px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
+    .analysis-strip .as-k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding-top: 4px; }
+    .analysis-strip p { font-size: 16px; line-height: 1.6; color: var(--ink); max-width: 72ch; }
+    .chart-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: 40px; }
+    .chart-head .chart-h { margin-top: 0; max-width: 34ch; }
+    .chart-sub { font-size: 13.5px; color: var(--ink-faint); margin-top: 6px; max-width: 70ch; }
+    .chart-mark { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); white-space: nowrap; }
+    .sens-tbl { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 24px; border-top: 2px solid var(--ink); }
+    .sens-tbl th { text-align: left; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); }
+    .sens-tbl th.num, .sens-tbl td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .sens-tbl td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--line-soft); }
+    .sens-tbl tr.tot td { font-weight: 600; }
+    .legend-line { font-size: 13px; color: var(--ink-faint); margin-top: 18px; }
+    .link-row { display: flex; gap: 10px 32px; flex-wrap: wrap; margin-top: 22px; }
+    .link-row a { font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+    .link-row a:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
+    @media (max-width: 700px) { .hero-nums { grid-template-columns: 1fr; } .analysis-strip { grid-template-columns: 1fr; gap: 8px; } .chart-head { flex-direction: column; align-items: flex-start; } }
     .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 44px; }
     .tile { border-top: 1px solid var(--ink); padding: 22px 0 36px; text-decoration: none; color: inherit; display: block; }
     .tile .tile__k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
@@ -235,9 +257,9 @@
   <section class="atlas-hero">
     <div class="container">
       <p class="atlas-hero__sub">Safeguard Atlas</p>
-      <h1>Location of the facilities</h1>
-      <p class="atlas-hero__lede">Each point is one row of the FY2024-25 register, sized by covered emissions and coloured by position against baseline, with a location grade for every coordinate.</p>
-      <nav class="atlas-subnav" aria-label="Safeguard Atlas sections"><a href="/safeguard-atlas.html">Overview</a><a href="/safeguard/pathway.html">Pathway</a><a href="/safeguard/scorecard.html">Scorecard</a><a href="/safeguard/policy.html">Policy settings</a><a href="/safeguard/map.html" class="is-here">Map</a><a href="/safeguard/facilities.html">Facilities</a><a href="/safeguard/sandbox.html">Sandbox</a><a href="/safeguard/method.html">Method</a></nav>
+      <h1>Where the covered emissions are</h1>
+      <p class="atlas-hero__lede">Every register row placed by National Pollutant Inventory coordinates, sized by covered emissions and coloured by position against baseline, with a stated location grade for each point.</p>
+      <nav class="atlas-subnav" aria-label="Safeguard Atlas sections"><a href="/safeguard-atlas.html">Findings</a><a href="/safeguard/pathway.html">Pathway</a><a href="/safeguard/policy.html">Policy settings</a><a href="/safeguard/map.html" class="is-here">Map</a><a href="/safeguard/facilities.html">Facilities</a><a href="/safeguard/sandbox.html">Sandbox</a><a href="/safeguard/scorecard.html">Scorecard</a><a href="/safeguard/method.html">Method</a></nav>
     </div>
   </section>
   <main id="atlas-start">
@@ -247,18 +269,16 @@
 <!-- ======================= 2c. MAP ======================= -->
     <section class="atlas-sec" id="map">
       <div class="container">
-        <p class="eyebrow">Map</p>
-        <h2>Location of the facilities</h2>
-        <p class="atlas-sec__why">
-          Each point is one row of the register. The size of the point is proportional to covered
-          emissions. The colour shows the facility's position against its baseline, either as
-          published for FY2024-25 or as modelled for FY2034-35 under the selected settings. Selecting
-          a point shows the facility's figures and a link to its page.
+        <p class="eyebrow">Explore the evidence</p>
+        <h2 id="map-h2">Where the covered emissions are</h2>
+        <p class="atlas-sec__why" id="map-lede">
+          Each point is one row of the register, sized by covered emissions and coloured by its
+          position against baseline. Select a point for the facility's figures and page.
         </p>
         <div class="map-tools">
           <select id="map-colour" aria-label="Colour the map by">
             <option value="pos0">Colour by position against baseline, FY2024-25 (published)</option>
-            <option value="pos35">Colour by modelled position, FY2034-35 (selected settings)</option>
+            <option value="pos35">Colour by modelled position, FY2034-35 (settings in force)</option>
             <option value="teba">Colour by trade-exposed determination</option>
             <option value="tier">Colour by location grade</option>
           </select>
@@ -266,10 +286,9 @@
         </div>
         <div class="map-wrap"><div id="chart-map"></div></div>
         <div class="map-info" id="map-info">Select a point to show the facility.</div>
-        <p class="tierlist" id="map-tiers"></p>
         <details class="how">
-          <summary>Source of the coordinates, and facilities not shown</summary>
-          <div class="how__body" id="how-map"></div>
+          <summary>Location grades, coordinate sources and facilities not shown</summary>
+          <div class="how__body"><p class="tierlist" id="map-tiers" style="margin-top:0"></p><div id="how-map"></div></div>
         </details>
       </div>
     </section>

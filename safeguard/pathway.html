@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>National pathway to FY2039-40 | Safeguard Atlas | Heliovulcan</title>
-  <meta name="description" content="Covered emissions, aggregate baselines and modelled compliant net emissions for the Safeguard Mechanism, FY2024-25 to FY2039-40, recalculated in the browser." />
+  <title>Covered emissions and baselines diverge sharply after 2030 | Safeguard Atlas | Heliovulcan</title>
+  <meta name="description" content="Covered emissions, aggregate baselines and modelled compliant net emissions for the Safeguard Mechanism, FY2024-25 to FY2039-40, rebuilt facility by facility from the published register." />
   <meta name="keywords" content="Safeguard Mechanism model, safeguard baseline calculator, Australia 2035 target, decline rate, TEBA, safeguard mechanism credits, facility emissions Australia" />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
   <link rel="apple-touch-icon" href="/favicon.png" />
@@ -13,8 +13,8 @@
   <meta property="og:site_name" content="Heliovulcan" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heliovulcan.com.au/safeguard/pathway.html" />
-  <meta property="og:title" content="The national pathway from FY2024-25 to FY2039-40" />
-  <meta property="og:description" content="Covered emissions, aggregate baselines and modelled compliant net emissions for the Safeguard Mechanism, FY2024-25 to FY2039-40, recalculated in the browser." />
+  <meta property="og:title" content="Covered emissions and baselines diverge sharply after 2030" />
+  <meta property="og:description" content="Covered emissions, aggregate baselines and modelled compliant net emissions for the Safeguard Mechanism, FY2024-25 to FY2039-40, rebuilt facility by facility from the published register." />
   <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
@@ -201,6 +201,28 @@
     .settings-strip .ss-lab { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
     .settings-strip a { color: var(--ink); font-weight: 600; text-decoration: none; margin-left: auto; }
     .settings-strip a:hover { color: var(--orange-deep); }
+    .hero-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 40px; }
+    .hero-nums > div { border-top: 1px solid rgba(255,255,255,.35); padding-top: 16px; }
+    .hero-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.05; color: #fff; }
+    .hero-nums span { display: block; margin-top: 10px; font-size: 14px; line-height: 1.5; color: #c6d2da; max-width: 30ch; }
+    .hero-finding { margin-top: 36px; font-size: 18px; line-height: 1.6; color: #eef2f4; max-width: 66ch; }
+    .analysis-strip { display: grid; grid-template-columns: 11rem 1fr; gap: 0 32px; padding: 22px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
+    .analysis-strip .as-k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding-top: 4px; }
+    .analysis-strip p { font-size: 16px; line-height: 1.6; color: var(--ink); max-width: 72ch; }
+    .chart-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: 40px; }
+    .chart-head .chart-h { margin-top: 0; max-width: 34ch; }
+    .chart-sub { font-size: 13.5px; color: var(--ink-faint); margin-top: 6px; max-width: 70ch; }
+    .chart-mark { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); white-space: nowrap; }
+    .sens-tbl { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 24px; border-top: 2px solid var(--ink); }
+    .sens-tbl th { text-align: left; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); }
+    .sens-tbl th.num, .sens-tbl td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .sens-tbl td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--line-soft); }
+    .sens-tbl tr.tot td { font-weight: 600; }
+    .legend-line { font-size: 13px; color: var(--ink-faint); margin-top: 18px; }
+    .link-row { display: flex; gap: 10px 32px; flex-wrap: wrap; margin-top: 22px; }
+    .link-row a { font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+    .link-row a:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
+    @media (max-width: 700px) { .hero-nums { grid-template-columns: 1fr; } .analysis-strip { grid-template-columns: 1fr; gap: 8px; } .chart-head { flex-direction: column; align-items: flex-start; } }
     .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 44px; }
     .tile { border-top: 1px solid var(--ink); padding: 22px 0 36px; text-decoration: none; color: inherit; display: block; }
     .tile .tile__k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
@@ -235,9 +257,9 @@
   <section class="atlas-hero">
     <div class="container">
       <p class="atlas-hero__sub">Safeguard Atlas</p>
-      <h1>The national pathway from FY2024-25 to FY2039-40</h1>
-      <p class="atlas-hero__lede">Covered emissions, aggregate baselines and modelled compliant net emissions, year by year, under the settings in force.</p>
-      <nav class="atlas-subnav" aria-label="Safeguard Atlas sections"><a href="/safeguard-atlas.html">Overview</a><a href="/safeguard/pathway.html" class="is-here">Pathway</a><a href="/safeguard/scorecard.html">Scorecard</a><a href="/safeguard/policy.html">Policy settings</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/facilities.html">Facilities</a><a href="/safeguard/sandbox.html">Sandbox</a><a href="/safeguard/method.html">Method</a></nav>
+      <h1>Covered emissions and baselines diverge sharply after 2030</h1>
+      <p class="atlas-hero__lede">Baselines fall by rule every year. Covered emissions do not. The gap that opens from FY2029-30 is the obligation the scheme creates, and it is what the 2035 target tests.</p>
+      <nav class="atlas-subnav" aria-label="Safeguard Atlas sections"><a href="/safeguard-atlas.html">Findings</a><a href="/safeguard/pathway.html" class="is-here">Pathway</a><a href="/safeguard/policy.html">Policy settings</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/facilities.html">Facilities</a><a href="/safeguard/sandbox.html">Sandbox</a><a href="/safeguard/scorecard.html">Scorecard</a><a href="/safeguard/method.html">Method</a></nav>
     </div>
   </section>
   <main id="atlas-start">
@@ -247,31 +269,45 @@
 <!-- ======================= 2. NATIONAL PATHWAY ======================= -->
     <section class="atlas-sec" id="pathway">
       <div class="container">
-        <p class="eyebrow">National pathway</p>
-        <h2>The national pathway from FY2024-25 to FY2039-40</h2>
+        <p class="eyebrow">What the model shows</p>
+        <h2>Covered emissions and baselines diverge sharply after 2030</h2>
         <p class="atlas-sec__why">
-          This section shows three series. <b>Covered emissions</b> are the scope 1 emissions the
-          facilities report. <b>Aggregate baselines</b> are the sum of the baselines the rules
-          allow; they fall each year because the emissions reduction contribution (ERC) in the
-          baseline formula falls each year. <b>Modelled compliant net emissions</b> are the
-          compliance measure: for each facility, the smaller of its covered emissions and its
-          baseline, assuming full compliance. The difference between covered emissions and net
-          emissions is the number of units the scheme requires to be surrendered.
+          Baselines fall every year by rule. Covered emissions do not. Under the starting-point
+          assumptions the gap between the two widens from FY2029-30, and the units that gap requires
+          facilities to surrender are the scheme's real obligation.
         </p>
-        <p class="atlas-sec__why">
-          The dashed line is current policy on the starting-point assumptions described in the
-          methods section. The solid lines follow the settings chosen in the policy section below.
-          Both are produced by the same calculation, so a change to any setting moves both charts.
-        </p>
+        <div id="chart-path-head"></div>
         <div class="chart-wrap">
           <div class="legend" id="legend-path"></div>
           <div id="chart-path"></div>
         </div>
         <div class="outgrid" id="path-out" style="margin-top:16px"></div>
+        <p class="atlas-sec__why" style="margin-top:22px">
+          The chart separates reported <b>covered emissions</b>, <b>aggregate baselines</b> and
+          <b>modelled compliant net emissions</b>, the smaller of each facility's covered emissions
+          and its baseline summed across facilities. The difference between covered and compliant
+          emissions is the number of units facilities would need to surrender under the settings in
+          force. The dashed line is current policy on the starting-point assumptions.
+        </p>
         <details class="how">
           <summary>How this is calculated</summary>
           <div class="how__body" id="how-path"></div>
         </details>
+      </div>
+    </section>
+<!-- ======================= 1. STARTING POINT ======================= -->
+    <section class="atlas-sec" id="start">
+      <div class="container">
+        <p class="eyebrow">Starting point</p>
+        <h2 id="start-h2">The FY2024-25 register, as published</h2>
+        <p class="atlas-sec__why">
+          Every figure in the model is rebuilt from the register the Clean Energy Regulator publishes
+          each year, one row per facility. These six figures are taken from it directly.
+        </p>
+        <div class="kpis" id="kpis"></div>
+        <p class="legend-line"><span class="tag tag--off">Official</span> published source &nbsp;·&nbsp;
+          <span class="tag tag--mod">Modelled</span> calculated here from official inputs &nbsp;·&nbsp;
+          <span class="tag tag--asm">Assumption</span> a stated setting the reader can change</p>
       </div>
     </section>
 

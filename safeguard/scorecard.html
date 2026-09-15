@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What the rule explains between two registers | Safeguard Atlas | Heliovulcan</title>
-  <meta name="description" content="For 183 facilities continuing under the same name, the ERC step alone accounts for 95% of the fall in aggregate Safeguard baselines between FY2023-24 and FY2024-25." />
+  <title>The rule alone explains most of last year's fall in baselines | Safeguard Atlas | Heliovulcan</title>
+  <meta name="description" content="For the 183 facilities continuing under the same name, the ERC step alone accounts for almost all of the fall in aggregate Safeguard baselines between FY2023-24 and FY2024-25; the remainder is production and intensity." />
   <meta name="keywords" content="Safeguard Mechanism model, safeguard baseline calculator, Australia 2035 target, decline rate, TEBA, safeguard mechanism credits, facility emissions Australia" />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
   <link rel="apple-touch-icon" href="/favicon.png" />
@@ -13,8 +13,8 @@
   <meta property="og:site_name" content="Heliovulcan" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heliovulcan.com.au/safeguard/scorecard.html" />
-  <meta property="og:title" content="Baseline movement explained by the rule alone" />
-  <meta property="og:description" content="For 183 facilities continuing under the same name, the ERC step alone accounts for 95% of the fall in aggregate Safeguard baselines between FY2023-24 and FY2024-25." />
+  <meta property="og:title" content="The rule alone explains most of last year's fall in baselines" />
+  <meta property="og:description" content="For the 183 facilities continuing under the same name, the ERC step alone accounts for almost all of the fall in aggregate Safeguard baselines between FY2023-24 and FY2024-25; the remainder is production and intensity." />
   <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
@@ -201,6 +201,28 @@
     .settings-strip .ss-lab { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
     .settings-strip a { color: var(--ink); font-weight: 600; text-decoration: none; margin-left: auto; }
     .settings-strip a:hover { color: var(--orange-deep); }
+    .hero-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 40px; }
+    .hero-nums > div { border-top: 1px solid rgba(255,255,255,.35); padding-top: 16px; }
+    .hero-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.05; color: #fff; }
+    .hero-nums span { display: block; margin-top: 10px; font-size: 14px; line-height: 1.5; color: #c6d2da; max-width: 30ch; }
+    .hero-finding { margin-top: 36px; font-size: 18px; line-height: 1.6; color: #eef2f4; max-width: 66ch; }
+    .analysis-strip { display: grid; grid-template-columns: 11rem 1fr; gap: 0 32px; padding: 22px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
+    .analysis-strip .as-k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding-top: 4px; }
+    .analysis-strip p { font-size: 16px; line-height: 1.6; color: var(--ink); max-width: 72ch; }
+    .chart-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: 40px; }
+    .chart-head .chart-h { margin-top: 0; max-width: 34ch; }
+    .chart-sub { font-size: 13.5px; color: var(--ink-faint); margin-top: 6px; max-width: 70ch; }
+    .chart-mark { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); white-space: nowrap; }
+    .sens-tbl { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 24px; border-top: 2px solid var(--ink); }
+    .sens-tbl th { text-align: left; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); }
+    .sens-tbl th.num, .sens-tbl td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .sens-tbl td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--line-soft); }
+    .sens-tbl tr.tot td { font-weight: 600; }
+    .legend-line { font-size: 13px; color: var(--ink-faint); margin-top: 18px; }
+    .link-row { display: flex; gap: 10px 32px; flex-wrap: wrap; margin-top: 22px; }
+    .link-row a { font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+    .link-row a:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
+    @media (max-width: 700px) { .hero-nums { grid-template-columns: 1fr; } .analysis-strip { grid-template-columns: 1fr; gap: 8px; } .chart-head { flex-direction: column; align-items: flex-start; } }
     .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 44px; }
     .tile { border-top: 1px solid var(--ink); padding: 22px 0 36px; text-decoration: none; color: inherit; display: block; }
     .tile .tile__k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
@@ -235,24 +257,22 @@
   <section class="atlas-hero">
     <div class="container">
       <p class="atlas-hero__sub">Safeguard Atlas</p>
-      <h1>Baseline movement explained by the rule alone</h1>
-      <p class="atlas-hero__lede">A comparison of the FY2023-24 and FY2024-25 registers: how much of the change in baselines the emissions reduction contribution accounts for, and how much is production and intensity.</p>
-      <nav class="atlas-subnav" aria-label="Safeguard Atlas sections"><a href="/safeguard-atlas.html">Overview</a><a href="/safeguard/pathway.html">Pathway</a><a href="/safeguard/scorecard.html" class="is-here">Scorecard</a><a href="/safeguard/policy.html">Policy settings</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/facilities.html">Facilities</a><a href="/safeguard/sandbox.html">Sandbox</a><a href="/safeguard/method.html">Method</a></nav>
+      <h1>The rule alone explains most of last year's fall in baselines</h1>
+      <p class="atlas-hero__lede">Two registers have been published under the reformed rules. Moving each continuing facility's baseline by its ERC change alone lands within a fraction of a megatonne of the published total; the remainder is production and intensity.</p>
+      <nav class="atlas-subnav" aria-label="Safeguard Atlas sections"><a href="/safeguard-atlas.html">Findings</a><a href="/safeguard/pathway.html">Pathway</a><a href="/safeguard/policy.html">Policy settings</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/facilities.html">Facilities</a><a href="/safeguard/sandbox.html">Sandbox</a><a href="/safeguard/scorecard.html" class="is-here">Scorecard</a><a href="/safeguard/method.html">Method</a></nav>
     </div>
   </section>
   <main id="atlas-start">
 <!-- ======================= 2b. SCORECARD ======================= -->
     <section class="atlas-sec" id="scorecard">
       <div class="container">
-        <p class="eyebrow">Assumption scorecard</p>
-        <h2>Baseline movement explained by the rule alone, FY2023-24 to FY2024-25</h2>
+        <p class="eyebrow">What has changed</p>
+        <h2 id="scorecard-h2">The rule alone explains most of last year's fall in baselines</h2>
         <p class="atlas-sec__why">
-          This section compares the published registers for the two years reported under the
-          reformed rules. For each facility that appears under the same name in both years, the
-          FY2023-24 baseline is adjusted by the change in its ERC and by nothing else. The
-          difference between that rule-only figure and the published FY2024-25 baseline is the part
-          attributable to changes in production and intensity, which the rule does not set. The
-          same comparison will be repeated when each subsequent register is published.
+          Two registers have now been published under the reformed rules. For each facility
+          continuing under the same name, moving its FY2023-24 baseline by the change in its ERC and
+          nothing else lands close to the published FY2024-25 figure. What remains is production
+          and intensity. The same comparison will be run against each register as it is published.
         </p>
         <div id="scorecard-out"></div>
         <details class="how">
