@@ -130,6 +130,41 @@ proves.** No page does more than one of those.
 - Evidence records (project entity, dataset, API, claims): reached from a case or from Tools & data,
   not from the main navigation.
 
+## Duplication removal (2026-09-15, round 9)
+
+The split into 43 pages had left the same explanation on several pages and a template skeleton
+inside every research article. Rules now in force:
+
+- **One home for each explanation.** `research-approach.html` is gone (redirect to `/about.html#discipline`);
+  About carries one paragraph on evidence discipline and links to Methods. `consultations/method.html` is gone
+  (redirect to `/methods/#consultation-submissions`); the Consultations index carries one text link to it.
+  Coverage is a technical record under Projects ("Research coverage"), out of the main nav. Project entity,
+  dataset and API are technical resources reached from the case report, not from the main nav.
+- **Methods is four numbered steps** (Reconstruct · Test · Separate reported/calculated/assumed · Record
+  uncertainty) plus Detailed methodologies and the consultation-submission method. No output preview, no
+  public/internal boundary (that is About).
+- **Section names come from the article, never from a template.** "Why this matters", "The Pre-DD takeaway",
+  "What this changes in a screen" and "Three lessons for Heliovulcan" no longer exist. A heading states what the
+  section concludes. The in-page contents nav is regenerated from the H2s.
+- **H1 gives the conclusion; the first H2 goes to the evidence** and never restates the H1 (Atlas subpages,
+  facility pages, submissions: The question / What the evidence shows / Recommendations / What remains
+  unresolved / Sources / Related research).
+- **"Not X, but Y" is rationed**: at most one such title per three articles (kept: Pre-DD screen, customer
+  savings, weak-grid mines, connection queue). Meta-narration ("This note examines…", "This page sets out…")
+  is deleted. Boundaries are stated twice at most: next to the number and in the footer. The per-article
+  "Where an external source informs the argument…" line is gone; the footer disclaimer stays.
+- **Descriptive URLs for the three notes**: `/research/btm-bess-customer-savings.html`,
+  `/research/pre-dd-versus-feasibility-study.html`, `/research/weak-grid-mine-energy.html`, tagged
+  "Research note · Project screening"; `note-1/2/3.html` redirect.
+- **Research hub**: featured three are not repeated in the grid; H2 "Browse the research"; the count is a line
+  under the filters, never a heading. Topics: Industrial & emissions · Energy markets · Battery projects · Policy analysis.
+- **Case report order** (Remote Mining Asset): Executive summary → Readiness → Key findings → Risks → Next steps →
+  Spatial → Sources and downloads, with one "Technical resources" line instead of a machine-access section.
+
+Phrase counts over the 41 content pages, before → after this round: "is not" 124 → 54, "not a" 91 → 56,
+"does not" 68 → 51, "rather than" 52 → 20, "This note/page" 12 → 1 (privacy), "Why this matters" 12 → 0,
+"The Pre-DD takeaway" 16 → 0.
+
 ## Homepage (2026-09-15, six modules)
 
 1. **Hero** — one sentence of value: *Independent analysis of Australian industrial assets, energy

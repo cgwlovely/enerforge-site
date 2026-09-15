@@ -1391,6 +1391,7 @@ a.note-card:hover .note-status { color: var(--orange-deep); }
 .res-body h2 { font-weight: 400; font-size: clamp(26px, 3vw, 32px); }
 .res-body h2::before { color: var(--ink-soft); font-family: var(--sans); font-weight: 600; letter-spacing: .14em; }
 .res-layout { max-width: var(--maxw); grid-template-columns: 168px minmax(0, var(--maxw-read)); gap: 0 64px; }
+@media (max-width: 1060px) { .res-layout { grid-template-columns: minmax(0, 1fr); gap: 0; } }
 .res-rail a, .res-rail button { font-size: 12px; letter-spacing: .1em; font-weight: 600; color: var(--ink-soft); }
 .res-rail a:hover, .res-rail button:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
 .res-jump { font-family: var(--sans); font-weight: 600; letter-spacing: .08em; }
@@ -1777,12 +1778,16 @@ a.dl:hover { border-color: var(--orange-deep); }
       </a>
       <button class="nav__burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open the menu">Menu</button>
       <nav class="nav__menu" id="site-menu" aria-label="Site">
-        <ul class="nav__list"><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/research.html">Research</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-research" aria-label="Open the Research menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-research" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Browse by topic</span><ul><li><a href="https://heliovulcan.com.au/research.html">All research</a></li><li><a href="https://heliovulcan.com.au/research.html#industrial">Industrial & emissions</a></li><li><a href="https://heliovulcan.com.au/research.html#markets">Energy markets</a></li><li><a href="https://heliovulcan.com.au/research.html#investment">Investment & projects</a></li><li><a href="https://heliovulcan.com.au/research.html#policy">Policy & regulation</a></li><li><a href="https://heliovulcan.com.au/research-approach.html">Research approach</a></li></ul></div><div class="mega__col"><span class="mega__k">Featured</span><ul><li><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas: the post-2030 decline rate cannot be set in isolation</a></li><li><a href="https://heliovulcan.com.au/australian-diesel-replacement-market-size.html">Most of the diesel is on wheels</a></li><li><a href="https://heliovulcan.com.au/consultations/ai-data-centres-2026.html">Latest submission: AI and data centres</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu is-current"><a class="nav__top" href="https://heliovulcan.com.au/safeguard-atlas.html">Tools & data</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-tools" aria-label="Open the Tools & data menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-tools" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Interactive</span><ul><li><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas</a></li><li><a href="https://heliovulcan.com.au/safeguard/facilities.html">Facility explorer</a></li><li><a href="https://heliovulcan.com.au/industry-maps.html">Industry maps</a></li></ul></div><div class="mega__col"><span class="mega__k">Underlying</span><ul><li><a href="https://heliovulcan.com.au/api/">Data & API</a></li><li><a href="https://heliovulcan.com.au/methods/">Methods</a></li><li><a href="https://heliovulcan.com.au/coverage.html">Coverage</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/consultations.html">Consultations</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-consultations" aria-label="Open the Consultations menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-consultations" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Submissions</span><ul><li><a href="https://heliovulcan.com.au/consultations.html">Consultation record</a></li><li><a href="https://heliovulcan.com.au/consultations/ai-data-centres-2026.html">AI and data centres, 2026</a></li><li><a href="https://heliovulcan.com.au/consultations/safeguard-onsite-abatement-2026.html">Safeguard onsite abatement, 2026</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="https://heliovulcan.com.au/consultations/method.html">How submissions are prepared</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/case-studies.html">Projects</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-projects" aria-label="Open the Projects menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-projects" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Cases</span><ul><li><a href="https://heliovulcan.com.au/case-studies.html">Case studies</a></li><li><a href="https://heliovulcan.com.au/reports/remote-mining-asset-hybrid-energy-review.html">Remote mine hybrid-energy screen</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="https://heliovulcan.com.au/methods/pre-dd-f1-f4/">Pre-DD methodology</a></li><li><a href="https://heliovulcan.com.au/coverage.html">Coverage</a></li></ul></div></div></div></li><li class="nav__item"><a class="nav__top" href="https://heliovulcan.com.au/about.html">About</a></li></ul>
+        <ul class="nav__list"><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/research.html">Research</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-research" aria-label="Open the Research menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-research" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Browse by topic</span><ul><li><a href="https://heliovulcan.com.au/research.html">All research</a></li><li><a href="https://heliovulcan.com.au/research.html#industrial">Industrial & emissions</a></li><li><a href="https://heliovulcan.com.au/research.html#markets">Energy markets</a></li><li><a href="https://heliovulcan.com.au/research.html#battery">Battery projects</a></li><li><a href="https://heliovulcan.com.au/research.html#policy">Policy analysis</a></li></ul></div><div class="mega__col"><span class="mega__k">Featured</span><ul><li><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas: the post-2030 decline rate cannot be set in isolation</a></li><li><a href="https://heliovulcan.com.au/australian-diesel-replacement-market-size.html">Most of the diesel is on wheels</a></li><li><a href="https://heliovulcan.com.au/consultations/ai-data-centres-2026.html">Submission: AI and data centres</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu is-current"><a class="nav__top" href="https://heliovulcan.com.au/safeguard-atlas.html">Tools & data</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-tools" aria-label="Open the Tools & data menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-tools" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Interactive</span><ul><li><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas</a></li><li><a href="https://heliovulcan.com.au/industry-maps.html">Industry maps</a></li></ul></div><div class="mega__col"><span class="mega__k">Underlying</span><ul><li><a href="https://heliovulcan.com.au/methods/">Methods</a></li><li><a href="https://heliovulcan.com.au/api/">Data & API</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/consultations.html">Consultations</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-consultations" aria-label="Open the Consultations menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-consultations" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Published submissions</span><ul><li><a href="https://heliovulcan.com.au/consultations.html">All submissions</a></li><li><a href="https://heliovulcan.com.au/consultations/ai-data-centres-2026.html">AI and data centres, 2026</a></li><li><a href="https://heliovulcan.com.au/consultations/safeguard-onsite-abatement-2026.html">Safeguard onsite abatement, 2026</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="https://heliovulcan.com.au/methods/#consultation-submissions">How submissions are prepared</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/case-studies.html">Projects</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-projects" aria-label="Open the Projects menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-projects" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Cases</span><ul><li><a href="https://heliovulcan.com.au/case-studies.html#screens">Project screens</a></li><li><a href="https://heliovulcan.com.au/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a></li></ul></div><div class="mega__col"><span class="mega__k">Record</span><ul><li><a href="https://heliovulcan.com.au/coverage.html">Research coverage</a></li><li><a href="https://heliovulcan.com.au/methods/pre-dd-f1-f4/">Pre-DD methodology</a></li></ul></div></div></div></li><li class="nav__item"><a class="nav__top" href="https://heliovulcan.com.au/about.html">About</a></li></ul>
         <a class="nav__cta" href="https://heliovulcan.com.au/about.html#contact">Discuss a question</a>
       </nav>
     </div>
   </header>
-  <script src="https://heliovulcan.com.au/assets/site-nav.js?v=20260915b" defer></script>
+  <script src="https://heliovulcan.com.au/assets/site-nav.js?v=20260915d" defer></script>
+  
+  
+  
+  
   
   
 
@@ -1800,7 +1805,7 @@ a.dl:hover { border-color: var(--orange-deep); }
     <section class="atlas-sec" id="start">
       <div class="container">
         <p class="eyebrow">Starting point</p>
-        <h2 id="start-h2">The FY2024-25 register, as published</h2>
+        <h2 id="start-h2">The FY2024-25 starting point</h2>
         <p class="atlas-sec__why">
           Every figure in the model is rebuilt from the register the Clean Energy Regulator publishes
           each year, one row per facility. These six figures are taken from it directly.
@@ -1815,7 +1820,7 @@ a.dl:hover { border-color: var(--orange-deep); }
     <section class="atlas-sec" id="pathway">
       <div class="container">
         <p class="eyebrow">What the model shows</p>
-        <h2>Covered emissions and baselines diverge sharply after 2030</h2>
+        <h2>The national pathway under the settings in force</h2>
         <p class="atlas-sec__why">
           Baselines fall every year by rule. Covered emissions do not. Under the starting-point
           assumptions the gap between the two widens from FY2029-30, and the units that gap requires
@@ -1844,7 +1849,7 @@ a.dl:hover { border-color: var(--orange-deep); }
     <section class="atlas-sec" id="scorecard">
       <div class="container">
         <p class="eyebrow">What has changed</p>
-        <h2 id="scorecard-h2">The rule alone explains most of last year's fall in baselines</h2>
+        <h2 id="scorecard-h2">Comparing the FY2023-24 and FY2024-25 registers</h2>
         <p class="atlas-sec__why">
           Two registers have now been published under the reformed rules. For each facility
           continuing under the same name, moving its FY2023-24 baseline by the change in its ERC and
@@ -1852,6 +1857,8 @@ a.dl:hover { border-color: var(--orange-deep); }
           and intensity. The same comparison will be run against each register as it is published.
         </p>
         <div id="scorecard-out"></div>
+        <h2 style="margin-top:48px;font-size:clamp(24px,3vw,32px)">What remains after the rule-only adjustment</h2>
+        <p class="atlas-sec__why">The residual is production and intensity, which the rule does not set. It is small in aggregate and uneven across commodities: alumina baselines fell faster than the rule, others rose.</p>
         <details class="how">
           <summary>Method, and what will be compared when the next register is published</summary>
           <div class="how__body" id="how-sc"></div>
@@ -1862,7 +1869,7 @@ a.dl:hover { border-color: var(--orange-deep); }
     <section class="atlas-sec" id="lab">
       <div class="container">
         <p class="eyebrow">What changes the result</p>
-        <h2>There is no single correct post-2030 decline rate</h2>
+        <h2>Results under the settings in force</h2>
         <p class="atlas-sec__why">
           The rate required to meet a 2035 target changes materially with assumptions about
           industrial production, new projects, closures and the treatment of the 21 facilities with
@@ -1877,11 +1884,13 @@ a.dl:hover { border-color: var(--orange-deep); }
             <div class="outgrid" id="lab-out"></div>
           </div>
         </div>
+        <h2 style="margin-top:56px">The trade-off between trade-exposed facilities and the rest</h2>
         <div id="chart-front-head"></div>
         <div class="chart-wrap">
           <div class="legend" id="legend-front"></div>
           <div id="chart-front"></div>
         </div>
+        <h2 style="margin-top:56px">Where the difference from current policy comes from</h2>
         <div id="chart-wf-head"></div>
         <div class="chart-wrap">
           <div class="legend" id="legend-wf"></div>
@@ -1897,7 +1906,7 @@ a.dl:hover { border-color: var(--orange-deep); }
     <section class="atlas-sec" id="map">
       <div class="container">
         <p class="eyebrow">Explore the evidence</p>
-        <h2 id="map-h2">Where the covered emissions are</h2>
+        <h2 id="map-h2">Facility distribution</h2>
         <p class="atlas-sec__why" id="map-lede">
           Each point is one row of the register, sized by covered emissions and coloured by its
           position against baseline. Select a point for the facility's figures and page.
@@ -1913,6 +1922,8 @@ a.dl:hover { border-color: var(--orange-deep); }
         </div>
         <div class="map-wrap"><div id="chart-map"></div></div>
         <div class="map-info" id="map-info">Select a point to show the facility.</div>
+        <h2 style="margin-top:48px;font-size:clamp(24px,3vw,32px)">How to read the map</h2>
+        <p class="atlas-sec__why">Size is covered emissions. Colour is the position against baseline, or the trade-exposed status, or the location grade. Grade A points come from a single National Pollutant Inventory site, grade B from one of several sites associated with the facility, grade C through a name match not yet verified; grade C points are drawn as open circles.</p>
         <details class="how">
           <summary>Location grades, coordinate sources and facilities not shown</summary>
           <div class="how__body"><p class="tierlist" id="map-tiers" style="margin-top:0"></p><div id="how-map"></div></div>
@@ -1923,7 +1934,7 @@ a.dl:hover { border-color: var(--orange-deep); }
     <section class="atlas-sec" id="facilities">
       <div class="container">
         <p class="eyebrow">Explore the evidence</p>
-        <h2 id="facilities-h2">Where each facility stands, now and in FY2034-35</h2>
+        <h2 id="facilities-h2">Facility positions</h2>
         <p class="atlas-sec__why">
           Published baseline and covered emissions for every register row, and the baseline and
           position the rules would give it in FY2034-35 under the settings in force. A positive
@@ -1959,7 +1970,7 @@ a.dl:hover { border-color: var(--orange-deep); }
     <section class="atlas-sec" id="sandbox">
       <div class="container">
         <p class="eyebrow">Explore the evidence</p>
-        <h2>What the rules would do to a facility that is not in the register</h2>
+        <h2>Enter the facility assumptions</h2>
         <p class="atlas-sec__why">
           A proposed project, an unnamed facility, or one for which the reader holds better figures
           than the register. Enter a baseline directly, or build it the way the Regulator does from
@@ -1969,6 +1980,7 @@ a.dl:hover { border-color: var(--orange-deep); }
         <div class="sb-grid">
           <div class="panel" id="sb-controls"></div>
           <div>
+            <h3 class="chart-h" style="margin-top:0">Baseline and compliance pathway</h3>
             <div class="outgrid" id="sb-out"></div>
             <div class="chart-wrap"><div class="legend" id="legend-sb"></div><div id="chart-sb"></div></div>
             <details class="how">
@@ -1983,21 +1995,22 @@ a.dl:hover { border-color: var(--orange-deep); }
     <section class="atlas-sec" id="methods">
       <div class="container">
         <p class="eyebrow">Method</p>
-        <h2>Sources, method and limitations</h2>
-        <p class="atlas-sec__why">
-          Every input is listed with its source. Anything that could not be sourced from public
-          material is identified as such. Errors identified by readers are corrected and each
-          correction is published with its date.
-        </p>
+        <h2>Data sources</h2>
+        <p class="atlas-sec__why">Every input is listed with its source. Anything that could not be sourced from public material is identified as such. Errors identified by readers are corrected and each correction is published with its date.</p>
         <div style="overflow-x:auto"><table class="src-tbl" id="srctbl"></table></div>
 
-        <h3 style="font-size:20px;margin-top:38px">Changes in the register between FY2023-24 and FY2024-25</h3>
+        <h2 style="margin-top:56px">Facility-level calculation</h2>
+        <p class="atlas-sec__why">A facility's published baseline is scaled by the ratio of ERC values year by year (Rule s 11), held at 100,000 t where it would fall below (s 10(1)), and compared with covered emissions moved by the commodity production factor. Facilities with a trade-exposed determination follow the ERC path the Regulator has published. Credits are measured against the baseline before the minimum is applied (s 57). The full derivation is under <em>How this is calculated</em> on the Pathway and Policy pages.</p>
+        <h2 style="margin-top:56px">Policy scenarios</h2>
+        <p class="atlas-sec__why">The 2035 target, the post-2030 decline rate, the treatment of trade-exposed determinations after expiry, the production outlook, closures, new entrants and additional abatement are settings. Current policy on the starting-point assumptions is the reference case; the decomposition on the Policy page attributes any difference to one setting at a time.</p>
+        <h2 style="margin-top:56px">Changes in the register between FY2023-24 and FY2024-25</h2>
         <div id="churn"></div>
 
+        <h2 style="margin-top:56px">Verification</h2>
         <div class="selfcheck" id="selfcheck">Running verification&hellip;</div>
         <p class="note-inline" id="selfcheck-note"></p>
+        <h2 style="margin-top:56px">Limitations</h2>
         <div class="panel" style="margin-top:22px">
-          <h3 style="font-size:19px">Limitations</h3>
           <ul style="margin-top:12px; display:grid; gap:10px; font-size:15px; color:var(--ink-soft)">
             <li>The model is based on the FY2024-25 register. A facility that has not yet reported is not represented except through the new-entrant setting.</li>
             <li>Facility baselines are the published values scaled by the change in the ERC. They are not re-derived from each facility's production and intensity, so a facility whose production changes materially will diverge from the modelled path until the next register is published.</li>
@@ -2025,10 +2038,10 @@ a.dl:hover { border-color: var(--orange-deep); }
           </a>
           <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
         </div>
-        <div class="footer__col"><span class="footer__k">Research</span><a href="https://heliovulcan.com.au/research.html">All research</a><a href="https://heliovulcan.com.au/research.html#industrial">Industrial &amp; emissions</a><a href="https://heliovulcan.com.au/research.html#markets">Energy markets</a><a href="https://heliovulcan.com.au/research.html#investment">Investment &amp; projects</a><a href="https://heliovulcan.com.au/research.html#policy">Policy &amp; regulation</a><a href="https://heliovulcan.com.au/research-approach.html">Research approach</a></div>
-        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas</a><a href="https://heliovulcan.com.au/safeguard/facilities.html">Facility explorer</a><a href="https://heliovulcan.com.au/industry-maps.html">Industry maps</a><a href="https://heliovulcan.com.au/api/">Data &amp; API</a><a href="https://heliovulcan.com.au/methods/">Methods</a></div>
-        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="https://heliovulcan.com.au/consultations.html">Consultation record</a><a href="https://heliovulcan.com.au/consultations/method.html">How submissions are prepared</a><a href="https://heliovulcan.com.au/case-studies.html">Case studies</a><a href="https://heliovulcan.com.au/methods/pre-dd-f1-f4/">Pre-DD methodology</a><a href="https://heliovulcan.com.au/coverage.html">Coverage</a></div>
-        <div class="footer__col"><span class="footer__k">About</span><a href="https://heliovulcan.com.au/about.html">What Heliovulcan does</a><a href="https://heliovulcan.com.au/about.html#principles">Evidence principles</a><a href="https://heliovulcan.com.au/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="https://heliovulcan.com.au/privacy.html">Privacy</a></div>
+        <div class="footer__col"><span class="footer__k">Research</span><a href="https://heliovulcan.com.au/research.html">All research</a><a href="https://heliovulcan.com.au/research.html#industrial">Industrial &amp; emissions</a><a href="https://heliovulcan.com.au/research.html#markets">Energy markets</a><a href="https://heliovulcan.com.au/research.html#battery">Battery projects</a><a href="https://heliovulcan.com.au/research.html#policy">Policy analysis</a></div>
+        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas</a><a href="https://heliovulcan.com.au/industry-maps.html">Industry maps</a><a href="https://heliovulcan.com.au/methods/">Methods</a><a href="https://heliovulcan.com.au/api/">Data &amp; API</a></div>
+        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="https://heliovulcan.com.au/consultations.html">Published submissions</a><a href="https://heliovulcan.com.au/case-studies.html">Project screens</a><a href="https://heliovulcan.com.au/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="https://heliovulcan.com.au/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">About</span><a href="https://heliovulcan.com.au/about.html">About Heliovulcan</a><a href="https://heliovulcan.com.au/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="https://heliovulcan.com.au/privacy.html">Privacy</a></div>
       </div>
       <p class="footer__legal">
         <b>Disclaimer:</b> Heliovulcan is an independent research and analysis practice providing public-information desktop analysis and screening support. Nothing on this site is legal, financial, tax, engineering, investment or lender due-diligence advice, a compliance determination, or regulatory representation or lobbying, and nothing here is a financial product recommendation. All results are indicative and must be independently verified before any commercial, financing or construction decision. &copy; 2026 Heliovulcan Energy Advisors.
@@ -2879,7 +2892,7 @@ function renderHeadlines() {
   set("hl-n", F.length + " facility rows");
   /* starting point */
   var cov = 0, over = 0; F.forEach(function (f) { cov += f.cov; if (f.cov > f.b0) over++; });
-  set("start-h2", "The FY2024-25 register: " + F.length + " rows, " + mt(cov / 1e6) + " Mt CO\u2082-e covered, " + over + " facilities above their baseline");
+  set("start-h2", "The FY2024-25 starting point: " + F.length + " rows, " + mt(cov / 1e6) + " Mt CO\u2082-e covered, " + over + " facilities above baseline");
   /* pathway chart */
   chartHead("chart-path-head",
     "Modelled compliant emissions " + (cur.net < r.net - 0.005 ? "fall to " : cur.net > r.net + 0.005 ? "reach " : "fall to ") + mt(cur.net, 2) +
@@ -2894,14 +2907,14 @@ function renderHeadlines() {
     "FY2034-35 modelled compliant net emissions, Mt CO\u2082-e; each bar moves one setting from current policy to the value in force");
   /* scorecard */
   if (D.scorecard) { var t = D.scorecard[D.scorecard.length - 1], share = 100 * (t.b_prev - t.b_pred) / (t.b_prev - t.b_act);
-    set("scorecard-h2", "The rule alone explains " + share.toFixed(0) + "% of the fall in baselines between the two registers"); }
+    set("scorecard-h2", "Comparing the two registers: the ERC step explains " + share.toFixed(0) + "% of the fall in baselines"); }
   /* map: states */
   if (D.map) { var st = {}; F.forEach(function (f) { st[f.s] = (st[f.s] || 0) + f.cov; });
     var arr = Object.keys(st).map(function (k) { return [k, st[k]]; }).sort(function (a, b) { return b[1] - a[1]; });
     var top3 = arr.slice(0, 3), tot = arr.reduce(function (a, x) { return a + x[1]; }, 0), s3 = top3.reduce(function (a, x) { return a + x[1]; }, 0);
-    set("map-h2", top3.map(function (x) { return x[0]; }).join(", ") + " carry " + (100 * s3 / tot).toFixed(0) + "% of covered emissions"); }
+    set("map-h2", "Facility distribution: " + top3.map(function (x) { return x[0]; }).join(", ") + " carry " + (100 * s3 / tot).toFixed(0) + "% of covered emissions"); }
   /* facilities */
-  set("facilities-h2", over + " facilities were above their baseline in FY2024-25; under the settings in force, " + cur.over + " are above it in FY2034-35");
+  set("facilities-h2", "Facility positions: " + over + " above baseline in FY2024-25, " + cur.over + " in FY2034-35 under the settings in force");
 }
 /* the overview's "what changes the result": one setting moved at a time from the starting point */
 function renderSensitivity() {
@@ -2975,7 +2988,7 @@ function renderScorecard() {
     Object.keys(A.closures_decided || {}).length + " confirmed closures, the phasing of new entrants and the end dates of the " +
     Object.keys(A.teba_end_years || {}).length + " trade-exposed determinations, cannot be compared with outcomes until the FY2025-26 register is published. " +
     "They are recorded in the page's data file with the model date <code>" + esc(A.model_version || "") + "</code> so that the comparison can be made against " +
-    "the assumptions as stated. <a href=\"' + ROOT + 'data/safeguard-atlas.json\">The data file is available for download.</a></p>";
+    "the assumptions as stated. <a href=\"" + ROOT + "data/safeguard-atlas.json\">The data file is available for download.</a></p>";
 }
 
 /* ---------- 13. map ---------------------------------------------------- */

@@ -839,7 +839,7 @@ function renderHeadlines() {
   set("hl-n", F.length + " facility rows");
   /* starting point */
   var cov = 0, over = 0; F.forEach(function (f) { cov += f.cov; if (f.cov > f.b0) over++; });
-  set("start-h2", "The FY2024-25 register: " + F.length + " rows, " + mt(cov / 1e6) + " Mt CO\u2082-e covered, " + over + " facilities above their baseline");
+  set("start-h2", "The FY2024-25 starting point: " + F.length + " rows, " + mt(cov / 1e6) + " Mt CO\u2082-e covered, " + over + " facilities above baseline");
   /* pathway chart */
   chartHead("chart-path-head",
     "Modelled compliant emissions " + (cur.net < r.net - 0.005 ? "fall to " : cur.net > r.net + 0.005 ? "reach " : "fall to ") + mt(cur.net, 2) +
@@ -854,14 +854,14 @@ function renderHeadlines() {
     "FY2034-35 modelled compliant net emissions, Mt CO\u2082-e; each bar moves one setting from current policy to the value in force");
   /* scorecard */
   if (D.scorecard) { var t = D.scorecard[D.scorecard.length - 1], share = 100 * (t.b_prev - t.b_pred) / (t.b_prev - t.b_act);
-    set("scorecard-h2", "The rule alone explains " + share.toFixed(0) + "% of the fall in baselines between the two registers"); }
+    set("scorecard-h2", "Comparing the two registers: the ERC step explains " + share.toFixed(0) + "% of the fall in baselines"); }
   /* map: states */
   if (D.map) { var st = {}; F.forEach(function (f) { st[f.s] = (st[f.s] || 0) + f.cov; });
     var arr = Object.keys(st).map(function (k) { return [k, st[k]]; }).sort(function (a, b) { return b[1] - a[1]; });
     var top3 = arr.slice(0, 3), tot = arr.reduce(function (a, x) { return a + x[1]; }, 0), s3 = top3.reduce(function (a, x) { return a + x[1]; }, 0);
-    set("map-h2", top3.map(function (x) { return x[0]; }).join(", ") + " carry " + (100 * s3 / tot).toFixed(0) + "% of covered emissions"); }
+    set("map-h2", "Facility distribution: " + top3.map(function (x) { return x[0]; }).join(", ") + " carry " + (100 * s3 / tot).toFixed(0) + "% of covered emissions"); }
   /* facilities */
-  set("facilities-h2", over + " facilities were above their baseline in FY2024-25; under the settings in force, " + cur.over + " are above it in FY2034-35");
+  set("facilities-h2", "Facility positions: " + over + " above baseline in FY2024-25, " + cur.over + " in FY2034-35 under the settings in force");
 }
 /* the overview's "what changes the result": one setting moved at a time from the starting point */
 function renderSensitivity() {
@@ -935,7 +935,7 @@ function renderScorecard() {
     Object.keys(A.closures_decided || {}).length + " confirmed closures, the phasing of new entrants and the end dates of the " +
     Object.keys(A.teba_end_years || {}).length + " trade-exposed determinations, cannot be compared with outcomes until the FY2025-26 register is published. " +
     "They are recorded in the page's data file with the model date <code>" + esc(A.model_version || "") + "</code> so that the comparison can be made against " +
-    "the assumptions as stated. <a href=\"' + ROOT + 'data/safeguard-atlas.json\">The data file is available for download.</a></p>";
+    "the assumptions as stated. <a href=\"" + ROOT + "data/safeguard-atlas.json\">The data file is available for download.</a></p>";
 }
 
 /* ---------- 13. map ---------------------------------------------------- */

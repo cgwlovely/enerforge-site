@@ -1380,6 +1380,7 @@ a.note-card:hover .note-status { color: var(--orange-deep); }
 .res-body h2 { font-weight: 400; font-size: clamp(26px, 3vw, 32px); }
 .res-body h2::before { color: var(--ink-soft); font-family: var(--sans); font-weight: 600; letter-spacing: .14em; }
 .res-layout { max-width: var(--maxw); grid-template-columns: 168px minmax(0, var(--maxw-read)); gap: 0 64px; }
+@media (max-width: 1060px) { .res-layout { grid-template-columns: minmax(0, 1fr); gap: 0; } }
 .res-rail a, .res-rail button { font-size: 12px; letter-spacing: .1em; font-weight: 600; color: var(--ink-soft); }
 .res-rail a:hover, .res-rail button:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
 .res-jump { font-family: var(--sans); font-weight: 600; letter-spacing: .08em; }

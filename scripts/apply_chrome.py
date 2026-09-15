@@ -15,38 +15,37 @@ WS = SITE.parents[1]            # /Users/hugefafafa1/BESS
 TEMPLATES = [WS / "tools/consultation_kb/atlas/parts/shell.html",
              WS / "tools/consultation_kb/atlas/facility_template.html",
              WS / "tools/consultation_kb/atlas/build_facility_pages.py"]
-ASSET_V = "20260915b"          # bump when style.css or site-nav.js changes: returning browsers cache both
+ASSET_V = "20260915d"          # bump when style.css or site-nav.js changes: returning browsers cache both
 SKIP = {"ar.html", "context_map.html", "siting_opportunity_constraint_screen.html", "reports/_template.html"}
 
 # ---- the menu -------------------------------------------------------------------
 MENU = [
     ("research", "Research", "/research.html", [
         ("Browse by topic", [("All research", "/research.html"), ("Industrial & emissions", "/research.html#industrial"),
-                             ("Energy markets", "/research.html#markets"), ("Investment & projects", "/research.html#investment"),
-                             ("Policy & regulation", "/research.html#policy"), ("Research approach", "/research-approach.html")]),
+                             ("Energy markets", "/research.html#markets"), ("Battery projects", "/research.html#battery"),
+                             ("Policy analysis", "/research.html#policy")]),
         ("Featured", [("Safeguard Atlas: the post-2030 decline rate cannot be set in isolation", "/safeguard-atlas.html"),
                       ("Most of the diesel is on wheels", "/australian-diesel-replacement-market-size.html"),
-                      ("Latest submission: AI and data centres", "/consultations/ai-data-centres-2026.html")])]),
+                      ("Submission: AI and data centres", "/consultations/ai-data-centres-2026.html")])]),
     ("tools", "Tools & data", "/safeguard-atlas.html", [
-        ("Interactive", [("Safeguard Atlas", "/safeguard-atlas.html"), ("Facility explorer", "/safeguard/facilities.html"),
-                         ("Industry maps", "/industry-maps.html")]),
-        ("Underlying", [("Data & API", "/api/"), ("Methods", "/methods/"), ("Coverage", "/coverage.html")])]),
+        ("Interactive", [("Safeguard Atlas", "/safeguard-atlas.html"), ("Industry maps", "/industry-maps.html")]),
+        ("Underlying", [("Methods", "/methods/"), ("Data & API", "/api/")])]),
     ("consultations", "Consultations", "/consultations.html", [
-        ("Submissions", [("Consultation record", "/consultations.html"),
-                         ("AI and data centres, 2026", "/consultations/ai-data-centres-2026.html"),
-                         ("Safeguard onsite abatement, 2026", "/consultations/safeguard-onsite-abatement-2026.html")]),
-        ("Method", [("How submissions are prepared", "/consultations/method.html")])]),
+        ("Published submissions", [("All submissions", "/consultations.html"),
+                                   ("AI and data centres, 2026", "/consultations/ai-data-centres-2026.html"),
+                                   ("Safeguard onsite abatement, 2026", "/consultations/safeguard-onsite-abatement-2026.html")]),
+        ("Method", [("How submissions are prepared", "/methods/#consultation-submissions")])]),
     ("projects", "Projects", "/case-studies.html", [
-        ("Cases", [("Case studies", "/case-studies.html"),
-                   ("Remote mine hybrid-energy screen", "/reports/remote-mining-asset-hybrid-energy-review.html")]),
-        ("Method", [("Pre-DD methodology", "/methods/pre-dd-f1-f4/"), ("Coverage", "/coverage.html")])]),
+        ("Cases", [("Project screens", "/case-studies.html#screens"),
+                   ("Remote Mining Asset", "/reports/remote-mining-asset-hybrid-energy-review.html")]),
+        ("Record", [("Research coverage", "/coverage.html"), ("Pre-DD methodology", "/methods/pre-dd-f1-f4/")])]),
     ("about", "About", "/about.html", None),
 ]
 
 # page path → (section key, breadcrumb trail [(label, href), …] excluding the page itself)
 SECTION_OF = {
     "index.html": ("home", []),
-    "research.html": ("research", []), "research-approach.html": ("research", [("Research", "/research.html")]),
+    "research.html": ("research", []),
     "consultations.html": ("consultations", []),
     "consultations/ai-data-centres-2026.html": ("consultations", [("Consultations", "/consultations.html")]),
     "consultations/safeguard-onsite-abatement-2026.html": ("consultations", [("Consultations", "/consultations.html")]),
@@ -62,7 +61,7 @@ SECTION_OF = {
     "methods/index.html": ("tools", [("Tools & data", "/safeguard-atlas.html")]),
     "api/index.html": ("tools", [("Tools & data", "/safeguard-atlas.html")]),
     "api/docs/index.html": ("tools", [("Tools & data", "/safeguard-atlas.html"), ("Data & API", "/api/")]),
-    "coverage.html": ("about", [("About", "/about.html")]), "about.html": ("about", []),
+    "coverage.html": ("projects", [("Projects", "/case-studies.html")]), "about.html": ("about", []),
     "industry-maps.html": ("tools", [("Tools & data", "/safeguard-atlas.html")]),
     "safeguard-atlas.html": ("tools", [("Tools & data", "/safeguard-atlas.html")]),
     "privacy.html": ("about", [("About", "/about.html")]),
@@ -71,7 +70,8 @@ RESEARCH_PAGES = ["safeguard-review-2026-baseline-floor.html", "australian-diese
     "mine-decarbonisation-funding-map-australia.html", "locational-pricing-remote-energy-australia.html", "time-to-power-offgrid-hybrid.html",
     "btm-demand-charges-australia.html", "australian-battery-financing-capital-constraint.html", "bess-development-queue-to-construction.html",
     "bess-forecast-is-not-cashflow.html", "bess-ready-to-build-completeness.html", "brownfield-bess-connection-value.html",
-    "emerging-market-bess-develop-backwards.html", "hybrid-asset-integrated-due-diligence.html", "note-1.html", "note-2.html", "note-3.html", "notes.html"]
+    "emerging-market-bess-develop-backwards.html", "hybrid-asset-integrated-due-diligence.html", "notes.html",
+    "research/btm-bess-customer-savings.html", "research/pre-dd-versus-feasibility-study.html", "research/weak-grid-mine-energy.html"]
 for p in RESEARCH_PAGES: SECTION_OF[p] = ("research", [("Research", "/research.html")])
 
 
@@ -116,10 +116,10 @@ FOOTER = '''<footer class="footer">
           </a>
           <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
         </div>
-        <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">All research</a><a href="/research.html#industrial">Industrial &amp; emissions</a><a href="/research.html#markets">Energy markets</a><a href="/research.html#investment">Investment &amp; projects</a><a href="/research.html#policy">Policy &amp; regulation</a><a href="/research-approach.html">Research approach</a></div>
-        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/safeguard/facilities.html">Facility explorer</a><a href="/industry-maps.html">Industry maps</a><a href="/api/">Data &amp; API</a><a href="/methods/">Methods</a></div>
-        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Consultation record</a><a href="/consultations/method.html">How submissions are prepared</a><a href="/case-studies.html">Case studies</a><a href="/methods/pre-dd-f1-f4/">Pre-DD methodology</a><a href="/coverage.html">Coverage</a></div>
-        <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">What Heliovulcan does</a><a href="/about.html#principles">Evidence principles</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
+        <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">All research</a><a href="/research.html#industrial">Industrial &amp; emissions</a><a href="/research.html#markets">Energy markets</a><a href="/research.html#battery">Battery projects</a><a href="/research.html#policy">Policy analysis</a></div>
+        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/industry-maps.html">Industry maps</a><a href="/methods/">Methods</a><a href="/api/">Data &amp; API</a></div>
+        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Published submissions</a><a href="/case-studies.html">Project screens</a><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">About Heliovulcan</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
       </div>
       <p class="footer__legal">
         <b>Disclaimer:</b> Heliovulcan is an independent research and analysis practice providing public-information desktop analysis and screening support. Nothing on this site is legal, financial, tax, engineering, investment or lender due-diligence advice, a compliance determination, or regulatory representation or lobbying, and nothing here is a financial product recommendation. All results are indicative and must be independently verified before any commercial, financing or construction decision. &copy; 2026 Heliovulcan Energy Advisors.

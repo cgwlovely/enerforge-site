@@ -31,24 +31,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://heliovulcan.com.au/note-1.html</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heliovulcan.com.au/note-2.html</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heliovulcan.com.au/note-3.html</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://heliovulcan.com.au/australian-battery-financing-capital-constraint.html</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -1511,12 +1493,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://heliovulcan.com.au/research-approach.html</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://heliovulcan.com.au/consultations/ai-data-centres-2026.html</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -1528,10 +1504,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://heliovulcan.com.au/consultations/method.html</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+  <url><loc>https://heliovulcan.com.au/research/btm-bess-customer-savings.html</loc><lastmod>2026-09-15</lastmod></url>
+  <url><loc>https://heliovulcan.com.au/research/pre-dd-versus-feasibility-study.html</loc><lastmod>2026-09-15</lastmod></url>
+  <url><loc>https://heliovulcan.com.au/research/weak-grid-mine-energy.html</loc><lastmod>2026-09-15</lastmod></url>
 </urlset>
