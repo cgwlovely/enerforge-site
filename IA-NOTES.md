@@ -78,6 +78,21 @@ that can absorb them without another redesign. Concretely, that means:
 from the footer on every page and is linked inline from the homepage platform section, the
 research page and the platform page — it is not orphaned.
 
+`safeguard-atlas.html` (Safeguard Atlas) and the `facility/` pages under it are handled the same
+way, and for the same reason: the nav stays at seven items. The Atlas is in the footer on every
+page that carries the standard footer, and is linked inline from the homepage `#asset-market`
+section, the research hub and the CCA entry on the consultations page. Every one of the 209
+facility pages links back to it in the breadcrumb, in the body and in the footer.
+
+⚠ The claim above that nav and footer are *kept identical across all pages* was not true when the
+Atlas link was added on 2026-09-15. Three variants exist and two are defects:
+
+| | |
+|---|---|
+| 28 pages | the standard eight-link footer (relative or root-absolute) — the Atlas link was added to all of them |
+| 6 pages | `bess-development-queue-to-construction`, `bess-forecast-is-not-cashflow`, `bess-ready-to-build-completeness`, `brownfield-bess-connection-value`, `emerging-market-bess-develop-backwards`, `hybrid-asset-integrated-due-diligence` — footer nav contains **only** the LinkedIn link. Not fixed; the cause is unknown and they may have been minified deliberately |
+| 1 page | `industry-maps.html` — every footer line carried a stray `</p></div>` prefix from an earlier bulk edit, leaving `footer__note` unclosed. **Repaired** on 2026-09-15 to match the standard block |
+
 Nav and footer markup is duplicated in every page (no templating layer). It is kept identical
 across all 32 pages; if you change one, change them all.
 
@@ -164,6 +179,61 @@ published to date** and none is invented. What the page does carry:
 
 When the first submission lands, add an entry above the record-format section using those seven
 fields, and swap the homepage `#latest` consultation slot from the pending panel to a card.
+
+## Safeguard Atlas (`safeguard-atlas.html` + `facility/`)
+
+Added 2026-09-15. The model behind the decline-rate consultation submissions, published as a page
+that recomputes in the reader's browser. Three things and deliberately not more: the national
+pathway, a policy simulator, and a searchable table of the 209 facilities in the FY2024-25 register.
+
+**Both are generated.** The layout source is in the *bess-workspace* repo at
+`tools/consultation_kb/atlas/{atlas_template.html, facility_template.html}`; the pages here are
+build output and editing them directly will be overwritten by the next build. To rebuild:
+`bake_data.py` → `build_facility_pages.py` → `build_atlas.py`, in that order.
+
+What makes it defensible rather than just interactive:
+
+- **The page proves itself.** A self-check at the foot re-runs 135 figures from our published
+  submissions — FY2034-35 net emissions, the decline rate needed for a 62% and a 70% target, the
+  five-year cumulative, across three facility populations and five ways of treating the
+  trade-exposed facilities, plus both iso-target curves — and prints whether this browser
+  reproduced them. If the engine drifts from the one behind the submission, the line goes red.
+- **Every number carries a provenance label**: Official (published), Modelled (calculated here),
+  Assumption (a stated judgement the reader can change), Yours (a control).
+- **Scenario permalinks.** The controls encode into the URL fragment, so a scenario can be sent to
+  someone else.
+- **It refuses to count what it cannot count.** The methods section publishes the churn between the
+  two registers and then explains why we do *not* turn it into an entries-and-exits number: names
+  change, and a change of operator part-way through a year puts one facility in the register twice.
+
+`facility/<slug>.html` — one page per register row, not per facility. Where a facility name appears
+twice in one register (Telfer Gold Mine in FY2024-25) each row gets its own page, disambiguated by
+responsible emitter in the slug, and each page says plainly that the other row exists and that the
+two should not be added together. `facility/index.html` is the directory, by state.
+
+Added later the same day, once each had the evidence discipline it needed:
+
+- **A map** (`#map`). 175 of 209 rows are placed; each dot carries a mechanical location grade —
+  A (single NPI site, 131), B (one of several NPI sites mapped to the facility, 37), C (placed
+  through a name pair that has not been adjudicated, 7, drawn hollow) — and the 34 rows with no
+  coordinate we are willing to publish are listed by name rather than guessed. The state outline
+  is the same equirectangular drawing (27°S standard parallel) as the data-centre map; the file is
+  `docs/research/australia/consultation-kb/dc_map_au_paths.json` in the workspace.
+- **An assumption scorecard** (`#scorecard`). The first score that can be taken with two registers:
+  for the 183 facilities continuing under the same name, the ERC step alone predicted 114.79 Mt of
+  FY2024-25 baselines and the register said 114.48. This year's forward assumptions (production
+  factors, decided closures, pipeline ramp, TEBA end dates) are stored in `data/safeguard-atlas.json`
+  under `assumptions`, stamped with the model date, so the FY2025-26 register can be scored against
+  what was actually assumed rather than what is remembered.
+- **A facility sandbox** (`#sandbox`). Production × intensity or a known baseline, TEBA option,
+  abatement, break-even abatement and rate sensitivity. Nothing typed is stored or sent.
+
+### What is deliberately not there yet
+
+- **The s58B ten-year eligibility window.** The full engine models it; this page counts each
+  facility until it closes, and says so.
+- **Adjudication of the ten name pairs.** Listed, graded, not decided.
+- **An NPI pollutant layer on the facility pages.**
 
 ## How it works (`intelligence-platform.html`)
 
