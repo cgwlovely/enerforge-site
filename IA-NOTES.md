@@ -93,6 +93,28 @@ the original rules so that every earlier selector still resolves. Page-local `<s
 by hand in the same pass; `ar.html` is a standalone card and was left as is. The Atlas and
 facility templates carry the same rules in their scoped CSS.
 
+### Colour roles restored (2026-09-15, later the same day)
+
+The restyle above kept the palette tokens but broke the colour *roles* defined in
+`bess_reports/DESIGN_SYSTEM.md` (Solar Forge Modernism: Albers colour discipline, Constructivist
+information design). The owner noticed. Corrections, layout untouched:
+
+- **Mastheads are light by default** (`.hero`, `.case-hero`, `.atlas-hero`, `.fp-hero`: warm paper,
+  navy text, hairline below). Navy is reserved, per §8 of the design system, for point-of-view and
+  flagship pages: the homepage hero, the Atlas overview (`.atlas-hero--navy`), the research long-read
+  hero with its photo (`.res-hero`), `.section--navy` blocks and the footer. `.masthead--navy` is the
+  opt-in modifier for any other page.
+- **Orange is the one action colour** (§5, §12): `.btn--primary` is orange again, the nav CTA is an
+  orange-bordered link, F1–F4 badges are flat orange, hover states use orange-deep. Buttons on navy stay
+  orange (orange against navy is the Albers principle the system cites).
+- **No off-palette colours**: the `#ffc79a` highlight on dark grounds is `--orange-lite`; page-local
+  hero styles use tokens. Above/below-baseline badges on facility pages are amber/teal, the caution and
+  positive semantics.
+- Homepage "Explore the evidence" is a light tinted section, not a second navy block.
+
+Before changing any public page again: read DESIGN_SYSTEM.md §5, §8, §12, §16–17, then ask whether
+orange is still scarce and the only action colour, and whether navy appears only where a pause is meant.
+
 ## Navigation (2026-09-15, restructured)
 
 Five entries, the logo is Home, one CTA. Desktop: each entry is a link to the section landing page plus

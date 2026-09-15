@@ -15,7 +15,7 @@ WS = SITE.parents[1]            # /Users/hugefafafa1/BESS
 TEMPLATES = [WS / "tools/consultation_kb/atlas/parts/shell.html",
              WS / "tools/consultation_kb/atlas/facility_template.html",
              WS / "tools/consultation_kb/atlas/build_facility_pages.py"]
-ASSET_V = "20260915d"          # bump when style.css or site-nav.js changes: returning browsers cache both
+ASSET_V = "20260915e"          # bump when style.css or site-nav.js changes: returning browsers cache both
 SKIP = {"ar.html", "context_map.html", "siting_opportunity_constraint_screen.html", "reports/_template.html"}
 
 # ---- the menu -------------------------------------------------------------------
@@ -127,7 +127,7 @@ FOOTER = '''<footer class="footer">
     </div>
   </footer>'''
 
-HEAD_RE = re.compile(r'<header class="nav"[^>]*>.*?</header>(?:\s*<script src="/assets/site-nav\.js[^"]*" defer></script>)?(?:\s*<nav class="crumb".*?</nav>)?', re.S)
+HEAD_RE = re.compile(r'<header class="nav"[^>]*>.*?</header>(?:\s*<script src="/assets/site-nav\.js[^"]*" defer></script>)?(?:\s*<nav class="crumb".*?</nav>)?(?:\s*\{\{CRUMB\}\})*', re.S)
 FOOT_RE = re.compile(r'<footer class="footer">.*?</footer>', re.S)
 
 

@@ -8,7 +8,7 @@
   <meta name="keywords" content="Safeguard Mechanism model, safeguard baseline calculator, Australia 2035 target, decline rate, TEBA, safeguard mechanism credits, facility emissions Australia" />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
   <link rel="apple-touch-icon" href="/favicon.png" />
-  <link rel="stylesheet" href="/style.css?v=20260915d" />
+  <link rel="stylesheet" href="/style.css?v=20260915e" />
   <link rel="canonical" href="https://heliovulcan.com.au/safeguard/facilities.html" />
   <meta property="og:site_name" content="Heliovulcan" />
   <meta property="og:type" content="website" />
@@ -38,17 +38,24 @@
     .skip { position: absolute; left: -9999px; top: 0; z-index: 99; background: var(--navy); color: #fff;
       padding: 10px 16px; border-radius: 0 0 8px 0; text-decoration: none; font-size: 14px; }
     .skip:focus { left: 0; }
-    .atlas-hero { background: var(--navy); color: #eef2f4; padding: clamp(64px, 8vw, 112px) 0 clamp(48px, 5vw, 72px); }
-    .atlas-hero h1 { font-size: clamp(40px, 5.4vw, 64px); font-weight: 400; line-height: 1.08; color: #fff; max-width: 18ch; }
+    /* section mastheads are light; the overview (the Atlas's point of view) opts into navy */
+    .atlas-hero { background: var(--bg); color: var(--ink); border-bottom: 1px solid var(--line); padding: clamp(56px, 7vw, 96px) 0 clamp(40px, 4vw, 56px); }
+    .atlas-hero h1 { font-size: clamp(36px, 4.8vw, 56px); font-weight: 400; line-height: 1.08; color: var(--ink); max-width: 18ch; }
     .atlas-hero__sub { font-family: var(--sans); font-size: 12px; letter-spacing: .14em; font-weight: 600;
-      text-transform: uppercase; color: #b7c4cd; margin-bottom: 26px; }
-    .atlas-hero__lede { max-width: 62ch; margin-top: 18px; color: #c6d2da; font-size: 18px; }
-    .atlas-hero__jump { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
-    .atlas-hero__jump { gap: 8px 30px; }
-    .atlas-hero__jump a { display: inline-block; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.35);
-      color: #eef2f4; text-decoration: none; font-size: 15px; font-weight: 600; }
-    .atlas-hero__jump a:hover { color: #ffc79a; border-bottom-color: #ffc79a; }
-    .atlas-hero__stamp { margin-top: 30px; font-size: 13px; color: #8da2b0; }
+      text-transform: uppercase; color: var(--ink-soft); margin-bottom: 26px; }
+    .atlas-hero__lede { max-width: 62ch; margin-top: 18px; color: var(--ink-soft); font-size: 18px; }
+    .atlas-hero__jump { display: flex; gap: 8px 30px; flex-wrap: wrap; margin-top: 26px; }
+    .atlas-hero__jump a { display: inline-block; padding: 6px 0; border-bottom: 1px solid var(--line);
+      color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 600; }
+    .atlas-hero__jump a:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
+    .atlas-hero__stamp { margin-top: 30px; font-size: 13px; color: var(--ink-faint); }
+    .atlas-hero--navy { background: var(--navy); color: #eef2f4; border-bottom: 0; padding: clamp(64px, 8vw, 112px) 0 clamp(48px, 5vw, 72px); }
+    .atlas-hero--navy h1 { color: #fff; font-size: clamp(40px, 5.4vw, 64px); }
+    .atlas-hero--navy .atlas-hero__sub { color: #b7c4cd; }
+    .atlas-hero--navy .atlas-hero__lede { color: #c6d2da; }
+    .atlas-hero--navy .atlas-hero__jump a { border-bottom-color: rgba(255,255,255,.35); color: #eef2f4; }
+    .atlas-hero--navy .atlas-hero__jump a:hover { color: var(--orange-lite); border-bottom-color: var(--orange-lite); }
+    .atlas-hero--navy .atlas-hero__stamp { color: #8da2b0; }
 
     .atlas-sec { padding: 88px 0; border-top: 1px solid var(--line); }
     .atlas-sec h2 { font-size: clamp(30px, 3.6vw, 42px); font-weight: 400; max-width: 24ch; }
@@ -193,9 +200,11 @@
     /* ---- section pages: sub-navigation, settings strip, overview tiles ---- */
     .atlas-subnav { display: flex; flex-wrap: wrap; gap: 6px 28px; margin-top: 30px; }
     .atlas-subnav a { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600;
-      color: #b7c4cd; text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
-    .atlas-subnav a:hover { color: #fff; }
-    .atlas-subnav a.is-here { color: #fff; border-bottom-color: var(--orange); }
+      color: var(--ink-soft); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+    .atlas-subnav a:hover { color: var(--ink); }
+    .atlas-subnav a.is-here { color: var(--ink); border-bottom-color: var(--orange); }
+    .atlas-hero--navy .atlas-subnav a { color: #b7c4cd; }
+    .atlas-hero--navy .atlas-subnav a:hover, .atlas-hero--navy .atlas-subnav a.is-here { color: #fff; }
     .settings-strip { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: baseline; margin: 0 0 8px;
       padding: 14px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); font-size: 14px; color: var(--ink-soft); }
     .settings-strip .ss-lab { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
@@ -249,11 +258,8 @@
       </nav>
     </div>
   </header>
-  <script src="/assets/site-nav.js?v=20260915d" defer></script>
+  <script src="/assets/site-nav.js?v=20260915e" defer></script>
   <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Tools & data</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><span aria-hidden="true">/</span><span aria-current="page">Facility positions</span></div></nav>
-  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Tools &amp; data</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><span aria-hidden="true">/</span><span aria-current="page">Facilities</span></div></nav>
-  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Tools &amp; data</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><span aria-hidden="true">/</span><span aria-current="page">Facilities</span></div></nav>
-  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Tools &amp; data</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><span aria-hidden="true">/</span><span aria-current="page">Facilities</span></div></nav>
 
   <section class="atlas-hero">
     <div class="container">
