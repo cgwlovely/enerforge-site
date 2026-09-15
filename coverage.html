@@ -19,10 +19,9 @@
   <style>
     .table-scroll { overflow-x: auto; margin-top: 26px; }
     .table-scroll .matrix { margin-top: 0; min-width: 36rem; }
-    .cov-stat { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin-top: 28px; }
-    .cov-stat > div { padding: 20px 22px; border-right: 1px solid var(--line-soft); }
-    .cov-stat > div:last-child { border-right: 0; }
-    .cov-stat b { display: block; font-family: var(--mono); font-size: 27px; letter-spacing: -0.02em; color: var(--teal-deep); line-height: 1; }
+    .cov-stat { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 0 32px; margin-top: 36px; }
+    .cov-stat > div { padding: 16px 0 0; border-top: 1px solid var(--ink); }
+    .cov-stat b { display: block; font-family: var(--serif); font-weight: 400; font-size: 34px; letter-spacing: -0.01em; color: var(--ink); line-height: 1; }
     .cov-stat span { display: block; margin-top: 8px; font-size: 13.5px; color: var(--ink-soft); }
     @media (max-width: 720px) { .cov-stat > div { border-right: 0; border-bottom: 1px solid var(--line-soft); } }
   </style>

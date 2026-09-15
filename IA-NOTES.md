@@ -62,6 +62,37 @@ that can absorb them without another redesign. Concretely, that means:
 - a **Latest work** block on the homepage that makes the site read as an active research
   operation, and that is trivial to automate later.
 
+## Design system (2026-09-15)
+
+The owner's brief: the site read as cluttered and piecemeal; restructure the layout on the model
+of McKinsey's Australia site, keeping the colour palette. The palette tokens in `style.css` are
+unchanged. What changed is one typographic and spatial system, applied through the existing
+class names so that the 36 hand-written pages and the 210 generated pages restyled without
+markup surgery:
+
+- **Type.** Titles are the serif at regular weight, large (mastheads 50–56 px, section titles
+  30–42 px, card titles 24 px). Section labels are small uppercase sans (12 px, tracked, 600),
+  not mono, and carry no leading dash. Body 16.5 px; article body 18–19 px. Mono is reserved
+  for code.
+- **Mastheads.** Every page opens on the same navy band (`.hero`, `.case-hero`, `.res-hero`,
+  the Atlas and facility heroes). Buttons on the band are white; text links are white with an
+  amber hover.
+- **Surfaces.** Square corners (`--radius: 0`), no shadows, no tinted panels, no pills or chips.
+  Cards are columns separated by a hairline above (`border-top: 1px solid var(--ink)`); grids
+  use a 40 px gutter. Notes, insights and method boxes are a 2 px left rule. Tables open with a
+  2 px rule and use hairline rows, no box. Tags (Official / Modelled / Assumption, TEBA,
+  above/below) are coloured small-caps text.
+- **Buttons.** One solid button (navy). Everything that was an outline button is now a text
+  link with an arrow. The nav CTA is a plain link separated by a hairline, not a pill.
+- **Rhythm.** Sections 96 px; `.section--tint` is now the page ground with a top hairline
+  rather than a grey block; content width 1180 px, reading column 760 px.
+
+The system lives in the block headed `EDITORIAL SYSTEM` at the end of `style.css`, layered over
+the original rules so that every earlier selector still resolves. Page-local `<style>` blocks
+(index, intelligence-platform, consultations, research, coverage, safeguard-review) were aligned
+by hand in the same pass; `ar.html` is a standalone card and was left as is. The Atlas and
+facility templates carry the same rules in their scoped CSS.
+
 ## Navigation
 
 | | |

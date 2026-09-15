@@ -20,18 +20,18 @@
   <meta name="twitter:card" content="summary_large_image" />
   <style>
     /* consultation entry — the record format, reusing the site's card and spec vocabulary */
-    .consult { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); margin-top: 26px; }
-    .consult__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 15px 20px; background: var(--surface-2); border-bottom: 1px solid var(--line); }
-    .consult__head b { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); font-weight: 400; }
+    .consult { border-top: 2px solid var(--ink); margin-top: 40px; }
+    .consult__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .consult__head b { font-family: var(--serif); font-size: 24px; font-weight: 400; color: var(--ink); }
     .consult__head span { font-size: 14px; color: var(--ink-soft); }
-    .consult__row { display: grid; grid-template-columns: 14rem 1fr; gap: 0 18px; padding: 13px 20px; border-bottom: 1px solid var(--line-soft); align-items: baseline; }
+    .consult__row { display: grid; grid-template-columns: 14rem 1fr; gap: 0 24px; padding: 14px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline; }
     .consult__row:last-child { border-bottom: 0; }
-    .consult__k { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--teal-deep); }
-    .consult__v { font-size: 14.5px; color: var(--ink-soft); }
+    .consult__k { font-family: var(--sans); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
+    .consult__v { font-size: 15px; color: var(--ink); line-height: 1.6; }
     @media (max-width: 680px) {
       .consult__row { grid-template-columns: 1fr; gap: 4px; }
     }
-    .empty-state { border: 1px dashed var(--line); border-radius: var(--radius); padding: 30px 24px; margin-top: 26px; text-align: center; background: var(--surface-2); }
+    .empty-state { border-left: 2px solid var(--ink); padding: 6px 0 6px 26px; margin-top: 26px; }
     .empty-state b { display: block; font-size: 16px; color: var(--ink); margin-bottom: 8px; }
     .empty-state p { font-size: 14.5px; color: var(--ink-soft); margin: 0 auto; max-width: 46rem; }
   </style>

@@ -74,16 +74,13 @@
       font-family: var(--mono); font-size: 11px; letter-spacing: .1em;
       text-transform: uppercase; color: var(--ink-faint); display: block; margin-bottom: 10px;
     }
-    .latest__pending {
-      border: 1px dashed var(--line); border-radius: var(--radius);
-      padding: 22px 20px; background: var(--surface-2); height: 100%;
-    }
+    .latest__pending { padding: 0; height: 100%; }
     .latest__pending b { display: block; font-size: 15px; color: var(--ink); margin-bottom: 8px; }
     .latest__pending p { font-size: 14px; color: var(--ink-soft); margin: 0; }
-    .domain-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 26px; }
-    .domain { border-top: 2px solid var(--teal-deep); padding-top: 14px; }
-    .domain b { display: block; font-size: 15.5px; color: var(--ink); margin-bottom: 6px; }
-    .domain span { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+    .domain-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 40px; margin-top: 44px; }
+    .domain { border-top: 1px solid var(--ink); padding-top: 20px; }
+    .domain b { display: block; font-family: var(--serif); font-weight: 400; font-size: 22px; color: var(--ink); margin-bottom: 10px; }
+    .domain span { font-size: 15px; color: var(--ink-soft); line-height: 1.6; }
     @media (max-width: 900px) { .domain-row { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 520px) { .domain-row { grid-template-columns: 1fr; } }
   </style>
@@ -127,7 +124,7 @@
             Heliovulcan investigates Australian industrial facilities and proposed energy projects
             using regulatory records, energy and emissions data, maps and company reports.
           </p>
-          <p class="hero__sub" style="margin-top:12px;font-size:13px;color:var(--ink-faint);">
+          <p class="hero__sub" style="margin-top:14px;font-size:15px;">
             Every figure is linked to a source and marked by evidence quality. If the public data
             cannot answer something, we say so.
           </p>
@@ -474,7 +471,7 @@
 
         <figure style="margin:34px 0 8px;">
           <img src="assets/capability-national.svg" alt="Aggregated national view of 8,000+ mapped industrial facilities with generalised network context. Capability preview only — not a searchable database."
-               style="width:100%;height:auto;display:block;border-radius:10px;" loading="lazy" />
+               style="width:100%;height:auto;display:block;" loading="lazy" />
           <figcaption style="margin-top:10px;font-size:0.92rem;color:var(--ink-soft,#6b7680);">
             8,000+ industrial sites mapped as background context &middot; National multi-layer coverage
             &middot; Selected non-confidential capability view

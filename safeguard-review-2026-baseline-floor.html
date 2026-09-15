@@ -19,7 +19,7 @@
     /* scoped to this article — stepped floor chart and scrollable data tables */
     .table-scroll { overflow-x: auto; margin-top: 28px; }
     .table-scroll .matrix { margin-top: 0; min-width: 34rem; }
-    .lawbox { margin-top: 30px; padding: 22px 24px; background: var(--surface-2); border-left: 3px solid var(--ink-faint); }
+    .lawbox { margin-top: 30px; padding: 6px 0 6px 26px; border-left: 2px solid var(--ink); }
     .lawbox p { margin: 0 0 12px; font-size: 16px; }
     .lawbox p:last-child { margin-bottom: 0; }
     .lawbox cite { font-family: var(--mono); font-size: 13px; color: var(--ink-faint); font-style: normal; display: block; margin-top: 2px; }
@@ -77,7 +77,7 @@
        labelled or in the table view, and focus shows the same as hover */
     #tip { position: fixed; z-index: 60; pointer-events: none; opacity: 0;
            transition: opacity .1s; background: var(--ink); color: #fff;
-           font-size: 12.5px; line-height: 1.45; padding: 7px 10px; border-radius: 6px;
+           font-size: 12.5px; line-height: 1.45; padding: 7px 10px; border-radius: 0;
            max-width: 15rem; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
     #tip.on { opacity: 1; }
     @media (prefers-reduced-motion: reduce) { #tip { transition: none; } }
