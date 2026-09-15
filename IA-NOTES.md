@@ -93,89 +93,77 @@ the original rules so that every earlier selector still resolves. Page-local `<s
 by hand in the same pass; `ar.html` is a standalone card and was left as is. The Atlas and
 facility templates carry the same rules in their scoped CSS.
 
-## Navigation
+## Navigation (2026-09-15, restructured)
 
-| | |
-|---|---|
-| **Home** | `index.html` |
-| **Research** | `research.html` |
-| **Consultations** | `consultations.html` |
-| **How it works** | `intelligence-platform.html` |
-| **Projects** | `case-studies.html` |
-| **About** | `index.html#about` |
-| **Discuss a question** (CTA) | `index.html#contact` |
+Five entries, the logo is Home, one CTA. Desktop: each entry is a link to the section landing page plus
+an arrow button that opens a two-column mega menu (browse / featured); hover opens on fine pointers,
+click and keyboard everywhere; Escape closes. Below 980 px the same markup is a burger and an
+accordion. The current section is underlined in orange. Second-level pages carry a breadcrumb rule
+under the header. The bar compacts after 80 px of scroll.
 
-`coverage.html` (Track record) left the primary nav to keep it to seven items. It is reachable
-from the footer on every page and is linked inline from the homepage platform section, the
-research page and the platform page — it is not orphaned.
+| entry | landing | menu |
+|---|---|---|
+| Research | `research.html` | All research · Industrial & emissions · Energy markets · Investment & projects · Policy & regulation · Research approach · featured: Safeguard Atlas, diesel study, latest submission |
+| Tools & data | `safeguard-atlas.html` | Safeguard Atlas · Facility explorer · Industry maps · Data & API · Methods · Coverage |
+| Consultations | `consultations.html` | Consultation record · each submission page · How submissions are prepared |
+| Projects | `case-studies.html` | Case studies · Remote mine hybrid-energy screen · Pre-DD methodology · Coverage |
+| About | `about.html` | plain link |
+| CTA | `about.html#contact` | Discuss a question |
 
-`safeguard-atlas.html` (Safeguard Atlas) and the `facility/` pages under it are handled the same
-way, and for the same reason: the nav stays at seven items. The Atlas is in the footer on every
-page that carries the standard footer, and is linked inline from the homepage `#asset-market`
-section, the research hub and the CCA entry on the consultations page. Every one of the 209
-facility pages links back to it in the breadcrumb, in the body and in the footer.
+The header, breadcrumb and five-column footer are one component, applied to every page by
+`scripts/apply_chrome.py` (idempotent; root-relative links; also patches the Atlas and facility
+templates in the workspace so a rebuild does not regress them). Edit the component there, then run
+it. `How it works` is no longer a navigation entry: its method content is `methods/index.html`,
+its evidence principles and audience table are on `about.html`, and `intelligence-platform.html`
+redirects to `/methods/`. `Track record` is now called Coverage.
 
-⚠ The claim above that nav and footer are *kept identical across all pages* was not true when the
-Atlas link was added on 2026-09-15. Three variants exist and two are defects:
+### Three layers: entry page, topic page, evidence page
 
-| | |
-|---|---|
-| 28 pages | the standard eight-link footer (relative or root-absolute) — the Atlas link was added to all of them |
-| 6 pages | `bess-development-queue-to-construction`, `bess-forecast-is-not-cashflow`, `bess-ready-to-build-completeness`, `brownfield-bess-connection-value`, `emerging-market-bess-develop-backwards`, `hybrid-asset-integrated-due-diligence` — footer nav contains **only** the LinkedIn link. Not fixed; the cause is unknown and they may have been minified deliberately |
-| 1 page | `industry-maps.html` — every footer line carried a stray `</p></div>` prefix from an earlier bulk edit, leaving `footer__note` unclosed. **Repaired** on 2026-09-15 to match the standard block |
+The rule that governs the structure: **a landing page chooses, a content page reads, a method page
+proves.** No page does more than one of those.
 
-Nav and footer markup is duplicated in every page (no templating layer). It is kept identical
-across all 32 pages; if you change one, change them all.
+- Landing pages (Home, Research, Consultations, Projects, Tools & data): short, strong navigation,
+  summary cards, no full content.
+- Research articles: category and date, conclusion-style title, standfirst, key numbers, body,
+  methods and sources, related research.
+- Interactive tool (the Atlas): its own section navigation; one product, not seven sites.
+- Evidence records (project entity, dataset, API, claims): reached from a case or from Tools & data,
+  not from the main navigation.
 
-## Homepage content hierarchy
+## Homepage (2026-09-15, six modules)
 
-1. **Hero** — independent research positioning. CTAs are `Explore the research`
-   and `Discuss a question`. The graded example panel stays: it is the fastest signal of the
-   evidence discipline.
-2. **Latest work** (`#latest`) — three fixed slots in order: consultation, research, project.
-   Update the three cards in place when new work publishes.
-3. **Four domains** (`#domains`) — industrial assets · energy and emissions · policy and
-   regulation · projects and investment.
-4. **Research & policy** (`#research`).
-5. **Existing operations** (`#asset-market`, was "Asset & market intelligence") — absorbs what used to be a standalone
-   2029 Safeguard exposure section. The Safeguard material is now framed as a worked example of
-   the method, not as the site's lead hook.
-6. **Project analysis** (`#projects`) — F1–F4, the anonymised Remote Mining Asset case, and
-   what a project screen produces. One application of the evidence engine.
-7. **Where the information comes from** (`#platform`) — deliberately short: the figure, the
-   8,000-mapped-versus-analysed distinction, and a link out. The method itself lives on the
-   How it works page, so the homepage does not explain it twice.
-8. **About** (`#about`) — the practice, not the founder. A named bio, portrait and personal
-   LinkedIn were tried on 2026-08-24 and taken out again on 2026-09-02 at the owner's request:
-   the About section stays impersonal, and the site does not carry a personal profile. The
-   company LinkedIn in the footer and the `Person` entry in the homepage JSON-LD predate this
-   and are unchanged.
-9. **Contact** (`#contact`) — "Have a question worth checking?". The CTA stays **Discuss a
-   question** everywhere, for the same reason. The navy **Point of view** band was removed on
-   2026-08-23, and **Explore more** on 2026-08-24: it was the nav and the footer links a third
-   time.
+1. **Hero** — one sentence of value: *Independent analysis of Australian industrial assets, energy
+   and emissions*, one line on what we do, two buttons (Explore the research / Discuss a question).
+2. **Selected findings** — three cards, each with content type, conclusion-style title, one key
+   number, two lines and a date: Safeguard Atlas, the diesel study, the AI and data centres submission.
+3. **What we analyse** — three capabilities (industrial assets, energy projects, markets and policy),
+   each linking to its section. No method on the homepage.
+4. **Flagship tools** — a navy band: Safeguard Atlas, Industry maps, Data & API.
+5. **Selected project** — the Remote Mining Asset case: the question, F1–F4 in one line each, one
+   image, Read the case.
+6. **Trust strip and contact** — one sentence on sources and labelling, then the final CTA.
 
-### What the homepage is not allowed to become again
+Everything that used to sit on the homepage now lives on an inner page: the asset-analysis cards and
+the evidence ladder on `methods/`, the output types and audience table on `about.html`, the
+Pre-DD outputs on `case-studies.html`, the About and Contact sections on `about.html`. Legacy
+anchors `#about` and `#contact` now resolve on `about.html`.
 
-On 2026-08-24 the homepage went from 2,555 words to 1,697 (−34%). What left, and where it went:
+## Consultations (2026-09-15, three layers)
 
-| removed | now lives at |
-|---|---|
-| Safeguard three-card derivation (floor / dead zone / consequence) | `safeguard-review-2026-baseline-floor.html`; the homepage keeps one result and a link |
-| F1–F4 four cards | `methods/pre-dd-f1-f4/` |
-| Output 01/02/03 report descriptions | `case-studies.html#outputs` |
-| Case "public key takeaways" (five bullets) | `reports/remote-mining-asset-hybrid-energy-review.html` |
-| Point of view band, Explore more section, four capability cards | deleted |
+- `consultations.html` — why we make submissions, then one summary card per submission (type and
+  date, conclusion-style title, institution, three numbers, two links), one method sentence, one CTA.
+- `consultations/<slug>.html` — one page per submission: title and one-sentence finding, metadata,
+  three numbers, key findings, recommendations, then evidence used, unresolved matters and sources
+  folded, the PDF, related research.
+- `consultations/method.html` — which consultations are in scope, what each record contains, the
+  evidence discipline, the bodies monitored, no relationship implied.
 
-The rule: the homepage says what the finding is and links to the derivation. If a section starts
-explaining a method the reader has not asked for yet, it belongs on an inner page.
+## Research hub (2026-09-15)
 
-### Legacy anchors
-
-The old section ids are preserved as empty anchor spans so existing deep links still land
-somewhere sensible: `#two-ways` → domains, `#exposure` → asset-market, `#lens` / `#case` /
-`#reports` → projects, `#why` → contact. `#about` and `#contact` are unchanged and carry the
-great majority of inbound anchor links.
+Featured research (three cards), then all published work in one grid with topic filters
+(`#industrial`, `#markets`, `#investment`, `#policy`, `#maps` select a filter on load). Every card
+shows type, topic, conclusion-style title, an optional key number, one-line summary, date and read
+time. The themes moved to `research-approach.html`; the in-preparation list became one line.
 
 ## Research
 

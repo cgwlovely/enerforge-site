@@ -1485,6 +1485,62 @@ a.dl:hover { border-color: var(--orange-deep); }
   .case-banner img { height: 240px; }
 }
 
+/* =============================================================
+   SITE CHROME (2026-09-15): mega menu, breadcrumb, footer columns
+   ============================================================= */
+.nav__inner { height: 80px; gap: 28px; transition: height .18s ease; }
+.nav.is-compact .nav__inner { height: 62px; }
+.nav__burger { display: none; }
+.nav__menu { display: flex; align-items: center; gap: 22px; margin-left: auto; }
+.nav__list { display: flex; align-items: center; gap: 0; list-style: none; margin: 0; padding: 0; }
+.nav__item { position: relative; display: flex; align-items: center; }
+.nav__top { font-size: 15px; color: var(--ink-soft); text-decoration: none; padding: 10px 6px 10px 14px; border-bottom: 2px solid transparent; }
+.nav__item--menu .nav__top { padding-right: 2px; }
+.nav__item:hover .nav__top, .nav__item.is-open .nav__top { color: var(--ink); }
+.nav__item.is-current .nav__top { color: var(--ink); font-weight: 600; border-bottom-color: var(--orange); }
+.nav__toggle { background: none; border: 0; cursor: pointer; color: var(--ink-faint); font-size: 12px; padding: 10px 12px 10px 4px; line-height: 1; }
+.nav__toggle:hover, .nav__item.is-open .nav__toggle { color: var(--ink); }
+.nav__toggle:focus-visible, .nav__top:focus-visible, .nav__burger:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.nav__cta { font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; padding: 8px 0 8px 22px; border-left: 1px solid var(--line); white-space: nowrap; }
+.nav__cta:hover { color: var(--orange-deep); }
+.mega { position: absolute; left: 0; top: 100%; z-index: 30; min-width: 560px; padding-top: 10px; }
+.mega__inner { background: var(--bg); border: 1px solid var(--line); border-top: 2px solid var(--ink); padding: 26px 30px 28px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0 44px; box-shadow: 0 24px 40px -30px rgba(22,41,58,.35); }
+.mega__k { display: block; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); margin-bottom: 12px; }
+.mega__col ul { list-style: none; margin: 0; padding: 0; }
+.mega__col li { padding: 7px 0; border-top: 1px solid var(--line-soft); }
+.mega__col li:first-child { border-top: 0; }
+.mega__col a { color: var(--ink); text-decoration: none; font-size: 15px; line-height: 1.4; }
+.mega__col a:hover { color: var(--orange-deep); }
+.nav__item:nth-child(n+3) .mega { left: auto; right: 0; }
+.crumb { border-bottom: 1px solid var(--line); font-size: 13px; color: var(--ink-faint); }
+.crumb .container { display: flex; flex-wrap: wrap; gap: 6px 10px; padding-top: 10px; padding-bottom: 10px; }
+.crumb a { color: var(--ink-soft); text-decoration: none; }
+.crumb a:hover { color: var(--orange-deep); }
+.crumb [aria-current] { color: var(--ink); }
+@media (max-width: 980px) {
+  .nav__inner { height: auto; padding: 12px var(--pad); flex-wrap: wrap; }
+  .nav__burger { display: inline-block; margin-left: auto; font: inherit; font-size: 14px; font-weight: 600; background: none;
+    border: 1px solid var(--ink); padding: 8px 14px; color: var(--ink); cursor: pointer; }
+  .nav__menu { display: none; flex-direction: column; align-items: stretch; width: 100%; margin: 12px 0 4px; gap: 0; border-top: 1px solid var(--ink); }
+  .nav.is-menu-open .nav__menu { display: flex; }
+  .nav__list { flex-direction: column; align-items: stretch; }
+  .nav__item { flex-wrap: wrap; border-bottom: 1px solid var(--line-soft); }
+  .nav__top { flex: 1; padding: 14px 0; font-size: 16px; border-bottom: 0; }
+  .nav__item.is-current .nav__top { border-bottom: 0; }
+  .nav__toggle { font-size: 16px; padding: 14px 8px; }
+  .mega { position: static; min-width: 0; width: 100%; padding: 0 0 12px; }
+  .mega__inner { grid-template-columns: 1fr; gap: 16px; padding: 4px 0 8px 14px; border: 0; border-left: 2px solid var(--line); box-shadow: none; }
+  .nav__cta { border-left: 0; padding: 16px 0; }
+}
+.footer__grid { display: grid; grid-template-columns: 1.6fr repeat(4, 1fr); gap: 32px 40px; }
+.footer__col { display: flex; flex-direction: column; gap: 9px; }
+.footer__k { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: #8da2b0; margin-bottom: 4px; }
+.footer__col a { color: #c6d2da; text-decoration: none; font-size: 14.5px; }
+.footer__col a:hover { color: #fff; }
+@media (max-width: 980px) { .footer__grid { grid-template-columns: 1fr 1fr; } .footer__about { grid-column: 1 / -1; } }
+@media (max-width: 560px) { .footer__grid { grid-template-columns: 1fr; } }
+
   </style>
   <link rel="canonical" href="https://heliovulcan.com.au/safeguard-atlas.html" />
   <meta property="og:site_name" content="Heliovulcan" />
@@ -1713,23 +1769,22 @@ a.dl:hover { border-color: var(--orange-deep); }
 </head>
 <body data-root="https://heliovulcan.com.au/">
   <a class="skip" href="#atlas-start">Skip to content</a>
-  <header class="nav">
+  <header class="nav" id="site-nav">
     <div class="nav__inner">
-      <a class="brand" href="https://heliovulcan.com.au/index.html">
-        <span class="brand__badge"><img src="https://heliovulcan.com.au/assets/logo-mark.png" alt="Heliovulcan logo" width="40" height="40" /></span>
+      <a class="brand" href="https://heliovulcan.com.au/index.html" aria-label="Heliovulcan home">
+        <span class="brand__badge"><img src="https://heliovulcan.com.au/assets/logo-mark.png" alt="" width="40" height="40" /></span>
         <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
       </a>
-      <nav class="nav__links">
-        <a href="https://heliovulcan.com.au/index.html">Home</a>
-        <a href="https://heliovulcan.com.au/research.html">Research</a>
-        <a href="https://heliovulcan.com.au/consultations.html" class="is-current">Consultations</a>
-        <a href="https://heliovulcan.com.au/intelligence-platform.html">How it works</a>
-        <a href="https://heliovulcan.com.au/case-studies.html">Projects</a>
-        <a href="https://heliovulcan.com.au/index.html#about">About</a>
-        <a href="https://heliovulcan.com.au/index.html#contact" class="nav__cta">Discuss a question</a>
+      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open the menu">Menu</button>
+      <nav class="nav__menu" id="site-menu" aria-label="Site">
+        <ul class="nav__list"><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/research.html">Research</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-research" aria-label="Open the Research menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-research" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Browse by topic</span><ul><li><a href="https://heliovulcan.com.au/research.html">All research</a></li><li><a href="https://heliovulcan.com.au/research.html#industrial">Industrial & emissions</a></li><li><a href="https://heliovulcan.com.au/research.html#markets">Energy markets</a></li><li><a href="https://heliovulcan.com.au/research.html#investment">Investment & projects</a></li><li><a href="https://heliovulcan.com.au/research.html#policy">Policy & regulation</a></li><li><a href="https://heliovulcan.com.au/research-approach.html">Research approach</a></li></ul></div><div class="mega__col"><span class="mega__k">Featured</span><ul><li><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas: the post-2030 decline rate cannot be set in isolation</a></li><li><a href="https://heliovulcan.com.au/australian-diesel-replacement-market-size.html">Most of the diesel is on wheels</a></li><li><a href="https://heliovulcan.com.au/consultations/ai-data-centres-2026.html">Latest submission: AI and data centres</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu is-current"><a class="nav__top" href="https://heliovulcan.com.au/safeguard-atlas.html">Tools & data</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-tools" aria-label="Open the Tools & data menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-tools" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Interactive</span><ul><li><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas</a></li><li><a href="https://heliovulcan.com.au/safeguard/facilities.html">Facility explorer</a></li><li><a href="https://heliovulcan.com.au/industry-maps.html">Industry maps</a></li></ul></div><div class="mega__col"><span class="mega__k">Underlying</span><ul><li><a href="https://heliovulcan.com.au/api/">Data & API</a></li><li><a href="https://heliovulcan.com.au/methods/">Methods</a></li><li><a href="https://heliovulcan.com.au/coverage.html">Coverage</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/consultations.html">Consultations</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-consultations" aria-label="Open the Consultations menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-consultations" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Submissions</span><ul><li><a href="https://heliovulcan.com.au/consultations.html">Consultation record</a></li><li><a href="https://heliovulcan.com.au/consultations/ai-data-centres-2026.html">AI and data centres, 2026</a></li><li><a href="https://heliovulcan.com.au/consultations/safeguard-onsite-abatement-2026.html">Safeguard onsite abatement, 2026</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="https://heliovulcan.com.au/consultations/method.html">How submissions are prepared</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="https://heliovulcan.com.au/case-studies.html">Projects</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-projects" aria-label="Open the Projects menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-projects" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Cases</span><ul><li><a href="https://heliovulcan.com.au/case-studies.html">Case studies</a></li><li><a href="https://heliovulcan.com.au/reports/remote-mining-asset-hybrid-energy-review.html">Remote mine hybrid-energy screen</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="https://heliovulcan.com.au/methods/pre-dd-f1-f4/">Pre-DD methodology</a></li><li><a href="https://heliovulcan.com.au/coverage.html">Coverage</a></li></ul></div></div></div></li><li class="nav__item"><a class="nav__top" href="https://heliovulcan.com.au/about.html">About</a></li></ul>
+        <a class="nav__cta" href="https://heliovulcan.com.au/about.html#contact">Discuss a question</a>
       </nav>
     </div>
   </header>
+  <script src="https://heliovulcan.com.au/assets/site-nav.js?v=20260915b" defer></script>
+  
+  
 
   <section class="atlas-hero">
     <div class="container">
@@ -1962,38 +2017,21 @@ a.dl:hover { border-color: var(--orange-deep); }
 
   <footer class="footer">
     <div class="container">
-      <div class="footer__inner">
-        <div>
+      <div class="footer__grid">
+        <div class="footer__about">
           <a class="brand" href="https://heliovulcan.com.au/index.html">
-            <span class="brand__badge"><img src="https://heliovulcan.com.au/assets/logo-mark.png" alt="Heliovulcan logo" width="40" height="40" /></span>
+            <span class="brand__badge"><img src="https://heliovulcan.com.au/assets/logo-mark.png" alt="" width="40" height="40" /></span>
             <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
           </a>
-          <p class="footer__note">
-            Heliovulcan is an independent research and analysis practice. We reconstruct Australian
-            industrial assets and energy projects from public records and agreed inputs, covering
-            energy, emissions, location, ownership and commercial context. We check them against
-            accounts we build ourselves, and grade the evidence behind every figure.
-          </p>
+          <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
         </div>
-        <nav class="footer__links">
-          <a href="https://heliovulcan.com.au/index.html">Home</a>
-          <a href="https://heliovulcan.com.au/research.html">Research</a>
-          <a href="https://heliovulcan.com.au/consultations.html">Consultations</a>
-          <a href="https://heliovulcan.com.au/intelligence-platform.html">How it works</a>
-          <a href="https://heliovulcan.com.au/case-studies.html">Projects</a>
-          <a href="https://heliovulcan.com.au/coverage.html">Track record</a>
-          <a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas</a>
-          <a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a>
-          <a href="https://heliovulcan.com.au/index.html#contact">Discuss a question</a>
-        </nav>
+        <div class="footer__col"><span class="footer__k">Research</span><a href="https://heliovulcan.com.au/research.html">All research</a><a href="https://heliovulcan.com.au/research.html#industrial">Industrial &amp; emissions</a><a href="https://heliovulcan.com.au/research.html#markets">Energy markets</a><a href="https://heliovulcan.com.au/research.html#investment">Investment &amp; projects</a><a href="https://heliovulcan.com.au/research.html#policy">Policy &amp; regulation</a><a href="https://heliovulcan.com.au/research-approach.html">Research approach</a></div>
+        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="https://heliovulcan.com.au/safeguard-atlas.html">Safeguard Atlas</a><a href="https://heliovulcan.com.au/safeguard/facilities.html">Facility explorer</a><a href="https://heliovulcan.com.au/industry-maps.html">Industry maps</a><a href="https://heliovulcan.com.au/api/">Data &amp; API</a><a href="https://heliovulcan.com.au/methods/">Methods</a></div>
+        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="https://heliovulcan.com.au/consultations.html">Consultation record</a><a href="https://heliovulcan.com.au/consultations/method.html">How submissions are prepared</a><a href="https://heliovulcan.com.au/case-studies.html">Case studies</a><a href="https://heliovulcan.com.au/methods/pre-dd-f1-f4/">Pre-DD methodology</a><a href="https://heliovulcan.com.au/coverage.html">Coverage</a></div>
+        <div class="footer__col"><span class="footer__k">About</span><a href="https://heliovulcan.com.au/about.html">What Heliovulcan does</a><a href="https://heliovulcan.com.au/about.html#principles">Evidence principles</a><a href="https://heliovulcan.com.au/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="https://heliovulcan.com.au/privacy.html">Privacy</a></div>
       </div>
       <p class="footer__legal">
-        <b>Disclaimer:</b> Safeguard Atlas is independent research based on public data. It does not
-        constitute a compliance determination, legal, financial product, tax or engineering advice, or a
-        forecast. Baselines and net emissions numbers published by the Clean Energy Regulator govern.
-        All modelled results are indicative and should be independently verified before any
-        commercial, financing or compliance decision.
-        &copy; 2026 Heliovulcan Energy Advisors. <a href="https://heliovulcan.com.au/privacy.html">Privacy</a>.
+        <b>Disclaimer:</b> Heliovulcan is an independent research and analysis practice providing public-information desktop analysis and screening support. Nothing on this site is legal, financial, tax, engineering, investment or lender due-diligence advice, a compliance determination, or regulatory representation or lobbying, and nothing here is a financial product recommendation. All results are indicative and must be independently verified before any commercial, financing or construction decision. &copy; 2026 Heliovulcan Energy Advisors.
       </p>
     </div>
   </footer>

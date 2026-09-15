@@ -7,7 +7,7 @@
   <meta name="description" content="Virgin Australia Holdings National Transport Facility (VIRGIN AUSTRALIA HOLDINGS LIMITED, National) reported 2,215,462 t CO2-e in FY2024-25 against a Safeguard baseline of 2,267,645 t. Position against baseline, greenhouse gas composition, change from FY2023-24 and the modelled baseline path to FY2034-35." />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
   <link rel="apple-touch-icon" href="/favicon.png" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=20260915b" />
   <link rel="canonical" href="https://heliovulcan.com.au/facility/virgin-australia-holdings-national-transport-facility.html" />
   <meta property="og:site_name" content="Heliovulcan" />
   <meta property="og:type" content="article" />
@@ -77,23 +77,21 @@
   </style>
 </head>
 <body>
-  <header class="nav">
+  <header class="nav" id="site-nav">
     <div class="nav__inner">
-      <a class="brand" href="/index.html">
-        <span class="brand__badge"><img src="/assets/logo-mark.png" alt="Heliovulcan logo" width="40" height="40" /></span>
+      <a class="brand" href="/index.html" aria-label="Heliovulcan home">
+        <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
         <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
       </a>
-      <nav class="nav__links">
-        <a href="/index.html">Home</a>
-        <a href="/research.html">Research</a>
-        <a href="/consultations.html">Consultations</a>
-        <a href="/intelligence-platform.html">How it works</a>
-        <a href="/case-studies.html">Projects</a>
-        <a href="/index.html#about">About</a>
-        <a href="/index.html#contact" class="nav__cta">Discuss a question</a>
+      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open the menu">Menu</button>
+      <nav class="nav__menu" id="site-menu" aria-label="Site">
+        <ul class="nav__list"><li class="nav__item nav__item--menu"><a class="nav__top" href="/research.html">Research</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-research" aria-label="Open the Research menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-research" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Browse by topic</span><ul><li><a href="/research.html">All research</a></li><li><a href="/research.html#industrial">Industrial & emissions</a></li><li><a href="/research.html#markets">Energy markets</a></li><li><a href="/research.html#investment">Investment & projects</a></li><li><a href="/research.html#policy">Policy & regulation</a></li><li><a href="/research-approach.html">Research approach</a></li></ul></div><div class="mega__col"><span class="mega__k">Featured</span><ul><li><a href="/safeguard-atlas.html">Safeguard Atlas: the post-2030 decline rate cannot be set in isolation</a></li><li><a href="/australian-diesel-replacement-market-size.html">Most of the diesel is on wheels</a></li><li><a href="/consultations/ai-data-centres-2026.html">Latest submission: AI and data centres</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu is-current"><a class="nav__top" href="/safeguard-atlas.html">Tools & data</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-tools" aria-label="Open the Tools & data menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-tools" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Interactive</span><ul><li><a href="/safeguard-atlas.html">Safeguard Atlas</a></li><li><a href="/safeguard/facilities.html">Facility explorer</a></li><li><a href="/industry-maps.html">Industry maps</a></li></ul></div><div class="mega__col"><span class="mega__k">Underlying</span><ul><li><a href="/api/">Data & API</a></li><li><a href="/methods/">Methods</a></li><li><a href="/coverage.html">Coverage</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/consultations.html">Consultations</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-consultations" aria-label="Open the Consultations menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-consultations" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Submissions</span><ul><li><a href="/consultations.html">Consultation record</a></li><li><a href="/consultations/ai-data-centres-2026.html">AI and data centres, 2026</a></li><li><a href="/consultations/safeguard-onsite-abatement-2026.html">Safeguard onsite abatement, 2026</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="/consultations/method.html">How submissions are prepared</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/case-studies.html">Projects</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-projects" aria-label="Open the Projects menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-projects" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Cases</span><ul><li><a href="/case-studies.html">Case studies</a></li><li><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote mine hybrid-energy screen</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="/methods/pre-dd-f1-f4/">Pre-DD methodology</a></li><li><a href="/coverage.html">Coverage</a></li></ul></div></div></div></li><li class="nav__item"><a class="nav__top" href="/about.html">About</a></li></ul>
+        <a class="nav__cta" href="/about.html#contact">Discuss a question</a>
       </nav>
     </div>
   </header>
+  <script src="/assets/site-nav.js?v=20260915b" defer></script>
+  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Tools & data</a><span aria-hidden="true">/</span><a href="/safeguard/facilities.html">Facilities</a><span aria-hidden="true">/</span><span aria-current="page">Virgin Australia Holdings National Transport Facility</span></div></nav>
 
   <section class="fp-hero">
     <div class="container">
@@ -124,7 +122,7 @@
       </div>
     </section>
 
-    <section class="fp-sec"><div class="container"><p class="eyebrow">Change from the previous register</p><h2>FY2023-24 to FY2024-25</h2><p class="fp-why">Both years are published register values for the same facility name; no modelling is involved. Covered emissions rose relative to the baseline, so the position against the baseline worsened. The baseline falls each year by rule; covered emissions change for facility-specific reasons.</p><table class="fp-tbl"><thead><tr><th>&nbsp;</th><th class="num">FY2023-24</th><th class="num">FY2024-25</th><th class="num">Change</th></tr></thead><tbody><tr><td>Covered emissions (t)</td><td class='num'>2,103,081</td><td class='num'>2,215,462</td><td class='num'><span class="up">+5.3%</span></td></tr><tr><td>Baseline (t)</td><td class='num'>2,170,511</td><td class='num'>2,267,645</td><td class='num'><span class="up">+4.5%</span></td></tr><tr><td>Position (t)</td><td class='num'>-67,430</td><td class='num'>-52,183</td><td class='num'>15,247</td></tr></tbody></table><p class="fp-note"><span class="tag tag--off">Official</span> Both rows are published register values. The two years are matched by facility name only. Facilities are sometimes renamed between years, and a renamed facility appears as one facility leaving the register and another entering it. <a href="/safeguard-atlas.html#methods">The Atlas methods section lists the name pairs that have not been verified</a>.</p></div></section>
+    <section class="fp-sec"><div class="container"><p class="eyebrow">Change from the previous register</p><h2>FY2023-24 to FY2024-25</h2><p class="fp-why">Both years are published register values for the same facility name; no modelling is involved. Covered emissions rose relative to the baseline, so the position against the baseline worsened. The baseline falls each year by rule; covered emissions change for facility-specific reasons.</p><table class="fp-tbl"><thead><tr><th>&nbsp;</th><th class="num">FY2023-24</th><th class="num">FY2024-25</th><th class="num">Change</th></tr></thead><tbody><tr><td>Covered emissions (t)</td><td class='num'>2,103,081</td><td class='num'>2,215,462</td><td class='num'><span class="up">+5.3%</span></td></tr><tr><td>Baseline (t)</td><td class='num'>2,170,511</td><td class='num'>2,267,645</td><td class='num'><span class="up">+4.5%</span></td></tr><tr><td>Position (t)</td><td class='num'>-67,430</td><td class='num'>-52,183</td><td class='num'>15,247</td></tr></tbody></table><p class="fp-note"><span class="tag tag--off">Official</span> Both rows are published register values. The two years are matched by facility name only. Facilities are sometimes renamed between years, and a renamed facility appears as one facility leaving the register and another entering it. <a href="/safeguard/method.html">The Atlas method page lists the name pairs that have not been verified</a>.</p></div></section>
 
     <section class="fp-sec">
       <div class="container">
@@ -164,8 +162,8 @@
           by the selected production assumption. The Regulator's published baseline governs.
         </p>
         <div class="fp-cta">
-          <a href="/safeguard-atlas.html#lab">The national pathway and policy settings &rarr;</a>
-          <a href="/safeguard-atlas.html#facilities">All facility rows</a>
+          <a href="/safeguard/policy.html">The national pathway and policy settings &rarr;</a>
+          <a href="/safeguard/facilities.html">All facility rows</a>
         </div>
       </div>
     </section>
@@ -210,35 +208,21 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer__inner">
-        <div>
+      <div class="footer__grid">
+        <div class="footer__about">
           <a class="brand" href="/index.html">
-            <span class="brand__badge"><img src="/assets/logo-mark.png" alt="Heliovulcan logo" width="40" height="40" /></span>
+            <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
             <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
           </a>
-          <p class="footer__note">
-            Heliovulcan is an independent research and analysis practice. We reconstruct Australian
-            industrial assets and energy projects from public records and agreed inputs, covering
-            energy, emissions, location, ownership and commercial context.
-          </p>
+          <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
         </div>
-        <nav class="footer__links">
-          <a href="/index.html">Home</a>
-          <a href="/research.html">Research</a>
-          <a href="/consultations.html">Consultations</a>
-          <a href="/intelligence-platform.html">How it works</a>
-          <a href="/case-studies.html">Projects</a>
-          <a href="/coverage.html">Track record</a>
-          <a href="/safeguard-atlas.html">Safeguard Atlas</a>
-          <a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a>
-          <a href="/index.html#contact">Discuss a question</a>
-        </nav>
+        <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">All research</a><a href="/research.html#industrial">Industrial &amp; emissions</a><a href="/research.html#markets">Energy markets</a><a href="/research.html#investment">Investment &amp; projects</a><a href="/research.html#policy">Policy &amp; regulation</a><a href="/research-approach.html">Research approach</a></div>
+        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/safeguard/facilities.html">Facility explorer</a><a href="/industry-maps.html">Industry maps</a><a href="/api/">Data &amp; API</a><a href="/methods/">Methods</a></div>
+        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Consultation record</a><a href="/consultations/method.html">How submissions are prepared</a><a href="/case-studies.html">Case studies</a><a href="/methods/pre-dd-f1-f4/">Pre-DD methodology</a><a href="/coverage.html">Coverage</a></div>
+        <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">What Heliovulcan does</a><a href="/about.html#principles">Evidence principles</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
       </div>
       <p class="footer__legal">
-        <b>Disclaimer:</b> This page is independent research based on public data. It does not
-        constitute a compliance determination, legal, financial product, tax or engineering advice,
-        or a forecast. Baselines and net emissions numbers published by the Clean Energy Regulator govern.
-        &copy; 2026 Heliovulcan Energy Advisors. <a href="/privacy.html">Privacy</a>.
+        <b>Disclaimer:</b> Heliovulcan is an independent research and analysis practice providing public-information desktop analysis and screening support. Nothing on this site is legal, financial, tax, engineering, investment or lender due-diligence advice, a compliance determination, or regulatory representation or lobbying, and nothing here is a financial product recommendation. All results are indicative and must be independently verified before any commercial, financing or construction decision. &copy; 2026 Heliovulcan Energy Advisors.
       </p>
     </div>
   </footer>

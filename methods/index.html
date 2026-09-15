@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Methods — how an industrial asset is reconstructed and checked | Heliovulcan</title>
+  <meta name="description" content="Heliovulcan combines public records and agreed project information to analyse Australian industrial assets and energy projects. The work covers energy, emissions, ownership, location, project readiness and sector comparisons." />
+  <meta name="keywords" content="industrial energy and emissions analysis Australia, facility energy and emissions inventory, Safeguard Mechanism exposure, bottom-up reconciliation, evidence grading, Pre-DD screening, sector and portfolio analysis" />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
+  <link rel="stylesheet" href="/style.css?v=20260915b" />
+  <link rel="canonical" href="https://heliovulcan.com.au/methods/" />
+  <meta property="og:site_name" content="Heliovulcan" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://heliovulcan.com.au/methods/" />
+  <meta property="og:title" content="How the analysis works | Heliovulcan Energy Advisors" />
+  <meta property="og:description" content="Understand an industrial asset or energy project before committing capital: where the information comes from, how it is checked, and how each figure is labelled." />
+  <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    .table-scroll { overflow-x: auto; margin-top: 26px; }
+    .table-scroll .matrix { margin-top: 0; min-width: 34rem; }
+    .ladder { margin-top: 26px; border-top: 1px solid var(--line); }
+    .ladder__row { display: grid; grid-template-columns: 10.5rem 1fr; gap: 0 18px; padding: 15px 0; border-bottom: 1px solid var(--line-soft); }
+    .ladder__g { font-family: var(--sans); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding-top: 3px; }
+    .ladder__b { font-size: 15px; color: var(--ink-soft); }
+    .ladder__b b { color: var(--ink); font-weight: 600; }
+    @media (max-width: 620px) { .ladder__row { grid-template-columns: 1fr; gap: 4px; } }
+
+    /* output preview panel */
+    .outpreview { margin-top: 26px; border-top: 2px solid var(--ink); }
+    .outpreview__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .outpreview__head b { font-family: var(--sans); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+    .outpreview__head span { font-size: 14px; color: var(--ink-soft); }
+    .outpreview__row { display: grid; grid-template-columns: 13rem 1fr 9.5rem; gap: 0 16px; padding: 12px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline; }
+    .outpreview__row:last-child { border-bottom: 0; }
+    .outpreview__k { font-size: 14px; color: var(--ink-soft); }
+    .outpreview__v { font-size: 14.5px; color: var(--ink); }
+    .outpreview__g { font-family: var(--sans); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; text-align: right; color: var(--teal-deep); }
+    .outpreview__g.is-gap { color: var(--amber); }
+    @media (max-width: 680px) {
+      .outpreview__row { grid-template-columns: 1fr 8rem; }
+      .outpreview__k { grid-column: 1 / -1; }
+    }
+
+    /* evidence graph — the records we link, and how */
+    .egraph { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 6px; margin-top: 28px; }
+    .egraph__n {
+      font-family: var(--sans); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600;
+      color: var(--ink); border-bottom: 1px solid var(--line); padding: 6px 2px; white-space: nowrap;
+    }
+    /* a connector is glued to the node that follows it, so a wrap never
+       strands a lone arrow at the end of a line */
+    .egraph__pair { display: inline-flex; align-items: center; gap: 6px; }
+    .egraph__l { color: var(--teal-deep); font-size: 14px; line-height: 1; user-select: none; }
+    .egraph__cap { margin-top: 16px; font-size: 14px; color: var(--ink-soft); text-align: center; }
+
+    /* how the work actually runs, as four steps */
+    .flow { counter-reset: step; list-style: none; margin: 26px auto 0; max-width: 760px; padding: 0; }
+    .flow li {
+      counter-increment: step; position: relative; padding: 16px 0 16px 52px;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .flow li:first-child { border-top: 1px solid var(--line); }
+    .flow li::before {
+      content: counter(step, decimal-leading-zero); position: absolute; left: 0; top: 17px;
+      font-family: var(--sans); font-size: 12px; letter-spacing: .12em; font-weight: 600; color: var(--ink-soft);
+    }
+    .flow b { display: block; font-size: 16px; color: var(--ink); }
+    .flow span { display: block; font-size: 14.5px; color: var(--ink-soft); margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <header class="nav" id="site-nav">
+    <div class="nav__inner">
+      <a class="brand" href="/index.html" aria-label="Heliovulcan home">
+        <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
+        <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+      </a>
+      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open the menu">Menu</button>
+      <nav class="nav__menu" id="site-menu" aria-label="Site">
+        <ul class="nav__list"><li class="nav__item nav__item--menu"><a class="nav__top" href="/research.html">Research</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-research" aria-label="Open the Research menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-research" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Browse by topic</span><ul><li><a href="/research.html">All research</a></li><li><a href="/research.html#industrial">Industrial & emissions</a></li><li><a href="/research.html#markets">Energy markets</a></li><li><a href="/research.html#investment">Investment & projects</a></li><li><a href="/research.html#policy">Policy & regulation</a></li><li><a href="/research-approach.html">Research approach</a></li></ul></div><div class="mega__col"><span class="mega__k">Featured</span><ul><li><a href="/safeguard-atlas.html">Safeguard Atlas: the post-2030 decline rate cannot be set in isolation</a></li><li><a href="/australian-diesel-replacement-market-size.html">Most of the diesel is on wheels</a></li><li><a href="/consultations/ai-data-centres-2026.html">Latest submission: AI and data centres</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu is-current"><a class="nav__top" href="/safeguard-atlas.html">Tools & data</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-tools" aria-label="Open the Tools & data menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-tools" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Interactive</span><ul><li><a href="/safeguard-atlas.html">Safeguard Atlas</a></li><li><a href="/safeguard/facilities.html">Facility explorer</a></li><li><a href="/industry-maps.html">Industry maps</a></li></ul></div><div class="mega__col"><span class="mega__k">Underlying</span><ul><li><a href="/api/">Data & API</a></li><li><a href="/methods/">Methods</a></li><li><a href="/coverage.html">Coverage</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/consultations.html">Consultations</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-consultations" aria-label="Open the Consultations menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-consultations" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Submissions</span><ul><li><a href="/consultations.html">Consultation record</a></li><li><a href="/consultations/ai-data-centres-2026.html">AI and data centres, 2026</a></li><li><a href="/consultations/safeguard-onsite-abatement-2026.html">Safeguard onsite abatement, 2026</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="/consultations/method.html">How submissions are prepared</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/case-studies.html">Projects</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-projects" aria-label="Open the Projects menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-projects" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Cases</span><ul><li><a href="/case-studies.html">Case studies</a></li><li><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote mine hybrid-energy screen</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="/methods/pre-dd-f1-f4/">Pre-DD methodology</a></li><li><a href="/coverage.html">Coverage</a></li></ul></div></div></div></li><li class="nav__item"><a class="nav__top" href="/about.html">About</a></li></ul>
+        <a class="nav__cta" href="/about.html#contact">Discuss a question</a>
+      </nav>
+    </div>
+  </header>
+  <script src="/assets/site-nav.js?v=20260915b" defer></script>
+  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Tools & data</a><span aria-hidden="true">/</span><span aria-current="page">Methods</span></div></nav>
+  <main>
+    <section class="case-hero">
+      <div class="container">
+        <p class="eyebrow">Methods</p>
+        <h1>An asset is reconstructed from its records, then checked against data built a different way</h1>
+        <p class="case-hero__sub">Regulatory filings, licences and company disclosures give the facility-level account. National energy statistics, pollutant inventories and trade data give the independent check. Every figure carries the label it was established at, and what the public record cannot settle is named rather than estimated.</p>
+      </div>
+    </section>
+<section class="section" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <p class="eyebrow">Method</p>
+        <h2 class="section-title" id="method-title">Built from facility records and checked against independent data</h2>
+        <p class="section-intro">
+          We first reconstruct the asset from regulatory filings, licences and company disclosures.
+          We then compare the result with an independently assembled account, such as national
+          energy statistics, a pollutant inventory or trade data. Material differences are
+          investigated and reported.
+        </p>
+
+        <div class="insight" style="margin-top:24px;">
+          Two figures only confirm each other if they come from separate sources. A facility&rsquo;s
+          reported emissions and the regulator&rsquo;s published intensity factor will always agree,
+          because one is calculated from the other. Comparing them proves nothing, and it is an easy
+          mistake to make. Every cross-check we report names both sets of inputs and shows that they
+          do not overlap.
+        </div>
+
+        <div class="grid grid--3" style="margin-top:30px;">
+          <article class="card"><span class="card__tag">01</span><h3>Reconstruct</h3><p>Build the facility-level account from filings, licences and company disclosures.</p></article>
+          <article class="card"><span class="card__tag">02</span><h3>Check</h3><p>Compare it with independent energy, emissions, production or trade data. The comparison uses a source that is independent of the records used in the first step.</p></article>
+          <article class="card"><span class="card__tag">03</span><h3>Define the limits</h3><p>Record missing information, uncertain boundaries and third-party control arrangements that affect the conclusion.</p></article>
+        </div>
+      </div>
+    </section>
+<section class="section section--tint" id="evidence" aria-labelledby="evidence-title">
+      <div class="container">
+        <p class="eyebrow">Evidence labels</p>
+        <h2 class="section-title" id="evidence-title">How we label the evidence</h2>
+
+        <div class="ladder">
+          <div class="ladder__row">
+            <span class="ladder__g">Regulatory filing</span>
+            <span class="ladder__b"><b>Reported by the operator to a regulator.</b> Usually the strongest public source, but still checked for unit and scope differences.</span>
+          </div>
+          <div class="ladder__row">
+            <span class="ladder__g">Licence record</span>
+            <span class="ladder__b"><b>Named in a state licence or permit.</b> Establishes who operates a plant and often what equipment is installed.</span>
+          </div>
+          <div class="ladder__row">
+            <span class="ladder__g">Company disclosure</span>
+            <span class="ladder__b"><b>Company reporting, investor material, sustainability data.</b> Useful and specific, but not independent of the operator.</span>
+          </div>
+          <div class="ladder__row">
+            <span class="ladder__g">Calculated</span>
+            <span class="ladder__b"><b>Calculated from reported quantities.</b> Labelled as calculated wherever it is used.</span>
+          </div>
+          <div class="ladder__row">
+            <span class="ladder__g">Owner data required</span>
+            <span class="ladder__b"><b>Held by the operator and not published.</b> It goes on the owner-data request list rather than being estimated.</span>
+          </div>
+          <div class="ladder__row">
+            <span class="ladder__g">Not found in public sources</span>
+            <span class="ladder__b"><b>We could not find the information in the public sources reviewed.</b> It is recorded as not found, not treated as zero.</span>
+          </div>
+        </div>
+
+        <h3 style="margin-top:34px;">What public sources will not give you</h3>
+        <p class="section-intro" style="margin-top:8px;">
+          Some information is not available from public sources and can only be confirmed by the
+          owner or another project party. Any estimate made without it should be clearly identified
+          as an assumption.
+        </p>
+        <div class="table-scroll">
+          <table class="matrix">
+            <thead>
+              <tr><th>Not available</th><th>Why it matters</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="metric">Interval load curve</td><td>Detailed system sizing and pricing require it</td></tr>
+              <tr><td class="metric">Peak demand</td><td>Determines connection and equipment, not average load</td></tr>
+              <tr><td class="metric">Unit run hours and standby strategy</td><td>Separates a continuous plant from a backup set</td></tr>
+              <tr><td class="metric">Contract price and volume terms</td><td>Shows how savings are shared and whether the commercial structure is workable</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="section-intro" style="margin-top:22px;">
+          Work can end in four results: continue, redesign, supplement the data, or stop.
+        </p>
+      </div>
+    </section>
+<section class="section section--tint" id="evidence-base" aria-labelledby="evidence-base-title">
+      <div class="container">
+        <p class="eyebrow">How the records connect</p>
+        <h2 class="section-title" id="evidence-base-title">How the information connects</h2>
+        <p class="section-intro">
+          Questions about policy, investment, assets and energy often depend on the same underlying
+          information. A facility belongs to a company, uses energy, reports emissions, operates
+          under approvals and may host one or more projects. We link those records so that each
+          analysis starts from a consistent account of the asset.
+        </p>
+
+        <div class="egraph" role="img" aria-label="Evidence graph: company, facility, project, energy, emissions, grid, technology, approval and capital, each linked to the next">
+          <span class="egraph__n">Company</span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Facility</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Project</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Energy</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Emissions</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Grid</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Technology</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Approval</span></span>
+          <span class="egraph__pair"><span class="egraph__l" aria-hidden="true">&harr;</span><span class="egraph__n">Capital</span></span>
+        </div>
+        <p class="egraph__cap">
+          The value comes from showing how the records relate to one another, not from collecting
+          them in isolation. Each relationship is supported by a source and given an evidence label.
+        </p>
+
+        <div class="note" style="margin-top:30px;">
+          <span class="cap">What this is, and is not</span>
+          <p>
+            This is how we work, not a product you log in to. There is no client-operated software
+            and no public database to query, and none of it substitutes for formal due diligence.
+            Coverage grows as assets and sectors are analysed; it is not a live or complete national
+            dataset. The count of what has been <a href="/coverage.html">analysed in depth</a> is much
+            smaller than the count of what has been mapped as background context.
+          </p>
+        </div>
+      </div>
+    </section>
+<section class="section" id="output-preview" aria-labelledby="preview-title">
+      <div class="container">
+        <p class="eyebrow">What the output looks like</p>
+        <h2 class="section-title" id="preview-title">One page of an Existing Asset Profile</h2>
+        <p class="section-intro">
+          This shows the shape of the output. Each line carries its own evidence label, and items
+          that cannot be confirmed are shown alongside the confirmed results.
+        </p>
+
+        <div class="outpreview">
+          <div class="outpreview__head">
+            <b>Summary panel</b>
+            <span>Remote gold operation, Western Australia &mdash; structure shown, values illustrative</span>
+          </div>
+          <div class="outpreview__row"><span class="outpreview__k">Operator / reporting entity</span><span class="outpreview__v">Named; group parent resolved</span><span class="outpreview__g">Regulatory filing</span></div>
+          <div class="outpreview__row"><span class="outpreview__k">Production proxy</span><span class="outpreview__v">Ore milled, t/yr</span><span class="outpreview__g">Company disclosure</span></div>
+          <div class="outpreview__row"><span class="outpreview__k">Fuel mix</span><span class="outpreview__v">Pipeline gas dominant; diesel remainder</span><span class="outpreview__g">Regulatory filing</span></div>
+          <div class="outpreview__row"><span class="outpreview__k">Average electrical load</span><span class="outpreview__v">Reconstructed range, MW</span><span class="outpreview__g">Calculated</span></div>
+          <div class="outpreview__row"><span class="outpreview__k">Reported Scope 1</span><span class="outpreview__v">t CO<sub>2</sub>-e, current year</span><span class="outpreview__g">Regulatory filing</span></div>
+          <div class="outpreview__row"><span class="outpreview__k">Safeguard position to 2029</span><span class="outpreview__v">Baseline, decline path, floor binding y/n</span><span class="outpreview__g">Calculated</span></div>
+          <div class="outpreview__row"><span class="outpreview__k">Power station control</span><span class="outpreview__v">Third-party build-own-operate; term undisclosed</span><span class="outpreview__g">Licence record</span></div>
+          <div class="outpreview__row"><span class="outpreview__k">Sector position</span><span class="outpreview__v">Percentile against comparable peers</span><span class="outpreview__g">Calculated</span></div>
+          <div class="outpreview__row"><span class="outpreview__k">Interval load curve</span><span class="outpreview__v">Not in the public record</span><span class="outpreview__g is-gap">Owner data required</span></div>
+          <div class="outpreview__row"><span class="outpreview__k">Contract price and volume</span><span class="outpreview__v">Not found in the sources reviewed</span><span class="outpreview__g is-gap">Not found in public sources</span></div>
+          <div class="outpreview__row"><span class="outpreview__k">Decision implication</span><span class="outpreview__v">Counterparty is the contractor, not the operator</span><span class="outpreview__g">Calculated</span></div>
+        </div>
+
+        <p class="footer__note" style="margin-top:18px;">
+          <em>Illustrative structure only. The line items and evidence labels reflect the real
+          profile format; the values shown are representative and do not describe any identified
+          operation. A full profile contains additional sections and supporting sources.</em>
+        </p>
+      </div>
+    </section>
+<section class="section section--tint" aria-labelledby="disclosure-title">
+      <div class="container">
+        <p class="eyebrow">Boundaries</p>
+        <h2 class="section-title" id="disclosure-title">What we show publicly, and what stays internal</h2>
+        <p class="section-intro">
+          Public examples show selected methods and non-confidential outputs. Source architecture,
+          internal scoring, model controls and opportunity assessments remain confidential.
+        </p>      </div>
+    </section>
+    <section class="section" id="more">
+      <div class="container">
+        <p class="eyebrow">Specific methods</p>
+        <h2 class="section-title">Where the detailed methods live</h2>
+        <div class="grid grid--3">
+          <a class="card note-card" href="/methods/pre-dd-f1-f4/"><span class="note-tag">Projects</span><h3>Pre-DD F1&ndash;F4</h3><p>Claim types, confidence and boundaries for a project screen.</p><span class="note-status is-drafting">Read &rarr;</span></a>
+          <a class="card note-card" href="/safeguard/method.html"><span class="note-tag">Safeguard Atlas</span><h3>Sources, method and limitations</h3><p>The facility-level Safeguard model, its inputs and its verification against the 2026 submission.</p><span class="note-status is-drafting">Read &rarr;</span></a>
+          <a class="card note-card" href="/consultations/method.html"><span class="note-tag">Consultations</span><h3>How submissions are prepared</h3><p>Which consultations are answered and what every record contains.</p><span class="note-status is-drafting">Read &rarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a class="brand" href="/index.html">
+            <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
+            <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+          </a>
+          <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
+        </div>
+        <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">All research</a><a href="/research.html#industrial">Industrial &amp; emissions</a><a href="/research.html#markets">Energy markets</a><a href="/research.html#investment">Investment &amp; projects</a><a href="/research.html#policy">Policy &amp; regulation</a><a href="/research-approach.html">Research approach</a></div>
+        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/safeguard/facilities.html">Facility explorer</a><a href="/industry-maps.html">Industry maps</a><a href="/api/">Data &amp; API</a><a href="/methods/">Methods</a></div>
+        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Consultation record</a><a href="/consultations/method.html">How submissions are prepared</a><a href="/case-studies.html">Case studies</a><a href="/methods/pre-dd-f1-f4/">Pre-DD methodology</a><a href="/coverage.html">Coverage</a></div>
+        <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">What Heliovulcan does</a><a href="/about.html#principles">Evidence principles</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
+      </div>
+      <p class="footer__legal">
+        <b>Disclaimer:</b> Heliovulcan is an independent research and analysis practice providing public-information desktop analysis and screening support. Nothing on this site is legal, financial, tax, engineering, investment or lender due-diligence advice, a compliance determination, or regulatory representation or lobbying, and nothing here is a financial product recommendation. All results are indicative and must be independently verified before any commercial, financing or construction decision. &copy; 2026 Heliovulcan Energy Advisors.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
