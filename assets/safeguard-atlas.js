@@ -968,29 +968,36 @@ function renderMap() {
   var leg = mode === "pos0" || mode === "pos35"
     ? [["Above baseline", PAL.neg], ["At or below baseline", PAL.pos]].concat(mode === "pos35" ? [["Closed under the selected settings", "#9A958C"]] : [])
     : mode === "teba" ? [["Trade-exposed determination", "#4C3F79"], ["Default path", "#9A958C"]]
-    : [["A · single NPI site", tierColour("A")], ["B · one of several NPI sites", tierColour("B")], ["C · located through an unverified name match", tierColour("C")]];
+    : [["A · two sources agree within 5 km", tierColour("A")], ["B · one source only", tierColour("B")], ["C · sources disagree, drawn at the mine or plant registry", tierColour("C")]];
   $("legend-map").innerHTML = legend(leg);
   Array.prototype.forEach.call(document.querySelectorAll(".map-dot"), function (c) {
     c.addEventListener("mouseenter", function () { mapInfo(+c.getAttribute("data-i")); });
     c.addEventListener("click", function () { MAP_ON = +c.getAttribute("data-i"); mapInfo(MAP_ON, true); });
   });
   if (MAP_ON !== null) mapInfo(MAP_ON, true);
-  var t = M.tiers || {};
+  var t = M.tiers || {}, np = M.not_placed || [], miss = M.missing || [];
   $("map-tiers").innerHTML =
-    "<b>" + M.points.length + " of " + F.length + " register rows are shown.</b> " +
-    (t.A || 0) + " are located from a single National Pollutant Inventory site (grade A), " + (t.B || 0) + " from one of several NPI sites associated with the facility (grade B), and " +
-    (t.C || 0) + " through a facility name match that has not been verified (grade C, drawn as an open circle). " +
-    (M.missing || []).length + " rows have no coordinate of sufficient quality and are listed below rather than placed. " +
+    "<b>" + M.points.length + " of " + F.length + " register rows are placed.</b> " +
+    (t.A || 0) + " have a National Pollutant Inventory site and an independent registry feature of the same name within 5 km of each other (grade A), " +
+    (t.B || 0) + " rest on one source only or on sources between 5 and 15 km apart (grade B), and " +
+    (t.C || 0) + " have sources that disagree by more than 15 km (grade C, drawn at the registry point as an open circle). " +
+    np.length + " rows are networks, railways, roads, fleets or multi-platform fields with no single location and are listed below rather than placed" +
+    (miss.length ? ", and " + miss.length + " could not be located" : "") + ". " +
     "The coastline is simplified, so coastal plants and offshore platforms may appear on or beyond the outline.";
   var pointByI = {}; M.points.forEach(function (p) { pointByI[p.i] = p; });
   $("how-map").innerHTML =
-    "<p><b>Coordinates.</b> All coordinates are taken from the National Pollutant Inventory (NPI). Each Safeguard facility is matched to an NPI reporting site, " +
-    "and that site's coordinate is used. Where a facility is associated with more than one NPI site, for example a mine with several pits or an operator with several " +
-    "licences, one site is used and the point is graded B. Where the register row has no NPI match under its FY2024-25 name but does under its FY2023-24 name, the " +
-    "earlier row's coordinate is used and the point is graded C. Three of those name pairs differ only in punctuation and take the grade of the underlying point.</p>" +
+    "<p><b>Coordinates.</b> The starting point for every facility is its National Pollutant Inventory (NPI) reporting site. Where a facility reports through several NPI sites, " +
+    "the site whose name shares the most words with the register name is used, and sites that are ports, depots, terminals, meter stations or offshore platforms are passed over " +
+    "unless the register name itself is one. NPI coordinates are the coordinates the reporter supplied, and for some sites they mark a town, a depot or a company office rather than the works. " +
+    "Each point is therefore checked against an independent registry of the same name: Geoscience Australia's operating mines, power stations and processing plants layers, " +
+    "Global Energy Monitor's coal, iron ore, gas and power trackers, and the site footprints drawn for Heliovulcan's own facility profiles. " +
+    "Where the NPI site and a registry feature lie within 5 km the point is graded A. Where the NPI site lies elsewhere but two independent sources agree with each other, " +
+    "the point is moved to them and graded A with the move recorded. Where only one source exists, or the sources are 5 to 15 km apart, the point is graded B. " +
+    "Where the NPI site and the sector's registry disagree by more than 15 km, the registry point is drawn as an open circle and graded C.</p>" +
     "<p><b>Projection.</b> Equirectangular, standard parallel 27°S. Distances are approximate.</p>" +
-    "<p><b>Not shown (" + (M.missing || []).length + ").</b> " + (M.missing || []).map(esc).join(" · ") + ".</p>" +
-    "<p>Gas distribution networks, rail and airline facilities have no single location and are not placed. The remaining omissions are gaps in the matching, not in the register.</p>";
+    "<p><b>Not placed by design (" + np.length + ").</b> " + np.map(esc).join(" · ") + ".</p>" +
+    (miss.length ? "<p><b>Not located (" + miss.length + ").</b> " + miss.map(esc).join(" · ") + ".</p>" : "") +
+    "<p>Gas distribution networks, pipelines, railways, haul roads, road and air fleets and multi-platform offshore fields have no single location and are not placed.</p>";
 }
 function mapInfo(i, pin) {
   var f = F[i], p = null;

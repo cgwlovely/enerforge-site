@@ -180,12 +180,20 @@
   },
   "points": [
    {
+    "i": 0,
+    "x": 128.956,
+    "y": 37.78,
+    "t": "B",
+    "o": 0,
+    "n": "NPI site 533928 only; no independent same-name feature within 15 km"
+   },
+   {
     "i": 1,
     "x": 134.711,
     "y": 23.755,
-    "t": "A",
+    "t": "B",
     "o": 1,
-    "n": ""
+    "n": "NPI site 623418 only; no independent same-name feature within 15 km"
    },
    {
     "i": 2,
@@ -193,63 +201,55 @@
     "y": 34.164,
     "t": "B",
     "o": 0,
-    "n": "one of 3 NPI sites mapped to this facility"
+    "n": "NPI site 487890 only; no independent same-name feature within 15 km"
    },
    {
     "i": 3,
     "x": 101.679,
     "y": 21.541,
-    "t": "A",
+    "t": "B",
     "o": 1,
-    "n": ""
+    "n": "NPI site 568412 only; no independent same-name feature within 15 km"
    },
    {
     "i": 4,
     "x": 106.007,
     "y": 22.922,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 546030 only; no independent same-name feature within 15 km"
    },
    {
     "i": 5,
     "x": 132.657,
     "y": 25.347,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 630082 only; no independent same-name feature within 15 km (a GEM Global-Oil-and-Gas-Extraction-Tracker-Ma feature of the same name lies 84 km away but is not a site registry for this sector)"
    },
    {
     "i": 6,
     "x": 134.488,
     "y": 27.097,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 547392 only; no independent same-name feature within 15 km"
    },
    {
     "i": 7,
-    "x": 134.669,
-    "y": 32.482,
+    "x": 134.612,
+    "y": 32.469,
     "t": "A",
     "o": 0,
-    "n": ""
-   },
-   {
-    "i": 8,
-    "x": 135.215,
-    "y": 32.867,
-    "t": "B",
-    "o": 0,
-    "n": "one of 32 NPI sites mapped to this facility"
+    "n": "NPI site 495916 is 6 km from two agreeing independent sources; placed at GEM Global Coal Mine Tracker, May 2026__.xls, confirmed by GA mine (0.3 km apart)"
    },
    {
     "i": 11,
     "x": 126.353,
     "y": 27.392,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 499698 only; no independent same-name feature within 15 km"
    },
    {
     "i": 12,
@@ -257,23 +257,31 @@
     "y": 24.155,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 501710 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.3 km"
    },
    {
     "i": 13,
     "x": 134.202,
     "y": 24.327,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 501936 only; no independent same-name feature within 15 km"
+   },
+   {
+    "i": 14,
+    "x": 136.256,
+    "y": 27.995,
+    "t": "B",
+    "o": 0,
+    "n": "NPI site 507468 only; no independent same-name feature within 15 km"
    },
    {
     "i": 15,
     "x": 102.59,
     "y": 29.465,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 540320 only; no independent same-name feature within 15 km"
    },
    {
     "i": 16,
@@ -281,7 +289,7 @@
     "y": 41.127,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 523146 confirmed by GA power within 3.3 km"
    },
    {
     "i": 17,
@@ -289,7 +297,7 @@
     "y": 32.277,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 488374 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.6 km"
    },
    {
     "i": 18,
@@ -297,15 +305,23 @@
     "y": 34.833,
     "t": "A",
     "o": 1,
-    "n": ""
+    "n": "NPI site 514850 confirmed by GA plant within 0.0 km"
    },
    {
     "i": 19,
     "x": 132.574,
     "y": 23.73,
-    "t": "C",
+    "t": "B",
     "o": 0,
-    "n": "located through the FY2023-24 row “Blackwater Mine” — a name pair not yet adjudicated"
+    "n": "NPI site 501894; nearest independent same-name feature (GA mine) is 5.2 km away"
+   },
+   {
+    "i": 20,
+    "x": 131.44,
+    "y": 22.688,
+    "t": "A",
+    "o": 0,
+    "n": "NPI site 502418 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 3.1 km"
    },
    {
     "i": 21,
@@ -313,15 +329,15 @@
     "y": 30.612,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 483996 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.8 km"
    },
    {
     "i": 22,
     "x": 134.843,
     "y": 23.924,
-    "t": "A",
+    "t": "B",
     "o": 1,
-    "n": ""
+    "n": "NPI site 500606 only; no independent same-name feature within 15 km"
    },
    {
     "i": 23,
@@ -329,47 +345,47 @@
     "y": 22.418,
     "t": "B",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 538152; nearest independent same-name feature (GA mine) is 6.5 km away"
    },
    {
     "i": 24,
     "x": 104.491,
     "y": 22.455,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 621132; nearest independent same-name feature (GA mine) is 10.0 km away"
    },
    {
     "i": 25,
     "x": 134.623,
     "y": 32.677,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 487506 only; no independent same-name feature within 15 km"
    },
    {
     "i": 26,
-    "x": 132.036,
+    "x": 132.037,
     "y": 21.621,
-    "t": "B",
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 501726 is 8 km from two agreeing independent sources; placed at GEM Global Coal Mine Tracker, May 2026__.xls, confirmed by GA mine (4.0 km apart)"
    },
    {
     "i": 27,
     "x": 131.729,
     "y": 21.317,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 624282; nearest independent same-name feature (GEM Global Coal Mine Tracker, May 2026__.xls) is 8.3 km away"
    },
    {
     "i": 28,
     "x": 125.556,
     "y": 21.86,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 501746 only; no independent same-name feature within 15 km"
    },
    {
     "i": 29,
@@ -377,7 +393,7 @@
     "y": 22.953,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 501956 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 4.3 km"
    },
    {
     "i": 30,
@@ -385,39 +401,39 @@
     "y": 21.97,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 501976 confirmed by GA mine within 4.0 km"
    },
    {
     "i": 31,
-    "x": 130.647,
-    "y": 21.95,
+    "x": 130.381,
+    "y": 22.074,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 666598 is 34 km from two agreeing independent sources; placed at GEM Global Coal Mine Tracker, May 2026__.xls, confirmed by repo onsite geojson AU-COAL-2026/01_CARMICHAEL_ONSITE.geojson (7.3 km apart)"
    },
    {
     "i": 32,
     "x": 109.017,
     "y": 30.154,
-    "t": "B",
+    "t": "A",
     "o": 0,
-    "n": "one of 3 NPI sites mapped to this facility"
+    "n": "NPI site 541256 confirmed by GA mine within 0.9 km"
    },
    {
     "i": 33,
     "x": 131.922,
     "y": 22.157,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 586956; nearest independent same-name feature (GEM Global Coal Mine Tracker, May 2026__.xls) is 5.8 km away"
    },
    {
     "i": 34,
     "x": 133.951,
     "y": 34.507,
-    "t": "B",
+    "t": "A",
     "o": 0,
-    "n": "one of 4 NPI sites mapped to this facility"
+    "n": "NPI site 489190 confirmed by GA plant within 0.0 km"
    },
    {
     "i": 35,
@@ -425,23 +441,23 @@
     "y": 21.663,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 502322 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 2.9 km"
    },
    {
     "i": 36,
     "x": 103.324,
     "y": 31.532,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 544050 only; no independent same-name feature within 15 km"
    },
    {
     "i": 37,
-    "x": 106.61,
-    "y": 22.357,
-    "t": "B",
+    "x": 106.706,
+    "y": 22.376,
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 558186 is 10 km from two agreeing independent sources; placed at GA mine, confirmed by GA power (4.5 km apart)"
    },
    {
     "i": 38,
@@ -449,39 +465,39 @@
     "y": 22.709,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 549996 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.6 km"
    },
    {
     "i": 39,
-    "x": 106.419,
-    "y": 22.292,
-    "t": "B",
+    "x": 106.391,
+    "y": 22.326,
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 556802 confirmed by GA mine within 2.0 km"
    },
    {
     "i": 40,
-    "x": 102.415,
-    "y": 29.311,
+    "x": 103.174,
+    "y": 32.141,
     "t": "B",
     "o": 0,
-    "n": "one of 3 NPI sites mapped to this facility"
+    "n": "NPI site 540650; nearest independent same-name feature (GEM Global-Oil-and-Gas-Plant-Tracker-GOGPT-J) is 6.9 km away"
    },
    {
     "i": 41,
     "x": 133.835,
     "y": 26.782,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 592038 only; no independent same-name feature within 15 km"
    },
    {
     "i": 42,
     "x": 132.666,
     "y": 23.717,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 502048 only; no independent same-name feature within 15 km"
    },
    {
     "i": 43,
@@ -489,15 +505,15 @@
     "y": 21.866,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 501662 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 2.4 km"
    },
    {
     "i": 44,
-    "x": 105.015,
-    "y": 35.024,
-    "t": "B",
+    "x": 103.144,
+    "y": 32.241,
+    "t": "A",
     "o": 0,
-    "n": "one of 5 NPI sites mapped to this facility"
+    "n": "NPI site 542116 confirmed by GEM Global-Coal-Plant-Tracker-January-2026.x within 4.9 km"
    },
    {
     "i": 46,
@@ -505,23 +521,23 @@
     "y": 23.482,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 502056 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.9 km"
    },
    {
     "i": 47,
     "x": 134.732,
     "y": 23.782,
-    "t": "A",
+    "t": "B",
     "o": 1,
-    "n": ""
+    "n": "NPI site 630084 only; no independent same-name feature within 15 km"
    },
    {
     "i": 48,
     "x": 132.107,
     "y": 22.043,
-    "t": "C",
+    "t": "A",
     "o": 0,
-    "n": "located through the FY2023-24 row “Daunia Mine” — a name pair not yet adjudicated"
+    "n": "NPI site 586954 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.4 km"
    },
    {
     "i": 49,
@@ -529,39 +545,31 @@
     "y": 24.623,
     "t": "A",
     "o": 0,
-    "n": ""
-   },
-   {
-    "i": 50,
-    "x": 103.31,
-    "y": 31.532,
-    "t": "B",
-    "o": 0,
-    "n": "one of 52 NPI sites mapped to this facility"
+    "n": "NPI site 502542 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.7 km"
    },
    {
     "i": 51,
     "x": 134.372,
     "y": 34.432,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 495956 only; no independent same-name feature within 15 km"
    },
    {
     "i": 52,
     "x": 131.716,
     "y": 20.695,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 615758 only; no independent same-name feature within 15 km"
    },
    {
     "i": 53,
     "x": 109.022,
     "y": 27.903,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 586768 only; no independent same-name feature within 15 km"
    },
    {
     "i": 54,
@@ -569,7 +577,7 @@
     "y": 22.48,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 665920 confirmed by GA mine within 1.6 km"
    },
    {
     "i": 55,
@@ -577,7 +585,7 @@
     "y": 23.46,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 502100 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 3.0 km"
    },
    {
     "i": 56,
@@ -585,7 +593,7 @@
     "y": 25.616,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 500026 confirmed by GA plant within 0.0 km"
    },
    {
     "i": 57,
@@ -593,31 +601,31 @@
     "y": 30.767,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 538388 confirmed by repo onsite geojson AU-GOLD-2026/07_FIMISTON_ONSITE.geojson within 1.6 km"
    },
    {
     "i": 58,
     "x": 134.68,
     "y": 23.793,
-    "t": "C",
+    "t": "B",
     "o": 0,
-    "n": "located through the FY2023-24 row “Fisherman's Landing” — a name pair not yet adjudicated"
+    "n": "NPI site 509230 only; no independent same-name feature within 15 km"
    },
    {
     "i": 59,
     "x": 134.68,
     "y": 23.793,
-    "t": "C",
+    "t": "B",
     "o": 0,
-    "n": "located through the FY2023-24 row “Fisherman's Landing” — a name pair not yet adjudicated"
+    "n": "NPI site 509230 only; no independent same-name feature within 15 km"
    },
    {
     "i": 60,
     "x": 109.876,
     "y": 13.783,
-    "t": "A",
+    "t": "B",
     "o": 1,
-    "n": ""
+    "n": "NPI site 639694 only; no independent same-name feature within 15 km"
    },
    {
     "i": 61,
@@ -625,7 +633,7 @@
     "y": 22.983,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 549616 confirmed by GA mine within 4.5 km"
    },
    {
     "i": 62,
@@ -633,7 +641,15 @@
     "y": 38.076,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 526898 confirmed by repo onsite geojson AU-REFINERY-2026/01_GEELONG_REFINERY_ONSITE.geojson within 2.7 km"
+   },
+   {
+    "i": 63,
+    "x": 121.571,
+    "y": 13.981,
+    "t": "B",
+    "o": 0,
+    "n": "NPI site 496916 only; no independent same-name feature within 15 km"
    },
    {
     "i": 65,
@@ -641,7 +657,7 @@
     "y": 21.763,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 501876 confirmed by GA mine within 3.4 km"
    },
    {
     "i": 66,
@@ -649,7 +665,7 @@
     "y": 20.79,
     "t": "A",
     "o": 1,
-    "n": ""
+    "n": "NPI site 614720 confirmed by GEM GEM-GGIT-LNG-Teminals-2025-09.xlsx within 0.0 km"
    },
    {
     "i": 67,
@@ -657,15 +673,15 @@
     "y": 12.263,
     "t": "B",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 497720 only; no independent same-name feature within 15 km"
    },
    {
     "i": 68,
-    "x": 108.984,
-    "y": 28.851,
-    "t": "B",
+    "x": 109.078,
+    "y": 28.814,
+    "t": "A",
     "o": 0,
-    "n": "one of 4 NPI sites mapped to this facility"
+    "n": "NPI site 539232 confirmed by GA mine within 0.7 km"
    },
    {
     "i": 69,
@@ -673,7 +689,15 @@
     "y": 33.861,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 575978 confirmed by GA mine within 1.2 km"
+   },
+   {
+    "i": 70,
+    "x": 110.359,
+    "y": 27.98,
+    "t": "A",
+    "o": 0,
+    "n": "NPI site 648674 confirmed by GA mine within 1.4 km"
    },
    {
     "i": 71,
@@ -681,31 +705,55 @@
     "y": 21.489,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 502476 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.5 km"
    },
    {
     "i": 72,
-    "x": 106.096,
-    "y": 22.575,
-    "t": "B",
+    "x": 106.142,
+    "y": 22.961,
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 549288 is 43 km from two agreeing independent sources; placed at GEM iron-ore wiki, confirmed by GA mine (1.6 km apart)"
+   },
+   {
+    "i": 73,
+    "x": 106.502,
+    "y": 23.153,
+    "t": "A",
+    "o": 0,
+    "n": "NPI site 586040 is 72 km from two agreeing independent sources; placed at GEM iron-ore wiki, confirmed by GA mine (5.0 km apart)"
    },
    {
     "i": 74,
+    "x": 134.53,
+    "y": 32.469,
+    "t": "A",
+    "o": 0,
+    "n": "NPI site 484648 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.3 km"
+   },
+   {
+    "i": 75,
     "x": 134.419,
     "y": 32.337,
     "t": "B",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 493580; nearest independent same-name feature (GA power) is 11.4 km away"
    },
    {
     "i": 76,
-    "x": 129.031,
-    "y": 37.775,
+    "x": 129.008,
+    "y": 37.83,
+    "t": "B",
+    "o": 0,
+    "n": "NPI site 525616 only; no independent same-name feature within 15 km"
+   },
+   {
+    "i": 77,
+    "x": 134.658,
+    "y": 32.465,
     "t": "A",
     "o": 0,
-    "n": "same name once punctuation is normalised"
+    "n": "NPI site 495778 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.0 km"
    },
    {
     "i": 78,
@@ -713,7 +761,7 @@
     "y": 21.248,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 612644 confirmed by GA mine within 0.5 km"
    },
    {
     "i": 79,
@@ -721,15 +769,15 @@
     "y": 21.963,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 502148 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.3 km"
    },
    {
     "i": 80,
     "x": 131.744,
     "y": 20.709,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 597204 only; no independent same-name feature within 15 km"
    },
    {
     "i": 81,
@@ -737,7 +785,7 @@
     "y": 23.399,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 613456 confirmed by GA mine within 1.2 km"
    },
    {
     "i": 83,
@@ -745,7 +793,7 @@
     "y": 23.384,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 536894 confirmed by GA mine within 0.8 km"
    },
    {
     "i": 84,
@@ -753,23 +801,31 @@
     "y": 26.344,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 538348 confirmed by GA mine within 4.0 km"
+   },
+   {
+    "i": 85,
+    "x": 106.93,
+    "y": 23.768,
+    "t": "B",
+    "o": 0,
+    "n": "NPI site 666326; nearest independent same-name feature (GA mine) is 9.1 km away"
    },
    {
     "i": 86,
     "x": 103.136,
     "y": 33.219,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 542330; nearest independent same-name feature (GEM Global-Oil-and-Gas-Plant-Tracker-GOGPT-J) is 6.7 km away"
    },
    {
     "i": 87,
     "x": 132.196,
     "y": 23.237,
-    "t": "C",
+    "t": "A",
     "o": 0,
-    "n": "located through the FY2023-24 row “Kestrel Coal Pty Ltd” — a name pair not yet adjudicated"
+    "n": "NPI site 502458 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.8 km"
    },
    {
     "i": 88,
@@ -777,23 +833,31 @@
     "y": 28.678,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 541270 confirmed by GA mine within 0.8 km"
+   },
+   {
+    "i": 89,
+    "x": 106.105,
+    "y": 22.533,
+    "t": "B",
+    "o": 0,
+    "n": "NPI site 656434; nearest independent same-name feature (GEM iron-ore wiki) is 6.7 km away"
    },
    {
     "i": 90,
     "x": 135.235,
     "y": 32.897,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 488406 only; no independent same-name feature within 15 km"
    },
    {
     "i": 91,
     "x": 103.159,
     "y": 32.192,
-    "t": "B",
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 536710 confirmed by GEM Global-Coal-Plant-Tracker-January-2026.x within 0.7 km"
    },
    {
     "i": 92,
@@ -801,7 +865,7 @@
     "y": 32.227,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 541840 confirmed by GEM Global-Coal-Plant-Tracker-January-2026.x within 3.2 km"
    },
    {
     "i": 93,
@@ -809,15 +873,15 @@
     "y": 22.457,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 563268 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.5 km"
    },
    {
     "i": 94,
     "x": 130.844,
     "y": 41.131,
-    "t": "A",
+    "t": "B",
     "o": 1,
-    "n": ""
+    "n": "NPI site 521154; nearest independent same-name feature (repo onsite geojson AU-STEEL-2026/03_BELL_BAY_ONSITE.geojson) is 14.5 km away"
    },
    {
     "i": 95,
@@ -825,7 +889,15 @@
     "y": 33.01,
     "t": "A",
     "o": 1,
-    "n": ""
+    "n": "NPI site 514612 confirmed by GA plant within 0.7 km"
+   },
+   {
+    "i": 96,
+    "x": 102.447,
+    "y": 21.732,
+    "t": "B",
+    "o": 0,
+    "n": "NPI site 605872 only; no independent same-name feature within 15 km (a GEM Global-Oil-and-Gas-Extraction-Tracker-Ma feature of the same name lies 87 km away but is not a site registry for this sector)"
    },
    {
     "i": 97,
@@ -833,15 +905,15 @@
     "y": 33.119,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 489898 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.1 km"
    },
    {
     "i": 98,
-    "x": 134.399,
-    "y": 32.262,
+    "x": 134.281,
+    "y": 32.295,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 568994 is 13 km from two agreeing independent sources; placed at GEM Global Coal Mine Tracker, May 2026__.xls, confirmed by GA mine (3.5 km apart)"
    },
    {
     "i": 99,
@@ -849,7 +921,7 @@
     "y": 22.634,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 538192 confirmed by GA mine within 1.7 km"
    },
    {
     "i": 100,
@@ -857,23 +929,23 @@
     "y": 30.566,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 604416 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.4 km"
    },
    {
     "i": 101,
-    "x": 121.523,
-    "y": 15.63,
-    "t": "B",
-    "o": 1,
-    "n": "one of 3 NPI sites mapped to this facility"
+    "x": 121.256,
+    "y": 16.435,
+    "t": "A",
+    "o": 0,
+    "n": "NPI site 496818 confirmed by GA mine within 1.1 km"
    },
    {
     "i": 102,
-    "x": 117.49,
-    "y": 13.785,
+    "x": 121.26,
+    "y": 16.433,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 497498 confirmed by GA mine within 0.6 km"
    },
    {
     "i": 103,
@@ -881,7 +953,7 @@
     "y": 34.188,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 564226 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.5 km"
    },
    {
     "i": 104,
@@ -889,7 +961,7 @@
     "y": 22.863,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 554466 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 2.4 km"
    },
    {
     "i": 105,
@@ -897,7 +969,7 @@
     "y": 12.676,
     "t": "A",
     "o": 1,
-    "n": ""
+    "n": "NPI site 498102 confirmed by GEM Global-Oil-and-Gas-Extraction-Tracker-Ma within 1.3 km"
    },
    {
     "i": 106,
@@ -905,15 +977,15 @@
     "y": 32.282,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 567576 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.5 km"
    },
    {
     "i": 107,
-    "x": 124.922,
-    "y": 28.11,
+    "x": 124.924,
+    "y": 28.112,
     "t": "B",
     "o": 0,
-    "n": "one of 19 NPI sites mapped to this facility"
+    "n": "NPI site 514748 only; no independent same-name feature within 15 km"
    },
    {
     "i": 108,
@@ -921,7 +993,7 @@
     "y": 21.985,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 501682 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 2.2 km"
    },
    {
     "i": 109,
@@ -929,7 +1001,7 @@
     "y": 21.972,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 599188 confirmed by GA power within 4.4 km"
    },
    {
     "i": 110,
@@ -937,7 +1009,7 @@
     "y": 21.885,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 502262 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.7 km"
    },
    {
     "i": 111,
@@ -945,39 +1017,39 @@
     "y": 20.728,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 502206 confirmed by repo onsite geojson AU-BASEMETALS-2026/02_MOUNT_ISA_ONSITE.geojson within 1.4 km"
    },
    {
     "i": 112,
-    "x": 134.798,
-    "y": 32.817,
-    "t": "B",
+    "x": 134.397,
+    "y": 32.259,
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 638510 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.3 km"
    },
    {
     "i": 113,
-    "x": 134.601,
-    "y": 32.399,
-    "t": "B",
+    "x": 134.623,
+    "y": 32.393,
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 490876 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.6 km"
    },
    {
     "i": 115,
     "x": 108.61,
     "y": 28.768,
-    "t": "B",
+    "t": "A",
     "o": 0,
-    "n": "one of 3 NPI sites mapped to this facility"
+    "n": "NPI site 536790 confirmed by GA mine within 0.3 km"
    },
    {
     "i": 116,
     "x": 135.05,
     "y": 33.063,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 489868 only; no independent same-name feature within 15 km"
    },
    {
     "i": 117,
@@ -985,63 +1057,79 @@
     "y": 30.52,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 554950 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.5 km"
+   },
+   {
+    "i": 118,
+    "x": 131.777,
+    "y": 21.212,
+    "t": "A",
+    "o": 0,
+    "n": "NPI site 502298 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.5 km"
    },
    {
     "i": 119,
-    "x": 106.627,
-    "y": 23.361,
-    "t": "B",
+    "x": 106.74,
+    "y": 23.341,
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 536954 confirmed by GA mine within 1.7 km"
+   },
+   {
+    "i": 120,
+    "x": 106.661,
+    "y": 23.344,
+    "t": "A",
+    "o": 0,
+    "n": "NPI site 539028 confirmed by GEM Global-Oil-and-Gas-Plant-Tracker-GOGPT-J within 0.0 km"
    },
    {
     "i": 121,
     "x": 103.675,
     "y": 32.751,
-    "t": "B",
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 537064 confirmed by GA mine within 0.1 km"
    },
    {
     "i": 122,
-    "x": 115.769,
-    "y": 20.528,
+    "x": 116.112,
+    "y": 20.543,
     "t": "B",
     "o": 0,
-    "n": "one of 4 NPI sites mapped to this facility"
+    "n": "NPI site 496554; nearest independent same-name feature (repo onsite geojson AU-GOLD-2026/02_TANAMI_ONSITE.geojson) is 14.3 km away"
    },
    {
     "i": 123,
     "x": 101.653,
     "y": 21.403,
-    "t": "A",
+    "t": "B",
     "o": 1,
-    "n": ""
+    "n": "NPI site 570036 only; no independent same-name feature within 15 km"
    },
    {
     "i": 124,
     "x": 131.071,
     "y": 42.78,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 523494 only; no independent same-name feature within 15 km"
    },
    {
     "i": 125,
-    "x": 103.89,
-    "y": 19.499,
+    "x": 103.48,
+    "y": 19.584,
     "t": "B",
     "o": 1,
-    "n": "one of 5 NPI sites mapped to this facility"
+    "n": "NPI site 539900 only; no independent same-name feature within 15 km (a GEM GEM-GGIT-LNG-Teminals-2025-09.xlsx feature of the same name lies 131 km away but is not a site registry for this sector)"
    },
    {
     "i": 126,
     "x": 134.203,
     "y": 34.853,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 495518 only; no independent same-name feature within 15 km"
    },
    {
     "i": 127,
@@ -1049,23 +1137,23 @@
     "y": 33.161,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 514710 confirmed by repo onsite geojson AU-LEADZINC-2026/01_PORT_PIRIE_ONSITE.geojson within 1.0 km"
    },
    {
     "i": 128,
-    "x": 132.177,
-    "y": 23.036,
+    "x": 132.3,
+    "y": 23.072,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 605674 is 15 km from two agreeing independent sources; placed at GEM Global Coal Mine Tracker, May 2026__.xls, confirmed by GA mine (0.6 km apart)"
    },
    {
     "i": 129,
-    "x": 121.954,
-    "y": 30.439,
-    "t": "A",
+    "x": 121.969,
+    "y": 30.437,
+    "t": "B",
     "o": 0,
-    "n": "same name once punctuation is normalised"
+    "n": "no NPI site; placed from GA mine"
    },
    {
     "i": 130,
@@ -1073,7 +1161,7 @@
     "y": 22.184,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 698364 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 3.3 km"
    },
    {
     "i": 132,
@@ -1081,31 +1169,23 @@
     "y": 38.179,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 529222 confirmed by GA power within 1.3 km"
    },
    {
     "i": 133,
     "x": 123.64,
     "y": 34.55,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 515316 only; no independent same-name feature within 15 km"
    },
    {
     "i": 134,
     "x": 127.448,
     "y": 38.572,
-    "t": "A",
-    "o": 0,
-    "n": ""
-   },
-   {
-    "i": 135,
-    "x": 136.348,
-    "y": 27.573,
     "t": "B",
     "o": 0,
-    "n": "one of 23 NPI sites mapped to this facility"
+    "n": "NPI site 549422 only; no independent same-name feature within 15 km"
    },
    {
     "i": 136,
@@ -1113,15 +1193,15 @@
     "y": 23.234,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 538212 confirmed by GA mine within 0.9 km"
    },
    {
     "i": 137,
     "x": 134.101,
     "y": 23.319,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 513184 only; no independent same-name feature within 15 km"
    },
    {
     "i": 138,
@@ -1129,7 +1209,7 @@
     "y": 22.26,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 501858 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.5 km"
    },
    {
     "i": 139,
@@ -1137,23 +1217,15 @@
     "y": 21.881,
     "t": "A",
     "o": 0,
-    "n": ""
-   },
-   {
-    "i": 140,
-    "x": 104.357,
-    "y": 20.66,
-    "t": "B",
-    "o": 0,
-    "n": "one of 4 NPI sites mapped to this facility"
+    "n": "NPI site 507018 confirmed by GA mine within 1.1 km"
    },
    {
     "i": 141,
     "x": 105.936,
     "y": 21.05,
-    "t": "B",
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 642210 confirmed by GA mine within 2.5 km"
    },
    {
     "i": 142,
@@ -1161,15 +1233,15 @@
     "y": 32.635,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 536730 confirmed by GEM Global-Oil-and-Gas-Plant-Tracker-GOGPT-J within 1.4 km"
    },
    {
     "i": 143,
     "x": 102.794,
     "y": 19.996,
-    "t": "A",
+    "t": "B",
     "o": 1,
-    "n": ""
+    "n": "NPI site 567936 only; no independent same-name feature within 15 km"
    },
    {
     "i": 144,
@@ -1177,7 +1249,7 @@
     "y": 22.051,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 501912 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.7 km"
    },
    {
     "i": 145,
@@ -1185,7 +1257,7 @@
     "y": 34.463,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 487830 confirmed by repo onsite geojson AU-STEEL-2026/01_PORT_KEMBLA_ONSITE.geojson within 0.8 km"
    },
    {
     "i": 146,
@@ -1193,15 +1265,15 @@
     "y": 40.852,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 521540 confirmed by GA plant within 0.3 km"
    },
    {
     "i": 147,
     "x": 126.194,
     "y": 38.377,
-    "t": "A",
+    "t": "B",
     "o": 1,
-    "n": ""
+    "n": "NPI site 529376 only; no independent same-name feature within 15 km"
    },
    {
     "i": 148,
@@ -1209,31 +1281,23 @@
     "y": 33.396,
     "t": "A",
     "o": 0,
-    "n": ""
-   },
-   {
-    "i": 150,
-    "x": 136.429,
-    "y": 27.384,
-    "t": "C",
-    "o": 0,
-    "n": "located through the FY2023-24 row “Qantas Airways Limited National Transport Facility” — a name pair not yet adjudicated"
+    "n": "NPI site 539710 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.3 km"
    },
    {
     "i": 151,
     "x": 134.059,
     "y": 26.948,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 564542 only; no independent same-name feature within 15 km"
    },
    {
     "i": 152,
     "x": 134.801,
     "y": 23.866,
-    "t": "A",
+    "t": "B",
     "o": 1,
-    "n": ""
+    "n": "NPI site 500586 only; no independent same-name feature within 15 km"
    },
    {
     "i": 153,
@@ -1241,15 +1305,23 @@
     "y": 23.769,
     "t": "A",
     "o": 1,
-    "n": ""
+    "n": "NPI site 616606 confirmed by GEM GEM-GGIT-LNG-Teminals-2025-09.xlsx within 0.0 km"
    },
    {
     "i": 154,
     "x": 133.679,
     "y": 24.538,
+    "t": "B",
+    "o": 0,
+    "n": "NPI site 502808 only; no independent same-name feature within 15 km"
+   },
+   {
+    "i": 156,
+    "x": 130.458,
+    "y": 41.332,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 523354 confirmed by GA plant within 0.0 km"
    },
    {
     "i": 157,
@@ -1257,15 +1329,15 @@
     "y": 20.113,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 501916 confirmed by GA mine within 1.9 km"
    },
    {
     "i": 158,
-    "x": 134.561,
-    "y": 32.402,
-    "t": "B",
+    "x": 134.562,
+    "y": 32.447,
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 495674 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.5 km"
    },
    {
     "i": 159,
@@ -1273,15 +1345,15 @@
     "y": 27.408,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 500074 confirmed by GA plant within 0.0 km"
    },
    {
     "i": 160,
     "x": 126.406,
     "y": 12.668,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 502028 only; no independent same-name feature within 15 km"
    },
    {
     "i": 161,
@@ -1289,7 +1361,7 @@
     "y": 23.827,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 500578 confirmed by GEM Global-Oil-and-Gas-Plant-Tracker-GOGPT-J within 0.6 km"
    },
    {
     "i": 162,
@@ -1297,23 +1369,23 @@
     "y": 24.443,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 502244 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.8 km"
    },
    {
     "i": 163,
     "x": 132.782,
     "y": 26.456,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 621622 only; no independent same-name feature within 15 km"
    },
    {
     "i": 164,
-    "x": 105.613,
-    "y": 20.344,
-    "t": "B",
+    "x": 106.861,
+    "y": 22.446,
+    "t": "A",
     "o": 0,
-    "n": "one of 3 NPI sites mapped to this facility"
+    "n": "NPI site 604630 confirmed by GEM iron-ore wiki within 2.0 km"
    },
    {
     "i": 165,
@@ -1321,55 +1393,63 @@
     "y": 34.359,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 489624 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.4 km"
    },
    {
     "i": 166,
-    "x": 132.117,
-    "y": 22.433,
+    "x": 132.136,
+    "y": 22.371,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 501804 is 7 km from two agreeing independent sources; placed at GEM Global Coal Mine Tracker, May 2026__.xls, confirmed by GA mine (0.9 km apart)"
+   },
+   {
+    "i": 167,
+    "x": 129.381,
+    "y": 41.49,
+    "t": "A",
+    "o": 0,
+    "n": "NPI site 522116 confirmed by GA mine within 0.4 km"
    },
    {
     "i": 168,
     "x": 128.882,
     "y": 37.93,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 529030 only; no independent same-name feature within 15 km"
    },
    {
     "i": 169,
-    "x": 103.499,
+    "x": 103.498,
     "y": 21.077,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": "same name once punctuation is normalised"
+    "n": "no NPI site; placed from GA power"
    },
    {
     "i": 170,
     "x": 104.984,
     "y": 22.209,
+    "t": "B",
+    "o": 0,
+    "n": "NPI site 587712; nearest independent same-name feature (GEM iron-ore wiki) is 10.7 km away"
+   },
+   {
+    "i": 171,
+    "x": 105.102,
+    "y": 22.144,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 607718 confirmed by GA power within 0.3 km"
    },
    {
     "i": 172,
-    "x": 132.084,
-    "y": 22.3,
+    "x": 132.264,
+    "y": 21.753,
     "t": "A",
     "o": 0,
-    "n": ""
-   },
-   {
-    "i": 173,
-    "x": 134.083,
-    "y": 23.359,
-    "t": "A",
-    "o": 0,
-    "n": ""
+    "n": "NPI site 501840 is 64 km from two agreeing independent sources; placed at GEM Global Coal Mine Tracker, May 2026__.xls, confirmed by GA mine (2.0 km apart)"
    },
    {
     "i": 174,
@@ -1377,15 +1457,15 @@
     "y": 33.514,
     "t": "B",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 543618 only; no independent same-name feature within 15 km"
    },
    {
     "i": 175,
     "x": 132.822,
     "y": 25.948,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 499686; nearest independent same-name feature (GA plant) is 8.0 km away"
    },
    {
     "i": 176,
@@ -1393,15 +1473,15 @@
     "y": 12.52,
     "t": "A",
     "o": 1,
-    "n": ""
+    "n": "NPI site 648318 confirmed by GEM Global-Oil-and-Gas-Plant-Tracker-GOGPT-J within 0.7 km"
    },
    {
     "i": 177,
-    "x": 109.462,
-    "y": 29.105,
+    "x": 109.081,
+    "y": 29.078,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 539586 is 42 km from two agreeing independent sources; placed at GA mine, confirmed by GA power (2.2 km apart)"
    },
    {
     "i": 178,
@@ -1409,23 +1489,39 @@
     "y": 34.249,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 489632 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.5 km"
+   },
+   {
+    "i": 179,
+    "x": 108.894,
+    "y": 21.715,
+    "t": "A",
+    "o": 0,
+    "n": "NPI site 539626 confirmed by GEM Global-Oil-and-Gas-Plant-Tracker-GOGPT-J within 1.6 km"
+   },
+   {
+    "i": 180,
+    "x": 108.894,
+    "y": 21.715,
+    "t": "A",
+    "o": 0,
+    "n": "NPI site 539626 confirmed by GEM Global-Oil-and-Gas-Plant-Tracker-GOGPT-J within 1.6 km"
    },
    {
     "i": 181,
-    "x": 108.072,
-    "y": 28.844,
-    "t": "B",
+    "x": 107.817,
+    "y": 28.193,
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 544520 confirmed by GA mine within 0.1 km"
    },
    {
     "i": 182,
-    "x": 104.934,
-    "y": 22.759,
+    "x": 104.927,
+    "y": 22.782,
     "t": "B",
     "o": 0,
-    "n": "one of 3 NPI sites mapped to this facility"
+    "n": "NPI site 538232 only; no independent same-name feature within 15 km"
    },
    {
     "i": 183,
@@ -1433,7 +1529,7 @@
     "y": 32.824,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 485222 confirmed by GA power within 0.5 km"
    },
    {
     "i": 184,
@@ -1441,15 +1537,7 @@
     "y": 29.24,
     "t": "A",
     "o": 0,
-    "n": ""
-   },
-   {
-    "i": 185,
-    "x": 128.625,
-    "y": 38.107,
-    "t": "B",
-    "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 597386 confirmed by GA mine within 2.4 km"
    },
    {
     "i": 186,
@@ -1457,31 +1545,31 @@
     "y": 32.548,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 491430 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 0.8 km"
    },
    {
-    "i": 187,
-    "x": 128.189,
-    "y": 37.562,
-    "t": "B",
+    "i": 188,
+    "x": 135.026,
+    "y": 33.161,
+    "t": "A",
     "o": 0,
-    "n": "one of 7 NPI sites mapped to this facility"
+    "n": "NPI site 483772 confirmed by GEM Global-Coal-Plant-Tracker-January-2026.x within 0.2 km"
    },
    {
     "i": 189,
     "x": 102.98,
     "y": 20.651,
-    "t": "A",
+    "t": "B",
     "o": 1,
-    "n": ""
+    "n": "NPI site 540176 only; no independent same-name feature within 15 km"
    },
    {
     "i": 190,
     "x": 101.604,
     "y": 21.433,
-    "t": "A",
+    "t": "B",
     "o": 1,
-    "n": ""
+    "n": "NPI site 558236 only; no independent same-name feature within 15 km"
    },
    {
     "i": 193,
@@ -1489,23 +1577,23 @@
     "y": 32.917,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 536750 confirmed by GEM Global-Oil-and-Gas-Plant-Tracker-GOGPT-J within 0.3 km"
    },
    {
     "i": 194,
     "x": 134.534,
     "y": 32.568,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 491460 only; no independent same-name feature within 15 km"
    },
    {
     "i": 195,
     "x": 134.609,
     "y": 32.606,
-    "t": "B",
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 488346 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 1.4 km"
    },
    {
     "i": 196,
@@ -1513,39 +1601,63 @@
     "y": 23.175,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 543542 confirmed by GEM Global-Oil-and-Gas-Plant-Tracker-GOGPT-J within 4.3 km"
+   },
+   {
+    "i": 197,
+    "x": 103.531,
+    "y": 22.056,
+    "t": "C",
+    "o": 0,
+    "n": "NPI site 695302 at -22.1968,116.2270 and GEM iron-ore wiki at -22.0557,116.1958 disagree by 16 km; drawn at the latter as an open circle"
    },
    {
     "i": 198,
     "x": 102.467,
     "y": 21.698,
-    "t": "B",
+    "t": "A",
     "o": 0,
-    "n": "one of 2 NPI sites mapped to this facility"
+    "n": "NPI site 642158 confirmed by GEM GEM-GGIT-LNG-Teminals-2025-09.xlsx within 0.1 km"
    },
    {
     "i": 199,
-    "x": 133.449,
-    "y": 32.269,
+    "x": 133.533,
+    "y": 32.319,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 483992 is 10 km from two agreeing independent sources; placed at GEM Global Coal Mine Tracker, May 2026__.xls, confirmed by GA mine (2.2 km apart)"
    },
    {
     "i": 200,
     "x": 105.737,
     "y": 21.195,
-    "t": "C",
+    "t": "A",
     "o": 0,
-    "n": "located through the FY2023-24 row “Wodgina Operations” — a name pair not yet adjudicated"
+    "n": "NPI site 539402 confirmed by GA mine within 2.3 km"
+   },
+   {
+    "i": 201,
+    "x": 133.261,
+    "y": 35.054,
+    "t": "A",
+    "o": 0,
+    "n": "NPI site 607274 confirmed by GA mine within 1.2 km"
+   },
+   {
+    "i": 202,
+    "x": 103.417,
+    "y": 33.241,
+    "t": "B",
+    "o": 0,
+    "n": "NPI site 539960 only; no independent same-name feature within 15 km"
    },
    {
     "i": 203,
     "x": 106.104,
     "y": 22.729,
-    "t": "A",
+    "t": "B",
     "o": 0,
-    "n": ""
+    "n": "NPI site 536914 only; no independent same-name feature within 15 km"
    },
    {
     "i": 204,
@@ -1553,7 +1665,15 @@
     "y": 22.756,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 538252 confirmed by GA mine within 1.6 km"
+   },
+   {
+    "i": 205,
+    "x": 106.663,
+    "y": 23.344,
+    "t": "A",
+    "o": 0,
+    "n": "NPI site 612506 confirmed by GEM Global-Oil-and-Gas-Plant-Tracker-GOGPT-J within 0.2 km"
    },
    {
     "i": 206,
@@ -1561,7 +1681,7 @@
     "y": 23.273,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 502662 confirmed by GEM Global Coal Mine Tracker, May 2026__.xls within 4.9 km"
    },
    {
     "i": 207,
@@ -1569,7 +1689,7 @@
     "y": 23.836,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 508076 confirmed by GEM Global-Oil-and-Gas-Plant-Tracker-GOGPT-J within 1.8 km"
    },
    {
     "i": 208,
@@ -1577,51 +1697,37 @@
     "y": 20.626,
     "t": "A",
     "o": 0,
-    "n": ""
+    "n": "NPI site 547078 confirmed by repo onsite geojson AU-FERTILISER-2026/01_YPF_AMMONIA_ONSITE.geojson within 0.8 km"
    }
   ],
-  "missing": [
-   "2. Solid Waste Services - MRL",
+  "missing": [],
+  "not_placed": [
+   "Aurizon National Transport Facility",
    "AusNet Gas Services Pty Ltd",
    "Australian Gas Networks (Vic) Pty Ltd",
-   "Beaudesert Plant - A J Bush & Sons (Mfrs) P/L",
-   "Blair Athol Operations",
    "CTC WA Facility",
-   "GEM01",
+   "DBNGP",
    "Gippsland Basin facility",
-   "Gruyere Mine Site",
-   "Hope Downs 4 Mine",
-   "HVY01 Hunter Valley Energy Coal - CCL Facility",
-   "Integra Underground Mine",
    "JGN",
-   "Karlawinda Gold Project",
-   "Koodaideri Mine",
-   "Macedon",
    "Multinet Principal Distribution Network and South Gippsland Pipeline",
-   "Newlands Coal Complex including Newlands Northern UG",
-   "Newman Power Station",
    "Onslow Haul Road",
+   "Pacific National National Transport Facility",
+   "Pilbara Rail Operations",
    "PRL03 Rail - IOR Facility",
+   "Qantas Airways Limited - National Facility",
    "Rail",
-   "Railton",
-   "Savage River Mine",
-   "Solomon Power Station",
-   "Telfer Gold Mine",
-   "Telfer Gold Mine",
-   "Vales Point Power Station",
+   "South West Queensland Pipeline",
+   "TT-Line - Victorian Operation",
+   "V/Line",
    "Virgin Australia Holdings National Transport Facility",
-   "WA Transport facility",
-   "West Pilbara Iron Ore Project",
-   "Woodlawn Bioreactor",
-   "WOR01",
-   "Yarnima Power Station"
+   "WA Transport facility"
   ],
   "tiers": {
-   "A": 131,
-   "B": 37,
-   "C": 7
+   "B": 70,
+   "A": 119,
+   "C": 1
   },
-  "offshore": 20
+  "offshore": 19
  },
  "scorecard": [
   {

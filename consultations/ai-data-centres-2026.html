@@ -6,7 +6,7 @@
   <title>AI and data centres: Australia has the data, but cannot reliably link it by facility | Heliovulcan</title>
   <meta name="description" content="Submission 89 to the Senate inquiry into artificial intelligence and data centres: 11 rated data-centre records in a 4,658-row NABERS extract, six still current a month later, and three recommendations about how records are structured." />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
-  <link rel="stylesheet" href="/style.css?v=20260915f" />
+  <link rel="stylesheet" href="/style.css?v=20260915g" />
   <link rel="canonical" href="https://heliovulcan.com.au/consultations/ai-data-centres-2026.html" />
   <meta property="og:site_name" content="Heliovulcan" />
   <meta property="og:type" content="article" />
@@ -16,36 +16,40 @@
   <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <style>
-    .sub-meta { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 26px; font-size: 13.5px; color: var(--ink-soft); }
+    /* submission grid: prose 760, findings/recommendations/numbers 900, all left-aligned */
+    .submission-prose { max-width: 760px; }
+    .submission-wide { max-width: 900px; }
+    .sub-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px; margin-top: 26px; font-size: 14px; color: var(--ink-soft); max-width: 900px; }
     .sub-meta b { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); margin-bottom: 4px; }
-    .sub-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 36px; }
+    .sub-nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 32px; margin-top: 36px; max-width: 900px; }
     .sub-nums > div { border-top: 1px solid var(--ink); padding-top: 14px; }
-    .sub-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1.05; }
-    .sub-nums span { display: block; font-size: 14px; color: var(--ink-soft); margin-top: 8px; max-width: 30ch; }
-    .findings { counter-reset: f; list-style: none; margin: 28px 0 0; padding: 0; border-top: 2px solid var(--ink); }
+    .sub-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: 38px; line-height: 1.05; }
+    .sub-nums span { display: block; font-size: 13.5px; color: var(--ink-soft); margin-top: 8px; }
+    .update { max-width: 900px; margin-top: 28px; border-left: 2px solid var(--amber); padding: 4px 0 4px 18px; font-size: 15px; line-height: 1.6; color: var(--ink); }
+    .update b { display: block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--amber); margin-bottom: 6px; }
+    .findings { counter-reset: f; list-style: none; margin: 28px 0 0; padding: 0; border-top: 2px solid var(--ink); max-width: 900px; }
     .findings li { counter-increment: f; display: grid; grid-template-columns: 3rem 1fr; gap: 0 18px; padding: 18px 0; border-bottom: 1px solid var(--line-soft); }
-    .findings li::before { content: counter(f, decimal-leading-zero); font-size: 12px; letter-spacing: .12em; font-weight: 600; color: var(--ink-soft); padding-top: 5px; }
-    .findings b { display: block; font-family: var(--serif); font-weight: 400; font-size: 21px; line-height: 1.3; }
-    .findings p { font-size: 15.5px; color: var(--ink-soft); margin-top: 8px; line-height: 1.6; max-width: 70ch; }
-    .kv { margin-top: 20px; border-top: 2px solid var(--ink); }
+    .findings li::before { content: counter(f, decimal-leading-zero); font-size: 12px; letter-spacing: .12em; font-weight: 600; color: var(--ink-soft); padding-top: 4px; }
+    .findings b { display: block; font-family: var(--sans); font-weight: 600; font-size: 17.5px; line-height: 1.4; color: var(--ink); }
+    .findings p { font-size: 16px; color: var(--ink); margin-top: 8px; line-height: 1.6; }
+    .findings p.upd { font-size: 13.5px; color: var(--ink-faint); margin-top: 6px; }
+    .recs { counter-reset: r; list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; max-width: 900px; }
+    .recs li { counter-increment: r; border-top: 2px solid var(--ink); padding: 16px 0 8px; }
+    .recs li::before { content: counter(r, decimal-leading-zero); display: block; font-size: 12px; letter-spacing: .12em; font-weight: 600; color: var(--ink-soft); }
+    .recs b { display: block; font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.2; margin-top: 8px; }
+    .recs p { font-size: 15.5px; color: var(--ink); margin-top: 10px; line-height: 1.6; }
+    .kv { margin-top: 20px; border-top: 2px solid var(--ink); max-width: 900px; }
     .kv div { display: grid; grid-template-columns: 12rem 1fr; gap: 0 24px; padding: 13px 0; border-bottom: 1px solid var(--line-soft); font-size: 15px; }
     .kv b { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding-top: 3px; }
-    details.fold { margin-top: 22px; border-top: 1px solid var(--ink); }
+    details.fold { margin-top: 22px; border-top: 1px solid var(--ink); max-width: 760px; }
     details.fold > summary { cursor: pointer; padding: 14px 0; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
     details.fold[open] > summary { border-bottom: 1px solid var(--line-soft); }
-    details.fold .body { padding: 16px 0 6px; font-size: 15.5px; color: var(--ink-soft); max-width: 72ch; line-height: 1.65; }
+    details.fold .body { padding: 16px 0 6px; font-size: 15.5px; color: var(--ink-soft); line-height: 1.65; }
     details.fold .body p + p { margin-top: 12px; }
-    .reading { max-width: 72ch; } .reading p + p { margin-top: 14px; }
-    .sub-card { display: block; border-top: 1px solid var(--ink); padding: 24px 0 36px; text-decoration: none; color: inherit; }
-    .sub-card .k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
-    .sub-card h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.2; margin-top: 12px; max-width: 26ch; }
-    .sub-card .who { font-size: 14px; color: var(--ink-soft); margin-top: 10px; }
-    .sub-card .nums { display: flex; flex-wrap: wrap; gap: 6px 32px; margin-top: 18px; font-size: 14px; }
-    .sub-card .nums b { font-family: var(--serif); font-weight: 400; font-size: 26px; display: block; }
-    .sub-card .go { display: inline-block; margin-top: 18px; font-size: 14.5px; font-weight: 600; color: var(--ink); }
-    .sub-card .go + .go { margin-left: 28px; }
-    .sub-card:hover .go { color: var(--orange-deep); }
-    @media (max-width: 700px) { .sub-nums { grid-template-columns: 1fr; } .kv div { grid-template-columns: 1fr; gap: 4px; } }
+    .revisions { max-width: 760px; margin-top: 40px; font-size: 13.5px; color: var(--ink-faint); line-height: 1.6; }
+    .revisions b { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }
+    @media (max-width: 900px) { .sub-nums { grid-template-columns: 1fr 1fr; } .recs { grid-template-columns: 1fr; } }
+    @media (max-width: 700px) { .sub-nums { grid-template-columns: 1fr; } .sub-meta { grid-template-columns: 1fr; } .kv div { grid-template-columns: 1fr; gap: 4px; } }
   </style>
 </head>
 <body>
@@ -62,7 +66,7 @@
       </nav>
     </div>
   </header>
-  <script src="/assets/site-nav.js?v=20260915f" defer></script>
+  <script src="/assets/site-nav.js?v=20260915g" defer></script>
   <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/consultations.html">Consultations</a><span aria-hidden="true">/</span><span aria-current="page">AI and data centres: Australia has the data, but cannot…</span></div></nav>
   <main>
 
@@ -74,8 +78,8 @@
         <div class="sub-meta">
           <div><b>Institution</b>Senate Environment and Communications References Committee</div>
           <div><b>Inquiry</b>Artificial intelligence and data centres, referred 13 May 2026</div>
-          <div><b>Status</b>Lodged August 2026 &middot; published by the committee as Submission 89 &middot; report due 16 November 2026</div>
           <div><b>Scope</b>Term of reference (a), and the energy and water elements of (b)</div>
+          <div><b>Status</b>Published as Submission 89 &middot; report due 16 November 2026</div>
         </div>
       </div>
     </section>
@@ -83,35 +87,39 @@
     <section class="section">
       <div class="container">
         <div class="sub-nums">
-          <div><b>11</b><span>Australian data-centre records returned by the NABERS current-ratings extract of 15 August 2026</span></div>
-          <div><b>6</b><span>of those ratings still current when re-checked on 14 September 2026; the rest had expired</span></div>
-          <div><b>10 of 11</b><span>records use the Infrastructure scope, which excludes the IT load that defines a data centre</span></div>
+          <div><b>4,658</b><span>rows in the complete NABERS ratings extract downloaded on 15 August 2026</span></div>
+          <div><b>11</b><span>data-centre records returned by that extract</span></div>
+          <div><b>6</b><span>ratings confirmed as current in the subsequent validity check, 14 September 2026</span></div>
+          <div><b>10 of 11</b><span>records using the Infrastructure scope, which excludes IT load</span></div>
+        </div>
+        <div class="update">
+          <b>Data update &middot; 14 September 2026</b>
+          The 15 August extract returned 11 data-centre records. A subsequent check of rating validity found that six remained current and five were no longer listed. Rating expiry explains at least one of the five (certificate expiry 25 August 2026) and is the likely cause of the rest; a difference in filtering between the two extracts has not been excluded. The lodged submission reports the original extract result; this page shows both the original and the subsequently verified counts.
         </div>
 
         <h2 class="section-title" style="margin-top:56px">The question</h2>
-        <p class="section-intro">Term of reference (a): the effectiveness of existing regulatory frameworks in managing the growth of data centres; and the energy and water elements of term of reference (b). Community, industry and biodiversity impacts, and the arrangements between government and AI companies, are outside the submission.</p>
+        <p class="section-intro submission-prose">Term of reference (a): the effectiveness of existing regulatory frameworks in managing the growth of data centres; and the energy and water elements of term of reference (b). Community, industry and biodiversity impacts, and the arrangements between government and AI companies, are outside the submission.</p>
         <h2 class="section-title" style="margin-top:48px">Key findings</h2>
         <ol class="findings">
           <li><b>NGER, connection, planning, environmental and water records each identify a data centre differently.</b><p>Substantial regulatory data exists; it cannot be read reliably for one site.</p></li>
-          <li><b>The 15 August 2026 extract of 4,658 current NABERS ratings returned 11 Australian data-centre records; a check on 14 September 2026 found six still current, the others having expired.</b><p>Ten of the 11 records, and five of the six, use the Infrastructure scope, which excludes IT load; a rating on that scope says little about a data centre&rsquo;s energy performance. The submission was lodged on the 15 August extract. That a public register can lose five of 11 entries in a month through rating expiry, without any facility closing, is itself the case for a defined reporting boundary.</p></li>
-          <li><b>The 30 MW threshold in the AEMC's Package 2 draft does not reach the Northern Territory or Western Australia.</b><p>It sits in the National Electricity Rules, which apply to the NEM jurisdictions. The 51-page policy advice contains no reference to off-grid, islanded or unconnected facilities.</p></li>
+          <li><b>Ten of the 11 data-centre records returned by the extract used the Infrastructure rating scope.</b><p>The scope excludes IT load, so a rating on it says little about a data centre&rsquo;s energy performance. A subsequent validity check found that six of the 11 ratings remained current; five of those six are also on the Infrastructure scope. That a public register can lose five of 11 entries in a month without any facility closing is itself the case for a defined reporting boundary.</p></li>
+          <li><b>The proposed 30 MW National Electricity Rules threshold would not cover facilities in Western Australia or the Northern Territory.</b><p>The AEMC&rsquo;s Package 2 draft places it in rules that apply in the NEM jurisdictions only; the 51-page policy advice contains no reference to off-grid, islanded or unconnected facilities.</p></li>
           <li><b>Published water metrics are not comparable.</b><p>One company's FY25 reports label the same 773 ML both &ldquo;consumed&rdquo; and &ldquo;withdrawal&rdquo;.</p></li>
-          <li><b>Federal classification fields are unreliable.</b><p>A proposed facility including approximately 1,038 MW of gas-fired generation is recorded on the EPBC portal under a renewable industry type.</p></li>
+          <li><b>Federal classification fields are unreliable.</b><p>A proposed facility including approximately 1,038 MW of gas-fired generation is recorded on the EPBC portal under a renewable industry type.</p><p class="upd">Updated 14 September 2026 from the referral document; the lodged submission used an earlier industry-media range of 900&ndash;1,100 MW. The proposal was determined a controlled action on 4 September 2026.</p></li>
         </ol>
 
         <h2 class="section-title" style="margin-top:56px">Recommendations</h2>
-        <div class="kv">
-          <div><b>Identify the facility</b><span>A persistent identifier across NGER, connection, planning, environmental and water records, with a public crosswalk of non-sensitive fields.</span></div>
-          <div><b>Show who regulates it</b><span>A published coverage map for NEM-connected, non-NEM and off-grid facilities.</span></div>
-          <div><b>Measure consistently</b><span>Define the reporting boundary before the volume.</span></div>
-        </div>
+        <ol class="recs">
+          <li><b>Identify the facility</b><p>Create a persistent identifier across NGER, connection, planning, environmental and water records, with a public crosswalk of the non-sensitive fields.</p></li>
+          <li><b>Publish the regulatory perimeter</b><p>Show which framework applies to NEM-connected, non-NEM and off-grid facilities, so that a site&rsquo;s obligations can be read from one map.</p></li>
+          <li><b>Define the measurement boundary</b><p>Specify whether energy and water measures cover infrastructure or IT load, and withdrawal or consumption, before any volume is reported or compared.</p></li>
+        </ol>
 
         <h2 class="section-title" style="margin-top:56px">Open questions</h2>
-        <p class="section-intro">Seven matters are listed in the submission as unverified, including the correspondence between NABERS star ratings and PUE values, any published timetable for NABERS work on a data centre water framework, the final connection arrangement for one of the two Northern Territory proposals, and the water and planning instruments of all eight jurisdictions. The Safeguard Mechanism's Schedule 1 contains no production variable for a data centre; the consequence for an off-grid facility is set out as an uncertainty. No legal advice was obtained.</p>
-        <p class="section-intro">Correction, 14 September 2026: the referral states the gas-fired capacity as approximately 1,038 MW; an earlier version quoted an industry-media range of 900&ndash;1,100 MW. The proposal was determined a controlled action on 4 September 2026. The NABERS count is stated on both dates above.</p>
+        <p class="section-intro submission-prose">Seven matters are listed in the submission as unverified, including the correspondence between NABERS star ratings and PUE values, any published timetable for NABERS work on a data centre water framework, the final connection arrangement for one of the two Northern Territory proposals, and the water and planning instruments of all eight jurisdictions. The Safeguard Mechanism's Schedule 1 contains no production variable for a data centre; the consequence for an off-grid facility is set out as an uncertainty. No legal advice was obtained.</p>
         <h2 class="section-title" style="margin-top:56px">Sources</h2>
         <details class="fold" style="border-top:0"><summary>Evidence used</summary><div class="body">
-          <p>NGER Act 2007, NGER Regulations 2008 and the NGER (Safeguard Mechanism) Rule 2015 as currently compiled (legislation). AEMC advice on data centre regulatory pathways and the Package 2 draft determination (regulator document). EPBC Act Public Portal referral 2026/10560 and supporting documents (regulatory filing). NABERS Rating Register, complete current-ratings extract of 4,658 rows, 15 August 2026 (public register). Directive (EU) 2023/1791 Article 12 (legislation). Company annual and sustainability reporting (company disclosure).</p>
+          <p>NGER Act 2007, NGER Regulations 2008 and the NGER (Safeguard Mechanism) Rule 2015 as currently compiled (legislation). AEMC advice on data centre regulatory pathways and the Package 2 draft determination (regulator document). EPBC Act Public Portal referral 2026/10560 and supporting documents (regulatory filing). NABERS Rating Register, complete ratings extract of 4,658 rows downloaded on 15 August 2026, filtered to the data-centre building type (public register); validity re-checked against a fresh extract on 14 September 2026. Directive (EU) 2023/1791 Article 12 (legislation). Company annual and sustainability reporting (company disclosure).</p>
         </div></details>
 
         <div class="cta-row" style="margin-top:36px">
@@ -119,6 +127,8 @@
           <a class="btn btn--outline" href="/consultations.html">All submissions</a>
         </div>
         <p class="small-note">The committee has authorised publication as Submission 89. Authorisation to publish is an administrative decision and does not indicate that any finding has been accepted.</p>
+
+        <div class="revisions"><b>Revision history</b>14 September 2026 &mdash; gas-generation capacity updated to approximately 1,038 MW from the referral document; NABERS rating validity clarified (11 records returned, six current at verification).</div>
 
         <h2 class="section-title" style="margin-top:56px">Related research</h2>
         <div class="grid grid--3">

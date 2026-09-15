@@ -1545,3 +1545,11 @@ a.dl:hover { border-color: var(--orange-deep); }
 .series-bar a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
 .series-bar a:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
 .series-bar .is-off { color: var(--ink-faint); }
+
+/* evidence box at the top of research pieces */
+.basis-box { margin: 0 0 30px; padding: 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
+.basis-box > div { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 0 18px; padding: 10px 0; border-bottom: 1px solid var(--line-soft); }
+.basis-box > div:last-child { border-bottom: 0; }
+.basis-box dt { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding-top: 3px; }
+.basis-box dd { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--ink); }
+@media (max-width: 600px) { .basis-box > div { grid-template-columns: 1fr; gap: 2px; } }

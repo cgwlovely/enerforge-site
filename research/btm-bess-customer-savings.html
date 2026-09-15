@@ -6,7 +6,7 @@
   <title>Customer savings are not project revenue | Heliovulcan</title>
   <meta name="description" content="Customer avoided cost is not SPV revenue. Why early industrial PV+BESS models look profitable before they are financeable — and the cashflow chain a lender can actually underwrite." />
   <meta name="keywords" content="BTM BESS feasibility, customer avoided cost, EaaS contracted revenue, DSCR, project finance, financeability readiness" />
-  <link rel="stylesheet" href="/style.css?v=20260915f" />
+  <link rel="stylesheet" href="/style.css?v=20260915g" />
   <!-- SEO: canonical + social preview -->
   <link rel="canonical" href="https://heliovulcan.com.au/research/btm-bess-customer-savings.html" />
   <meta property="og:site_name" content="Heliovulcan" />
@@ -32,7 +32,7 @@
       </nav>
     </div>
   </header>
-  <script src="/assets/site-nav.js?v=20260915f" defer></script>
+  <script src="/assets/site-nav.js?v=20260915g" defer></script>
   <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/research.html">Research</a><span aria-hidden="true">/</span><span aria-current="page">Customer savings are not project revenue</span></div></nav>
 
   <main>
@@ -40,10 +40,10 @@
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research note</p>
+          <p class="eyebrow">Analytical framework</p>
           <h1>Customer savings are not project revenue</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research note</span>
+            <span class="tag">Analytical framework</span>
             <span class="sep" aria-hidden="true"></span>
             <span>12 June 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -67,6 +67,8 @@
         <div class="res-main">
                     <p class="series-bar"><b>Battery project readiness &middot; 2 of 9</b> <a href="/research/pre-dd-versus-feasibility-study.html">&larr; Previous</a> <a href="/research.html#battery-series">Series overview</a> <a href="/btm-demand-charges-australia.html">Next &rarr;</a></p>
           <p class="standfirst">A behind-the-meter BESS becomes financeable only when the allocation of savings is converted into enforceable cashflow. A model can look profitable to the customer and still be unfinanceable for a lender; the gap is where most early industrial projects fail during financing or diligence.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>When does a customer saving become revenue a lender can size debt against?</dd></div><div><dt>Basis</dt><dd>Heliovulcan&rsquo;s screening structure (contracted base, customer upside and lender downside cases); no completed transaction, project data set or contract is published.</dd></div><div><dt>Method</dt><dd>Follows value from customer avoided cost through the contract, SPV revenue, CFADS and debt service; the worked example below is illustrative.</dd></div><div><dt>Finding</dt><dd>Customer savings become project revenue only where a contract converts them into a payment obligation; the lender sizes debt against the weakest contracted link.</dd></div><div><dt>Limits</dt><dd>Illustrative structure; not derived from a completed transaction. Tenor, DSCR, availability and haircut assumptions are project-specific.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -124,6 +126,16 @@
           </div>
 
           <p>Every arrow is a place the value can leak. If the fee captures only part of the saving, the chain narrows at arrow one. If the fee is uncontracted or contingent, it narrows at arrow two. If tenor is short or DSCR thin, it narrows at debt service. The lender underwrites the narrowest contracted point in that chain.</p>
+
+          <div class="worked"><p class="eyebrow">Illustrative worked example</p>
+          <div class="table-scroll"><table class="matrix"><thead><tr><th>Item</th><th class="num">Customer</th><th class="num">SPV</th><th class="num">Lender case</th></tr></thead><tbody>
+            <tr><td>Avoided diesel and tariff cost</td><td class="num">A$X</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+            <tr><td>Contracted service fee</td><td class="num">(A$Y)</td><td class="num">A$Y</td><td class="num">A$Y, after availability and payment haircuts</td></tr>
+            <tr><td>Uncontracted value (upside sharing, carbon)</td><td class="num">A$Z</td><td class="num">A$Z</td><td class="num">A$0</td></tr>
+            <tr><td>Operating cost</td><td class="num">&mdash;</td><td class="num">(A$O)</td><td class="num">(A$O), stressed</td></tr>
+            <tr><td>Debt service</td><td class="num">&mdash;</td><td class="num">(A$N)</td><td class="num">tested at 1.30&times; DSCR on the contracted fee alone</td></tr>
+          </tbody></table></div>
+          <p class="small-note">Illustrative structure; not derived from a completed transaction. The customer&rsquo;s saving (X) exceeds the fee (Y) or the contract is not signed; the lender sizes debt on Y net of haircuts, never on X or Z.</p></div>
 
           <h2 id="s-s1-s2-s3-what-each-case-is-a">S1, S2, S3: what each case is for</h2>
 

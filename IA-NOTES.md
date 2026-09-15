@@ -218,6 +218,35 @@ Sixth editorial review. Changes and the rules they leave behind:
 - **Facility pages** open with a one-line decision summary: FY2024-25 position and the modelled FY2034-35
   position under current settings.
 
+## Round 12: submission-grade evidence standard for every piece (2026-09-15)
+
+Seventh review: the site had been audited for editing and structure, not for whether each article met
+the evidence standard the submissions meet. Rules now in force:
+
+- **Content types by evidence, not by topic**: Quantitative analysis (a data set, a stated calculation,
+  a checkable result) · Interactive model · Submission · Applied case · Analytical framework (a method or
+  decision structure; no representative sample claimed) · Practitioner note (professional judgement from
+  screening work and cited industry sources) · Reference. The legend sits on the research hub. Today:
+  diesel, baseline floor and the funding map are Quantitative analysis; nine BESS pieces are Analytical
+  framework; time-to-power, capital and readiness, emerging markets and weak-grid mines are Practitioner notes.
+- **Every research piece opens with the same five-line box**: Question · Basis · Method · Finding · Limits.
+  A framework says so in Basis ("no claim of a representative market sample") instead of borrowing the
+  register of a quantitative study.
+- **Titles state no more than the evidence supports**: "Grants pay for the first one, not the tenth" →
+  "Public funding is concentrated in first-of-a-kind mine-energy projects" (3 of 23, first-of-a-kind, "not
+  found" ≠ "no support"); "Capital is available…" → "Project readiness can constrain battery deployment
+  before capital availability does"; "most valuable part" → "can materially improve"; "emerging markets"
+  → "projects dependent on concessional or development finance"; time-to-power is conditional on slow
+  connection; demand charges are conditional on demand-based tariffs.
+- **Submission pages carry two-date facts, not a correction footnote**: the data-centre page shows
+  4,658 rows · 11 records · 6 current at verification · 10 of 11 Infrastructure scope, with a dated
+  Data update box directly under the numbers, a note under the finding that changed, and a revision
+  history at the foot. "Current-ratings extract" is now "the complete ratings extract downloaded on
+  15 August 2026", with the validity re-check described in Sources.
+- **Submission page grid**: prose 760 px, findings, recommendations and numbers 900 px, all left-aligned;
+  hero metadata in two fixed columns; finding titles in sans 17.5 px with the qualifying condition in
+  the title itself; recommendations as three numbered cards, each written in full.
+
 ## Homepage (2026-09-15, six modules)
 
 1. **Hero** — one sentence of value: *Independent analysis of Australian industrial assets, energy

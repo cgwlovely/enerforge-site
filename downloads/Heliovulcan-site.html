@@ -1548,6 +1548,14 @@ a.dl:hover { border-color: var(--orange-deep); }
 .series-bar a:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); }
 .series-bar .is-off { color: var(--ink-faint); }
 
+/* evidence box at the top of research pieces */
+.basis-box { margin: 0 0 30px; padding: 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
+.basis-box > div { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 0 18px; padding: 10px 0; border-bottom: 1px solid var(--line-soft); }
+.basis-box > div:last-child { border-bottom: 0; }
+.basis-box dt { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding-top: 3px; }
+.basis-box dd { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--ink); }
+@media (max-width: 600px) { .basis-box > div { grid-template-columns: 1fr; gap: 2px; } }
+
 
     /* =========================================================
        Safeguard Atlas — page-scoped components.
@@ -1787,7 +1795,7 @@ a.dl:hover { border-color: var(--orange-deep); }
 <div class="bundle-toc"><p class="eyebrow">Heliovulcan &middot; heliovulcan.com.au</p><h1>The whole site in one file</h1>
 <p>Assembled 2026-09-15 for review, after the restructure into entry, content and method pages and the removal of duplicated explanations and template section names. Every public page in reading order, navigation, breadcrumbs and footers removed, one shared stylesheet. The navigation itself (five entries, mega menus, mobile accordion) is described in the note below the contents.
 The Safeguard Atlas pages and the sample facility page are rendered snapshots (the live pages compute their figures in the browser); charts, the map and the interactive controls are omitted here, and the 209-row facility table is cut to its first rows. One facility page stands for the 209 generated ones.</p>
-<ol><li><a href="#p1">Home</a> <span>heliovulcan.com.au/index.html</span></li><li><a href="#p2">About</a> <span>heliovulcan.com.au/about.html</span></li><li><a href="#p3">Research</a> <span>heliovulcan.com.au/research.html</span></li><li><a href="#p4">Consultations — published submissions</a> <span>heliovulcan.com.au/consultations.html</span></li><li><a href="#p5">Submission: AI and data centres, 2026</a> <span>heliovulcan.com.au/consultations/ai-data-centres-2026.html</span></li><li><a href="#p6">Submission: Safeguard onsite abatement, 2026</a> <span>heliovulcan.com.au/consultations/safeguard-onsite-abatement-2026.html</span></li><li><a href="#p7">Methods</a> <span>heliovulcan.com.au/methods/index.html</span></li><li><a href="#p8">Projects</a> <span>heliovulcan.com.au/case-studies.html</span></li><li><a href="#p9">Research coverage</a> <span>heliovulcan.com.au/coverage.html</span></li><li><a href="#p10">Safeguard Atlas — Findings</a> <span>heliovulcan.com.au/safeguard-atlas.html</span></li><li><a href="#p11">Safeguard Atlas — Pathway</a> <span>heliovulcan.com.au/safeguard/pathway.html</span></li><li><a href="#p12">Safeguard Atlas — Policy settings</a> <span>heliovulcan.com.au/safeguard/policy.html</span></li><li><a href="#p13">Safeguard Atlas — Map</a> <span>heliovulcan.com.au/safeguard/map.html</span></li><li><a href="#p14">Safeguard Atlas — Facilities</a> <span>heliovulcan.com.au/safeguard/facilities.html</span></li><li><a href="#p15">Safeguard Atlas — Sandbox</a> <span>heliovulcan.com.au/safeguard/sandbox.html</span></li><li><a href="#p16">Safeguard Atlas — Scorecard</a> <span>heliovulcan.com.au/safeguard/scorecard.html</span></li><li><a href="#p17">Safeguard Atlas — Method</a> <span>heliovulcan.com.au/safeguard/method.html</span></li><li><a href="#p18">Facility page (one of 209): Port Kembla Steelworks</a> <span>heliovulcan.com.au/facility/port-kembla-steelworks.html</span></li><li><a href="#p19">Research: Lowering the threshold does more to the facilities already in</a> <span>heliovulcan.com.au/safeguard-review-2026-baseline-floor.html</span></li><li><a href="#p20">Technical appendix: how the baseline-floor analysis was built</a> <span>heliovulcan.com.au/safeguard/baseline-floor-method.html</span></li><li><a href="#p21">Research: Most of the diesel is on wheels</a> <span>heliovulcan.com.au/australian-diesel-replacement-market-size.html</span></li><li><a href="#p22">Research: Mine decarbonisation funding map</a> <span>heliovulcan.com.au/mine-decarbonisation-funding-map-australia.html</span></li><li><a href="#p23">Research: Locational pricing for remote energy</a> <span>heliovulcan.com.au/locational-pricing-remote-energy-australia.html</span></li><li><a href="#p24">Research: Time-to-power and off-grid hybrid energy</a> <span>heliovulcan.com.au/time-to-power-offgrid-hybrid.html</span></li><li><a href="#p25">Research: Behind-the-meter BESS and demand charges</a> <span>heliovulcan.com.au/btm-demand-charges-australia.html</span></li><li><a href="#p26">Research: Capital is available; readiness determines deployment</a> <span>heliovulcan.com.au/australian-battery-financing-capital-constraint.html</span></li><li><a href="#p27">Research: A BESS connection queue is not a construction pipeline</a> <span>heliovulcan.com.au/bess-development-queue-to-construction.html</span></li><li><a href="#p28">Research: Contract structure determines financeable cashflow</a> <span>heliovulcan.com.au/bess-forecast-is-not-cashflow.html</span></li><li><a href="#p29">Research: Ready to build when no critical right remains unresolved</a> <span>heliovulcan.com.au/bess-ready-to-build-completeness.html</span></li><li><a href="#p30">Research: Existing connection rights in a brownfield BESS site</a> <span>heliovulcan.com.au/brownfield-bess-connection-value.html</span></li><li><a href="#p31">Research: Emerging-market BESS starts with the buyer and financing</a> <span>heliovulcan.com.au/emerging-market-bess-develop-backwards.html</span></li><li><a href="#p32">Research: Hybrid assets require a single review</a> <span>heliovulcan.com.au/hybrid-asset-integrated-due-diligence.html</span></li><li><a href="#p33">Research: Customer savings are not project revenue</a> <span>heliovulcan.com.au/research/btm-bess-customer-savings.html</span></li><li><a href="#p34">Research: A Pre-DD screen is not a feasibility study</a> <span>heliovulcan.com.au/research/pre-dd-versus-feasibility-study.html</span></li><li><a href="#p35">Research: Weak-grid mines do not buy cheap energy</a> <span>heliovulcan.com.au/research/weak-grid-mine-energy.html</span></li><li><a href="#p36">Industry maps</a> <span>heliovulcan.com.au/industry-maps.html</span></li><li><a href="#p37">Project: Remote Mining Asset — hybrid energy Pre-DD</a> <span>heliovulcan.com.au/reports/remote-mining-asset-hybrid-energy-review.html</span></li><li><a href="#p38">Method: Pre-DD F1–F4</a> <span>heliovulcan.com.au/methods/pre-dd-f1-f4/index.html</span></li><li><a href="#p39">Project entity: Remote Mining Asset</a> <span>heliovulcan.com.au/projects/remote-mining-asset/index.html</span></li><li><a href="#p40">Dataset: Remote Mining Asset Pre-DD</a> <span>heliovulcan.com.au/datasets/remote-mining-asset-pre-dd/index.html</span></li><li><a href="#p41">Data &amp; API</a> <span>heliovulcan.com.au/api/index.html</span></li><li><a href="#p42">Privacy</a> <span>heliovulcan.com.au/privacy.html</span></li></ol>
+<ol><li><a href="#p1">Home</a> <span>heliovulcan.com.au/index.html</span></li><li><a href="#p2">About</a> <span>heliovulcan.com.au/about.html</span></li><li><a href="#p3">Research</a> <span>heliovulcan.com.au/research.html</span></li><li><a href="#p4">Consultations — published submissions</a> <span>heliovulcan.com.au/consultations.html</span></li><li><a href="#p5">Submission: AI and data centres, 2026</a> <span>heliovulcan.com.au/consultations/ai-data-centres-2026.html</span></li><li><a href="#p6">Submission: Safeguard onsite abatement, 2026</a> <span>heliovulcan.com.au/consultations/safeguard-onsite-abatement-2026.html</span></li><li><a href="#p7">Methods</a> <span>heliovulcan.com.au/methods/index.html</span></li><li><a href="#p8">Projects</a> <span>heliovulcan.com.au/case-studies.html</span></li><li><a href="#p9">Research coverage</a> <span>heliovulcan.com.au/coverage.html</span></li><li><a href="#p10">Safeguard Atlas — Findings</a> <span>heliovulcan.com.au/safeguard-atlas.html</span></li><li><a href="#p11">Safeguard Atlas — Pathway</a> <span>heliovulcan.com.au/safeguard/pathway.html</span></li><li><a href="#p12">Safeguard Atlas — Policy settings</a> <span>heliovulcan.com.au/safeguard/policy.html</span></li><li><a href="#p13">Safeguard Atlas — Map</a> <span>heliovulcan.com.au/safeguard/map.html</span></li><li><a href="#p14">Safeguard Atlas — Facilities</a> <span>heliovulcan.com.au/safeguard/facilities.html</span></li><li><a href="#p15">Safeguard Atlas — Sandbox</a> <span>heliovulcan.com.au/safeguard/sandbox.html</span></li><li><a href="#p16">Safeguard Atlas — Scorecard</a> <span>heliovulcan.com.au/safeguard/scorecard.html</span></li><li><a href="#p17">Safeguard Atlas — Method</a> <span>heliovulcan.com.au/safeguard/method.html</span></li><li><a href="#p18">Facility page (one of 209): Port Kembla Steelworks</a> <span>heliovulcan.com.au/facility/port-kembla-steelworks.html</span></li><li><a href="#p19">Research: Lowering the threshold does more to the facilities already in</a> <span>heliovulcan.com.au/safeguard-review-2026-baseline-floor.html</span></li><li><a href="#p20">Technical appendix: how the baseline-floor analysis was built</a> <span>heliovulcan.com.au/safeguard/baseline-floor-method.html</span></li><li><a href="#p21">Research: Most of the diesel is on wheels</a> <span>heliovulcan.com.au/australian-diesel-replacement-market-size.html</span></li><li><a href="#p22">Research: Public funding is concentrated in first-of-a-kind mine-energy projects</a> <span>heliovulcan.com.au/mine-decarbonisation-funding-map-australia.html</span></li><li><a href="#p23">Research: Locational pricing for remote energy</a> <span>heliovulcan.com.au/locational-pricing-remote-energy-australia.html</span></li><li><a href="#p24">Note: When grid connection is slow, time-to-power strengthens the off-grid case</a> <span>heliovulcan.com.au/time-to-power-offgrid-hybrid.html</span></li><li><a href="#p25">Framework: Demand-based tariffs and peak-demand reduction</a> <span>heliovulcan.com.au/btm-demand-charges-australia.html</span></li><li><a href="#p26">Note: Project readiness can constrain deployment before capital does</a> <span>heliovulcan.com.au/australian-battery-financing-capital-constraint.html</span></li><li><a href="#p27">Research: A BESS connection queue is not a construction pipeline</a> <span>heliovulcan.com.au/bess-development-queue-to-construction.html</span></li><li><a href="#p28">Research: Contract structure determines financeable cashflow</a> <span>heliovulcan.com.au/bess-forecast-is-not-cashflow.html</span></li><li><a href="#p29">Research: Ready to build when no critical right remains unresolved</a> <span>heliovulcan.com.au/bess-ready-to-build-completeness.html</span></li><li><a href="#p30">Framework: Existing connection rights in a brownfield BESS case</a> <span>heliovulcan.com.au/brownfield-bess-connection-value.html</span></li><li><a href="#p31">Note: Concessional-finance BESS starts with buyer eligibility and financing</a> <span>heliovulcan.com.au/emerging-market-bess-develop-backwards.html</span></li><li><a href="#p32">Research: Hybrid assets require a single review</a> <span>heliovulcan.com.au/hybrid-asset-integrated-due-diligence.html</span></li><li><a href="#p33">Research: Customer savings are not project revenue</a> <span>heliovulcan.com.au/research/btm-bess-customer-savings.html</span></li><li><a href="#p34">Research: A Pre-DD screen is not a feasibility study</a> <span>heliovulcan.com.au/research/pre-dd-versus-feasibility-study.html</span></li><li><a href="#p35">Research: Weak-grid mines do not buy cheap energy</a> <span>heliovulcan.com.au/research/weak-grid-mine-energy.html</span></li><li><a href="#p36">Industry maps</a> <span>heliovulcan.com.au/industry-maps.html</span></li><li><a href="#p37">Project: Remote Mining Asset — hybrid energy Pre-DD</a> <span>heliovulcan.com.au/reports/remote-mining-asset-hybrid-energy-review.html</span></li><li><a href="#p38">Method: Pre-DD F1–F4</a> <span>heliovulcan.com.au/methods/pre-dd-f1-f4/index.html</span></li><li><a href="#p39">Project entity: Remote Mining Asset</a> <span>heliovulcan.com.au/projects/remote-mining-asset/index.html</span></li><li><a href="#p40">Dataset: Remote Mining Asset Pre-DD</a> <span>heliovulcan.com.au/datasets/remote-mining-asset-pre-dd/index.html</span></li><li><a href="#p41">Data &amp; API</a> <span>heliovulcan.com.au/api/index.html</span></li><li><a href="#p42">Privacy</a> <span>heliovulcan.com.au/privacy.html</span></li></ol>
 <p><b>Site navigation (not shown per page):</b> Research (All research · Industrial &amp; emissions · Energy markets · Battery projects · Policy analysis; featured: Safeguard Atlas, the diesel study, the AI and data centres submission) · Tools &amp; data (Safeguard Atlas · Industry maps · Methods · Data &amp; API) · Consultations (Published submissions · the two submissions · how submissions are prepared, on Methods) · Projects (Project screens · Remote Mining Asset · Research coverage · Pre-DD methodology) · About (Contact); the logo is Home and the one call to action is Discuss a question. Second-level pages carry a breadcrumb.</p></div>
 <div class="bundle-page" id="p1"><div class="bundle-tag">Page 1 of 42 &middot; heliovulcan.com.au/index.html</div><style>
     .home-hero { background: var(--navy); color: #eef2f4; padding: clamp(72px, 9vw, 128px) 0 clamp(56px, 6vw, 88px); }
@@ -2077,6 +2085,7 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
     @media (max-width: 900px) { .rgrid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 560px) { .rgrid { grid-template-columns: 1fr; } }
   .series { margin-top: 44px; border-top: 2px solid var(--ink); padding-top: 22px; } .series h3 { font-family: var(--serif); font-weight: 400; font-size: 26px; } .series__list { columns: 3; column-gap: 40px; margin-top: 16px; padding-left: 20px; font-size: 15px; line-height: 1.8; } .series__list a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); } .series__list a:hover { color: var(--orange-deep); border-bottom-color: var(--orange-deep); } @media (max-width: 760px) { .series__list { columns: 1; } }
+.types { margin-top: 36px; max-width: 760px; } .types .matrix td { font-size: 14.5px; padding: 8px 12px 8px 0; }
 </style><main>
     <section class="case-hero">
       <div class="container">
@@ -2089,7 +2098,7 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
       <div class="container">
         <p class="eyebrow">Featured research</p>
         <h2 class="section-title">Three findings to start with</h2>
-        <div class="rgrid"><a class="rcard rcard--feat" href="/safeguard-atlas.html" data-topic="policy"><span class="k">Interactive model &middot; Policy analysis</span><h3>The post-2030 decline rate cannot be set in isolation</h3><span class="num">3.53 pp/yr</span><p>Production, new entrants, closures and the trade-exposed treatment trade against each other for a fixed 2035 target. Modelled facility by facility from the FY2024-25 register.</p><span class="meta">September 2026 &middot; Safeguard Atlas</span></a><a class="rcard rcard--feat" href="/australian-diesel-replacement-market-size.html" data-topic="industrial"><span class="k">Quantitative analysis &middot; Industrial & emissions</span><h3>Most of the diesel is on wheels</h3><span class="num">45 MW</span><p>Only about four per cent of Australia's diesel makes electricity. Sizing the replaceable market from the national energy account down to what is actually left.</p><span class="meta">6 August 2026 &middot; 9-minute read</span></a><a class="rcard rcard--feat" href="/safeguard-review-2026-baseline-floor.html" data-topic="policy"><span class="k">In-depth analysis &middot; Policy analysis</span><h3>Lowering the threshold does more to the facilities already in</h3><span class="num">100,000 t</span><p>Because the statutory minimum baseline moves with the coverage threshold, the larger effect of lowering it lands on facilities already inside the scheme.</p><span class="meta">7 August 2026 &middot; 15-minute read</span></a></div>
+        <div class="rgrid"><a class="rcard rcard--feat" href="/safeguard-atlas.html" data-topic="policy"><span class="k">Interactive model &middot; Policy analysis</span><h3>The post-2030 decline rate cannot be set in isolation</h3><span class="num">3.53 pp/yr</span><p>Production, new entrants, closures and the trade-exposed treatment trade against each other for a fixed 2035 target. Modelled facility by facility from the FY2024-25 register.</p><span class="meta">September 2026 &middot; Safeguard Atlas</span></a><a class="rcard rcard--feat" href="/australian-diesel-replacement-market-size.html" data-topic="industrial"><span class="k">Quantitative analysis &middot; Industrial & emissions</span><h3>Most of the diesel is on wheels</h3><span class="num">45 MW</span><p>Only about four per cent of Australia's diesel makes electricity. Sizing the replaceable market from the national energy account down to what is actually left.</p><span class="meta">6 August 2026 &middot; 9-minute read</span></a><a class="rcard rcard--feat" href="/safeguard-review-2026-baseline-floor.html" data-topic="policy"><span class="k">Quantitative analysis &middot; Policy analysis</span><h3>Lowering the threshold does more to the facilities already in</h3><span class="num">100,000 t</span><p>Because the statutory minimum baseline moves with the coverage threshold, the larger effect of lowering it lands on facilities already inside the scheme.</p><span class="meta">7 August 2026 &middot; 15-minute read</span></a></div>
       </div>
     </section>
     <section class="section section--tint" id="all">
@@ -2105,6 +2114,18 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
           <button type="button" data-f="maps" aria-pressed="false" id="maps">Maps &amp; frameworks</button>
         </div>
 
+
+        <div class="types" id="content-types">
+          <p class="eyebrow">Content types, by evidence</p>
+          <div class="table-scroll"><table class="matrix"><tbody>
+            <tr><td class="metric">Quantitative analysis</td><td>A data set, a stated calculation and a result that can be checked</td></tr>
+            <tr><td class="metric">Interactive model</td><td>Assumptions can be changed and the figures recomputed in the browser</td></tr>
+            <tr><td class="metric">Submission</td><td>An evidence record answering a formal consultation question</td></tr>
+            <tr><td class="metric">Applied case</td><td>Project-level analysis of one site</td></tr>
+            <tr><td class="metric">Analytical framework</td><td>A method or decision structure; no representative market sample is claimed</td></tr>
+            <tr><td class="metric">Practitioner note</td><td>Professional judgement from screening work and cited industry sources</td></tr>
+          </tbody></table></div>
+        </div>
         <div class="series" id="battery-series">
           <p class="eyebrow">Series</p>
           <h3>Battery project readiness</h3>
@@ -2122,7 +2143,7 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
           </ol>
         </div>
         <p class="small-note" id="rcount" style="margin-top:14px"></p>
-        <div class="rgrid" id="rgrid"><a class="rcard" href="/mine-decarbonisation-funding-map-australia.html" data-topic="policy"><span class="k">Quantitative analysis &middot; Policy analysis</span><h3>Grants pay for the first one, not the tenth</h3><span class="num">3 of 23</span><p>Only three of 23 Australian mine microgrid and BESS projects on our register carried public money, and all three were first-of-a-kind.</p><span class="meta">3 August 2026 &middot; 8-minute read</span></a><a class="rcard" href="/research/weak-grid-mine-energy.html" data-topic="industrial"><span class="k">Research note &middot; Industrial & emissions</span><h3>Weak-grid mines do not buy cheap energy</h3><p>They buy operational continuity. Diesel is five roles at once, so the first question is which diesel exposure can be replaced reliably and financeably.</p><span class="meta">26 June 2026 &middot; 4-minute read</span></a><a class="rcard" href="/locational-pricing-remote-energy-australia.html" data-topic="markets"><span class="k">Research article &middot; Energy markets</span><h3>The grid is being redesigned to charge you for where you are</h3><p>Loss factors and REZ congestion are locational pricing already. For remote sites they make on-site solar and storage a hedge, not a preference.</p><span class="meta">2 July 2026 &middot; 6-minute read</span></a><a class="rcard" href="/btm-demand-charges-australia.html" data-topic="markets"><span class="k">Research article &middot; Energy markets</span><h3>The demand charge is the line item a BTM battery can defend</h3><p>How peak shaving works, which Australian tariff details matter, and why interval data must come before battery sizing.</p><span class="meta">2 July 2026 &middot; 4-minute read</span></a><a class="rcard" href="/bess-forecast-is-not-cashflow.html" data-topic="markets"><span class="k">Research article &middot; Energy markets</span><h3>Which battery revenues can support debt?</h3><p>Duration, market saturation and regulatory uncertainty can turn a strong central forecast into cashflow that cannot support debt.</p><span class="meta">2 July 2026 &middot; 3-minute read</span></a><a class="rcard" href="/research/btm-bess-customer-savings.html" data-topic="battery"><span class="k">Research note &middot; Battery projects</span><h3>Customer savings are not project revenue</h3><p>Customer avoided cost is not SPV revenue. The cashflow chain a lender underwrites, and why carbon value must not be counted twice.</p><span class="meta">12 June 2026 &middot; 5-minute read</span></a><a class="rcard" href="/research/pre-dd-versus-feasibility-study.html" data-topic="battery"><span class="k">Research note &middot; Battery projects</span><h3>A Pre-DD screen is not a feasibility study</h3><p>The useful early output is not an IRR. It is finding where the project breaks.</p><span class="meta">19 June 2026 &middot; 5-minute read</span></a><a class="rcard" href="/australian-battery-financing-capital-constraint.html" data-topic="battery"><span class="k">Research article &middot; Battery projects</span><h3>Capital is available; project readiness determines whether it can be deployed</h3><p>When capital is abundant, capital stops being the constraint.</p><span class="meta">1 July 2026 &middot; 5-minute read</span></a><a class="rcard" href="/time-to-power-offgrid-hybrid.html" data-topic="battery"><span class="k">Research article &middot; Battery projects</span><h3>Time-to-power is reshaping the case for off-grid hybrid energy</h3><p>What development attrition, interconnection and equipment constraints reveal about finding fatal risks early.</p><span class="meta">2 July 2026 &middot; 4-minute read</span></a><a class="rcard" href="/bess-development-queue-to-construction.html" data-topic="battery"><span class="k">Research article &middot; Battery projects</span><h3>A BESS connection queue is not a construction pipeline</h3><p>Queued megawatts overstate deliverable supply; land, planning, grid, procurement and finance gates decide what gets built.</p><span class="meta">2 July 2026 &middot; 3-minute read</span></a><a class="rcard" href="/bess-ready-to-build-completeness.html" data-topic="battery"><span class="k">Research article &middot; Battery projects</span><h3>A project is ready to build when no critical right or approval remains unresolved</h3><p>RTB value depends on complete, transferable and consistent land, cable, planning, grid and delivery rights.</p><span class="meta">2 July 2026 &middot; 3-minute read</span></a><a class="rcard" href="/brownfield-bess-connection-value.html" data-topic="battery"><span class="k">Research article &middot; Battery projects</span><h3>Existing connection rights can be the most valuable part of a brownfield BESS site</h3><p>How brownfield infrastructure avoids years of development, and which constraints still need diligence.</p><span class="meta">2 July 2026 &middot; 3-minute read</span></a><a class="rcard" href="/emerging-market-bess-develop-backwards.html" data-topic="battery"><span class="k">Research article &middot; Battery projects</span><h3>In emerging markets, start BESS development with the buyer and financing structure</h3><p>Start with who pays for flexibility, under which contract and currency, then work backwards to duration, connection, equipment and site.</p><span class="meta">2 July 2026 &middot; 3-minute read</span></a><a class="rcard" href="/hybrid-asset-integrated-due-diligence.html" data-topic="battery"><span class="k">Research article &middot; Battery projects</span><h3>Hybrid assets require a single review of their shared connection, contracts and dispatch</h3><p>Solar and BESS share and compete for connection, controls and contracts; their value must be diligenced as one system.</p><span class="meta">2 July 2026 &middot; 3-minute read</span></a><a class="rcard" href="/industry-maps.html" data-topic="maps"><span class="k">Reference &middot; Maps & frameworks</span><h3>Industry maps and frameworks</h3><p>Compact visual maps for mining hybrid development, financial close, BESS responsibilities and industrial PV+BESS stakeholders.</p><span class="meta">July 2026</span></a></div>
+        <div class="rgrid" id="rgrid"><a class="rcard" href="/mine-decarbonisation-funding-map-australia.html" data-topic="policy"><span class="k">Quantitative analysis &middot; Policy analysis</span><h3>Public funding is concentrated in first-of-a-kind mine-energy projects</h3><span class="num">3 of 23</span><p>Only three of 23 Australian mine microgrid and BESS projects on our register carried public money, and all three were first-of-a-kind.</p><span class="meta">3 August 2026 &middot; 8-minute read</span></a><a class="rcard" href="/research/weak-grid-mine-energy.html" data-topic="industrial"><span class="k">Practitioner note &middot; Industrial & emissions</span><h3>Weak-grid mines do not buy cheap energy</h3><p>They buy operational continuity. Diesel is five roles at once, so the first question is which diesel exposure can be replaced reliably and financeably.</p><span class="meta">26 June 2026 &middot; 4-minute read</span></a><a class="rcard" href="/locational-pricing-remote-energy-australia.html" data-topic="markets"><span class="k">Analytical framework &middot; Energy markets</span><h3>The grid is being redesigned to charge you for where you are</h3><p>Loss factors and REZ congestion are locational pricing already. For remote sites they make on-site solar and storage a hedge, not a preference.</p><span class="meta">2 July 2026 &middot; 6-minute read</span></a><a class="rcard" href="/btm-demand-charges-australia.html" data-topic="markets"><span class="k">Analytical framework &middot; Energy markets</span><h3>For sites on demand-based tariffs, peak-demand reduction can be the most directly attributable BESS value stream</h3><p>How peak shaving works, which Australian tariff details matter, and why interval data must come before battery sizing.</p><span class="meta">2 July 2026 &middot; 4-minute read</span></a><a class="rcard" href="/bess-forecast-is-not-cashflow.html" data-topic="markets"><span class="k">Analytical framework &middot; Energy markets</span><h3>Which battery revenues can support debt?</h3><p>Duration, market saturation and regulatory uncertainty can turn a strong central forecast into cashflow that cannot support debt.</p><span class="meta">2 July 2026 &middot; 3-minute read</span></a><a class="rcard" href="/research/btm-bess-customer-savings.html" data-topic="battery"><span class="k">Analytical framework &middot; Battery projects</span><h3>Customer savings are not project revenue</h3><p>Customer avoided cost is not SPV revenue. The cashflow chain a lender underwrites, and why carbon value must not be counted twice.</p><span class="meta">12 June 2026 &middot; 5-minute read</span></a><a class="rcard" href="/research/pre-dd-versus-feasibility-study.html" data-topic="battery"><span class="k">Analytical framework &middot; Battery projects</span><h3>A Pre-DD screen is not a feasibility study</h3><p>The useful early output is not an IRR. It is finding where the project breaks.</p><span class="meta">19 June 2026 &middot; 5-minute read</span></a><a class="rcard" href="/australian-battery-financing-capital-constraint.html" data-topic="battery"><span class="k">Practitioner note &middot; Battery projects</span><h3>Project readiness can constrain battery deployment before capital availability does</h3><p>When capital is abundant, capital stops being the constraint.</p><span class="meta">1 July 2026 &middot; 5-minute read</span></a><a class="rcard" href="/time-to-power-offgrid-hybrid.html" data-topic="battery"><span class="k">Practitioner note &middot; Battery projects</span><h3>When grid connection is slow, time-to-power can strengthen the case for off-grid hybrid energy</h3><p>What development attrition, interconnection and equipment constraints reveal about finding fatal risks early.</p><span class="meta">2 July 2026 &middot; 4-minute read</span></a><a class="rcard" href="/bess-development-queue-to-construction.html" data-topic="battery"><span class="k">Analytical framework &middot; Battery projects</span><h3>A BESS connection queue is not a construction pipeline</h3><p>Queued megawatts overstate deliverable supply; land, planning, grid, procurement and finance gates decide what gets built.</p><span class="meta">2 July 2026 &middot; 3-minute read</span></a><a class="rcard" href="/bess-ready-to-build-completeness.html" data-topic="battery"><span class="k">Analytical framework &middot; Battery projects</span><h3>A project is ready to build when no critical right or approval remains unresolved</h3><p>RTB value depends on complete, transferable and consistent land, cable, planning, grid and delivery rights.</p><span class="meta">2 July 2026 &middot; 3-minute read</span></a><a class="rcard" href="/brownfield-bess-connection-value.html" data-topic="battery"><span class="k">Analytical framework &middot; Battery projects</span><h3>Existing connection rights can materially improve a brownfield BESS development case</h3><p>How brownfield infrastructure avoids years of development, and which constraints still need diligence.</p><span class="meta">2 July 2026 &middot; 3-minute read</span></a><a class="rcard" href="/emerging-market-bess-develop-backwards.html" data-topic="battery"><span class="k">Practitioner note &middot; Battery projects</span><h3>For BESS projects dependent on concessional or development finance, start with buyer eligibility and financing structure</h3><p>Start with who pays for flexibility, under which contract and currency, then work backwards to duration, connection, equipment and site.</p><span class="meta">2 July 2026 &middot; 3-minute read</span></a><a class="rcard" href="/hybrid-asset-integrated-due-diligence.html" data-topic="battery"><span class="k">Analytical framework &middot; Battery projects</span><h3>Hybrid assets require a single review of their shared connection, contracts and dispatch</h3><p>Solar and BESS share and compete for connection, controls and contracts; their value must be diligenced as one system.</p><span class="meta">2 July 2026 &middot; 3-minute read</span></a><a class="rcard" href="/industry-maps.html" data-topic="maps"><span class="k">Reference &middot; Maps & frameworks</span><h3>Industry maps and frameworks</h3><p>Compact visual maps for mining hybrid development, financial close, BESS responsibilities and industrial PV+BESS stakeholders.</p><span class="meta">July 2026</span></a></div>
         <p class="small-note">Upcoming: a note on why a model is not a project, and one on turning public maps into a data-room request. Nothing unpublished should be cited.</p>
       </div>
     </section>
@@ -2205,36 +2226,40 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
       </div>
     </section>
   </main></div><div class="bundle-page" id="p5"><div class="bundle-tag">Page 5 of 42 &middot; heliovulcan.com.au/consultations/ai-data-centres-2026.html</div><style>
-    .sub-meta { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 26px; font-size: 13.5px; color: var(--ink-soft); }
+    /* submission grid: prose 760, findings/recommendations/numbers 900, all left-aligned */
+    .submission-prose { max-width: 760px; }
+    .submission-wide { max-width: 900px; }
+    .sub-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px; margin-top: 26px; font-size: 14px; color: var(--ink-soft); max-width: 900px; }
     .sub-meta b { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); margin-bottom: 4px; }
-    .sub-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 36px; }
+    .sub-nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 32px; margin-top: 36px; max-width: 900px; }
     .sub-nums > div { border-top: 1px solid var(--ink); padding-top: 14px; }
-    .sub-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1.05; }
-    .sub-nums span { display: block; font-size: 14px; color: var(--ink-soft); margin-top: 8px; max-width: 30ch; }
-    .findings { counter-reset: f; list-style: none; margin: 28px 0 0; padding: 0; border-top: 2px solid var(--ink); }
+    .sub-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: 38px; line-height: 1.05; }
+    .sub-nums span { display: block; font-size: 13.5px; color: var(--ink-soft); margin-top: 8px; }
+    .update { max-width: 900px; margin-top: 28px; border-left: 2px solid var(--amber); padding: 4px 0 4px 18px; font-size: 15px; line-height: 1.6; color: var(--ink); }
+    .update b { display: block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--amber); margin-bottom: 6px; }
+    .findings { counter-reset: f; list-style: none; margin: 28px 0 0; padding: 0; border-top: 2px solid var(--ink); max-width: 900px; }
     .findings li { counter-increment: f; display: grid; grid-template-columns: 3rem 1fr; gap: 0 18px; padding: 18px 0; border-bottom: 1px solid var(--line-soft); }
-    .findings li::before { content: counter(f, decimal-leading-zero); font-size: 12px; letter-spacing: .12em; font-weight: 600; color: var(--ink-soft); padding-top: 5px; }
-    .findings b { display: block; font-family: var(--serif); font-weight: 400; font-size: 21px; line-height: 1.3; }
-    .findings p { font-size: 15.5px; color: var(--ink-soft); margin-top: 8px; line-height: 1.6; max-width: 70ch; }
-    .kv { margin-top: 20px; border-top: 2px solid var(--ink); }
+    .findings li::before { content: counter(f, decimal-leading-zero); font-size: 12px; letter-spacing: .12em; font-weight: 600; color: var(--ink-soft); padding-top: 4px; }
+    .findings b { display: block; font-family: var(--sans); font-weight: 600; font-size: 17.5px; line-height: 1.4; color: var(--ink); }
+    .findings p { font-size: 16px; color: var(--ink); margin-top: 8px; line-height: 1.6; }
+    .findings p.upd { font-size: 13.5px; color: var(--ink-faint); margin-top: 6px; }
+    .recs { counter-reset: r; list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; max-width: 900px; }
+    .recs li { counter-increment: r; border-top: 2px solid var(--ink); padding: 16px 0 8px; }
+    .recs li::before { content: counter(r, decimal-leading-zero); display: block; font-size: 12px; letter-spacing: .12em; font-weight: 600; color: var(--ink-soft); }
+    .recs b { display: block; font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.2; margin-top: 8px; }
+    .recs p { font-size: 15.5px; color: var(--ink); margin-top: 10px; line-height: 1.6; }
+    .kv { margin-top: 20px; border-top: 2px solid var(--ink); max-width: 900px; }
     .kv div { display: grid; grid-template-columns: 12rem 1fr; gap: 0 24px; padding: 13px 0; border-bottom: 1px solid var(--line-soft); font-size: 15px; }
     .kv b { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding-top: 3px; }
-    details.fold { margin-top: 22px; border-top: 1px solid var(--ink); }
+    details.fold { margin-top: 22px; border-top: 1px solid var(--ink); max-width: 760px; }
     details.fold > summary { cursor: pointer; padding: 14px 0; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
     details.fold[open] > summary { border-bottom: 1px solid var(--line-soft); }
-    details.fold .body { padding: 16px 0 6px; font-size: 15.5px; color: var(--ink-soft); max-width: 72ch; line-height: 1.65; }
+    details.fold .body { padding: 16px 0 6px; font-size: 15.5px; color: var(--ink-soft); line-height: 1.65; }
     details.fold .body p + p { margin-top: 12px; }
-    .reading { max-width: 72ch; } .reading p + p { margin-top: 14px; }
-    .sub-card { display: block; border-top: 1px solid var(--ink); padding: 24px 0 36px; text-decoration: none; color: inherit; }
-    .sub-card .k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
-    .sub-card h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.2; margin-top: 12px; max-width: 26ch; }
-    .sub-card .who { font-size: 14px; color: var(--ink-soft); margin-top: 10px; }
-    .sub-card .nums { display: flex; flex-wrap: wrap; gap: 6px 32px; margin-top: 18px; font-size: 14px; }
-    .sub-card .nums b { font-family: var(--serif); font-weight: 400; font-size: 26px; display: block; }
-    .sub-card .go { display: inline-block; margin-top: 18px; font-size: 14.5px; font-weight: 600; color: var(--ink); }
-    .sub-card .go + .go { margin-left: 28px; }
-    .sub-card:hover .go { color: var(--orange-deep); }
-    @media (max-width: 700px) { .sub-nums { grid-template-columns: 1fr; } .kv div { grid-template-columns: 1fr; gap: 4px; } }
+    .revisions { max-width: 760px; margin-top: 40px; font-size: 13.5px; color: var(--ink-faint); line-height: 1.6; }
+    .revisions b { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }
+    @media (max-width: 900px) { .sub-nums { grid-template-columns: 1fr 1fr; } .recs { grid-template-columns: 1fr; } }
+    @media (max-width: 700px) { .sub-nums { grid-template-columns: 1fr; } .sub-meta { grid-template-columns: 1fr; } .kv div { grid-template-columns: 1fr; gap: 4px; } }
   </style><main>
 
     <section class="case-hero">
@@ -2245,8 +2270,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         <div class="sub-meta">
           <div><b>Institution</b>Senate Environment and Communications References Committee</div>
           <div><b>Inquiry</b>Artificial intelligence and data centres, referred 13 May 2026</div>
-          <div><b>Status</b>Lodged August 2026 &middot; published by the committee as Submission 89 &middot; report due 16 November 2026</div>
           <div><b>Scope</b>Term of reference (a), and the energy and water elements of (b)</div>
+          <div><b>Status</b>Published as Submission 89 &middot; report due 16 November 2026</div>
         </div>
       </div>
     </section>
@@ -2254,35 +2279,39 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
     <section class="section">
       <div class="container">
         <div class="sub-nums">
-          <div><b>11</b><span>Australian data-centre records returned by the NABERS current-ratings extract of 15 August 2026</span></div>
-          <div><b>6</b><span>of those ratings still current when re-checked on 14 September 2026; the rest had expired</span></div>
-          <div><b>10 of 11</b><span>records use the Infrastructure scope, which excludes the IT load that defines a data centre</span></div>
+          <div><b>4,658</b><span>rows in the complete NABERS ratings extract downloaded on 15 August 2026</span></div>
+          <div><b>11</b><span>data-centre records returned by that extract</span></div>
+          <div><b>6</b><span>ratings confirmed as current in the subsequent validity check, 14 September 2026</span></div>
+          <div><b>10 of 11</b><span>records using the Infrastructure scope, which excludes IT load</span></div>
+        </div>
+        <div class="update">
+          <b>Data update &middot; 14 September 2026</b>
+          The 15 August extract returned 11 data-centre records. A subsequent check of rating validity found that six remained current and five were no longer listed. Rating expiry explains at least one of the five (certificate expiry 25 August 2026) and is the likely cause of the rest; a difference in filtering between the two extracts has not been excluded. The lodged submission reports the original extract result; this page shows both the original and the subsequently verified counts.
         </div>
 
         <h2 class="section-title" style="margin-top:56px">The question</h2>
-        <p class="section-intro">Term of reference (a): the effectiveness of existing regulatory frameworks in managing the growth of data centres; and the energy and water elements of term of reference (b). Community, industry and biodiversity impacts, and the arrangements between government and AI companies, are outside the submission.</p>
+        <p class="section-intro submission-prose">Term of reference (a): the effectiveness of existing regulatory frameworks in managing the growth of data centres; and the energy and water elements of term of reference (b). Community, industry and biodiversity impacts, and the arrangements between government and AI companies, are outside the submission.</p>
         <h2 class="section-title" style="margin-top:48px">Key findings</h2>
         <ol class="findings">
           <li><b>NGER, connection, planning, environmental and water records each identify a data centre differently.</b><p>Substantial regulatory data exists; it cannot be read reliably for one site.</p></li>
-          <li><b>The 15 August 2026 extract of 4,658 current NABERS ratings returned 11 Australian data-centre records; a check on 14 September 2026 found six still current, the others having expired.</b><p>Ten of the 11 records, and five of the six, use the Infrastructure scope, which excludes IT load; a rating on that scope says little about a data centre&rsquo;s energy performance. The submission was lodged on the 15 August extract. That a public register can lose five of 11 entries in a month through rating expiry, without any facility closing, is itself the case for a defined reporting boundary.</p></li>
-          <li><b>The 30 MW threshold in the AEMC's Package 2 draft does not reach the Northern Territory or Western Australia.</b><p>It sits in the National Electricity Rules, which apply to the NEM jurisdictions. The 51-page policy advice contains no reference to off-grid, islanded or unconnected facilities.</p></li>
+          <li><b>Ten of the 11 data-centre records returned by the extract used the Infrastructure rating scope.</b><p>The scope excludes IT load, so a rating on it says little about a data centre&rsquo;s energy performance. A subsequent validity check found that six of the 11 ratings remained current; five of those six are also on the Infrastructure scope. That a public register can lose five of 11 entries in a month without any facility closing is itself the case for a defined reporting boundary.</p></li>
+          <li><b>The proposed 30 MW National Electricity Rules threshold would not cover facilities in Western Australia or the Northern Territory.</b><p>The AEMC&rsquo;s Package 2 draft places it in rules that apply in the NEM jurisdictions only; the 51-page policy advice contains no reference to off-grid, islanded or unconnected facilities.</p></li>
           <li><b>Published water metrics are not comparable.</b><p>One company's FY25 reports label the same 773 ML both &ldquo;consumed&rdquo; and &ldquo;withdrawal&rdquo;.</p></li>
-          <li><b>Federal classification fields are unreliable.</b><p>A proposed facility including approximately 1,038 MW of gas-fired generation is recorded on the EPBC portal under a renewable industry type.</p></li>
+          <li><b>Federal classification fields are unreliable.</b><p>A proposed facility including approximately 1,038 MW of gas-fired generation is recorded on the EPBC portal under a renewable industry type.</p><p class="upd">Updated 14 September 2026 from the referral document; the lodged submission used an earlier industry-media range of 900&ndash;1,100 MW. The proposal was determined a controlled action on 4 September 2026.</p></li>
         </ol>
 
         <h2 class="section-title" style="margin-top:56px">Recommendations</h2>
-        <div class="kv">
-          <div><b>Identify the facility</b><span>A persistent identifier across NGER, connection, planning, environmental and water records, with a public crosswalk of non-sensitive fields.</span></div>
-          <div><b>Show who regulates it</b><span>A published coverage map for NEM-connected, non-NEM and off-grid facilities.</span></div>
-          <div><b>Measure consistently</b><span>Define the reporting boundary before the volume.</span></div>
-        </div>
+        <ol class="recs">
+          <li><b>Identify the facility</b><p>Create a persistent identifier across NGER, connection, planning, environmental and water records, with a public crosswalk of the non-sensitive fields.</p></li>
+          <li><b>Publish the regulatory perimeter</b><p>Show which framework applies to NEM-connected, non-NEM and off-grid facilities, so that a site&rsquo;s obligations can be read from one map.</p></li>
+          <li><b>Define the measurement boundary</b><p>Specify whether energy and water measures cover infrastructure or IT load, and withdrawal or consumption, before any volume is reported or compared.</p></li>
+        </ol>
 
         <h2 class="section-title" style="margin-top:56px">Open questions</h2>
-        <p class="section-intro">Seven matters are listed in the submission as unverified, including the correspondence between NABERS star ratings and PUE values, any published timetable for NABERS work on a data centre water framework, the final connection arrangement for one of the two Northern Territory proposals, and the water and planning instruments of all eight jurisdictions. The Safeguard Mechanism's Schedule 1 contains no production variable for a data centre; the consequence for an off-grid facility is set out as an uncertainty. No legal advice was obtained.</p>
-        <p class="section-intro">Correction, 14 September 2026: the referral states the gas-fired capacity as approximately 1,038 MW; an earlier version quoted an industry-media range of 900&ndash;1,100 MW. The proposal was determined a controlled action on 4 September 2026. The NABERS count is stated on both dates above.</p>
+        <p class="section-intro submission-prose">Seven matters are listed in the submission as unverified, including the correspondence between NABERS star ratings and PUE values, any published timetable for NABERS work on a data centre water framework, the final connection arrangement for one of the two Northern Territory proposals, and the water and planning instruments of all eight jurisdictions. The Safeguard Mechanism's Schedule 1 contains no production variable for a data centre; the consequence for an off-grid facility is set out as an uncertainty. No legal advice was obtained.</p>
         <h2 class="section-title" style="margin-top:56px">Sources</h2>
         <details class="fold" style="border-top:0"><summary>Evidence used</summary><div class="body">
-          <p>NGER Act 2007, NGER Regulations 2008 and the NGER (Safeguard Mechanism) Rule 2015 as currently compiled (legislation). AEMC advice on data centre regulatory pathways and the Package 2 draft determination (regulator document). EPBC Act Public Portal referral 2026/10560 and supporting documents (regulatory filing). NABERS Rating Register, complete current-ratings extract of 4,658 rows, 15 August 2026 (public register). Directive (EU) 2023/1791 Article 12 (legislation). Company annual and sustainability reporting (company disclosure).</p>
+          <p>NGER Act 2007, NGER Regulations 2008 and the NGER (Safeguard Mechanism) Rule 2015 as currently compiled (legislation). AEMC advice on data centre regulatory pathways and the Package 2 draft determination (regulator document). EPBC Act Public Portal referral 2026/10560 and supporting documents (regulatory filing). NABERS Rating Register, complete ratings extract of 4,658 rows downloaded on 15 August 2026, filtered to the data-centre building type (public register); validity re-checked against a fresh extract on 14 September 2026. Directive (EU) 2023/1791 Article 12 (legislation). Company annual and sustainability reporting (company disclosure).</p>
         </div></details>
 
         <div class="cta-row" style="margin-top:36px">
@@ -2290,6 +2319,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
           <a class="btn btn--outline" href="/consultations.html">All submissions</a>
         </div>
         <p class="small-note">The committee has authorised publication as Submission 89. Authorisation to publish is an administrative decision and does not indicate that any finding has been accepted.</p>
+
+        <div class="revisions"><b>Revision history</b>14 September 2026 &mdash; gas-generation capacity updated to approximately 1,038 MW from the referral document; NABERS rating validity clarified (11 records returned, six current at verification).</div>
 
         <h2 class="section-title" style="margin-top:56px">Related research</h2>
         <div class="grid grid--3">
@@ -2300,36 +2331,40 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
       </div>
     </section>
   </main></div><div class="bundle-page" id="p6"><div class="bundle-tag">Page 6 of 42 &middot; heliovulcan.com.au/consultations/safeguard-onsite-abatement-2026.html</div><style>
-    .sub-meta { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 26px; font-size: 13.5px; color: var(--ink-soft); }
+    /* submission grid: prose 760, findings/recommendations/numbers 900, all left-aligned */
+    .submission-prose { max-width: 760px; }
+    .submission-wide { max-width: 900px; }
+    .sub-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px; margin-top: 26px; font-size: 14px; color: var(--ink-soft); max-width: 900px; }
     .sub-meta b { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); margin-bottom: 4px; }
-    .sub-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 36px; }
+    .sub-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; margin-top: 36px; max-width: 900px; }
     .sub-nums > div { border-top: 1px solid var(--ink); padding-top: 14px; }
-    .sub-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1.05; }
-    .sub-nums span { display: block; font-size: 14px; color: var(--ink-soft); margin-top: 8px; max-width: 30ch; }
-    .findings { counter-reset: f; list-style: none; margin: 28px 0 0; padding: 0; border-top: 2px solid var(--ink); }
+    .sub-nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: 38px; line-height: 1.05; }
+    .sub-nums span { display: block; font-size: 13.5px; color: var(--ink-soft); margin-top: 8px; }
+    .update { max-width: 900px; margin-top: 28px; border-left: 2px solid var(--amber); padding: 4px 0 4px 18px; font-size: 15px; line-height: 1.6; color: var(--ink); }
+    .update b { display: block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--amber); margin-bottom: 6px; }
+    .findings { counter-reset: f; list-style: none; margin: 28px 0 0; padding: 0; border-top: 2px solid var(--ink); max-width: 900px; }
     .findings li { counter-increment: f; display: grid; grid-template-columns: 3rem 1fr; gap: 0 18px; padding: 18px 0; border-bottom: 1px solid var(--line-soft); }
-    .findings li::before { content: counter(f, decimal-leading-zero); font-size: 12px; letter-spacing: .12em; font-weight: 600; color: var(--ink-soft); padding-top: 5px; }
-    .findings b { display: block; font-family: var(--serif); font-weight: 400; font-size: 21px; line-height: 1.3; }
-    .findings p { font-size: 15.5px; color: var(--ink-soft); margin-top: 8px; line-height: 1.6; max-width: 70ch; }
-    .kv { margin-top: 20px; border-top: 2px solid var(--ink); }
+    .findings li::before { content: counter(f, decimal-leading-zero); font-size: 12px; letter-spacing: .12em; font-weight: 600; color: var(--ink-soft); padding-top: 4px; }
+    .findings b { display: block; font-family: var(--sans); font-weight: 600; font-size: 17.5px; line-height: 1.4; color: var(--ink); }
+    .findings p { font-size: 16px; color: var(--ink); margin-top: 8px; line-height: 1.6; }
+    .findings p.upd { font-size: 13.5px; color: var(--ink-faint); margin-top: 6px; }
+    .recs { counter-reset: r; list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; max-width: 900px; }
+    .recs li { counter-increment: r; border-top: 2px solid var(--ink); padding: 16px 0 8px; }
+    .recs li::before { content: counter(r, decimal-leading-zero); display: block; font-size: 12px; letter-spacing: .12em; font-weight: 600; color: var(--ink-soft); }
+    .recs b { display: block; font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.2; margin-top: 8px; }
+    .recs p { font-size: 15.5px; color: var(--ink); margin-top: 10px; line-height: 1.6; }
+    .kv { margin-top: 20px; border-top: 2px solid var(--ink); max-width: 900px; }
     .kv div { display: grid; grid-template-columns: 12rem 1fr; gap: 0 24px; padding: 13px 0; border-bottom: 1px solid var(--line-soft); font-size: 15px; }
     .kv b { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); padding-top: 3px; }
-    details.fold { margin-top: 22px; border-top: 1px solid var(--ink); }
+    details.fold { margin-top: 22px; border-top: 1px solid var(--ink); max-width: 760px; }
     details.fold > summary { cursor: pointer; padding: 14px 0; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
     details.fold[open] > summary { border-bottom: 1px solid var(--line-soft); }
-    details.fold .body { padding: 16px 0 6px; font-size: 15.5px; color: var(--ink-soft); max-width: 72ch; line-height: 1.65; }
+    details.fold .body { padding: 16px 0 6px; font-size: 15.5px; color: var(--ink-soft); line-height: 1.65; }
     details.fold .body p + p { margin-top: 12px; }
-    .reading { max-width: 72ch; } .reading p + p { margin-top: 14px; }
-    .sub-card { display: block; border-top: 1px solid var(--ink); padding: 24px 0 36px; text-decoration: none; color: inherit; }
-    .sub-card .k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
-    .sub-card h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.2; margin-top: 12px; max-width: 26ch; }
-    .sub-card .who { font-size: 14px; color: var(--ink-soft); margin-top: 10px; }
-    .sub-card .nums { display: flex; flex-wrap: wrap; gap: 6px 32px; margin-top: 18px; font-size: 14px; }
-    .sub-card .nums b { font-family: var(--serif); font-weight: 400; font-size: 26px; display: block; }
-    .sub-card .go { display: inline-block; margin-top: 18px; font-size: 14.5px; font-weight: 600; color: var(--ink); }
-    .sub-card .go + .go { margin-left: 28px; }
-    .sub-card:hover .go { color: var(--orange-deep); }
-    @media (max-width: 700px) { .sub-nums { grid-template-columns: 1fr; } .kv div { grid-template-columns: 1fr; gap: 4px; } }
+    .revisions { max-width: 760px; margin-top: 40px; font-size: 13.5px; color: var(--ink-faint); line-height: 1.6; }
+    .revisions b { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }
+    @media (max-width: 900px) { .sub-nums { grid-template-columns: 1fr 1fr; } .recs { grid-template-columns: 1fr; } }
+    @media (max-width: 700px) { .sub-nums { grid-template-columns: 1fr; } .sub-meta { grid-template-columns: 1fr; } .kv div { grid-template-columns: 1fr; gap: 4px; } }
   </style><main>
 
     <section class="case-hero">
@@ -2355,7 +2390,7 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         </div>
 
         <h2 class="section-title" style="margin-top:56px">The question</h2>
-        <p class="section-intro">Question 10 of the 2026 Annual Progress Advice consultation: whether the Safeguard Mechanism should play a stronger role in encouraging onsite abatement relative to ACCU flexibility, what objectives should guide that assessment, and whether additional incentives or constraints are warranted. Public-register evidence is also provided against Question 9.</p>
+        <p class="section-intro submission-prose">Question 10 of the 2026 Annual Progress Advice consultation: whether the Safeguard Mechanism should play a stronger role in encouraging onsite abatement relative to ACCU flexibility, what objectives should guide that assessment, and whether additional incentives or constraints are warranted. Public-register evidence is also provided against Question 9.</p>
         <h2 class="section-title" style="margin-top:48px">Key findings</h2>
         <ol class="findings">
           <li><b>Onsite abatement projects cluster in one technology and one window.</b><p>Six projects were registered after the reformed baselines commenced. All are coal mine waste gas electricity generation; four were registered within four days of each other in March 2025.</p></li>
@@ -2369,7 +2404,7 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         </div>
 
         <h2 class="section-title" style="margin-top:56px">Open questions</h2>
-        <p class="section-intro">The submission identifies 24 facilities surrendering ACCUs at or above 30% of baseline, where the Authority and Department report 23. The difference may lie in the treatment of deemed surrender; nothing in the findings rests on it.</p>
+        <p class="section-intro submission-prose">The submission identifies 24 facilities surrendering ACCUs at or above 30% of baseline, where the Authority and Department report 23. The difference may lie in the treatment of deemed surrender; nothing in the findings rests on it.</p>
         <h2 class="section-title" style="margin-top:56px">Sources</h2>
         <details class="fold" style="border-top:0"><summary>Evidence used</summary><div class="body">
           <p>CER <i>Safeguard facility reported emissions</i>, FY2024&ndash;25 and FY2023&ndash;24 (regulatory filing). CER ACCU Scheme Project Register, 31 May 2026 (regulatory filing). CER emissions-intensity determination data, 15 May 2026 (regulatory filing). Project-to-facility matching using two-stage name and corporate-group rules with project-location checking (calculated).</p>
@@ -2385,7 +2420,7 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         <div class="grid grid--3">
           <a class="card note-card" href="/safeguard-atlas.html"><span class="note-tag">Interactive model</span><h3>Safeguard Atlas</h3><p>The same register, modelled facility by facility to 2035, with the post-2030 decline rate and the trade-exposed treatment as settings.</p><span class="note-status is-drafting">Open &rarr;</span></a>
           <a class="card note-card" href="/safeguard-review-2026-baseline-floor.html"><span class="note-tag">Research</span><h3>The floor beneath the Safeguard baseline</h3><p>The statutory minimum baseline and the cohort sitting on it.</p><span class="note-status is-drafting">Read &rarr;</span></a>
-          <a class="card note-card" href="/mine-decarbonisation-funding-map-australia.html"><span class="note-tag">Research</span><h3>Grants pay for the first one, not the tenth</h3><p>Which Australian mine microgrid and BESS projects carried public money.</p><span class="note-status is-drafting">Read &rarr;</span></a>
+          <a class="card note-card" href="/mine-decarbonisation-funding-map-australia.html"><span class="note-tag">Research</span><h3>Public funding is concentrated in first-of-a-kind mine-energy projects</h3><p>Which Australian mine microgrid and BESS projects carried public money.</p><span class="note-status is-drafting">Read &rarr;</span></a>
         </div>
       </div>
     </section>
@@ -3058,10 +3093,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Article</p>
+          <p class="eyebrow">Quantitative analysis</p>
           <h1>Lowering the threshold does more to the facilities already in</h1>
           <p class="res-hero__meta">
-            <span class="tag">Article</span>
+            <span class="tag">Quantitative analysis</span>
             <span class="sep" aria-hidden="true"></span>
             <span>7 August 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -3084,6 +3119,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
         <div class="res-main">
           <p class="standfirst">Three papers now sit open on Australia&rsquo;s industrial carbon settings: the department&rsquo;s Safeguard Mechanism review consultation paper, released 7 August; the Climate Change Authority&rsquo;s annual progress advice, which consulted through to 9 August; and the final report of the Carbon Leakage Review. Between them they ask a dozen questions. One of the quieter ones &mdash; whether to lower the 100,000-tonne coverage threshold &mdash; is being discussed as a question about who comes into the scheme. Rebuild the register and it turns out to be a bigger question about who is already in it.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>What changes when the Safeguard coverage threshold is lowered?</dd></div><div><dt>Basis</dt><dd>The FY2024&ndash;25 and FY2023&ndash;24 Safeguard registers; the Safeguard Rule ss 10(1), 11, 56(4) and 57; the consultation paper&rsquo;s table 3.3; Heliovulcan&rsquo;s site-by-site build of 88 gold operations.</dd></div><div><dt>Method</dt><dd>Each covered facility&rsquo;s baseline is rescaled from its filed emissions reduction contribution to 0.657 and tested against the statutory minimum at four candidate thresholds; covered facilities are identified from the register&rsquo;s s 58B note; totals are reconciled to the department&rsquo;s published figures.</dd></div><div><dt>Finding</dt><dd>Twenty-four covered facilities sit on the 100,000 t floor today and 45 do by 2029&ndash;30. A 75,000 t threshold withdraws about 0.92 Mt a year of baseline from facilities already covered, against 4.1 Mt of newly covered emissions, and that effect is absent from the consultation table.</dd></div><div><dt>Limits</dt><dd>Production and intensity are not re-derived for every facility; sub-threshold facility emissions cannot be computed from public data; for the 24 already floored, the filed value is the floored one, so the held-back tonnage is a lower bound.</dd></div></dl>
 
           <div class="glance">
             <span class="glance__label">At a glance</span>
@@ -3914,6 +3951,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         <div class="res-main">
           <p class="standfirst">Australia burns 1,269.9 petajoules of diesel a year. Only about four per cent of it is burned to make electricity &mdash; a national ceiling of roughly 551 megawatts of average electrical output, mine sites and remote towns included. Take out the mines and what is left is 45 megawatts, all of it owned by state utilities. If you are sizing a diesel displacement market from the top down, that is the whole of it.</p>
 
+          <dl class="basis-box"><div><dt>Question</dt><dd>How much of Australia&rsquo;s diesel use could a stationary generation project displace, once mobile use and mine sites are removed?</dd></div><div><dt>Basis</dt><dd>Australian Energy Statistics 2023&ndash;24 (consumption by industry and fuel; generation by fuel and state); the NGER register of designated generation facilities; Safeguard intensity determinations; the National Pollutant Inventory; state generation licences; Heliovulcan&rsquo;s 370-site screen of mine on-site generation.</dd></div><div><dt>Method</dt><dd>The national diesel account is decomposed by end use and the oil-fired generation statistics are reconciled against it; mine sites and town utilities are then subtracted. The bottom-up site list is tested against the top-down ceiling.</dd></div><div><dt>Finding</dt><dd>About 4 per cent of 1,269.9 PJ of diesel is burned for electricity, a ceiling of roughly 551 MW of average output; outside mining the remainder is about 45 MW, all state-utility town supply. Both figures are averages derived from annual fuel and generation statistics, not observed nameplate capacity.</dd></div><div><dt>Limits</dt><dd>Some state and sub-division cells are suppressed in the official tables; the attribution of about 390 MW to contractor-operated mine stations is an inference from the accounts; fleet age is not public site by site.</dd></div></dl>
+
           <div class="glance">
             <span class="glance__label">At a glance</span>
             <ol>
@@ -4080,7 +4119,7 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
           <aside class="inline-module">
             <span class="inline-module__label">Related reading</span>
-            <h4>Grants pay for the first one, not the tenth</h4>
+            <h4>Public funding is concentrated in first-of-a-kind mine-energy projects</h4>
             <p>The fuel tax credit arithmetic below is the same arithmetic that decides whether a
             public funding case for a mine energy project holds up. Twenty of 23 Australian mine
             microgrid and BESS projects on our register were built with no public money at all.</p>
@@ -4193,7 +4232,7 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
           <p class="eyebrow">Quantitative analysis</p>
-          <h1>Grants pay for the first one, not the tenth</h1>
+          <h1>Public funding is concentrated in first-of-a-kind mine-energy projects</h1>
           <p class="res-hero__meta">
             <span class="tag">Quantitative analysis</span>
             <span class="sep" aria-hidden="true"></span>
@@ -4218,6 +4257,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
         <div class="res-main">
           <p class="standfirst">Australia has real public money for industrial decarbonisation, and mine sites are squarely inside several programs. But on our own register of 23 mine microgrid and BESS projects, only three carried public funding &mdash; and every one of those reached commercial operation by 2020. Before you build a funding case, it is worth knowing what that pattern is telling you.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>Which Australian mine microgrid and BESS projects carried public funding, and what does the pattern imply for a funding case?</dd></div><div><dt>Basis</dt><dd>Heliovulcan&rsquo;s register of 23 mine microgrid and hybrid BESS projects that reached commercial operation in Australia, compiled from company announcements, ARENA and CEFC program records and contractor project registers; published program material as at 3 August 2026.</dd></div><div><dt>Method</dt><dd>Each project was checked against ARENA, CEFC and state program disclosures; public funding is recorded only where a public record names the project.</dd></div><div><dt>Finding</dt><dd>Three of the 23 projects disclosed public funding. All three (Weipa solar, DeGrussa, Agnew) were described at the time as first-of-a-kind or demonstration projects; the other 20 were funded commercially.</dd></div><div><dt>Limits</dt><dd>Absence of a public funding record is treated as &ldquo;not found&rdquo;, not as proof that no support was received; the register covers operating projects, not proposals; program rounds and terms change.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -4347,10 +4388,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research article</p>
+          <p class="eyebrow">Analytical framework</p>
           <h1>The grid is being redesigned to charge you for where you are</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research article</span>
+            <span class="tag">Analytical framework</span>
             <span class="sep" aria-hidden="true"></span>
             <span>2 July 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -4373,6 +4414,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
         <div class="res-main">
           <p class="standfirst">Britain is arguing about locational pricing. The mechanism it describes is universal &mdash; and it carries a hard lesson for anyone whose site sits at the far end of a long wire. In Australia the same physics is already priced through loss factors and congestion. For a remote or industrial site, that changes the cheapest energy you will ever buy.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>How should a remote or industrial site treat the future delivered cost of grid electricity?</dd></div><div><dt>Basis</dt><dd>Great Britain constraint-cost figures as reported in the ADE and Modo Energy discussion (September 2024); Australian marginal loss factors, renewable energy zone and network-charge mechanisms from AEMO and AEMC publications.</dd></div><div><dt>Method</dt><dd>Separates what is observed today, what is under consideration, and what follows for a site at the grid edge.</dd></div><div><dt>Finding</dt><dd><b>Observed today:</b> loss factors and congestion already create locational differences in delivered cost. <b>Policy under consideration:</b> reforms may make those signals more explicit. <b>Implication:</b> a connected remote site should test location-adjusted grid costs against onsite supply.</dd></div><div><dt>Limits</dt><dd>No Australian site-level delivered-cost series is analysed; the GB figures are contextual and not Australian benchmarks.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -4490,10 +4533,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research article</p>
-          <h1>Time-to-power is reshaping the case for off-grid hybrid energy</h1>
+          <p class="eyebrow">Practitioner note</p>
+          <h1>When grid connection is slow, time-to-power can strengthen the case for off-grid hybrid energy</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research article</span>
+            <span class="tag">Practitioner note</span>
             <span class="sep" aria-hidden="true"></span>
             <span>2 July 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -4516,6 +4559,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
         <div class="res-main">
           <p class="standfirst">A project can work perfectly in a model and still die on interconnection, permitting or equipment. The lesson from Paces is to discover fatal development risks before capital is committed, and to treat a self-built hybrid system as a route to faster power.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>When does a self-built hybrid become the faster route to power?</dd></div><div><dt>Basis</dt><dd>US development statistics cited by Paces (MCJ &ldquo;Inevitable&rdquo; podcast) and the Paces, Scale Microgrids and Stripe Climate off-grid analysis; no Australian sample.</dd></div><div><dt>Method</dt><dd>Applies the observations to the F1&ndash;F4 screening questions.</dd></div><div><dt>Finding</dt><dd>Where connection or permitting is the binding delay, a firmed renewable hybrid can be faster and more controllable than waiting for a connection; equipment lead times can bind as hard as approvals.</dd></div><div><dt>Limits</dt><dd>A project-development note. US completion and interconnection figures are not Australian benchmarks, and no market share is quantified.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -4613,10 +4658,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research article</p>
-          <h1>The demand charge is the line item a behind-the-meter battery can defend</h1>
+          <p class="eyebrow">Analytical framework</p>
+          <h1>For sites on demand-based tariffs, peak-demand reduction can be the most directly attributable BESS value stream</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research article</span>
+            <span class="tag">Analytical framework</span>
             <span class="sep" aria-hidden="true"></span>
             <span>2 July 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -4640,6 +4685,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         <div class="res-main">
                     <p class="series-bar"><b>Battery project readiness &middot; 3 of 9</b> <a href="/research/btm-bess-customer-savings.html">&larr; Previous</a> <a href="/research.html#battery-series">Series overview</a> <a href="/bess-forecast-is-not-cashflow.html">Next &rarr;</a></p>
           <p class="standfirst">Peak shaving means refusing to buy network capacity that a commercial or industrial site needs for only a few minutes a month. That distinction changes how a BTM battery should be sized, valued and financed.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>Which behind-the-meter battery value stream can be attributed most directly on a demand-based tariff?</dd></div><div><dt>Basis</dt><dd>The peak-shaving mechanism as described in a 2018 Clean Energy Group webinar; Australian network tariff structures in general terms.</dd></div><div><dt>Method</dt><dd>Describes how a demand charge is set and how a battery defends it; no Australian tariff example or interval-data set is included.</dd></div><div><dt>Finding</dt><dd>For sites on demand-based tariffs, peak-demand reduction is the value stream that can be attributed most directly; other services count only where they can coexist operationally.</dd></div><div><dt>Limits</dt><dd>No tariff name, rate, demand window or 12-month interval-data example is given; not all customers are on demand-based tariffs.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -4735,10 +4782,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research article</p>
-          <h1>Capital is available; project readiness determines whether it can be deployed</h1>
+          <p class="eyebrow">Practitioner note</p>
+          <h1>Project readiness can constrain battery deployment before capital availability does</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research article</span>
+            <span class="tag">Practitioner note</span>
             <span class="sep" aria-hidden="true"></span>
             <span>1 July 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -4761,6 +4808,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
         <div class="res-main">
           <p class="standfirst">Utility-scale battery financing gives industrial PV+BESS developers a warning worth taking seriously: when capital is abundant, capital stops being the constraint. What gets a project funded is readiness: resolved land, approvals, connection, contract and cashflow.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>What constrains an industrial PV+BESS project first: capital or readiness?</dd></div><div><dt>Basis</dt><dd>One practitioner interview (Azure Capital, on Modo Energy&rsquo;s &ldquo;The Transmission&rdquo;) and Heliovulcan&rsquo;s own screening work.</dd></div><div><dt>Method</dt><dd>Applies the reported utility-scale financing signal to the F1&ndash;F4 screen.</dd></div><div><dt>Finding</dt><dd>Readiness (resolved land, approvals, connection, contract and cashflow) can constrain deployment before capital availability does. A screening proposition, not a capital-market statistic.</dd></div><div><dt>Limits</dt><dd>No fund-raising, transaction or oversubscription data is analysed here; the signal is reported, not measured.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -4854,10 +4903,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research article</p>
+          <p class="eyebrow">Analytical framework</p>
           <h1>A BESS connection queue is not a construction pipeline</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research article</span>
+            <span class="tag">Analytical framework</span>
             <span class="sep" aria-hidden="true"></span>
             <span>2 July 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -4881,6 +4930,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         <div class="res-main">
                     <p class="series-bar"><b>Battery project readiness &middot; 5 of 9</b> <a href="/bess-forecast-is-not-cashflow.html">&larr; Previous</a> <a href="/research.html#battery-series">Series overview</a> <a href="/bess-ready-to-build-completeness.html">Next &rarr;</a></p>
           <p class="standfirst">Headline gigawatts create the illusion of future supply. In reality, every battery project must survive a series of land, planning, connection, procurement and finance gates &mdash; and one missing right can reduce an apparently advanced project to almost nothing.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>How should a battery connection queue be read as a supply pipeline?</dd></div><div><dt>Basis</dt><dd>UK development mechanics from one interview (Field, on Modo Energy&rsquo;s &ldquo;The Transmission&rdquo;); no Australian queue data set is analysed.</dd></div><div><dt>Method</dt><dd>Sets out serial survival gates (site, connection, approval, technical freeze, finance) and how delay compounds across them.</dd></div><div><dt>Finding</dt><dd>A pipeline should be probability-weighted and evidence-backed rather than ranked by nominal MW or percentage complete. This is a framework, not an empirical result for Australia.</dd></div><div><dt>Limits</dt><dd>No queue source, project counts, capacity, stage classification or gate pass-through rates are reported.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -4955,10 +5006,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research article</p>
+          <p class="eyebrow">Analytical framework</p>
           <h1>Which battery revenues can support debt?</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research article</span>
+            <span class="tag">Analytical framework</span>
             <span class="sep" aria-hidden="true"></span>
             <span>2 July 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -4982,6 +5033,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         <div class="res-main">
                     <p class="series-bar"><b>Battery project readiness &middot; 4 of 9</b> <a href="/btm-demand-charges-australia.html">&larr; Previous</a> <a href="/research.html#battery-series">Series overview</a> <a href="/bess-development-queue-to-construction.html">Next &rarr;</a></p>
           <p class="standfirst">Contract structure determines how much of a forecast becomes financeable cashflow. A central forecast is closer to an architect&rsquo;s drawing than a completed building. It describes what may happen under a set of assumptions. It does not guarantee the timing, volatility or availability of cash needed to service debt.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>Which battery revenues can support debt?</dd></div><div><dt>Basis</dt><dd>One practitioner interview (Harmony Energy, on Modo Energy&rsquo;s &ldquo;The Transmission&rdquo;) and Heliovulcan&rsquo;s financeability work; no transaction model is published.</dd></div><div><dt>Method</dt><dd>Distinguishes contracted, downside-protected and merchant revenue and traces each to debt capacity.</dd></div><div><dt>Finding</dt><dd>Contract structure determines how much of a forecast becomes financeable cashflow; median merchant revenue should not be treated as contracted cashflow.</dd></div><div><dt>Limits</dt><dd>Contracted share, downside treatment, tenor, DSCR and availability assumptions are project-specific; the logic is illustrative.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -5061,10 +5114,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research article</p>
+          <p class="eyebrow">Analytical framework</p>
           <h1>A project is ready to build when no critical right or approval remains unresolved</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research article</span>
+            <span class="tag">Analytical framework</span>
             <span class="sep" aria-hidden="true"></span>
             <span>2 July 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -5088,6 +5141,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         <div class="res-main">
                     <p class="series-bar"><b>Battery project readiness &middot; 6 of 9</b> <a href="/bess-development-queue-to-construction.html">&larr; Previous</a> <a href="/research.html#battery-series">Series overview</a> <a href="/brownfield-bess-connection-value.html">Next &rarr;</a></p>
           <p class="standfirst">A battery project can look 90% complete and still be worth very little if the remaining 10% contains a cable easement, incompatible consent or connection condition that cannot be satisfied.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>When is a battery project ready to build?</dd></div><div><dt>Basis</dt><dd>One interview (ILI Group, on Modo Energy&rsquo;s &ldquo;The Transmission&rdquo;); the completeness test is Heliovulcan&rsquo;s.</dd></div><div><dt>Method</dt><dd>Treats ready-to-build as a completeness test across site control, planning approval, connection rights, revenue contract, EPC scope, financing conditions and critical interfaces.</dd></div><div><dt>Finding</dt><dd>A project is ready to build when no critical right, approval or interface remains unresolved; value rises non-linearly with completeness.</dd></div><div><dt>Limits</dt><dd>RTB is used here as a completeness test, not a market-standard legal definition; UK prices and histories are not Australian benchmarks.</dd></div></dl>
+
+          <div class="note rtb-check"><span class="cap">Ready-to-build completeness test</span><ul><li>Site control</li><li>Planning approval</li><li>Connection rights</li><li>Revenue contract</li><li>EPC scope</li><li>Financing conditions</li><li>Critical interfaces</li></ul><p>RTB is used here as a completeness test across these seven items, not as a market-standard legal definition.</p></div>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -5154,10 +5211,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research article</p>
-          <h1>Existing connection rights can be the most valuable part of a brownfield BESS site</h1>
+          <p class="eyebrow">Analytical framework</p>
+          <h1>Existing connection rights can materially improve a brownfield BESS development case</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research article</span>
+            <span class="tag">Analytical framework</span>
             <span class="sep" aria-hidden="true"></span>
             <span>2 July 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -5181,6 +5238,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         <div class="res-main">
                     <p class="series-bar"><b>Battery project readiness &middot; 7 of 9</b> <a href="/bess-ready-to-build-completeness.html">&larr; Previous</a> <a href="/research.html#battery-series">Series overview</a> <a href="/hybrid-asset-integrated-due-diligence.html">Next &rarr;</a></p>
           <p class="standfirst">A low-utilisation power site can already contain the hardest parts of a BESS project: a substation, line, permits, metering and tested injection rights. Brownfield value comes from avoiding development work &mdash; but only after the inherited constraints are understood.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>What do existing connection rights contribute to a brownfield BESS case?</dd></div><div><dt>Basis</dt><dd>The Enertis Applus+ and UC Berkeley webinar on storage at peaker plants; Heliovulcan screening work; no Australian project sample.</dd></div><div><dt>Method</dt><dd>Lists the inherited rights and assets, the constraints that come with them, and the diligence each needs.</dd></div><div><dt>Finding</dt><dd>Existing connection rights can materially improve a brownfield BESS development case, after remaining life, capacity, fault level, protection and shared-use limits are tested.</dd></div><div><dt>Limits</dt><dd>No comparison of replacement cost, time value, available capacity or re-approval risk across a project sample; US surplus-interconnection mechanisms do not apply directly.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -5244,10 +5303,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research article</p>
-          <h1>In emerging markets, start BESS development with the buyer and financing structure</h1>
+          <p class="eyebrow">Practitioner note</p>
+          <h1>For BESS projects dependent on concessional or development finance, start with buyer eligibility and financing structure</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research article</span>
+            <span class="tag">Practitioner note</span>
             <span class="sep" aria-hidden="true"></span>
             <span>2 July 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -5271,6 +5330,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         <div class="res-main">
                     <p class="series-bar"><b>Battery project readiness &middot; 9 of 9</b> <a href="/hybrid-asset-integrated-due-diligence.html">&larr; Previous</a> <a href="/research.html#battery-series">Series overview</a> <span class="is-off">Next</span></p>
           <p class="standfirst">The first question is who will buy the service and on what terms. It is who will pay for flexibility, under which contract, in which currency, and whether that payment obligation can support capital.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>Where should development of a BESS that depends on concessional or development finance start?</dd></div><div><dt>Basis</dt><dd>One interview (Ion Ventures, on Modo Energy&rsquo;s &ldquo;The Transmission&rdquo;) and Heliovulcan&rsquo;s mine-microgrid screening.</dd></div><div><dt>Method</dt><dd>Reverses the usual sequence: buyer, service, payment structure and capital eligibility before sizing or siting.</dd></div><div><dt>Finding</dt><dd>For projects dependent on concessional or development finance, buyer eligibility and financing structure decide the case before project return does.</dd></div><div><dt>Limits</dt><dd>Markets differ in currency, sovereign support, buyer credit, permitting and concessional finance; this is a practitioner note, not a rule for all emerging markets.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -5340,10 +5401,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research article</p>
+          <p class="eyebrow">Analytical framework</p>
           <h1>Hybrid assets require a single review of their shared connection, contracts and dispatch</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research article</span>
+            <span class="tag">Analytical framework</span>
             <span class="sep" aria-hidden="true"></span>
             <span>2 July 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -5367,6 +5428,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         <div class="res-main">
                     <p class="series-bar"><b>Battery project readiness &middot; 8 of 9</b> <a href="/brownfield-bess-connection-value.html">&larr; Previous</a> <a href="/research.html#battery-series">Series overview</a> <a href="/emerging-market-bess-develop-backwards.html">Next &rarr;</a></p>
           <p class="standfirst">Putting a solar model and a battery model in the same workbook does not create a hybrid model. The combined asset is governed by the interfaces both components share and compete for: connection capacity, charging rights, controls, metering, contracts and performance responsibility.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>How should a co-located solar and battery asset be reviewed?</dd></div><div><dt>Basis</dt><dd>AFRY&rsquo;s webinar on due diligence for hybrid assets; Heliovulcan mine-hybrid screening.</dd></div><div><dt>Method</dt><dd>Identifies the shared interfaces (connection capacity, charging rights, controls, metering, contracts, performance responsibility) that separate models miss.</dd></div><div><dt>Finding</dt><dd>Hybrid assets require a single review of their shared connection, contracts and dispatch; independent revenue curves overstate value where the components compete.</dd></div><div><dt>Limits</dt><dd>A due-diligence framework, not quantitative research; experience ranges require project-specific verification.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -5435,10 +5498,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research note</p>
+          <p class="eyebrow">Analytical framework</p>
           <h1>Customer savings are not project revenue</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research note</span>
+            <span class="tag">Analytical framework</span>
             <span class="sep" aria-hidden="true"></span>
             <span>12 June 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -5462,6 +5525,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         <div class="res-main">
                     <p class="series-bar"><b>Battery project readiness &middot; 2 of 9</b> <a href="/research/pre-dd-versus-feasibility-study.html">&larr; Previous</a> <a href="/research.html#battery-series">Series overview</a> <a href="/btm-demand-charges-australia.html">Next &rarr;</a></p>
           <p class="standfirst">A behind-the-meter BESS becomes financeable only when the allocation of savings is converted into enforceable cashflow. A model can look profitable to the customer and still be unfinanceable for a lender; the gap is where most early industrial projects fail during financing or diligence.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>When does a customer saving become revenue a lender can size debt against?</dd></div><div><dt>Basis</dt><dd>Heliovulcan&rsquo;s screening structure (contracted base, customer upside and lender downside cases); no completed transaction, project data set or contract is published.</dd></div><div><dt>Method</dt><dd>Follows value from customer avoided cost through the contract, SPV revenue, CFADS and debt service; the worked example below is illustrative.</dd></div><div><dt>Finding</dt><dd>Customer savings become project revenue only where a contract converts them into a payment obligation; the lender sizes debt against the weakest contracted link.</dd></div><div><dt>Limits</dt><dd>Illustrative structure; not derived from a completed transaction. Tenor, DSCR, availability and haircut assumptions are project-specific.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -5519,6 +5584,16 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
           </div>
 
           <p>Every arrow is a place the value can leak. If the fee captures only part of the saving, the chain narrows at arrow one. If the fee is uncontracted or contingent, it narrows at arrow two. If tenor is short or DSCR thin, it narrows at debt service. The lender underwrites the narrowest contracted point in that chain.</p>
+
+          <div class="worked"><p class="eyebrow">Illustrative worked example</p>
+          <div class="table-scroll"><table class="matrix"><thead><tr><th>Item</th><th class="num">Customer</th><th class="num">SPV</th><th class="num">Lender case</th></tr></thead><tbody>
+            <tr><td>Avoided diesel and tariff cost</td><td class="num">A$X</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+            <tr><td>Contracted service fee</td><td class="num">(A$Y)</td><td class="num">A$Y</td><td class="num">A$Y, after availability and payment haircuts</td></tr>
+            <tr><td>Uncontracted value (upside sharing, carbon)</td><td class="num">A$Z</td><td class="num">A$Z</td><td class="num">A$0</td></tr>
+            <tr><td>Operating cost</td><td class="num">&mdash;</td><td class="num">(A$O)</td><td class="num">(A$O), stressed</td></tr>
+            <tr><td>Debt service</td><td class="num">&mdash;</td><td class="num">(A$N)</td><td class="num">tested at 1.30&times; DSCR on the contracted fee alone</td></tr>
+          </tbody></table></div>
+          <p class="small-note">Illustrative structure; not derived from a completed transaction. The customer&rsquo;s saving (X) exceeds the fee (Y) or the contract is not signed; the lender sizes debt on Y net of haircuts, never on X or Z.</p></div>
 
           <h2 id="s-s1-s2-s3-what-each-case-is-a">S1, S2, S3: what each case is for</h2>
 
@@ -5595,10 +5670,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research note</p>
+          <p class="eyebrow">Analytical framework</p>
           <h1>A Pre-DD screen is not a feasibility study</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research note</span>
+            <span class="tag">Analytical framework</span>
             <span class="sep" aria-hidden="true"></span>
             <span>19 June 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -5622,6 +5697,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
         <div class="res-main">
                     <p class="series-bar"><b>Battery project readiness &middot; 1 of 9</b> <span class="is-off">Previous</span> <a href="/research.html#battery-series">Series overview</a> <a href="/research/btm-bess-customer-savings.html">Next &rarr;</a></p>
           <p class="standfirst">A feasibility study tries to prove a project works. A Pre-DD screen does the opposite job: it goes looking for where the project breaks &mdash; in approvals, on the ground, at the connection, or in the cashflow &mdash; while the answer is still cheap to act on. </p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>What should an early industrial energy screen produce?</dd></div><div><dt>Basis</dt><dd>Heliovulcan&rsquo;s F1&ndash;F4 screening method, set out in full on the <a href="/methods/pre-dd-f1-f4/">methodology page</a>.</dd></div><div><dt>Method</dt><dd>Contrasts a feasibility study, which proves a chosen design, with a screen that looks for where the project breaks.</dd></div><div><dt>Finding</dt><dd>The useful early output is a decision (proceed, redesign, reduce scope, pause or stop) with the evidence behind it.</dd></div><div><dt>Limits</dt><dd>Professional project-screening framework; no claim of a representative market sample.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
@@ -5709,10 +5786,10 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
       <section class="res-hero res-hero--plain">
         <div class="res-hero__inner">
-          <p class="eyebrow">Research note</p>
+          <p class="eyebrow">Practitioner note</p>
           <h1>Weak-grid mines do not buy cheap energy</h1>
           <p class="res-hero__meta">
-            <span class="tag">Research note</span>
+            <span class="tag">Practitioner note</span>
             <span class="sep" aria-hidden="true"></span>
             <span>26 June 2026</span>
             <span class="sep" aria-hidden="true"></span>
@@ -5735,6 +5812,8 @@ The Safeguard Atlas pages and the sample facility page are rendered snapshots (t
 
         <div class="res-main">
           <p class="standfirst">A remote mine is buying operational continuity. On those sites diesel is the thing that guarantees the plant keeps running. That changes the first PV+BESS question entirely.</p>
+
+          <dl class="basis-box"><div><dt>Question</dt><dd>What is a weak-grid mine buying when it buys energy, and what does that do to a PV+BESS screen?</dd></div><div><dt>Basis</dt><dd>Operating experience from off-grid mine screens; no published mine sample, load profile, diesel configuration or reliability data set.</dd></div><div><dt>Method</dt><dd>Sets out the roles diesel performs and the sizing and reliability questions that follow.</dd></div><div><dt>Finding</dt><dd>A remote mine buys operational continuity; the served-load slice, not the rare peak, sets the boundary of the commercial case.</dd></div><div><dt>Limits</dt><dd>A practitioner note. Typical served-load shares and model sensitivities are not reported; upgrading it would need a defined mine sample.</dd></div></dl>
 
           <nav class="res-jump" aria-label="Contents">
             <b>In this note</b>
