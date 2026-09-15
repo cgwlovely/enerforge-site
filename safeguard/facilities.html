@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Safeguard Atlas — an independent model of the Safeguard Mechanism | Heliovulcan</title>
-  <meta name="description" content="An independent model of how the Safeguard Mechanism converts a national 2035 target into facility-level baselines: the FY2024-25 register, the annual pathway, the policy settings, a map, every facility, and the method." />
+  <title>Every facility row, with the modelled FY2034-35 position | Safeguard Atlas | Heliovulcan</title>
+  <meta name="description" content="A searchable table of the 209 facility rows in the FY2024-25 Safeguard register, with published baselines, covered emissions and the modelled FY2034-35 position. Each name links to a facility page." />
   <meta name="keywords" content="Safeguard Mechanism model, safeguard baseline calculator, Australia 2035 target, decline rate, TEBA, safeguard mechanism credits, facility emissions Australia" />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
   <link rel="apple-touch-icon" href="/favicon.png" />
   <link rel="stylesheet" href="/style.css" />
-  <link rel="canonical" href="https://heliovulcan.com.au/safeguard-atlas.html" />
+  <link rel="canonical" href="https://heliovulcan.com.au/safeguard/facilities.html" />
   <meta property="og:site_name" content="Heliovulcan" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://heliovulcan.com.au/safeguard-atlas.html" />
-  <meta property="og:title" content="An independent model of the Safeguard Mechanism, facility by facility." />
-  <meta property="og:description" content="An independent model of how the Safeguard Mechanism converts a national 2035 target into facility-level baselines: the FY2024-25 register, the annual pathway, the policy settings, a map, every facility, and the method." />
+  <meta property="og:url" content="https://heliovulcan.com.au/safeguard/facilities.html" />
+  <meta property="og:title" content="The register, row by row" />
+  <meta property="og:description" content="A searchable table of the 209 facility rows in the FY2024-25 Safeguard register, with published baselines, covered emissions and the modelled FY2034-35 position. Each name links to a facility page." />
   <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
@@ -212,7 +212,7 @@
     @media (max-width: 560px) { .tiles { grid-template-columns: 1fr; } .settings-strip a { margin-left: 0; } }
   </style>
 </head>
-<body data-root="">
+<body data-root="../">
   <a class="skip" href="#atlas-start">Skip to content</a>
   <header class="nav">
     <div class="nav__inner">
@@ -235,46 +235,52 @@
   <section class="atlas-hero">
     <div class="container">
       <p class="atlas-hero__sub">Safeguard Atlas</p>
-      <h1>An independent model of the Safeguard Mechanism, facility by facility.</h1>
-      <p class="atlas-hero__lede">The Safeguard Mechanism sets an annual emissions baseline for each of Australia's largest industrial facilities, calculated from production, an applicable emissions intensity and a decline rate that falls every year. Safeguard Atlas reconstructs that calculation from the published register and the Safeguard Rule. Each part of the model has its own page.</p>
-      <nav class="atlas-subnav" aria-label="Safeguard Atlas sections"><a href="/safeguard-atlas.html" class="is-here">Overview</a><a href="/safeguard/pathway.html">Pathway</a><a href="/safeguard/scorecard.html">Scorecard</a><a href="/safeguard/policy.html">Policy settings</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/facilities.html">Facilities</a><a href="/safeguard/sandbox.html">Sandbox</a><a href="/safeguard/method.html">Method</a></nav>
-      <p class="atlas-hero__stamp" id="stamp"></p>
+      <h1>The register, row by row</h1>
+      <p class="atlas-hero__lede">The 209 facility rows of the FY2024-25 register with their published baseline and covered emissions, and the baseline and position the rules would give each of them in FY2034-35 under the settings in force.</p>
+      <nav class="atlas-subnav" aria-label="Safeguard Atlas sections"><a href="/safeguard-atlas.html">Overview</a><a href="/safeguard/pathway.html">Pathway</a><a href="/safeguard/scorecard.html">Scorecard</a><a href="/safeguard/policy.html">Policy settings</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/facilities.html" class="is-here">Facilities</a><a href="/safeguard/sandbox.html">Sandbox</a><a href="/safeguard/method.html">Method</a></nav>
     </div>
   </section>
   <main id="atlas-start">
-<!-- ======================= 1. STARTING POINT ======================= -->
-    <section class="atlas-sec" id="start">
-      <div class="container">
-        <p class="eyebrow">The starting point</p>
-        <h2>The FY2024-25 register, as published</h2>
-        <p class="atlas-sec__why">
-          The Clean Energy Regulator publishes a register each year with one row per facility,
-          giving the facility's baseline and its covered emissions. Every projection on this page
-          starts from that register. The figures in this section are taken directly from it and are
-          not modelled.
-        </p>
-        <div class="kpis" id="kpis"></div>
-        <p class="note-inline">
-          <span class="tag tag--off">Official</span> marks a figure taken from a published source.
-          <span class="tag tag--mod">Modelled</span> marks a figure calculated on this page from
-          official inputs. <span class="tag tag--asm">Assumption</span> marks a stated scenario
-          setting that the reader can change. Nothing on this page is a compliance determination;
-          the Regulator's determinations govern.
-        </p>
-      </div>
+    <section class="atlas-sec" style="padding-bottom:0;border-top:0">
+      <div class="container"><div class="settings-strip" id="settings-strip"></div></div>
     </section>
-    <section class="atlas-sec" id="parts">
+<!-- ======================= 4. FACILITIES ======================= -->
+    <section class="atlas-sec" id="facilities">
       <div class="container">
-        <p class="eyebrow">The model, by part</p>
-        <h2>Each part of the model has its own page</h2>
-        <div class="tiles">
-          <a class="tile" href="/safeguard/pathway.html"><span class="tile__k">01</span><h3>National pathway</h3><p>Covered emissions, aggregate baselines and modelled compliant net emissions, FY2024-25 to FY2039-40, against the 2035 targets.</p><span class="tile__go">Open &rarr;</span></a>
-          <a class="tile" href="/safeguard/policy.html"><span class="tile__k">02</span><h3>Policy settings</h3><p>The post-2030 decline rate required for a 2035 target, and how it moves with the trade-exposed treatment, production, closures, new entrants and abatement.</p><span class="tile__go">Open &rarr;</span></a>
-          <a class="tile" href="/safeguard/scorecard.html"><span class="tile__k">03</span><h3>Scorecard</h3><p>How much of the change in baselines between the two published registers the rule alone explains.</p><span class="tile__go">Open &rarr;</span></a>
-          <a class="tile" href="/safeguard/map.html"><span class="tile__k">04</span><h3>Map</h3><p>Every register row placed by National Pollutant Inventory coordinates, with a stated location grade for each point.</p><span class="tile__go">Open &rarr;</span></a>
-          <a class="tile" href="/safeguard/facilities.html"><span class="tile__k">05</span><h3>Facilities</h3><p>The 209 rows of the register, searchable, with the modelled FY2034-35 position and a page for each facility.</p><span class="tile__go">Open &rarr;</span></a>
-          <a class="tile" href="/safeguard/sandbox.html"><span class="tile__k">06</span><h3>Facility sandbox</h3><p>The same calculation applied to a facility that is not in the register. Nothing entered is stored.</p><span class="tile__go">Open &rarr;</span></a>
-          <a class="tile" href="/safeguard/method.html"><span class="tile__k">07</span><h3>Method and sources</h3><p>Inputs, verification against the 2026 submission, register changes, and limitations.</p><span class="tile__go">Open &rarr;</span></a>
+        <p class="eyebrow">Facilities</p>
+        <h2>The register, row by row, with the modelled FY2034-35 position</h2>
+        <p class="atlas-sec__why">
+          The first five columns are taken from the published register. The last two are modelled:
+          the baseline the rules would set in FY2034-35 under the selected settings, and the
+          facility's position against it. A positive position means covered emissions exceed the
+          baseline and units would have to be surrendered. A facility that closes under the
+          selected settings is marked and is excluded from the totals from its closure year. Each
+          facility name links to a page giving its greenhouse gas composition, the change from the
+          previous register and its own baseline path.
+        </p>
+        <div class="tbl-tools">
+          <input type="search" id="fsearch" placeholder="Search by facility, responsible emitter or industry" aria-label="Search facilities" />
+          <select id="fstate" aria-label="Filter by state"><option value="">All states</option></select>
+          <select id="fclass" aria-label="Filter by group"><option value="">All facilities</option><option value="teba">Facilities with a trade-exposed determination</option><option value="over">Above baseline in FY2024-25</option><option value="under">Below baseline in FY2024-25</option><option value="close">Closing under the selected settings</option></select>
+          <button class="btn-sm" id="fcsv">Download CSV</button>
+        </div>
+        <div class="tbl-scroll">
+          <table class="fac" id="ftable">
+            <thead><tr>
+              <th data-k="n">Facility</th>
+              <th data-k="s">State</th>
+              <th class="num" data-k="cov">Covered FY24-25 (t)</th>
+              <th class="num" data-k="b0">Baseline FY24-25 (t)</th>
+              <th class="num" data-k="pos0">Position FY24-25 (t)</th>
+              <th class="num" data-k="b35">Modelled baseline FY34-35 (t)</th>
+              <th class="num" data-k="pos35">Modelled position FY34-35 (t)</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="tbl-foot">
+          <span id="fcount"></span>
+          <span><span class="tag tag--off">Official</span> columns 1&ndash;5 &nbsp;&middot;&nbsp; <span class="tag tag--mod">Modelled</span> columns 6&ndash;7</span>
         </div>
       </div>
     </section>

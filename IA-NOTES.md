@@ -237,6 +237,28 @@ What makes it defensible rather than just interactive:
   two registers and then explains why we do *not* turn it into an entries-and-exits number: names
   change, and a change of operator part-way through a year puts one facility in the register twice.
 
+**One page per part (2026-09-15, later the same day).** The owner's second brief: too much on one
+page, and quantitative panels mixed with qualitative prose. The Atlas is now an overview plus seven
+section pages, on the McKinsey pattern of an overview that opens onto one-topic pages:
+
+| page | holds |
+|---|---|
+| `safeguard-atlas.html` | the register as published (six figures) and seven tiles, one per part |
+| `safeguard/pathway.html` | the national series to FY2039-40 |
+| `safeguard/scorecard.html` | what the rule alone explains between the two registers |
+| `safeguard/policy.html` | the settings, the rate required, the iso-target curve, the decomposition |
+| `safeguard/map.html` | the map with location grades |
+| `safeguard/facilities.html` | the 209-row table |
+| `safeguard/sandbox.html` | a facility not in the register |
+| `safeguard/method.html` | sources, register changes, verification, limitations |
+
+The settings chosen on the policy page carry across the other pages (localStorage, and the
+`#s:` fragment for a shareable link); pathway, map, facilities and sandbox open with a one-line
+"settings in force" strip linking back to the policy page. All pages share one engine,
+`assets/safeguard-atlas.js`, and each inlines the data so nothing is fetched. The masthead of
+every page carries the section navigation. `safeguard/` redirects to the overview. Layout source:
+`tools/consultation_kb/atlas/parts/` (shell, section fragments, engine) assembled by `build_atlas.py`.
+
 `facility/<slug>.html` — one page per register row, not per facility. Where a facility name appears
 twice in one register (Telfer Gold Mine in FY2024-25) each row gets its own page, disambiguated by
 responsible emitter in the slug, and each page says plainly that the other row exists and that the
