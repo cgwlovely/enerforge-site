@@ -30,6 +30,8 @@
     .findings { counter-reset: f; list-style: none; margin: 28px 0 0; padding: 0; border-top: 2px solid var(--ink); max-width: 900px; }
     .findings li { counter-increment: f; display: grid; grid-template-columns: 3rem 1fr; gap: 0 18px; padding: 18px 0; border-bottom: 1px solid var(--line-soft); }
     .findings li::before { content: counter(f, decimal-leading-zero); font-size: 12px; letter-spacing: .12em; font-weight: 600; color: var(--ink-soft); padding-top: 4px; }
+    .findings li::before { grid-column: 1; grid-row: 1; }
+    .findings li > b, .findings li > p { grid-column: 2; }
     .findings b { display: block; font-family: var(--sans); font-weight: 600; font-size: 17.5px; line-height: 1.4; color: var(--ink); }
     .findings p { font-size: 16px; color: var(--ink); margin-top: 8px; line-height: 1.6; }
     .findings p.upd { font-size: 13.5px; color: var(--ink-faint); margin-top: 6px; }
