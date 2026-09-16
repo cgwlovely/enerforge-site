@@ -347,9 +347,9 @@ window.HELIOVULCAN_CASES = [
   {
     id: "diesel-replacement-market",
     num: "03",
-    title: "The largest mine-electrification loads may be invisible in today's electricity data",
+    title: "The largest future mine-electrification loads may not appear in current electricity data",
     subtitle:
-      "A reconciliation of the national diesel and generation accounts shows that mining's 299.6 PJ of diesel is mostly mobile equipment. Converted to electricity it is a theoretical 3.9–4.65 GW of average load, about 70–90 per cent of mining's current electricity use, much of it at sites that report little electricity today.",
+      "A reconciliation of the national diesel and generation accounts shows that mining's 299.6 PJ of diesel is predominantly used in mobile equipment. Converted to electricity it is a theoretical 3.9–4.65 GW of average load, about 70–90 per cent of mining's current electricity use, some of it at sites that report little electricity today.",
     status: { label: "Published — upper-bound estimate", tone: "warn" },
     lesson:
       "<span class='hl'>A site list cannot tell you when it is finished.</span> Building the market from the bottom up produced a target list. Reconciling that list against national energy accounts produced something a list never gives you: a ceiling, and a residual that had to be named.",

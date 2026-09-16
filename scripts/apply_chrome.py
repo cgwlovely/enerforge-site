@@ -15,7 +15,7 @@ WS = SITE.parents[1]            # /Users/hugefafafa1/BESS
 TEMPLATES = [WS / "tools/consultation_kb/atlas/parts/shell.html",
              WS / "tools/consultation_kb/atlas/facility_template.html",
              WS / "tools/consultation_kb/atlas/build_facility_pages.py"]
-ASSET_V = "20260916c"          # bump when style.css or site-nav.js changes: returning browsers cache both
+ASSET_V = "20260916d"          # bump when style.css or site-nav.js changes: returning browsers cache both
 SKIP = {"ar.html", "context_map.html", "siting_opportunity_constraint_screen.html", "reports/_template.html"}
 
 # ---- the menu -------------------------------------------------------------------
@@ -25,7 +25,7 @@ MENU = [
                              ("Energy markets", "/research.html#markets"), ("Battery projects", "/research.html#battery"),
                              ("Policy analysis", "/research.html#policy")]),
         ("Featured", [("Safeguard Atlas: the post-2030 decline rate cannot be set in isolation", "/safeguard-atlas.html"),
-                      ("Mine-electrification loads invisible in today's electricity data", "/australian-diesel-replacement-market-size.html"),
+                      ("Future mine-electrification loads and current electricity data", "/australian-diesel-replacement-market-size.html"),
                       ("Submission: AI and data centres", "/consultations/ai-data-centres-2026.html")])]),
     ("tools", "Tools & data", "/safeguard-atlas.html", [
         ("Interactive", [("Safeguard Atlas", "/safeguard-atlas.html"), ("Industry maps", "/industry-maps.html")]),

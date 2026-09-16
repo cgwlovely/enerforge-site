@@ -296,6 +296,31 @@ page's source table beyond a labelled "Modelled" row, not in the page data (per-
 at build time) and not in the public JSON (the map layer is omitted). No modelled figure depends on a
 location, so the evidence ledger for the numbers is unaffected.
 
+### Round 16: sentences no stronger than the evidence (2026-09-16)
+
+Ninth review, on the rebuilt diesel study and the rest of the research. Rules that now hold:
+
+- **A title states the direction and the condition, not a certainty**: "may not appear in current electricity
+  data" (not "invisible"); "also tightens baselines for facilities already covered" (not "does more");
+  "buy reliability as well as energy" (not "do not buy cheap energy"); "for early-stage battery projects …
+  than headline capital availability"; "for customers on demand-based tariffs".
+- **What the accounts cannot split is not asserted**: the national accounts do not separate mobile from
+  stationary mining diesel, so the text says "appears to be predominantly mobile use", the bar chart's last row
+  is "reported mining diesel pool, not split by equipment type" in a neutral colour, and the funnel's second
+  layer is "not quantified; the reconciliation indicates it is the majority". A chart never concludes more
+  than the text.
+- **"Not found" is written as not found**: no public funding record was identified for 20 of 23 projects;
+  absence of a record is not proof that none was received.
+- **Derived numbers carry their derivation**: the 25–35 MW installed-capacity figure states the
+  average-to-installed ratio it comes from and that it is indicative.
+- **Neutral policy vocabulary**: the fuel tax credit lowers the private cost of each litre relative to its
+  excise-inclusive price; it is not called a subsidy.
+- **Three registers, deliberately**: quantitative pieces read data → method → result → limit; frameworks
+  define the decision, show the steps and say when to use them; practitioner notes give a common problem,
+  its implication and the questions to test. A few characterful headings stay ("Most of the diesel is on
+  wheels", "Average energy is not charging capacity", "Customer savings are not project revenue"); the body
+  underneath returns to evidence language.
+
 ## Homepage (2026-09-15, six modules)
 
 1. **Hero** — one sentence of value: *Independent analysis of Australian industrial assets, energy
