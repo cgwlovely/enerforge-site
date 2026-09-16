@@ -286,6 +286,16 @@ Two sentences had been made abstract to sound like research. Rules:
   412.8 / 369.3 Mt budgets, seven confirmed closures, ERC 0.902 → 0.657. The Policy page's five-year
   cumulative (393 Mt) is under the settings in force; the PDF's 388 Mt is at the solved rate.
 
+### Facility locations are not documented on the site (owner decision, 2026-09-16)
+
+The Atlas map places each register row by Heliovulcan's own geocoding and shows a confidence grade
+(A: two independent references agree; B: one reference, or references a few kilometres apart; C:
+references disagree, open circle). The references, the matching rules and the per-point workings are
+part of the facility layer and are deliberately not published: not on the map page, not in the method
+page's source table beyond a labelled "Modelled" row, not in the page data (per-point notes are stripped
+at build time) and not in the public JSON (the map layer is omitted). No modelled figure depends on a
+location, so the evidence ledger for the numbers is unaffected.
+
 ## Homepage (2026-09-15, six modules)
 
 1. **Hero** — one sentence of value: *Independent analysis of Australian industrial assets, energy

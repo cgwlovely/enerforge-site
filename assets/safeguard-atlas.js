@@ -725,9 +725,11 @@ function renderSources() {
     ["New entrants", "Projects in public environmental assessment, with baselines calculated from the Rule's best-practice intensities",
       "Assumption", mt(C.NEW_EMISSIONS_T / 1e6) + " Mt CO₂-e of emissions against " + mt(C.NEW_BASELINE_T / 1e6) +
       " Mt of baseline, phased in over the decade according to stated commissioning dates.", ""],
+    ["Facility locations", "Heliovulcan geocoding of each register row, graded A, B or C by the agreement between the independent references used", "Modelled",
+      "Map placement only; no figure in the model depends on a location. The references, matching rules and per-point workings are part of Heliovulcan's facility layer and are not published.", ""],
     ["Model", "Heliovulcan — the calculation used in the 2026 decline-rate submission", "Modelled",
       "The calculation on this page is a port of the code used for the consultation submission. The check below re-runs the published cases.",
-      "consultations.html"]
+      "/consultations/safeguard-decline-rate-2026.html"]
   ];
   $("srctbl").innerHTML =
     "<thead><tr><th>Input</th><th>Source</th><th>Kind</th><th>Use in the model</th></tr></thead><tbody>" +
@@ -985,25 +987,19 @@ function renderMap() {
   var t = M.tiers || {}, np = M.not_placed || [], miss = M.missing || [], ln = M.lines || [];
   $("map-tiers").innerHTML =
     "<b>" + M.points.length + " of " + F.length + " register rows are placed as points" + (ln.length ? " and " + ln.length + " as pipelines" : "") + ".</b> " +
-    (t.A || 0) + " have a National Pollutant Inventory site and an independent registry feature of the same name within 5 km of each other (grade A), " +
-    (t.B || 0) + " rest on one source only or on sources between 5 and 15 km apart (grade B), and " +
-    (t.C || 0) + " have sources that disagree by more than 15 km (grade C, drawn at the registry point as an open circle). " +
+    (t.A || 0) + " are graded A (two independent references agree on the site), " +
+    (t.B || 0) + " grade B (one reference, or references a few kilometres apart) and " +
+    (t.C || 0) + " grade C (references disagree; drawn at the sector registry point as an open circle). " +
     np.length + " rows are networks, railways, roads, fleets or multi-platform fields with no single location and are listed below rather than placed" +
     (miss.length ? ", and " + miss.length + " could not be located" : "") + ". " +
     "The coastline is simplified, so coastal plants and offshore platforms may appear on or beyond the outline.";
   var pointByI = {}; M.points.forEach(function (p) { pointByI[p.i] = p; });
   $("how-map").innerHTML =
-    "<p><b>Coordinates.</b> The starting point for every facility is its National Pollutant Inventory (NPI) reporting site. Where a facility reports through several NPI sites, " +
-    "the site whose name shares the most words with the register name is used, and sites that are ports, depots, terminals, meter stations or offshore platforms are passed over " +
-    "unless the register name itself is one. NPI coordinates are the coordinates the reporter supplied, and for some sites they mark a town, a depot or a company office rather than the works. " +
-    "Each point is therefore checked against an independent registry of the same name: Geoscience Australia's operating mines, power stations and processing plants layers, " +
-    "Global Energy Monitor's coal, iron ore, gas and power trackers, and the site footprints drawn for Heliovulcan's own facility profiles. " +
-    "Where the NPI site and a registry feature lie within 5 km the point is graded A. Where the NPI site lies elsewhere but two independent sources agree with each other, " +
-    "the point is moved to them and graded A with the move recorded. Where only one source exists, or the sources are 5 to 15 km apart, the point is graded B. " +
-    "Where the NPI site and the sector's registry disagree by more than 15 km, the registry point is drawn as an open circle and graded C.</p>" +
+    "<p><b>Locations.</b> Each register row is geocoded by Heliovulcan and graded A, B or C by the agreement between the independent references used. " +
+    "The references, the matching rules and the per-point workings are part of Heliovulcan's facility layer and are not published; grades are shown so that the confidence of each point is visible.</p>" +
     "<p><b>Projection.</b> Equirectangular, standard parallel 27°S. Distances are approximate.</p>" +
     (ln.length ? "<p><b>Drawn as lines (" + ln.length + ").</b> " + ln.map(function (l) { return esc(l.n) + " (" + int(l.km) + " km)"; }).join(" · ") +
-      ". Geometry is Geoscience Australia's gas pipeline layer, simplified for display; the register row covers the whole pipeline, including its compressor stations.</p>" : "") +
+      ". Simplified for display; the register row covers the whole pipeline, including its compressor stations.</p>" : "") +
     "<p><b>Not placed by design (" + np.length + ").</b> " + np.map(esc).join(" · ") + ".</p>" +
     (miss.length ? "<p><b>Not located (" + miss.length + ").</b> " + miss.map(esc).join(" · ") + ".</p>" : "") +
     "<p>Gas distribution networks, pipelines, railways, haul roads, road and air fleets and multi-platform offshore fields have no single location and are not placed.</p>";
@@ -1019,7 +1015,7 @@ function mapInfo(i, pin) {
     '<div style="margin-top:6px">FY2024-25: covered <b>' + int(f.cov) + "</b> t, baseline <b>" + int(f.b0) + "</b> t, " +
     (f.cov > f.b0 ? '<span class="pill pill--over">' + int(f.cov - f.b0) + " above</span>" : '<span class="pill pill--under">' + int(f.b0 - f.cov) + " below</span>") +
     " &nbsp;·&nbsp; FY2034-35 under the selected settings: " + (r ? ("baseline <b>" + int(r.b) + "</b> t, " + (r.cov > r.b ? '<span class="pill pill--over">' + int(r.cov - r.b) + " above</span>" : '<span class="pill pill--under">' + int(r.b - r.cov) + " below</span>")) : '<span class="pill pill--closed">closed</span>') +
-    '</div><div style="margin-top:6px;font-size:12.5px;color:var(--ink-faint)">Location grade ' + p.t + (p.n ? " — " + esc(p.n) : "") + (pin ? " · selected" : "") + "</div>";
+    '</div><div style="margin-top:6px;font-size:12.5px;color:var(--ink-faint)">Location grade ' + p.t + (pin ? " · selected" : "") + "</div>";
   Array.prototype.forEach.call(document.querySelectorAll(".map-dot, .map-line"), function (c) { c.classList.toggle("is-on", +c.getAttribute("data-i") === i); });
 }
 
