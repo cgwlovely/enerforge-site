@@ -15,22 +15,18 @@ WS = SITE.parents[1]            # /Users/hugefafafa1/BESS
 TEMPLATES = [WS / "tools/consultation_kb/atlas/parts/shell.html",
              WS / "tools/consultation_kb/atlas/facility_template.html",
              WS / "tools/consultation_kb/atlas/build_facility_pages.py"]
-ASSET_V = "20260916f"          # bump when style.css or site-nav.js changes: returning browsers cache both
+ASSET_V = "20260916g"          # bump when style.css or site-nav.js changes: returning browsers cache both
 SKIP = {"ar.html", "context_map.html", "siting_opportunity_constraint_screen.html", "reports/_template.html"}
 
 # ---- the menu -------------------------------------------------------------------
 MENU = [
     ("research", "Research", "/research.html", [
         ("Research", [("Research reports and models", "/research.html#reports"), ("Insights", "/insights.html"),
-                      ("Consultations", "/consultations.html"), ("Methods", "/methods/")]),
+                      ("Methods", "/methods/")]),
         ("Featured", [("Safeguard Atlas: the post-2030 decline rate cannot be set in isolation", "/safeguard-atlas.html"),
                       ("Future mine-electrification loads and current electricity data", "/australian-diesel-replacement-market-size.html"),
                       ("Lowering the Safeguard threshold also tightens baselines for facilities already covered", "/safeguard-review-2026-baseline-floor.html")])]),
-    ("tools", "Data & tools", "/safeguard-atlas.html", [
-        ("Safeguard Atlas", [("Findings", "/safeguard-atlas.html"), ("Policy model", "/safeguard/policy.html"),
-                             ("Facility explorer", "/safeguard/facilities.html"), ("Map", "/safeguard/map.html"), ("Facility sandbox", "/safeguard/sandbox.html")]),
-        ("Downloads", [("Atlas model inputs (JSON)", "/safeguard/method.html#downloads"), ("Safeguard facility table (CSV)", "/data/safeguard-facilities.csv"),
-                       ("Remote Mining Asset record (JSON)", "/projects/remote-mining-asset/#machine-access")])]),
+    ("tools", "Data & tools", "/safeguard-atlas.html", None),
     ("consultations", "Consultations", "/consultations.html", [
         ("Published submissions", [("All submissions", "/consultations.html"),
                                    ("Safeguard post-2030 decline rate, 2026", "/consultations/safeguard-decline-rate-2026.html"),
@@ -123,7 +119,7 @@ FOOTER = '''<footer class="footer">
           <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
         </div>
         <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">Research reports and models</a><a href="/insights.html">Insights</a><a href="/methods/">Methods</a><a href="/coverage.html">Research coverage</a></div>
-        <div class="footer__col"><span class="footer__k">Data &amp; tools</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/safeguard/policy.html">Policy model</a><a href="/safeguard/facilities.html">Facility explorer</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/sandbox.html">Facility sandbox</a><a href="/safeguard/method.html#downloads">Downloads</a></div>
+        <div class="footer__col"><span class="footer__k">Data &amp; tools</span><a href="/safeguard-atlas.html">Safeguard Atlas</a></div>
         <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Published submissions</a><a href="/case-studies.html">Project screens</a><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="/coverage.html">Research coverage</a></div>
         <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">About Heliovulcan</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
       </div>
