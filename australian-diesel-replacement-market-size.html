@@ -38,13 +38,17 @@
     .verdict-list__t { font-weight: 600; }
     .verdict-list__t span { font-family: var(--mono); font-size: 13px; color: var(--ink-faint); font-weight: 400; }
     .verdict-list__b { font-size: 15px; color: var(--ink-soft); margin-top: 3px; }
-    .flow--stack { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin: 22px 0; border-left: 2px solid var(--ink); padding-left: 18px; font-size: 15px; }
-    .flow--stack .arrow { color: var(--ink-faint); }
-    .flow--stack .is-end { color: var(--ink-soft); }
-    .funnel { counter-reset: fn; list-style: none; padding: 0; margin: 18px 0 0; border-top: 2px solid var(--ink); }
-    .funnel li { counter-increment: fn; display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: 0 14px; padding: 10px 0; border-bottom: 1px solid var(--line-soft); font-size: 15.5px; }
-    .funnel li::before { content: counter(fn); font-size: 12px; letter-spacing: .1em; font-weight: 600; color: var(--ink-soft); padding-top: 3px; }
-    .funnel .fq { display: block; font-size: 13.5px; color: var(--ink-faint); margin-top: 2px; }
+    .bars { display: grid; gap: 8px; margin-top: 8px; }
+    .bars__row { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr) minmax(0, 15rem); gap: 0 14px; align-items: center; font-size: 14px; }
+    .bars__row--sub .bars__k { padding-left: 14px; color: var(--ink-soft); font-size: 13px; }
+    .bars__row--tot { border-top: 1px solid var(--ink); padding-top: 8px; margin-top: 4px; font-weight: 600; }
+    .bars__k { color: var(--ink); line-height: 1.35; }
+    .bars__bar { display: block; height: 14px; background: var(--surface-2); position: relative; }
+    .bars__bar i { display: block; height: 100%; min-width: 2px; background: var(--ink); }
+    .bars__bar i.is-gen { background: var(--amber); }
+    .bars__bar i.is-mob { background: var(--teal-deep); }
+    .bars__v { font-variant-numeric: tabular-nums; color: var(--ink-soft); font-size: 13.5px; line-height: 1.35; }
+    @media (max-width: 700px) { .bars__row { grid-template-columns: 1fr; gap: 4px; } }
   </style>
 </head>
 <body>
@@ -139,80 +143,45 @@
           <div class="exhibit">
             <div class="exhibit__head">
               <span class="exhibit__n">Exhibit 1</span>
-              <span class="exhibit__t">Four steps reduce a 1,270 PJ fuel pool to a 45 MW market</span>
+              <span class="exhibit__t">Mining burns a quarter of Australia&rsquo;s diesel, and almost none of that quarter is burned in a power station</span>
             </div>
             <div class="exhibit__body">
-          <div class="cascade">
-
-            <div class="cascade__step">
-              <div class="cascade__top">
-                <span class="cascade__val">1,269.9 PJ</span>
-                <span class="cascade__lab">National diesel consumption</span>
-                <span class="cascade__pct">100%</span>
+              <div class="bars">
+                <div class="bars__row"><span class="bars__k">National diesel consumption</span><span class="bars__bar"><i style="width:100%"></i></span><span class="bars__v">1,269.9 PJ</span></div>
+                <div class="bars__row"><span class="bars__k">Mining division</span><span class="bars__bar"><i style="width:23.6%"></i></span><span class="bars__v">299.6 PJ &middot; 23.6%</span></div>
+                <div class="bars__row"><span class="bars__k">Burned to generate electricity, all sectors</span><span class="bars__bar"><i style="width:3.9%" class="is-gen"></i></span><span class="bars__v">~50 PJ &middot; 3.9% &middot; 551 MW average</span></div>
+                <div class="bars__row bars__row--sub"><span class="bars__k">of which contractor-run mine power stations, booked under electricity supply</span><span class="bars__bar"><i style="width:3.0%" class="is-gen"></i></span><span class="bars__v">~37.8 PJ &middot; ~390 MW</span></div>
+                <div class="bars__row bars__row--sub"><span class="bars__k">of which registered remote-town stations</span><span class="bars__bar"><i style="width:0.4%" class="is-gen"></i></span><span class="bars__v">~4.3 PJ &middot; 45.4 MW</span></div>
+                <div class="bars__row bars__row--tot"><span class="bars__k">Mining-division diesel that is mobile plant</span><span class="bars__bar"><i style="width:23.6%" class="is-mob"></i></span><span class="bars__v">&asymp; 299.6 PJ &rarr; 3.9&ndash;4.65 GW electrical equivalent</span></div>
               </div>
-              <div class="cascade__bar"><i style="width:100%"></i></div>
             </div>
-
-            <div class="cascade__step">
-              <div class="cascade__top">
-                <span class="cascade__val">299.6 PJ</span>
-                <span class="cascade__lab">Diesel in the mining division</span>
-                <span class="cascade__pct">23.6%</span>
-              </div>
-              <div class="cascade__bar"><i style="width:23.6%"></i></div>
-            </div>
-
-            <div class="cascade__step is-mid">
-              <div class="cascade__top">
-                <span class="cascade__val">~50 PJ</span>
-                <span class="cascade__lab">Diesel burned to make electricity &mdash; 551 MW average</span>
-                <span class="cascade__pct">3.9%</span>
-              </div>
-              <div class="cascade__bar"><i style="width:3.9%"></i></div>
-            </div>
-
-            <div class="cascade__step is-live">
-              <div class="cascade__top">
-                <span class="cascade__val">~4.3 PJ</span>
-                <span class="cascade__lab">Still generating once mine sites are removed &mdash; <strong>45.4 MW</strong></span>
-                <span class="cascade__pct">0.34%</span>
-              </div>
-              <div class="cascade__bar"><i style="width:1.2%"></i></div>
-            </div>
-
-            <p class="cascade__foot">The third step is corroborated from the other side of the accounts: national oil-fired generation is reported at 4,823 GWh, or 551 MW average. It is a ceiling &mdash; mine sites, remote town stations and factory standby sets are all inside it. The final bar is drawn wider than scale so it remains visible.</p>
-          </div>
-            </div>
-            <p class="exhibit__src"><b>Source:</b> Australian energy statistics (consumption by industry and fuel; generation by fuel), 2023&ndash;24; national greenhouse and energy reporting register of designated generation facilities. Analysis by Heliovulcan. Conversion from fuel to electrical output assumes 33 per cent thermal efficiency.</p>
+            <p class="exhibit__src"><b>Source:</b> Australian energy statistics 2023&ndash;24 (consumption by industry and fuel; generation by fuel); NGER register of designated generation facilities. Generation from fuel assumes 33 per cent thermal efficiency; the mine-station figure is the electricity-supply line less the registered remote-town fleet, an inference from the accounts. Analysis by Heliovulcan.</p>
           </div>
 
           <div class="exhibit">
             <div class="exhibit__head">
               <span class="exhibit__n">Exhibit 2</span>
-              <span class="exhibit__t">One line in the national diesel account is a power station; the rest is engines that move</span>
+              <span class="exhibit__t">The national diesel account, grouped by what the fuel does: the mining line is mobile plant; the only generation line sits under electricity supply</span>
             </div>
             <div class="exhibit__body exhibit__scroll">
             <table class="matrix">
               <thead>
-                <tr><th>Use</th><th class="num">PJ</th><th class="num">Share</th><th>Form</th></tr>
+                <tr><th>Use</th><th class="num">PJ</th><th class="num">Share</th><th>What the diesel does</th></tr>
               </thead>
               <tbody>
-                <tr><td class="metric">Road transport</td><td class="num">679.4</td><td class="num">53.5%</td><td>Mobile</td></tr>
-                <tr><td class="metric">Mining</td><td class="num">299.6</td><td class="num">23.6%</td><td>Predominantly haul fleet</td></tr>
+                <tr><td class="metric"><b>Mining</b></td><td class="num"><b>299.6</b></td><td class="num"><b>23.6%</b></td><td>Predominantly haul fleet and other mobile plant; mine power stations are booked elsewhere</td></tr>
                 <tr><td class="metric">&nbsp;&nbsp;&mdash; Coal mining</td><td class="num">151.4</td><td class="num">&mdash;</td><td>Qld 95.3 &middot; NSW 53.2</td></tr>
-                <tr><td class="metric">&nbsp;&nbsp;&mdash; Metal ore and quarrying</td><td class="num">145.4</td><td class="num">&mdash;</td><td>WA alone 120.3</td></tr>
+                <tr><td class="metric">&nbsp;&nbsp;&mdash; Metal ore mining and quarrying</td><td class="num">145.4</td><td class="num">&mdash;</td><td>WA alone 120.3</td></tr>
                 <tr><td class="metric">&nbsp;&nbsp;&mdash; Oil and gas extraction</td><td class="num">2.8</td><td class="num">&mdash;</td><td>LNG plants burn gas, not diesel</td></tr>
-                <tr><td class="metric">Agriculture, forestry, fishing</td><td class="num">88.8</td><td class="num">7.0%</td><td>Tractors, harvesters, vessels</td></tr>
-                <tr><td class="metric">Rail transport</td><td class="num">52.0</td><td class="num">4.1%</td><td>Mobile</td></tr>
-                <tr><td class="metric">Electricity supply</td><td class="num s1">42.1</td><td class="num s1">3.3%</td><td>The only generation line in the table</td></tr>
-                <tr><td class="metric">Commercial and services</td><td class="num">32.1</td><td class="num">2.5%</td><td>Dispersed small sets</td></tr>
-                <tr><td class="metric">Construction</td><td class="num">26.5</td><td class="num">2.1%</td><td>Excavators</td></tr>
-                <tr><td class="metric">Manufacturing</td><td class="num">13.9</td><td class="num">1.1%</td><td>Mostly standby</td></tr>
-                <tr><td class="metric"><strong>Total</strong></td><td class="num"><strong>1,269.9</strong></td><td class="num"><strong>100%</strong></td><td></td></tr>
+                <tr><td class="metric"><b>Electricity supply</b></td><td class="num"><b>42.1</b></td><td class="num"><b>3.3%</b></td><td>The only generation line: remote-town stations ~4.3 PJ; contractor-run mine stations ~37.8 PJ (~390 MW)</td></tr>
+                <tr><td class="metric">Other mobile uses</td><td class="num">846.7</td><td class="num">66.7%</td><td>Road transport 679.4 &middot; agriculture, forestry and fishing 88.8 &middot; rail 52.0 &middot; construction 26.5. Vehicles and machines with no interconnection point</td></tr>
+                <tr><td class="metric">Other stationary and standby uses</td><td class="num">46.0</td><td class="num">3.6%</td><td>Commercial and services 32.1 &middot; manufacturing 13.9, dispersed small sets</td></tr>
+                <tr><td class="metric">All other divisions (residual)</td><td class="num">35.5</td><td class="num">2.8%</td><td>Smaller divisions not itemised</td></tr>
+                <tr><td class="metric"><b>Total</b></td><td class="num"><b>1,269.9</b></td><td class="num"><b>100%</b></td><td></td></tr>
               </tbody>
             </table>
             </div>
-            <p class="exhibit__src"><b>Source:</b> Australian energy statistics, consumption by industry and fuel, 2023&ndash;24. Analysis by Heliovulcan.</p>
+            <p class="exhibit__src"><b>Source:</b> Australian energy statistics, consumption by industry and fuel, 2023&ndash;24. Groupings and the mine-station attribution are Heliovulcan&rsquo;s; the residual is the division total less the itemised lines. Analysis by Heliovulcan.</p>
           </div>
 
           <p>Of 1,269.9 PJ of national diesel consumption, roughly 50 PJ is burned to generate electricity, a ceiling of about 551 MW of average output that includes mine stations, remote-town stations and factory standby sets. The generation side of the accounts corroborates it: 4,823 GWh of oil-fired generation, or 551 MW. Subtract the 148 registered remote-town power stations (45.4 MW, all state-utility town supply) and roughly 37.8 PJ under electricity supply is unexplained, equivalent to about 390 MW. Approached from the generation side in the three states where off-grid operation is material, the same figure appears: 3,779 GWh, less those states&rsquo; town stations, leaves 387 MW.</p>
@@ -252,27 +221,50 @@
 
           <p>The estimate converts annual energy use into an average electrical equivalent. Actual charging capacity could be higher, because vehicles charge during limited operating windows and because the power system must accommodate coincident demand, losses and operational reserve. The figure is therefore neither a generation requirement, nor a connection capacity, nor a battery size.</p>
 
-          <div class="flow flow--stack">
-            <span><b>3.9&ndash;4.65 GW</b> average electrical equivalent</span>
-            <span class="arrow" aria-hidden="true">&darr;</span>
-            <span>Charging windows &middot; fleet concurrency &middot; network losses &middot; operational reserve</span>
-            <span class="arrow" aria-hidden="true">&darr;</span>
-            <span class="is-end">Required connection or generation capacity &mdash; <em>not calculated in this study</em></span>
+          <div class="exhibit">
+            <div class="exhibit__head">
+              <span class="exhibit__n">Exhibit 4</span>
+              <span class="exhibit__t">What the 3.9&ndash;4.65 GW is, and what it is not</span>
+            </div>
+            <div class="exhibit__body exhibit__scroll">
+            <table class="matrix">
+              <thead><tr><th>Quantity</th><th>Meaning</th><th class="num">In this study</th></tr></thead>
+              <tbody>
+                <tr><td class="metric">Average electrical equivalent</td><td>Annual diesel energy converted to an average electrical load</td><td class="num s1">3.9&ndash;4.65 GW</td></tr>
+                <tr><td class="metric">Charging windows and fleet concurrency</td><td>Vehicles charge during limited operating windows, so demand is concentrated in time</td><td class="num">Not modelled</td></tr>
+                <tr><td class="metric">Network losses and operational reserve</td><td>The power system must carry coincident demand, losses and reserve above the average</td><td class="num">Not modelled</td></tr>
+                <tr><td class="metric">Required connection or generation capacity</td><td>The capacity a site would have to build or contract; higher than the average equivalent</td><td class="num">Not calculated</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="exhibit__src"><b>Note:</b> The average equivalent is neither a generation requirement, nor a connection capacity, nor a battery size.</p>
           </div>
 
           <h2 id="s-market">The theoretical load is not the addressable market</h2>
 
           <p>The 3.9&ndash;4.65 GW is an upper bound on energy. The commercially addressable load sits at the bottom of a funnel whose lower layers this study does not quantify.</p>
 
-          <ol class="funnel">
-            <li><b>299.6 PJ</b> reported mining diesel, 2023&ndash;24 <span class="fq">Australian energy statistics</span></li>
-            <li>Mobile equipment share <span class="fq">Most of the pool, by the reconciliation above; not split by equipment type</span></li>
-            <li>Technically electrifiable equipment <span class="fq">Not quantified in this study</span></li>
-            <li>Fleet due for replacement <span class="fq">Not quantified in this study; fleet age is not public site by site</span></li>
-            <li>Mine life supports the investment <span class="fq">Not quantified in this study; mine life and contract expiry are public</span></li>
-            <li>Power supply can be expanded <span class="fq">Not quantified in this study</span></li>
-            <li>Commercially addressable load <span class="fq">Not quantified in this study</span></li>
-          </ol>
+          <div class="exhibit">
+            <div class="exhibit__head">
+              <span class="exhibit__n">Exhibit 5</span>
+              <span class="exhibit__t">From reported diesel to addressable load: only the first layer is quantified here</span>
+            </div>
+            <div class="exhibit__body exhibit__scroll">
+            <table class="matrix">
+              <thead><tr><th>Layer</th><th class="num">Quantity</th><th>Basis</th></tr></thead>
+              <tbody>
+                <tr><td class="metric">1 &middot; Reported mining diesel, 2023&ndash;24</td><td class="num s1">299.6 PJ</td><td>Australian energy statistics</td></tr>
+                <tr><td class="metric">2 &middot; Mobile equipment share</td><td class="num">Most of the pool</td><td>The reconciliation in Exhibit 1; not split by equipment type</td></tr>
+                <tr><td class="metric">3 &middot; Technically electrifiable equipment</td><td class="num">Not quantified</td><td>Depends on duty, haul profile and available machines</td></tr>
+                <tr><td class="metric">4 &middot; Fleet due for replacement</td><td class="num">Not quantified</td><td>Fleet age is not public site by site</td></tr>
+                <tr><td class="metric">5 &middot; Mine life supports the investment</td><td class="num">Not quantified</td><td>Mine life and contract expiry are public and can be screened first</td></tr>
+                <tr><td class="metric">6 &middot; Power supply can be expanded</td><td class="num">Not quantified</td><td>Grid capacity or onsite generation, site by site</td></tr>
+                <tr><td class="metric">7 &middot; Commercially addressable load</td><td class="num">Not quantified</td><td>The residual after layers 2 to 6</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="exhibit__src"><b>Note:</b> Layers 3 to 7 are the next stage of work; this study establishes the ceiling and the reason current electricity data cannot see it.</p>
+          </div>
 
           <h2 id="s-ftc">Fuel tax credits reduce the value of each litre displaced</h2>
 
