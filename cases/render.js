@@ -138,7 +138,7 @@
       if (!list.length) return "";
       return (
         '<div class="case-group" id="' + id + '">' +
-          (title ? '<h2 class="section-title" style="margin-top:0">' + title + "</h2>" : "") +
+          (title ? '<h2 class="section-title" id="' + id + '" style="margin-top:0">' + title + "</h2>" : "") +
           '<p class="section-intro">' + intro + "</p>" +
           '<div class="case-index">' + list.map(tile).join("") + (extra || "") + "</div>" +
         "</div>"
@@ -152,7 +152,7 @@
         projects,
         '<div class="case-soon">More screens are added as projects come through &mdash;<br />industrial solar, storage, diesel displacement and weak-grid sites.</div>') +
       map +
-      group("sector-studies", "",
+      group("reconstructions", "",
         "Market reconstructions",
         "Built bottom-up from site-level evidence, then tested against national accounts assembled a different way. The output is a ceiling and a named residual &mdash; including, sometimes, the finding that a market is smaller than it looks.",
         sectors, "");
