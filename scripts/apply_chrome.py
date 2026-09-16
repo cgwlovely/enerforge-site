@@ -15,7 +15,7 @@ WS = SITE.parents[1]            # /Users/hugefafafa1/BESS
 TEMPLATES = [WS / "tools/consultation_kb/atlas/parts/shell.html",
              WS / "tools/consultation_kb/atlas/facility_template.html",
              WS / "tools/consultation_kb/atlas/build_facility_pages.py"]
-ASSET_V = "20260916h"          # bump when style.css or site-nav.js changes: returning browsers cache both
+ASSET_V = "20260916i"          # bump when style.css or site-nav.js changes: returning browsers cache both
 SKIP = {"ar.html", "context_map.html", "siting_opportunity_constraint_screen.html", "reports/_template.html"}
 
 # ---- the menu -------------------------------------------------------------------
@@ -34,7 +34,7 @@ MENU = [
                                    ("Safeguard onsite abatement, 2026", "/consultations/safeguard-onsite-abatement-2026.html")]),
         ("Method", [("How submissions are prepared", "/methods/#consultation-submissions")])]),
     ("projects", "Projects", "/case-studies.html", [
-        ("Cases", [("Project screens", "/case-studies.html#screens"), ("Market reconstructions", "/case-studies.html#reconstructions"),
+        ("Cases", [("Project screens", "/case-studies.html#screens"),
                    ("Remote Mining Asset", "/reports/remote-mining-asset-hybrid-energy-review.html")]),
         ("Record", [("Research coverage", "/coverage.html"), ("Pre-DD methodology", "/methods/pre-dd-f1-f4/")])]),
     ("about", "About", "/about.html", None),
@@ -120,7 +120,7 @@ FOOTER = '''<footer class="footer">
         </div>
         <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">Research reports and models</a><a href="/insights.html">Insights</a><a href="/methods/">Methods</a><a href="/coverage.html">Research coverage</a></div>
         <div class="footer__col"><span class="footer__k">Data &amp; tools</span><a href="/safeguard-atlas.html">Safeguard Atlas</a></div>
-        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Published submissions</a><a href="/case-studies.html#screens">Project screens</a><a href="/case-studies.html#reconstructions">Market reconstructions</a><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Published submissions</a><a href="/case-studies.html#screens">Project screens</a><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="/coverage.html">Research coverage</a></div>
         <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">About Heliovulcan</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
       </div>
       <p class="footer__legal">
