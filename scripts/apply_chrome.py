@@ -15,7 +15,7 @@ WS = SITE.parents[1]            # /Users/hugefafafa1/BESS
 TEMPLATES = [WS / "tools/consultation_kb/atlas/parts/shell.html",
              WS / "tools/consultation_kb/atlas/facility_template.html",
              WS / "tools/consultation_kb/atlas/build_facility_pages.py"]
-ASSET_V = "20260916a"          # bump when style.css or site-nav.js changes: returning browsers cache both
+ASSET_V = "20260916b"          # bump when style.css or site-nav.js changes: returning browsers cache both
 SKIP = {"ar.html", "context_map.html", "siting_opportunity_constraint_screen.html", "reports/_template.html"}
 
 # ---- the menu -------------------------------------------------------------------
@@ -32,6 +32,7 @@ MENU = [
         ("Underlying", [("Methods", "/methods/"), ("Data & JSON", "/api/")])]),
     ("consultations", "Consultations", "/consultations.html", [
         ("Published submissions", [("All submissions", "/consultations.html"),
+                                   ("Safeguard post-2030 decline rate, 2026", "/consultations/safeguard-decline-rate-2026.html"),
                                    ("AI and data centres, 2026", "/consultations/ai-data-centres-2026.html"),
                                    ("Safeguard onsite abatement, 2026", "/consultations/safeguard-onsite-abatement-2026.html")]),
         ("Method", [("How submissions are prepared", "/methods/#consultation-submissions")])]),
@@ -49,6 +50,7 @@ SECTION_OF = {
     "research.html": ("research", []),
     "consultations.html": ("consultations", []),
     "consultations/ai-data-centres-2026.html": ("consultations", [("Consultations", "/consultations.html")]),
+    "consultations/safeguard-decline-rate-2026.html": ("consultations", [("Consultations", "/consultations.html")]),
     "consultations/safeguard-onsite-abatement-2026.html": ("consultations", [("Consultations", "/consultations.html")]),
     "consultations/method.html": ("consultations", [("Consultations", "/consultations.html")]),
     "case-studies.html": ("projects", []), "case.html": ("projects", [("Projects", "/case-studies.html")]),

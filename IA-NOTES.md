@@ -266,6 +266,26 @@ Two sentences had been made abstract to sound like research. Rules:
   structured data, the consultations card, the homepage card, related-research cards and the breadcrumb
   (regenerated from `<title>` by `apply_chrome.py`).
 
+### Round 14: the decline-rate submission on the site, and the PDF–site reconciliation (2026-09-16)
+
+- **Submission page**: `consultations/safeguard-decline-rate-2026.html`, PDF at
+  `submissions/Heliovulcan-Submission-2026-SMR-Post-2030-Decline-Rate.pdf` (38 pages). The workbook is
+  not published. Status line reads "To be lodged …" until the lodgement date is known, then
+  "Lodged with DCCEEW on <date> in the 2026-27 Safeguard Mechanism Review; the Department's published
+  version will be linked when available". Copyright and reuse terms stay on page 2 of the PDF; the footer
+  keeps its © line.
+- **Corrections rule is live**: the page carries a Corrections section. Any material correction is
+  recorded there with the date, the original figure, the corrected figure and the source, and notified
+  to DCCEEW, as Annex H.2 of the submission undertakes.
+- **Facility count**: the Regulator counts 208 covered facilities on 209 register rows (Telfer Gold Mine
+  twice after a mid-year change of operator; 228 rows less 19 eligible facilities under s 58B). The site
+  now headlines 208 everywhere and says "rows" only where rows are meant (the facilities table, the map,
+  the register-change comparison). The trade-off statements use "the other 187 facilities", as the PDF does.
+- **Other figures checked against the PDF and found consistent**: 3.53 / 5.99, 68.8 / 54.3 Mt, 70.25 Mt
+  at the legislated 3.285, 21 trade-exposed facilities, 17.0 Mt / 2.59 Mt pipeline, 607.7 Mt × 29.8%,
+  412.8 / 369.3 Mt budgets, seven confirmed closures, ERC 0.902 → 0.657. The Policy page's five-year
+  cumulative (393 Mt) is under the settings in force; the PDF's 388 Mt is at the solved rate.
+
 ## Homepage (2026-09-15, six modules)
 
 1. **Hero** — one sentence of value: *Independent analysis of Australian industrial assets, energy

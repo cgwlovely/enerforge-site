@@ -19,6 +19,7 @@ function $(id) { return document.getElementById(id) || nullEl(); }
 var D = JSON.parse(document.getElementById("atlas-data").textContent);
 var ROOT = (document.body.getAttribute("data-root") || "");                 /* "" on /safeguard-atlas.html, "../" under /safeguard/ */
 var C = D.const, F = D.facilities, RAMP = D.ramp;
+var NFAC = (function () { var o = {}; for (var i = 0; i < F.length; i++) o[F[i].n] = 1; return Object.keys(o).length; })();
 var FLOOR = C.FLOOR_T, THRESH = C.THRESHOLD;
 
 /* ---------- 1. engine ------------------------------------------------ */
@@ -229,7 +230,7 @@ function renderKPIs() {
     if (f.t) teba++;
   });
   var cards = [
-    ["Facilities in the register", int(F.length), "off",
+    ["Covered facilities", int(NFAC), "off",
      "Rows in the " + D.meta.register_year + " register after removing the 19 rows the Regulator marks as eligible facilities under Rule s 58B. " +
      "Telfer Gold Mine occupies two rows because of a mid-year change of operator, so the merged count is 208 facilities. " +
      "Elsewhere on this site the denominator is stated as 208 covered facilities; the register is the same."],
@@ -238,7 +239,7 @@ function renderKPIs() {
      "This is approximately a quarter of the national inventory."],
     ["Aggregate baselines", mt(b0 / 1e6) + " Mt", "off",
      "The sum of the published baselines. The difference between covered emissions and baselines is the net obligation the scheme created in the year."],
-    ["Facilities above their baseline", int(over) + " of " + int(F.length), "off",
+    ["Register rows above their baseline", int(over) + " of " + int(F.length), "off",
      "Facilities whose covered emissions exceeded their baseline and which were therefore required to surrender units. The remainder were at or below baseline."],
     ["On slower trade-exposed rates", int(teba) + " facilities", "off",
      "Facilities holding a trade-exposed baseline adjustment (TEBA) determination under Rule s 42, under which the ERC declines more slowly than the default path."],
@@ -251,7 +252,7 @@ function renderKPIs() {
       '</span><small>' + c[3] + "</small></div>";
   }).join("");
   $("stamp").textContent =
-    "Register " + D.meta.register_year + " · " + D.meta.register_rows + " facilities · " +
+    "Register " + D.meta.register_year + " · " + NFAC + " facilities on " + D.meta.register_rows + " rows · " +
     D.meta.teba_facilities + " with a trade-exposed determination · model built " + D.meta.built +
     " · all figures recalculated in the browser";
 }
@@ -483,7 +484,7 @@ function renderLab() {
     ["Five-year cumulative net", mt(b5, 0) + " Mt", budget === null ? "FY2030-31 to FY2034-35" :
       "Compared with the consultation paper's " + mt(budget, 0) + " Mt budget for this target: " + sgn(b5 - budget, 0) + " Mt"],
     ["Net emissions of facilities with a determination", mt(a.nT, 1) + " Mt", (100 * a.nT / tot).toFixed(1) + "% of modelled compliant net emissions, from " +
-      D.meta.teba_facilities + " of " + F.length + " facility rows"],
+      D.meta.teba_facilities + " of " + NFAC + " facilities"],
     ["Facilities above baseline, FY2034-35", int(a.over), int(a.under) + " at or below baseline; " + int(a.closed) + " closed"],
     ["Units to be surrendered, FY2034-35", mt(a.owed, 2) + " Mt", "Covered emissions less the applicable baseline, summed over facilities above baseline, assuming no additional on-site abatement"]
   ].map(function (o) {
@@ -500,7 +501,7 @@ function renderLab() {
     "distributed between the two groups. Points above the curve exceed the target and points below it fall short.</p>" +
     "<p><b>Interpretation.</b> Where the curve crosses the dashed 45° line, both groups decline at the same rate. That is the single-rate result, and " +
     "it is the quantity the consultation question asks about. Moving to the left along the curve reduces the rate required of the facilities with a " +
-    "determination; the curve gives the corresponding increase required of the other " + (F.length - D.meta.teba_facilities) + " facilities. " +
+    "determination; the curve gives the corresponding increase required of the other " + (NFAC - D.meta.teba_facilities) + " facilities. " +
     "Because the two groups differ greatly in size, the exchange is far from one-for-one.</p>" +
     "<p><b>Solution method.</b> The rate is found by bisection over 44 iterations, to a precision of approximately 0.0001 percentage points. " +
     "Each iteration recalculates all " + F.length + " facility rows; no fitted parameters are used.</p>" +
@@ -530,7 +531,7 @@ function renderFrontier(T) {
       '" stroke="#e4ddcf"/>' + txt(X(x), B + 18, String(x), { anchor: "middle" }));
   s.push(txt((L + R) / 2, B + 40, "Post-2030 decline rate for the " + D.meta.teba_facilities +
     " facilities with a trade-exposed determination, percentage points per year", { anchor: "middle", size: 12, fill: "#4c5b68" }));
-  s.push(txt(16, (Tp + B) / 2, "Rate for the other " + (F.length - D.meta.teba_facilities) + " facilities, percentage points per year",
+  s.push(txt(16, (Tp + B) / 2, "Rate for the other " + (NFAC - D.meta.teba_facilities) + " facilities, percentage points per year",
     { anchor: "middle", rot: "-90 16 " + ((Tp + B) / 2).toFixed(0), size: 12, fill: "#4c5b68" }));
   var d45 = Math.min(xm, ym);
   s.push('<line x1="' + X(0).toFixed(1) + '" y1="' + Y(0).toFixed(1) + '" x2="' + X(d45).toFixed(1) +
@@ -837,7 +838,7 @@ function renderHeadlines() {
   set("hl-net35", mt(r.net, 2) + " Mt CO\u2082-e");
   set("ov-net35", mt(r.net, 2) + " Mt CO\u2082-e");
   set("hl-rate", need.toFixed(2) + " percentage points");
-  set("hl-n", F.length + " facility rows");
+  set("hl-n", NFAC + " facilities");
   /* starting point */
   var cov = 0, over = 0; F.forEach(function (f) { cov += f.cov; if (f.cov > f.b0) over++; });
   set("start-h2", "The FY2024-25 starting point: " + F.length + " rows, " + mt(cov / 1e6) + " Mt CO\u2082-e covered, " + over + " facilities above baseline");
@@ -849,7 +850,7 @@ function renderHeadlines() {
   /* policy charts */
   var T = targetMt(S.target);
   chartHead("chart-front-head",
-    "A slower path for the " + D.meta.teba_facilities + " trade-exposed facilities must be paid for by the other " + (F.length - D.meta.teba_facilities),
+    "A slower path for the " + D.meta.teba_facilities + " trade-exposed facilities must be paid for by the other " + (NFAC - D.meta.teba_facilities),
     "Pairs of post-2030 decline rates, in percentage points per year, that meet the " + Math.round(S.target * 100) + "% target of " + mt(T, 1) + " Mt CO\u2082-e in FY2034-35");
   chartHead("chart-wf-head", isRef() ? "Current policy on the starting-point assumptions" : "Where the difference from current policy comes from",
     "FY2034-35 modelled compliant net emissions, Mt CO\u2082-e; each bar moves one setting from current policy to the value in force");
