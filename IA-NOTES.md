@@ -701,3 +701,18 @@ pages found the same chrome on the 256 pages that carry one (the other 15 are re
 stand-alone map/AR pages, which have no site chrome). If an old menu appears while clicking around, it is a
 cached copy: GitHub Pages and browsers cache HTML for some minutes, and the HTML files carry no version
 query, so a hard refresh (or waiting out the cache) is the fix.
+
+### Baseline-floor article rewritten in rule → result → implication order (2026-09-16, round 18)
+
+The threshold article was rebuilt to the owner's brief: no analyst aphorisms, no deliberate antitheses,
+every sentence no stronger than the register. New title "Lowering the Safeguard threshold would reduce the
+baseline floor for facilities already covered"; two-paragraph standfirst; three-point glance; Question /
+Basis / Method / Finding / Limits rewritten. Seven sections: the threshold changes two parts of the scheme ·
+how the minimum baseline works · the effect on existing facilities · why the effect is nonlinear (three
+sub-heads: lower bound / nonlinear / no preferred threshold) · which sectors are most exposed · a split
+incentive at contractor-operated mine power stations (explicit denominators: 39 examined, 35 / 2 / 2; 15 with
+storage; expiry for 9 of 88) · implications for the threshold review (three numbered conclusions). Main text
+≈2,500 words excluding exhibits. Moved to the technical appendix: the 19 no-longer-covered facilities
+(`#s56`, `#cohort`) and the 433 / 245 / 98 / 54 mine population (`#population`). Exhibit titles and captions
+now describe what the chart shows rather than argue. The pull quote on discounting credits was removed as a
+third repetition of the split-incentive point. `.res-body h3` style added for the sub-heads.
