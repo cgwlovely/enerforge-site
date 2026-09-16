@@ -346,7 +346,7 @@ page and a one-project JSON catalogue. Now:
   financial close → readiness series page; who-does-what → hybrid review note; remote mine power architecture
   → weak-grid note; stakeholder map → cashflow note. `industry-maps.html` redirects to `/methods/#frameworks`,
   where a table says where each diagram went.
-- **Navigation** (as of 2026-09-16, later): Research (columns: Research reports and models · Insights · Consultations · Methods | Featured) · **Data & tools** (Safeguard Atlas: Findings · Policy model · Facility explorer · Map · Facility sandbox | Downloads: Atlas model inputs JSON · facility table CSV · Remote Mining Asset record JSON) · Consultations · Projects · About. "Data & JSON" is gone from the main navigation as a product; the JSON stays and is
+- **Navigation** (as of 2026-09-16, later): Research (columns: Research reports and models · Insights · Methods | Featured) · **Data & tools** (a plain link to the Safeguard Atlas; its sub-pages are reached from the Atlas's own sub-navigation and downloads from its method page) · Consultations · Projects · About. "Data & JSON" is gone from the main navigation as a product; the JSON stays and is
   reached from the Remote Mining Asset pages. Downloads sit inside the product pages: the Atlas method page
   now has a Downloads table (model-inputs JSON, a 209-row facility CSV, a short data dictionary).
 - A Data catalogue returns only when there are at least three independent data sets with record counts,
