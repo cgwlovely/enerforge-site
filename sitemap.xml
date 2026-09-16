@@ -43,37 +43,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://heliovulcan.com.au/industry-maps.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://heliovulcan.com.au/privacy.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://heliovulcan.com.au/btm-demand-charges-australia.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heliovulcan.com.au/time-to-power-offgrid-hybrid.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://heliovulcan.com.au/bess-development-queue-to-construction.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heliovulcan.com.au/bess-forecast-is-not-cashflow.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -86,12 +62,6 @@
   </url>
   <url>
     <loc>https://heliovulcan.com.au/brownfield-bess-connection-value.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heliovulcan.com.au/emerging-market-bess-develop-backwards.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1509,4 +1479,6 @@
   <url><loc>https://heliovulcan.com.au/research/weak-grid-mine-energy.html</loc><lastmod>2026-09-15</lastmod></url>
   <url><loc>https://heliovulcan.com.au/safeguard/baseline-floor-method.html</loc><lastmod>2026-09-15</lastmod></url>
   <url><loc>https://heliovulcan.com.au/consultations/safeguard-decline-rate-2026.html</loc><lastmod>2026-09-16</lastmod></url>
+  <url><loc>https://heliovulcan.com.au/insights.html</loc><lastmod>2026-09-16</lastmod></url>
+  <url><loc>https://heliovulcan.com.au/insights/battery-project-readiness.html</loc><lastmod>2026-09-16</lastmod></url>
 </urlset>

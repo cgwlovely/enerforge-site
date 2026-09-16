@@ -15,21 +15,16 @@ WS = SITE.parents[1]            # /Users/hugefafafa1/BESS
 TEMPLATES = [WS / "tools/consultation_kb/atlas/parts/shell.html",
              WS / "tools/consultation_kb/atlas/facility_template.html",
              WS / "tools/consultation_kb/atlas/build_facility_pages.py"]
-ASSET_V = "20260916d"          # bump when style.css or site-nav.js changes: returning browsers cache both
+ASSET_V = "20260916e"          # bump when style.css or site-nav.js changes: returning browsers cache both
 SKIP = {"ar.html", "context_map.html", "siting_opportunity_constraint_screen.html", "reports/_template.html"}
 
 # ---- the menu -------------------------------------------------------------------
 MENU = [
     ("research", "Research", "/research.html", [
-        ("Browse by topic", [("All research", "/research.html"), ("Industrial & emissions", "/research.html#industrial"),
-                             ("Energy markets", "/research.html#markets"), ("Battery projects", "/research.html#battery"),
-                             ("Policy analysis", "/research.html#policy")]),
-        ("Featured", [("Safeguard Atlas: the post-2030 decline rate cannot be set in isolation", "/safeguard-atlas.html"),
-                      ("Future mine-electrification loads and current electricity data", "/australian-diesel-replacement-market-size.html"),
-                      ("Submission: AI and data centres", "/consultations/ai-data-centres-2026.html")])]),
-    ("tools", "Tools & data", "/safeguard-atlas.html", [
-        ("Interactive", [("Safeguard Atlas", "/safeguard-atlas.html"), ("Industry maps", "/industry-maps.html")]),
-        ("Underlying", [("Methods", "/methods/"), ("Data & JSON", "/api/")])]),
+        ("Research", [("Research reports and models", "/research.html#reports"), ("Insights", "/insights.html"),
+                      ("Consultations", "/consultations.html"), ("Methods", "/methods/")]),
+        ("Interactive", [("Safeguard Atlas", "/safeguard-atlas.html"), ("Policy model", "/safeguard/policy.html"),
+                         ("Facility explorer", "/safeguard/facilities.html"), ("Map", "/safeguard/map.html"), ("Facility sandbox", "/safeguard/sandbox.html")])]),
     ("consultations", "Consultations", "/consultations.html", [
         ("Published submissions", [("All submissions", "/consultations.html"),
                                    ("Safeguard post-2030 decline rate, 2026", "/consultations/safeguard-decline-rate-2026.html"),
@@ -45,6 +40,8 @@ MENU = [
 
 # page path → (section key, breadcrumb trail [(label, href), …] excluding the page itself)
 SECTION_OF = {
+    "insights.html": ("research", [("Research", "/research.html")]),
+    "insights/battery-project-readiness.html": ("research", [("Research", "/research.html"), ("Insights", "/insights.html")]),
     "safeguard/baseline-floor-method.html": ("research", [("Research", "/research.html"), ("Lowering the threshold does more to the facilities already in", "/safeguard-review-2026-baseline-floor.html")]),
     "index.html": ("home", []),
     "research.html": ("research", []),
@@ -119,8 +116,8 @@ FOOTER = '''<footer class="footer">
           </a>
           <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
         </div>
-        <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">All research</a><a href="/research.html#industrial">Industrial &amp; emissions</a><a href="/research.html#markets">Energy markets</a><a href="/research.html#battery">Battery projects</a><a href="/research.html#policy">Policy analysis</a></div>
-        <div class="footer__col"><span class="footer__k">Tools &amp; data</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/industry-maps.html">Industry maps</a><a href="/methods/">Methods</a><a href="/api/">Data &amp; JSON</a></div>
+        <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">Research reports and models</a><a href="/insights.html">Insights</a><a href="/methods/">Methods</a><a href="/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">Interactive</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/safeguard/policy.html">Policy model</a><a href="/safeguard/facilities.html">Facility explorer</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/sandbox.html">Facility sandbox</a></div>
         <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Published submissions</a><a href="/case-studies.html">Project screens</a><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="/coverage.html">Research coverage</a></div>
         <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">About Heliovulcan</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
       </div>

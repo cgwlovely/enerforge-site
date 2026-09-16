@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What makes a BESS project development-ready? Battery project readiness series | Heliovulcan</title>
+  <meta name="description" content="Five insight notes on what a battery project needs before it is worth building: connection queue, brownfield rights, development risk before capital, hybrid interfaces and the ready-to-build test." />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
+  <link rel="stylesheet" href="/style.css?v=20260916e" />
+  <link rel="canonical" href="https://heliovulcan.com.au/insights/battery-project-readiness.html" />
+  <meta property="og:site_name" content="Heliovulcan" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://heliovulcan.com.au/insights/battery-project-readiness.html" />
+  <meta property="og:title" content="What makes a BESS project development-ready? Battery project readiness series" />
+  <meta property="og:description" content="Five insight notes on what a battery project needs before it is worth building: connection queue, brownfield rights, development risk before capital, hybrid interfaces and the ready-to-build test." />
+  <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    .ins { list-style: none; margin: 28px 0 0; padding: 0; border-top: 2px solid var(--ink); max-width: 900px; }
+    .ins li { display: grid; grid-template-columns: 11rem minmax(0, 1fr) 8rem; gap: 0 28px; padding: 20px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline; }
+    .ins .k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
+    .ins h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.25; }
+    .ins h3 a { color: inherit; text-decoration: none; } .ins h3 a:hover { color: var(--orange-deep); }
+    .ins p { font-size: 15px; color: var(--ink-soft); margin-top: 6px; max-width: 60ch; }
+    .ins .parts { margin-top: 10px; font-size: 14px; color: var(--ink-soft); } .ins .parts a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); margin-right: 14px; } .ins .parts a:hover { color: var(--orange-deep); }
+    .ins .go { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; white-space: nowrap; } .ins .go:hover { color: var(--orange-deep); }
+    .ins .go small { display: block; font-weight: 400; color: var(--ink-faint); font-size: 12.5px; margin-top: 4px; }
+    @media (max-width: 760px) { .ins li { grid-template-columns: 1fr; gap: 6px; } }
+  </style>
+</head>
+<body>
+  <header class="nav" id="site-nav">
+    <div class="nav__inner">
+      <a class="brand" href="/index.html" aria-label="Heliovulcan home">
+        <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
+        <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+      </a>
+      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open the menu">Menu</button>
+      <nav class="nav__menu" id="site-menu" aria-label="Site">
+        <ul class="nav__list"><li class="nav__item nav__item--menu is-current"><a class="nav__top" href="/research.html">Research</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-research" aria-label="Open the Research menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-research" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Research</span><ul><li><a href="/research.html#reports">Research reports and models</a></li><li><a href="/insights.html">Insights</a></li><li><a href="/consultations.html">Consultations</a></li><li><a href="/methods/">Methods</a></li></ul></div><div class="mega__col"><span class="mega__k">Interactive</span><ul><li><a href="/safeguard-atlas.html">Safeguard Atlas</a></li><li><a href="/safeguard/policy.html">Policy model</a></li><li><a href="/safeguard/facilities.html">Facility explorer</a></li><li><a href="/safeguard/map.html">Map</a></li><li><a href="/safeguard/sandbox.html">Facility sandbox</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/consultations.html">Consultations</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-consultations" aria-label="Open the Consultations menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-consultations" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Published submissions</span><ul><li><a href="/consultations.html">All submissions</a></li><li><a href="/consultations/safeguard-decline-rate-2026.html">Safeguard post-2030 decline rate, 2026</a></li><li><a href="/consultations/ai-data-centres-2026.html">AI and data centres, 2026</a></li><li><a href="/consultations/safeguard-onsite-abatement-2026.html">Safeguard onsite abatement, 2026</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="/methods/#consultation-submissions">How submissions are prepared</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/case-studies.html">Projects</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-projects" aria-label="Open the Projects menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-projects" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Cases</span><ul><li><a href="/case-studies.html#screens">Project screens</a></li><li><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a></li></ul></div><div class="mega__col"><span class="mega__k">Record</span><ul><li><a href="/coverage.html">Research coverage</a></li><li><a href="/methods/pre-dd-f1-f4/">Pre-DD methodology</a></li></ul></div></div></div></li><li class="nav__item"><a class="nav__top" href="/about.html">About</a></li></ul>
+        <a class="nav__cta" href="/about.html#contact">Discuss a question</a>
+      </nav>
+    </div>
+  </header>
+  <script src="/assets/site-nav.js?v=20260916e" defer></script>
+  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/research.html">Research</a><span aria-hidden="true">/</span><a href="/insights.html">Insights</a><span aria-hidden="true">/</span><span aria-current="page">What makes a BESS project development-ready? Battery project…</span></div></nav>
+  <main>
+    <section class="case-hero">
+      <div class="container">
+        <p class="eyebrow">Insight series &middot; 5 parts</p>
+        <h1>What makes a BESS project development-ready?</h1>
+        <p class="case-hero__sub">A battery project is ready when its site control, planning, connection, revenue, delivery structure and financing hold together, and when the interfaces between them are owned. These five notes take the readiness question one layer at a time. They are frameworks and practitioner judgement, drawn from cited industry sources and Heliovulcan&rsquo;s screening work, not a representative sample of Australian projects.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">The series</p>
+        <h2 class="section-title">Read in order, or start where the project is stuck</h2>
+        <ul class="ins">
+          <li><span class="k">01 &middot; Connection queue</span><div><h3><a href="/bess-development-queue-to-construction.html">A BESS connection queue is not a construction pipeline</a></h3><p>A queue measures interest, not construction-ready capacity; a project belongs in a credible pipeline only after site control, planning, connection progress, delivery structure and finance are established.</p></div><a class="go" href="/bess-development-queue-to-construction.html">Read &rarr;</a></li>
+          <li><span class="k">02 &middot; Brownfield rights</span><div><h3><a href="/brownfield-bess-connection-value.html">Existing connection rights can materially improve a brownfield BESS development case</a></h3><p>Inherited substations, lines, permits and injection rights can cut time and uncertainty, subject to remaining life, capacity, protection and shared-use limits.</p></div><a class="go" href="/brownfield-bess-connection-value.html">Read &rarr;</a></li>
+          <li><span class="k">03 &middot; Development risk before capital</span><div><h3><a href="/australian-battery-financing-capital-constraint.html">For early-stage battery projects, unresolved development risks can be a tighter constraint than headline capital availability</a></h3><p>Where capital is available, deals are decided on resolved land, approvals, connection, contract and cashflow; slippage reprices all of them at once.</p></div><a class="go" href="/australian-battery-financing-capital-constraint.html">Read &rarr;</a></li>
+          <li><span class="k">04 &middot; Hybrid interfaces</span><div><h3><a href="/hybrid-asset-integrated-due-diligence.html">Review hybrid assets as one commercial and operational system</a></h3><p>Shared connections, dispatch rights and contracts create risks that separate solar and battery reviews miss; who does what has to be assigned at the boundaries.</p></div><a class="go" href="/hybrid-asset-integrated-due-diligence.html">Read &rarr;</a></li>
+          <li><span class="k">05 &middot; Ready-to-build</span><div><h3><a href="/bess-ready-to-build-completeness.html">A battery project is ready to build when its critical rights, approvals, contracts and delivery interfaces are complete</a></h3><p>A completeness test across seven items; value rises non-linearly as the last critical gaps close.</p></div><a class="go" href="/bess-ready-to-build-completeness.html">Read &rarr;</a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="section section--tint" id="financial-close">
+      <div class="container">
+        <p class="eyebrow">Framework</p>
+        <h2 class="section-title">Path to financial close</h2>
+        <p class="section-intro">Financial close is the convergence of rights, contracts, risk allocation and evidence. Each item on the path is a condition to close, not a modelling step; the five notes above address the conditions that most often remain open.</p>
+        
+      
+      <p class="section-intro">Lists the rights, contracts, risk allocations and evidence that have to converge before a lender commits. Each item is a condition to close, not a modelling step.</p>
+      <div class="process-map" role="img" aria-label="Path to financial close for a BESS project">
+        <div class="process-flow">
+          <div class="process-node"><strong>Controlled site</strong><small>Land, access, cable</small></div><div class="process-arrow">&rarr;</div>
+          <div class="process-node"><strong>Approved design</strong><small>Consent matches layout</small></div><div class="process-arrow">&rarr;</div>
+          <div class="process-node"><strong>Grid position</strong><small>Capacity, GPS, date</small></div><div class="process-arrow">&rarr;</div>
+          <div class="process-node"><strong>Contracted cash</strong><small>Revenue and credit</small></div><div class="process-arrow">&rarr;</div>
+          <div class="process-node"><strong>Wrapped delivery</strong><small>EPC, OEM, interfaces</small></div><div class="process-arrow">&rarr;</div>
+          <div class="process-node is-accent"><strong>Financial close</strong><small>Conditions satisfied</small></div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a class="brand" href="/index.html">
+            <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
+            <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+          </a>
+          <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
+        </div>
+        <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">Research reports and models</a><a href="/insights.html">Insights</a><a href="/methods/">Methods</a><a href="/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">Interactive</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/safeguard/policy.html">Policy model</a><a href="/safeguard/facilities.html">Facility explorer</a><a href="/safeguard/map.html">Map</a><a href="/safeguard/sandbox.html">Facility sandbox</a></div>
+        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Published submissions</a><a href="/case-studies.html">Project screens</a><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">About Heliovulcan</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
+      </div>
+      <p class="footer__legal">
+        <b>Disclaimer:</b> Heliovulcan is an independent research and analysis practice providing public-information desktop analysis and screening support. Nothing on this site is legal, financial, tax, engineering, investment or lender due-diligence advice, a compliance determination, or regulatory representation or lobbying, and nothing here is a financial product recommendation. All results are indicative and must be independently verified before any commercial, financing or construction decision. &copy; 2026 Heliovulcan Energy Advisors.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

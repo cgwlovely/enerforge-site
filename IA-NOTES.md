@@ -321,6 +321,39 @@ Ninth review, on the rebuilt diesel study and the rest of the research. Rules th
   wheels", "Average energy is not charging capacity", "Customer savings are not project revenue"); the body
   underneath returns to evidence language.
 
+## Round 17: research and insights are different things (2026-09-16)
+
+Tenth review. The research hub had been laying four quantitative studies, a dozen 600–1,200-word notes,
+method pages and framework diagrams out as identical cards, and "Tools & data" had one tool, a poster
+page and a one-project JSON catalogue. Now:
+
+- **Research** (`research.html`) holds only work with an original data set or model, a stated method, a
+  quantified finding and its sources, assumptions and limitations: the Safeguard Atlas (interactive model),
+  the mine-electrification load study (quantitative sector analysis), the baseline-floor study (quantitative
+  policy analysis) and the mine-energy public-funding study (project-register analysis). Each card shows type,
+  question, finding, data scope, date and reading time. Below them, a light "Latest insights" list.
+- **Insights** (`insights.html`) holds the short notes, typed Project insight · Market insight ·
+  Financeability insight · Practitioner note, on light list rows (type · title · one line · read time). No
+  big numbers, no five-line evidence box; each note names its basis and sources in its provenance block.
+- **Merges**: demand charges + revenue/debt + customer savings → *From customer savings to financeable BESS
+  cashflow* (`research/btm-bess-customer-savings.html`; the other two URLs redirect); weak-grid + time-to-power
+  → *Screening energy options for weak-grid and off-grid mines* (`research/weak-grid-mine-energy.html`;
+  time-to-power redirects); the five readiness notes stay separate under a series landing page
+  (`insights/battery-project-readiness.html`, numbered 01–05 with prev/next bars); the concessional-finance
+  note is withdrawn (redirects to Insights) until it has a specific region, institution or case; the Pre-DD
+  vs feasibility page is a method and is listed under Methods.
+- **Framework diagrams live where they are used**: development process → Pre-DD F1–F4 methodology; path to
+  financial close → readiness series page; who-does-what → hybrid review note; remote mine power architecture
+  → weak-grid note; stakeholder map → cashflow note. `industry-maps.html` redirects to `/methods/#frameworks`,
+  where a table says where each diagram went.
+- **Navigation**: Research (columns: Research reports and models · Insights · Consultations · Methods |
+  Interactive: Safeguard Atlas · Policy model · Facility explorer · Map · Facility sandbox) · Consultations ·
+  Projects · About. "Tools & data" and "Data & JSON" are gone from the main navigation; the JSON stays and is
+  reached from the Remote Mining Asset pages. Downloads sit inside the product pages: the Atlas method page
+  now has a Downloads table (model-inputs JSON, a 209-row facility CSV, a short data dictionary).
+- A Data catalogue returns only when there are at least three independent data sets with record counts,
+  CSV/JSON, a dictionary, a licence, an update date and a preview.
+
 ## Homepage (2026-09-15, six modules)
 
 1. **Hero** — one sentence of value: *Independent analysis of Australian industrial assets, energy

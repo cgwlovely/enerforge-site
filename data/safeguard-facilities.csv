@@ -1,0 +1,210 @@
+facility_name,responsible_emitter,state,industry,erc_fy2024_25,baseline_t,covered_emissions_t,commodity_group
+2. Solid Waste Services - MRL,Cleanaway Waste Management Limited,VIC,"Waste treatment, disposal and remediation services (292)",0.902,377924,197276,other
+APLNG Facility,CONOCOPHILLIPS AUSTRALIA OPERATIONS PTY LTD,QLD,Oil and gas extraction (070),0.902,2059639,2206497,lng
+APN01 Appin Colliery - ICH Facility,ENDEAVOUR COAL PTY LIMITED,NSW,Coal mining (060),0.902,2305451,2359680,coal
+APU01 Pyrenees - AOA Facility,WOODSIDE ENERGY GLOBAL PTY LTD,WA,Oil and gas extraction (070),0.902,132862,144213,oil
+ARC01 Mining Area C - MNG Facility,BHP IRON ORE PTY LTD,WA,Metal ore mining (080),0.902,757811,587292,iron_ore
+Arcadia,Santos Limited,QLD,Oil and gas extraction (070),0.902,144203,134510,lng
+Arrow Surat Operations,Arrow Energy Holdings Pty Ltd,QLD,Oil and gas extraction (070),0.902,185665,179006,lng
+Ashton Coal Mine (Underground),ASHTON COAL OPERATIONS PTY LIMITED,NSW,Coal mining (060),0.902,194109,682780,coal
+Aurizon National Transport Facility,AURIZON OPERATIONS LIMITED,National,Rail freight transport (471),0.902,574103,658557,other
+AusNet Gas Services Pty Ltd,AusNet Services Holdings Pty Ltd,VIC,Gas supply (270),0.902,180601,187314,other
+Australian Gas Networks (Vic) Pty Ltd,Australian Gas Networks Holding Pty Ltd,VIC,Gas supply (270),0.902,110234,111347,other
+Ballera,Santos Limited,QLD,Oil and gas extraction (070),0.902,104065,149747,lng
+Baralaba Coal Mine,BARALABA COAL COMPANY PTY LTD,QLD,Coal mining (060),0.902,122977,133263,coal
+Batchfire Resources No.1,BATCHFIRE RESOURCES PTY LTD,QLD,Coal mining (060),0.902,200861,229693,coal
+Beaudesert Plant - A J Bush & Sons (Mfrs) P/L,A.J. Bush & Sons (Manufactures) Pty Ltd,QLD,Meat and meat product manufacturing (111),0.902,0,102839,other
+Beharra Springs,BEACH ENERGY LIMITED,WA,Oil and gas extraction (070),0.902,100000,128002,gas_west
+Bell Bay Smelter,RIO TINTO ALUMINIUM (BELL BAY) LIMITED,TAS,Basic non-ferrous metal manufacturing (213),0.98,349556,341166,aluminium
+Bengalla Operations,Bengalla Mining Company Pty Limited,NSW,Coal mining (060),0.902,526009,692775,coal
+Birkenhead Operations,ADBRI LIMITED,SA,"Cement, lime, plaster and concrete product manufacturing (203)",0.902,874516,796132,other
+Blackwater Coal Mine,WHITEHAVEN BLACKWATER PTY LTD,QLD,Coal mining (060),0.902,690525,801671,coal
+Blair Athol Operations,ORION MINING PTY LTD,QLD,Coal mining (060),0.902,100000,101931,coal
+Boggabri Coal Minesite,BOGGABRI COAL PTY LIMITED,NSW,Coal mining (060),0.902,200054,218760,coal
+Boyne Smelters Limited,RIO TINTO ALUMINIUM LIMITED,QLD,Basic non-ferrous metal manufacturing (213),0.98,920815,943720,aluminium
+Brockman 2 / Nammuldi Mines,Hamersley Iron Pty. Limited,WA,Metal ore mining (080),0.902,152378,304904,iron_ore
+Brockman 4 Mine,Hamersley Iron Pty. Limited,WA,Metal ore mining (080),0.902,165060,232771,iron_ore
+Bulga Coal Complex,BULGA COAL MANAGEMENT PTY LIMITED,NSW,Coal mining (060),0.902,692463,585235,coal
+Burton Complex,BOWEN COKING COAL LIMITED,QLD,Coal mining (060),0.902,182836,173658,coal
+Byerwen Mine,BYERWEN COAL PTY LTD,QLD,Coal mining (060),0.902,248356,340920,coal
+CAN01,South32 Cannington Proprietary Limited,QLD,Metal ore mining (080),0.902,106486,122968,base_metals
+Capcoal Mine,ANGLO COAL (CAPCOAL MANAGEMENT) PTY LIMITED,QLD,Coal mining (060),0.902,2148463,1004050,coal
+Carborough Downs Coal Mine,FITZROY (CQ) PTY LTD,QLD,Coal mining (060),0.902,530894,793653,coal
+Carmichael Coal Mine,Adani Mining Pty Ltd,QLD,Coal mining (060),0.902,1021505,741002,coal
+Carosue Dam Operations,NORTHERN STAR (CAROSUE DAM) PTY LTD,WA,Metal ore mining (080),0.902,100000,104670,gold
+Caval Ridge Mine,BM Alliance Coal Operations Pty Limited,QLD,Coal mining (060),0.902,283285,343254,coal
+CEM NSW Berrima Maldon,Boral Limited,NSW,"Cement, lime, plaster and concrete product manufacturing (203)",0.902,944588,860111,other
+Centurion Coal Mine,Centurion Coal Mining Pty Ltd,QLD,Coal mining (060),0.902,160736,591219,coal
+Chandala Processing Plant,Tronox Management Pty Ltd,WA,Basic chemical manufacturing (181),0.902,193612,214468,mineral_sands
+Christmas Creek Mine,CHICHESTER METALS PTY LTD,WA,Metal ore mining (080),0.902,352267,372827,iron_ore
+Clermont Coal Operations,Clermont Coal Operations Pty Limited,QLD,Coal mining (060),0.902,187630,145229,coal
+Cloudbreak Mine,CHICHESTER METALS PTY LTD,WA,Metal ore mining (080),0.902,247491,332001,iron_ore
+Cockburn Operations,ADBRI LIMITED,WA,"Cement, lime, plaster and concrete product manufacturing (203)",0.902,503740,524450,other
+Condabri Talinga Orana,ORIGIN ENERGY UPSTREAM OPERATOR PTY LTD,QLD,Oil and gas extraction (070),0.902,381411,247011,lng
+Cook Colliery,Constellation Mining Pty Ltd,QLD,Coal mining (060),0.902,106479,142267,coal
+Coppabella Coal Mine,PEABODY ENERGY AUSTRALIA PCI (C&M MANAGEMENT) PTY LTD,QLD,Coal mining (060),0.902,156190,208542,coal
+CSBP Kwinana Facility,CSBP Limited,WA,Fertiliser and pesticide manufacturing (183),0.902,692197,641327,other
+CTC WA Facility,CENTURION TRANSPORT CO. PTY LTD,WA,Road freight transport (461),0.902,119456,118994,other
+Curragh Mine,CORONADO AUSTRALIA HOLDINGS PTY LTD,QLD,Coal mining (060),0.902,535181,1093183,coal
+Curtis Island GLNG Plant,GLNG OPERATIONS PTY LTD,QLD,Oil and gas extraction (070),0.902,1610744,1677171,lng
+Daunia Coal Mine,WHITEHAVEN DAUNIA PTY LTD,QLD,Coal mining (060),0.902,277375,209969,coal
+Dawson Mine,ANGLO COAL (DAWSON MANAGEMENT) PTY LTD,QLD,Coal mining (060),0.902,492550,574390,coal
+DBNGP,DBNGP (WA) Transmission Pty Limited,WA,Pipeline and other transport (502),0.902,232997,211921,other
+DEN01,Dendrobium Coal Pty Ltd,NSW,Coal mining (060),0.902,199253,477762,coal
+Drake Mine,Drake Mine Management Pty Ltd,QLD,Coal mining (060),0.902,213653,235637,coal
+Duketon South Operations,Regis Resources Limited,WA,Metal ore mining (080),0.902,167545,164526,gold
+Eliwana Mine,FMG SOLOMON PTY LTD,WA,Metal ore mining (080),0.902,157344,178715,iron_ore
+Ensham Coal Mine,ENSHAM RESOURCES PTY. LIMITED,QLD,Coal mining (060),0.902,292941,261158,coal
+Fairview,Santos Limited,QLD,Oil and gas extraction (070),0.902,264027,162315,lng
+Fimiston Operations,KALGOORLIE CONSOLIDATED GOLD MINES PTY LTD,WA,Metal ore mining (080),0.902,125151,271036,gold
+Fisherman's Landing - Clinker & Cement,CEMENT AUSTRALIA (QUEENSLAND) PTY LIMITED,QLD,"Cement, lime, plaster and concrete product manufacturing (203)",0.902,1291368,1338072,other
+Fisherman's Landing - Lime,CEMENT AUSTRALIA (QUEENSLAND) PTY LIMITED,QLD,"Cement, lime, plaster and concrete product manufacturing (203)",0.93449,173709,191984,other
+FLNG,SHELL AUSTRALIA PTY LTD,WA,Oil and gas extraction (070),0.902,3675438,2253798,lng
+Foxleigh Mine,FOXLEIGH MANAGEMENT PTY LTD,QLD,Coal mining (060),0.902,206135,266489,coal
+Geelong Refinery,Viva Energy Refining Pty Ltd,VIC,Petroleum and coal product manufacturing (170),0.98,954727,1061314,other
+GEM01,Groote Eylandt Mining Company Proprietary Limited,NT,Metal ore mining (080),0.902,100000,135299,manganese
+Gippsland Basin facility,ESSO AUSTRALIA RESOURCES PTY LTD,VIC,Oil and gas extraction (070),0.902,1329204,1634475,gas_east
+Goonyella Broadmeadow Mine,BM Alliance Coal Operations Pty Limited,QLD,Coal mining (060),0.902,890016,1358763,coal
+Gorgon Operations,CHEVRON AUSTRALIA PTY LTD,WA,Oil and gas extraction (070),0.902,8543442,9021856,lng
+Gove Operations,RTA GOVE PTY LIMITED,NT,Basic non-ferrous metal manufacturing (213),0.902,108964,135550,bauxite
+Granny Smith Mine Site,GSM MINING COMPANY PTY LTD,WA,Metal ore mining (080),0.902,106554,123215,gold
+Greenbushes Lithium Operation,Talison Lithium Australia Pty Ltd,WA,Metal ore mining (080),0.902,100000,127780,lithium
+Gruyere Mine Site,Gruyere Mining Company Pty Ltd,WA,Metal ore mining (080),0.902,190697,267882,gold
+Hail Creek Mine,HAIL CREEK COAL PTY LTD,QLD,Coal mining (060),0.902,1237293,987836,coal
+Hope Downs 1 Mine,Hamersley HMS Pty Ltd,WA,Metal ore mining (080),0.902,100000,161539,iron_ore
+Hope Downs 4 Mine,Hamersley HMS Pty Ltd,WA,Metal ore mining (080),0.902,100000,143256,iron_ore
+Hunter Valley Operations mine,HV OPERATIONS PTY LTD,NSW,Coal mining (060),0.902,630086,670583,coal
+HVY01 Hunter Valley Energy Coal - CCL Facility,Hunter Valley Energy Coal Pty Ltd,NSW,Coal mining (060),0.902,538040,548294,coal
+InfraBuild Steel - Laverton Steel Mill,THE AUSTRALIAN STEEL COMPANY (OPERATIONS) PTY LTD,VIC,Basic ferrous metal manufacturing (211),0.902,105155,111329,steel
+Integra Underground Mine,HV Coking Coal Pty Limited,NSW,Coal mining (060),0.902,100000,153496,coal
+Iron Bridge Mine,IB Operations Pty Ltd,WA,Metal ore mining (080),0.902,100000,156160,iron_ore
+Isaac Plains Complex,STANMORE RESOURCES LIMITED,QLD,Coal mining (060),0.902,159941,207822,coal
+Jax Mine,Jax Coal Pty Ltd,QLD,Coal mining (060),0.902,110693,114373,coal
+Jellinbah Mine,JELLINBAH MINING PTY LTD,QLD,Coal mining (060),0.902,337996,406136,coal
+JGN,Jemena Gas Networks (NSW) Ltd,NSW,Gas supply (270),0.902,314603,272434,other
+Jimblebar Mine,BHP IRON ORE PTY LTD,WA,Metal ore mining (080),0.902,278021,341862,iron_ore
+Jundee Gold Mine,NORTHERN STAR RESOURCES LIMITED,WA,Metal ore mining (080),0.902,140519,115913,gold
+Karlawinda Gold Project,Capricorn Metals Limited,WA,Metal ore mining (080),0.902,100000,109583,gold
+Kemerton Silicon Smelter,SIMCOA OPERATIONS PTY. LTD.,WA,Basic non-ferrous metal manufacturing (213),0.902,100000,112136,base_metals
+Kestrel Mine,Kestrel Coal Group Pty Ltd,QLD,Coal mining (060),0.902,708388,1263099,coal
+King of the Hills,GREENSTONE RESOURCES (WA) PTY LTD,WA,Metal ore mining (080),0.902,158105,136354,gold
+Koodaideri Mine,Mount Bruce Mining Pty Ltd,WA,Metal ore mining (080),0.902,593864,150607,iron_ore
+Kooragang Island,ORICA AUSTRALIA PTY LTD,NSW,Other basic chemical product manufacturing (189),0.902,921488,582845,other
+Kwinana Alumina Refinery,Alcoa of Australia Limited,WA,Basic non-ferrous metal manufacturing (213),0.98,100000,139861,alumina
+Kwinana Pigment Plant,Tronox Management Pty Ltd,WA,Basic chemical manufacturing (181),0.98,278742,311831,mineral_sands
+Lake Vermont Mine,THIESS PTY LTD,QLD,Coal mining (060),0.902,294328,318955,coal
+Liberty Bell Bay,Liberty Bell Bay Pty Ltd,TAS,Basic ferrous metal manufacturing (211),0.941,150481,189872,manganese
+Liberty Primary Steel Whyalla Steelworks,ONESTEEL MANUFACTURING PTY LIMITED,SA,Basic ferrous metal manufacturing (211),0.98,838562,1287610,steel
+Macedon,WOODSIDE ENERGY GLOBAL PTY LTD,WA,Oil and gas extraction (070),0.902,100000,113092,gas_west
+Mandalong Mine,CENTENNIAL MANDALONG PTY LIMITED,NSW,Coal mining (060),0.902,473844,632944,coal
+Mangoola,MANGOOLA COAL OPERATIONS PTY LIMITED,NSW,Coal mining (060),0.902,174392,143013,coal
+Marandoo Mine,Hamersley Iron Pty. Limited,WA,Metal ore mining (080),0.902,100000,153982,iron_ore
+Maules Creek Open Cut Mine,MAULES CREEK COAL PTY LTD,NSW,Coal mining (060),0.902,285862,283315,coal
+McArthur River Mine Operations,MCARTHUR RIVER MINING PTY. LTD.,NT,Metal ore mining (080),0.902,100000,118072,base_metals
+McArthur River Power Station,EDL NGD (NT) Pty Ltd,NT,Electricity generation (261),0.902,132352,154742,base_metals
+Metropolitan Colliery,METROPOLITAN COLLIERIES PTY. LTD.,NSW,Coal mining (060),0.902,570173,780758,coal
+Middlemount Coal Mine,Middlemount Coal Pty Ltd,QLD,Coal mining (060),0.902,232392,272169,coal
+Montara Operations,JADESTONE ENERGY (EAGLE) PTY LTD,NT,Oil and gas extraction (070),0.902,121399,284110,oil
+Moolarben Coal Mine (Open Cut & Underground),MOOLARBEN COAL OPERATIONS PTY LTD,NSW,Coal mining (060),0.902,273084,233290,coal
+Moomba Plant,Santos Limited,SA,Oil and gas extraction (070),0.902,1782513,1078118,gas_east
+Moorvale Coal Mine,PEABODY ENERGY AUSTRALIA PCI (C&M MANAGEMENT) PTY LTD,QLD,Coal mining (060),0.902,128337,133838,coal
+Moranbah,DYNO NOBEL LIMITED,QLD,Other basic chemical product manufacturing (189),0.902,387571,309375,other
+Moranbah North Mine,ANGLO COAL (MORANBAH NORTH MANAGEMENT) PTY LIMITED,QLD,Coal mining (060),0.902,645924,1406857,coal
+Mount Isa Mines Copper and Zinc Operations,MOUNT ISA MINES LIMITED,QLD,Metal ore mining (080),0.902,271071,331193,base_metals
+Mount Pleasant Operations,MACH Energy Australia Pty Ltd,NSW,Coal mining (060),0.902,239365,221984,coal
+Mt Owen Glendell Complex,MT OWEN PTY LIMITED,NSW,Coal mining (060),0.902,188003,223994,coal
+Multinet Principal Distribution Network and South Gippsland Pipeline,MULTINET GAS (DB NO. 2) PTY LTD,VIC,Gas supply (270),0.902,142863,162902,other
+Murrin Murrin Operations,MURRIN MURRIN OPERATIONS PTY LTD,WA,Metal ore mining (080),0.941,465620,508542,nickel
+Myuna Colliery,CENTENNIAL MYUNA PTY LIMITED,NSW,Coal mining (060),0.902,266812,176131,coal
+Narrabri Underground Mine,Narrabri Coal Operations Pty Ltd,NSW,Coal mining (060),0.902,322834,511474,coal
+Newlands Coal Complex including Newlands Northern UG,NC COAL COMPANY PTY LIMITED,QLD,Coal mining (060),0.902,100000,101144,coal
+Newman Operations,BHP IRON ORE PTY LTD,WA,Metal ore mining (080),0.902,282096,347444,iron_ore
+Newman Power Station,APA TRANSMISSION (ROY HILL) PTY LTD,WA,Electricity generation (261),0.902,496339,381037,iron_ore
+Newmont Boddington Gold Operation,Newmont Boddington Pty Ltd,WA,Metal ore mining (080),0.902,194483,218347,gold
+Newmont Tanami Operation,Newmont Tanami Pty Ltd,NT,Metal ore mining (080),0.902,186772,206504,gold
+Ningaloo Vision FPSO,Santos Limited,WA,Oil and gas extraction (070),0.902,180651,159413,oil
+Norske Skog Boyer Mill,Boyer Paper Mill Limited,TAS,"Pulp, paper and paperboard manufacturing (151)",0.98,155581,175088,other
+North West Shelf Project,Woodside Energy Ltd.,WA,Oil and gas extraction (070),0.902,4829212,5750304,lng
+Nowra Plant,Shoalhaven Starches Pty Ltd,NSW,Grain mill and cereal product manufacturing (116),0.902,445991,399535,other
+Nyrstar Port Pirie Facility,Nyrstar Port Pirie Pty Ltd,SA,Basic non-ferrous metal manufacturing (213),0.98,426225,426225,base_metals
+Oaky Creek Coal Complex,OAKY CREEK HOLDINGS PTY LIMITED,QLD,Coal mining (060),0.902,618093,838833,coal
+ODS01 Olympic Dam – UOD Facility,BHP OLYMPIC DAM CORPORATION PTY LTD,SA,Metal ore mining (080),0.902,228123,229988,copper
+Olive Downs Complex,PEMBROKE RESOURCES NOMINEE PTY LTD,QLD,Coal mining (060),0.902,100000,392766,coal
+Onslow Haul Road,ONSLOW INFRACO PTY LTD,WA,Road freight transport (461),0.902,100000,126242,other
+Opal Australian Paper Maryvale Mill,PAPER AUSTRALIA PTY LTD,VIC,"Pulp, paper and paperboard manufacturing (151)",0.98,219114,173712,other
+Orora Glass Plant Gawler,Orora Limited,SA,Glass and glass product manufacturing (201),0.902,153086,134492,other
+Otway,BEACH ENERGY LIMITED,VIC,Oil and gas extraction (070),0.902,228318,226056,gas_east
+Pacific National National Transport Facility,PACIFIC NATIONAL PTY LTD,National,Rail freight transport (471),0.902,643198,728189,other
+Paraburdoo Mine,Hamersley Iron Pty. Limited,WA,Metal ore mining (080),0.902,100000,139337,iron_ore
+Parkhurst Magnesia Manufacturing Plant,QMAG PTY LIMITED,QLD,Other non-metallic mineral product manufacturing (209),0.98,264318,264019,other
+Peak Downs Mine,BM Alliance Coal Operations Pty Limited,QLD,Coal mining (060),0.902,431563,480592,coal
+Phosphate Hill,DYNO NOBEL LIMITED,QLD,Fertiliser and pesticide manufacturing (183),0.98,446062,472151,other
+Pilbara Rail Operations,PILBARA IRON PTY LTD,WA,Rail freight transport (471),0.902,569672,651125,other
+Pilgangoora Operations,PLS GROUP LIMITED,WA,Metal ore mining (080),0.902,145243,167449,lithium
+Pinjarra Alumina Refinery,Alcoa of Australia Limited,WA,Basic non-ferrous metal manufacturing (213),0.902,1434251,1268082,alumina
+Pluto LNG,Woodside Burrup Pty. Ltd.,WA,Oil and gas extraction (070),0.902,1743127,1888110,lng
+Poitrel Mine,STANMORE RESOURCES LIMITED,QLD,Coal mining (060),0.902,248897,309856,coal
+Port Kembla Steelworks,BLUESCOPE STEEL (AIS) PTY. LTD.,NSW,Basic ferrous metal manufacturing (211),0.98,6350820,6061526,steel
+Port Latta Pelletising Plant,GRANGE RESOURCES (TASMANIA) PTY LTD,TAS,Basic ferrous product manufacturing (212),0.902,111438,105870,iron_ore
+Portland Aluminium Smelter,Alcoa Portland Aluminium Proprietary Limited,VIC,Basic non-ferrous metal manufacturing (213),0.941,563872,600011,aluminium
+Premier Coal Mine (Open Cut),Premier Coal Pty Ltd,WA,Coal mining (060),0.902,100000,106030,coal
+PRL03 Rail - IOR Facility,BHP IRON ORE PTY LTD,WA,Rail freight transport (471),0.902,503836,552076,other
+Qantas Airways Limited - National Facility,Qantas Airways Limited,National,Air and space transport (490),0.902,4404094,4622401,other
+QGC Upstream,QGC PTY LIMITED,QLD,Oil and gas extraction (070),0.902,907237,845251,lng
+Queensland Alumina Limited Refinery,QUEENSLAND ALUMINA LIMITED,QLD,Basic non-ferrous metal manufacturing (213),0.98,2814233,3169994,alumina
+Queensland Curtis LNG Plant,QCLNG Operating Company Pty Ltd,QLD,Oil and gas extraction (070),0.902,1704155,1861809,lng
+Queensland Nitrates Ammonium Nitrate Plant,Queensland Nitrates Pty Ltd,QLD,Basic chemical manufacturing (181),0.902,162397,163243,other
+Rail,THE PILBARA INFRASTRUCTURE PTY LTD,WA,Rail freight transport (471),0.902,240979,264806,other
+Railton,CEMENT AUSTRALIA (GOLIATH) PTY LIMITED,TAS,"Cement, lime, plaster and concrete product manufacturing (203)",0.90892,1026842,1102707,other
+Ravenswood Mine,RAVENSWOOD GOLD PTY LTD,QLD,Metal ore mining (080),0.902,214665,143978,gold
+Ravensworth Operations,RAVENSWORTH OPERATIONS PTY LIMITED,NSW,Coal mining (060),0.902,295410,331739,coal
+Refinery Qld Lytton,Ampol Limited,QLD,Petroleum and coal product manufacturing (170),0.941,596810,644669,other
+Rio Tinto Weipa,RTA WEIPA PTY LTD,QLD,Metal ore mining (080),0.902,243584,277044,bauxite
+Rio Tinto Yarwun,RTA Yarwun Pty Ltd,QLD,Basic non-ferrous metal manufacturing (213),0.98,1910570,2045310,alumina
+Rolleston Coal Mine,ROLLESTON COAL HOLDINGS PTY LIMITED,QLD,Coal mining (060),0.902,181244,196617,coal
+Roma Hub,Santos Limited,QLD,Oil and gas extraction (070),0.902,152421,105321,lng
+Roy Hill Mine,Roy Hill Holdings Pty Ltd,WA,Metal ore mining (080),0.902,393393,480607,iron_ore
+Russell Vale Colliery,WOLLONGONG RESOURCES PTY. LTD.,NSW,Coal mining (060),0.902,89800,160035,coal
+Saraji Mine,BM Alliance Coal Operations Pty Limited,QLD,Coal mining (060),0.902,349197,383551,coal
+Savage River Mine,GRANGE RESOURCES (TASMANIA) PTY LTD,TAS,Metal ore mining (080),0.902,100000,110066,iron_ore
+Sewerage West,Melbourne Water Corporation,VIC,"Water supply, sewerage and drainage services (281)",0.902,128649,146528,other
+Sino Iron Project – Cape Preston,CITIC Pacific Mining Management Pty Ltd,WA,Metal ore mining (080),0.902,792477,836882,iron_ore
+Solomon Mine,FMG SOLOMON PTY LTD,WA,Metal ore mining (080),0.902,357442,470534,iron_ore
+Solomon Power Station,FMG SOLOMON PTY LTD,WA,Electricity generation (261),0.902,474965,436601,iron_ore
+South Walker Creek,STANMORE RESOURCES LIMITED,QLD,Coal mining (060),0.902,361841,508592,coal
+South West Queensland Pipeline,APA (SWQP) PTY LIMITED,QLD; SA,Pipeline and other transport (502),0.902,124644,140864,other
+South West Synthetic Rutile Operations,Iluka Resources Limited,WA,Metal ore mining (080),0.902,238856,285198,mineral_sands
+Spring Gully Reedy Creek Combabula,ORIGIN ENERGY UPSTREAM OPERATOR PTY LTD,QLD,Oil and gas extraction (070),0.902,422811,316959,lng
+Start up and Operations of the Ichthys LNG Project,INPEX Operations Australia Pty Ltd,NT,Oil and gas extraction (070),0.902,6322859,6255335,lng
+Sunrise Dam,AngloGold Ashanti Australia Limited,WA,Metal ore mining (080),0.902,137390,163952,gold
+TAHMOOR COAL MINE,TAHMOOR COAL PTY LTD,NSW,Coal mining (060),0.902,731110,757886,coal
+Telfer Gold Mine,Newcrest Mining Limited,WA,Metal ore mining (080),0.902,143577,119821,gold
+Telfer Gold Mine,GREATLAND HOLDINGS GROUP PTY LTD,WA,Metal ore mining (080),0.902,192357,261212,gold
+Thunderbox Operations,NORTHERN STAR (THUNDERBOX) PTY LTD,WA,Metal ore mining (080),0.902,180197,190387,gold
+Tom Price Mine / WTS,Hamersley Iron Pty. Limited,WA,Metal ore mining (080),0.902,138056,172874,iron_ore
+Tomago Aluminium Smelter,TOMAGO ALUMINIUM COMPANY PTY LTD,NSW,Basic non-ferrous metal manufacturing (213),0.902,1030974,1087025,aluminium
+Tropicana Gold Mine,AngloGold Ashanti Australia Limited,WA,Metal ore mining (080),0.902,285439,280553,gold
+TT-Line - Victorian Operation,TT-Line Company Pty. Ltd.,VIC,Water passenger transport (482),0.902,112369,154713,other
+United Coal Mine,UNITED COLLIERIES PTY LTD,NSW,Coal mining (060),0.902,270767,488260,coal
+V/Line,V/Line Corporation,VIC,Rail passenger transport (472),0.902,168013,151324,other
+Vales Point Power Station,Delta Power & Energy Pty Ltd,NSW,Coal mining (060),0.902,485087,563387,coal
+Varanus Hub,Santos Limited,WA,Oil and gas extraction (070),0.902,227595,312681,gas_west
+Vincent Project Venture,Woodside Energy Ltd.,WA,Oil and gas extraction (070),0.902,261109,282383,oil
+Virgin Australia Holdings National Transport Facility,VIRGIN AUSTRALIA HOLDINGS LIMITED,National,Air and space transport (490),0.902,2267645,2215462,other
+WA Transport facility,MGM BULK PTY LTD,WA,Road freight transport (461),0.902,100000,109830,other
+Wagerup Alumina Refinery,Alcoa of Australia Limited,WA,Basic non-ferrous metal manufacturing (213),0.902,1217338,1306994,alumina
+Wambo Coal Mine,WAMBO COAL PTY LIMITED,NSW,Coal mining (060),0.902,193130,139316,coal
+Warkworth Mine,Warkworth Mining Ltd,NSW,Coal mining (060),0.902,763046,1064719,coal
+West Angelas Mine,Robe River Mining Co. Pty. Ltd.,WA,Metal ore mining (080),0.902,204720,264443,iron_ore
+West Pilbara Iron Ore Project,ONSLOW IRON PTY LTD,WA,Metal ore mining (080),0.902,100000,135870,iron_ore
+Wheatstone Operations,CHEVRON AUSTRALIA PTY LTD,WA,Oil and gas extraction (070),0.902,4025022,4020667,lng
+Wilpinjong Coal Mine,WILPINJONG COAL PTY LTD,NSW,Coal mining (060),0.902,173119,164904,coal
+Wodgina Lithium Project,MARBL Lithium Operations Pty Ltd,WA,Metal ore mining (080),0.902,138301,169821,lithium
+Woodlawn Bioreactor,Veolia Environmental Services (Australia) Pty Ltd,NSW,"Waste treatment, disposal and remediation services (292)",0.902,188427,133925,other
+WOR01,South32 Worsley Alumina Pty Ltd,WA,Basic non-ferrous metal manufacturing (213),0.902,3087049,3218588,alumina
+YAN01 Yandi/Marillana Creek Mine - MNG Facility,BHP IRON ORE PTY LTD,WA,Metal ore mining (080),0.902,100000,106656,iron_ore
+Yandicoogina Mine,Hamersley Iron - Yandi Pty Limited,WA,Metal ore mining (080),0.902,123266,151953,iron_ore
+Yarnima Power Station,BHP IRON ORE PTY LTD,WA,Electricity generation (261),0.902,324820,364582,iron_ore
+Yarrabee Coal Mine (Open Cut),YARRABEE COAL COMPANY PTY. LTD.,QLD,Coal mining (060),0.902,201079,241396,coal
+Yarwun Nitrates,ORICA AUSTRALIA PTY LTD,QLD,Other basic chemical product manufacturing (189),0.902,282537,80908,other
+YPF AMMONIA PLANT,Yara Pilbara Fertilisers Pty Ltd,WA,Fertiliser and pesticide manufacturing (183),0.98,1680100,1637599,other
