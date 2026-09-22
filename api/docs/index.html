@@ -97,14 +97,14 @@
             <h3><code class="path">GET /api/v1/projects/remote-mining-asset/claims.json</code></h3>
             <p>The claim registry. Each claim:</p>
             <pre class="sample">{
-  "claim_id": "FH-LOAD-001",
+  "claim_id": "RMA-LOAD-001",
   "statement": "Indicative annual electricity demand ... approximately 30 GWh per year.",
   "value": 30,
   "unit": "GWh/year",
   "claim_type": "derived",
   "confidence": "medium",
   "method_id": "METHOD-LOAD-RECONSTRUCTION-01",
-  "evidence_ids": ["EVID-FH-EIS-MAIN-01"],
+  "evidence_ids": ["EVID-RMA-EIS-MAIN-01"],
   "last_verified": "2026-07-23",
   "status": "published",
   "limitations": "..."
@@ -121,14 +121,14 @@
             <h3><code class="path">GET /api/v1/projects/remote-mining-asset/evidence.json</code></h3>
             <p>The evidence registry. Each object:</p>
             <pre class="sample">{
-  "evidence_id": "EVID-FH-EIS-MAIN-01",
+  "evidence_id": "EVID-RMA-EIS-MAIN-01",
   "source_title": "Draft EIS, main report — Northern Territory gold project",
   "publisher": "Project proponent (published via the NT EPA assessment register)",
   "source_url": "https://ntepa.nt.gov.au/...",
   "document_date": "2021-05",
   "accessed_at": "2026-07-23",
   "page_or_section": "Section 3.8.1.1 (p. 3-46) and Table 3.19",
-  "supports_claims": ["FH-LOAD-001", "FH-LOAD-002", "FH-FUEL-001"],
+  "supports_claims": ["RMA-LOAD-001", "RMA-LOAD-002", "RMA-FUEL-001"],
   "evidence_type": "primary_public_document",
   "evidence_quality": "high"
 }</pre>

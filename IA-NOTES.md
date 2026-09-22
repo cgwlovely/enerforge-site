@@ -716,3 +716,35 @@ storage; expiry for 9 of 88) · implications for the threshold review (three num
 (`#s56`, `#cohort`) and the 433 / 245 / 98 / 54 mine population (`#population`). Exhibit titles and captions
 now describe what the chart shows rather than argue. The pull quote on discounting credits was removed as a
 third repetition of the split-incentive point. `.res-body h3` style added for the sub-heads.
+
+### Plain-English pass across all 39 pages (2026-09-22, round 19)
+
+An external editorial audit of the single-file bundle listed changes for every page. Applied in full,
+with two exceptions noted below. House rules now in force: use "we" or the named source rather than
+"the work" or "the analysis"; replace metaphors (rests on, lands on, travels through, earns its keep)
+with the action; define noun strings such as "approval delta" in ordinary English; "shows" rather than
+"establishes" unless the evidence proves the point; one main claim per sentence; "per year" in prose and
+"/yr" only in tables; "onsite" throughout; no diagram caption repeated above and below the diagram;
+"Safeguard credits" or "ACCUs" rather than "units"; "we did not find" rather than "no record was found".
+
+Content defects fixed: the onsite-abatement submission now carries a recommendation in plain terms; the
+Remote Mining Asset report no longer links two PDFs it describes as unavailable (they are marked
+available on request, and the section is now "Maps"); the dataset page cited FH-LOAD-001 where the claim
+is RMA-LOAD-001 (the API docs used the same stale prefix); the coverage page said 215 Safeguard
+facilities against the Atlas population of 208 on 209 rows. Duplicate diagram captions removed on the
+battery-readiness series, the hybrid-asset note, the F1-F4 method page, the weak-grid note and the
+customer-savings note. Retitled: onsite abatement, the decline-rate submission, the funding map, the
+capital-constraint note, ready-to-build, brownfield, and "cash flow" as two words.
+
+Atlas and facility pages are generated, so their copy changed in `tools/consultation_kb/atlas/`
+(build_atlas.py, parts/engine.js, parts/section_*.html, facility_template.html, build_facility_pages.py).
+The engine script now carries a content hash (`safeguard-atlas.js?v=<sha1>`) because an unversioned
+script URL had been serving stale copy to returning browsers.
+
+Two audit items were not applied, because the owner wrote those titles directly in earlier rounds:
+the data-centre submission keeps "Australia regulates data centres through multiple systems, but cannot
+trace one facility across them" (audit proposed "Australia's data-centre registers do not use a common
+facility identifier"), and the baseline-floor article keeps "Lowering the Safeguard threshold would
+reduce the baseline floor for facilities already covered" (audit proposed "A lower Safeguard threshold
+would also tighten baselines for existing facilities"). The audit also asked to move the gold-ownership
+section out of that article; the owner's round-18 brief put it there as section 6, so it stayed.

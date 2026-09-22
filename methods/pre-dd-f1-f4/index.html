@@ -48,7 +48,8 @@
             <span class="dot" aria-hidden="true"></span>
             <span>v1.0 &middot; updated 23 July 2026</span>
           </p>
-          <h1>Pre-DD F1&ndash;F4 methodology &mdash; claim types, confidence and boundaries</h1>
+          <h1>How the F1&ndash;F4 project screen works</h1>
+          <p class="case-hero__sub">Claim types, confidence and limits.</p>
           <p class="standfirst">
             Every figure Heliovulcan publishes carries a claim type and a confidence rating.
             This page defines the F1&ndash;F4 screening framework those claims come from, and
@@ -85,20 +86,17 @@
           <h2 id="claim-types">Claim types</h2>
           <p>Each published claim is typed by where its content comes from:</p>
           <ul>
-            <li><code>public_source</code> &mdash; stated directly in a public document (e.g. a draft EIS); cited with section/page.</li>
-            <li><code>reported</code> &mdash; disclosed publicly by a company or third party; repeated here as reported, not independently verified.</li>
-            <li><code>derived</code> &mdash; obtained from public figures via a documented reconstruction or cross-check (see <a href="#load-reconstruction">load reconstruction</a>).</li>
-            <li><code>calculated</code> &mdash; an output of Heliovulcan's screening model under stated assumptions; indicative only.</li>
-            <li><code>interpreted</code> &mdash; an analyst judgement (e.g. which scenario to validate next); reasoned, but a judgement.</li>
-            <li><code>assumption</code> &mdash; an input chosen by the analyst (e.g. solar yield), with its basis noted.</li>
-            <li><code>owner_confirmation_required</code> &mdash; cannot be settled from public information; requires the owner, EPC, lender or a specialist.</li>
-            <li><code>unresolved</code> &mdash; known gap; explicitly left open rather than filled in.</li>
+            <li><code><b>Public source</b> (<code>public_source</code>) &mdash; stated directly in a public document, such as a draft environmental impact statement, cited with section and page.</li>
+            <li><code><b>Reported</b> (<code>reported</code>) &mdash; disclosed publicly by a company or third party; repeated here as reported, not independently verified.</li>
+            <li><b>Derived</b> (<code>derived</code>) &mdash; obtained from public figures through a documented reconstruction or cross-check (see <a href="#load-reconstruction">load reconstruction</a>).</li>
+            <li><code><b>Calculated</b> (<code>calculated</code>) &mdash; an output of Heliovulcan's screening model under stated assumptions; indicative only.</li>
+            <li><code><b>Interpreted</b> (<code>interpreted</code>) &mdash; an analyst judgement, such as which scenario to validate next.</li>
+            <li><code><b>Assumption</b> (<code>assumption</code>) &mdash; an input chosen by the analyst, such as solar yield, with its basis noted.</li>
+            <li><code><b>Owner confirmation required</b> (<code>owner_confirmation_required</code>) &mdash; cannot be settled from public information; requires the owner, EPC contractor, lender or a specialist.</li>
+            <li><code><b>Unresolved</b> (<code>unresolved</code>) &mdash; a known gap, left open rather than filled in.</li>
           </ul>
           <p>
-            <strong>The rule behind the registry:</strong> every claim has an ID; every ID has
-            evidence; every evidence has a source; and anything that cannot be verified is marked
-            <code>unresolved</code> rather than silently completed. Sources, dates, page numbers and
-            document content are never invented.
+            <strong>Every published claim has an ID and links to supporting evidence, and every piece of evidence names its source.</strong> If we cannot verify a claim, we mark it unresolved rather than filling the gap. We do not invent sources, dates, page numbers or document content.
           </p>
 
           <h2 id="confidence">Confidence scale</h2>
@@ -113,10 +111,10 @@
           <p>
             Annual energy and peak load are reconstructed from public environmental-impact material.
             In this case: the draft EIS states a proposed diesel power station of three 1.5 MW
-            units (3.9 MW peak) burning ~7,500 kL/yr of diesel, and its energy table reports
-            107,853 GJ/yr of energy produced &mdash; equivalent to ~30 GWh/yr. The EIS text itself
-            says &ldquo;approximately 30 MWh/yr&rdquo;, an apparent unit error; the registry records
-            the derived ~30 GWh/yr figure as <code>derived</code> with that inconsistency stated in
+            units (3.9 MW peak) burning ~7,500 kL per year of diesel, and its energy table reports
+            107,853 GJ per year of energy produced &mdash; equivalent to about 30 GWh per year. The EIS text itself
+            says &ldquo;approximately 30 MWh per year&rdquo;, an apparent unit error; the registry records
+            the derived about 30 GWh per year figure as <code>derived</code> with that inconsistency stated in
             its limitations, not as a clean public figure.
           </p>
 
@@ -142,9 +140,6 @@
 
           <h2 id="development-sequence">Development sequence</h2>
           <p>The F1&ndash;F4 screen sits at the front of a sequence that runs from commercial need and site control through approvals, operating design and financing. The map is used to identify which decision must be closed before the next stage can begin.</p>
-          
-      
-      <p class="section-intro">Maps the sequence from commercial need and site control through approvals, operating design and financing. Use it to identify which decision must be closed before the next stage can begin.</p>
       <div class="process-map" role="img" aria-label="Mining hybrid energy development process">
         <div class="process-flow">
           <div class="process-node"><strong>Energy problem</strong><small>Cost, reliability, expansion</small></div><div class="process-arrow">&rarr;</div>
@@ -163,17 +158,11 @@
             <li>not legal, tax, engineering, investment, EPC-design or lender due-diligence advice;</li>
             <li>not owner-verified: screens are built from public information and are not commissioned by, endorsed by or verified with project owners;</li>
             <li>not a bankable resource, dispatch or reliability study &mdash; 8,760-hour validation is explicitly the next stage, not part of the screen;</li>
-            <li>not a promise of search-engine or AI citation: machine-readable structure makes the work discoverable and checkable, nothing more.</li>
           </ul>
 
-          <h2>Machine access</h2>
-          <p>
-            Claims typed under this methodology are published at
-            <a href="/api/v1/projects/remote-mining-asset/claims.json">claims.json</a> /
-            <a href="/api/v1/projects/remote-mining-asset/evidence.json">evidence.json</a>, described by
-            the <a href="/openapi.json">OpenAPI specification</a> and documented at
-            <a href="/api/">/api/</a>.
-          </p>
+          
+
+          <p class="small-note" style="margin-top:26px"><strong>Machine-readable record.</strong> Claims typed under this methodology are published at <a href="/api/v1/projects/remote-mining-asset/claims.json">claims.json</a> and <a href="/api/v1/projects/remote-mining-asset/evidence.json">evidence.json</a>, described by the <a href="/openapi.json">OpenAPI specification</a>.</p>
 
         </div>
       </div>

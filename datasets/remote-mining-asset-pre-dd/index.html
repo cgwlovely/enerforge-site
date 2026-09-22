@@ -109,7 +109,7 @@
             <span class="dot" aria-hidden="true"></span>
             <span>v1.0 &middot; updated 23 July 2026</span>
           </p>
-          <h1>Remote Mining Asset Pre-DD dataset &mdash; claim &amp; evidence registry</h1>
+          <h1>Remote Mining Asset: claims and evidence dataset</h1>
           <p class="standfirst">A structured dataset of the published claims, assumptions and evidence behind the Remote Mining Asset screen, including unresolved source gaps.</p>
         </header>
       </div>
@@ -119,10 +119,7 @@
 
           <h2>Purpose</h2>
           <p>
-            When a mine hybrid-energy screen is quoted, the number usually travels without its
-            assumptions. This dataset keeps each headline figure attached to its claim type,
-            confidence, method and evidence, so a downstream reader &mdash; human or machine &mdash;
-            can tell a public EIS figure from a model output from an analyst assumption.
+            Headline figures from a mine hybrid-energy screen are often repeated without their assumptions. This dataset keeps each figure attached to its claim type, confidence, method and evidence, so a reader can distinguish a figure reported in the environmental impact statement, a modelled result and an analyst assumption.
           </p>
 
           <h2>Coverage and variables</h2>
@@ -135,11 +132,11 @@
 
           <h2>Source types</h2>
           <ul>
-            <li><code>primary_public_document</code> &mdash; NT EPA-published draft EIS material</li>
-            <li><code>public_register</code> &mdash; NT EPA assessment register</li>
-            <li><code>company_disclosure</code> &mdash; proponent public reporting (one item currently <code>unresolved</code>: primary URL not yet captured)</li>
-            <li><code>reference_dataset</code> &mdash; Global Solar Atlas</li>
-            <li><code>published_analysis</code> &mdash; Heliovulcan's own published reports (traceability for model outputs, not independent verification)</li>
+            <li><code>Primary public document (<code>primary_public_document</code>) &mdash; NT EPA-published draft EIS material</li>
+            <li><code>Public register (<code>public_register</code>) &mdash; NT EPA assessment register</li>
+            <li><code>Company disclosure (<code>company_disclosure</code>) &mdash; proponent public reporting (one item currently <code>unresolved</code>: primary URL not yet captured)</li>
+            <li><code>Reference dataset (<code>reference_dataset</code>) &mdash; Global Solar Atlas</li>
+            <li><code>Published analysis (<code>published_analysis</code>) &mdash; Heliovulcan's own published reports (traceability for model outputs, not independent verification)</li>
           </ul>
 
           <h2>Method</h2>
@@ -151,15 +148,15 @@
 
           <h2>Known limitations</h2>
           <ul>
-            <li>Load and energy figures derive from a 2021 draft EIS whose text contains an apparent unit inconsistency (stated &ldquo;30 MWh/yr&rdquo;; cross-checked to ~30 GWh/yr) &mdash; see claim <code>FH-LOAD-001</code>;</li>
+            <li>Load and energy figures derive from a 2021 draft EIS whose text contains an apparent unit inconsistency (stated &ldquo;30 MWh per year&rdquo;; cross-checked to about 30 GWh per year) &mdash; see claim <code>RMA-LOAD-001</code>;</li>
             <li>PV/BESS disclosure evidence is marked <code>unresolved</code> until the primary document URL is captured;</li>
             <li>all financeability figures are screening-model outputs under unverified timing, pricing, financing and contract assumptions;</li>
             <li>siting areas are desktop search areas requiring owner confirmation;</li>
-            <li>the dataset covers one project only &mdash; it is the MVP of the registry structure, not a facility database.</li>
+            <li>the dataset covers one project only: it is a first example of the registry structure, not a facility database.</li>
           </ul>
 
                     <p class="small-note" id="cadence"><strong>Update cadence.</strong> Updated when the underlying screen is revised or a source is resolved; each claim and evidence object carries its own last_verified / accessed_at date, and the registry carries a version.</p>
-          <p class="small-note" id="terms"><strong>Licence and use.</strong> Free to access and cite with attribution to Heliovulcan (heliovulcan.com.au), for information purposes. The dataset is an independent public-information screen: it is not owner-verified data and not legal, financial, engineering, investment or lender due-diligence advice. Do not present calculated screening outputs as transaction values or verified project economics.</p>
+          <p class="small-note" id="terms"><strong>Licence.</strong> Free to access and cite with attribution to Heliovulcan (heliovulcan.com.au), for information purposes. Limitations. The dataset is an independent screen built from public information. It is not owner-verified data, and it is not legal, financial, engineering, investment or lender due-diligence advice. Do not present modelled screening outputs as transaction values or verified project economics.</p>
 <h2>Access</h2>
           <ul>
             <li><a href="/api/v1/projects/remote-mining-asset.json">Project JSON</a></li>

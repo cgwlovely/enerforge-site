@@ -32,6 +32,16 @@ DATASET_SLUG = "remote-mining-asset-pre-dd"
 
 CLAIM_TYPES = {"reported", "public_source", "calculated", "derived", "interpreted",
                "assumption", "unresolved", "owner_confirmation_required"}
+
+TYPE_LABELS = {
+    "public_source": "Public source", "reported": "Reported", "calculated": "Calculated",
+    "derived": "Derived", "interpreted": "Interpreted", "assumption": "Assumption",
+    "unresolved": "Unresolved", "owner_confirmation_required": "Owner confirmation required",
+}
+UNIT_LABELS = {"AUD_million": "A$ million", "AUD_million/year": "A$ million per year",
+               "GWh/year": "GWh per year", "kL/year": "kL per year",
+               "kWh/kWp/year": "kWh per kWp per year"}
+
 CONFIDENCE = {"high", "medium", "low"}
 CLAIM_STATUS = {"published", "draft", "unresolved", "withdrawn"}
 EVIDENCE_TYPES = {"primary_public_document", "public_register", "company_disclosure",
@@ -248,7 +258,8 @@ def claims_table_html(claims_doc: dict, evidence_doc: dict) -> str:
                 ev_cells.append(f"{label} <em>({html_escape(ev.get('status', 'unresolved'))})</em>")
         val = ""
         if c.get("value") is not None:
-            val = f"{c['value']:g} {html_escape(c.get('unit', ''))}".strip()
+            unit = c.get("unit", "")
+            val = f"{c['value']:g} {html_escape(UNIT_LABELS.get(unit, unit))}".strip()
         rows.append(
             "<tr>"
             f"<td><code>{html_escape(c['claim_id'])}</code></td>"
@@ -257,7 +268,7 @@ def claims_table_html(claims_doc: dict, evidence_doc: dict) -> str:
                if c.get("limitations") else "")
             + "</td>"
             f"<td>{val}</td>"
-            f"<td><code>{html_escape(c['claim_type'])}</code></td>"
+            f"<td>{html_escape(TYPE_LABELS.get(c['claim_type'], c['claim_type']))}</td>"
             f"<td>{html_escape(c['confidence'])}</td>"
             f"<td>{' '.join(ev_cells) or '&mdash;'}</td>"
             f"<td>{html_escape(c['last_verified'])}</td>"
@@ -281,7 +292,7 @@ def stats_html(project: dict, stats: dict) -> str:
         ("Published claims", str(stats["claims_total"])),
         ("Derived / calculated / interpreted claims", str(stats["derived_claims"])),
         ("Analyst assumptions", str(stats["analyst_assumptions"])),
-        ("Owner confirmation required", str(stats["owner_confirmation_required"])),
+        ("Claims needing owner confirmation", str(stats["owner_confirmation_required"])),
         ("Unresolved evidence items", str(stats["unresolved_evidence"])),
     ]
     body = "\n".join(

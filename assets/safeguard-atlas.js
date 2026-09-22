@@ -301,7 +301,7 @@ function renderPath() {
   $("legend-path").innerHTML = legend([
     ["Covered emissions", PAL.cov],
     ["Aggregate baselines", PAL.base],
-    ["Modelled compliant net emissions", PAL.net],
+    ["Modelled net emissions", PAL.net],
     ["Current policy on the starting-point assumptions", PAL.ref, 1]
   ]);
 
@@ -334,11 +334,11 @@ function renderPath() {
     "The credit issuance formula in Rule s 57 uses the baseline that would apply if s 10(1) had not been made, so the minimum baseline " +
     "reduces the units a facility must surrender but does not increase the credits it can be issued. The calculation applies it in " +
     "that direction only.</p>" +
-    "<p><b>Step three — the compliance measure.</b> Modelled compliant net emissions for a facility are the smaller of its covered " +
+    "<p><b>Step three — the compliance measure.</b> Modelled net emissions for a facility are the smaller of its covered " +
     "emissions and its baseline. The national figure is the sum across facilities. Production is applied as one factor per commodity, " +
     "so a coal mine follows the coal production path and an LNG plant follows the LNG path.</p>" +
-    "<p><b>Not modelled on this page.</b> The full model also tracks facilities that fall below the 100,000 t coverage threshold and " +
-    "remain eligible facilities under Rule s 58B for up to ten years. That treatment affects the coverage series after approximately " +
+    "<p><b>Not modelled here.</b> This page does not model facilities that fall below the 100,000 t coverage threshold but remain eligible under Rule s 58B. The full model tracks them " +
+    "for up to ten years. That treatment affects the coverage series after approximately " +
     "FY2032-33 but not the FY2034-35 test, and it is not applied here. Each facility is counted until its modelled closure year.</p>";
 }
 
@@ -402,9 +402,9 @@ function buildControls() {
     mt(C.NEW_EMISSIONS_T / 1e6) + ' Mt of emissions against ' + mt(C.NEW_BASELINE_T / 1e6) +
     ' Mt of best-practice baseline. <span class="tag tag--asm">Assumption</span></p></div>');
 
-  h.push('<div class="ctrl"><div class="ctrl__lab"><span>Additional on-site abatement</span><span class="ctrl__val" id="v-abate"></span></div>' +
+  h.push('<div class="ctrl"><div class="ctrl__lab"><span>Additional onsite abatement</span><span class="ctrl__val" id="v-abate"></span></div>' +
     '<input type="range" id="c-abate" min="0" max="3" step="0.1">' +
-    '<p class="ctrl__hint">Additional on-site abatement, applied as a compounding annual reduction in covered emissions. At zero, the starting-point assumption applies and no additional on-site abatement is assumed. <span class="tag tag--asm">Assumption</span></p></div>');
+    '<p class="ctrl__hint">Additional onsite abatement, applied as a compounding annual reduction in covered emissions. At zero, the starting-point assumption applies and no additional onsite abatement is assumed. <span class="tag tag--asm">Assumption</span></p></div>');
 
   $("controls").innerHTML = h.join("");
   bindControls();
@@ -469,7 +469,7 @@ function renderLab() {
     '<div class="verdict verdict--' + (hit ? "hit" : "miss") + '"><b>' +
     (hit ? "These settings meet the " + Math.round(S.target * 100) + "% target" :
            "These settings miss the " + Math.round(S.target * 100) + "% target by " + mt(gap, 2) + " Mt") +
-    "</b><p style=\"margin-top:8px;font-size:15px;color:var(--ink-soft)\">Modelled compliant net emissions in FY2034-35 are <b>" +
+    "</b><p style=\"margin-top:8px;font-size:15px;color:var(--ink-soft)\">Modelled net emissions in FY2034-35 are <b>" +
     mt(a.net, 2) + " Mt CO₂-e</b> against a point target of <b>" + mt(T, 2) + " Mt</b>. The post-2030 decline rate that meets the target exactly is <b>" +
     need.toFixed(2) + " percentage points per year</b>, " +
     (need > C.D_STATUTORY * 100 ?
@@ -483,10 +483,10 @@ function renderLab() {
     ["Aggregate baselines, FY2034-35", mt(a.base, 1) + " Mt", "The sum of the baselines the rules would set in that year"],
     ["Five-year cumulative net", mt(b5, 0) + " Mt", budget === null ? "FY2030-31 to FY2034-35" :
       "Compared with the consultation paper's " + mt(budget, 0) + " Mt budget for this target: " + sgn(b5 - budget, 0) + " Mt"],
-    ["Net emissions of facilities with a determination", mt(a.nT, 1) + " Mt", (100 * a.nT / tot).toFixed(1) + "% of modelled compliant net emissions, from " +
+    ["Net emissions of facilities with a determination", mt(a.nT, 1) + " Mt", (100 * a.nT / tot).toFixed(1) + "% of modelled net emissions, from " +
       D.meta.teba_facilities + " of " + NFAC + " facilities"],
     ["Facilities above baseline, FY2034-35", int(a.over), int(a.under) + " at or below baseline; " + int(a.closed) + " closed"],
-    ["Units to be surrendered, FY2034-35", mt(a.owed, 2) + " Mt", "Covered emissions less the applicable baseline, summed over facilities above baseline, assuming no additional on-site abatement"]
+    ["Units to be surrendered, FY2034-35", mt(a.owed, 2) + " Mt", "Covered emissions less the applicable baseline, summed over facilities above baseline, assuming no additional onsite abatement"]
   ].map(function (o) {
     return '<div class="out"><span>' + o[0] + '</span><b>' + o[1] +
       '</b><span class="tag tag--mod">Modelled</span><small>' + o[2] + "</small></div>";
@@ -505,7 +505,7 @@ function renderLab() {
     "Because the two groups differ greatly in size, the exchange is far from one-for-one.</p>" +
     "<p><b>Solution method.</b> The rate is found by bisection over 44 iterations, to a precision of approximately 0.0001 percentage points. " +
     "Each iteration recalculates all " + F.length + " facility rows; no fitted parameters are used.</p>" +
-    "<p><b>Effect of additional on-site abatement.</b> Modelled compliant net emissions are the smaller of covered emissions and the baseline. " +
+    "<p><b>Effect of additional onsite abatement.</b> Modelled net emissions are the smaller of covered emissions and the baseline. " +
     "A facility well above its baseline remains above it after a small annual reduction, so its contribution to net emissions is unchanged and " +
     "only the units it must surrender are reduced. The abatement setting therefore changes the <em>units to be surrendered</em> figure before it " +
     "changes net emissions. On the starting-point assumptions, net emissions begin to fall only when the abatement rate is large enough to bring " +
@@ -726,9 +726,9 @@ function renderSources() {
       "Assumption", mt(C.NEW_EMISSIONS_T / 1e6) + " Mt CO₂-e of emissions against " + mt(C.NEW_BASELINE_T / 1e6) +
       " Mt of baseline, phased in over the decade according to stated commissioning dates.", ""],
     ["Facility locations", "Heliovulcan geocoding of each register row, graded A, B or C by the agreement between the independent references used", "Modelled",
-      "Map placement only; no figure in the model depends on a location. The references, matching rules and per-point workings are part of Heliovulcan's facility layer and are not published.", ""],
+      "Map placement only; no figure in the model depends on a location. The references, matching rules and per-point workings are held in our internal facility-location dataset and are not published.", ""],
     ["Model", "Heliovulcan — the calculation used in the 2026 decline-rate submission", "Modelled",
-      "The calculation on this page is a port of the code used for the consultation submission. The check below re-runs the published cases.",
+      "This page uses the same calculation as the consultation submission and reruns its published cases.",
       "/consultations/safeguard-decline-rate-2026.html"]
   ];
   $("srctbl").innerHTML =
@@ -758,10 +758,9 @@ function renderChurn() {
     " distinct facility names; FY2024-25 carries <b>" + c.rows_cur + " rows</b> under " + c.names_cur +
     " names. <b>" + c.both + "</b> names appear in both years, " + c.only_cur.length +
     " only in the newer year and " + c.only_prev.length + " only in the older one.</p>" +
-    '<p class="atlas-sec__why"><b>These figures are not reported as a count of facilities entering and leaving the ' +
-    "scheme, because two features of the register prevent that reading.</b> First, facilities are renamed between years, " +
-    "and a rename appears as one facility leaving and another entering. Second, when a facility changes operator " +
-    "part-way through a year, both operators report it, producing two rows and two baselines under one name. This is why " +
+    '<p class="atlas-sec__why"><b>These counts are not the number of facilities entering and leaving the ' +
+    "scheme.</b> Facilities are renamed between years, and a rename looks like one facility leaving and another entering. " +
+    "When a facility changes operator part-way through a year, both operators report it, producing two rows and two baselines under one name. This is why " +
     (dupc.length ? "<b>" + esc(dupc.join(", ")) + "</b> " + (dupc.length > 1 ? "appear" : "appears") +
       " twice in the FY2024-25 register" : "duplicate names occur") +
     (dupp.length ? ", and <b>" + esc(dupp.join(", ")) + "</b> " + (dupp.length > 1 ? "do" : "does") +
@@ -821,10 +820,12 @@ function selfCheck() {
       worst.toExponential(1) + ", attributable to rounding.";
   }
   $("selfcheck-note").innerHTML =
-    "The verification recomputes, in the reader's browser, the principal figures published in Heliovulcan's 2026 decline-rate submission: " +
-    "FY2034-35 modelled compliant net emissions, the decline rate required for a 62% and a 70% target, and the five-year cumulative total, " +
-    "for three facility populations and five treatments of the trade-exposed determinations, together with both iso-target curves. " +
-    "A difference between this page and the submission would be reported here.";
+    "The verification recomputes, in the reader's browser, the principal figures published in Heliovulcan's 2026 decline-rate submission:</p><ul>" +
+    "<li>FY2034-35 modelled net emissions.</li>" +
+    "<li>The decline rate required for a 62% and a 70% target.</li>" +
+    "<li>The five-year cumulative total.</li>" +
+    "<li>Both iso-target curves.</li></ul>" +
+    "<p>Each is recomputed for three facility populations and five treatments of the trade-exposed determinations. A difference between this page and the submission would be reported here.";
 }
 
 
@@ -846,26 +847,26 @@ function renderHeadlines() {
   set("start-h2", "The FY2024-25 starting point: " + F.length + " rows, " + mt(cov / 1e6) + " Mt CO\u2082-e covered, " + over + " facilities above baseline");
   /* pathway chart */
   chartHead("chart-path-head",
-    "Modelled compliant emissions " + (cur.net < r.net - 0.005 ? "fall to " : cur.net > r.net + 0.005 ? "reach " : "fall to ") + mt(cur.net, 2) +
+    "Modelled net emissions " + (cur.net < r.net - 0.005 ? "fall to " : cur.net > r.net + 0.005 ? "reach " : "fall to ") + mt(cur.net, 2) +
     " Mt CO\u2082-e by FY2034-35 under the settings in force" + (isRef() ? "" : ", against " + mt(r.net, 2) + " Mt under current policy"),
     "Mt CO\u2082-e per year, FY2024-25 to FY2039-40; settings in force compared with the current-policy reference case");
   /* policy charts */
   var T = targetMt(S.target);
   chartHead("chart-front-head",
-    "A slower path for the " + D.meta.teba_facilities + " trade-exposed facilities must be paid for by the other " + (NFAC - D.meta.teba_facilities),
+    "A slower path for the " + D.meta.teba_facilities + " trade-exposed facilities requires a faster rate for the other " + (NFAC - D.meta.teba_facilities),
     "Pairs of post-2030 decline rates, in percentage points per year, that meet the " + Math.round(S.target * 100) + "% target of " + mt(T, 1) + " Mt CO\u2082-e in FY2034-35");
   chartHead("chart-wf-head", isRef() ? "Current policy on the starting-point assumptions" : "Where the difference from current policy comes from",
-    "FY2034-35 modelled compliant net emissions, Mt CO\u2082-e; each bar moves one setting from current policy to the value in force");
+    "FY2034-35 modelled net emissions, Mt CO\u2082-e; each bar moves one setting from current policy to the value in force");
   /* scorecard */
   if (D.scorecard) { var t = D.scorecard[D.scorecard.length - 1], share = 100 * (t.b_prev - t.b_pred) / (t.b_prev - t.b_act);
-    set("scorecard-h2", "Comparing the two registers: the ERC step explains " + share.toFixed(0) + "% of the fall in baselines"); }
+    set("scorecard-h2", "Rule changes explain " + share.toFixed(0) + "% of the fall in published baselines between the two registers"); }
   /* map: states */
   if (D.map) { var st = {}; F.forEach(function (f) { st[f.s] = (st[f.s] || 0) + f.cov; });
     var arr = Object.keys(st).map(function (k) { return [k, st[k]]; }).sort(function (a, b) { return b[1] - a[1]; });
     var top3 = arr.slice(0, 3), tot = arr.reduce(function (a, x) { return a + x[1]; }, 0), s3 = top3.reduce(function (a, x) { return a + x[1]; }, 0);
-    set("map-h2", "Facility distribution: " + top3.map(function (x) { return x[0]; }).join(", ") + " carry " + (100 * s3 / tot).toFixed(0) + "% of covered emissions"); }
+    set("map-h2", top3.map(function (x) { return x[0]; }).join(", ") + " account for " + (100 * s3 / tot).toFixed(0) + "% of covered emissions"); }
   /* facilities */
-  set("facilities-h2", "Facility positions: " + over + " above baseline in FY2024-25, " + cur.over + " in FY2034-35 under the settings in force");
+  set("facilities-h2", over + " rows were above baseline in FY2024-25; " + cur.over + " are modelled above baseline in FY2034-35 under the settings in force");
 }
 /* the overview's "what changes the result": one setting moved at a time from the starting point */
 function renderSensitivity() {
@@ -877,7 +878,7 @@ function renderSensitivity() {
     ["Production held constant instead of the OCE outlook", { pf: "flat" }],
     ["No new entrants", { pipe: false }],
     ["Confirmed closures plus approval expiries", { clos: "tracker" }],
-    ["Additional on-site abatement of 1% a year", { abate: 0.01 }]
+    ["Additional onsite abatement of 1% a year", { abate: 0.01 }]
   ];
   el.innerHTML = '<table class="sens-tbl"><thead><tr><th>One setting changed from the starting point</th>' +
     '<th class="num">FY2034-35 net, Mt</th><th class="num">Change</th><th class="num">Rate required for 62%, pp/yr</th></tr></thead><tbody>' +
@@ -996,11 +997,11 @@ function renderMap() {
   var pointByI = {}; M.points.forEach(function (p) { pointByI[p.i] = p; });
   $("how-map").innerHTML =
     "<p><b>Locations.</b> Each register row is geocoded by Heliovulcan and graded A, B or C by the agreement between the independent references used. " +
-    "The references, the matching rules and the per-point workings are part of Heliovulcan's facility layer and are not published; grades are shown so that the confidence of each point is visible.</p>" +
+    "The references, the matching rules and the per-point workings are held in our internal facility-location dataset and are not published. The grade is shown so that the confidence of each point is visible.</p>" +
     "<p><b>Projection.</b> Equirectangular, standard parallel 27°S. Distances are approximate.</p>" +
     (ln.length ? "<p><b>Drawn as lines (" + ln.length + ").</b> " + ln.map(function (l) { return esc(l.n) + " (" + int(l.km) + " km)"; }).join(" · ") +
       ". Simplified for display; the register row covers the whole pipeline, including its compressor stations.</p>" : "") +
-    "<p><b>Not placed by design (" + np.length + ").</b> " + np.map(esc).join(" · ") + ".</p>" +
+    "<p><b>Not mapped because they have no single location (" + np.length + ").</b> " + np.map(esc).join(" · ") + ".</p>" +
     (miss.length ? "<p><b>Not located (" + miss.length + ").</b> " + miss.map(esc).join(" · ") + ".</p>" : "") +
     "<p>Gas distribution networks, pipelines, railways, haul roads, road and air fleets and multi-platform offshore fields have no single location and are not placed.</p>";
 }
@@ -1063,7 +1064,7 @@ function sbControls() {
   h.push('<div class="sb-field"><label>Trade-exposed determination</label>' + seg("sbteba", [["no", "None"], ["yes", "Determination from FY2025-26"]]) +
     '<div id="sb-row-rate" hidden><label style="margin-top:8px">Decline rate under the determination <span class="v" id="sb-rate-v"></span></label>' +
     '<input type="range" id="sb-rate" min="0.5" max="3" step="0.05" value="' + SB.rate + '"><p class="hint">A three-year determination, after which the default path applies. Most current determinations specify 1 percentage point per year.</p></div></div>');
-  h.push('<div class="sb-field"><label>Additional on-site abatement <span class="v" id="sb-abate-v"></span></label><input type="range" id="sb-abate" min="0" max="10" step="0.5" value="' + (SB.abate * 100) + '"><p class="hint">Annual, compounding, applied to covered emissions.</p></div>');
+  h.push('<div class="sb-field"><label>Additional onsite abatement <span class="v" id="sb-abate-v"></span></label><input type="range" id="sb-abate" min="0" max="10" step="0.5" value="' + (SB.abate * 100) + '"><p class="hint">Annual, compounding, applied to covered emissions.</p></div>');
   h.push('<p class="hint" style="margin-top:12px">The post-2030 decline rate is taken from the policy settings above (currently <b>' + (S.d * 100).toFixed(2) + '</b> percentage points per year).</p>');
   $("sb-controls").innerHTML = h.join("");
   function on(id, ev, fn) { var e = $(id); if (e) e.addEventListener(ev, fn); }
@@ -1129,9 +1130,13 @@ function renderSandbox() {
   $("chart-sb").innerHTML = svgEl(W, H, s.join(""));
   $("legend-sb").innerHTML = legend([["Covered emissions", PAL.cov], ["Baseline", PAL.base]].concat(floorK !== null ? [["Baseline without the floor", "#9A958C", 1]] : []));
   $("how-sb").innerHTML =
-    "<p><b>Method.</b> The FY2024-25 baseline is divided by 0.902 to recover the production × intensity term. That term is multiplied by each year's ERC, which falls by 0.049 per year to FY2029-30 and then by the selected post-2030 rate, and by the production path. A baseline below 100,000 t is set at 100,000 t under Rule s 10(1); credits are measured against the baseline before that adjustment, as in Rule s 57.</p>" +
-    "<p><b>The trade-exposed option</b> models a three-year determination beginning in FY2025-26 at the selected rate, after which the default path applies. This is the form of the determinations the Regulator has issued. It is not an assessment of eligibility, which depends on trade-exposure and earnings tests that are outside the scope of this page.</p>" +
-    "<p><b>Break-even abatement</b> is the compounding annual reduction at which FY2034-35 covered emissions equal that year's baseline. It does not consider cost, and it treats abatement as reducing covered emissions one-for-one. That is appropriate for fuel switching and not for measures that change the production variable.</p>" +
+    "<p><b>Method.</b> The calculation runs in four steps.</p>" +
+    "<ol><li>Divide the FY2024-25 baseline by 0.902 to recover the production × intensity term.</li>" +
+    "<li>Multiply that term by each year's emissions reduction contribution, which falls by 0.049 a year to FY2029-30 and then by the selected post-2030 rate.</li>" +
+    "<li>Apply the production path.</li>" +
+    "<li>Set any baseline below 100,000 t to 100,000 t under Rule s 10(1). Credits are measured against the baseline before that adjustment, as in Rule s 57.</li></ol>" +
+    "<p><b>The trade-exposed option.</b> If you select it, the model applies the chosen rate for three years from FY2025-26, then returns the facility to the default path. This reflects the form of current determinations. It does not assess whether the facility would qualify, which depends on trade-exposure and earnings tests outside the scope of this page.</p>" +
+    "<p><b>Break-even abatement</b> is the annual reduction needed for the facility's FY2034-35 covered emissions to equal its baseline. It measures quantity, not cost, and it treats abatement as reducing covered emissions one-for-one. That is appropriate for fuel switching and not for measures that change the production variable.</p>" +
     "<p>Nothing entered in this section is stored or transmitted. Reloading the page clears it.</p>";
 }
 
