@@ -74,7 +74,7 @@
       "evidence_ids": ["EVID-RMA-GSA-01"],
       "last_verified": "2026-07-23",
       "status": "published",
-      "limitations": "Analyst assumption informed by Global Solar Atlas regional data; not a bankable yield assessment (no P50/P90 study, no on-site measurement)."
+      "limitations": "Analyst assumption informed by Global Solar Atlas regional data; not a bankable yield assessment (no P50/P90 study, no onsite measurement)."
     },
     {
       "claim_id": "RMA-SCEN-001",

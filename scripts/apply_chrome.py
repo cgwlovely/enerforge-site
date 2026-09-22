@@ -25,7 +25,7 @@ MENU = [
                       ("Methods", "/methods/")]),
         ("Featured", [("Safeguard Atlas: the post-2030 decline rate cannot be set in isolation", "/safeguard-atlas.html"),
                       ("Future mine-electrification loads and current electricity data", "/australian-diesel-replacement-market-size.html"),
-                      ("Lowering the Safeguard threshold would reduce the baseline floor for facilities already covered", "/safeguard-review-2026-baseline-floor.html")])]),
+                      ("A lower Safeguard threshold would also tighten baselines for existing facilities", "/safeguard-review-2026-baseline-floor.html")])]),
     ("tools", "Data & tools", "/safeguard-atlas.html", None),
     ("consultations", "Consultations", "/consultations.html", [
         ("Published submissions", [("All submissions", "/consultations.html"),

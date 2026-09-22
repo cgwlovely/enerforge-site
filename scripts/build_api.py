@@ -269,7 +269,7 @@ def claims_table_html(claims_doc: dict, evidence_doc: dict) -> str:
             + "</td>"
             f"<td>{val}</td>"
             f"<td>{html_escape(TYPE_LABELS.get(c['claim_type'], c['claim_type']))}</td>"
-            f"<td>{html_escape(c['confidence'])}</td>"
+            f"<td>{html_escape(c['confidence'].capitalize())}</td>"
             f"<td>{' '.join(ev_cells) or '&mdash;'}</td>"
             f"<td>{html_escape(c['last_verified'])}</td>"
             "</tr>"
@@ -290,7 +290,7 @@ def stats_html(project: dict, stats: dict) -> str:
         ("Last verified", html_escape(project.get("last_verified", project["updated_at"]))),
         ("Public sources", str(stats["public_sources"])),
         ("Published claims", str(stats["claims_total"])),
-        ("Derived / calculated / interpreted claims", str(stats["derived_claims"])),
+        ("Claims not copied directly from a source", str(stats["derived_claims"])),
         ("Analyst assumptions", str(stats["analyst_assumptions"])),
         ("Claims needing owner confirmation", str(stats["owner_confirmation_required"])),
         ("Unresolved evidence items", str(stats["unresolved_evidence"])),
