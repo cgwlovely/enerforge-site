@@ -3,66 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Australian critical minerals: power and grid readiness | Heliovulcan</title>
-  <meta name="description" content="538 Australian critical-minerals sites screened by project stage, distance to the nearest substation, published power demand and registered holder." />
+  <title>How far critical-minerals projects are from power | Heliovulcan</title>
+  <meta name="description" content="538 Australian critical-minerals sites, screened by how far they sit from the nearest substation, what power demand has been published, and who holds the ground." />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
   <link rel="apple-touch-icon" href="/favicon.png" />
-  <link rel="stylesheet" href="/style.css?v=20260916j" />
+  <link rel="stylesheet" href="/style.css?v=20260927a" />
   <link rel="canonical" href="https://heliovulcan.com.au/critical-minerals.html" />
   <meta property="og:site_name" content="Heliovulcan" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heliovulcan.com.au/critical-minerals.html" />
-  <meta property="og:title" content="Australian critical minerals: power and grid readiness" />
-  <meta property="og:description" content="538 critical-minerals sites screened by stage, distance to the grid, published power demand and registered holder." />
+  <meta property="og:title" content="How far critical-minerals projects are from power" />
+  <meta property="og:description" content="538 Australian critical-minerals sites, screened by distance to the grid, published power demand and registered holder." />
   <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-<style>
-:root{
-  --ground:#EAEDE9; --surface:#FBFCFA; --surface-2:#F2F5F1;
-  --ink:#161D1A; --muted:#68766F; --rule:#D2D8D1; --rule-soft:#E2E7E1;
-  --net:#A9B6AE;
-  --operating:#0F7A68; --developing:#C2661C; --care:#7E5F9C; --deposit:#4E6672;
-  --warn:#9A6B12; --crit:#A8431A;
-  --focus:#0F7A68;
-  --opp-active:#A8431A; --opp-likely:#9A6B12; --opp-monitor:#4E6672; --opp-none:#68766F;
-}
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --ground:#0F1412; --surface:#161D1A; --surface-2:#1C2521;
-  --ink:#E4EAE5; --muted:#8C9C93; --rule:#26302B; --rule-soft:#1F2824;
-  --net:#3A4A42;
-  --operating:#3BB49C; --developing:#E3903F; --care:#AE8FCD; --deposit:#7E99A6;
-  --warn:#D6A83A; --crit:#E0704A;
-  --focus:#3BB49C;
-  --opp-active:#E0704A; --opp-likely:#D6A83A; --opp-monitor:#7E99A6; --opp-none:#8C9C93;
-}}
-:root[data-theme="dark"]{
-  --ground:#0F1412; --surface:#161D1A; --surface-2:#1C2521;
-  --ink:#E4EAE5; --muted:#8C9C93; --rule:#26302B; --rule-soft:#1F2824;
-  --net:#3A4A42;
-  --operating:#3BB49C; --developing:#E3903F; --care:#AE8FCD; --deposit:#7E99A6;
-  --warn:#D6A83A; --crit:#E0704A;
-  --focus:#3BB49C;
-  --opp-active:#E0704A; --opp-likely:#D6A83A; --opp-monitor:#7E99A6; --opp-none:#8C9C93;
-}
+  <style>
+
+
+
+
 *{box-sizing:border-box}
-body{
-  background:var(--ground); color:var(--ink);
-  font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
-  font-size:14px; line-height:1.5; margin:0;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:1280px; margin:0 auto; padding:28px 24px 56px; display:flex; flex-direction:column; gap:22px}
+
+
 
 /* ---- masthead ---- */
-.mast{display:flex; flex-direction:column; gap:14px; border-bottom:1px solid var(--rule); padding-bottom:20px}
-.eyebrow{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600}
+
+
 h1{font-size:30px; line-height:1.15; font-weight:700; margin:0; text-wrap:balance; letter-spacing:-.015em}
-.standfirst{font-family:"Source Serif 4",Georgia,serif; font-size:16.5px; line-height:1.6; color:var(--ink); max-width:66ch; margin:0}
+
 .standfirst b{font-weight:600}
 
-.figs{display:grid; grid-template-columns:repeat(auto-fit,minmax(178px,1fr)); gap:1px; background:var(--rule-soft); border:1px solid var(--rule-soft)}
-.fig{background:var(--surface); padding:13px 15px; display:flex; flex-direction:column; gap:3px}
+
+
 .fig .n{font-size:26px; font-weight:700; font-variant-numeric:tabular-nums; letter-spacing:-.02em; line-height:1.1}
 .fig .k{font-size:11.5px; color:var(--muted); line-height:1.35}
 
@@ -79,7 +50,7 @@ button.chip{
 }
 button.chip:hover{color:var(--ink); border-color:var(--muted)}
 button.chip[aria-pressed="true"]{background:var(--surface-2); color:var(--ink); border-color:var(--ink)}
-button.chip .sw{width:9px; height:9px; border-radius:50%; flex:none; background:currentColor}
+button.chip .sw{width:9px; height:9px; flex:none; background:currentColor}
 button.chip .ct{font-variant-numeric:tabular-nums; color:var(--muted); font-size:11.5px}
 button.chip:focus-visible, select:focus-visible{outline:2px solid var(--focus); outline-offset:1px}
 select{font:inherit; font-size:12.5px; background:var(--surface); color:var(--ink); border:1px solid var(--rule); padding:5px 8px}
@@ -93,7 +64,7 @@ canvas{display:block; width:100%; height:auto; cursor:crosshair}
   border-top:1px solid var(--rule-soft); padding:8px 12px;
   font-size:11.5px; color:var(--muted);
 }
-.maplegend .net::before{content:""; display:inline-block; width:8px; height:8px; background:var(--net); border-radius:50%; margin-right:6px; vertical-align:middle}
+.maplegend .net::before{content:""; display:inline-block; width:8px; height:8px; background:var(--net); margin-right:6px; vertical-align:middle}
 
 .rail{background:var(--surface); border:1px solid var(--rule); display:flex; flex-direction:column}
 .rail-head{padding:13px 16px; border-bottom:1px solid var(--rule-soft); display:flex; justify-content:space-between; align-items:baseline; gap:10px}
@@ -130,9 +101,7 @@ td.n{font-variant-numeric:tabular-nums; text-align:right}
 td.name{white-space:normal; min-width:150px; font-weight:500}
 tbody tr{cursor:pointer}
 tbody tr:hover{background:var(--surface-2)}
-tbody tr[aria-selected="true"]{background:var(--surface-2); box-shadow:inset 3px 0 0 var(--focus)}
-
-footer{font-size:11.5px; color:var(--muted); line-height:1.6; border-top:1px solid var(--rule); padding-top:14px}
+tbody tr[aria-selected="true"]{background:var(--surface-2); color:var(--muted); line-height:1.6; border-top:1px solid var(--rule); padding-top:14px}
 footer a{color:inherit}
 @media (max-width:900px){ .stage{grid-template-columns:1fr} }
 @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
@@ -140,14 +109,12 @@ footer a{color:inherit}
 /* Sources block: the page's caveats in full, read after the figures rather than
    standing in front of the map. The opening paragraph was 1,359 characters, so the
    first screen was a wall of 14px prose before anything was visible. */
-details.sources{margin:18px 0 0; border-top:1px solid var(--rule); padding-top:12px}
-details.sources > summary{cursor:pointer; font-family:Archivo,-apple-system,sans-serif;
-  font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted);
-  font-weight:600; list-style:none}
-details.sources > summary::-webkit-details-marker{display:none}
-details.sources > summary::before{content:"+ "; font-weight:400}
+
+
+
+
 details.sources[open] > summary::before{content:"– "}
-details.sources > summary:hover{color:var(--ink)}
+
 details.sources p{max-width:72ch; margin:11px 0 0; color:var(--muted)}
 details.sources p b{color:var(--ink)}
 
@@ -157,10 +124,77 @@ details.sources p b{color:var(--ink)}
   color:var(--muted); background:var(--surface-2); border:1px solid var(--rule-soft);
   padding:1px 6px; margin-left:6px; white-space:normal}
 
-.howto{max-width:78ch; margin:0; padding:12px 14px; background:var(--surface-2);
-  border-left:3px solid var(--developing); color:var(--muted); font-size:13px}
+
 .howto b{color:var(--ink)}
-</style>
+
+
+/* ── the tool, wearing the site's palette ───────────────────────────────────
+   Scoped to .cmtool: these names are the tool's own, and four of them collide
+   with the site's. On :root they repainted the header and footer. */
+.cmtool{
+  --ground:var(--bg); --rule:var(--line); --rule-soft:var(--line-soft);
+  --muted:var(--ink-soft); --net:var(--ink-faint);
+  /* category colour by intent, not by hue-matching */
+  --operating:var(--teal);        /* running — the accent */
+  --developing:var(--orange);     /* moving — the brand colour */
+  --care:var(--amber);            /* paused — caution */
+  --deposit:var(--ink-faint);     /* inert — neutral */
+  --crit:var(--orange-deep); --warn:var(--amber); --focus:var(--teal);
+  /* the opportunity ramp, strongest to weakest */
+  --opp-active:var(--orange-deep); --opp-likely:var(--amber);
+  --opp-monitor:var(--teal-deep); --opp-none:var(--ink-faint);
+  font-family:var(--sans); color:var(--ink);
+}
+.cmtool .num{font-variant-numeric:tabular-nums}
+.cmtool .mapbox{border-top:2px solid var(--ink); padding-top:14px}
+.cmtool .maplegend{display:flex; gap:18px; flex-wrap:wrap; font-size:13px;
+  color:var(--ink-soft); padding:10px 0 0}
+.cmtool .controls{border-top:2px solid var(--ink); border-bottom:1px solid var(--line);
+  padding:16px 0; margin:30px 0 0; display:flex; flex-wrap:wrap; gap:14px 34px}
+.cmtool .chip{background:none; border:1px solid var(--line); padding:5px 10px;
+  font-family:var(--sans); font-size:13px; cursor:pointer; color:var(--ink)}
+.cmtool .chip[aria-pressed="true"]{border-color:var(--ink); background:var(--surface)}
+.cmtool .ct{color:var(--ink-faint); margin-left:7px; font-size:11.5px}
+.cmtool .rail{border-top:2px solid var(--ink); padding-top:14px}
+.cmtool dt{font-family:var(--sans); font-size:11.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--ink-soft); font-weight:600}
+.cmtool dd{margin:4px 0 0; font-size:15px}
+.cmtool dl > div{padding:12px 0; border-bottom:1px solid var(--line-soft)}
+.cmtool table{width:100%; border-collapse:collapse; font-size:14px}
+.cmtool th{text-align:left; font-family:var(--sans); font-size:11.5px;
+  letter-spacing:.1em; font-weight:600; text-transform:uppercase;
+  color:var(--ink-soft); padding:12px 12px 12px 0; border-bottom:2px solid var(--ink)}
+.cmtool td{padding:12px 12px 12px 0; border-bottom:1px solid var(--line-soft);
+  vertical-align:top}
+.cmtool .absent{border-top:1px solid var(--ink); margin-top:26px; padding-top:14px;
+  font-size:14px; color:var(--ink-soft)}
+.cmtool .absent h3{font-family:var(--sans); font-size:11.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--ink-soft); margin:0 0 10px}
+.cmtool .stagetag{font-size:11.5px; letter-spacing:.09em; text-transform:uppercase;
+  font-weight:600}
+.cmtool .who{font-family:var(--serif); font-size:25px; line-height:1.15; margin-top:6px}
+.cmtool .where{font-size:13px; color:var(--ink-faint)}
+.cmtool .axes{font-family:var(--sans); font-size:11.5px; color:var(--ink-soft);
+  background:var(--surface-2); border:1px solid var(--line-soft); padding:1px 6px;
+  margin-left:6px}
+/* the Atlas defines these in its own page styles rather than in style.css, so the
+   second tool has to carry them too or its hero runs label into value */
+.sub-meta{display:grid; grid-template-columns:1fr 1fr; gap:14px 40px; margin-top:26px;
+  font-size:14px; color:var(--ink-soft); max-width:900px}
+@media (max-width:760px){ .sub-meta{grid-template-columns:1fr} }
+.sub-meta b{display:block; font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+  font-weight:600; color:var(--ink-faint); margin-bottom:4px}
+.sub-nums{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0 32px;
+  margin:30px 0 0; max-width:900px}
+.sub-nums b{display:block; font-family:var(--serif); font-weight:400; font-size:38px;
+  line-height:1.05}
+.sub-nums span{display:block; font-size:13.5px; color:var(--ink-soft); margin-top:8px}
+@media (max-width:760px){ .sub-nums{grid-template-columns:repeat(2,1fr); gap:22px 24px} }
+.cm-stage{display:grid; grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);
+  gap:34px; margin-top:26px}
+@media (max-width:900px){ .cm-stage{grid-template-columns:1fr} }
+
+  </style>
 </head>
 <body>
   <header class="nav" id="site-nav">
@@ -176,20 +210,31 @@ details.sources p b{color:var(--ink)}
       </nav>
     </div>
   </header>
-  <script src="/assets/site-nav.js?v=20260916j" defer></script>
-  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Tools & data</a><span aria-hidden="true">/</span><span aria-current="page">Australian critical minerals: power and grid readiness</span></div></nav>
-<div class="wrap">
-  <header class="mast">
-    <div class="eyebrow">Critical minerals · power and grid readiness · data checked 27 September 2026</div>
-    <h1>Every Australian critical-minerals project, ranked by when it is next likely to spend money on power</h1>
-    <p class="standfirst">This map covers 538 Australian critical-mineral sites — 117 mines and <b>421 known deposits not currently classified as mines</b>. They are plotted here against 1,805 mapped substations, because distance to the grid is the one commercial question that can be answered for every site. Each row says what its evidence does <em>not</em> settle.</p>
-    <p class="howto"><b>Start here:</b> use the filters to narrow the list. Then select a map point or table row to see the evidence for one site. Results are ordered by the energy-opportunity signal, and within each group the sites farthest from a mapped substation come first. This is a research screen: it does not show whether a project will proceed, whether grid capacity is available, or what a connection would cost.</p>
-    <div class="figs" id="figs"></div>
-  </header>
+  <script src="/assets/site-nav.js?v=20260927a" defer></script>
+  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Tools & data</a><span aria-hidden="true">/</span><span aria-current="page">How far critical-minerals projects are from power</span></div></nav>
+  <section class="case-hero">
+    <div class="container">
+      <p class="eyebrow">Interactive screen &middot; Critical minerals</p>
+      <h1>How far critical-minerals projects are from power</h1>
+      <p class="case-hero__sub">Australia has 538 mapped critical-minerals sites. Most are nowhere near a substation, and only a handful have ever published what they would need. This screen shows which is which.</p>
+      <div class="sub-meta">
+        <div><b>Coverage</b>538 sites &mdash; 117 mines and 421 deposits that are not currently classified as mines</div>
+        <div><b>Grid</b>Straight-line distance to the nearest of 1,805 mapped substations</div>
+        <div><b>Power</b>Shown only where a figure has been published; never estimated from production</div>
+        <div><b>Holdings</b>Registered holder of the ground, Western Australia only</div>
+      </div>
+    </div>
+  </section>
+  <main>
+    <section class="section">
+      <div class="container cmtool">
+        <div class="sub-nums" id="figs"></div>
+
+  
 
   <section class="controls" id="controls"></section>
 
-  <section class="stage">
+  <div class="cm-stage">
     <div>
       <div class="mapbox">
         <canvas id="map" width="1120" height="860" role="img" aria-label="Map of Australian critical-mineral projects over the substation network"></canvas>
@@ -219,8 +264,30 @@ details.sources p b{color:var(--ink)}
   </section>
 
   <footer id="foot"></footer>
-</div>
 
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a class="brand" href="/index.html">
+            <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
+            <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+          </a>
+          <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
+        </div>
+        <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">Research reports and models</a><a href="/insights.html">Insights</a><a href="/methods/">Methods</a><a href="/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">Data &amp; tools</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/critical-minerals.html">Critical minerals: power and grid readiness</a></div>
+        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Published submissions</a><a href="/case-studies.html#screens">Project screens</a><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">About Heliovulcan</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
+      </div>
+      <p class="footer__legal">
+        <b>Disclaimer:</b> Heliovulcan is an independent research and analysis practice providing public-information desktop analysis and screening support. Nothing on this site is legal, financial, tax, engineering, investment or lender due-diligence advice, a compliance determination, or regulatory representation or lobbying, and nothing here is a financial product recommendation. All results are indicative and must be independently verified before any commercial, financing or construction decision. &copy; 2026 Heliovulcan Energy Advisors.
+      </p>
+    </div>
+  </footer>
 <script>
 const STAGES = [
   {key:"operating",      label:"Operating",          css:"--operating"},
@@ -317,7 +384,14 @@ const LON0 = 112.0, LON1 = 154.2, LAT0 = -44.2, LAT1 = -9.8;
 const sel = {stage:new Set(["operating","developing","care_maintenance","deposit"]), grid:new Set(GRIDS.map(g=>g.key)), state:"ALL", load:false, opp:new Set(OPPS.map(o=>o.key))};
 let DATA = null, chosen = null, pts = [];
 
-const cssv = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+/* ⚠⚠ THE CANVAS READS ITS COLOURS THROUGH THIS. When the site edition scoped
+   the tool palette to .cmtool (so it would stop repainting the site header),
+   every lookup here still went to :root, came back EMPTY, and the map drew
+   itself in default black on a black fill. Read from the tool's own element,
+   which resolves in both editions because inheritance reaches :root anyway. */
+const cssv = n => getComputedStyle(
+  document.querySelector(".cmtool") || document.documentElement
+).getPropertyValue(n).trim();
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 fetch("/data/critical-minerals.json").then(r => r.json()).then(d => { DATA = d; boot(); });
@@ -344,7 +418,7 @@ function boot(){
     [far.length, "more than 40 km from a substation"],
     [stated.length, "with a published power figure"],
     [held.length, "with a registered holder on record"]
-  ].map(([n,k]) => `<div class="fig"><span class="n">${n}</span><span class="k">${k}</span></div>`).join("");
+  ].map(([n,k]) => `<div><b>${n}</b><span>${k}</span></div>`).join("");
 
   document.getElementById("controls").innerHTML = `
     <div class="group"><span>Project stage</span><div class="chips">${
@@ -722,27 +796,5 @@ function drawTable(){
   };
 }
 </script>
-
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__about">
-          <a class="brand" href="/index.html">
-            <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
-            <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
-          </a>
-          <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
-        </div>
-        <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">Research reports and models</a><a href="/insights.html">Insights</a><a href="/methods/">Methods</a><a href="/coverage.html">Research coverage</a></div>
-        <div class="footer__col"><span class="footer__k">Data &amp; tools</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/critical-minerals.html">Critical minerals: power and grid readiness</a></div>
-        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Published submissions</a><a href="/case-studies.html#screens">Project screens</a><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="/coverage.html">Research coverage</a></div>
-        <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">About Heliovulcan</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
-      </div>
-      <p class="footer__legal">
-        <b>Disclaimer:</b> Heliovulcan is an independent research and analysis practice providing public-information desktop analysis and screening support. Nothing on this site is legal, financial, tax, engineering, investment or lender due-diligence advice, a compliance determination, or regulatory representation or lobbying, and nothing here is a financial product recommendation. All results are indicative and must be independently verified before any commercial, financing or construction decision. &copy; 2026 Heliovulcan Energy Advisors.
-      </p>
-    </div>
-  </footer>
 </body>
 </html>

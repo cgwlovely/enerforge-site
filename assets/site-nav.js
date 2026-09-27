@@ -19,12 +19,32 @@
     }
     item.addEventListener("focusout", function (e) { if (!item.contains(e.relatedTarget)) close(item); });
   });
+  var burger, closeBurger;
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") Array.prototype.forEach.call(items, close); });
-  var burger = nav.querySelector(".nav__burger"), menu = nav.querySelector(".nav__menu");
-  burger.addEventListener("click", function () {
-    var on = burger.getAttribute("aria-expanded") !== "true";
-    burger.setAttribute("aria-expanded", String(on)); nav.classList.toggle("is-menu-open", on);
+  /* Dismiss on a click outside the nav.
+     Escape closed a menu and a second click on the toggle closed it, but the move
+     everyone actually makes — open a menu, then click the page to get rid of it —
+     did nothing, and the menu stayed over the content. On a touch screen there is
+     no hover to close it either, so the panel could only be dismissed by finding
+     the toggle again. Site-wide: every page carried this. */
+  document.addEventListener("click", function (e) {
+    if (nav.contains(e.target)) return;
+    Array.prototype.forEach.call(items, close);
+    if (burger && burger.getAttribute("aria-expanded") === "true") closeBurger();
+  });
+  burger = nav.querySelector(".nav__burger");
+  function setBurger(on) {
+    burger.setAttribute("aria-expanded", String(on));
+    nav.classList.toggle("is-menu-open", on);
     burger.textContent = on ? "Close" : "Menu";
+  }
+  closeBurger = function () { setBurger(false); };
+  burger.addEventListener("click", function () {
+    setBurger(burger.getAttribute("aria-expanded") !== "true");
+  });
+  /* Escape should also close the mobile menu, not only the mega panels */
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && burger.getAttribute("aria-expanded") === "true") closeBurger();
   });
   /* compact the bar once the reader has scrolled */
   var last = 0; window.addEventListener("scroll", function () {
