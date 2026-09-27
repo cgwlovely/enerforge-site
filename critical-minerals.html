@@ -56,14 +56,30 @@ button.chip:focus-visible, select:focus-visible{outline:2px solid var(--focus); 
 select{font:inherit; font-size:12.5px; background:var(--surface); color:var(--ink); border:1px solid var(--rule); padding:5px 8px}
 
 /* ---- map + rail ---- */
-.stage{display:grid; grid-template-columns:minmax(0,1.62fr) minmax(300px,.95fr); gap:20px; align-items:start}
+/* ⚠ The map is ~620px tall and the record beside it runs to several thousand —
+   nineteen rows. Left to flow, the map sat at the top of a column that was then
+   EMPTY for thousands of pixels while the record scrolled on alone. Both columns
+   are now held to roughly one screen: the map sticks, and the record scrolls
+   inside itself. The table then follows immediately instead of being pushed far
+   below a blank gap. */
+.stage{display:grid; grid-template-columns:minmax(0,1.5fr) minmax(320px,1fr);
+  gap:20px; align-items:start}
+.stage > div:first-child{position:sticky; top:16px; align-self:start}
+.rail{max-height:calc(100vh - 48px); overflow-y:auto; position:sticky; top:16px}
+@media (max-width:900px){
+  .stage{grid-template-columns:1fr}
+  .stage > div:first-child, .rail{position:static; max-height:none; overflow:visible}
+}
 .mapbox{background:var(--surface); border:1px solid var(--rule); position:relative}
 canvas{display:block; width:100%; height:auto; cursor:crosshair}
+/* ⚠ space-between kept the second span on the same line as the first and let it
+   run past the map's right border. Each line wraps inside the box instead. */
 .maplegend{
-  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  display:flex; flex-direction:column; gap:4px;
   border-top:1px solid var(--rule-soft); padding:8px 12px;
-  font-size:11.5px; color:var(--muted);
+  font-size:11.5px; color:var(--muted); min-width:0;
 }
+.maplegend span{min-width:0; overflow-wrap:anywhere}
 .maplegend .net::before{content:""; display:inline-block; width:8px; height:8px; background:var(--net); margin-right:6px; vertical-align:middle}
 
 .rail{background:var(--surface); border:1px solid var(--rule); display:flex; flex-direction:column}
@@ -72,8 +88,12 @@ canvas{display:block; width:100%; height:auto; cursor:crosshair}
 .rail-head .where{font-size:11.5px; color:var(--muted); white-space:nowrap}
 .stagetag{font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase}
 dl{margin:0; padding:4px 16px 14px}
-dl div{display:grid; grid-template-columns:118px minmax(0,1fr); gap:10px; padding:7px 0; border-bottom:1px solid var(--rule-soft)}
-dl div:last-child{border-bottom:0}
+/* ⚠ `dl div` is a DESCENDANT selector, so it matched every div inside the record,
+   not only the rows: each stated-power entry became a two-column grid of its own
+   and the axes line was pushed into a 74px column, one word per line. It also put
+   a divider under inner blocks that are not rows. Direct children only. */
+dl > div{display:grid; grid-template-columns:118px minmax(0,1fr); gap:10px; padding:7px 0; border-bottom:1px solid var(--rule-soft)}
+dl > div:last-child{border-bottom:0}
 dt{font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:600; padding-top:2px}
 dd{margin:0; font-size:13.5px; overflow-wrap:anywhere}
 dd .num{font-variant-numeric:tabular-nums; font-weight:600}
@@ -120,9 +140,11 @@ details.sources p b{color:var(--ink)}
 
 /* The four axes carried beside every stated figure. They are the round-2 scope
    correction made visible: a number without them is not comparable to any other. */
-.axes{font-family:Archivo,-apple-system,sans-serif; font-size:11px; letter-spacing:.02em;
-  color:var(--muted); background:var(--surface-2); border:1px solid var(--rule-soft);
-  padding:1px 6px; margin-left:6px; white-space:normal}
+/* On its own line: as an inline span beside the MW figure it was squeezed into a
+   narrow right-hand column and set one word per line. */
+.axes{display:block; font-family:Archivo,-apple-system,sans-serif; font-size:11px;
+  letter-spacing:.02em; color:var(--muted); background:var(--surface-2);
+  border:1px solid var(--rule-soft); padding:3px 7px; margin:4px 0 0}
 
 
 .howto b{color:var(--ink)}
@@ -198,12 +220,29 @@ details.sources p b{color:var(--ink)}
    align-self:start because a grid item stretches by default and a stretched item
    cannot stick. The record also gets a wider column — 427px was about 45
    characters, too narrow for prose this dense. */
-.cm-stage{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(360px,1fr);
-  gap:40px; margin-top:26px; align-items:start}
-.cm-stage > .cm-mapcol{position:sticky; top:84px; align-self:start}
-@media (max-width:900px){
-  .cm-stage{grid-template-columns:1fr; gap:28px}
-  .cm-stage > .cm-mapcol{position:static}
+/* ── map over record, not side by side ──────────────────────────────────────
+   Two columns forced a ~460px map next to a 7,000px record, and every fix for
+   the resulting blank made one of them smaller: sticky left a gap, matching the
+   heights shrank the record to the map's 463px. Stacked, both get the full
+   measure — the map is nearly twice the width it had, and the record is laid out
+   across the page instead of down a 390px gutter. */
+.cm-stage{display:block; margin-top:26px}
+.cm-mapcol{position:static; width:100%}
+.cmtool .mapbox{border-top:2px solid var(--ink); padding-top:14px}
+.cmtool #map{width:100%; height:auto; display:block}
+.cmtool .rail{position:static; max-height:none; overflow:visible; padding-right:0;
+  margin-top:38px; border-top:2px solid var(--ink); padding-top:16px}
+/* the record now runs across the page: rows sit side by side and wrap, rather
+   than forming one long single-file list */
+/* 330px gave three columns on a 1,124px measure — a 118px label plus a 216px
+   value, too narrow for prose this dense. 460 yields two. */
+.cmtool .rail dl{display:grid; grid-template-columns:repeat(auto-fit,minmax(460px,1fr));
+  gap:0 48px; align-items:start}
+.cmtool .rail-head{grid-column:1/-1; display:flex; justify-content:space-between;
+  align-items:baseline; gap:20px; flex-wrap:wrap; margin-bottom:6px}
+.cmtool .absent{grid-column:1/-1}
+@media (max-width:760px){
+  .cmtool .rail dl{grid-template-columns:1fr}
 }
 
   </style>
@@ -354,7 +393,7 @@ const TERM = {
   approved_limit:"approved limit", reserved_network_capacity:"reserved network capacity",
   shortfall:"shortfall against demand",
   /* operating_basis — UNDER WHAT CONDITION */
-  maximum:"at maximum", normal:"in normal operation", unknown:"basis not stated",
+  maximum:"at maximum", normal:"in normal operation",
   /* system_boundary — WHERE THE METER SITS */
   whole_project:"whole project", power_station:"power station only",
   processing:"processing plant only", acid_plant:"acid plant only",
@@ -697,7 +736,19 @@ function drawRail(){
            whole scope review existed to get right. Fixing the producer and leaving
            the consumer is half a fix, and it looks finished. */
         p.stated_power.map(x => `<div style="margin-bottom:8px"><span class="num">${esc(x.mw)} MW</span>
-          <span class="axes">${esc(term(x.quantity_kind))} · ${esc(term(x.operating_basis))} · ${esc(term(x.system_boundary))} · ${esc(term(x.temporal_status))}</span>
+          <div class="axes">${[
+            esc(term(x.quantity_kind)),
+            /* ⚠ "unknown" is a legal value on BOTH operating_basis and
+               system_boundary, and a single shared term for it rendered
+               "basis not stated · basis not stated" side by side — two different
+               axes saying the same words. Each axis names itself when it has
+               nothing to report. */
+            x.operating_basis && x.operating_basis !== "unknown"
+              ? esc(term(x.operating_basis)) : "operating basis not stated",
+            x.system_boundary && x.system_boundary !== "unknown"
+              ? esc(term(x.system_boundary)) : "boundary not stated",
+            esc(term(x.temporal_status))
+          ].filter(Boolean).join(" · ")}</div>
           <div style="color:var(--muted); font-size:12px; margin-top:2px">“${esc(x.scope_verbatim)}” — as worded in the document${x.statement_year ? `, ${esc(x.statement_year)}` : ""}${x.evidence_status ? ` · ${esc(term(x.evidence_status))}` : ""}</div>
           </div>`).join("")
       }<div style="color:var(--muted); font-size:12px">Published by the project company. <b>The four axes are load-bearing, not decoration</b> — a project total, a station maximum and a normal operating requirement are different quantities, and two figures may only be compared when all four agree.</div></dd></div>` : ""}
