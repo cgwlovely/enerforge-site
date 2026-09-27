@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How far critical-minerals projects are from power | Heliovulcan</title>
-  <meta name="description" content="538 Australian critical-minerals sites, screened by how far they sit from the nearest substation, what power demand has been published, and who holds the ground." />
+  <title>Energy demand for critical-minerals projects | Heliovulcan</title>
+  <meta name="description" content="Market research on energy demand for Australian critical-minerals projects: 538 sites screened by distance to the grid, published power demand and registered holder." />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
   <link rel="apple-touch-icon" href="/favicon.png" />
   <link rel="stylesheet" href="/style.css?v=20260927a" />
@@ -12,8 +12,8 @@
   <meta property="og:site_name" content="Heliovulcan" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://heliovulcan.com.au/critical-minerals.html" />
-  <meta property="og:title" content="How far critical-minerals projects are from power" />
-  <meta property="og:description" content="538 Australian critical-minerals sites, screened by distance to the grid, published power demand and registered holder." />
+  <meta property="og:title" content="Energy demand for critical-minerals projects" />
+  <meta property="og:description" content="Market research on energy demand for Australian critical-minerals projects: 538 sites screened by distance to the grid, published power demand and registered holder." />
   <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <style>
@@ -190,9 +190,21 @@ details.sources p b{color:var(--ink)}
   line-height:1.05}
 .sub-nums span{display:block; font-size:13.5px; color:var(--ink-soft); margin-top:8px}
 @media (max-width:760px){ .sub-nums{grid-template-columns:repeat(2,1fr); gap:22px 24px} }
-.cm-stage{display:grid; grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);
-  gap:34px; margin-top:26px}
-@media (max-width:900px){ .cm-stage{grid-template-columns:1fr} }
+/* ⚠ The map box is about 620px tall and the record beside it runs to 6,400px —
+   nineteen rows of detail. Left as two plain columns, the map sat at the top with
+   roughly 5,800px of empty space under it while the record scrolled on alone, and
+   the table below was pushed past 7,800px. The map is the thing you keep
+   consulting while you read a record, so it stays in view: sticky, with
+   align-self:start because a grid item stretches by default and a stretched item
+   cannot stick. The record also gets a wider column — 427px was about 45
+   characters, too narrow for prose this dense. */
+.cm-stage{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(360px,1fr);
+  gap:40px; margin-top:26px; align-items:start}
+.cm-stage > .cm-mapcol{position:sticky; top:84px; align-self:start}
+@media (max-width:900px){
+  .cm-stage{grid-template-columns:1fr; gap:28px}
+  .cm-stage > .cm-mapcol{position:static}
+}
 
   </style>
 </head>
@@ -211,12 +223,12 @@ details.sources p b{color:var(--ink)}
     </div>
   </header>
   <script src="/assets/site-nav.js?v=20260927a" defer></script>
-  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Tools & data</a><span aria-hidden="true">/</span><span aria-current="page">How far critical-minerals projects are from power</span></div></nav>
+  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Tools & data</a><span aria-hidden="true">/</span><span aria-current="page">Energy demand for critical-minerals projects</span></div></nav>
   <section class="case-hero">
     <div class="container">
-      <p class="eyebrow">Interactive screen &middot; Critical minerals</p>
-      <h1>How far critical-minerals projects are from power</h1>
-      <p class="case-hero__sub">Australia has 538 mapped critical-minerals sites. Most are nowhere near a substation, and only a handful have ever published what they would need. This screen shows which is which.</p>
+      <p class="eyebrow">Market research &middot; Critical minerals</p>
+      <h1>Energy demand for critical-minerals projects</h1>
+      <p class="case-hero__sub">Where the next electrical load in Australian mining is likely to appear, and how much of it can actually be evidenced today. 538 mapped sites: most sit a long way from the grid, and only a handful have ever published what they would need.</p>
       <div class="sub-meta">
         <div><b>Coverage</b>538 sites &mdash; 117 mines and 421 deposits that are not currently classified as mines</div>
         <div><b>Grid</b>Straight-line distance to the nearest of 1,805 mapped substations</div>
@@ -235,7 +247,7 @@ details.sources p b{color:var(--ink)}
   <section class="controls" id="controls"></section>
 
   <div class="cm-stage">
-    <div>
+    <div class="cm-mapcol">
       <div class="mapbox">
         <canvas id="map" width="1120" height="860" role="img" aria-label="Map of Australian critical-mineral projects over the substation network"></canvas>
         <div class="maplegend">
