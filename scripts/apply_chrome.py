@@ -26,7 +26,15 @@ MENU = [
         ("Featured", [("Safeguard Atlas: the post-2030 decline rate cannot be set in isolation", "/safeguard-atlas.html"),
                       ("Future mine-electrification loads and current electricity data", "/australian-diesel-replacement-market-size.html"),
                       ("A lower Safeguard threshold would also tighten baselines for existing facilities", "/safeguard-review-2026-baseline-floor.html")])]),
-    ("tools", "Data & tools", "/safeguard-atlas.html", None),
+    # ⚠ This was a bare link straight to the Safeguard Atlas, so a second tool
+    # could be added to the footer and the breadcrumb map and still be unreachable
+    # from the main nav — which is exactly what happened to the critical-minerals
+    # screen. A section with more than one thing in it needs a menu.
+    ("tools", "Data & tools", "/safeguard-atlas.html", [
+        ("Interactive tools", [("Safeguard Atlas", "/safeguard-atlas.html"),
+                               ("Critical minerals: power and grid readiness",
+                                "/critical-minerals.html")]),
+        ("Data", [("Data & API", "/api/"), ("Research coverage", "/coverage.html")])]),
     ("consultations", "Consultations", "/consultations.html", [
         ("Published submissions", [("All submissions", "/consultations.html"),
                                    ("Safeguard post-2030 decline rate, 2026", "/consultations/safeguard-decline-rate-2026.html"),
