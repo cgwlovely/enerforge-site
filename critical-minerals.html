@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Australian critical minerals: power and grid readiness | Heliovulcan</title>
+  <meta name="description" content="538 Australian critical-minerals sites screened by project stage, distance to the nearest substation, published power demand and registered holder." />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="stylesheet" href="/style.css?v=20260916j" />
+  <link rel="canonical" href="https://heliovulcan.com.au/critical-minerals.html" />
+  <meta property="og:site_name" content="Heliovulcan" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://heliovulcan.com.au/critical-minerals.html" />
+  <meta property="og:title" content="Australian critical minerals: power and grid readiness" />
+  <meta property="og:description" content="538 critical-minerals sites screened by stage, distance to the grid, published power demand and registered holder." />
+  <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root{
+  --ground:#EAEDE9; --surface:#FBFCFA; --surface-2:#F2F5F1;
+  --ink:#161D1A; --muted:#68766F; --rule:#D2D8D1; --rule-soft:#E2E7E1;
+  --net:#A9B6AE;
+  --operating:#0F7A68; --developing:#C2661C; --care:#7E5F9C; --deposit:#4E6672;
+  --warn:#9A6B12; --crit:#A8431A;
+  --focus:#0F7A68;
+  --opp-active:#A8431A; --opp-likely:#9A6B12; --opp-monitor:#4E6672; --opp-none:#68766F;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --ground:#0F1412; --surface:#161D1A; --surface-2:#1C2521;
+  --ink:#E4EAE5; --muted:#8C9C93; --rule:#26302B; --rule-soft:#1F2824;
+  --net:#3A4A42;
+  --operating:#3BB49C; --developing:#E3903F; --care:#AE8FCD; --deposit:#7E99A6;
+  --warn:#D6A83A; --crit:#E0704A;
+  --focus:#3BB49C;
+  --opp-active:#E0704A; --opp-likely:#D6A83A; --opp-monitor:#7E99A6; --opp-none:#8C9C93;
+}}
+:root[data-theme="dark"]{
+  --ground:#0F1412; --surface:#161D1A; --surface-2:#1C2521;
+  --ink:#E4EAE5; --muted:#8C9C93; --rule:#26302B; --rule-soft:#1F2824;
+  --net:#3A4A42;
+  --operating:#3BB49C; --developing:#E3903F; --care:#AE8FCD; --deposit:#7E99A6;
+  --warn:#D6A83A; --crit:#E0704A;
+  --focus:#3BB49C;
+  --opp-active:#E0704A; --opp-likely:#D6A83A; --opp-monitor:#7E99A6; --opp-none:#8C9C93;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+  font-size:14px; line-height:1.5; margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1280px; margin:0 auto; padding:28px 24px 56px; display:flex; flex-direction:column; gap:22px}
+
+/* ---- masthead ---- */
+.mast{display:flex; flex-direction:column; gap:14px; border-bottom:1px solid var(--rule); padding-bottom:20px}
+.eyebrow{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600}
+h1{font-size:30px; line-height:1.15; font-weight:700; margin:0; text-wrap:balance; letter-spacing:-.015em}
+.standfirst{font-family:"Source Serif 4",Georgia,serif; font-size:16.5px; line-height:1.6; color:var(--ink); max-width:66ch; margin:0}
+.standfirst b{font-weight:600}
+
+.figs{display:grid; grid-template-columns:repeat(auto-fit,minmax(178px,1fr)); gap:1px; background:var(--rule-soft); border:1px solid var(--rule-soft)}
+.fig{background:var(--surface); padding:13px 15px; display:flex; flex-direction:column; gap:3px}
+.fig .n{font-size:26px; font-weight:700; font-variant-numeric:tabular-nums; letter-spacing:-.02em; line-height:1.1}
+.fig .k{font-size:11.5px; color:var(--muted); line-height:1.35}
+
+/* ---- controls ---- */
+.controls{display:flex; flex-wrap:wrap; gap:18px; align-items:flex-end}
+.group{display:flex; flex-direction:column; gap:7px}
+.group>span{font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:600}
+.chips{display:flex; flex-wrap:wrap; gap:6px}
+button.chip{
+  font:inherit; font-size:12.5px; font-weight:500; cursor:pointer;
+  background:var(--surface); color:var(--muted);
+  border:1px solid var(--rule); padding:5px 11px 5px 9px;
+  display:inline-flex; align-items:center; gap:7px;
+}
+button.chip:hover{color:var(--ink); border-color:var(--muted)}
+button.chip[aria-pressed="true"]{background:var(--surface-2); color:var(--ink); border-color:var(--ink)}
+button.chip .sw{width:9px; height:9px; border-radius:50%; flex:none; background:currentColor}
+button.chip .ct{font-variant-numeric:tabular-nums; color:var(--muted); font-size:11.5px}
+button.chip:focus-visible, select:focus-visible{outline:2px solid var(--focus); outline-offset:1px}
+select{font:inherit; font-size:12.5px; background:var(--surface); color:var(--ink); border:1px solid var(--rule); padding:5px 8px}
+
+/* ---- map + rail ---- */
+.stage{display:grid; grid-template-columns:minmax(0,1.62fr) minmax(300px,.95fr); gap:20px; align-items:start}
+.mapbox{background:var(--surface); border:1px solid var(--rule); position:relative}
+canvas{display:block; width:100%; height:auto; cursor:crosshair}
+.maplegend{
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  border-top:1px solid var(--rule-soft); padding:8px 12px;
+  font-size:11.5px; color:var(--muted);
+}
+.maplegend .net::before{content:""; display:inline-block; width:8px; height:8px; background:var(--net); border-radius:50%; margin-right:6px; vertical-align:middle}
+
+.rail{background:var(--surface); border:1px solid var(--rule); display:flex; flex-direction:column}
+.rail-head{padding:13px 16px; border-bottom:1px solid var(--rule-soft); display:flex; justify-content:space-between; align-items:baseline; gap:10px}
+.rail-head .who{font-size:16px; font-weight:700; letter-spacing:-.01em}
+.rail-head .where{font-size:11.5px; color:var(--muted); white-space:nowrap}
+.stagetag{font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase}
+dl{margin:0; padding:4px 16px 14px}
+dl div{display:grid; grid-template-columns:118px minmax(0,1fr); gap:10px; padding:7px 0; border-bottom:1px solid var(--rule-soft)}
+dl div:last-child{border-bottom:0}
+dt{font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:600; padding-top:2px}
+dd{margin:0; font-size:13.5px; overflow-wrap:anywhere}
+dd .num{font-variant-numeric:tabular-nums; font-weight:600}
+.gridpill{display:inline-block; font-size:11.5px; font-weight:600; padding:2px 7px; border:1px solid currentColor}
+.absent{padding:12px 16px 16px; border-top:1px solid var(--rule); background:var(--surface-2)}
+.absent h3{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin:0 0 7px; font-weight:600}
+.absent p{margin:0; font-family:"Source Serif 4",Georgia,serif; font-size:13.5px; line-height:1.55; color:var(--muted)}
+.absent p b{color:var(--ink); font-weight:600}
+
+/* ---- table ---- */
+.tablewrap{border:1px solid var(--rule); background:var(--surface)}
+.tablehead{padding:12px 15px; border-bottom:1px solid var(--rule-soft); display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap}
+.tablehead h2{font-size:14px; margin:0; font-weight:600}
+.tablehead .sub{font-size:11.5px; color:var(--muted)}
+.scroll{overflow-x:auto; max-height:360px; overflow-y:auto}
+table{border-collapse:collapse; width:100%; font-size:12.5px}
+th{
+  position:sticky; top:0; background:var(--surface); z-index:1;
+  text-align:left; font-size:10.5px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--muted); font-weight:600; padding:9px 12px; border-bottom:1px solid var(--rule);
+  white-space:nowrap;
+}
+td{padding:8px 12px; border-bottom:1px solid var(--rule-soft); white-space:nowrap}
+td.n{font-variant-numeric:tabular-nums; text-align:right}
+td.name{white-space:normal; min-width:150px; font-weight:500}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:var(--surface-2)}
+tbody tr[aria-selected="true"]{background:var(--surface-2); box-shadow:inset 3px 0 0 var(--focus)}
+
+footer{font-size:11.5px; color:var(--muted); line-height:1.6; border-top:1px solid var(--rule); padding-top:14px}
+footer a{color:inherit}
+@media (max-width:900px){ .stage{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+
+/* Sources block: the page's caveats in full, read after the figures rather than
+   standing in front of the map. The opening paragraph was 1,359 characters, so the
+   first screen was a wall of 14px prose before anything was visible. */
+details.sources{margin:18px 0 0; border-top:1px solid var(--rule); padding-top:12px}
+details.sources > summary{cursor:pointer; font-family:Archivo,-apple-system,sans-serif;
+  font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted);
+  font-weight:600; list-style:none}
+details.sources > summary::-webkit-details-marker{display:none}
+details.sources > summary::before{content:"+ "; font-weight:400}
+details.sources[open] > summary::before{content:"– "}
+details.sources > summary:hover{color:var(--ink)}
+details.sources p{max-width:72ch; margin:11px 0 0; color:var(--muted)}
+details.sources p b{color:var(--ink)}
+
+/* The four axes carried beside every stated figure. They are the round-2 scope
+   correction made visible: a number without them is not comparable to any other. */
+.axes{font-family:Archivo,-apple-system,sans-serif; font-size:11px; letter-spacing:.02em;
+  color:var(--muted); background:var(--surface-2); border:1px solid var(--rule-soft);
+  padding:1px 6px; margin-left:6px; white-space:normal}
+
+.howto{max-width:78ch; margin:0; padding:12px 14px; background:var(--surface-2);
+  border-left:3px solid var(--developing); color:var(--muted); font-size:13px}
+.howto b{color:var(--ink)}
+</style>
+</head>
+<body>
+  <header class="nav" id="site-nav">
+    <div class="nav__inner">
+      <a class="brand" href="/index.html" aria-label="Heliovulcan home">
+        <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
+        <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+      </a>
+      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open the menu">Menu</button>
+      <nav class="nav__menu" id="site-menu" aria-label="Site">
+        <ul class="nav__list"><li class="nav__item nav__item--menu"><a class="nav__top" href="/research.html">Research</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-research" aria-label="Open the Research menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-research" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Research</span><ul><li><a href="/research.html#reports">Research reports and models</a></li><li><a href="/insights.html">Insights</a></li><li><a href="/methods/">Methods</a></li></ul></div><div class="mega__col"><span class="mega__k">Featured</span><ul><li><a href="/safeguard-atlas.html">Safeguard Atlas: the post-2030 decline rate cannot be set in isolation</a></li><li><a href="/australian-diesel-replacement-market-size.html">Future mine-electrification loads and current electricity data</a></li><li><a href="/safeguard-review-2026-baseline-floor.html">A lower Safeguard threshold would also tighten baselines for existing facilities</a></li></ul></div></div></div></li><li class="nav__item is-current"><a class="nav__top" href="/safeguard-atlas.html">Data & tools</a></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/consultations.html">Consultations</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-consultations" aria-label="Open the Consultations menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-consultations" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Published submissions</span><ul><li><a href="/consultations.html">All submissions</a></li><li><a href="/consultations/safeguard-decline-rate-2026.html">Safeguard post-2030 decline rate, 2026</a></li><li><a href="/consultations/ai-data-centres-2026.html">AI and data centres, 2026</a></li><li><a href="/consultations/safeguard-onsite-abatement-2026.html">Safeguard onsite abatement, 2026</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="/methods/#consultation-submissions">How submissions are prepared</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/case-studies.html">Projects</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-projects" aria-label="Open the Projects menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-projects" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Cases</span><ul><li><a href="/case-studies.html#screens">Project screens</a></li><li><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a></li></ul></div><div class="mega__col"><span class="mega__k">Record</span><ul><li><a href="/coverage.html">Research coverage</a></li><li><a href="/methods/pre-dd-f1-f4/">Pre-DD methodology</a></li></ul></div></div></div></li><li class="nav__item"><a class="nav__top" href="/about.html">About</a></li></ul>
+        <a class="nav__cta" href="/about.html#contact">Discuss a question</a>
+      </nav>
+    </div>
+  </header>
+  <script src="/assets/site-nav.js?v=20260916j" defer></script>
+  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Tools & data</a><span aria-hidden="true">/</span><span aria-current="page">Australian critical minerals: power and grid readiness</span></div></nav>
+<div class="wrap">
+  <header class="mast">
+    <div class="eyebrow">Critical minerals · power and grid readiness · data checked 27 September 2026</div>
+    <h1>Every Australian critical-minerals project, ranked by when it is next likely to spend money on power</h1>
+    <p class="standfirst">This map covers 538 Australian critical-mineral sites — 117 mines and <b>421 known deposits not currently classified as mines</b>. They are plotted here against 1,805 mapped substations, because distance to the grid is the one commercial question that can be answered for every site. Each row says what its evidence does <em>not</em> settle.</p>
+    <p class="howto"><b>Start here:</b> use the filters to narrow the list. Then select a map point or table row to see the evidence for one site. Results are ordered by the energy-opportunity signal, and within each group the sites farthest from a mapped substation come first. This is a research screen: it does not show whether a project will proceed, whether grid capacity is available, or what a connection would cost.</p>
+    <div class="figs" id="figs"></div>
+  </header>
+
+  <section class="controls" id="controls"></section>
+
+  <section class="stage">
+    <div>
+      <div class="mapbox">
+        <canvas id="map" width="1120" height="860" role="img" aria-label="Map of Australian critical-mineral projects over the substation network"></canvas>
+        <div class="maplegend">
+          <span class="net">1,805 mapped substations</span>
+          <span>Colour combines grid position, load evidence, funding and procurement filings · larger rings mean greater distance · select a point for the record</span>
+        </div>
+      </div>
+    </div>
+    <aside class="rail" id="rail"></aside>
+  </section>
+
+  <section class="tablewrap">
+    <div class="tablehead">
+      <h2 id="tabletitle">Selection</h2>
+      <span class="sub">Strongest energy-opportunity signal first, then farthest from a mapped substation</span>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr>
+          <th>Project</th><th>State</th><th>Status</th><th>Commodities</th>
+          <th>Energy signal</th><th>Owner or holder</th><th style="text-align:right">Nearest substation (km)</th><th style="text-align:right">Power demand</th><th>Next known milestone</th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const STAGES = [
+  {key:"operating",      label:"Operating",          css:"--operating"},
+  {key:"developing",     label:"Developing",         css:"--developing"},
+  {key:"care_maintenance",label:"Care & maintenance", css:"--care"},
+  {key:"deposit",        label:"Deposit",            css:"--deposit"}
+];
+const GRIDS = [
+  {key:"OFF_GRID_SUSPECT",   label:"Over 40 km",  css:"--crit"},
+  {key:"WEAK_GRID_15_40KM",  label:"15–40 km",    css:"--warn"},
+  {key:"GRID_CLOSE",         label:"5–15 km",     css:"--muted"},
+  {key:"GRID_ADJACENT",      label:"Under 5 km",  css:"--muted"}
+];
+const GRIDLABEL = Object.fromEntries(GRIDS.map(g => [g.key, g.label]));
+const LOADLABEL = {
+  T1:"Measured demand",
+  T2:"Declared power-station capacity",
+  T3:"Indirect estimate — blind to electric equipment, so it can read far too low",
+  T4:"No on-site combustion indicated",
+  T5:"No recent record",
+  T6:"The available figure belongs to a nearby operation, not this site",
+  T7:"The site is not producing, so there is no operating demand to measure",
+  T8:"No relevant record",
+  T9:"Checked — no evidence of on-site generation"
+};
+const OPPS = [
+  {key:"active procurement",        label:"Procurement evidence found", css:"--opp-active"},
+  {key:"likely future opportunity", label:"Possible future need",       css:"--opp-likely"},
+  {key:"monitor",                   label:"Watch for new evidence",     css:"--opp-monitor"},
+  {key:"none identified",           label:"No current signal",          css:"--opp-none"}
+];
+const OPPCSS = Object.fromEntries(OPPS.map(o => [o.key, o.css]));
+/* Keys stay keys and labels are display-only, so the page can be reworded without
+   the data and the copy drifting apart. */
+const OPPLABEL = Object.fromEntries(OPPS.map(o => [o.key, o.label]));
+
+/* ── Controlled vocabularies, rendered for a reader ────────────────────────────
+   ⚠⚠ THE VALUES ARE THE POINT AND THE RAW TOKENS ARE NOT READABLE. The four scope
+   axes were put on the page because a power figure is not comparable without them
+   — and then printed verbatim, so a record read
+     "18.5 MW · generation_capacity · maximum · power_station · proposed
+      · verified_primary"
+   which to anyone who did not write the pipeline is indistinguishable from
+   garbage. Twenty-two distinct machine tokens were reaching the page this way,
+   including file-path slugs like "hanroy_mulga_downs_aip_plan_summary" standing
+   in as a plan's name.
+   Keys stay keys in the data; this maps them for display only. */
+const TERM = {
+  /* quantity_kind — WHAT is being measured */
+  load_demand:"electrical demand", generation_capacity:"generating capacity",
+  generation_output:"generator output", cogeneration_output:"cogeneration output",
+  approved_limit:"approved limit", reserved_network_capacity:"reserved network capacity",
+  shortfall:"shortfall against demand",
+  /* operating_basis — UNDER WHAT CONDITION */
+  maximum:"at maximum", normal:"in normal operation", unknown:"basis not stated",
+  /* system_boundary — WHERE THE METER SITS */
+  whole_project:"whole project", power_station:"power station only",
+  processing:"processing plant only", acid_plant:"acid plant only",
+  network_connection:"network connection point",
+  /* temporal_status */
+  current:"current", proposed:"proposed", historical:"historical",
+  superseded:"superseded by a later figure",
+  /* evidence_status */
+  verified_primary:"read from the source document",
+  /* denominator_basis for kWh per tonne */
+  ore_plant_feed:"tonnes of ore fed to the plant",
+  total_material_moved:"tonnes of all material moved",
+  saleable_product:"tonnes of saleable product",
+  intermediate_product:"tonnes of intermediate product",
+  coproduct_by_mass:"tonnes of co-product, split by mass",
+  /* the FIELD NAMES are quoted inside refusal sentences too, e.g.
+     "temporal_status is historical — ..." */
+  quantity_kind:"the quantity measured", operating_basis:"the operating basis",
+  system_boundary:"the system boundary", temporal_status:"the time basis",
+  evidence_status:"the evidence status", denominator_basis:"the denominator"
+};
+/* Anything not in the map is still made readable rather than shown raw — a file
+   slug becomes words instead of looking like a fault. */
+const term = v => !v ? "" : (TERM[v] || String(v).replace(/_/g, " ").trim());
+/* The refusal sentences quote the field values that caused the refusal
+   ("numerator is generation_capacity, not a load demand"), so the tokens have to
+   be translated INSIDE the prose as well as in the labels — otherwise the one
+   place that explains a refusal is the last place still speaking in schema. */
+const TERM_RE = new RegExp("\\b(" + Object.keys(TERM).sort((a,b)=>b.length-a.length).join("|") + ")\\b", "g");
+const humanise = t => !t ? "" : String(t).replace(TERM_RE, m => TERM[m]);
+
+const hasLoad = p => !!(p.avg_mw_low || p.installed_mw);
+const loadText = p => p.avg_mw_low
+  ? `${p.avg_mw_low}–${p.avg_mw_high} MW avg`
+  : (p.installed_mw ? `${p.installed_mw} MW installed` : "—");
+const STAGELABEL = Object.fromEntries(STAGES.map(s => [s.key, s.label]));
+
+const LON0 = 112.0, LON1 = 154.2, LAT0 = -44.2, LAT1 = -9.8;
+const sel = {stage:new Set(["operating","developing","care_maintenance","deposit"]), grid:new Set(GRIDS.map(g=>g.key)), state:"ALL", load:false, opp:new Set(OPPS.map(o=>o.key))};
+let DATA = null, chosen = null, pts = [];
+
+const cssv = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+fetch("/data/critical-minerals.json").then(r => r.json()).then(d => { DATA = d; boot(); });
+function filtered(){
+  return DATA.projects.filter(p =>
+    sel.stage.has(p.development_stage) &&
+    sel.grid.has(p.grid_class) &&
+    sel.opp.has(p.energy_opportunity_status) &&
+    (!sel.load || hasLoad(p)) &&
+    (sel.state === "ALL" || p.state === sel.state));
+}
+
+function boot(){
+  const P = DATA.projects;
+  const cnt = f => P.filter(f).length;
+  const far = P.filter(p => p.grid_class === "OFF_GRID_SUSPECT");
+  const stated = P.filter(p => p.stated_power && p.stated_power.length);
+  const held = P.filter(p => p.tenements && p.tenements.length);
+
+  /* ⭐ Three denominators, shown together on purpose. A single "538" invites the
+     reader to think the whole set is characterised; almost none of it is. */
+  document.getElementById("figs").innerHTML = [
+    [P.length, "critical-minerals sites"],
+    [far.length, "more than 40 km from a substation"],
+    [stated.length, "with a published power figure"],
+    [held.length, "with a registered holder on record"]
+  ].map(([n,k]) => `<div class="fig"><span class="n">${n}</span><span class="k">${k}</span></div>`).join("");
+
+  document.getElementById("controls").innerHTML = `
+    <div class="group"><span>Project stage</span><div class="chips">${
+      STAGES.map(s => `<button class="chip" data-kind="stage" data-key="${s.key}" aria-pressed="${sel.stage.has(s.key)}" style="color:var(${s.css})"><span class="sw"></span><span style="color:var(--ink)">${s.label}</span><span class="ct">${cnt(p=>p.development_stage===s.key)}</span></button>`).join("")
+    }</div></div>
+    <div class="group"><span>Energy-opportunity signal</span><div class="chips">${
+      OPPS.map(o => `<button class="chip" data-kind="opp" data-key="${o.key}" aria-pressed="${sel.opp.has(o.key)}" style="color:var(${o.css})"><span class="sw"></span><span style="color:var(--ink)">${o.label}</span><span class="ct">${cnt(p=>p.energy_opportunity_status===o.key)}</span></button>`).join("")
+    }</div></div>
+    <div class="group"><span>Distance to nearest substation</span><div class="chips">${
+      GRIDS.map(g => `<button class="chip" data-kind="grid" data-key="${g.key}" aria-pressed="${sel.grid.has(g.key)}"><span style="color:var(--ink)">${g.label}</span><span class="ct">${cnt(p=>p.grid_class===g.key)}</span></button>`).join("")
+    }</div></div>
+    <div class="group"><span>Published evidence</span><div class="chips">
+      <button class="chip" data-kind="load" aria-pressed="${sel.load}"><span style="color:var(--ink)">Power demand or installed capacity is on record</span><span class="ct">${cnt(hasLoad)}</span></button>
+    </div></div>
+    <div class="group"><span>State</span><select id="statesel">
+      <option value="ALL">All states</option>${
+      [...new Set(P.map(p=>p.state))].sort().map(s=>`<option value="${s}">${s}</option>`).join("")
+    }</select></div>`;
+
+  document.getElementById("controls").addEventListener("click", e => {
+    const b = e.target.closest("button.chip"); if(!b) return;
+    if (b.dataset.kind === "load"){
+      sel.load = !sel.load; b.setAttribute("aria-pressed", sel.load); render(); return;
+    }
+    const set = b.dataset.kind === "stage" ? sel.stage
+              : b.dataset.kind === "opp" ? sel.opp : sel.grid;
+    set.has(b.dataset.key) ? set.delete(b.dataset.key) : set.add(b.dataset.key);
+    b.setAttribute("aria-pressed", set.has(b.dataset.key));
+    render();
+  });
+  document.getElementById("statesel").addEventListener("change", e => { sel.state = e.target.value; render(); });
+
+  document.getElementById("foot").innerHTML =
+    `<b>How to read this.</b> Distance is straight-line distance to the nearest mapped substation. ` +
+    `It is <b>not</b> connection capacity, access rights, route length or cost — it is a screening band. ` +
+    `Commercial figures are the project companies' own, and the underlying list is not exhaustive. ` +
+    `A power figure appears only where one has been published; none is estimated from production volume, ` +
+    `and where only an indirect indicator exists the record says so rather than presenting it as a ` +
+    `measurement. ` +
+    `<b>These figures are for screening only: they are not engineering designs, grid-connection studies ` +
+    `or recommended battery sizes.</b><br>` +
+    `© Commonwealth of Australia (Geoscience Australia) 2026, CC BY 4.0.`;
+
+
+  const ORDER = {"active procurement":0,"likely future opportunity":1,"monitor":2,"none identified":3};
+  const seed = filtered().slice().sort((a,b)=>
+    (ORDER[a.energy_opportunity_status]-ORDER[b.energy_opportunity_status]) ||
+    (b.nearest_substation_km-a.nearest_substation_km))[0];
+  chosen = seed || DATA.projects[0];
+
+  const cv = document.getElementById("map");
+  cv.addEventListener("click", ev => {
+    const r = cv.getBoundingClientRect(), s = cv.width / r.width;
+    const x = (ev.clientX - r.left) * s, y = (ev.clientY - r.top) * s;
+    let best = null, bd = 26 * 26;
+    for (const p of pts){ const d = (p.x-x)**2 + (p.y-y)**2; if(d < bd){ bd = d; best = p.p; } }
+    if (best){ chosen = best; render(); }
+  });
+  window.addEventListener("resize", drawMap);
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => render());
+  render();
+}
+
+function render(){ drawMap(); drawRail(); drawTable(); }
+
+function project(lon, lat, w, h){
+  return [ (lon - LON0) / (LON1 - LON0) * w, (LAT1 - lat) / (LAT1 - LAT0) * h ];
+}
+
+function drawMap(){
+  const cv = document.getElementById("map"), ctx = cv.getContext("2d");
+  const w = cv.width, h = cv.height;
+  ctx.clearRect(0,0,w,h);
+  ctx.fillStyle = cssv("--surface"); ctx.fillRect(0,0,w,h);
+
+  // graticule
+  ctx.strokeStyle = cssv("--rule-soft"); ctx.lineWidth = 1;
+  ctx.fillStyle = cssv("--muted"); ctx.font = "500 15px Archivo, sans-serif";
+  for (let lon = 115; lon <= 150; lon += 5){
+    const [x] = project(lon, 0, w, h);
+    ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke();
+    ctx.fillText(lon + "°E", x + 5, h - 8);
+  }
+  for (let lat = -40; lat <= -10; lat += 5){
+    const [,y] = project(0, lat, w, h);
+    ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke();
+    ctx.fillText(Math.abs(lat) + "°S", 6, y - 6);
+  }
+
+  // the network is the basemap
+  ctx.fillStyle = cssv("--net");
+  for (const [lon, lat] of DATA.substations){
+    if (lon < LON0 || lon > LON1 || lat < LAT0 || lat > LAT1) continue;
+    const [x,y] = project(lon, lat, w, h);
+    ctx.fillRect(x - 1, y - 1, 2.2, 2.2);
+  }
+
+  pts = [];
+  const rows = filtered();
+  for (const p of rows){
+    const [x,y] = project(p.longitude, p.latitude, w, h);
+    pts.push({x, y, p});
+    const r = 3.2 + Math.min(Math.sqrt(p.nearest_substation_km) * 0.62, 7.4);
+    const col = cssv(OPPCSS[p.energy_opportunity_status] || "--deposit");
+    ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832);
+    ctx.globalAlpha = p.development_stage === "deposit" ? 0.5 : 0.78;
+    ctx.fillStyle = col; ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+  if (chosen){
+    const [x,y] = project(chosen.longitude, chosen.latitude, w, h);
+    ctx.strokeStyle = cssv("--ink"); ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(x, y, 13, 0, 6.2832); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x-20,y); ctx.lineTo(x-15,y); ctx.moveTo(x+15,y); ctx.lineTo(x+20,y); ctx.stroke();
+    ctx.font = "600 17px Archivo, sans-serif"; ctx.fillStyle = cssv("--ink");
+    const label = chosen.project_name;
+    const tw = ctx.measureText(label).width;
+    ctx.fillText(label, Math.min(x + 20, w - tw - 6), y - 16);
+  }
+}
+
+
+/* ── 2026-09-27 layers ──────────────────────────────────────────────────────
+   Four questions the map could not answer before, each from a register rather
+   than from a name: who holds the ground, what that holder holds in total,
+   which legal entity files the accounts, and what cash it last reported.
+   Every one of them carries the limit of its own source in the text — a page
+   that shows a register value without saying what the register does not settle
+   invites the reader to over-read it. */
+
+function tenementRow(p){
+  if (!p.tenements || !p.tenements.length) return "";
+  const live = p.tenements.filter(t => t.status === "LIVE");
+  const shown = (live.length ? live : p.tenements).slice(0, 4);
+  const items = shown.map(t => {
+    const joint = Number(t.n_holders) > 1
+      ? ` <span class="num">(${t.n_holders} co-holders — the register carries no shares)</span>` : "";
+    return `<div style="margin-top:4px"><b>${esc(t.holders)}</b>${joint}
+      <div style="color:var(--muted); font-size:12px">${esc(t.id)} · ${esc(t.type.toLowerCase())} · ${esc(t.status.toLowerCase())}${t.end ? " · expires " + esc(t.end) : ""}</div></div>`;
+  }).join("");
+  const cls = shown[0] && shown[0].match ? shown[0].match
+            : (shown[0] && shown[0].basis ? shown[0].basis : "");
+  return `<div><dt>Registered holder</dt><dd>${items}
+    ${cls ? `<div style="color:var(--muted); font-size:12px; margin-top:6px">${esc(cls)}</div>` : ""}
+    <div style="color:var(--muted); font-size:12px; margin-top:6px">
+      These are the holdings recorded nearest this site's mapped point — <b>not "this project's holdings"</b>. A registered holder is not the operator and not the beneficial owner.
+      ${p.tenements.length > shown.length ? `${p.tenements.length} nearby in total.` : ""}
+    </div></dd></div>`;
+}
+
+function portfolioRow(p){
+  if (!p.tenement_portfolios || !p.tenement_portfolios.length) return "";
+  const items = p.tenement_portfolios.map(h => {
+    const types = Object.entries(h.types).sort()
+      .map(([k,v]) => `${esc(k.toLowerCase())} ×${v}`).join(", ");
+    /* ⚠ area totals are PER UNIT: exploration licences are in blocks and mining
+       leases in hectares, so one summed figure would be meaningless. */
+    const area = Object.entries(h.area).sort()
+      .map(([u,v]) => `<span class="num">${v} ${esc(u)}</span>`).join(" + ");
+    const cannot = h.live_mining_leases === 0
+      ? ` <b style="color:var(--crit)">no live mining lease — this holder cannot mine</b>`
+      : ` <span class="num">${h.live_mining_leases}</span> live mining lease${h.live_mining_leases>1?"s":""}`;
+    return `<div style="margin-top:5px"><b>${esc(h.holder)}</b> holds <span class="num">${h.n}</span> tenements ·${cannot}
+      <div style="color:var(--muted); font-size:12px">${types}${area ? " · " + area : ""}</div>
+      <div style="color:var(--muted); font-size:12px">${esc(h.why)}</div></div>`;
+  }).join("");
+  return `<div><dt>What that holder holds</dt><dd>${items}
+    <div style="color:var(--muted); font-size:12px; margin-top:6px">
+      Areas are totalled <b>per unit and never across units</b> — exploration licences are measured in
+      blocks and mining leases in hectares. Co-held packages are counted once per holder, so two holders
+      of one package must not be added together.</div></dd></div>`;
+}
+
+function entityRow(p){
+  if (!p.entity_spine || !p.entity_spine.length) return "";
+  const items = p.entity_spine.map(e => {
+    const renamed = e.names_as_filed && e.names_as_filed.indexOf("; ") >= 0
+      ? `<div style="color:var(--muted); font-size:12px">filed under more than one name — <b>same legal entity</b>: ${esc(e.names_as_filed)}</div>` : "";
+    return `<div style="margin-top:4px"><b>${esc(e.registered_name)}</b>
+      <div style="color:var(--muted); font-size:12px">${esc(e.entity_type)} ·
+        ${e.filings} quarterly filings, ${esc(e.first)} – ${esc(e.last)}</div>${renamed}</div>`;
+  }).join("");
+  const split = p.entity_spine.length > 1
+    ? `<div style="color:var(--crit); font-size:12px; margin-top:6px">⚠ this ticker has filed under
+        <b>${p.entity_spine.length} different legal entities</b> — do not read its cash series as one
+        company without checking which quarter belongs to which.</div>` : "";
+  return `<div><dt>Legal entity</dt><dd>${items}${split}
+    <div style="color:var(--muted); font-size:12px; margin-top:6px">
+      Keyed on the identifier the company files under, and resolved against the national company register. This settles <b>identity, not ownership</b>.</div></dd></div>`;
+}
+
+function capitalRow(p){
+  const c = p.capital; if (!c || !c.quarter) return "";
+  const m = n => n === "" || n == null ? "—" : `A$${(Number(n)/1000).toFixed(1)}m`;
+  const warn = c.continuity && c.continuity.indexOf("⚠") === 0
+    ? `<div style="color:var(--crit); font-size:12px; margin-top:5px">${esc(c.continuity)}</div>` : "";
+  return `<div><dt>Reported cash position</dt><dd>
+    Cash at quarter end <b class="num">${m(c.cash_a000)}</b>
+    <span style="color:var(--muted)">(${esc(c.quarter)})</span>
+    <div style="color:var(--muted); font-size:12px; margin-top:3px">
+      operating <span class="num">${m(c.operating_a000)}</span> ·
+      investing <span class="num">${m(c.investing_a000)}</span>${c.filer ? " · filed by " + esc(c.filer) : ""}</div>
+    ${c.runway_quarters ? `<div style="margin-top:5px">Company's own stated runway
+      <b class="num">${esc(c.runway_quarters)}</b> quarters
+      <div style="color:var(--muted); font-size:12px">⚠ this runway figure <b>excludes capital spending</b> — it divides available funding by operating outgoings only, so read it beside the investing figure above.${c.runway_check ? " " + esc(c.runway_check) : ""}</div></div>` : ""}
+    ${warn}
+    <div style="color:var(--muted); font-size:12px; margin-top:6px">
+      Quarterly figures on the filing date — not a market cap, not shares on issue, not a valuation.
+      No ASX price or market data is used anywhere on this page.</div></dd></div>`;
+}
+
+function eventsRow(p){
+  if (!p.events_day) return "";
+  const items = (p.events_recent || []).map(e =>
+    `<div style="margin-top:3px"><span class="num">${esc(e.date)}</span>
+      <span style="color:var(--muted)">${esc(e.type.replace(/_/g," "))}</span><br>${esc(e.title)}</div>`).join("");
+  return `<div><dt>Dated events</dt><dd>
+    <span class="num">${p.events_day}</span> day-precision events${items ? ", most recent:" : ""}
+    ${items}
+    <div style="color:var(--muted); font-size:12px; margin-top:6px">
+      Dates are as published by the company. The event type is read from the <b>headline</b>, not the document, and an event is listed against the <b>company</b> — one with several projects does not say in its headline which one moved.</div></dd></div>`;
+}
+
+function drawRail(){
+  const p = chosen;
+  const stageCss = {operating:"--operating", developing:"--developing",
+    care_maintenance:"--care", deposit:"--deposit"}[p.development_stage];
+  const gridCss = {OFF_GRID_SUSPECT:"--crit", WEAK_GRID_15_40KM:"--warn",
+    GRID_CLOSE:"--muted", GRID_ADJACENT:"--muted"}[p.grid_class];
+
+  const sg = p.safeguard_facility
+    ? (p.safeguard_match_class === "same_site"
+        ? `${esc(p.safeguard_facility)} <span class="num">(${p.safeguard_km} km — same site)</span>`
+        : `${esc(p.safeguard_facility)} <span class="num">(${p.safeguard_km} km — nearby, not this site)</span>`)
+    : "—";
+  const xw = {"name+coord":"matched by name and position", "coord_only":"matched by position",
+    "name_probable_same_site":"same name, 40+ km apart — unresolved",
+    "name_collision":"same name, different site", "none":"no counterpart"}[p.ga_mines_match];
+
+  document.getElementById("rail").innerHTML = `
+    <div class="rail-head">
+      <div>
+        <div class="stagetag" style="color:var(${stageCss})">${STAGELABEL[p.development_stage]}</div>
+        <div class="stagetag" style="color:var(${OPPCSS[p.energy_opportunity_status]}); margin-top:2px">${esc(OPPLABEL[p.energy_opportunity_status] || p.energy_opportunity_status)}</div>
+        <div class="who">${esc(p.project_name)}</div>
+      </div>
+      <div class="where">${esc(p.state)} · ${p.latitude.toFixed(3)}, ${p.longitude.toFixed(3)}</div>
+    </div>
+    <dl>
+      <div><dt>Commodities</dt><dd>${esc(p.commodities)}</dd></div>
+      <div><dt>Project status</dt><dd>${esc(p.ga_status)}</dd></div>
+      <div><dt>Nearest substation</dt><dd><span class="num">${p.nearest_substation_km.toFixed(1)} km</span>
+        &nbsp;<span class="gridpill" style="color:var(${gridCss})">${GRIDLABEL[p.grid_class]}</span></dd></div>
+      <div><dt>Power demand</dt><dd>${loadRow(p)}</dd></div>
+      ${p.counterparty_class ? `<div><dt>Who supplies it</dt><dd>${
+        esc({THIRD_PARTY_GENERATOR:"A third-party generator",SHARED_STATION:"A shared station",MINE_OPERATOR:"The miner itself",UNKNOWN:"Not established"}[p.counterparty_class] || p.counterparty_class)
+      }${p.station_operator ? ` — <b>${esc(p.station_operator)}</b>` : ""}${p.filed_installed_mw ? ` <span class="num">(${esc(p.filed_installed_mw)} MW filed)</span>` : ""}${p.accredited_pv_wind_mw ? ` · <span class="num">${esc(p.accredited_pv_wind_mw)} MW</span> accredited PV/wind` : ""}<div style="color:var(--muted); font-size:12px; margin-top:3px">${esc(p.who_to_talk_to || "")}</div></dd></div>` : ""}
+      
+      ${(p.stated_power && p.stated_power.length) ? `<div><dt>Published power figure</dt><dd>${
+        /* ⚠⚠ THIS ROW READ x.scope, A FIELD THE PAYLOAD NO LONGER HAS. The round-2
+           correction replaced a free-text `scope` with four orthogonal axes, the
+           exporter was updated and THIS RENDERER WAS NOT — so the page printed
+           "18.5 MW — undefined" three times on Nolans Bore, on the one field the
+           whole scope review existed to get right. Fixing the producer and leaving
+           the consumer is half a fix, and it looks finished. */
+        p.stated_power.map(x => `<div style="margin-bottom:8px"><span class="num">${esc(x.mw)} MW</span>
+          <span class="axes">${esc(term(x.quantity_kind))} · ${esc(term(x.operating_basis))} · ${esc(term(x.system_boundary))} · ${esc(term(x.temporal_status))}</span>
+          <div style="color:var(--muted); font-size:12px; margin-top:2px">“${esc(x.scope_verbatim)}” — as worded in the document${x.statement_year ? `, ${esc(x.statement_year)}` : ""}${x.evidence_status ? ` · ${esc(term(x.evidence_status))}` : ""}</div>
+          </div>`).join("")
+      }<div style="color:var(--muted); font-size:12px">Published by the project company. <b>The four axes are load-bearing, not decoration</b> — a project total, a station maximum and a normal operating requirement are different quantities, and two figures may only be compared when all four agree.</div></dd></div>` : ""}
+      ${(p.specific_energy && p.specific_energy.length) ? `<div><dt>Per tonne</dt><dd>${
+        /* ⚠⚠ MOST OF THESE ROWS WERE REFUSED, AND THE PAGE WAS SHOWING THE REFUSAL
+           AS A BLANK NUMBER — "kWh/t per tonnes of ore fed to the plant" with
+           nothing in front of it, as though the figure were merely missing. 13 of
+           19 observations fail the numerator/denominator compatibility gate, which
+           is the mechanism the whole scope review exists around. A gate that works
+           in the data and is invisible on the page is not doing its job. */
+        p.specific_energy.map(x => x.refused_because
+          ? `<div style="margin-bottom:6px; color:var(--muted)"><b>Not calculated</b> per ${esc(term(x.basis))}
+             <div style="font-size:12px">${esc(humanise(x.refused_because))}</div></div>`
+          : `<div style="margin-bottom:5px"><span class="num">${esc(x.kwh_t)} kWh/t</span> per <b>${esc(term(x.basis))}</b>
+             <span style="color:var(--muted)">(${esc(x.mw)} MW ÷ ${Number(x.tonnes).toLocaleString()} t)</span></div>`).join("")
+      }<div style="color:var(--muted); font-size:12px">Arithmetic at 100% utilisation — an upper bound, not a measured intensity.
+      <b>Never compare across different denominators.</b> Where a figure is not calculated, the numerator and the
+      denominator describe different quantities, and dividing them would produce a number with no meaning.</div></dd></div>` : ""}
+      ${(p.predicted_mw_low || p.prediction_tier === "P5_NOT_PREDICTABLE") ? `<div><dt>If not measured</dt><dd>${
+        p.predicted_mw_low
+          ? `<span class="num">${esc(p.predicted_mw_low)}–${esc(p.predicted_mw_high)} MW</span> — order-of-magnitude bracket only<div style="color:var(--muted); font-size:12px; margin-top:3px">${esc(humanise(p.pred_why || ""))}<br>Anchored on: ${esc(humanise(p.prediction_anchor || ""))}</div>`
+          : `not predictable<div style="color:var(--muted); font-size:12px; margin-top:3px">${esc(humanise(p.pred_why || ""))}</div>`
+      }</dd></div>` : ""}
+      ${p.announced_energy_plan ? `<div><dt>Announced plan</dt><dd>${esc(p.announced_energy_plan)}<div style="color:var(--muted); font-size:12px; margin-top:3px">as announced</div></dd></div>` : ""}
+      <div><dt>On-site generation check</dt><dd>${p.onsite_gen_screen ? esc(p.onsite_gen_screen) : "not checked yet"}</dd></div>
+      <div><dt>Large-emitter match</dt><dd>${sg}</dd></div>
+      <div><dt>All-minerals match</dt><dd>${p.ga_mines_name ? esc(p.ga_mines_name) + " — " : ""}${xw}</dd></div>
+      <div><dt>Owner or project company</dt><dd>${p.company ? esc(p.company) + (p.asx_ticker ? ` <span class="num">(${esc(p.asx_ticker)})</span>` : "") : "not identified"}</dd></div>
+      <div><dt>Study stage and capital cost</dt><dd>${p.study_stage ? esc(p.study_stage) + (p.study_date ? ` ${esc(p.study_date)}` : "") : "—"}${p.capital_cost ? `<div style="color:var(--muted); font-size:12px; margin-top:3px">${esc(p.capital_cost)}</div>` : ""}</dd></div>
+      <div><dt>Next known milestone</dt><dd>${esc(p.next_commercial_trigger || "—")}<div style="color:var(--muted); font-size:12px; margin-top:3px">${esc(humanise(p.trigger_basis || ""))}</div></dd></div>
+      
+      ${p.funder ? `<div><dt>Public funding</dt><dd><span class="num">${esc(p.funding_amount)}</span> — ${esc(p.funder)}${p.funding_energy_in_scope ? ` · <b>covers generation or transmission at this site</b>` : ""}<div style="color:var(--muted); font-size:12px; margin-top:3px">${esc(p.funded_project || "")}</div></dd></div>` : ""}
+      <div><dt>Federal approval</dt><dd>${p.approval_status
+          ? esc(p.approval_status) + `<div style="color:var(--muted); font-size:12px; margin-top:3px">— the mapped point lies inside a declared maximum extent, which must not be read as a development footprint; some are later withdrawn</div>`
+          : "no federal approval footprint contains this site"}</dd></div>
+      <div><dt>Change in status since 2022</dt><dd>${p.status_2025
+          ? `${esc(p.status_2022 || "not on the map")} → ${esc(p.status_2025)}` +
+            (p.net_movement && p.net_movement !== "unchanged" ? ` <span class="num">(${esc(p.net_movement)})</span>` : "")
+          : "—"}</dd></div>
+      ${tenementRow(p)}
+      ${portfolioRow(p)}
+      ${entityRow(p)}
+      ${capitalRow(p)}
+      ${eventsRow(p)}
+      
+    </dl>
+    <div class="absent">
+      <h3>What this record can — and cannot — tell you</h3>
+      <p><b>What it supports.</b> Where coverage reaches a project, the record carries the registered
+      holder of the ground, what that holder holds in total, the legal entity behind the listed company,
+      its last reported cash position and its dated announcements. A blank row means coverage does not
+      reach this project; holdings are Western Australia only.</p>
+      <p><b>What is not here.</b> Resource and reserve figures, a final investment decision, engineering
+      contract awards, a construction start date, tenders. A &ldquo;developing&rdquo; label can mean a
+      positive feasibility study <b>or</b> construction started <b>or</b> approvals granted, and the
+      record does not say which &mdash; so those projects cannot be ranked by readiness.</p>
+      <p><b>How to read ownership and power.</b> A registered holder is not necessarily the operator or
+      the ultimate owner, and no ownership share is implied. A company identifier settles which legal
+      entity filed a document, not who owns that entity. Holdings shown are those near a project&rsquo;s
+      mapped point, so <b>this is not the project&rsquo;s land package</b>. Power demand is never
+      predicted from throughput, and two intensities on different denominators cannot be compared.</p>
+    </div>`;
+
+}
+
+function loadRow(p){
+  const tier = `<div style="color:var(--muted); font-size:12px; margin-top:3px">${esc(LOADLABEL[p.load_tier] || p.load_tier || "—")}</div>`;
+  if (p.avg_mw_low) return `<span class="num">${p.avg_mw_low}–${p.avg_mw_high} MW</span> average load` +
+    (p.installed_mw ? ` · <span class="num">${p.installed_mw} MW</span> installed` : "") + tier;
+  if (p.installed_mw) return `<span class="num">${p.installed_mw} MW</span> installed capacity` +
+    `<div style="color:var(--muted); font-size:12px; margin-top:3px">${esc(p.installed_mw_basis)} — installed capacity runs 2.5–3.5× average load, so it is not the load</div>`;
+  if (p.adjacent_operation) return `none of its own` +
+    `<div style="color:var(--muted); font-size:12px; margin-top:3px">${esc(p.adjacent_operation)} is ${esc(p.adjacent_km)} km away and runs ${p.adjacent_mw_low}–${p.adjacent_mw_high} MW — <b>that is the neighbour's load, not this site's</b></div>`;
+  if (p.band_validity === "NOX_METHOD_INVALID" || String(p.band_validity).startsWith("SUPPRESSED"))
+    return `withheld on purpose` +
+      `<div style="color:var(--muted); font-size:12px; margin-top:3px">${esc(p.band_validity)} — ${p.npi_point_nox_t ? "reports " + esc(p.npi_point_nox_t) + " t of point-source NOx, so this is a large site, " : ""}but the proxy would read it wrong by a factor</div>`;
+  return "—" + tier;
+}
+
+function drawTable(){
+  const ORDER = {"active procurement":0,"likely future opportunity":1,"monitor":2,"none identified":3};
+  const rows = filtered().slice().sort((a,b) =>
+    (ORDER[a.energy_opportunity_status]-ORDER[b.energy_opportunity_status]) ||
+    (b.nearest_substation_km-a.nearest_substation_km));
+  document.getElementById("tabletitle").textContent =
+    `${rows.length} site${rows.length === 1 ? "" : "s"} in the current selection`;
+  document.getElementById("tbody").innerHTML = rows.slice(0, 120).map(p => {
+    const gridCss = {OFF_GRID_SUSPECT:"--crit", WEAK_GRID_15_40KM:"--warn",
+      GRID_CLOSE:"--muted", GRID_ADJACENT:"--muted"}[p.grid_class];
+    const stageCss = {operating:"--operating", developing:"--developing",
+      care_maintenance:"--care", deposit:"--deposit"}[p.development_stage];
+    return `<tr data-id="${esc(p.project_id)}" aria-selected="${p.project_id === chosen.project_id}">
+      <td class="name">${esc(p.project_name)}</td>
+      <td>${esc(p.state)}</td>
+      <td style="color:var(${stageCss}); font-weight:600">${STAGELABEL[p.development_stage]}</td>
+      <td>${esc(p.commodities)}</td>
+      <td style="color:var(${OPPCSS[p.energy_opportunity_status]}); font-weight:600">${esc(OPPLABEL[p.energy_opportunity_status] || p.energy_opportunity_status)}</td>
+      <td>${esc(p.company || "—")}</td>
+      <td class="n" style="color:var(${gridCss})">${p.nearest_substation_km.toFixed(1)}</td>
+      <td class="n">${loadText(p)}</td>
+      <td>${esc(p.next_commercial_trigger || "—")}</td>
+    </tr>`;
+  }).join("");
+  document.getElementById("tbody").onclick = e => {
+    const tr = e.target.closest("tr"); if(!tr) return;
+    chosen = DATA.projects.find(p => p.project_id === tr.dataset.id);
+    render();
+  };
+}
+</script>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a class="brand" href="/index.html">
+            <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
+            <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+          </a>
+          <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
+        </div>
+        <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">Research reports and models</a><a href="/insights.html">Insights</a><a href="/methods/">Methods</a><a href="/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">Data &amp; tools</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/critical-minerals.html">Critical minerals: power and grid readiness</a></div>
+        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Published submissions</a><a href="/case-studies.html#screens">Project screens</a><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">About Heliovulcan</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
+      </div>
+      <p class="footer__legal">
+        <b>Disclaimer:</b> Heliovulcan is an independent research and analysis practice providing public-information desktop analysis and screening support. Nothing on this site is legal, financial, tax, engineering, investment or lender due-diligence advice, a compliance determination, or regulatory representation or lobbying, and nothing here is a financial product recommendation. All results are indicative and must be independently verified before any commercial, financing or construction decision. &copy; 2026 Heliovulcan Energy Advisors.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
