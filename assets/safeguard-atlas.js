@@ -501,7 +501,7 @@ function renderLab() {
     "it is the quantity the consultation question asks about. Moving to the left along the curve reduces the rate required of the facilities with a " +
     "determination; the curve gives the corresponding increase required of the other " + (NFAC - D.meta.teba_facilities) + " facilities. " +
     "Because the two groups differ greatly in size, the exchange is far from one-for-one.</p>" +
-    "<p><b>Solution method.</b> The rate is found by repeated halving of the search range, to a precision of about 0.0001 percentage points; each step recalculates all " + F.length + " facility rows, and no fitted parameters are used. The full method is on the <a href=\"/safeguard/method.html\">method page</a>.</p>" +
+    "<p><b>Solution method.</b> The rate is found by repeated halving of the search range, to a precision of about 0.0001 percentage points; each step recalculates all " + F.length + " facility rows, and no fitted parameters are used. The full method is set out under <a href=\"#method\">Method and sources</a>.</p>" +
     "<p><b>Effect of additional onsite abatement.</b> Modelled net emissions are the smaller of covered emissions and the baseline. " +
     "At first, additional abatement reduces the credits a facility must surrender. It reduces modelled net emissions only after the facility's emissions fall below its baseline. On the starting-point assumptions, net emissions therefore begin to fall only when the abatement rate is large enough to bring facilities below their baselines.</p>" +
     "<p><b>The decomposition chart.</b> The FY2034-35 figure is decomposed by moving one setting at a time from current policy to the selected value, " +
@@ -1156,11 +1156,11 @@ function renderSettingsStrip() {
   var teba = (TEBA_MODES.filter(function (m) { return m[0] === S.teba; })[0] || ["", S.teba])[1];
   var pf = (PF_MODES.filter(function (m) { return m[0] === S.pf; })[0] || ["", S.pf])[1];
   var clos = (CLOS_MODES.filter(function (m) { return m[0] === S.clos; })[0] || ["", S.clos])[1];
-  el.innerHTML = '<span class="ss-lab">Settings in force</span>' +
+  el.innerHTML = '<span class="ss-lab">Selected settings</span>' +
     '<span>' + (isRef() ? "Current policy on the starting-point assumptions" :
       Math.round(S.target * 100) + "% target · " + (S.d * 100).toFixed(2) + " pp/yr · " + esc(teba) + " · " + esc(pf) + " · " + esc(clos) +
       (S.pipe ? " · new entrants" : " · no new entrants") + (S.abate ? " · abatement " + (S.abate * 100).toFixed(1) + "%/yr" : "")) + "</span>" +
-    '<a href="' + ROOT + 'safeguard/policy.html">Change the settings &rarr;</a>';
+    '<a href="#settings">Change the settings &rarr;</a>';
 }
 function init() {
   if ((location.hash || "").indexOf("#s:") === 0) fromHash(); else loadS();

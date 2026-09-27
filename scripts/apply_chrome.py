@@ -146,7 +146,7 @@ def apply(path: pathlib.Path, rel: str) -> bool:
     s = path.read_text()
     if not HEAD_RE.search(s): return False
     section, trail = SECTION_OF.get(rel, ("", []))
-    if rel.startswith("facility/"): section, trail = "tools", [("Tools & data", "/safeguard-atlas.html"), ("Facilities", "/safeguard/facilities.html")]
+    if rel.startswith("facility/"): section, trail = "tools", [("Tools & data", "/safeguard-atlas.html"), ("Facilities", "/safeguard-atlas.html#facilities")]
     if rel.startswith("safeguard/") and rel not in SECTION_OF: section, trail = "tools", [("Tools & data", "/safeguard-atlas.html"), ("Safeguard Atlas", "/safeguard-atlas.html")]
     if rel.startswith("consultations/"): section = "consultations"
     new = header_html(section) + crumb_html(trail, title_of(s))
@@ -174,7 +174,7 @@ def main():
             hdr = header_html("tools") + '\n  {{CRUMB}}'
             s2 = HEAD_RE.sub(lambda m: hdr, s, count=1); s2 = FOOT_RE.sub(lambda m: FOOTER, s2, count=1)
         else:
-            hdr = header_html("tools") + crumb_html([("Tools & data", "/safeguard-atlas.html"), ("Facilities", "/safeguard/facilities.html")], "{{NAME}}")
+            hdr = header_html("tools") + crumb_html([("Tools & data", "/safeguard-atlas.html"), ("Facilities", "/safeguard-atlas.html#facilities")], "{{NAME}}")
             s2 = HEAD_RE.sub(lambda m: hdr, s, count=1); s2 = FOOT_RE.sub(lambda m: FOOTER, s2, count=1)
         if s2 != s: t.write_text(s2); print("  template patched:", t.name)
 
