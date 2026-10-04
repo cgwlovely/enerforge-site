@@ -51,6 +51,7 @@ MENU = [
 # page path → (section key, breadcrumb trail [(label, href), …] excluding the page itself)
 SECTION_OF = {
     "insights.html": ("research", [("Research", "/research.html")]),
+    "research/cbam-verification-gap.html": ("research", [("Research", "/research.html")]),
     "insights/battery-project-readiness.html": ("research", [("Research", "/research.html"), ("Insights", "/insights.html")]),
     "safeguard/baseline-floor-method.html": ("research", [("Research", "/research.html"), ("Lowering the threshold does more to the facilities already in", "/safeguard-review-2026-baseline-floor.html")]),
     "index.html": ("home", []),
@@ -69,6 +70,7 @@ SECTION_OF = {
     "datasets/fountain-head-pre-dd/index.html": ("tools", [("Tools & data", "/api/")]),
     "methods/pre-dd-f1-f4/index.html": ("projects", [("Projects", "/case-studies.html")]),
     "methods/index.html": ("tools", [("Tools & data", "/safeguard-atlas.html")]),
+    "methods/cbam/index.html": ("tools", [("Tools & data", "/safeguard-atlas.html"), ("Methods", "/methods/")]),
     "api/index.html": ("tools", [("Tools & data", "/safeguard-atlas.html")]),
     "api/docs/index.html": ("tools", [("Tools & data", "/safeguard-atlas.html"), ("Data & API", "/api/")]),
     "coverage.html": ("projects", [("Projects", "/case-studies.html")]), "about.html": ("about", []),

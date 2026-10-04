@@ -109,6 +109,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://heliovulcan.com.au/methods/cbam/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://heliovulcan.com.au/api/</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -1435,6 +1441,7 @@
   <url><loc>https://heliovulcan.com.au/research/btm-bess-customer-savings.html</loc><lastmod>2026-09-15</lastmod></url>
   <url><loc>https://heliovulcan.com.au/research/pre-dd-versus-feasibility-study.html</loc><lastmod>2026-09-15</lastmod></url>
   <url><loc>https://heliovulcan.com.au/research/weak-grid-mine-energy.html</loc><lastmod>2026-09-15</lastmod></url>
+  <url><loc>https://heliovulcan.com.au/research/cbam-verification-gap.html</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://heliovulcan.com.au/safeguard/baseline-floor-method.html</loc><lastmod>2026-09-15</lastmod></url>
   <url><loc>https://heliovulcan.com.au/consultations/safeguard-decline-rate-2026.html</loc><lastmod>2026-09-16</lastmod></url>
   <url><loc>https://heliovulcan.com.au/insights.html</loc><lastmod>2026-09-16</lastmod></url>
