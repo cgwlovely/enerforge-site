@@ -27,7 +27,42 @@ WORLD = MODEL / "outputs/cbam/countries-110m.json"
 PAYLOAD = pathlib.Path("/private/tmp/claude-502/-Users-hugefafafa1-BESS/"
                        "a3a861b3-9b9a-49eb-9236-bbed38f19b61/scratchpad/fac_payload.json")
 OUT = SITE / "research/cbam-verification-gap.html"
+REFRESH = MODEL / "outputs/cbam/monthly_refresh_report.json"
 DATE = "4 October 2026"
+
+# The current-year trade section is the one part of this page that moves monthly. It is written
+# from the refresh report when there is one, and from these published values when there is not,
+# so the page can always be rebuilt from source even if the refresh has never run.
+FALLBACK = {"newest_month": "2026-06",
+            "changes": {"fertiliser": {"pct": -55.8}, "cement": {"pct": -21.0},
+                        "aluminium": {"pct": -14.2}, "steel": {"pct": -8.0}},
+            "named_figures": {"steel:RU": {"pct": -45.8}, "aluminium:RU": {"pct": -79.9},
+                              "fertiliser:RU": {"pct": -82.0, "prior": 3342090, "now": 600828},
+                              "steel:CN": {"pct": 8.8}, "steel:BR": {"pct": 89.9},
+                              "steel:ID": {"pct": 29.6}, "aluminium:CA": {"pct": 96.5},
+                              "aluminium:QW_origin_not_specified": {"prior": 1770, "now": 85851}}}
+WORD = {1: "month", 2: "two months", 3: "three months", 4: "four months", 5: "five months",
+        7: "seven months", 8: "eight months", 9: "nine months", 10: "ten months",
+        11: "eleven months"}
+
+
+def window_phrase(month_key):
+    """'2026-06' -> ('the first half of 2026', 'the first half of 2025')."""
+    yr, m = month_key.split("-")
+    n = int(m)
+    if n == 12:
+        return yr, str(int(yr) - 1)
+    stem = "the first half of" if n == 6 else "the first %s of" % WORD[n]
+    return "%s %s" % (stem, yr), "%s %d" % (stem, int(yr) - 1)
+
+
+def trade_figures():
+    import json as _json
+    if REFRESH.exists():
+        r = _json.loads(REFRESH.read_text())
+        if r.get("decision") in ("publish", "review") and r.get("changes"):
+            return r
+    return FALLBACK
 
 # chart series, validated against the site surface #f6f3ec (dataviz six checks, all pass)
 C_OLD, C_NEW = "#0E8F72", "#d9620f"
@@ -316,22 +351,7 @@ BODY = """
           validation. The independent evidence is the United States, where seven plants reporting to a different
           regulator under different rules give the same ratio.</p>
 
-          <h2 id="s-trade">What early 2026 trade data can &mdash; and cannot &mdash; show</h2>
-          <p>Early 2026 trade data shows what changed after the definitive period began. It cannot by itself show
-          that CBAM caused those changes.</p>
-          <p>Compared with the first half of 2025, import volumes in the first half of 2026 fell across every CBAM
-          sector in this analysis, measured by weight on goods originating outside the EU and the EEA: fertilisers
-          by 56%, cement by 21%, aluminium by 14% and steel by 8%.</p>
-          <p>The largest single movement by far is Russia &mdash; steel down 46%, aluminium down 80%, fertilisers down
-          82%, a single origin accounting for 2.7 million tonnes of the fertiliser fall on its own. Sanctions and
-          separate tariff measures on Russian fertiliser are more immediate explanations for this decline, and they
-          make any CBAM effect difficult to isolate. Over the same months imports from several origins rose: Chinese
-          steel by 9%, Brazilian steel by 90%, Indonesian steel by 30% and Canadian aluminium by 97%. That pattern is
-          not consistent with a simple claim that CBAM alone is already reducing imports.</p>
-          <p>One further caution on the published trade data. The share of aluminium arriving with its origin
-          undeclared rose from under 2,000 tonnes in the first half of 2025 to nearly 86,000 tonnes in 2026, almost
-          all of it unwrought metal. Part of what looks like a fall in any single country&rsquo;s aluminium is simply
-          origin no longer being stated.</p>
+__TRADE__
 
           <h2 id="s-checks">How this was checked, and its limits</h2>
           <p>The analysis was tested in four ways using public data. Each check produces a numerical result that can
@@ -456,10 +476,55 @@ N2I = {"China":"CHN","Turkey":"TUR","Indonesia":"IDN","India":"IND","Russia":"RU
        "Switzerland":"CHE","Iceland":"ISL"}
 
 
+def trade_section():
+    r = trade_figures()
+    now_w, prev_w = window_phrase(r["newest_month"])
+    c, n = r["changes"], r["named_figures"]
+    pc = lambda k: abs(c[k]["pct"])
+    nm = lambda k: abs(n[k]["pct"])
+    f = n["fertiliser:RU"]
+    ru_drop = (f["prior"] - f["now"]) / 1e6
+    qw = n["aluminium:QW_origin_not_specified"]
+    rose = [(lab, n[k]["pct"]) for lab, k in (("Chinese steel", "steel:CN"),
+            ("Brazilian steel", "steel:BR"), ("Indonesian steel", "steel:ID"),
+            ("Canadian aluminium", "aluminium:CA")) if k in n and n[k]["pct"] > 0]
+    if len(rose) > 1:
+        rose_txt = ", ".join("%s by %.0f%%" % (l, p) for l, p in rose[:-1])
+        rose_txt += " and %s by %.0f%%" % (rose[-1][0], rose[-1][1])
+    elif rose:
+        rose_txt = "%s by %.0f%%" % (rose[0][0], rose[0][1])
+    else:
+        rose_txt = "none"
+    year = r["newest_month"][:4]
+
+    out = []
+    out.append('          <h2 id="s-trade">What early %s trade data can &mdash; and cannot &mdash; show</h2>' % year)
+    out.append('          <p>Trade data for %s shows what changed after the definitive period began. It'
+               ' cannot by itself show that CBAM caused those changes.</p>' % now_w)
+    out.append('          <p>Compared with %s, import volumes in %s fell across every CBAM sector in this'
+               ' analysis, measured by weight on goods originating outside the EU and the EEA:'
+               ' fertilisers by %.0f%%, cement by %.0f%%, aluminium by %.0f%% and steel by %.0f%%.</p>'
+               % (prev_w, now_w, pc("fertiliser"), pc("cement"), pc("aluminium"), pc("steel")))
+    out.append('          <p>The largest single movement by far is Russia &mdash; steel down %.0f%%,'
+               ' aluminium down %.0f%%, fertilisers down %.0f%%, a single origin accounting for %.1f'
+               ' million tonnes of the fertiliser fall on its own. Sanctions and separate tariff measures'
+               ' on Russian fertiliser are more immediate explanations for this decline, and they make any'
+               ' CBAM effect difficult to isolate. Over the same months imports from several origins rose:'
+               ' %s. That pattern is not consistent with a simple claim that CBAM alone is already'
+               ' reducing imports.</p>'
+               % (nm("steel:RU"), nm("aluminium:RU"), nm("fertiliser:RU"), ru_drop, rose_txt))
+    out.append('          <p>One further caution on the published trade data. The share of aluminium'
+               ' arriving with its origin undeclared rose from {:,} tonnes in {} to {:,} tonnes in {},'
+               ' almost all of it unwrought metal. Part of what looks like a fall in any single'
+               ' country&rsquo;s aluminium is simply origin no longer being stated.</p>'
+               .format(qw["prior"], prev_w, qw["now"], now_w))
+    return "\n".join(out) + "\n"
+
+
 def main():
     if not PAYLOAD.exists():
         sys.exit(f"missing facility payload: {PAYLOAD}")
-    body = BODY.replace("__CHART__", chart_html())
+    body = BODY.replace("__CHART__", chart_html()).replace("__TRADE__", trade_section())
 
     rows = list(csv.DictReader(open(REGISTER, encoding="utf-8")))
     hay = html.unescape(re.sub(r"<[^>]+>", " ", body)).lower()
