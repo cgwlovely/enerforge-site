@@ -402,13 +402,14 @@ BODY = """
 """
 
 MAPJS = """
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src="/assets/d3-7.9.0.min.js"></script>
+<script src="/assets/topojson-3.0.2.min.js"></script>
 <script>
 const CB_WORLD = __WORLD__;
 const CB_PAY = __PAY__;
 (function(){
-  const host=document.getElementById("cbmap"); if(!host||!window.d3||!window.topojson) return;
+  const host=document.getElementById("cbmap"); if(!host) return;
+  if(!window.d3||!window.topojson){ host.innerHTML='<p class="cb-note" style="padding:18px 0">The map could not be drawn because its drawing library did not load. The figures it illustrates are in the tables above and below.</p>'; return; }
   const RAMP=["#f6ddc4","#e8a06a","#d9620f"], LAND="#e7e2d6", MEAS="#16293a", EST="#63707c";
   document.querySelectorAll(".cb-key .sw1").forEach(e=>e.style.background=RAMP[0]);
   document.querySelectorAll(".cb-key .sw2").forEach(e=>e.style.background=RAMP[1]);
