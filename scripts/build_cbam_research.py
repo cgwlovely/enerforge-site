@@ -24,8 +24,7 @@ ROOT = SITE.parents[1]
 MODEL = ROOT / "safeguard_public_model"
 REGISTER = MODEL / "data/reference/cbam_source_licence_register.csv"
 WORLD = MODEL / "outputs/cbam/countries-110m.json"
-PAYLOAD = pathlib.Path("/private/tmp/claude-502/-Users-hugefafafa1-BESS/"
-                       "a3a861b3-9b9a-49eb-9236-bbed38f19b61/scratchpad/fac_payload.json")
+MAPDATA = MODEL / "outputs/cbam/cbam_global_facility_map_data.json"
 OUT = SITE / "research/cbam-verification-gap.html"
 REFRESH = MODEL / "outputs/cbam/monthly_refresh_report.json"
 DATE = "4 October 2026"
@@ -168,7 +167,8 @@ BODY = """
             <a href="#s-plants">4 &middot; From country averages to individual plants</a>
             <a href="#s-australia">5 &middot; Australia as a validation case</a>
             <a href="#s-trade">6 &middot; What early 2026 trade data can show</a>
-            <a href="#s-checks">7 &middot; How this was checked, and its limits</a>
+            <a href="#s-data">7 &middot; Download the data</a>
+            <a href="#s-checks">8 &middot; How this was checked, and its limits</a>
           </nav>
 
           <div class="article__body res-body">
@@ -353,6 +353,39 @@ BODY = """
 
 __TRADE__
 
+          <h2 id="s-data">Download the data</h2>
+          <p>The figures on this page are published as CSV. They carry the country layer: the
+          charge by origin, and the comparison against published country intensities. The plant
+          layer is not included &mdash; its cross-source identifiers, the matching rules behind
+          them and the per-plant calibrated intensities stay unpublished, for the reasons set out
+          in the <a href="/methods/cbam/">methodology note</a>.</p>
+          <div class="cb-scroll">
+          <table class="cb-tbl">
+            <thead><tr><th>File</th><th>Contents</th><th class="n">Records</th><th class="n">Updated</th></tr></thead>
+            <tbody>
+              <tr><td class="nm"><a href="/data/cbam-exposure-by-origin.csv" download>cbam-exposure-by-origin.csv</a></td>
+                  <td>One row per origin country: goods in scope and their value, the modelled charge
+                  at default values split by sector, the charge as a share of goods value, and the
+                  trade-weighted default intensity.</td>
+                  <td class="n">198</td><td class="n">__DATE__</td></tr>
+              <tr><td class="nm"><a href="/data/cbam-verification-by-origin.csv" download>cbam-verification-by-origin.csv</a></td>
+                  <td>The eleven origins where a published country-level steel intensity exists:
+                  tonnage covered, that intensity, the charge at default values, the charge at the
+                  country average, and the difference between them.</td>
+                  <td class="n">11</td><td class="n">__DATE__</td></tr>
+              <tr><td class="nm"><a href="/data/cbam-sources.csv" download>cbam-sources.csv</a></td>
+                  <td>Every source behind these figures, with its publisher, licence, and whether
+                  its values are reproduced or only cited.</td>
+                  <td class="n">24</td><td class="n">__DATE__</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <p class="cb-note">Published under the site&rsquo;s terms. The underlying fields remain subject
+          to the licences of the sources they come from, which is what the third file is for: EU trade
+          and legal texts are reusable under Decision 2011/833/EU, the country intensities and the plant
+          registers under CC BY 4.0, and a few sources are cited without their values being reproduced.
+          Trade year __TRADEYEAR__, __RULESYEAR__ rules, &euro;80 certificate.</p>
+
           <h2 id="s-checks">How this was checked, and its limits</h2>
           <p>The analysis was tested in four ways using public data. Each check produces a numerical result that can
           be independently reproduced.</p>
@@ -521,10 +554,35 @@ def trade_section():
     return "\n".join(out) + "\n"
 
 
+def map_payload():
+    """Derive the map's payload from the canonical facility data in the model repo.
+
+    It used to be read from a pre-built file in a session scratch directory, which meant the page
+    could not be rebuilt from a fresh checkout — and a scheduled rebuild would simply fail. It is
+    derived here instead. Coordinates are rounded to a tenth of a degree: enough for a world map,
+    and not a location dataset.
+    """
+    d = json.loads(MAPDATA.read_text(encoding="utf-8"))
+    sec = {"steel": 0, "aluminium": 1, "ammonia": 2}
+    rows = []
+    for x in d["facilities"]:
+        act = x.get("act") or ((x.get("cap") or 0) * 1000)
+        rows.append([sec[x["s"]], x["n"][:44], x["c"], round(x["lat"], 1), round(x["lon"], 1),
+                     round((act or 0) / 1e6, 2), 1 if x.get("ver") else 0])
+    cost = {c["iso3"]: round(c["cost"] / 1e6) for c in d["countries"]
+            if c.get("iso3") and c.get("cost")}
+    return json.dumps({"f": rows, "cost": cost}, ensure_ascii=False, separators=(",", ":"))
+
+
 def main():
-    if not PAYLOAD.exists():
-        sys.exit(f"missing facility payload: {PAYLOAD}")
-    body = BODY.replace("__CHART__", chart_html()).replace("__TRADE__", trade_section())
+    if not MAPDATA.exists():
+        sys.exit(f"missing facility data: {MAPDATA}")
+    import datetime as _dt
+    ds = SITE / "data/cbam-exposure-by-origin.csv"
+    dstamp = (_dt.date.fromtimestamp(ds.stat().st_mtime).isoformat() if ds.exists() else "")
+    body = (BODY.replace("__CHART__", chart_html()).replace("__TRADE__", trade_section())
+                .replace("__DATE__", dstamp).replace("__TRADEYEAR__", "2025")
+                .replace("__RULESYEAR__", "2026"))
 
     rows = list(csv.DictReader(open(REGISTER, encoding="utf-8")))
     hay = html.unescape(re.sub(r"<[^>]+>", " ", body)).lower()
@@ -537,7 +595,7 @@ def main():
                 sys.exit(f"ABORT: restricted source named in page body: {r['source_id']} ({needle})")
 
     mapjs = (MAPJS.replace("__WORLD__", WORLD.read_text())
-                  .replace("__PAY__", PAYLOAD.read_text(encoding="utf-8"))
+                  .replace("__PAY__", map_payload())
                   .replace("__N2I__", json.dumps(N2I, ensure_ascii=False)))
 
     page = f"""<!DOCTYPE html>
