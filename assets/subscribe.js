@@ -1,9 +1,12 @@
 /* Registration form on /subscribe.html.
  *
- * Posts to MailerLite's embedded-form endpoint. Two IDs are needed and they are
- * the only things to change here — both are in the embed snippet MailerLite
- * shows when a form is created (Forms -> Embedded form -> the action URL
- * .../jsonp/<ACCOUNT_ID>/forms/<FORM_ID>/subscribe).
+ * Posts to MailerLite's embedded-form endpoint. ENDPOINT below is the only thing
+ * to change: copy the form's own action URL out of the embed snippet MailerLite
+ * shows when a form is created (Forms -> Embedded form -> view the HTML, the
+ * <form action="..."> value). Paste it whole rather than assembling it from IDs,
+ * so the URL is MailerLite's own and cannot be the wrong shape.
+ *
+ *   python3 scripts/set_mailerlite.py "<the action URL>"
  *
  * Until they are filled in, the form does not pretend to work: the button is
  * disabled and the page offers the email route instead. A failed request is
@@ -20,8 +23,7 @@
 (function () {
   "use strict";
 
-  var ACCOUNT_ID = "PASTE_MAILERLITE_ACCOUNT_ID";
-  var FORM_ID = "PASTE_MAILERLITE_FORM_ID";
+  var ENDPOINT = "PASTE_MAILERLITE_FORM_ACTION_URL";
 
   var CONTACT = "grantchen@heliovulcan.com.au";
   var form = document.getElementById("reg-form");
@@ -29,7 +31,7 @@
 
   var msg = document.getElementById("reg-msg");
   var button = form.querySelector('button[type="submit"]');
-  var configured = ACCOUNT_ID.indexOf("PASTE_") !== 0 && FORM_ID.indexOf("PASTE_") !== 0;
+  var configured = ENDPOINT.indexOf("PASTE_") !== 0 && ENDPOINT.indexOf("http") === 0;
 
   function say(text, state) {
     msg.innerHTML = text;
@@ -97,8 +99,7 @@
     button.disabled = true;
     say("Sending…");
 
-    fetch("https://assets.mailerlite.com/jsonp/" + ACCOUNT_ID + "/forms/" + FORM_ID + "/subscribe",
-          { method: "POST", body: body })
+    fetch(ENDPOINT, { method: "POST", body: body })
       .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
       .then(function (data) {
         if (!data || data.success !== true) throw new Error("rejected");

@@ -3,6 +3,13 @@
 Free registration with an email address, a notice whenever the research changes, and
 the packaged files sent by email. Built on 10 October 2026.
 
+> **Not pushed yet, and that is deliberate.** The change is committed locally
+> (`c709e1e`) and the live site is unchanged. Pushing removes eight files from the site
+> at the moment the form still cannot register anyone, which is a window where a reader
+> finds neither the file nor a working form. Connect MailerLite first — one command,
+> below — then push. If you are a different session: please do not push this branch
+> until `python3 scripts/set_mailerlite.py --check` exits 0.
+
 ## What a download gate can and cannot do on this site
 
 Worth reading before changing the registration list. The site's method is that every
@@ -33,6 +40,7 @@ arrangement, not a copy change.
 |---|---|
 | Registration page | `scripts/build_subscribe.py` → `subscribe.html` |
 | Form behaviour | `assets/subscribe.js` |
+| Connecting it to MailerLite | `scripts/set_mailerlite.py` |
 | What is withheld | `scripts/registered_files.json` |
 | Guard | `scripts/check_registered.py` |
 | Changelog source | `updates.json` |
@@ -41,10 +49,18 @@ arrangement, not a copy change.
 
 ## Before it works: three things to set up once
 
-**1. MailerLite.** Create the account and a form (Forms → Embedded form). Its action URL
-contains the two IDs: `…/jsonp/<ACCOUNT_ID>/forms/<FORM_ID>/subscribe`. Put both at the
-top of `assets/subscribe.js`. Until they are filled in, the form disables its own button
-and offers the email route instead, so the page is safe to publish beforehand.
+**1. MailerLite.** Create the account and a form (Forms → Embedded form). Open the
+embed HTML and copy the `<form action="...">` value, then:
+
+```
+python3 scripts/set_mailerlite.py "<the action URL>"
+python3 scripts/set_mailerlite.py --check      # exits 0 once the form is connected
+```
+
+Paste the URL whole rather than assembling it from IDs — then it is MailerLite's own URL
+and cannot be the wrong shape. It is not a secret: every site with an embedded form has it
+in its page source. Until it is set, the form disables its own button and offers the email
+route, so the page is safe to publish beforehand.
 
 Create three custom fields first (Subscribers → Fields), or the values arrive unnamed and
 are dropped: `role`, `interests`, `came_for` — all text. `name` and `company` are built in.
