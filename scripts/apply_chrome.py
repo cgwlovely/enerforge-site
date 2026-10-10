@@ -33,7 +33,8 @@ MENU = [
     ("tools", "Data & tools", "/safeguard-atlas.html", [
         ("Interactive tools", [("Safeguard Atlas", "/safeguard-atlas.html"),
                                ("Critical minerals: power and grid readiness",
-                                "/critical-minerals.html")]),
+                                "/critical-minerals.html"),
+                               ("CBAM charge explorer", "/cbam-explorer.html")]),
         ("Data", [("Data & API", "/api/"), ("Research coverage", "/coverage.html")])]),
     ("consultations", "Consultations", "/consultations.html", [
         ("Published submissions", [("All submissions", "/consultations.html"),
