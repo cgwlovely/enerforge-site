@@ -1,0 +1,101 @@
+{
+  "_note": "Files delivered on registration rather than published. This repository is public, so no delivery URL belongs in this file — the links live in the MailerLite welcome email and in 网站建设/_registered/LINKS.md on the operator's machine. scripts/check_registered.py fails the build if any path listed here reappears in the site tree or in a public link. Note on what a download gate can achieve here: every analysis page recalculates in the reader's browser, so four of the datasets below are also carried by a public page. The submissions are the only files the registration list actually withholds. subscribe.html says so rather than implying otherwise.",
+  "register_page": "/subscribe.html",
+  "files": [
+    {
+      "path": "data/safeguard-facilities.csv",
+      "title": "safeguard-facilities.csv",
+      "group": "Safeguard Atlas",
+      "records": "209 rows",
+      "contents": "One row per Safeguard register row: facility name, responsible emitter, state, industry, FY2024-25 emissions reduction contribution, published baseline, covered emissions, and the commodity group used for the production assumption.",
+      "also_public_as": "/data/safeguard-atlas.json",
+      "also_public_note": "The Atlas page loads the same 209 rows in the browser, so these fields remain readable without registering. Registration adds the packaged file and the change notices."
+    },
+    {
+      "path": "data/cbam-exposure-by-origin.csv",
+      "title": "cbam-exposure-by-origin.csv",
+      "group": "EU CBAM",
+      "records": "198 origins",
+      "contents": "Goods in scope, goods value, the modelled charge at default values, the charge as a share of goods value, the charge split across steel, aluminium, cement, fertiliser and hydrogen, and the trade-weighted default intensity.",
+      "also_public_as": "/cbam-explorer.html",
+      "also_public_note": "The CBAM charge explorer recalculates in the browser from the same figures, inlined in that page for all 198 origins, so these fields remain readable without registering. Registration adds the packaged file, the column definitions and the change notices."
+    },
+    {
+      "path": "data/cbam-verification-by-origin.csv",
+      "title": "cbam-verification-by-origin.csv",
+      "group": "EU CBAM",
+      "records": "11 origins",
+      "contents": "Steel tonnage covered, its share of the origin's steel exports, the published country intensity for HS 7208, the charge at default values, the charge at the country average, and the difference between them.",
+      "also_public_as": "/cbam-explorer.html",
+      "also_public_note": "The CBAM charge explorer recalculates in the browser from the same figures, inlined in that page for all 198 origins, so these fields remain readable without registering. Registration adds the packaged file, the column definitions and the change notices."
+    },
+    {
+      "path": "submissions/Heliovulcan-Submission-2026-SMR-Post-2030-Decline-Rate.pdf",
+      "title": "Safeguard Mechanism post-2030 decline rate, 2026",
+      "group": "Submissions",
+      "records": "submission as lodged",
+      "contents": "The submission to the Safeguard Mechanism review on the post-2030 decline rate, as lodged.",
+      "also_public_as": null
+    },
+    {
+      "path": "submissions/Heliovulcan-Submission-2026-Senate-AI-Data-Centres-Briefing.pdf",
+      "title": "AI and data centres, 2026",
+      "group": "Submissions",
+      "records": "submission as lodged",
+      "contents": "The briefing on artificial intelligence and data centre electricity demand, as lodged.",
+      "also_public_as": null
+    },
+    {
+      "path": "submissions/Heliovulcan-Submission-2026-APA-Consultation.pdf",
+      "title": "Safeguard onsite abatement, 2026",
+      "group": "Submissions",
+      "records": "submission as lodged",
+      "contents": "The submission on onsite abatement under the Safeguard Mechanism, as lodged.",
+      "also_public_as": null
+    },
+    {
+      "path": "reports/Fountain_Head_Hybrid_Energy_Financeability_Report.pdf",
+      "title": "Fountain Head hybrid energy financeability report",
+      "group": "Project reports",
+      "records": "named-asset report",
+      "contents": "The financeability report behind the Pre-DD case. It names the asset, so it is not published on the site and is released on request rather than on registration.",
+      "release": "on_request",
+      "also_public_as": null
+    },
+    {
+      "path": "reports/Fountain_Head_PreDD_Enhanced_Public_EN_v4.pdf",
+      "title": "Fountain Head Pre-DD report",
+      "group": "Project reports",
+      "records": "named-asset report",
+      "contents": "The Pre-DD report behind the anonymised case. It names the asset, so it is not published on the site and is released on request rather than on registration.",
+      "release": "on_request",
+      "also_public_as": null
+    }
+  ],
+  "stays_public": [
+    {
+      "path": "data/cbam-sources.csv",
+      "why": "The source register is what lets a reader check the work: 24 rows of publisher, URL, licence and how each source is used. Putting the proof behind a form would work against the reason the register exists."
+    },
+    {
+      "path": "data/datacentres.csv",
+      "why": "Field for field the same 161 records as data/datacentres.json, which the register page must fetch in the browser. Requiring a registration for the CSV would not withhold anything, so it is published alongside the JSON."
+    },
+    {
+      "path": "data/safeguard-atlas.json",
+      "why": "The Atlas page fetches it in the browser. Gating it would stop the tool working."
+    },
+    {
+      "path": "data/datacentres.json",
+      "why": "The register page fetches it in the browser. Gating it would stop the tool working."
+    },
+    {
+      "path": "data/critical-minerals.json",
+      "why": "The critical minerals screen fetches it in the browser. Gating it would stop the tool working."
+    },
+    {
+      "path": "data/schemas/",
+      "why": "Schemas describe the JSON endpoints and are needed to read them."
+    }
+  ]
+}

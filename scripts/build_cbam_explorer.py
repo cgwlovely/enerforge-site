@@ -342,11 +342,7 @@ def main():
             </div>
 
             <h2 style="margin-top:56px">What this is, and what it is not</h2>
-            <p>Every figure is recalculated in your browser from
-            <a href="/data/cbam-exposure-by-origin.csv" download>cbam-exposure-by-origin.csv</a> and
-            <a href="/data/cbam-verification-by-origin.csv" download>cbam-verification-by-origin.csv</a>,
-            the same files behind <a href="/research/cbam-verification-gap.html">the research
-            report</a>. The certificate price is a plain multiplier on the certificates due, so
+            <p>Every figure is recalculated in your browser from the same two tables behind <a href="/research/cbam-verification-gap.html">the research report</a>, <code>cbam-exposure-by-origin.csv</code> and <code>cbam-verification-by-origin.csv</code>, which are carried in this page. Both are also available as files on <a href="/subscribe.html">free registration</a>. The certificate price is a plain multiplier on the certificates due, so
             moving it is exact.</p>
             <ul>
               <li><b>A default-value scenario, not a forecast.</b> It shows what is charged if no

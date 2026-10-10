@@ -26,6 +26,11 @@ SITE = pathlib.Path(__file__).resolve().parents[1]
 MODEL = SITE.parents[1] / "safeguard_public_model"
 REF = MODEL / "data/reference"
 OUTD = SITE / "data"
+# Files on the registration list are not written into the site: this repository is public,
+# so a file in the tree is a published file. They go to 网站建设/_registered/, which is the
+# folder uploaded to the shared drive the confirmation email links to.
+# scripts/check_registered.py fails if one of them reappears under data/.
+REGD = SITE.parent / "_registered/data"
 
 PRICE, TRADE_YEAR, RULES_YEAR = 80.0, 2025, 2026
 NAME = {
@@ -71,7 +76,7 @@ def exposure():
             r0(f(r["cost_fert"])), r0(f(r["cost_hydrogen"])),
             round(f(r["avg_default_see"]), 3),
         ])
-    write(OUTD / "cbam-exposure-by-origin.csv",
+    write(REGD / "cbam-exposure-by-origin.csv",
           ["origin_iso2", "origin", "goods_in_scope_t", "goods_value_eur",
            "modelled_charge_eur", "charge_pct_of_goods_value", "charge_steel_eur",
            "charge_aluminium_eur", "charge_cement_eur", "charge_fertiliser_eur",
@@ -91,7 +96,7 @@ def verification():
             r0(f(r["cost_default_eur"])), r0(f(r["cost_jrc_path_eur"])),
             r0(f(r["verification_value_jrc_eur"])),
         ])
-    write(OUTD / "cbam-verification-by-origin.csv",
+    write(REGD / "cbam-verification-by-origin.csv",
           ["origin_iso2", "origin", "steel_covered_t", "share_of_origin_steel_pct",
            "published_country_intensity_7208_tco2e_per_t", "charge_at_default_values_eur",
            "charge_at_country_average_eur", "modelled_reduction_eur"],
@@ -120,6 +125,7 @@ def main():
     if not (REF / "cbam_global_exposure_2025.csv").exists():
         sys.exit("model repo reference tables not found")
     OUTD.mkdir(parents=True, exist_ok=True)
+    REGD.mkdir(parents=True, exist_ok=True)
     print(f"CBAM datasets  (trade {TRADE_YEAR}, {RULES_YEAR} rules, €{PRICE:.0f} certificate)")
     n1, n2, n3 = exposure(), verification(), sources()
     print(f"\nnot published, by design: the plant layer's cross-source identifiers, the matching "

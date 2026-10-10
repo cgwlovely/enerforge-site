@@ -4,12 +4,14 @@
 User-agent: *
 Allow: /
 
-# Internal analytical artefacts. Retained in the repository as a capability but
-# not published as part of the site: detailed site-specific GIS outputs, and the
-# PDF reports behind the anonymised Pre-DD case, which name the asset in their
-# contents. They are unlinked from every page and excluded from the sitemap.
-# Patterns rather than filenames, so this file does not itself disclose what the
-# anonymised case pages deliberately do not.
-# Disallow is a crawling signal, not access control — see IA-NOTES.md.
+# Files that are sent on registration rather than published — the packaged
+# datasets, the submissions as lodged, and the two Pre-DD reports that name the
+# asset behind the anonymised case — are not in this repository at all. An
+# earlier version of this file said they were "retained in the repository but
+# unlinked", which was not a restriction: the repository is public, so anything
+# in it is published whether or not a page links to it. There is nothing here to
+# disallow, because there is nothing here to find.
+#   What is sent, and what stays open: /subscribe.html
+#   Disallow is a crawling signal, not access control — see IA-NOTES.md.
 
 Sitemap: https://heliovulcan.com.au/sitemap.xml

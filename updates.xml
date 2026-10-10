@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Heliovulcan updates</title>
+    <link>https://heliovulcan.com.au/updates.html</link>
+    <atom:link href="https://heliovulcan.com.au/updates.xml" rel="self" type="application/rss+xml" />
+    <description>Published changes to Heliovulcan's research, datasets and tools, including corrections to figures already published.</description>
+    <language>en-AU</language>
+    <lastBuildDate>Sat, 10 Oct 2026 05:32:25 +0000</lastBuildDate>
+    <item>
+      <title>CBAM charge explorer: move the certificate price and see what it costs by origin</title>
+      <link>https://heliovulcan.com.au/cbam-explorer.html</link>
+      <guid isPermaLink="false">https://heliovulcan.com.au/updates.html#2026-10-10-cbam-charge-explorer-move-the-certificate-price-and-see-what-it</guid>
+      <pubDate>Sat, 10 Oct 2026 09:00:00 +0000</pubDate>
+      <category>Interactive tool</category>
+      <description>Interactive tool &#8212; The explorer puts the EU carbon border charge on one screen for 198 origin countries. Moving the certificate price re-prices every origin, so a reader can see which exposures are sensitive to the price and which are driven by tonnage.</description>
+    </item>
+    <item>
+      <title>The CBAM country layer is published as data, with what is held back stated on the page</title>
+      <link>https://heliovulcan.com.au/api/</link>
+      <guid isPermaLink="false">https://heliovulcan.com.au/updates.html#2026-10-10-the-cbam-country-layer-is-published-as-data-with-what-is-held</guid>
+      <pubDate>Sat, 10 Oct 2026 09:00:00 +0000</pubDate>
+      <category>Dataset</category>
+      <description>Dataset &#8212; Three files cover the country layer: exposure for 198 origins, the verification comparison for 11 origins, and the source register. Facility-level cross-source identifiers, the matching rules and the per-plant calibrated intensities are not published, and the methods page says so.</description>
+    </item>
+    <item>
+      <title>The CBAM verification gap: what an exporter pays at default values against what it pays on a verified figure</title>
+      <link>https://heliovulcan.com.au/research/cbam-verification-gap.html</link>
+      <guid isPermaLink="false">https://heliovulcan.com.au/updates.html#2026-10-04-the-cbam-verification-gap-what-an-exporter-pays-at-default</guid>
+      <pubDate>Sun, 04 Oct 2026 09:00:00 +0000</pubDate>
+      <category>Research report</category>
+      <description>Research report &#8212; For 11 origins the charge can be compared at EU default values against the published country average intensity. The report sets out the method and the source register alongside the result.</description>
+    </item>
+    <item>
+      <title>Research coverage was stated as 21 facility profiles across 3 sectors. It is 49 across 16</title>
+      <link>https://heliovulcan.com.au/coverage.html</link>
+      <guid isPermaLink="false">https://heliovulcan.com.au/updates.html#2026-09-27-research-coverage-was-stated-as-21-facility-profiles-across-3</guid>
+      <pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+      <category>Correction</category>
+      <description>Correction &#8212; The coverage page carried a count that had not been updated as profiles were completed. The page now reports 49 profiles across 16 sectors and is rebuilt from the profile record rather than written by hand.</description>
+    </item>
+    <item>
+      <title>Critical minerals: power and grid readiness</title>
+      <link>https://heliovulcan.com.au/critical-minerals.html</link>
+      <guid isPermaLink="false">https://heliovulcan.com.au/updates.html#2026-09-27-critical-minerals-power-and-grid-readiness</guid>
+      <pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+      <category>Interactive tool</category>
+      <description>Interactive tool &#8212; A screen over Australian critical-mineral projects covering the power arrangement each one has, whether a station is owned by the miner or a contractor, and how far the site sits from the network.</description>
+    </item>
+    <item>
+      <title>The Safeguard Atlas is rebuilt as a single page, laid out like a submission</title>
+      <link>https://heliovulcan.com.au/safeguard-atlas.html</link>
+      <guid isPermaLink="false">https://heliovulcan.com.au/updates.html#2026-09-27-the-safeguard-atlas-is-rebuilt-as-a-single-page-laid-out-like-a</guid>
+      <pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+      <category>Interactive tool</category>
+      <description>Interactive tool &#8212; The Atlas now reads in one pass: the rule, the arithmetic, one setting changed at a time, and the register-change comparison between FY2023-24 and FY2024-25. The 209 register rows and the model inputs are available to registered readers as a packaged file.</description>
+    </item>
+    <item>
+      <title>Baseline-floor study: two corrections dated 16 September 2026</title>
+      <link>https://heliovulcan.com.au/safeguard-review-2026-baseline-floor.html</link>
+      <guid isPermaLink="false">https://heliovulcan.com.au/updates.html#2026-09-16-baseline-floor-study-two-corrections-dated-16-september-2026</guid>
+      <pubDate>Wed, 16 Sep 2026 09:00:00 +0000</pubDate>
+      <category>Correction</category>
+      <description>Correction &#8212; A fact check against the FY2024-25 and FY2023-24 registers and the Rule text changed two figures. The median baseline of the floored cohort is 127,011 t CO2-e, not 127,780 t. The difference between the 24-facility and 23-facility counts is not explained by deemed surrenders, and the earlier text said it was.</description>
+    </item>
+  </channel>
+</rss>

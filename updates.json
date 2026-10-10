@@ -1,0 +1,61 @@
+{
+  "_note": "The source of truth for /updates.html and /updates.xml. Add an entry at the top, then run: python3 scripts/build_updates.py. MailerLite reads /updates.xml and emails each new entry, so an entry here is a message to every registered reader — write it for them, not for the commit log. Navigation changes, layout work and refactors do not belong here. Corrections do.",
+  "kinds": {
+    "report": "Research report",
+    "tool": "Interactive tool",
+    "data": "Dataset",
+    "submission": "Submission",
+    "correction": "Correction"
+  },
+  "entries": [
+    {
+      "date": "2026-10-10",
+      "kind": "tool",
+      "title": "CBAM charge explorer: move the certificate price and see what it costs by origin",
+      "url": "/cbam-explorer.html",
+      "summary": "The explorer puts the EU carbon border charge on one screen for 198 origin countries. Moving the certificate price re-prices every origin, so a reader can see which exposures are sensitive to the price and which are driven by tonnage."
+    },
+    {
+      "date": "2026-10-10",
+      "kind": "data",
+      "title": "The CBAM country layer is published as data, with what is held back stated on the page",
+      "url": "/api/",
+      "summary": "Three files cover the country layer: exposure for 198 origins, the verification comparison for 11 origins, and the source register. Facility-level cross-source identifiers, the matching rules and the per-plant calibrated intensities are not published, and the methods page says so."
+    },
+    {
+      "date": "2026-10-04",
+      "kind": "report",
+      "title": "The CBAM verification gap: what an exporter pays at default values against what it pays on a verified figure",
+      "url": "/research/cbam-verification-gap.html",
+      "summary": "For 11 origins the charge can be compared at EU default values against the published country average intensity. The report sets out the method and the source register alongside the result."
+    },
+    {
+      "date": "2026-09-27",
+      "kind": "correction",
+      "title": "Research coverage was stated as 21 facility profiles across 3 sectors. It is 49 across 16",
+      "url": "/coverage.html",
+      "summary": "The coverage page carried a count that had not been updated as profiles were completed. The page now reports 49 profiles across 16 sectors and is rebuilt from the profile record rather than written by hand."
+    },
+    {
+      "date": "2026-09-27",
+      "kind": "tool",
+      "title": "Critical minerals: power and grid readiness",
+      "url": "/critical-minerals.html",
+      "summary": "A screen over Australian critical-mineral projects covering the power arrangement each one has, whether a station is owned by the miner or a contractor, and how far the site sits from the network."
+    },
+    {
+      "date": "2026-09-27",
+      "kind": "tool",
+      "title": "The Safeguard Atlas is rebuilt as a single page, laid out like a submission",
+      "url": "/safeguard-atlas.html",
+      "summary": "The Atlas now reads in one pass: the rule, the arithmetic, one setting changed at a time, and the register-change comparison between FY2023-24 and FY2024-25. The 209 register rows and the model inputs are available to registered readers as a packaged file."
+    },
+    {
+      "date": "2026-09-16",
+      "kind": "correction",
+      "title": "Baseline-floor study: two corrections dated 16 September 2026",
+      "url": "/safeguard-review-2026-baseline-floor.html",
+      "summary": "A fact check against the FY2024-25 and FY2023-24 registers and the Rule text changed two figures. The median baseline of the floored cohort is 127,011 t CO2-e, not 127,780 t. The difference between the 24-facility and 23-facility counts is not explained by deemed surrenders, and the earlier text said it was."
+    }
+  ]
+}

@@ -791,3 +791,36 @@ the matching anchor (`#pathway`, `#settings`, `#map`, `#facilities`, `#sandbox`,
 for the section pages is empty. The engine's own links (settings strip, method reference) point at
 anchors rather than pages. The whole-site bundle now carries one Atlas snapshot instead of eight, so it
 is 32 pages rather than 39.
+
+## Registration and update notices (2026-10-10)
+
+Free registration with an email address, a notice whenever the research changes, and the packaged
+files sent by email rather than published. Two new pages, `/subscribe.html` and `/updates.html`,
+both generated (`scripts/build_subscribe.py`, `scripts/build_updates.py`), both under About in the
+breadcrumb map, both reachable from the footer and from `Data & tools → Data` in the main nav. The
+entry points that matter are the download calls-to-action themselves: each one now carries
+`?file=<name>` to `/subscribe.html`, so the subscriber record shows what each person came for.
+
+**A download gate on this site withholds very little, and the page says so.** The site's method is
+that every figure recalculates in the reader's browser, which means the analysis pages carry their
+data with them. `safeguard-atlas.json` holds the same 209 rows as `safeguard-facilities.csv` and the
+Atlas fetches it; `cbam-explorer.html` inlines all 198 origins and the verification object, which is
+both CBAM tables; `datacentres.json` is `datacentres.csv`. Of the files on the registration list,
+only the three submissions and the two Pre-DD reports are genuinely withheld. `/subscribe.html`
+therefore has a section headed *What stays open whether or not you register*, with the reason for
+each. Replacing that section with copy implying the data is unavailable would be found out by anyone
+who opens a network tab, and on a site that sells verifiability that is a bad trade. Making the gate
+real means serving the tools' data from an authenticated endpoint — different hosting, not copy.
+
+**An unlinked file in a public repository is a published file.** `robots.txt` used to say the Pre-DD
+PDFs were "retained in the repository as a capability but not published as part of the site". They
+were served at a public URL and listed in a public repository the whole time. The registration list
+is enforced the only way it can be: the files are not in the repository at all, they live in
+`网站建设/_registered/` outside both repositories, and `scripts/check_registered.py` fails if one
+reappears or if any page links to one. Removing them does not undo the earlier exposure — a public
+repository keeps its history, and caches and crawled corpora keep their copies.
+
+**The feed is the engine.** `updates.json` is the source of truth; `/updates.xml` is what MailerLite
+reads to send each notice, so an entry there is a message to every registered reader. Navigation and
+layout work does not belong in it. Corrections do: two of the first seven entries are corrections to
+published figures, and the page leads on that rather than burying it.
