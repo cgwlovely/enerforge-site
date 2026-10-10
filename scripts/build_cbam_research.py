@@ -641,6 +641,7 @@ def main():
             <a href="/research.html">&larr; All research</a>
             <button type="button" data-copy-link>Copy link</button>
             <button type="button" onclick="window.print()">Print</button>
+            <a href="/cbam-explorer.html">Explore the charge</a>
             <a href="/methods/cbam/">Method &amp; sources</a>
             <a href="/about.html#contact">Discuss a question</a>
           </div>
