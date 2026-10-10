@@ -76,6 +76,7 @@ SECTION_OF = {
     "coverage.html": ("projects", [("Projects", "/case-studies.html")]), "about.html": ("about", []),
     "industry-maps.html": ("tools", [("Tools & data", "/safeguard-atlas.html")]),
     "safeguard-atlas.html": ("tools", [("Tools & data", "/safeguard-atlas.html")]),
+    "cbam-explorer.html": ("tools", [("Tools & data", "/safeguard-atlas.html")]),
     "critical-minerals.html": ("tools", [("Tools & data", "/safeguard-atlas.html")]),
     "privacy.html": ("about", [("About", "/about.html")]),
 }

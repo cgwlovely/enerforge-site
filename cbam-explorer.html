@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CBAM charge explorer &mdash; what the EU carbon border tariff costs by origin | Heliovulcan</title>
+  <meta name="description" content="Move the certificate price and see what CBAM charges each origin country at EU default values, by sector, on 2025 trade and 2026 rules. Recalculated in the browser from published data." />
+  <meta name="keywords" content="CBAM calculator, carbon border adjustment charge by country, CBAM certificate price, EU default emissions values" />
+  <link rel="stylesheet" href="/style.css?v=20260927a" />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
+  <link rel="canonical" href="https://heliovulcan.com.au/cbam-explorer.html" />
+  <meta property="og:site_name" content="Heliovulcan" />
+  <meta property="og:title" content="CBAM charge explorer" />
+  <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    .xp-wrap { margin-top: 26px; }
+    .xp-controls { display: grid; grid-template-columns: minmax(260px,1fr) minmax(220px,1fr) auto;
+      gap: 22px 32px; align-items: end; border-top: 2px solid var(--ink);
+      border-bottom: 1px solid var(--line); padding: 20px 0; margin-bottom: 4px; }
+    .xp-ctl label { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--ink-faint); font-weight: 600; margin-bottom: 8px; }
+    .xp-ctl input[type=range] { width: 100%; accent-color: var(--orange-deep); }
+    .xp-price { display: flex; align-items: baseline; gap: 10px; }
+    .xp-price b { font-family: var(--serif); font-size: 30px; font-variant-numeric: tabular-nums;
+      line-height: 1; }
+    .xp-price span { font-size: 13px; color: var(--ink-faint); }
+    .xp-marks { display: flex; gap: 14px; font-family: var(--mono); font-size: 11px;
+      color: var(--ink-faint); margin-top: 7px; }
+    .xp-marks button { font: inherit; border: 0; background: none; color: var(--teal-deep);
+      cursor: pointer; padding: 0; text-decoration: underline; }
+    .xp-ctl select { font: inherit; font-size: 15px; padding: 9px 11px; border: 1px solid var(--ink);
+      background: var(--surface); color: var(--ink); width: 100%; border-radius: 0; }
+    .xp-reset { font: inherit; font-size: 13px; border: 1px solid var(--line); background: var(--surface);
+      color: var(--ink-soft); padding: 9px 14px; cursor: pointer; border-radius: 0; white-space: nowrap; }
+
+    .xp-heads { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 30px; margin: 26px 0 8px; }
+    .xp-heads > div { border-top: 1px solid var(--ink); padding-top: 11px; }
+    .xp-heads b { display: block; font-family: var(--serif); font-size: 27px; line-height: 1.05;
+      font-variant-numeric: tabular-nums; }
+    .xp-heads span { display: block; font-size: 12.5px; color: var(--ink-soft); margin-top: 5px; }
+
+    .xp-tbl { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 20px;
+      border-top: 2px solid var(--ink); }
+    .xp-tbl th { font-family: var(--mono); font-size: 10.5px; letter-spacing: .09em;
+      text-transform: uppercase; color: var(--ink-faint); font-weight: 600; text-align: left;
+      padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); cursor: pointer;
+      white-space: nowrap; }
+    .xp-tbl th.n { text-align: right; }
+    .xp-tbl th[aria-sort]::after { content: " \2193"; color: var(--orange-deep); }
+    .xp-tbl td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--line-soft); }
+    .xp-tbl td.n { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums;
+      white-space: nowrap; }
+    .xp-tbl tbody tr:hover { background: var(--surface-2); }
+    .xp-tbl tbody tr.is-sel { background: var(--orange-tint); }
+    .xp-tbl td.nm { font-weight: 600; cursor: pointer; }
+    .xp-bar { display: inline-block; height: 9px; background: var(--orange-deep); vertical-align: 1px;
+      margin-right: 7px; min-width: 1px; }
+    .xp-scroll { overflow-x: auto; }
+    .xp-note { font-size: 13px; color: var(--ink-faint); max-width: 78ch; margin: 12px 0 0; }
+
+    .xp-detail { border-top: 2px solid var(--ink); margin-top: 34px; padding-top: 18px; }
+    .xp-detail h3 { font-family: var(--sans); font-size: 19px; margin: 0 0 4px; }
+    .xp-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0 26px; margin-top: 16px; }
+    .xp-split > div { border-top: 1px solid var(--line); padding-top: 10px; }
+    .xp-split b { display: block; font-family: var(--mono); font-size: 17px;
+      font-variant-numeric: tabular-nums; }
+    .xp-split span { display: block; font-size: 12px; color: var(--ink-faint); margin-top: 3px; }
+    .xp-cmp { margin-top: 20px; border-left: 2px solid var(--ink); padding: 2px 0 2px 16px; }
+    .xp-cmp p { margin: 0 0 6px; font-size: 14.5px; max-width: 72ch; }
+    @media (max-width: 820px) {
+      .xp-controls { grid-template-columns: 1fr; gap: 18px; }
+      .xp-heads { grid-template-columns: repeat(2, 1fr); gap: 0 20px; }
+      .xp-tbl { min-width: 620px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" id="site-nav">
+    <div class="nav__inner">
+      <a class="brand" href="/index.html" aria-label="Heliovulcan home">
+        <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
+        <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+      </a>
+      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open the menu">Menu</button>
+      <nav class="nav__menu" id="site-menu" aria-label="Site">
+        <ul class="nav__list"><li class="nav__item nav__item--menu"><a class="nav__top" href="/research.html">Research</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-research" aria-label="Open the Research menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-research" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Research</span><ul><li><a href="/research.html#reports">Research reports and models</a></li><li><a href="/insights.html">Insights</a></li><li><a href="/methods/">Methods</a></li></ul></div><div class="mega__col"><span class="mega__k">Featured</span><ul><li><a href="/safeguard-atlas.html">Safeguard Atlas: the post-2030 decline rate cannot be set in isolation</a></li><li><a href="/australian-diesel-replacement-market-size.html">Future mine-electrification loads and current electricity data</a></li><li><a href="/safeguard-review-2026-baseline-floor.html">A lower Safeguard threshold would also tighten baselines for existing facilities</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu is-current"><a class="nav__top" href="/safeguard-atlas.html">Data & tools</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-tools" aria-label="Open the Data & tools menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-tools" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Interactive tools</span><ul><li><a href="/safeguard-atlas.html">Safeguard Atlas</a></li><li><a href="/critical-minerals.html">Critical minerals: power and grid readiness</a></li></ul></div><div class="mega__col"><span class="mega__k">Data</span><ul><li><a href="/api/">Data & API</a></li><li><a href="/coverage.html">Research coverage</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/consultations.html">Consultations</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-consultations" aria-label="Open the Consultations menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-consultations" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Published submissions</span><ul><li><a href="/consultations.html">All submissions</a></li><li><a href="/consultations/safeguard-decline-rate-2026.html">Safeguard post-2030 decline rate, 2026</a></li><li><a href="/consultations/ai-data-centres-2026.html">AI and data centres, 2026</a></li><li><a href="/consultations/safeguard-onsite-abatement-2026.html">Safeguard onsite abatement, 2026</a></li></ul></div><div class="mega__col"><span class="mega__k">Method</span><ul><li><a href="/methods/#consultation-submissions">How submissions are prepared</a></li></ul></div></div></div></li><li class="nav__item nav__item--menu"><a class="nav__top" href="/case-studies.html">Projects</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega-projects" aria-label="Open the Projects menu"><span aria-hidden="true">&#9662;</span></button><div class="mega" id="mega-projects" hidden><div class="mega__inner"><div class="mega__col"><span class="mega__k">Cases</span><ul><li><a href="/case-studies.html#screens">Project screens</a></li><li><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a></li></ul></div><div class="mega__col"><span class="mega__k">Record</span><ul><li><a href="/coverage.html">Research coverage</a></li><li><a href="/methods/pre-dd-f1-f4/">Pre-DD methodology</a></li></ul></div></div></div></li><li class="nav__item"><a class="nav__top" href="/about.html">About</a></li></ul>
+        <a class="nav__cta" href="/about.html#contact">Discuss a question</a>
+      </nav>
+    </div>
+  </header>
+  <script src="/assets/site-nav.js?v=20260927a" defer></script>
+  <nav class="crumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/safeguard-atlas.html">Tools & data</a><span aria-hidden="true">/</span><span aria-current="page">CBAM charge explorer &mdash; what the EU carbon border tariff…</span></div></nav>
+  <main>
+    <article>
+      <div class="container">
+        <section class="res-hero res-hero--plain">
+          <div class="res-hero__inner">
+            <p class="eyebrow">Interactive tool</p>
+            <h1>What CBAM charges, by origin and by certificate price</h1>
+            <p class="res-hero__meta">
+              <span class="tag">Interactive tool</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>2025 trade, 2026 rules</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>198 origins</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Recalculated in your browser</span>
+            </p>
+          </div>
+        </section>
+
+        <div class="res-layout">
+          <aside class="res-rail">
+            <div class="res-rail__inner">
+              <a href="/safeguard-atlas.html">&larr; Tools &amp; data</a>
+              <a href="/research/cbam-verification-gap.html">The findings</a>
+              <a href="/methods/cbam/">Method &amp; sources</a>
+              <a href="/api/">Download the data</a>
+              <a href="/about.html#contact">Discuss a question</a>
+            </div>
+          </aside>
+
+          <div class="res-main">
+            <p class="standfirst">CBAM charges an importer for the emissions embedded in a good,
+            less the free allocation an equivalent EU producer would receive. Where no verified
+            emissions data is supplied, an EU country default value is used instead. This is what
+            that costs, origin by origin, at a certificate price you choose.</p>
+
+            <div class="xp-wrap">
+              <div class="xp-controls">
+                <div class="xp-ctl">
+                  <label for="price">Certificate price</label>
+                  <div class="xp-price"><b id="priceOut">&euro;80</b>
+                    <span>per tonne CO&#8322;e</span></div>
+                  <input type="range" id="price" min="20" max="200" step="1" value="80"
+                         aria-label="Certificate price in euro per tonne" />
+                  <div class="xp-marks">
+                    <button type="button" data-price="75">2026 Q1 &euro;75.36</button>
+                    <button type="button" data-price="75">Q2 &euro;75.28</button>
+                    <button type="button" data-price="80">report basis &euro;80</button>
+                  </div>
+                </div>
+                <div class="xp-ctl">
+                  <label for="sector">Sector</label>
+                  <select id="sector"><option value="all">All CBAM goods</option><option value="steel">Steel</option><option value="aluminium">Aluminium</option><option value="cement">Cement</option><option value="fertiliser">Fertiliser</option><option value="hydrogen">Hydrogen</option></select>
+                </div>
+                <div class="xp-ctl"><button type="button" class="xp-reset" id="reset">Reset</button></div>
+              </div>
+
+              <div class="xp-heads">
+                <div><b id="h-charge">&mdash;</b><span>Modelled charge at default values</span></div>
+                <div><b id="h-cert">&mdash;</b><span>Certificates due</span></div>
+                <div><b id="h-share">&mdash;</b><span>Share of the value of those goods</span></div>
+                <div><b id="h-origins">&mdash;</b><span>Origin countries</span></div>
+              </div>
+
+              <div class="xp-scroll">
+                <table class="xp-tbl">
+                  <thead><tr>
+                    <th data-sort="name">Origin</th>
+                    <th class="n" data-sort="tonnes">Goods in scope</th>
+                    <th class="n" data-sort="charge" aria-sort="descending">Modelled charge</th>
+                    <th class="n" data-sort="share">Share of value</th>
+                    <th class="n">Default intensity</th>
+                  </tr></thead>
+                  <tbody id="tbody"></tbody>
+                </table>
+              </div>
+              <p class="xp-note">Goods in scope is the whole CBAM basket for that origin and does not
+              change with the sector filter; the charge and its share do. Default intensity is the
+              trade-weighted EU default for that origin, in tonnes CO&#8322;e per tonne of goods.</p>
+
+              <div class="xp-detail" id="detail"></div>
+            </div>
+
+            <h2 style="margin-top:56px">What this is, and what it is not</h2>
+            <p>Every figure is recalculated in your browser from
+            <a href="/data/cbam-exposure-by-origin.csv" download>cbam-exposure-by-origin.csv</a> and
+            <a href="/data/cbam-verification-by-origin.csv" download>cbam-verification-by-origin.csv</a>,
+            the same files behind <a href="/research/cbam-verification-gap.html">the research
+            report</a>. The certificate price is a plain multiplier on the certificates due, so
+            moving it is exact.</p>
+            <ul>
+              <li><b>A default-value scenario, not a forecast.</b> It shows what is charged if no
+              verified emissions data is supplied. What is actually collected depends on how much
+              verified data importers obtain.</li>
+              <li><b>The mark-up year is not a control here.</b> The mark-up rises from 10% in 2026
+              to 30% from 2028, but it sits inside a comparison against the benchmark rather than
+              scaling the answer, so it cannot be moved client-side without rebuilding the charge
+              per customs code. Until that recomputation reproduces the published 2026 total
+              exactly, it is left out rather than shown as an approximation.</li>
+              <li><b>Country averages are not verified data.</b> The comparison shown for some
+              origins uses a published country-level intensity. It estimates where better data
+              would matter; it cannot determine the charge for an individual consignment.</li>
+              <li><b>Carbon prices paid in the country of origin are not deducted.</b> Any
+              recognised carbon price would reduce the certificates ultimately due.</li>
+              <li><b>Indonesia should be read with care.</b> Its default value corresponds to
+              ferro-nickel and is not comparable with the other origins.</li>
+              <li><b>Indicative desktop analysis of public information, not advice.</b></li>
+            </ul>
+            <p class="xp-note">Trade year 2025, 2026 rules, CBAM factor 0.975. The official
+            certificate price was &euro;75.36 in the first quarter of 2026 and &euro;75.28 in the
+            second; the report states its figures at &euro;80. Sources and licences:
+            <a href="/data/cbam-sources.csv" download>cbam-sources.csv</a>. Method:
+            <a href="/methods/cbam/">the CBAM methodology note</a>.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a class="brand" href="/index.html">
+            <span class="brand__badge"><img src="/assets/logo-mark.png" alt="" width="40" height="40" /></span>
+            <span class="brand__name">Heliovulcan<span class="brand__sub">Energy Advisors</span></span>
+          </a>
+          <p class="footer__note">Independent analysis of Australian industrial assets, energy and emissions, built from regulatory filings, licence records and company disclosures. Calculated results and unresolved questions are labelled explicitly.</p>
+        </div>
+        <div class="footer__col"><span class="footer__k">Research</span><a href="/research.html">Research reports and models</a><a href="/insights.html">Insights</a><a href="/methods/">Methods</a><a href="/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">Data &amp; tools</span><a href="/safeguard-atlas.html">Safeguard Atlas</a><a href="/critical-minerals.html">Critical minerals: power and grid readiness</a></div>
+        <div class="footer__col"><span class="footer__k">Consultations &amp; projects</span><a href="/consultations.html">Published submissions</a><a href="/case-studies.html#screens">Project screens</a><a href="/reports/remote-mining-asset-hybrid-energy-review.html">Remote Mining Asset</a><a href="/coverage.html">Research coverage</a></div>
+        <div class="footer__col"><span class="footer__k">About</span><a href="/about.html">About Heliovulcan</a><a href="/about.html#contact">Contact</a><a href="https://www.linkedin.com/company/heliovulcan" rel="me noopener" target="_blank">LinkedIn</a><a href="/privacy.html">Privacy</a></div>
+      </div>
+      <p class="footer__legal">
+        <b>Disclaimer:</b> Heliovulcan is an independent research and analysis practice providing public-information desktop analysis and screening support. Nothing on this site is legal, financial, tax, engineering, investment or lender due-diligence advice, a compliance determination, or regulatory representation or lobbying, and nothing here is a financial product recommendation. All results are indicative and must be independently verified before any commercial, financing or construction decision. &copy; 2026 Heliovulcan Energy Advisors.
+      </p>
+    </div>
+  </footer>
+
+<script>
+const ROWS = [{"iso":"CN","name":"China","t":11342773,"val":17151865072,"see":4.288,"cert":{"steel":28312529.788,"aluminium":2399150.938,"cement":31767.775,"fertiliser":2874613.438,"hydrogen":0.0},"ver":{"t":9057554,"int":1.84,"certDef":28525652.012,"certAvg":4835735.713}},{"iso":"TR","name":"Türkiye","t":14810089,"val":10684877951,"see":2.776,"cert":{"steel":14486226.4,"aluminium":1315035.05,"cement":9148725.775,"fertiliser":351167.062,"hydrogen":326.75},"ver":{"t":7434009,"int":1.89,"certDef":14538523.912,"certAvg":5131382.062}},{"iso":"ID","name":"Indonesia","t":3246434,"val":2432077764,"see":8.854,"cert":{"steel":24350907.538,"aluminium":28163.65,"cement":42.875,"fertiliser":458.975,"hydrogen":0.0},"ver":null},{"iso":"IN","name":"India","t":4602025,"val":5486381493,"see":4.526,"cert":{"steel":14246985.6,"aluminium":313252.975,"cement":19.087,"fertiliser":2780.625,"hydrogen":0.0},"ver":{"t":4202259,"int":4.9,"certDef":14341220.075,"certAvg":11458699.475}},{"iso":"RU","name":"Russia","t":10396542,"val":4889368429,"see":2.442,"cert":{"steel":11165548.75,"aluminium":300292.65,"cement":0.0,"fertiliser":3022387.0,"hydrogen":0.0},"ver":{"t":5172163,"int":3.65,"certDef":11162195.012,"certAvg":11041578.238}},{"iso":"EG","name":"Egypt","t":6564007,"val":2800715525,"see":2.084,"cert":{"steel":3245526.4,"aluminium":315105.65,"cement":1336934.575,"fertiliser":3187248.388,"hydrogen":0.0},"ver":null},{"iso":"UA","name":"Ukraine","t":11180442,"val":3349927614,"see":1.334,"cert":{"steel":5898668.688,"aluminium":13238.962,"cement":1596036.238,"fertiliser":22876.562,"hydrogen":0.0},"ver":{"t":4297218,"int":2.18,"certDef":5885017.513,"certAvg":3436350.712}},{"iso":"KR","name":"Korea","t":3748134,"val":4417160327,"see":2.619,"cert":{"steel":4580461.112,"aluminium":157898.388,"cement":0.013,"fertiliser":3.038,"hydrogen":0.0},"ver":null},{"iso":"GB","name":"United Kingdom","t":3336163,"val":6385181510,"see":2.493,"cert":{"steel":3850532.837,"aluminium":364557.812,"cement":57519.925,"fertiliser":13537.55,"hydrogen":159.475},"ver":{"t":2250052,"int":2.03,"certDef":3849764.875,"certAvg":1796726.788}},{"iso":"DZ","name":"Algeria","t":4402144,"val":1332673826,"see":1.82,"cert":{"steel":1593652.075,"aluminium":136.213,"cement":1379345.65,"fertiliser":1084962.6,"hydrogen":0.0},"ver":null},{"iso":"VN","name":"Viet Nam","t":3089363,"val":2503850906,"see":2.677,"cert":{"steel":3896535.263,"aluminium":37661.137,"cement":114755.575,"fertiliser":153.4,"hydrogen":0.0},"ver":null},{"iso":"TW","name":"Taiwan","t":2396092,"val":3431159426,"see":3.013,"cert":{"steel":3888578.737,"aluminium":5645.875,"cement":0.0,"fertiliser":37.487,"hydrogen":0.0},"ver":{"t":2065391,"int":1.88,"certDef":2558485.663,"certAvg":1005380.938}},{"iso":"US","name":"United States","t":3046532,"val":3901618439,"see":1.688,"cert":{"steel":1108728.95,"aluminium":58266.912,"cement":754.087,"fertiliser":808793.375,"hydrogen":1391212.3},"ver":{"t":666887,"int":1.66,"certDef":211592.8,"certAvg":233248.612}},{"iso":"XS","name":"Not specified","t":1298574,"val":1445648521,"see":3.742,"cert":{"steel":2940862.7,"aluminium":209378.962,"cement":28555.5,"fertiliser":85404.45,"hydrogen":348.775},"ver":null},{"iso":"ZA","name":"South Africa","t":1164572,"val":1295461406,"see":3.317,"cert":{"steel":2068877.438,"aluminium":278839.1,"cement":47741.3,"fertiliser":379.825,"hydrogen":0.0},"ver":{"t":890487,"int":3.65,"certDef":2068774.113,"certAvg":1288385.075}},{"iso":"MY","name":"Malaysia","t":869819,"val":930216577,"see":3.677,"cert":{"steel":1935260.887,"aluminium":99372.163,"cement":61080.15,"fertiliser":10.45,"hydrogen":0.0},"ver":null},{"iso":"AE","name":"United Arab Emirates","t":973414,"val":1816080230,"see":3.146,"cert":{"steel":1355888.875,"aluminium":336076.125,"cement":39405.037,"fertiliser":5872.575,"hydrogen":0.013},"ver":null},{"iso":"BR","name":"Brazil","t":4515020,"val":2151864912,"see":0.944,"cert":{"steel":1662388.788,"aluminium":33606.825,"cement":475.788,"fertiliser":100.475,"hydrogen":0.0},"ver":{"t":1735461,"int":2.02,"certDef":1325700.512,"certAvg":1071623.5}},{"iso":"KZ","name":"Kazakhstan","t":609033,"val":611399626,"see":3.585,"cert":{"steel":1324067.812,"aluminium":73805.525,"cement":0.013,"fertiliser":46205.975,"hydrogen":0.0},"ver":null},{"iso":"SA","name":"Saudi Arabia","t":699499,"val":523294170,"see":3.119,"cert":{"steel":1096164.175,"aluminium":70546.1,"cement":207839.675,"fertiliser":5768.975,"hydrogen":0.0},"ver":null},{"iso":"MZ","name":"Mozambique","t":621038,"val":1562717566,"see":3.593,"cert":{"steel":4299.413,"aluminium":1362579.625,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"TN","name":"Tunisia","t":1387888,"val":510652781,"see":1.761,"cert":{"steel":731755.012,"aluminium":6014.8,"cement":574794.713,"fertiliser":28898.15,"hydrogen":0.0},"ver":null},{"iso":"JP","name":"Japan","t":858713,"val":1450570093,"see":2.484,"cert":{"steel":915890.3,"aluminium":72697.488,"cement":3399.762,"fertiliser":129.85,"hydrogen":0.0},"ver":{"t":809112,"int":2.1,"certDef":922426.738,"certAvg":585481.175}},{"iso":"MK","name":"North Macedonia","t":556068,"val":400974056,"see":1.926,"cert":{"steel":891217.488,"aluminium":4353.462,"cement":31428.062,"fertiliser":55.013,"hydrogen":21.725},"ver":null},{"iso":"AU","name":"Australia","t":419258,"val":284042057,"see":3.226,"cert":{"steel":782774.188,"aluminium":6347.738,"cement":0.1,"fertiliser":1.55,"hydrogen":0.013},"ver":null},{"iso":"VE","name":"Venezuela","t":694036,"val":254968691,"see":1.455,"cert":{"steel":708671.562,"aluminium":12067.3,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"TH","name":"Thailand","t":251224,"val":477853790,"see":2.927,"cert":{"steel":663522.525,"aluminium":11025.075,"cement":1.35,"fertiliser":1.9,"hydrogen":0.0},"ver":null},{"iso":"MD","name":"Moldova","t":238679,"val":133246803,"see":4.066,"cert":{"steel":639504.15,"aluminium":275.312,"cement":34261.863,"fertiliser":16.962,"hydrogen":0.0},"ver":null},{"iso":"OM","name":"Oman","t":396940,"val":448496187,"see":2.688,"cert":{"steel":303133.675,"aluminium":73708.6,"cement":0.0,"fertiliser":244434.062,"hydrogen":0.1},"ver":null},{"iso":"UZ","name":"Uzbekistan","t":570559,"val":211827931,"see":1.771,"cert":{"steel":5979.825,"aluminium":5197.812,"cement":0.0,"fertiliser":574224.025,"hydrogen":0.0},"ver":null},{"iso":"TT","name":"Trinidad and Tobago","t":1260997,"val":524981038,"see":1.55,"cert":{"steel":32.875,"aluminium":1.312,"cement":0.0,"fertiliser":566308.363,"hydrogen":0.0},"ver":null},{"iso":"CA","name":"Canada","t":9498148,"val":2673155622,"see":0.232,"cert":{"steel":58995.188,"aluminium":458306.188,"cement":88.787,"fertiliser":343.95,"hydrogen":0.075},"ver":null},{"iso":"BA","name":"Bosnia and Herzegovina","t":635737,"val":764123841,"see":1.782,"cert":{"steel":265102.662,"aluminium":107893.575,"cement":139083.263,"fertiliser":4500.062,"hydrogen":0.0},"ver":null},{"iso":"LY","name":"Libya","t":451140,"val":141001037,"see":1.654,"cert":{"steel":458744.612,"aluminium":0.5,"cement":0.0,"fertiliser":16675.562,"hydrogen":0.0},"ver":null},{"iso":"BH","name":"Bahrain","t":571542,"val":1479169658,"see":2.11,"cert":{"steel":31290.575,"aluminium":399113.1,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"MA","name":"Morocco","t":1664629,"val":1014560677,"see":0.99,"cert":{"steel":78185.3,"aluminium":10208.612,"cement":117869.938,"fertiliser":213299.237,"hydrogen":0.0},"ver":null},{"iso":"GE","name":"Georgia","t":320198,"val":180613578,"see":2.266,"cert":{"steel":194820.487,"aluminium":51.925,"cement":0.0,"fertiliser":224089.362,"hydrogen":0.0},"ver":null},{"iso":"TM","name":"TM","t":201960,"val":75132923,"see":2.203,"cert":{"steel":28.562,"aluminium":0.0,"cement":0.0,"fertiliser":293331.8,"hydrogen":0.0},"ver":null},{"iso":"AL","name":"Albania","t":199743,"val":209191659,"see":2.405,"cert":{"steel":208106.562,"aluminium":35654.662,"cement":33793.588,"fertiliser":33.65,"hydrogen":0.0},"ver":null},{"iso":"CL","name":"Chile","t":259614,"val":260903453,"see":1.641,"cert":{"steel":8840.212,"aluminium":47.775,"cement":4.8,"fertiliser":244582.125,"hydrogen":0.0},"ver":null},{"iso":"IL","name":"Israel","t":153514,"val":268305736,"see":1.978,"cert":{"steel":20077.55,"aluminium":12756.625,"cement":0.237,"fertiliser":174337.913,"hydrogen":10.338},"ver":null},{"iso":"PK","name":"Pakistan","t":58381,"val":50869051,"see":4.512,"cert":{"steel":178919.375,"aluminium":371.95,"cement":0.013,"fertiliser":0.013,"hydrogen":0.0},"ver":null},{"iso":"MX","name":"Mexico","t":448102,"val":206234926,"see":0.738,"cert":{"steel":154181.513,"aluminium":2534.225,"cement":19748.675,"fertiliser":70.475,"hydrogen":0.0},"ver":null},{"iso":"QZ","name":"QZ","t":66436,"val":146546258,"see":3.586,"cert":{"steel":147288.487,"aluminium":2658.738,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"QW","name":"QW","t":43017,"val":184728974,"see":4.46,"cert":{"steel":122041.375,"aluminium":9556.038,"cement":0.163,"fertiliser":1395.463,"hydrogen":0.013},"ver":null},{"iso":"NG","name":"Nigeria","t":215617,"val":82734975,"see":1.351,"cert":{"steel":968.55,"aluminium":829.288,"cement":0.0,"fertiliser":127862.725,"hydrogen":0.0},"ver":null},{"iso":"JO","name":"Jordan","t":87725,"val":93646217,"see":2.001,"cert":{"steel":489.288,"aluminium":8015.938,"cement":0.0,"fertiliser":116491.312,"hydrogen":0.0},"ver":null},{"iso":"QA","name":"Qatar","t":152061,"val":203986813,"see":1.659,"cert":{"steel":82079.988,"aluminium":31844.263,"cement":0.013,"fertiliser":0.013,"hydrogen":0.0},"ver":null},{"iso":"CO","name":"Colombia","t":125553,"val":116995454,"see":1.725,"cert":{"steel":51787.05,"aluminium":312.137,"cement":58312.512,"fertiliser":205.062,"hydrogen":0.0},"ver":null},{"iso":"IR","name":"Iran","t":121647,"val":75458691,"see":2.155,"cert":{"steel":99087.512,"aluminium":740.825,"cement":1.25,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"ZW","name":"Zimbabwe","t":69236,"val":66125671,"see":2.55,"cert":{"steel":86768.975,"aluminium":0.113,"cement":0.15,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"QP","name":"QP","t":25390,"val":201120384,"see":4.637,"cert":{"steel":60255.688,"aluminium":20545.1,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"NZ","name":"New Zealand","t":92528,"val":189647481,"see":2.079,"cert":{"steel":33937.875,"aluminium":31996.95,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"AZ","name":"Azerbaijan","t":48882,"val":28555476,"see":1.939,"cert":{"steel":16529.638,"aluminium":764.013,"cement":0.0,"fertiliser":39805.825,"hydrogen":0.0},"ver":null},{"iso":"QY","name":"QY","t":36126,"val":114755598,"see":2.926,"cert":{"steel":32261.7,"aluminium":23830.025,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"AM","name":"AM","t":18970,"val":117517573,"see":4.216,"cert":{"steel":4914.587,"aluminium":47746.775,"cement":0.013,"fertiliser":0.013,"hydrogen":0.0},"ver":null},{"iso":"QV","name":"QV","t":22016,"val":33721830,"see":3.473,"cert":{"steel":40126.662,"aluminium":3435.412,"cement":289.637,"fertiliser":6709.175,"hydrogen":37.837},"ver":null},{"iso":"XK","name":"XK","t":13900,"val":41073494,"see":5.088,"cert":{"steel":47162.15,"aluminium":3410.312,"cement":0.125,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"LR","name":"LR","t":81544,"val":8113079,"see":0.686,"cert":{"steel":48950.425,"aluminium":0.125,"cement":0.037,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"AR","name":"Argentina","t":58560,"val":154897833,"see":2.081,"cert":{"steel":16204.612,"aluminium":24262.325,"cement":0.0,"fertiliser":0.037,"hydrogen":0.0},"ver":null},{"iso":"BY","name":"Belarus","t":73434,"val":46293094,"see":1.303,"cert":{"steel":112.775,"aluminium":7226.312,"cement":0.0,"fertiliser":30792.8,"hydrogen":0.0},"ver":null},{"iso":"LB","name":"LB","t":9380,"val":14937291,"see":4.833,"cert":{"steel":30168.6,"aluminium":1627.987,"cement":2.3,"fertiliser":81.287,"hydrogen":0.0},"ver":null},{"iso":"NC","name":"NC","t":12348,"val":32176393,"see":3.634,"cert":{"steel":28480.013,"aluminium":0.925,"cement":0.113,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"AO","name":"AO","t":11316,"val":9924247,"see":3.703,"cert":{"steel":26682.312,"aluminium":147.625,"cement":0.237,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"KH","name":"KH","t":8332,"val":15713566,"see":4.601,"cert":{"steel":25906.075,"aluminium":319.938,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"GH","name":"Ghana","t":46355,"val":113673426,"see":1.88,"cert":{"steel":553.013,"aluminium":22291.95,"cement":0.05,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"PH","name":"Philippines","t":14546,"val":50515847,"see":1.572,"cert":{"steel":20715.812,"aluminium":122.925,"cement":0.075,"fertiliser":0.013,"hydrogen":0.0},"ver":null},{"iso":"HK","name":"Hong Kong","t":5974,"val":28467936,"see":4.26,"cert":{"steel":13020.138,"aluminium":3295.725,"cement":7.513,"fertiliser":1022.712,"hydrogen":0.0},"ver":null},{"iso":"SG","name":"Singapore","t":4649,"val":44727245,"see":4.491,"cert":{"steel":14062.112,"aluminium":385.575,"cement":0.263,"fertiliser":97.213,"hydrogen":0.0},"ver":null},{"iso":"TJ","name":"TJ","t":26951,"val":64341561,"see":1.87,"cert":{"steel":0.25,"aluminium":13005.888,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"CM","name":"Cameroon","t":25151,"val":57137616,"see":1.87,"cert":{"steel":26.375,"aluminium":12129.862,"cement":0.45,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BT","name":"BT","t":4153,"val":4588501,"see":3.633,"cert":{"steel":9576.487,"aluminium":0.025,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"PY","name":"PY","t":4097,"val":4058300,"see":3.523,"cert":{"steel":9050.825,"aluminium":0.375,"cement":0.0,"fertiliser":61.538,"hydrogen":0.0},"ver":null},{"iso":"MH","name":"MH","t":2047,"val":363111,"see":4.932,"cert":{"steel":7121.087,"aluminium":1.413,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BO","name":"BO","t":4747,"val":12677367,"see":2.423,"cert":{"steel":0.087,"aluminium":4917.562,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"PE","name":"Peru","t":1571,"val":2991326,"see":4.428,"cert":{"steel":4855.45,"aluminium":25.45,"cement":3.888,"fertiliser":0.45,"hydrogen":0.0},"ver":null},{"iso":"ME","name":"Montenegro","t":8330,"val":23619907,"see":1.905,"cert":{"steel":288.75,"aluminium":4012.887,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"ZM","name":"ZM","t":7983,"val":7527751,"see":1.86,"cert":{"steel":4253.688,"aluminium":0.113,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"NP","name":"NP","t":1308,"val":1392103,"see":4.511,"cert":{"steel":3998.65,"aluminium":0.388,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"MU","name":"MU","t":1363,"val":5851861,"see":3.814,"cert":{"steel":879.388,"aluminium":2340.738,"cement":15.825,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"KW","name":"Kuwait","t":1145,"val":1751475,"see":3.603,"cert":{"steel":2612.213,"aluminium":21.038,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"LK","name":"Sri Lanka","t":859,"val":2347548,"see":3.563,"cert":{"steel":1801.688,"aluminium":393.625,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"SM","name":"SM","t":771,"val":1930890,"see":3.391,"cert":{"steel":16.012,"aluminium":1485.162,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"AD","name":"AD","t":373,"val":661893,"see":5.001,"cert":{"steel":1109.85,"aluminium":215.275,"cement":0.163,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"GI","name":"GI","t":331,"val":453599,"see":4.739,"cert":{"steel":1031.162,"aluminium":57.025,"cement":0.5,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"MR","name":"MR","t":248,"val":502603,"see":5.477,"cert":{"steel":998.438,"aluminium":0.212,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"MG","name":"MG","t":323,"val":935054,"see":4.501,"cert":{"steel":904.175,"aluminium":82.287,"cement":0.013,"fertiliser":0.013,"hydrogen":0.113},"ver":null},{"iso":"BS","name":"BS","t":253,"val":699767,"see":5.339,"cert":{"steel":977.9,"aluminium":5.1,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"SN","name":"SN","t":247,"val":511889,"see":5.392,"cert":{"steel":963.062,"aluminium":11.05,"cement":0.013,"fertiliser":0.013,"hydrogen":0.0},"ver":null},{"iso":"PA","name":"PA","t":537,"val":1303245,"see":2.891,"cert":{"steel":470.337,"aluminium":259.188,"cement":242.113,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"LA","name":"LA","t":405,"val":475013,"see":3.633,"cert":{"steel":934.013,"aluminium":0.037,"cement":0.0,"fertiliser":0.013,"hydrogen":0.0},"ver":null},{"iso":"NE","name":"NE","t":215,"val":883146,"see":5.529,"cert":{"steel":874.95,"aluminium":0.062,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"KG","name":"KG","t":208,"val":582706,"see":5.488,"cert":{"steel":832.45,"aluminium":6.1,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"GT","name":"GT","t":179,"val":122355,"see":5.764,"cert":{"steel":763.513,"aluminium":23.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"UY","name":"UY","t":244,"val":409477,"see":4.656,"cert":{"steel":776.263,"aluminium":4.662,"cement":0.0,"fertiliser":0.025,"hydrogen":0.0},"ver":null},{"iso":"FO","name":"FO","t":223,"val":839907,"see":4.798,"cert":{"steel":705.175,"aluminium":51.263,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"CW","name":"CW","t":227,"val":1014843,"see":4.565,"cert":{"steel":704.462,"aluminium":1.225,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"GA","name":"GA","t":287,"val":366986,"see":3.732,"cert":{"steel":678.8,"aluminium":8.925,"cement":0.0,"fertiliser":0.0,"hydrogen":0.375},"ver":null},{"iso":"SV","name":"SV","t":165,"val":689451,"see":5.442,"cert":{"steel":657.55,"aluminium":2.125,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"XL","name":"XL","t":205,"val":221386,"see":4.528,"cert":{"steel":445.562,"aluminium":184.938,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"GN","name":"GN","t":479,"val":1118255,"see":2.673,"cert":{"steel":4.975,"aluminium":607.475,"cement":0.013,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"CI","name":"CI","t":267,"val":572045,"see":3.678,"cert":{"steel":442.363,"aluminium":159.062,"cement":0.25,"fertiliser":2.587,"hydrogen":0.0},"ver":null},{"iso":"XC","name":"XC","t":170,"val":221156,"see":4.779,"cert":{"steel":461.863,"aluminium":105.662,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"DJ","name":"DJ","t":177,"val":480975,"see":4.474,"cert":{"steel":534.462,"aluminium":0.188,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BD","name":"Bangladesh","t":129,"val":926964,"see":4.941,"cert":{"steel":445.788,"aluminium":10.988,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"EC","name":"EC","t":110,"val":191576,"see":5.453,"cert":{"steel":437.2,"aluminium":9.812,"cement":0.0,"fertiliser":0.025,"hydrogen":0.0},"ver":null},{"iso":"BL","name":"BL","t":124,"val":72614,"see":4.525,"cert":{"steel":379.375,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"GL","name":"GL","t":97,"val":374429,"see":4.809,"cert":{"steel":295.962,"aluminium":26.775,"cement":0.0,"fertiliser":3.288,"hydrogen":0.0},"ver":null},{"iso":"MM","name":"MM","t":100,"val":2594807,"see":4.397,"cert":{"steel":190.762,"aluminium":104.938,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"SX","name":"SX","t":101,"val":309439,"see":4.327,"cert":{"steel":201.75,"aluminium":88.8,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BV","name":"BV","t":82,"val":93646,"see":4.603,"cert":{"steel":258.675,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"CV","name":"CV","t":57,"val":30476,"see":5.84,"cert":{"steel":249.2,"aluminium":0.825,"cement":0.013,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"DO","name":"DO","t":88,"val":366543,"see":4.078,"cert":{"steel":197.162,"aluminium":33.013,"cement":9.162,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"IQ","name":"Iraq","t":55,"val":300763,"see":4.997,"cert":{"steel":163.062,"aluminium":30.525,"cement":0.15,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"ML","name":"ML","t":55,"val":353236,"see":4.682,"cert":{"steel":174.9,"aluminium":4.263,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"SL","name":"SL","t":138,"val":308576,"see":2.603,"cert":{"steel":31.613,"aluminium":135.262,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"GY","name":"GY","t":41,"val":84618,"see":5.47,"cert":{"steel":163.463,"aluminium":0.838,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"AW","name":"AW","t":51,"val":239436,"see":4.639,"cert":{"steel":161.35,"aluminium":0.05,"cement":0.163,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"KE","name":"KE","t":64,"val":271065,"see":3.654,"cert":{"steel":88.325,"aluminium":58.538,"cement":0.0,"fertiliser":4.2,"hydrogen":0.0},"ver":null},{"iso":"SC","name":"SC","t":43,"val":18204,"see":4.934,"cert":{"steel":150.812,"aluminium":0.075,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"CR","name":"CR","t":49,"val":10826178,"see":4.487,"cert":{"steel":134.287,"aluminium":14.787,"cement":0.025,"fertiliser":0.388,"hydrogen":0.0},"ver":null},{"iso":"KY","name":"KY","t":37,"val":242704,"see":4.646,"cert":{"steel":107.75,"aluminium":10.012,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BJ","name":"BJ","t":26,"val":142986,"see":5.559,"cert":{"steel":107.95,"aluminium":0.013,"cement":0.15,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"PF","name":"PF","t":27,"val":173297,"see":5.024,"cert":{"steel":87.55,"aluminium":11.175,"cement":0.138,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BM","name":"BM","t":28,"val":50873,"see":4.813,"cert":{"steel":93.638,"aluminium":0.45,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BW","name":"BW","t":27,"val":35558,"see":4.867,"cert":{"steel":93.312,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"SY","name":"SY","t":29,"val":108229,"see":4.628,"cert":{"steel":92.513,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"CG","name":"CG","t":26,"val":119260,"see":4.891,"cert":{"steel":61.4,"aluminium":28.675,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"FK","name":"FK","t":22,"val":93001,"see":5.017,"cert":{"steel":42.075,"aluminium":37.112,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"ET","name":"ET","t":32,"val":290593,"see":3.644,"cert":{"steel":10.838,"aluminium":58.5,"cement":0.2,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BF","name":"BF","t":19,"val":166631,"see":4.981,"cert":{"steel":68.35,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"TC","name":"TC","t":19,"val":45678,"see":4.67,"cert":{"steel":60.75,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"SR","name":"SR","t":16,"val":121042,"see":5.168,"cert":{"steel":52.6,"aluminium":7.713,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"MV","name":"MV","t":17,"val":10966,"see":4.651,"cert":{"steel":54.413,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"TZ","name":"TZ","t":15,"val":69217,"see":4.334,"cert":{"steel":29.962,"aluminium":13.075,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"NA","name":"NA","t":9,"val":89239,"see":4.988,"cert":{"steel":30.788,"aluminium":0.175,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"AG","name":"AG","t":9,"val":61972,"see":4.673,"cert":{"steel":28.062,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"CU","name":"CU","t":13,"val":34212,"see":3.587,"cert":{"steel":20.75,"aluminium":7.025,"cement":0.05,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BQ","name":"BQ","t":7,"val":20158,"see":5.251,"cert":{"steel":26.262,"aluminium":0.912,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"EH","name":"EH","t":6,"val":7757,"see":4.912,"cert":{"steel":20.1,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"CD","name":"CD","t":10,"val":18941,"see":2.864,"cert":{"steel":19.925,"aluminium":0.013,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"JM","name":"JM","t":4,"val":3447,"see":5.909,"cert":{"steel":17.8,"aluminium":0.013,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BB","name":"BB","t":4,"val":10025,"see":5.207,"cert":{"steel":13.137,"aluminium":1.975,"cement":0.075,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BN","name":"BN","t":5,"val":85764,"see":4.152,"cert":{"steel":7.612,"aluminium":5.775,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"UG","name":"UG","t":4,"val":56887,"see":4.669,"cert":{"steel":10.512,"aluminium":1.288,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"TK","name":"TK","t":5,"val":36016,"see":3.859,"cert":{"steel":3.212,"aluminium":8.225,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"SZ","name":"SZ","t":2,"val":9280,"see":5.274,"cert":{"steel":8.387,"aluminium":0.037,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"MN","name":"Mongolia","t":3,"val":60052,"see":4.534,"cert":{"steel":8.4,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"AF","name":"AF","t":3,"val":32189,"see":3.869,"cert":{"steel":2.288,"aluminium":5.838,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"GQ","name":"GQ","t":2,"val":14494,"see":4.186,"cert":{"steel":0.113,"aluminium":6.112,"cement":0.212,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"PW","name":"PW","t":1,"val":485,"see":5.921,"cert":{"steel":5.037,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"HT","name":"HT","t":1,"val":12649,"see":4.475,"cert":{"steel":3.6,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"HN","name":"HN","t":1,"val":90199,"see":4.362,"cert":{"steel":2.862,"aluminium":0.0,"cement":0.0,"fertiliser":0.062,"hydrogen":0.0},"ver":null},{"iso":"TF","name":"TF","t":1,"val":101,"see":5.922,"cert":{"steel":2.85,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"ST","name":"ST","t":1,"val":3602,"see":4.102,"cert":{"steel":0.1,"aluminium":2.65,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"YE","name":"YE","t":1,"val":5289,"see":4.669,"cert":{"steel":2.625,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"NF","name":"NF","t":1,"val":13937,"see":4.077,"cert":{"steel":0.0,"aluminium":2.525,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"SO","name":"SO","t":1,"val":14265,"see":4.509,"cert":{"steel":2.138,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"UM","name":"UM","t":1,"val":57892,"see":4.541,"cert":{"steel":1.738,"aluminium":0.013,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"CF","name":"CF","t":0,"val":19685,"see":4.847,"cert":{"steel":1.413,"aluminium":0.237,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"AQ","name":"AQ","t":1,"val":2149,"see":4.364,"cert":{"steel":0.0,"aluminium":1.475,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"LS","name":"LS","t":0,"val":10628,"see":4.619,"cert":{"steel":1.238,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"PS","name":"PS","t":0,"val":2776,"see":4.344,"cert":{"steel":0.05,"aluminium":1.175,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"WS","name":"WS","t":0,"val":195,"see":4.669,"cert":{"steel":1.05,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"TD","name":"TD","t":0,"val":7113,"see":4.525,"cert":{"steel":0.95,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"VC","name":"VC","t":0,"val":1666,"see":4.665,"cert":{"steel":0.925,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"PG","name":"PG","t":0,"val":20471,"see":4.486,"cert":{"steel":0.8,"aluminium":0.013,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"WF","name":"WF","t":0,"val":694,"see":4.482,"cert":{"steel":0.787,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"MO","name":"MO","t":0,"val":8677,"see":4.279,"cert":{"steel":0.388,"aluminium":0.362,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"PM","name":"PM","t":0,"val":3359,"see":2.968,"cert":{"steel":0.025,"aluminium":0.588,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"TO","name":"TO","t":0,"val":17354,"see":4.481,"cert":{"steel":0.575,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"AS","name":"AS","t":0,"val":5944,"see":5.106,"cert":{"steel":0.388,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"TG","name":"TG","t":1,"val":2387,"see":0.88,"cert":{"steel":0.375,"aluminium":0.013,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"IO","name":"IO","t":0,"val":3089,"see":4.664,"cert":{"steel":0.362,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BZ","name":"BZ","t":0,"val":1379,"see":4.512,"cert":{"steel":0.312,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"CX","name":"CX","t":0,"val":527,"see":4.474,"cert":{"steel":0.287,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"VU","name":"VU","t":0,"val":633,"see":4.6,"cert":{"steel":0.287,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"KM","name":"KM","t":0,"val":1504,"see":3.533,"cert":{"steel":0.0,"aluminium":0.212,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"HM","name":"HM","t":0,"val":1338,"see":4.022,"cert":{"steel":0.0,"aluminium":0.2,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"VI","name":"VI","t":0,"val":544,"see":4.658,"cert":{"steel":0.163,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"VG","name":"VG","t":0,"val":1282,"see":4.641,"cert":{"steel":0.125,"aluminium":0.013,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"MS","name":"MS","t":0,"val":461,"see":4.08,"cert":{"steel":0.013,"aluminium":0.1,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"NI","name":"NI","t":0,"val":1068,"see":4.341,"cert":{"steel":0.1,"aluminium":0.013,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"SB","name":"SB","t":0,"val":248,"see":4.324,"cert":{"steel":0.113,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"TL","name":"TL","t":0,"val":2380,"see":4.652,"cert":{"steel":0.113,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"TV","name":"TV","t":0,"val":481,"see":4.472,"cert":{"steel":0.113,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"KP","name":"KP","t":0,"val":766,"see":4.67,"cert":{"steel":0.1,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"MP","name":"MP","t":0,"val":807,"see":4.472,"cert":{"steel":0.05,"aluminium":0.037,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"SD","name":"SD","t":0,"val":1764,"see":4.572,"cert":{"steel":0.087,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"AI","name":"AI","t":0,"val":32557,"see":4.64,"cert":{"steel":0.05,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"GM","name":"GM","t":0,"val":201,"see":4.78,"cert":{"steel":0.05,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"FJ","name":"FJ","t":0,"val":291,"see":4.337,"cert":{"steel":0.037,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"BI","name":"BI","t":0,"val":644,"see":4.67,"cert":{"steel":0.025,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"CK","name":"CK","t":0,"val":104,"see":4.592,"cert":{"steel":0.025,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"LC","name":"LC","t":0,"val":336,"see":4.43,"cert":{"steel":0.0,"aluminium":0.025,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"PN","name":"PN","t":0,"val":136,"see":4.67,"cert":{"steel":0.013,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"RW","name":"RW","t":0,"val":74,"see":4.67,"cert":{"steel":0.013,"aluminium":0.0,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null},{"iso":"GD","name":"GD","t":0,"val":428,"see":3.942,"cert":{"steel":0.0,"aluminium":0.013,"cement":0.0,"fertiliser":0.0,"hydrogen":0.0},"ver":null}];
+const SECTORS = [["steel", "Steel"], ["aluminium", "Aluminium"], ["cement", "Cement"], ["fertiliser", "Fertiliser"], ["hydrogen", "Hydrogen"]];
+const BASIS = 80, Q1 = 75.36, Q2 = 75.28;
+let price = BASIS, sector = "all", sortKey = "charge", selected = null;
+
+const eur = v => v >= 1e9 ? "\u20ac" + (v/1e9).toFixed(2) + "bn"
+               : v >= 1e6 ? "\u20ac" + Math.round(v/1e6).toLocaleString("en-GB") + "M"
+               : "\u20ac" + Math.round(v/1e3).toLocaleString("en-GB") + "k";
+const mt = t => (t/1e6).toFixed(2) + " Mt";
+
+const certOf = r => sector === "all"
+  ? SECTORS.reduce((a, s) => a + (r.cert[s[0]] || 0), 0)
+  : (r.cert[sector] || 0);
+const tonOf = r => sector === "all" ? r.t : null;     // tonnage is published whole, not by sector
+const valOf = r => r.val;
+
+function visible() {
+  return ROWS.filter(r => certOf(r) > 0);
+}
+
+function render() {
+  const rows = visible();
+  const totalCert = rows.reduce((a, r) => a + certOf(r), 0);
+  const totalVal = rows.reduce((a, r) => a + valOf(r), 0);
+  const charge = totalCert * price;
+
+  document.getElementById("h-charge").textContent = eur(charge);
+  document.getElementById("h-cert").textContent = (totalCert/1e6).toFixed(1) + " Mt";
+  document.getElementById("h-origins").textContent = rows.length;
+  document.getElementById("h-share").textContent = totalVal ? (charge/totalVal*100).toFixed(1) + "%" : "\u2014";
+  document.getElementById("priceOut").textContent = "\u20ac" + price;
+
+  const sorted = rows.slice().sort((a, b) =>
+      sortKey === "name" ? a.name.localeCompare(b.name)
+    : sortKey === "share" ? (certOf(b)*price/b.val) - (certOf(a)*price/a.val)
+    : sortKey === "tonnes" ? b.t - a.t
+    : certOf(b) - certOf(a));
+  const max = Math.max(...sorted.map(certOf), 1);
+
+  document.getElementById("tbody").innerHTML = sorted.map(r => {
+    const c = certOf(r) * price;
+    const w = Math.max(1, Math.round(certOf(r) / max * 90));
+    return '<tr data-iso="' + r.iso + '"' + (r.iso === selected ? ' class="is-sel"' : '') + '>'
+      + '<td class="nm">' + r.name + '</td>'
+      + '<td class="n">' + mt(r.t) + '</td>'
+      + '<td class="n"><span class="xp-bar" style="width:' + w + 'px"></span>' + eur(c) + '</td>'
+      + '<td class="n">' + (r.val ? (c/r.val*100).toFixed(1) + '%' : '\u2014') + '</td>'
+      + '<td class="n">' + (r.see ? r.see.toFixed(2) : '\u2014') + '</td></tr>';
+  }).join("");
+
+  document.querySelectorAll("#tbody tr").forEach(tr =>
+    tr.onclick = () => { selected = tr.dataset.iso; render(); detail(); });
+  detail();
+}
+
+function detail() {
+  const box = document.getElementById("detail");
+  const r = ROWS.find(x => x.iso === selected);
+  if (!r) { box.innerHTML = '<p class="xp-note">Select an origin in the table to see its sector '
+    + 'split, and — where a published country intensity exists — what the charge would be on that '
+    + 'intensity instead of the EU default.</p>'; return; }
+  const parts = SECTORS.filter(s => (r.cert[s[0]] || 0) > 0)
+    .map(s => '<div><b>' + eur(r.cert[s[0]] * price) + '</b><span>' + s[1] + '</span></div>').join("");
+  let cmp = '';
+  if (r.ver) {
+    const d = r.ver.certDef * price, a = r.ver.certAvg * price, red = Math.max(0, d - a);
+    const pct = d > 0 ? (red / d * 100) : 0;
+    cmp = '<div class="xp-cmp"><p><b>Steel, against the published country average.</b> '
+      + 'On ' + mt(r.ver.t) + ' of steel with a published intensity of ' + r.ver.int.toFixed(2)
+      + ' t CO\u2082e per tonne, the charge falls from ' + eur(d) + ' at default values to '
+      + eur(a) + ' \u2014 a modelled reduction of ' + eur(red) + ', ' + pct.toFixed(0) + '%.</p>'
+      + '<p class="xp-note">A country average, not verified data for any consignment. Where it is '
+      + 'close to or above the default, better reporting alone will not reduce the charge.</p></div>';
+  } else {
+    cmp = '<p class="xp-note">No published country-level steel intensity for this origin, so the '
+      + 'default-value charge is the only figure that can be put against it here.</p>';
+  }
+  box.innerHTML = '<h3>' + r.name + '</h3>'
+    + '<p class="xp-note">' + mt(r.t) + ' of goods in scope, worth ' + eur(r.val)
+    + '. Trade-weighted default intensity ' + (r.see ? r.see.toFixed(2) + ' t CO\u2082e per tonne' : 'n/a') + '.</p>'
+    + '<div class="xp-split">' + parts + '</div>' + cmp;
+}
+
+document.getElementById("price").addEventListener("input", e => { price = +e.target.value; render(); });
+document.querySelectorAll("[data-price]").forEach(b => b.onclick = () => {
+  price = +b.dataset.price; document.getElementById("price").value = price; render(); });
+document.getElementById("sector").addEventListener("change", e => { sector = e.target.value; render(); });
+document.querySelectorAll(".xp-tbl th[data-sort]").forEach(th => th.onclick = () => {
+  sortKey = th.dataset.sort;
+  document.querySelectorAll(".xp-tbl th").forEach(x => x.removeAttribute("aria-sort"));
+  th.setAttribute("aria-sort", "descending"); render(); });
+document.getElementById("reset").onclick = () => {
+  price = BASIS; sector = "all"; sortKey = "charge"; selected = null;
+  document.getElementById("price").value = BASIS;
+  document.getElementById("sector").value = "all";
+  document.querySelectorAll(".xp-tbl th").forEach(x => x.removeAttribute("aria-sort"));
+  render(); };
+render();
+</script>
+</body>
+</html>
