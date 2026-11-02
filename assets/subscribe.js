@@ -23,7 +23,7 @@
 (function () {
   "use strict";
 
-  var ENDPOINT = "PASTE_MAILERLITE_FORM_ACTION_URL";
+  var ENDPOINT = "https://assets.mailerlite.com/jsonp/2761346/forms/202992836458579684/subscribe";
 
   var CONTACT = "grantchen@heliovulcan.com.au";
   var form = document.getElementById("reg-form");
