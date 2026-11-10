@@ -87,6 +87,13 @@ def page() -> str:
   <title>Register for data access and update notices | Heliovulcan</title>
   <meta name="description" content="Registration for Heliovulcan's packaged datasets and submissions is free. Register with an email address to receive the files and a notice whenever the research changes, including corrections to figures already published." />
   <link rel="canonical" href="{BASE}/subscribe.html" />
+  <meta property="og:site_name" content="Heliovulcan" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{BASE}/subscribe.html" />
+  <meta property="og:title" content="Register for data access and update notices" />
+  <meta property="og:description" content="Registration for Heliovulcan's packaged datasets and submissions is free. Register with an email address to receive the files and a notice whenever the research changes, including corrections to figures already published." />
+  <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="alternate" type="application/rss+xml" title="Heliovulcan updates" href="{BASE}/updates.xml" />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
   <link rel="stylesheet" href="/style.css?v={ASSET_V}" />

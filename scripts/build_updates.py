@@ -79,6 +79,13 @@ def page() -> str:
   <title>Updates: what has changed on this site | Heliovulcan</title>
   <meta name="description" content="Every published change to Heliovulcan's research, datasets and tools, newest first, including corrections to figures already published. Available as a feed and by email." />
   <link rel="canonical" href="{BASE}/updates.html" />
+  <meta property="og:site_name" content="Heliovulcan" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{BASE}/updates.html" />
+  <meta property="og:title" content="Updates: what has changed on this site" />
+  <meta property="og:description" content="Every published change to Heliovulcan's research, datasets and tools, newest first, including corrections to figures already published. Available as a feed and by email." />
+  <meta property="og:image" content="https://heliovulcan.com.au/assets/bess.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="alternate" type="application/rss+xml" title="Heliovulcan updates" href="{BASE}/updates.xml" />
   <link rel="icon" href="/favicon.png" type="image/png" sizes="240x240" />
   <link rel="stylesheet" href="/style.css?v={ASSET_V}" />
